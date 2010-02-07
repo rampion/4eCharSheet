@@ -11,7 +11,7 @@
 				width: 0px;
 				height: 0px;
 				position: absolute;
-				background: #ffbbbb;
+				opacity: 0.5;
 			}
 			.page { 
 				position: absolute;
@@ -28,13 +28,16 @@
 		<div id='CharacterSheet'>
 			<div id="Page1" class="page"></div>
 			<div id="Page2" class="page"></div>
+
+			<div class="box" style="left: 862px; top: 119px; width: 267px; height: 18px;" id="PlayerName"></div>
+
 			<div class="box" style="left: 73px; top: 145px; width: 348px; height: 27px;" id="CharacterName"></div>
 			<div class="box" style="left: 437px; top: 151px; width: 56px; height: 23px;" id="Level"></div>
 			<div class="box" style="left: 509px; top: 146px; width: 162px; height: 26px;" id="Class"></div>
-			<div class="box" style="left: 862px; top: 119px; width: 267px; height: 18px;" id="PlayerName"></div>
 			<div class="box" style="left: 678px; top: 147px; width: 169px; height: 25px;" id="ParagonPath"></div>
 			<div class="box" style="left: 855px; top: 147px; width: 175px; height: 25px;" id="EpicDestiny"></div>
 			<div class="box" style="left: 1035px; top: 151px; width: 104px; height: 21px;" id="TotalXP"></div>
+
 			<div class="box" style="left: 74px; top: 191px; width: 205px; height: 18px;" id="Race"></div>
 			<div class="box" style="left: 289px; top: 187px; width: 54px; height: 22px;" id="Size"></div>
 			<div class="box" style="left: 353px; top: 184px; width: 47px; height: 25px;" id="Age"></div>
@@ -44,11 +47,13 @@
 			<div class="box" style="left: 594px; top: 191px; width: 109px; height: 18px;" id="Alignment"></div>
 			<div class="box" style="left: 716px; top: 191px; width: 111px; height: 18px;" id="Deity"></div>
 			<div class="box" style="left: 836px; top: 190px; width: 308px; height: 19px;" id="Affiliation"></div>
+
 			<div class="box" style="left: 84px; top: 274px; width: 42px; height: 21px;" id="Initiative"></div>
 			<div class="box" style="left: 82px; top: 312px; width: 336px; height: 18px;" id="InitiativeConditionalModifiers"></div>
 			<div class="box" style="left: 236px; top: 274px; width: 31px; height: 21px;" id="InitiativeAbilMod"></div>
 			<div class="box" style="left: 277px; top: 274px; width: 31px; height: 22px;" id="InitiativeHalfLevel"></div>
 			<div class="box" style="left: 387px; top: 274px; width: 32px; height: 23px;" id="InitiativeMisc"></div>
+
 			<div class="box" style="left: 444px; top: 282px; width: 28px; height: 28px;" id="AC"></div>
 			<div class="box" style="left: 446px; top: 332px; width: 342px; height: 25px;" id="ACConditionalBonuses"></div>
 			<div class="box" style="left: 550px; top: 287px; width: 29px; height: 20px;" id="AC10PlusHalfLevel"></div>
@@ -58,12 +63,14 @@
 			<div class="box" style="left: 687px; top: 286px; width: 29px; height: 21px;" id="ACEnh"></div>
 			<div class="box" style="left: 722px; top: 286px; width: 28px; height: 22px;" id="ACMisc1"></div>
 			<div class="box" style="left: 755px; top: 286px; width: 31px; height: 22px;" id="ACMisc2"></div>
+
 			<div class="box" style="left: 802px; top: 273px; width: 45px; height: 24px;" id="Speed"></div>
 			<div class="box" style="left: 995px; top: 274px; width: 33px; height: 22px;" id="SpeedBase"></div>
 			<div class="box" style="left: 1035px; top: 275px; width: 30px; height: 20px;" id="SpeedArmor"></div>
 			<div class="box" style="left: 1073px; top: 275px; width: 31px; height: 21px;" id="SpeedItem"></div>
 			<div class="box" style="left: 1112px; top: 274px; width: 32px; height: 21px;" id="SpeedMisc"></div>
 			<div class="box" style="left: 803px; top: 316px; width: 342px; height: 21px;" id="SpecialMovement"></div>
+
 			<div class="box" style="left: 83px; top: 374px; width: 46px; height: 22px;" id="STR"></div>
 			<div class="box" style="left: 83px; top: 411px; width: 46px; height: 22px;" id="CON"></div>
 			<div class="box" style="left: 83px; top: 462px; width: 46px; height: 24px;" id="DEX"></div>
@@ -82,6 +89,7 @@
 			<div class="box" style="left: 352px; top: 498px; width: 44px; height: 20px;" id="INTModPlusHalfLevel"></div>
 			<div class="box" style="left: 353px; top: 550px; width: 45px; height: 18px;" id="WISModPlusHalfLevel"></div>
 			<div class="box" style="left: 354px; top: 583px; width: 43px; height: 21px;" id="CHAModPlusHalfLevel"></div>
+
 			<div class="box" style="left: 444px; top: 381px; width: 29px; height: 27px;" id="FORT"></div>
 			<div class="box" style="left: 550px; top: 383px; width: 30px; height: 21px;" id="FORT10PlusHalfLevel"></div>
 			<div class="box" style="left: 585px; top: 383px; width: 30px; height: 21px;" id="FORTAbil"></div>
@@ -109,11 +117,13 @@
 			<div class="box" style="left: 721px; top: 556px; width: 30px; height: 21px;" id="WILLMisc1"></div>
 			<div class="box" style="left: 756px; top: 558px; width: 30px; height: 19px;" id="WILLMisc2"></div>
 			<div class="box" style="left: 444px; top: 597px; width: 342px; height: 20px;" id="WILLConditionalBonuses"></div>
+
 			<div class="box" style="left: 804px; top: 381px; width: 39px; height: 20px;" id="PassiveInsight"></div>
 			<div class="box" style="left: 1086px; top: 380px; width: 45px; height: 21px;" id="PassiveInsightSkillBonus"></div>
 			<div class="box" style="left: 802px; top: 418px; width: 42px; height: 21px;" id="PassivePerception"></div>
 			<div class="box" style="left: 1086px; top: 417px; width: 46px; height: 21px;" id="PassivePerceptionSkillBonus"></div>
 			<div class="box" style="left: 804px; top: 459px; width: 345px; height: 20px;" id="SpecialSenses"></div>
+
 			<div class="box" style="left: 74px; top: 667px; width: 73px; height: 38px;" id="MaxHP"></div>
 			<div class="box" style="left: 160px; top: 677px; width: 78px; height: 23px;" id="BloodiedHP"></div>
 			<div class="box" style="left: 259px; top: 677px; width: 80px; height: 23px;" id="SurgeValue"></div>
@@ -128,8 +138,10 @@
 			<div class="box" style="left: 74px; top: 894px; width: 348px; height: 22px;" id="SavingThrowMods"></div>
 			<div class="box" style="left: 75px; top: 935px; width: 348px; height: 27px;" id="Resistances"></div>
 			<div class="box" style="left: 74px; top: 979px; width: 349px; height: 24px;" id="CurrentConditionsAndEffects"></div>
+
 			<div class="box" style="left: 439px; top: 653px; width: 49px; height: 26px;" id="ActionPoints"></div>
 			<div class="box" style="left: 442px; top: 699px; width: 343px; height: 23px;" id="ActionPointAddtionalEffects"></div>
+
 			<div class="box" style="left: 523px; top: 752px; width: 263px; height: 18px;" id="RaceAbilityScoreMods"></div>
 			<div class="box" style="left: 441px; top: 774px; width: 342px; height: 21px;" id="RaceFeatures1"></div>
 			<div class="box" style="left: 440px; top: 801px; width: 344px; height: 25px;" id="RaceFeatures2"></div>
@@ -139,6 +151,7 @@
 			<div class="box" style="left: 440px; top: 915px; width: 345px; height: 23px;" id="RaceFeatures6"></div>
 			<div class="box" style="left: 440px; top: 943px; width: 344px; height: 24px;" id="RaceFeatures7"></div>
 			<div class="box" style="left: 441px; top: 976px; width: 342px; height: 18px;" id="RaceFeatures8"></div>
+
 			<div class="box" style="left: 845px; top: 505px; width: 295px; height: 22px;" id="Attack1Name"></div>
 			<div class="box" style="left: 819px; top: 547px; width: 39px; height: 20px;" id="Attack1AttBonus"></div>
 			<div class="box" style="left: 907px; top: 546px; width: 31px; height: 20px;" id="Attack1HalfLevel"></div>
@@ -148,6 +161,7 @@
 			<div class="box" style="left: 1043px; top: 547px; width: 29px; height: 21px;" id="Attack1Feat"></div>
 			<div class="box" style="left: 1078px; top: 546px; width: 30px; height: 21px;" id="Attack1Enh"></div>
 			<div class="box" style="left: 1113px; top: 547px; width: 31px; height: 20px;" id="Attack1Misc"></div>
+
 			<div class="box" style="left: 844px; top: 578px; width: 300px; height: 24px;" id="Attack2Name"></div>
 			<div class="box" style="left: 814px; top: 619px; width: 45px; height: 22px;" id="Attack2AttBonus"></div>
 			<div class="box" style="left: 907px; top: 620px; width: 29px; height: 19px;" id="Attack2HalfLevel"></div>
@@ -157,6 +171,7 @@
 			<div class="box" style="left: 1045px; top: 621px; width: 27px; height: 19px;" id="Attack2Feat"></div>
 			<div class="box" style="left: 1078px; top: 618px; width: 29px; height: 23px;" id="Attack2Enh"></div>
 			<div class="box" style="left: 1113px; top: 620px; width: 29px; height: 20px;" id="Attack2Misc"></div>
+
 			<div class="box" style="left: 843px; top: 682px; width: 301px; height: 20px;" id="Damage1Name"></div>
 			<div class="box" style="left: 803px; top: 725px; width: 67px; height: 19px;" id="Damage1Damage"></div>
 			<div class="box" style="left: 975px; top: 723px; width: 28px; height: 21px;" id="Damage1Abil"></div>
@@ -164,6 +179,7 @@
 			<div class="box" style="left: 1043px; top: 723px; width: 29px; height: 20px;" id="Damage1Enh"></div>
 			<div class="box" style="left: 1077px; top: 725px; width: 30px; height: 20px;" id="Damage1Misc1"></div>
 			<div class="box" style="left: 1112px; top: 724px; width: 29px; height: 21px;" id="Damage1Misc2"></div>
+
 			<div class="box" style="left: 842px; top: 754px; width: 304px; height: 23px;" id="Damage2Name"></div>
 			<div class="box" style="left: 802px; top: 797px; width: 66px; height: 18px;" id="Damage2Damage"></div>
 			<div class="box" style="left: 973px; top: 797px; width: 30px; height: 18px;" id="Damage2Abil"></div>
@@ -171,22 +187,27 @@
 			<div class="box" style="left: 1043px; top: 793px; width: 28px; height: 23px;" id="Damage2Enh"></div>
 			<div class="box" style="left: 1077px; top: 795px; width: 29px; height: 22px;" id="Damage2Misc1"></div>
 			<div class="box" style="left: 1110px; top: 795px; width: 32px; height: 22px;" id="Damage2Misc2"></div>
+
 			<div class="box" style="left: 803px; top: 872px; width: 42px; height: 27px;" id="BasicAttack1Attack"></div>
 			<div class="box" style="left: 872px; top: 872px; width: 43px; height: 27px;" id="BasicAttack1Defense"></div>
 			<div class="box" style="left: 927px; top: 870px; width: 131px; height: 27px;" id="BasicAttack1WeaponOrPower"></div>
 			<div class="box" style="left: 1076px; top: 871px; width: 69px; height: 26px;" id="BasicAttack1Damage"></div>
+
 			<div class="box" style="left: 804px; top: 908px; width: 41px; height: 24px;" id="BasicAttack2Attack"></div>
 			<div class="box" style="left: 872px; top: 906px; width: 42px; height: 26px;" id="BasicAttack2Defense"></div>
 			<div class="box" style="left: 923px; top: 904px; width: 139px; height: 27px;" id="BasicAttack2WeaponOrPower"></div>
 			<div class="box" style="left: 1074px; top: 904px; width: 70px; height: 25px;" id="BasicAttack2Damage"></div>
+
 			<div class="box" style="left: 803px; top: 944px; width: 44px; height: 23px;" id="BasicAttack3Attack"></div>
 			<div class="box" style="left: 871px; top: 941px; width: 45px; height: 26px;" id="BasicAttack3Defense"></div>
 			<div class="box" style="left: 925px; top: 939px; width: 138px; height: 26px;" id="BasicAttack3WeaponOrPower"></div>
 			<div class="box" style="left: 1075px; top: 935px; width: 70px; height: 29px;" id="BasicAttack3Damage"></div>
+
 			<div class="box" style="left: 804px; top: 974px; width: 40px; height: 27px;" id="BasicAttack4Attack"></div>
 			<div class="box" style="left: 872px; top: 976px; width: 41px; height: 26px;" id="BasicAttack4Defense"></div>
 			<div class="box" style="left: 926px; top: 972px; width: 135px; height: 27px;" id="BasicAttack4WeaponOrPower"></div>
 			<div class="box" style="left: 1074px; top: 971px; width: 71px; height: 27px;" id="BasicAttack4Damage"></div>
+
 			<div class="box" style="left: 71px; top: 1062px; width: 37px; height: 21px;" id="Acrobatics"></div>
 			<div class="box" style="left: 71px; top: 1091px; width: 37px; height: 20px;" id="Arcana"></div>
 			<div class="box" style="left: 71px; top: 1119px; width: 37px; height: 18px;" id="Athletics"></div>
@@ -204,6 +225,7 @@
 			<div class="box" style="left: 71px; top: 1453px; width: 37px; height: 20px;" id="Stealth"></div>
 			<div class="box" style="left: 71px; top: 1483px; width: 37px; height: 17px;" id="Streetwise"></div>
 			<div class="box" style="left: 71px; top: 1511px; width: 37px; height: 17px;" id="Thievery"></div>
+
 			<div class="box" style="left: 276px; top: 1062px; width: 23px; height: 19px;" id="AcrobaticsAbilModPlusHalfLevel"></div>
 			<div class="box" style="left: 275px; top: 1091px; width: 24px; height: 20px;" id="ArcanaAbilModPlusHalfLevel"></div>
 			<div class="box" style="left: 276px; top: 1119px; width: 23px; height: 18px;" id="AthleticsAbilModPlusHalfLevel"></div>
@@ -297,193 +319,219 @@
 			<div class="box" style="left: 804px; top: 1475px; width: 348px; height: 25px;" id="Feats16"></div>
 			<div class="box" style="left: 804px; top: 1503px; width: 348px; height: 25px;" id="Feats17"></div>
 
-			<div id="LanguagesKnown1" style="left: 444px; top: 1443px; width: 341px; height: 27px;" class="box"></div>
-			<div id="LanguagesKnown2" style="left: 444px; top: 1474px; width: 341px; height: 25px;" class="box"></div>
-			<div id="LanguagesKnown3" style="left: 444px; top: 1502px; width: 341px; height: 25px;" class="box"></div>
+			<div class="box" style="left: 444px; top: 1443px; width: 341px; height: 27px;" id="LanguagesKnown1"></div>
+			<div class="box" style="left: 444px; top: 1474px; width: 341px; height: 25px;" id="LanguagesKnown2"></div>
+			<div class="box" style="left: 444px; top: 1502px; width: 341px; height: 25px;" id="LanguagesKnown3"></div>
 
-			<div class="box" style="left: 87px; top: 1797px; width: 350px; height: 26px;" id="AtWillPowers1"></div>
-			<div class="box" style="left: 87px; top: 1828px; width: 350px; height: 25px;" id="AtWillPowers2"></div>
-			<div class="box" style="left: 87px; top: 1857px; width: 351px; height: 24px;" id="AtWillPowers3"></div>
-			<div class="box" style="left: 88px; top: 1887px; width: 350px; height: 22px;" id="AtWillPowers4"></div>
-			<div class="box" style="left: 87px; top: 1916px; width: 351px; height: 23px;" id="AtWillPowers5"></div>
-			<div class="box" style="left: 87px; top: 1945px; width: 351px; height: 22px;" id="AtWillPowers6"></div>
-			<div class="box" style="left: 88px; top: 2003px; width: 324px; height: 22px;" id="EncounterPowers1"></div>
-			<div class="box" style="left: 89px; top: 2031px; width: 322px; height: 23px;" id="EncounterPowers2"></div>
-			<div class="box" style="left: 87px; top: 2057px; width: 324px; height: 27px;" id="EncounterPowers3"></div>
-			<div class="box" style="left: 86px; top: 2089px; width: 326px; height: 23px;" id="EncounterPowers4"></div>
-			<div class="box" style="left: 87px; top: 2117px; width: 326px; height: 23px;" id="EncounterPowers5"></div>
-			<div class="box" style="left: 87px; top: 2145px; width: 325px; height: 24px;" id="EncounterPowers6"></div>
-			<div class="box" style="left: 417px; top: 2012px; width: 12px; height: 13px;" id="EncounterPowersCheck1"></div>
-			<div class="box" style="left: 416px; top: 2040px; width: 14px; height: 13px;" id="EncounterPowersCheck2"></div>
-			<div class="box" style="left: 418px; top: 2068px; width: 10px; height: 13px;" id="EncounterPowersCheck3"></div>
-			<div class="box" style="left: 418px; top: 2100px; width: 11px; height: 10px;" id="EncounterPowersCheck4"></div>
-			<div class="box" style="left: 416px; top: 2127px; width: 14px; height: 11px;" id="EncounterPowersCheck5"></div>
-			<div class="box" style="left: 417px; top: 2156px; width: 12px; height: 12px;" id="EncounterPowersCheck6"></div>
-			<div class="box" style="left: 88px; top: 2202px; width: 324px; height: 26px;" id="DailyPowers1"></div>
-			<div class="box" style="left: 88px; top: 2231px; width: 324px; height: 25px;" id="DailyPowers2"></div>
-			<div class="box" style="left: 87px; top: 2261px; width: 325px; height: 24px;" id="DailyPowers3"></div>
-			<div class="box" style="left: 87px; top: 2288px; width: 325px; height: 26px;" id="DailyPowers4"></div>
-			<div class="box" style="left: 88px; top: 2318px; width: 324px; height: 25px;" id="DailyPowers5"></div>
-			<div class="box" style="left: 86px; top: 2347px; width: 327px; height: 23px;" id="DailyPowers6"></div>
-			<div class="box" style="left: 416px; top: 2214px; width: 14px; height: 10px;" id="DailyPowersCheck1"></div>
-			<div class="box" style="left: 418px; top: 2241px; width: 12px; height: 11px;" id="DailyPowersCheck2"></div>
-			<div class="box" style="left: 418px; top: 2269px; width: 12px; height: 13px;" id="DailyPowersCheck3"></div>
-			<div class="box" style="left: 417px; top: 2299px; width: 12px; height: 13px;" id="DailyPowersCheck4"></div>
-			<div class="box" style="left: 416px; top: 2326px; width: 13px; height: 13px;" id="DailyPowersCheck5"></div>
-			<div class="box" style="left: 417px; top: 2357px; width: 12px; height: 11px;" id="DailyPowersCheck6"></div>
+			<div class="box" style="left: 88px; top: 1797px; width: 351px; height: 26px;" id="AtWillPowers1"></div>
+			<div class="box" style="left: 88px; top: 1828px; width: 351px; height: 25px;" id="AtWillPowers2"></div>
+			<div class="box" style="left: 88px; top: 1857px; width: 351px; height: 24px;" id="AtWillPowers3"></div>
+			<div class="box" style="left: 88px; top: 1886px; width: 351px; height: 24px;" id="AtWillPowers4"></div>
+			<div class="box" style="left: 88px; top: 1916px; width: 351px; height: 23px;" id="AtWillPowers5"></div>
+			<div class="box" style="left: 88px; top: 1944px; width: 351px; height: 24px;" id="AtWillPowers6"></div>
+
+			<div class="box" style="left: 88px; top: 2003px; width: 323px; height: 22px;" id="EncounterPowers1"></div>
+			<div class="box" style="left: 88px; top: 2031px; width: 323px; height: 23px;" id="EncounterPowers2"></div>
+			<div class="box" style="left: 88px; top: 2057px; width: 323px; height: 27px;" id="EncounterPowers3"></div>
+			<div class="box" style="left: 88px; top: 2089px; width: 323px; height: 23px;" id="EncounterPowers4"></div>
+			<div class="box" style="left: 88px; top: 2117px; width: 323px; height: 23px;" id="EncounterPowers5"></div>
+			<div class="box" style="left: 88px; top: 2145px; width: 323px; height: 24px;" id="EncounterPowers6"></div>
+			<div class="box" style="left: 88px; top: 2202px; width: 323px; height: 26px;" id="DailyPowers1"></div>
+			<div class="box" style="left: 88px; top: 2231px; width: 323px; height: 25px;" id="DailyPowers2"></div>
+			<div class="box" style="left: 88px; top: 2261px; width: 323px; height: 24px;" id="DailyPowers3"></div>
+			<div class="box" style="left: 88px; top: 2288px; width: 323px; height: 26px;" id="DailyPowers4"></div>
+			<div class="box" style="left: 88px; top: 2318px; width: 323px; height: 25px;" id="DailyPowers5"></div>
+			<div class="box" style="left: 88px; top: 2347px; width: 323px; height: 23px;" id="DailyPowers6"></div>
 			<div class="box" style="left: 88px; top: 2406px; width: 323px; height: 23px;" id="UtilityPowers1"></div>
-			<div class="box" style="left: 87px; top: 2433px; width: 324px; height: 25px;" id="UtilityPowers2"></div>
-			<div class="box" style="left: 87px; top: 2461px; width: 323px; height: 27px;" id="UtilityPowers3"></div>
-			<div class="box" style="left: 88px; top: 2491px; width: 321px; height: 25px;" id="UtilityPowers4"></div>
+			<div class="box" style="left: 88px; top: 2433px; width: 323px; height: 25px;" id="UtilityPowers2"></div>
+			<div class="box" style="left: 88px; top: 2461px; width: 323px; height: 27px;" id="UtilityPowers3"></div>
+			<div class="box" style="left: 88px; top: 2491px; width: 323px; height: 25px;" id="UtilityPowers4"></div>
 			<div class="box" style="left: 88px; top: 2519px; width: 323px; height: 25px;" id="UtilityPowers5"></div>
 			<div class="box" style="left: 88px; top: 2548px; width: 323px; height: 24px;" id="UtilityPowers6"></div>
-			<div class="box" style="left: 87px; top: 2576px; width: 324px; height: 25px;" id="UtilityPowers7"></div>
-			<div class="box" style="left: 88px; top: 2605px; width: 322px; height: 24px;" id="UtilityPowers8"></div>
-			<div class="box" style="left: 417px; top: 2415px; width: 13px; height: 11px;" id="UtilityPowersCheck1"></div>
-			<div class="box" style="left: 416px; top: 2444px; width: 12px; height: 10px;" id="UtilityPowersCheck2"></div>
+			<div class="box" style="left: 88px; top: 2576px; width: 323px; height: 25px;" id="UtilityPowers7"></div>
+			<div class="box" style="left: 88px; top: 2605px; width: 323px; height: 24px;" id="UtilityPowers8"></div>
+
+			<div class="box" style="left: 416px; top: 2012px; width: 12px; height: 11px;" id="EncounterPowersCheck1"></div>
+			<div class="box" style="left: 416px; top: 2040px; width: 12px; height: 11px;" id="EncounterPowersCheck2"></div>
+			<div class="box" style="left: 416px; top: 2069px; width: 12px; height: 11px;" id="EncounterPowersCheck3"></div>
+			<div class="box" style="left: 416px; top: 2098px; width: 12px; height: 11px;" id="EncounterPowersCheck4"></div>
+			<div class="box" style="left: 416px; top: 2127px; width: 12px; height: 11px;" id="EncounterPowersCheck5"></div>
+			<div class="box" style="left: 416px; top: 2156px; width: 12px; height: 11px;" id="EncounterPowersCheck6"></div>
+			<div class="box" style="left: 416px; top: 2214px; width: 12px; height: 11px;" id="DailyPowersCheck1"></div>
+			<div class="box" style="left: 416px; top: 2242px; width: 12px; height: 11px;" id="DailyPowersCheck2"></div>
+			<div class="box" style="left: 416px; top: 2271px; width: 12px; height: 11px;" id="DailyPowersCheck3"></div>
+			<div class="box" style="left: 416px; top: 2299px; width: 12px; height: 11px;" id="DailyPowersCheck4"></div>
+			<div class="box" style="left: 416px; top: 2328px; width: 12px; height: 11px;" id="DailyPowersCheck5"></div>
+			<div class="box" style="left: 416px; top: 2357px; width: 12px; height: 11px;" id="DailyPowersCheck6"></div>
+			<div class="box" style="left: 416px; top: 2415px; width: 12px; height: 11px;" id="UtilityPowersCheck1"></div>
+			<div class="box" style="left: 416px; top: 2444px; width: 12px; height: 11px;" id="UtilityPowersCheck2"></div>
 			<div class="box" style="left: 416px; top: 2472px; width: 12px; height: 11px;" id="UtilityPowersCheck3"></div>
-			<div class="box" style="left: 418px; top: 2502px; width: 12px; height: 10px;" id="UtilityPowersCheck4"></div>
-			<div class="box" style="left: 419px; top: 2529px; width: 9px; height: 13px;" id="UtilityPowersCheck5"></div>
-			<div class="box" style="left: 417px; top: 2559px; width: 12px; height: 10px;" id="UtilityPowersCheck6"></div>
-			<div class="box" style="left: 415px; top: 2586px; width: 15px; height: 13px;" id="UtilityPowersCheck7"></div>
-			<div class="box" style="left: 417px; top: 2616px; width: 12px; height: 11px;" id="UtilityPowersCheck8"></div>
-			<div class="box" style="left: 493px; top: 1799px; width: 284px; height: 25px;" id="MagicItemsWeapon1"></div>
-			<div class="box" style="left: 491px; top: 1829px; width: 286px; height: 24px;" id="MagicItemsWeapon2"></div>
-			<div class="box" style="left: 491px; top: 1858px; width: 287px; height: 25px;" id="MagicItemsWeapon3"></div>
-			<div class="box" style="left: 493px; top: 1887px; width: 282px; height: 25px;" id="MagicItemsWeapon4"></div>
-			<div class="box" style="left: 782px; top: 1811px; width: 10px; height: 11px;" id="MagicItemsWeaponCheck1"></div>
+			<div class="box" style="left: 416px; top: 2502px; width: 12px; height: 11px;" id="UtilityPowersCheck4"></div>
+			<div class="box" style="left: 416px; top: 2529px; width: 12px; height: 11px;" id="UtilityPowersCheck5"></div>
+			<div class="box" style="left: 416px; top: 2559px; width: 12px; height: 11px;" id="UtilityPowersCheck6"></div>
+			<div class="box" style="left: 416px; top: 2587px; width: 12px; height: 11px;" id="UtilityPowersCheck7"></div>
+			<div class="box" style="left: 416px; top: 2616px; width: 12px; height: 11px;" id="UtilityPowersCheck8"></div>
+
+			<div class="box" style="right: 461px; top: 1799px; width: 282px; height: 25px;" id="MagicItemsWeapon1"></div>
+			<div class="box" style="right: 461px; top: 1829px; width: 282px; height: 24px;" id="MagicItemsWeapon2"></div>
+			<div class="box" style="right: 461px; top: 1858px; width: 282px; height: 25px;" id="MagicItemsWeapon3"></div>
+			<div class="box" style="right: 461px; top: 1887px; width: 282px; height: 25px;" id="MagicItemsWeapon4"></div>
+			<div class="box" style="right: 461px; top: 1914px; width: 282px; height: 26px;" id="MagicItemsArmor"></div>
+			<div class="box" style="right: 461px; top: 1943px; width: 282px; height: 26px;" id="MagicItemsArms"></div>
+			<div class="box" style="right: 461px; top: 1971px; width: 282px; height: 27px;" id="MagicItemsFeet"></div>
+			<div class="box" style="right: 461px; top: 2001px; width: 282px; height: 23px;" id="MagicItemsHands"></div>
+			<div class="box" style="right: 461px; top: 2029px; width: 282px; height: 26px;" id="MagicItemsHead"></div>
+			<div class="box" style="right: 461px; top: 2058px; width: 282px; height: 26px;" id="MagicItemsNeck"></div>
+			<div class="box" style="right: 461px; top: 2087px; width: 282px; height: 24px;" id="MagicItemsRing1"></div>
+			<div class="box" style="right: 461px; top: 2116px; width: 282px; height: 25px;" id="MagicItemsRing2"></div>
+			<div class="box" style="right: 461px; top: 2144px; width: 282px; height: 26px;" id="MagicItemsWaist"></div>
+			<div class="box" style="right: 461px; top: 2173px; width: 323px; height: 25px;" id="MagicItemsMisc1"></div>
+			<div class="box" style="right: 461px; top: 2203px; width: 323px; height: 24px;" id="MagicItemsMisc2"></div>
+			<div class="box" style="right: 461px; top: 2231px; width: 323px; height: 25px;" id="MagicItemsMisc3"></div>
+			<div class="box" style="right: 461px; top: 2260px; width: 323px; height: 24px;" id="MagicItemsMisc4"></div>
+			<div class="box" style="right: 461px; top: 2288px; width: 323px; height: 26px;" id="MagicItemsMisc5"></div>
+			<div class="box" style="right: 461px; top: 2317px; width: 323px; height: 26px;" id="MagicItemsMisc6"></div>
+			<div class="box" style="right: 461px; top: 2347px; width: 323px; height: 25px;" id="MagicItemsMisc7"></div>
+			<div class="box" style="right: 461px; top: 2376px; width: 323px; height: 26px;" id="MagicItemsMisc8"></div>
+			<div class="box" style="right: 461px; top: 2405px; width: 323px; height: 23px;" id="MagicItemsMisc9"></div>
+			<div class="box" style="right: 461px; top: 2431px; width: 323px; height: 28px;" id="MagicItemsMisc10"></div>
+			<div class="box" style="right: 461px; top: 2463px; width: 323px; height: 23px;" id="MagicItemsMisc11"></div>
+			<div class="box" style="right: 461px; top: 2491px; width: 323px; height: 23px;" id="MagicItemsMisc12"></div>
+
+			<div class="box" style="left: 780px; top: 1810px; width: 12px; height: 11px;" id="MagicItemsWeaponCheck1"></div>
 			<div class="box" style="left: 780px; top: 1839px; width: 12px; height: 11px;" id="MagicItemsWeaponCheck2"></div>
-			<div class="box" style="left: 779px; top: 1868px; width: 14px; height: 14px;" id="MagicItemsWeaponCheck3"></div>
-			<div class="box" style="left: 780px; top: 1896px; width: 13px; height: 14px;" id="MagicItemsWeaponCheck4"></div>
-			<div class="box" style="left: 488px; top: 1914px; width: 286px; height: 26px;" id="MagicItemsArmor"></div>
-			<div class="box" style="left: 779px; top: 1927px; width: 11px; height: 9px;" id="MagicItemsArmorCheck"></div>
-			<div class="box" style="left: 479px; top: 1943px; width: 295px; height: 26px;" id="MagicItemsArms"></div>
-			<div class="box" style="left: 779px; top: 1954px; width: 13px; height: 12px;" id="MagicItemsArmsCheck"></div>
-			<div class="box" style="left: 473px; top: 1971px; width: 302px; height: 27px;" id="MagicItemsFeet"></div>
-			<div class="box" style="left: 779px; top: 1983px; width: 13px; height: 11px;" id="MagicItemsFeetCheck"></div>
-			<div class="box" style="left: 484px; top: 2001px; width: 290px; height: 23px;" id="MagicItemsHands"></div>
-			<div class="box" style="left: 778px; top: 2012px; width: 12px; height: 11px;" id="MagicItemsHandsCheck"></div>
-			<div class="box" style="left: 479px; top: 2029px; width: 295px; height: 26px;" id="MagicItemsHead"></div>
-			<div class="box" style="left: 779px; top: 2040px; width: 14px; height: 11px;" id="MagicItemsHeadCheck"></div>
-			<div class="box" style="left: 478px; top: 2058px; width: 296px; height: 26px;" id="MagicItemsNeck"></div>
-			<div class="box" style="left: 779px; top: 2069px; width: 12px; height: 13px;" id="MagicItemsNeckCheck"></div>
-			<div class="box" style="left: 477px; top: 2087px; width: 297px; height: 24px;" id="MagicItemsRing1"></div>
-			<div class="box" style="left: 781px; top: 2098px; width: 11px; height: 13px;" id="MagicItemsRingCheck1"></div>
-			<div class="box" style="left: 477px; top: 2116px; width: 298px; height: 25px;" id="MagicItemsRing2"></div>
-			<div class="box" style="left: 779px; top: 2129px; width: 14px; height: 9px;" id="MagicItemsRingCheck2"></div>
-			<div class="box" style="left: 481px; top: 2144px; width: 294px; height: 26px;" id="MagicItemsWaist"></div>
-			<div class="box" style="left: 779px; top: 2156px; width: 14px; height: 10px;" id="MagicItemsWaistCheck"></div>
-			<div class="box" style="left: 453px; top: 2173px; width: 322px; height: 25px;" id="MagicItemsMisc1"></div>
-			<div class="box" style="left: 453px; top: 2203px; width: 321px; height: 24px;" id="MagicItemsMisc2"></div>
-			<div class="box" style="left: 454px; top: 2231px; width: 321px; height: 25px;" id="MagicItemsMisc3"></div>
-			<div class="box" style="left: 452px; top: 2260px; width: 324px; height: 24px;" id="MagicItemsMisc4"></div>
-			<div class="box" style="left: 452px; top: 2288px; width: 324px; height: 26px;" id="MagicItemsMisc5"></div>
-			<div class="box" style="left: 452px; top: 2317px; width: 323px; height: 26px;" id="MagicItemsMisc6"></div>
-			<div class="box" style="left: 451px; top: 2348px; width: 325px; height: 23px;" id="MagicItemsMisc7"></div>
-			<div class="box" style="left: 452px; top: 2376px; width: 323px; height: 26px;" id="MagicItemsMisc8"></div>
-			<div class="box" style="left: 452px; top: 2405px; width: 321px; height: 23px;" id="MagicItemsMisc9"></div>
-			<div class="box" style="left: 452px; top: 2431px; width: 322px; height: 28px;" id="MagicItemsMisc10"></div>
-			<div class="box" style="left: 453px; top: 2463px; width: 321px; height: 23px;" id="MagicItemsMisc11"></div>
-			<div class="box" style="left: 453px; top: 2491px; width: 322px; height: 23px;" id="MagicItemsMisc12"></div>
-			<div class="box" style="left: 781px; top: 2185px; width: 13px; height: 10px;" id="MagicItemsMiscCheck1"></div>
-			<div class="box" style="left: 779px; top: 2213px; width: 15px; height: 13px;" id="MagicItemsMiscCheck2"></div>
-			<div class="box" style="left: 780px; top: 2239px; width: 12px; height: 15px;" id="MagicItemsMiscCheck3"></div>
-			<div class="box" style="left: 781px; top: 2271px; width: 12px; height: 11px;" id="MagicItemsMiscCheck4"></div>
-			<div class="box" style="left: 780px; top: 2298px; width: 14px; height: 13px;" id="MagicItemsMiscCheck5"></div>
-			<div class="box" style="left: 781px; top: 2328px; width: 12px; height: 13px;" id="MagicItemsMiscCheck6"></div>
-			<div class="box" style="left: 780px; top: 2357px; width: 13px; height: 12px;" id="MagicItemsMiscCheck7"></div>
-			<div class="box" style="left: 781px; top: 2386px; width: 11px; height: 12px;" id="MagicItemsMiscCheck8"></div>
-			<div class="box" style="left: 780px; top: 2417px; width: 14px; height: 10px;" id="MagicItemsMiscCheck9"></div>
-			<div class="box" style="left: 780px; top: 2444px; width: 11px; height: 13px;" id="MagicItemsMiscCheck10"></div>
-			<div class="box" style="left: 780px; top: 2473px; width: 11px; height: 11px;" id="MagicItemsMiscCheck11"></div>
-			<div class="box" style="left: 780px; top: 2501px; width: 13px; height: 11px;" id="MagicItemsMiscCheck12"></div>
-			<div class="box" style="left: 556px; top: 2554px; width: 12px; height: 14px;" id="DailyItemPowersHeroic"></div>
-			<div class="box" style="left: 691px; top: 2555px; width: 13px; height: 12px;" id="DailyItemPowersHeroicMilestone1"></div>
-			<div class="box" style="left: 717px; top: 2556px; width: 13px; height: 11px;" id="DailyItemPowersHeroicMilestone2"></div>
-			<div class="box" style="left: 742px; top: 2555px; width: 14px; height: 13px;" id="DailyItemPowersHeroicMilestone3"></div>
-			<div class="box" style="left: 768px; top: 2555px; width: 13px; height: 12px;" id="DailyItemPowersHeroicMilestone4"></div>
-			<div class="box" style="left: 556px; top: 2584px; width: 11px; height: 11px;" id="DailyItemPowersParagon1"></div>
-			<div class="box" style="left: 575px; top: 2584px; width: 12px; height: 10px;" id="DailyItemPowersParagon2"></div>
-			<div class="box" style="left: 693px; top: 2585px; width: 12px; height: 11px;" id="DailyItemPowersParagonMilestone1"></div>
-			<div class="box" style="left: 717px; top: 2585px; width: 13px; height: 11px;" id="DailyItemPowersParagonMilestone2"></div>
-			<div class="box" style="left: 742px; top: 2584px; width: 14px; height: 11px;" id="DailyItemPowersParagonMilestone3"></div>
-			<div class="box" style="left: 768px; top: 2583px; width: 13px; height: 12px;" id="DailyItemPowersParagonMilestone4"></div>
-			<div class="box" style="left: 555px; top: 2613px; width: 12px; height: 10px;" id="DailyItemPowersEpic1"></div>
-			<div class="box" style="left: 575px; top: 2613px; width: 12px; height: 9px;" id="DailyItemPowersEpic2"></div>
-			<div class="box" style="left: 597px; top: 2612px; width: 10px; height: 12px;" id="DailyItemPowersEpic3"></div>
-			<div class="box" style="left: 692px; top: 2613px; width: 14px; height: 10px;" id="DailyItemPowersEpicMilestone1"></div>
-			<div class="box" style="left: 717px; top: 2612px; width: 14px; height: 14px;" id="DailyItemPowersEpicMilestone2"></div>
-			<div class="box" style="left: 741px; top: 2612px; width: 13px; height: 11px;" id="DailyItemPowersEpicMilestone3"></div>
-			<div class="box" style="left: 767px; top: 2612px; width: 15px; height: 12px;" id="DailyItemPowersEpicMilestone4"></div>
+			<div class="box" style="left: 780px; top: 1868px; width: 12px; height: 11px;" id="MagicItemsWeaponCheck3"></div>
+			<div class="box" style="left: 780px; top: 1896px; width: 12px; height: 11px;" id="MagicItemsWeaponCheck4"></div>
+			<div class="box" style="left: 780px; top: 1926px; width: 12px; height: 11px;" id="MagicItemsArmorCheck"></div>
+			<div class="box" style="left: 780px; top: 1954px; width: 12px; height: 11px;" id="MagicItemsArmsCheck"></div>
+			<div class="box" style="left: 780px; top: 1983px; width: 12px; height: 11px;" id="MagicItemsFeetCheck"></div>
+			<div class="box" style="left: 780px; top: 2012px; width: 12px; height: 11px;" id="MagicItemsHandsCheck"></div>
+			<div class="box" style="left: 780px; top: 2040px; width: 12px; height: 11px;" id="MagicItemsHeadCheck"></div>
+			<div class="box" style="left: 780px; top: 2069px; width: 12px; height: 11px;" id="MagicItemsNeckCheck"></div>
+			<div class="box" style="left: 780px; top: 2098px; width: 12px; height: 11px;" id="MagicItemsRingCheck1"></div>
+			<div class="box" style="left: 780px; top: 2127px; width: 12px; height: 11px;" id="MagicItemsRingCheck2"></div>
+			<div class="box" style="left: 780px; top: 2156px; width: 12px; height: 11px;" id="MagicItemsWaistCheck"></div>
+			<div class="box" style="left: 780px; top: 2185px; width: 12px; height: 11px;" id="MagicItemsMiscCheck1"></div>
+			<div class="box" style="left: 780px; top: 2213px; width: 12px; height: 11px;" id="MagicItemsMiscCheck2"></div>
+			<div class="box" style="left: 780px; top: 2242px; width: 12px; height: 11px;" id="MagicItemsMiscCheck3"></div>
+			<div class="box" style="left: 780px; top: 2271px; width: 12px; height: 11px;" id="MagicItemsMiscCheck4"></div>
+			<div class="box" style="left: 780px; top: 2299px; width: 12px; height: 11px;" id="MagicItemsMiscCheck5"></div>
+			<div class="box" style="left: 780px; top: 2328px; width: 12px; height: 11px;" id="MagicItemsMiscCheck6"></div>
+			<div class="box" style="left: 780px; top: 2357px; width: 12px; height: 11px;" id="MagicItemsMiscCheck7"></div>
+			<div class="box" style="left: 780px; top: 2386px; width: 12px; height: 11px;" id="MagicItemsMiscCheck8"></div>
+			<div class="box" style="left: 780px; top: 2415px; width: 12px; height: 11px;" id="MagicItemsMiscCheck9"></div>
+			<div class="box" style="left: 780px; top: 2444px; width: 12px; height: 11px;" id="MagicItemsMiscCheck10"></div>
+			<div class="box" style="left: 780px; top: 2473px; width: 12px; height: 11px;" id="MagicItemsMiscCheck11"></div>
+			<div class="box" style="left: 780px; top: 2501px; width: 12px; height: 11px;" id="MagicItemsMiscCheck12"></div>
+
+			<div class="box" style="left: 555px; top: 2556px; width: 12px; height: 11px;" id="DailyItemPowersHeroic"></div>
+			<div class="box" style="left: 692px; top: 2556px; width: 12px; height: 11px;" id="DailyItemPowersHeroicMilestone1"></div>
+			<div class="box" style="left: 717px; top: 2556px; width: 12px; height: 11px;" id="DailyItemPowersHeroicMilestone2"></div>
+			<div class="box" style="left: 742px; top: 2556px; width: 12px; height: 11px;" id="DailyItemPowersHeroicMilestone3"></div>
+			<div class="box" style="left: 768px; top: 2556px; width: 12px; height: 11px;" id="DailyItemPowersHeroicMilestone4"></div>
+			<div class="box" style="left: 555px; top: 2584px; width: 12px; height: 11px;" id="DailyItemPowersParagon1"></div>
+			<div class="box" style="left: 575px; top: 2584px; width: 12px; height: 11px;" id="DailyItemPowersParagon2"></div>
+			<div class="box" style="left: 692px; top: 2584px; width: 12px; height: 11px;" id="DailyItemPowersParagonMilestone1"></div>
+			<div class="box" style="left: 717px; top: 2584px; width: 12px; height: 11px;" id="DailyItemPowersParagonMilestone2"></div>
+			<div class="box" style="left: 742px; top: 2584px; width: 12px; height: 11px;" id="DailyItemPowersParagonMilestone3"></div>
+			<div class="box" style="left: 768px; top: 2584px; width: 12px; height: 11px;" id="DailyItemPowersParagonMilestone4"></div>
+			<div class="box" style="left: 555px; top: 2613px; width: 12px; height: 11px;" id="DailyItemPowersEpic1"></div>
+			<div class="box" style="left: 575px; top: 2613px; width: 12px; height: 11px;" id="DailyItemPowersEpic2"></div>
+			<div class="box" style="left: 597px; top: 2613px; width: 12px; height: 11px;" id="DailyItemPowersEpic3"></div>
+			<div class="box" style="left: 693px; top: 2613px; width: 12px; height: 11px;" id="DailyItemPowersEpicMilestone1"></div>
+			<div class="box" style="left: 717px; top: 2613px; width: 12px; height: 11px;" id="DailyItemPowersEpicMilestone2"></div>
+			<div class="box" style="left: 742px; top: 2613px; width: 12px; height: 11px;" id="DailyItemPowersEpicMilestone3"></div>
+			<div class="box" style="left: 768px; top: 2613px; width: 12px; height: 11px;" id="DailyItemPowersEpicMilestone4"></div>
 
 			<div class="box" style="left: 822px; top: 1709px; width: 338px; height: 310px;" id="Portrait"></div>
-			<div class="box" style="left: 814px; top: 2060px; width: 344px; height: 19px;" id="PersonalityTraits1"></div>
-			<div class="box" style="left: 815px; top: 2083px; width: 343px; height: 25px;" id="PersonalityTraits2"></div>
-			<div class="box" style="left: 816px; top: 2111px; width: 342px; height: 26px;" id="PersonalityTraits3"></div>
-			<div class="box" style="left: 815px; top: 2141px; width: 343px; height: 23px;" id="PersonalityTraits4"></div>
-			<div class="box" style="left: 815px; top: 2171px; width: 345px; height: 22px;" id="PersonalityTraits5"></div>
-			<div class="box" style="left: 816px; top: 2197px; width: 341px; height: 25px;" id="PersonalityTraits6"></div>
-			<div class="box" style="left: 816px; top: 2254px; width: 339px; height: 23px;" id="MannerismsAndAppearance1"></div>
-			<div class="box" style="left: 815px; top: 2280px; width: 341px; height: 25px;" id="MannerismsAndAppearance2"></div>
-			<div class="box" style="left: 816px; top: 2309px; width: 340px; height: 25px;" id="MannerismsAndAppearance3"></div>
-			<div class="box" style="left: 816px; top: 2337px; width: 338px; height: 25px;" id="MannerismsAndAppearance4"></div>
-			<div class="box" style="left: 816px; top: 2366px; width: 336px; height: 26px;" id="MannerismsAndAppearance5"></div>
-			<div class="box" style="left: 817px; top: 2425px; width: 336px; height: 24px;" id="MannerismsAndAppearance6"></div>
-			<div class="box" style="left: 817px; top: 2453px; width: 336px; height: 25px;" id="CharacterBackground2"></div>
-			<div class="box" style="left: 817px; top: 2482px; width: 334px; height: 24px;" id="CharacterBackground3"></div>
-			<div class="box" style="left: 820px; top: 2510px; width: 333px; height: 25px;" id="CharacterBackground4"></div>
+
+			<div class="box" style="left: 814px; top: 2060px; width: 350px; height: 19px;" id="PersonalityTraits1"></div>
+			<div class="box" style="left: 814px; top: 2083px; width: 350px; height: 25px;" id="PersonalityTraits2"></div>
+			<div class="box" style="left: 814px; top: 2111px; width: 350px; height: 26px;" id="PersonalityTraits3"></div>
+			<div class="box" style="left: 814px; top: 2141px; width: 350px; height: 24px;" id="PersonalityTraits4"></div>
+			<div class="box" style="left: 814px; top: 2170px; width: 350px; height: 24px;" id="PersonalityTraits5"></div>
+			<div class="box" style="left: 814px; top: 2197px; width: 350px; height: 25px;" id="PersonalityTraits6"></div>
+
+			<div class="box" style="left: 814px; top: 2254px; width: 350px; height: 23px;" id="MannerismsAndAppearance1"></div>
+			<div class="box" style="left: 814px; top: 2280px; width: 350px; height: 25px;" id="MannerismsAndAppearance2"></div>
+			<div class="box" style="left: 814px; top: 2309px; width: 350px; height: 25px;" id="MannerismsAndAppearance3"></div>
+			<div class="box" style="left: 814px; top: 2337px; width: 350px; height: 25px;" id="MannerismsAndAppearance4"></div>
+			<div class="box" style="left: 814px; top: 2366px; width: 350px; height: 26px;" id="MannerismsAndAppearance5"></div>
+			<div class="box" style="left: 814px; top: 2425px; width: 350px; height: 24px;" id="MannerismsAndAppearance6"></div>
+
+			<div class="box" style="left: 814px; top: 2453px; width: 350px; height: 25px;" id="CharacterBackground2"></div>
+			<div class="box" style="left: 814px; top: 2482px; width: 350px; height: 24px;" id="CharacterBackground3"></div>
+			<div class="box" style="left: 814px; top: 2510px; width: 350px; height: 25px;" id="CharacterBackground4"></div>
+
 			<div class="box" style="left: 836px; top: 2567px; width: 135px; height: 21px;" id="CompanionsAndAlliesName1"></div>
 			<div class="box" style="left: 836px; top: 2592px; width: 135px; height: 22px;" id="CompanionsAndAlliesName2"></div>
-			<div class="box" style="left: 834px; top: 2618px; width: 137px; height: 24px;" id="CompanionsAndAlliesName3"></div>
-			<div class="box" style="left: 835px; top: 2648px; width: 135px; height: 27px;" id="CompanionsAndAlliesName4"></div>
-			<div class="box" style="left: 836px; top: 2678px; width: 136px; height: 22px;" id="CompanionsAndAlliesName5"></div>
-			<div class="box" style="left: 837px; top: 2707px; width: 136px; height: 20px;" id="CompanionsAndAlliesName6"></div>
-			<div class="box" style="left: 836px; top: 2733px; width: 135px; height: 23px;" id="CompanionsAndAlliesName7"></div>
-			<div class="box" style="left: 837px; top: 2761px; width: 133px; height: 20px;" id="CompanionsAndAlliesName8"></div>
-			<div class="box" style="left: 1002px; top: 2568px; width: 159px; height: 20px;" id="CompanionsAndAlliesNotes1"></div>
-			<div class="box" style="left: 1001px; top: 2592px; width: 159px; height: 23px;" id="CompanionsAndAlliesNotes2"></div>
-			<div class="box" style="left: 1002px; top: 2618px; width: 158px; height: 23px;" id="CompanionsAndAlliesNotes3"></div>
-			<div class="box" style="left: 1004px; top: 2646px; width: 155px; height: 27px;" id="CompanionsAndAlliesNotes4"></div>
-			<div class="box" style="left: 1002px; top: 2676px; width: 159px; height: 25px;" id="CompanionsAndAlliesNotes5"></div>
-			<div class="box" style="left: 1001px; top: 2706px; width: 161px; height: 20px;" id="CompanionsAndAlliesNotes6"></div>
-			<div class="box" style="left: 1000px; top: 2731px; width: 163px; height: 25px;" id="CompanionsAndAlliesNotes7"></div>
-			<div class="box" style="left: 1000px; top: 2763px; width: 164px; height: 17px;" id="CompanionsAndAlliesNotes8"></div>
-			<div class="box" style="left: 91px; top: 2682px; width: 346px; height: 26px;" id="OtherEquipment1"></div>
-			<div class="box" style="left: 89px; top: 2713px; width: 348px; height: 25px;" id="OtherEquipment2"></div>
-			<div class="box" style="left: 89px; top: 2743px; width: 348px; height: 23px;" id="OtherEquipment3"></div>
-			<div class="box" style="left: 90px; top: 2770px; width: 347px; height: 23px;" id="OtherEquipment4"></div>
-			<div class="box" style="left: 86px; top: 2797px; width: 350px; height: 25px;" id="OtherEquipment5"></div>
-			<div class="box" style="left: 87px; top: 2826px; width: 350px; height: 24px;" id="OtherEquipment6"></div>
-			<div class="box" style="left: 89px; top: 2854px; width: 347px; height: 24px;" id="OtherEquipment7"></div>
-			<div class="box" style="left: 90px; top: 2882px; width: 347px; height: 26px;" id="OtherEquipment8"></div>
-			<div class="box" style="left: 90px; top: 2912px; width: 347px; height: 25px;" id="OtherEquipment9"></div>
-			<div class="box" style="left: 89px; top: 2942px; width: 347px; height: 25px;" id="OtherEquipment10"></div>
-			<div class="box" style="left: 456px; top: 2682px; width: 344px; height: 26px;" id="Rituals1"></div>
-			<div class="box" style="left: 455px; top: 2712px; width: 344px; height: 24px;" id="Rituals2"></div>
-			<div class="box" style="left: 461px; top: 2742px; width: 337px; height: 23px;" id="Rituals3"></div>
-			<div class="box" style="left: 459px; top: 2770px; width: 334px; height: 22px;" id="Rituals4"></div>
-			<div class="box" style="left: 458px; top: 2797px; width: 336px; height: 27px;" id="Rituals5"></div>
-			<div class="box" style="left: 455px; top: 2827px; width: 337px; height: 24px;" id="Rituals6"></div>
-			<div class="box" style="left: 455px; top: 2854px; width: 336px; height: 25px;" id="Rituals7"></div>
-			<div class="box" style="left: 453px; top: 2883px; width: 336px; height: 24px;" id="Rituals8"></div>
-			<div class="box" style="left: 456px; top: 2914px; width: 336px; height: 22px;" id="Rituals9"></div>
-			<div class="box" style="left: 456px; top: 2941px; width: 342px; height: 24px;" id="Rituals10"></div>
-			<div class="box" style="left: 816px; top: 2822px; width: 345px; height: 23px;" id="SessionAndCampaignNotes1"></div>
-			<div class="box" style="left: 816px; top: 2849px; width: 344px; height: 23px;" id="SessionAndCampaignNotes2"></div>
-			<div class="box" style="left: 816px; top: 2876px; width: 343px; height: 26px;" id="SessionAndCampaignNotes3"></div>
-			<div class="box" style="left: 819px; top: 2909px; width: 340px; height: 20px;" id="SessionAndCampaignNotes4"></div>
-			<div class="box" style="left: 814px; top: 2934px; width: 346px; height: 26px;" id="SessionAndCampaignNotes5"></div>
-			<div class="box" style="left: 814px; top: 2965px; width: 346px; height: 22px;" id="SessionAndCampaignNotes6"></div>
-			<div class="box" style="left: 814px; top: 2991px; width: 345px; height: 24px;" id="SessionAndCampaignNotes7"></div>
-			<div class="box" style="left: 813px; top: 3020px; width: 348px; height: 24px;" id="SessionAndCampaignNotes8"></div>
-			<div class="box" style="left: 816px; top: 3049px; width: 340px; height: 21px;" id="SessionAndCampaignNotes9"></div>
-			<div class="box" style="left: 814px; top: 3076px; width: 345px; height: 24px;" id="SessionAndCampaignNotes10"></div>
-			<div class="box" style="left: 816px; top: 3106px; width: 345px; height: 24px;" id="SessionAndCampaignNotes11"></div>
-			<div class="box" style="left: 815px; top: 3133px; width: 343px; height: 25px;" id="SessionAndCampaignNotes12"></div>
+			<div class="box" style="left: 836px; top: 2618px; width: 135px; height: 24px;" id="CompanionsAndAlliesName3"></div>
+			<div class="box" style="left: 836px; top: 2647px; width: 135px; height: 27px;" id="CompanionsAndAlliesName4"></div>
+			<div class="box" style="left: 836px; top: 2677px; width: 135px; height: 24px;" id="CompanionsAndAlliesName5"></div>
+			<div class="box" style="left: 836px; top: 2706px; width: 135px; height: 21px;" id="CompanionsAndAlliesName6"></div>
+			<div class="box" style="left: 836px; top: 2732px; width: 135px; height: 24px;" id="CompanionsAndAlliesName7"></div>
+			<div class="box" style="left: 836px; top: 2761px; width: 135px; height: 21px;" id="CompanionsAndAlliesName8"></div>
+
+			<div class="box" style="left: 1002px; top: 2567px; width: 161px; height: 21px;" id="CompanionsAndAlliesNotes1"></div>
+			<div class="box" style="left: 1002px; top: 2592px; width: 161px; height: 22px;" id="CompanionsAndAlliesNotes2"></div>
+			<div class="box" style="left: 1002px; top: 2618px; width: 161px; height: 24px;" id="CompanionsAndAlliesNotes3"></div>
+			<div class="box" style="left: 1002px; top: 2647px; width: 161px; height: 27px;" id="CompanionsAndAlliesNotes4"></div>
+			<div class="box" style="left: 1002px; top: 2677px; width: 161px; height: 24px;" id="CompanionsAndAlliesNotes5"></div>
+			<div class="box" style="left: 1002px; top: 2706px; width: 161px; height: 21px;" id="CompanionsAndAlliesNotes6"></div>
+			<div class="box" style="left: 1002px; top: 2732px; width: 161px; height: 24px;" id="CompanionsAndAlliesNotes7"></div>
+			<div class="box" style="left: 1002px; top: 2761px; width: 161px; height: 21px;" id="CompanionsAndAlliesNotes8"></div>
+
+			<div class="box" style="left: 86px; top: 2682px; width: 353px; height: 26px;" id="OtherEquipment1"></div>
+			<div class="box" style="left: 86px; top: 2712px; width: 353px; height: 25px;" id="OtherEquipment2"></div>
+			<div class="box" style="left: 86px; top: 2742px; width: 353px; height: 24px;" id="OtherEquipment3"></div>
+			<div class="box" style="left: 86px; top: 2770px; width: 353px; height: 24px;" id="OtherEquipment4"></div>
+			<div class="box" style="left: 86px; top: 2797px; width: 353px; height: 24px;" id="OtherEquipment5"></div>
+			<div class="box" style="left: 86px; top: 2827px; width: 353px; height: 24px;" id="OtherEquipment6"></div>
+			<div class="box" style="left: 86px; top: 2854px; width: 353px; height: 25px;" id="OtherEquipment7"></div>
+			<div class="box" style="left: 86px; top: 2883px; width: 353px; height: 24px;" id="OtherEquipment8"></div>
+			<div class="box" style="left: 86px; top: 2912px; width: 353px; height: 25px;" id="OtherEquipment9"></div>
+			<div class="box" style="left: 86px; top: 2941px; width: 353px; height: 24px;" id="OtherEquipment10"></div>
+
+			<div class="box" style="left: 452px; top: 2682px; width: 349px; height: 26px;" id="Rituals1"></div>
+			<div class="box" style="left: 452px; top: 2712px; width: 349px; height: 25px;" id="Rituals2"></div>
+			<div class="box" style="left: 452px; top: 2742px; width: 349px; height: 24px;" id="Rituals3"></div>
+			<div class="box" style="left: 452px; top: 2770px; width: 349px; height: 24px;" id="Rituals4"></div>
+			<div class="box" style="left: 452px; top: 2797px; width: 349px; height: 24px;" id="Rituals5"></div>
+			<div class="box" style="left: 452px; top: 2827px; width: 349px; height: 24px;" id="Rituals6"></div>
+			<div class="box" style="left: 452px; top: 2854px; width: 349px; height: 25px;" id="Rituals7"></div>
+			<div class="box" style="left: 452px; top: 2883px; width: 349px; height: 24px;" id="Rituals8"></div>
+			<div class="box" style="left: 452px; top: 2912px; width: 349px; height: 25px;" id="Rituals9"></div>
+			<div class="box" style="left: 452px; top: 2941px; width: 349px; height: 24px;" id="Rituals10"></div>
+
+			<div class="box" style="left: 813px; top: 2822px; width: 350px; height: 23px;" id="SessionAndCampaignNotes1"></div>
+			<div class="box" style="left: 813px; top: 2850px; width: 350px; height: 23px;" id="SessionAndCampaignNotes2"></div>
+			<div class="box" style="left: 813px; top: 2878px; width: 350px; height: 23px;" id="SessionAndCampaignNotes3"></div>
+			<div class="box" style="left: 813px; top: 2906px; width: 350px; height: 25px;" id="SessionAndCampaignNotes4"></div>
+			<div class="box" style="left: 813px; top: 2936px; width: 350px; height: 25px;" id="SessionAndCampaignNotes5"></div>
+			<div class="box" style="left: 813px; top: 2964px; width: 350px; height: 24px;" id="SessionAndCampaignNotes6"></div>
+			<div class="box" style="left: 813px; top: 2991px; width: 350px; height: 25px;" id="SessionAndCampaignNotes7"></div>
+			<div class="box" style="left: 813px; top: 3020px; width: 350px; height: 24px;" id="SessionAndCampaignNotes8"></div>
+			<div class="box" style="left: 813px; top: 3047px; width: 350px; height: 25px;" id="SessionAndCampaignNotes9"></div>
+			<div class="box" style="left: 813px; top: 3076px; width: 350px; height: 25px;" id="SessionAndCampaignNotes10"></div>
+			<div class="box" style="left: 813px; top: 3105px; width: 350px; height: 25px;" id="SessionAndCampaignNotes11"></div>
+			<div class="box" style="left: 813px; top: 3134px; width: 350px; height: 25px;" id="SessionAndCampaignNotes12"></div>
+
 			<div class="box" style="left: 86px; top: 3000px; width: 715px; height: 161px;" id="CoinsAndOtherWealth"></div>
 		</div>
 		<script>
 			const CharacterSheet = document.getElementById('CharacterSheet');
+			const divs = CharacterSheet.getElementsByTagName('div');
+			for (var i = 0; i < divs.length; i++) (function(div){
+				if (div.className != "box") return;
+				div.addEventListener("mouseover", function(over_event) {
+					div.style.background = "#ffffbb";
+				}, false);
+				div.addEventListener("mouseout", function(out_event) {
+					div.style.background = "";
+				}, false);
+			})(divs[i]);
+
+/*
 			CharacterSheet.addEventListener('mousedown', function(down_event){
 				const box = document.createElement('div');
 				box.className = 'box';
@@ -509,6 +557,7 @@
 				CharacterSheet.addEventListener('mouseup', mouseup, false);
 				console.log("mousedown!");
 			}, false);
+*/
 			console.log("let's go!");
 		</script>
 	</body>

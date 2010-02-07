@@ -7,11 +7,11 @@
 // VAR is the label for a cell with value 2
 // 
 // [ blah blah blah ] => [ blah blah blah ]
-// [= 1 + 2 /* from this */ + 3 /* from that */ ] => [ 6 ]
-// [= 1 + 2 + 3 ] => [ 6 ]
-// [= 1 + VAR ] => [ 3 ]
-// [ blah =VAR blah ] => [ blah 2 blah ]
-// [ blah =(VAR + 2) blah ] => [ blah 4 blah ]
+// [=( 1 + 2 /* from this */ + 3 /* from that */ )=] => [ 6 ]
+// [=( 1 + 2 + 3 )=] => [ 6 ]
+// [=( 1 + VAR )=] => [ 3 ]
+// [ blah =VAR= blah ] => [ blah 2 blah ]
+// [ blah =(VAR + 2)= blah ] => [ blah 4 blah ]
 //
 // cells can have
 //	* a label
