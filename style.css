@@ -1,0 +1,27 @@
+.edited { background: #ffffbb !important; }
+.moused { outline: solid 2px red; }
+.selected { background: #bbffff; }
+#EditBox {
+	outline: solid 2px #88ffff;
+	display: none;
+	position: fixed;
+	left: 100px;
+	right: 100px;
+	background: #bbffff;
+	width: 610;
+	z-index: 1;
+}
+#EditBoxTarget {
+	padding: 5px;
+	padding-bottom: 0px;
+}
+#EditBoxText {
+	width: 600px;
+	margin: 5px;
+	height: auto;
+	overflow: hidden;
+}
+#EditBoxTextMeasure {
+	width: 600px;
+	display: none;
+}
