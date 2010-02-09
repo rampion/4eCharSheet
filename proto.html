@@ -1,10 +1,9 @@
 <html>
 	<head>
+		<link href="style.css" type="text/css" rel="stylesheet">
 		<style>
 			#CharacterSheet { 
 				position: relative; 
-				width: 1240px; 
-				height: 3266px; 
 			}
 			.box { 
 				position: absolute;
@@ -13,47 +12,15 @@
 			.center {
 				text-align: center;
 			}
-			.edited { background: #ffffbb !important; }
-			.moused { outline: solid 2px red; }
-			.selected { background: #bbffff; }
-			.page { 
-				position: absolute;
+			.page {
 				z-index: -1;
-				width: 1238px; 
-				height: 1632px; 
 			}
-			#EditBox {
-				outline: solid 2px #88ffff;
-				display: none;
-				position: fixed;
-				left: 100px;
-				right: 100px;
-				background: #bbffff;
-				width: 610;
-			}
-			#EditBoxTarget {
-				padding: 5px;
-				padding-bottom: 0px;
-			}
-			#EditBoxText {
-				width: 600px;
-				margin: 5px;
-				height: auto;
-				overflow: hidden;
-			}
-			#EditBoxTextMeasure {
-				width: 600px;
-				display: none;
-			}
-			#Page1 { background: url(CharacterSheetPage1.png); }
-			#Page2 { background: url(CharacterSheetPage2.png); }
-			#Page2 { top: 1632px; }
 		</style>
 	</head>
 	<body>
 		<div id='CharacterSheet'>
-			<div id="Page1" class="page"></div>
-			<div id="Page2" class="page"></div>
+			<img class="page" id="Page1" src="CharacterSheetPage1.png"/>
+			<img class="page" id="Page2" src="CharacterSheetPage2.png"/>
 
 			<span tabIndex=1 class="box" style="left: 862px; top: 119px; width: 265px; height: 16px;" id="PlayerName"></span>
 
@@ -546,12 +513,6 @@
 			<span tabIndex=444 class="box" style="left: 813px; top: 3134px; width: 348px; height: 23px;" id="SessionAndCampaignNotes12"></span>
 
 			<span tabIndex=445 class="box" style="left: 86px; top: 3000px; width: 713px; height: 159px;" id="CoinsAndOtherWealth"></span>
-
-			<div tabIndex=1000 id="EditBox">
-				<div tabIndex=1001 id="EditBoxTarget"></div>
-				<pre tabIndex=1002 id="EditBoxTextMeasure"></pre>
-				<textarea tabIndex=1003 id="EditBoxText" rows=1></textarea>
-			</div>
 		</div>
 		<script src="parser.js"></script>
 		<script src="ui.js"></script>
@@ -565,7 +526,7 @@
 				if (base != 10) return '??';
 				return ({ 0:10, 1:11, 2:12, 3:13, 5:14, 7:15, 9:16, 12:17, 16:18 }[points]) || '??';
 			};
-			addUI({  
+			addUI('CharacterSheet', {  
 				Str:	"=(pointBuy(10,9))",
 				Dex:	"=(pointBuy(10,5))",
 				Con:	"=(pointBuy(10,3))",

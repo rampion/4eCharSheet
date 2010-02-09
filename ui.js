@@ -1,4 +1,4 @@
-const addUI = function(defaults){
+const addUI = function(region_id, defaults){
 
 	if (!defaults) defaults = {};
 
@@ -20,9 +20,9 @@ const addUI = function(defaults){
 		elt.className = classes.join(' ');
 	};
 
-	const CharacterSheet = document.getElementById('CharacterSheet');
+	const region = document.getElementById(region_id);
 	const boxes = (function(){
-		const spans = CharacterSheet.getElementsByTagName('span');
+		const spans = region.getElementsByTagName('span');
 		const boxes = {};
 		for (var i=0; i < spans.length; ++i) {
 			var span = spans[i];
@@ -40,11 +40,23 @@ const addUI = function(defaults){
 		return;
 	}
 	
-	const EditBox = document.getElementById('EditBox');
-	const EditBoxTarget = document.getElementById('EditBoxTarget');
-	const EditBoxText = document.getElementById('EditBoxText');
-	const EditBoxTextMeasure = document.getElementById('EditBoxTextMeasure');
+	const EditBox = document.createElement('div');
+	EditBox.id = 'EditBox';
+	const EditBoxTarget = document.createElement('div');
+	EditBox.appendChild(EditBoxTarget);
+	EditBoxTarget.id = 'EditBoxTarget';
+	const EditBoxText = document.createElement('textarea');
+	EditBox.appendChild(EditBoxText);
+	EditBoxText.id = 'EditBoxText'
+	const EditBoxTextMeasure = document.createElement('pre');
+	EditBox.appendChild(EditBoxTextMeasure);
+	EditBoxTextMeasure.id = 'EditBoxTextMeasure'
 	EditBoxTextMeasure.appendChild(document.createTextNode(''));
+
+	if (region.firstChild)
+		region.insertBefore( EditBox, region.firstChild );
+	else
+		region.appendChild( EditBox );
 
 	// go through each of the entry boxes
 	for (var id in boxes) (function(id, box){
@@ -101,5 +113,5 @@ const addUI = function(defaults){
 
 	// hide the EditBox when you click away
 	EditBoxText.addEventListener('click', function(click_event) { click_event.stopPropagation(); }, false);
-	CharacterSheet.addEventListener('click', function(click_event) { EditBox.style.display = 'none'; }, false);
+	region.addEventListener('click', function(click_event) { EditBox.style.display = 'none'; }, false);
 };
