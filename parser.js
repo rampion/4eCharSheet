@@ -18,8 +18,8 @@ const compileAndEval  = function(formulas){
 	const parseNonParen = consumeRegex(/^[^()]/);
 	const parseVariable = function( state ) {
 		m = consumeRegex(/^(\w+)(?:\.\w+)*/)(state);
-		if (m && boxes[m[1]]) {
-			state.box.variables.push(m[1]);
+		if (m) {
+			state.variables.push(m[1]);
 			return true;
 		}
 		return false;
@@ -51,7 +51,7 @@ const compileAndEval  = function(formulas){
 			if ( !parseParens( state ) ) break;
 
 			sections.push( state.parsed );
-			start += state.parsed.length;
+			start += 1+state.parsed.length;
 		};
 		sections.push(formula.slice( start ).toSource());
 

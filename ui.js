@@ -34,10 +34,8 @@ const addUI = function(defaults){
 		return boxes;
 	})();
 	const program = compileAndEval( defaults );
-	//console.log( program );
 	
 	if ( typeof program.loop  != "undefined") {
-		console.log( program.loop );
 		alert( "Unable to render formulas (recursive loop):\n\t"+program.loop.join(" ->\n\t") );
 		return;
 	}
@@ -95,8 +93,6 @@ const addUI = function(defaults){
 			box.innerHTML = program.graph[id].value;
 			break;
 		case 'loop':
-			if (typeof program.loop == "undefined")
-				console.log('uh-oh');
 			alert( "Unable to render formula (recursive loop):\n\t"+program.loop.join(" ->\n\t") );
 			EditBox.style.display = 'block';
 			EditBoxText.focus();
