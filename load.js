@@ -3,6 +3,6 @@ const load = function(id, formula) {
 	return formula;
 };
 const save = function(id, formula) {
-	console.log('saving '+id+' as '+formula);
+	//console.log('saving '+id+' as '+formula);
 	return true;
 }
