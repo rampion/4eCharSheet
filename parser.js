@@ -55,7 +55,7 @@ const compileAndEval  = function(formulas){
 			if ( !parseParens( state ) ) break;
 
 			sections.push( state.parsed );
-			start += 1+state.parsed.length;
+			start = next + 1 + state.parsed.length;
 		};
 		sections.push(formula.slice( start ).toSource());
 
