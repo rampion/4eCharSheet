@@ -4,7 +4,7 @@
 		<style>
 			#CharacterSheet { 
 				position: relative; 
-				overflow: scroll;
+				overflow: auto;
 			}
 			.box { 
 				position: absolute;
@@ -519,6 +519,9 @@
 		<script src="parser.js"></script>
 		<script src="ui.js"></script>
 		<script>
+			document.getElementById('CharacterSheet').style.height = window.innerHeight + 'px';
+			document.getElementById('CharacterSheet').style.width = window.innerWidth + 'px';
+
 			const pointBuy =  function(base, points){
 				if (base == 8) {
 					if (points < 2) return base + points;
