@@ -1,6 +1,10 @@
 // compile a formula into
 // * a string that can be eval'ed to get the display value
 // * a list of graph that it depends on.
+
+const RecursiveReferenceException = function() {
+	this.loop = [];
+};
 const compileAndEval  = function(formulas){
 	const consumeRegex = function( regex ) {
 		return function( state ) {
@@ -16,10 +20,10 @@ const compileAndEval  = function(formulas){
 	const parseString = consumeRegex(/^(?:"(?:[^\\"]|\\.)*"|'(?:[^\\']|\\.)*')/);
 	const parseComment = consumeRegex(/^(?:\/\/.*\n|\/\*(?:\n|.)*?\*\/)/);
 	const parseNonParen = consumeRegex(/^[^()]/);
-	const parseVariable = function( state ) {
+	const parseTerm = function( state ) {
 		m = consumeRegex(/^(\w+)(?:\.\w+)*/)(state);
 		if (m) {
-			state.variables.push(m[1]);
+			if (formulas[m[1]]) state.variables.push(m[1]);
 			return true;
 		}
 		return false;
@@ -28,7 +32,7 @@ const compileAndEval  = function(formulas){
 		if (! consumeRegex(/^\(/)(state) ) return false;
 		while( parseString( state )		||
 					 parseComment( state )  ||
-					 parseVariable( state )	||
+					 parseTerm( state )	||
 					 parseNonParen( state ) ||
 					 parseParens( state )		);
 		return consumeRegex(/^\)/)(state);
@@ -67,17 +71,18 @@ const compileAndEval  = function(formulas){
 	const evalScript = function( source, context ) {
 		with(context) { return eval(source); }
 	}
-	
+
 	// sort the boxes and render them
 	const evalSublattice = function(ids, program) {
 		const seen = {};
 		const stack = [];
 		var i;
-		program.loop = undefined;
 		const dfs = function(id) {
 			if (seen[id]) {
 				if (seen[id] == i) {
-					throw [id];
+					var e = new RecursiveReferenceException;
+					e.loop = [id];
+					throw e;
 				} else {
 					return;
 				}
@@ -85,40 +90,34 @@ const compileAndEval  = function(formulas){
 			seen[id] = i;
 			try {
 				program.graph[id].occurences.forEach(dfs);
-			} catch(loop) {
-				loop.push(id);
-				throw loop;
+			} catch(e) {
+				if (e instanceof RecursiveReferenceException) {
+					e.loop.push(id);
+				}
+				throw e;
 			}
 			stack.push(id);
 			return;
 		}
-		try {
-			for (i = 0; i < ids.length; ++i) 
-				dfs(ids[i]);
-			stack.reverse().forEach(function(id) {
-				const result = evalScript( program.graph[id].script, program.context );
-				program.graph[id].value = result;
-				program.context[id] = result.match(/^[+-]?\d\+$/) ? parseInt(result) : result;
-			});
-			return true;
-		} catch(loop) {
-			program.loop = loop;
-			return false;
-		}
+		for (i = 0; i < ids.length; ++i) 
+			dfs(ids[i]);
+		stack.reverse().forEach(function(id) {
+			const result = evalScript( program.graph[id].script, program.context );
+			program.graph[id].value = result;
+			program.context[id] = result.match(/^[+-]?\d+$/) ? parseInt(result) : result;
+		});
+		return stack;
 	};
 
 	const link = function(cell, id){
 		cell.variables.forEach(function(var_name){
-			const variable = program.graph[var_name];
-			if (variable)
-				variable.occurences.push(id);
+			program.graph[var_name].occurences.push(id);
 		});
 	};
 	const unlink = function(cell, id){
 		cell.variables.forEach(function(var_name){
 			const variable = program.graph[var_name];
-			if (variable)
-				variable.occurences.splice( variable.occurences.indexOf( id ), 1 );
+			variable.occurences.splice( variable.occurences.indexOf( id ), 1 );
 		});
 	};
 	const program = {
@@ -128,24 +127,28 @@ const compileAndEval  = function(formulas){
 		loop: undefined,
 		update: function( id, formula ){
 			const prev = program.graph[id];
-			if (prev.formula == formula) return 'unchanged';
+			if (prev.formula == formula) return [];
 
 			// remove previous dependency links
 			unlink(prev, id);
 
 			// update formula and add dependency links
 			const edit = compile( formula );
+			edit.occurences = prev.occurences;
 			program.graph[id] = edit;
 			link(edit, id);
 
 			// update cell values
-			if (evalSublattice([id], program)) return 'change';
-			
-			// restore to pre-edit state
-			unlink(edit, id);
-			program.graph[id] = prev;
-			link(prev, id);
-			return 'loop';
+			try {
+				return evalSublattice([id], program);
+			}
+			catch(e) {
+				// restore to pre-edit state
+				unlink(edit, id);
+				program.graph[id] = prev;
+				link(prev, id);
+				throw e;
+			}
 		}
 	};
 	for (var id in formulas) 

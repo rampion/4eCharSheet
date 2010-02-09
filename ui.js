@@ -20,23 +20,42 @@ const addUI = function(region_id, defaults){
 		elt.className = classes.join(' ');
 	};
 
+	const formulas = {};
 	const region = document.getElementById(region_id);
 	const boxes = (function(){
 		const spans = region.getElementsByTagName('span');
 		const boxes = {};
 		for (var i=0; i < spans.length; ++i) {
 			var span = spans[i];
-			if (hasClass(span, 'box')) { 
-				boxes[span.id] = span;
-				if (!defaults[span.id]) defaults[span.id] = "";
+			if (hasClass(span, 'box') && span.id.match(/^_/)) { 
+				var id = span.id.slice(1);
+				boxes[id] = span;
+				if (!defaults[id]) defaults[id] = "";
+				formulas[id] = load( id, defaults[id] );
+				if (formulas[id] != defaults[id]) 
+					addClass(box, 'edited');
 			}
 		}
 		return boxes;
 	})();
-	const program = compileAndEval( defaults );
+
+	const handle = function(e) {
+		if (e instanceof RecursiveReferenceException ) {
+			alert( "Unable to render formulas (recursive loop):\n\t"+e.loop.join(" ->\n\t") );
+		}
+		else if (e.message) {
+			alert( "Unable to render formulas: " + e.message );
+		}
+		else {
+			alert( "Unable to render formulas: " + e);
+		}
+	};
 	
-	if ( typeof program.loop  != "undefined") {
-		alert( "Unable to render formulas (recursive loop):\n\t"+program.loop.join(" ->\n\t") );
+	try {
+		const program = compileAndEval( formulas );
+	}
+	catch (e) {
+		handle(e);
 		return;
 	}
 	
@@ -98,14 +117,20 @@ const addUI = function(region_id, defaults){
 		const box = boxes[id];
 		if (!box) return;
 
-		remClass(box,'selected');
-		switch(program.update(id, EditBoxText.value)){
-		case 'change':
-			(program.graph[id].value != defaults[id] ? addClass : remClass)(box, 'edited');
-			box.innerHTML = program.graph[id].value;
-			break;
-		case 'loop':
-			alert( "Unable to render formula (recursive loop):\n\t"+program.loop.join(" ->\n\t") );
+		try {
+			var touched = program.update(id, EditBoxText.value);
+			if (touched.length > 0)
+			{
+				touched.forEach(function(t_id){
+					boxes[t_id].innerHTML = program.graph[t_id].value;
+				});
+				(program.graph[id].formula != defaults[id] ? addClass : remClass)(box, 'edited');
+				save( id, program.graph[id].formula );
+			}
+			remClass(box,'selected');
+		}
+		catch (e) {
+			handle(e);
 			EditBox.style.display = 'block';
 			EditBoxText.focus();
 		}
@@ -114,4 +139,5 @@ const addUI = function(region_id, defaults){
 	// hide the EditBox when you click away
 	EditBoxText.addEventListener('click', function(click_event) { click_event.stopPropagation(); }, false);
 	region.addEventListener('click', function(click_event) { EditBox.style.display = 'none'; }, false);
+	return program;
 };
