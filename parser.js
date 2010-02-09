@@ -23,7 +23,7 @@ const compileAndEval  = function(formulas){
 	const parseTerm = function( state ) {
 		m = consumeRegex(/^(\w+)(?:\.\w+)*/)(state);
 		if (m) {
-			if (formulas[m[1]]) state.variables.push(m[1]);
+			if (typeof formulas[m[1]] != 'undefined') state.variables.push(m[1]);
 			return true;
 		}
 		return false;
@@ -105,6 +105,7 @@ const compileAndEval  = function(formulas){
 			const result = evalScript( program.graph[id].script, program.context );
 			program.graph[id].value = result;
 			program.context[id] = result.match(/^[+-]?\d+$/) ? parseInt(result) : result;
+			//console.log('evaluating ' + id );
 		});
 		return stack;
 	};
