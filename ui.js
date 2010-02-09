@@ -67,10 +67,15 @@ const addUI = function(region_id, defaults){
 	const EditBoxText = document.createElement('textarea');
 	EditBox.appendChild(EditBoxText);
 	EditBoxText.id = 'EditBoxText'
-	const EditBoxTextMeasure = document.createElement('pre');
+	const EditBoxTextMeasure = document.createElement('div');
 	EditBox.appendChild(EditBoxTextMeasure);
 	EditBoxTextMeasure.id = 'EditBoxTextMeasure'
 	EditBoxTextMeasure.appendChild(document.createTextNode(''));
+	const EditBoxX = document.createElement('a');
+	EditBox.appendChild(EditBoxX);
+	EditBoxX.id = 'EditBoxX';
+	EditBoxX.href = "#";
+	EditBoxX.innerHTML = 'X';
 
 	if (region.firstChild)
 		region.insertBefore( EditBox, region.firstChild );
@@ -103,10 +108,19 @@ const addUI = function(region_id, defaults){
 
 	// make the EditBox fit the text
 	const resizeEditBoxText = function(event) {
-		EditBoxTextMeasure.firstChild.nodeValue = EditBoxText.value;
+		EditBoxTextMeasure.firstChild.nodeValue = EditBoxText.value.replace(/[<>&\n]|$/g, function(m){
+			return { '<': '&lt;', '>':'&gt;', '&':'&amp;', "\n":'<br/>', '':'&nbsp;' }[m];
+		}).replace(/ {2,}/g, function(s){
+			return s.slice(1).replace(' ', '&nbsp;') + ' ';
+		});
 		EditBoxTextMeasure.style.display = 'block';
-		EditBoxText.style.height = (EditBoxTextMeasure.offsetHeight+20) + 'px';
+		var calcHeight = (EditBoxTextMeasure.offsetHeight+20);
 		EditBoxTextMeasure.style.display = 'none';
+
+		if (calcHeight > 0.5 * window.innerHeight)
+			calcHeight = 0.5 * window.innerHeight;
+
+		EditBoxText.style.height =  calcHeight + 'px';
 	};
 	EditBoxText.addEventListener('keyup', resizeEditBoxText, false);
 
@@ -137,7 +151,8 @@ const addUI = function(region_id, defaults){
 	}, false);
 
 	// hide the EditBox when you click away
-	EditBoxText.addEventListener('click', function(click_event) { click_event.stopPropagation(); }, false);
+	EditBox.addEventListener('click', function(click_event) { click_event.stopPropagation(); }, false);
+	EditBoxX.addEventListener('click', function(click_event) { EditBox.style.display = 'none'; return false;}, false);
 	region.addEventListener('click', function(click_event) { EditBox.style.display = 'none'; }, false);
 	return program;
 };
