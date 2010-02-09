@@ -5,7 +5,7 @@
 		<![CDATA[
 <html>
 	<head>
-		<link href="style.css" type="text/css" rel="stylesheet">
+		<link href="http://rampion.github.com/4eCharSheet/style.css" type="text/css" rel="stylesheet">
 		<style>
 			#CharacterSheet { 
 				position: relative; 
@@ -25,8 +25,8 @@
 	</head>
 	<body>
 		<div id='CharacterSheet'>
-			<img class="page" id="Page1" src="CharacterSheetPage1.png"/>
-			<img class="page" id="Page2" src="CharacterSheetPage2.png"/>
+			<img class="page" id="Page1" src="http://rampion.github.com/4eCharSheet/CharacterSheetPage1.png"/>
+			<img class="page" id="Page2" src="http://rampion.github.com/4eCharSheet/CharacterSheetPage2.png"/>
 
 			<span tabIndex=1 class="box" style="left: 862px; top: 119px; width: 265px; height: 16px;" id="_PlayerName"></span>
 
@@ -520,9 +520,9 @@
 
 			<span tabIndex=445 class="box" style="left: 86px; top: 3000px; width: 713px; height: 159px;" id="_CoinsAndOtherWealth"></span>
 		</div>
-		<script src="load.js"></script>
-		<script src="parser.js"></script>
-		<script src="ui.js"></script>
+		<script src="http://rampion.github.com/4eCharSheet/load.js"></script>
+		<script src="http://rampion.github.com/4eCharSheet/parser.js"></script>
+		<script src="http://rampion.github.com/4eCharSheet/ui.js"></script>
 		<script>
 			document.getElementById('CharacterSheet').style.height = window.innerHeight + 'px';
 			document.getElementById('CharacterSheet').style.width = window.innerWidth + 'px';
