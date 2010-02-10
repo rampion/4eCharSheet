@@ -23,7 +23,8 @@ const compileAndEval  = function(formulas){
 	const parseTerm = function( state ) {
 		m = consumeRegex(/^(\w+)(?:\.\w+)*/)(state);
 		if (m) {
-			if (typeof formulas[m[1]] != 'undefined') state.variables.push(m[1]);
+			if (typeof formulas[m[1]] != 'undefined' && state.variables.indexOf(m[1]) == -1) 
+				state.variables.push(m[1]);
 			return true;
 		}
 		return false;
