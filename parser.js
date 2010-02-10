@@ -88,7 +88,7 @@ const compileAndEval  = function(formulas){
 				}
 			}
 			seen[id] = i;
-			if (typeof console != 'undefined') console.log( id,  i );
+			if (typeof console != 'undefined') console.log( id,  i , program.graph[id]);
 			try {
 				program.graph[id].occurences.forEach(dfs);
 			} catch(e) {
