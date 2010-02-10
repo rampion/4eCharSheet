@@ -11,8 +11,6 @@ const short_name = (function(){
 	const index = document.URL.indexOf('?#') + 2;
 	if (index == 1 || index == document.URL.length)
 	{
-		console.log('no sheet name found');
-
 		document.getElementById('CharacterSheet').style.display = 'none';
 		const SheetSelect = document.createElement('div');
 		SheetSelect.id = 'SheetSelect';
