@@ -33,7 +33,7 @@ const addUI = function(region_id, defaults){
 				if (!defaults[id]) defaults[id] = "";
 				formulas[id] = load( id, defaults[id] );
 				if (formulas[id] != defaults[id]) 
-					addClass(box, 'edited');
+					addClass(span, 'edited');
 			}
 		}
 		return boxes;

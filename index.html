@@ -515,13 +515,13 @@
 
 			<span tabIndex=445 class="box" style="left: 86px; top: 3000px; width: 713px; height: 159px;" id="_CoinsAndOtherWealth"></span>
 		</div>
+
+		<script src="gears_init.js"></script>
 		<script src="load.js"></script>
 		<script src="parser.js"></script>
 		<script src="ui.js"></script>
-		<script>
-			document.getElementById('CharacterSheet').style.height = window.innerHeight + 'px';
-			document.getElementById('CharacterSheet').style.width = window.innerWidth + 'px';
 
+		<script>
 			const pointBuy =  function(base, points){
 				if (base == 8) {
 					if (points < 2) return base + points;
