@@ -73,7 +73,7 @@ const addUI = function(region_id, defaults){
 	const EditBoxX = document.createElement('a');
 	EditBox.appendChild(EditBoxX);
 	EditBoxX.id = 'EditBoxX';
-	EditBoxX.href = "#";
+	EditBoxX.href = window.location;
 	EditBoxX.innerHTML = 'X';
 
 	if (region.firstChild)
