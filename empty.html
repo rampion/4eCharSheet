@@ -41,10 +41,142 @@
 				return v | 0;
 			};
 		</script>
-		<script id="entries">({})</script>
+		<script id="entries">({
+			Level: "1",
+			TotalExperience: "0",
+
+			Initiative: "=(InitiativeAbilMod + InitiativeHalfLevel + InitiativeMisc)",
+			InitiativeAbilMod: "=(DexMod)",
+			InitiativeHalfLevel: "=(roundDown(Level/2))",
+
+			Str: "=(pointBuy(10,9))",
+			Dex: "=(pointBuy(10,5))",
+			Con: "=(pointBuy(10,3))",
+			Wis: "=(pointBuy(10,2))",
+			Int: "=(pointBuy(10,1))",
+			Cha: "=(pointBuy(8,2))",
+
+			StrMod: "=(roundDown(Str/2) - 5)",
+			DexMod: "=(roundDown(Dex/2) - 5)",
+			ConMod: "=(roundDown(Con/2) - 5)",
+			WisMod: "=(roundDown(Wis/2) - 5)",
+			IntMod: "=(roundDown(Int/2) - 5)",
+			ChaMod: "=(roundDown(Cha/2) - 5)",
+
+			StrModPlusHalfLevel: "=(StrMod + roundDown(Level/2))",
+			DexModPlusHalfLevel: "=(DexMod + roundDown(Level/2))",
+			ConModPlusHalfLevel: "=(ConMod + roundDown(Level/2))",
+			WisModPlusHalfLevel: "=(WisMod + roundDown(Level/2))",
+			IntModPlusHalfLevel: "=(IntMod + roundDown(Level/2))",
+			ChaModPlusHalfLevel: "=(ChaMod + roundDown(Level/2))",
+
+			ArmorClass: "=(ArmorClass10PlusHalfLevel + ArmorClassArmorSlashAbil + ArmorClassClass + ArmorClassFeat + ArmorClassEnh + ArmorClassMisc1 + ArmorClassMisc2)",
+			ArmorClass10PlusHalfLevel: "=(10 + roundDown(Level/2))",
+			ArmorClassArmorSlashAbil: "=(max(DexMod,IntMod) /* add light armor bonus, or replace with heavy armor bonus */)",
+
+			Fortitude: "=(Fortitude10PlusHalfLevel + FortitudeAbil + FortitudeClass + FortitudeFeat + FortitudeEnh + FortitudeMisc1 + FortitudeMisc2)",
+			Fortitude10PlusHalfLevel: "=(10 + roundDown(Level/2))",
+			FortitudeAbil: "=(max(StrMod,ConMod))",
+
+			Reflex: "=(Reflex10PlusHalfLevel + ReflexAbil + ReflexClass + ReflexFeat + ReflexEnh + ReflexMisc1 + ReflexMisc2)",
+			Reflex10PlusHalfLevel: "=(10 + roundDown(Level/2))",
+			ReflexAbil: "=(max(IntMod,DexMod) /* add shield bonus */)",
+
+			Willpower: "=(Willpower10PlusHalfLevel + WillpowerAbil + WillpowerClass + WillpowerFeat + WillpowerEnh + WillpowerMisc1 + WillpowerMisc2)",
+			Willpower10PlusHalfLevel: "=(10 + roundDown(Level/2))",
+			WillpowerAbil: "=(max(WisMod,ChaMod))",
+
+			Speed: "=(SpeedBase+SpeedArmor+SpeedItem+SpeedMisc)",
+
+			PassiveInsight: "=(10+PassiveInsightSkillBonus)",
+			PassiveInsightSkillBonus: "=(Insight)",
+			PassivePerception: "=(10+PassivePerceptionSkillBonus)",
+			PassivePerceptionSkillBonus: "=(Perception)",
+
+			MaxHitPoints: "=(0 /* level 1 */ + (Level - 1)*( 0 /* per level */))",
+			BloodiedHitPoints: "=(roundDown(MaxHitPoints/2))",
+			SurgeValue: "=(roundDown(MaxHitPoints/4))",
+			SurgesPerDay: "0",
+			CurrentHitPoints: "=(MaxHitPoints)",
+			CurrentSurgeUses: "=(SurgesPerDay)",
+
+			ActionPoints: "1",
+
+			Attack1Ability: "Improvised Melee",
+			Attack1AttBonus: "=(Attack1HalfLevel + Attack1Abil + Attack1Class + Attack1Prof + Attack1Feat + Attack1Enh + Attack1Misc)",
+			Attack1HalfLevel: "=(roundDown(Level/2))",
+			Attack1Abil: "=(StrMod)",
+
+			Attack2Ability: "Improvised Ranged",
+			Attack2AttBonus: "=(Attack2HalfLevel + Attack2Abil + Attack2Class + Attack2Prof + Attack2Feat + Attack2Enh + Attack2Misc)",
+			Attack2HalfLevel: "=(roundDown(Level/2))",
+			Attack2Abil: "=(DexMod)",
+
+			Damage1Ability: "=(Attack1Ability)",
+			Damage1Damage: "1d4 + =(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
+			Damage1Abil: "=(StrMod)",
+
+			Damage2Ability: "=(Attack2Ability)",
+			Damage2Damage: "1d4 + =(Damage2Abil + Damage2Feat + Damage2Enh + Damage2Misc1 + Damage2Misc2)",
+			Damage2Abil: "=(DexMod)",
+
+			BasicAttack1Attack: "=(Attack1AttBonus)",
+			BasicAttack2Attack: "=(Attack2AttBonus)",
+
+			BasicAttack1Defense: "AC",
+			BasicAttack2Defense: "AC",
+
+			BasicAttack1WeaponOrPower: "=(Attack1Ability)",
+			BasicAttack2WeaponOrPower: "=(Attack2Ability)",
+
+			Acrobatics: "=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
+			Arcana: "=(ArcanaAbilModPlusHalfLevel + ArcanaTrained + ArcanaMisc)",
+			Athletics: "=(AthleticsAbilModPlusHalfLevel + AthleticsTrained + AthleticsArmorPenalty + AthleticsMisc)",
+			Bluff: "=(BluffAbilModPlusHalfLevel + BluffTrained + BluffMisc)",
+			Diplomacy: "=(DiplomacyAbilModPlusHalfLevel + DiplomacyTrained + DiplomacyMisc)",
+			Dungeoneering: "=(DungeoneeringAbilModPlusHalfLevel + DungeoneeringTrained + DungeoneeringMisc)",
+			Endurance: "=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
+			Heal: "=(HealAbilModPlusHalfLevel + HealTrained + HealMisc)",
+			History: "=(HistoryAbilModPlusHalfLevel + HistoryTrained + HistoryMisc)",
+			Insight: "=(InsightAbilModPlusHalfLevel + InsightTrained + InsightMisc)",
+			Intimidate: "=(IntimidateAbilModPlusHalfLevel + IntimidateTrained + IntimidateMisc)",
+			Nature: "=(NatureAbilModPlusHalfLevel + NatureTrained + NatureMisc)",
+			Perception: "=(PerceptionAbilModPlusHalfLevel + PerceptionTrained + PerceptionMisc)",
+			Religion: "=(ReligionAbilModPlusHalfLevel + ReligionTrained + ReligionMisc)",
+			Stealth: "=(StealthAbilModPlusHalfLevel + StealthTrained + StealthArmorPenalty + StealthMisc)",
+			Streetwise: "=(StreetwiseAbilModPlusHalfLevel + StreetwiseTrained + StreetwiseMisc)",
+			Thievery: "=(ThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc)",
+
+			AcrobaticsAbilModPlusHalfLevel: "=(roundDown(Level/2)+DexMod)",
+			ArcanaAbilModPlusHalfLevel: "=(roundDown(Level/2)+IntMod)",
+			AthleticsAbilModPlusHalfLevel: "=(roundDown(Level/2)+StrMod)",
+			BluffAbilModPlusHalfLevel: "=(roundDown(Level/2)+ChaMod)",
+			DiplomacyAbilModPlusHalfLevel: "=(roundDown(Level/2)+ChaMod)",
+			DungeoneeringAbilModPlusHalfLevel: "=(roundDown(Level/2)+WisMod)",
+			EnduranceAbilModPlusHalfLevel: "=(roundDown(Level/2)+ConMod)",
+			HealAbilModPlusHalfLevel: "=(roundDown(Level/2)+WisMod)",
+			HistoryAbilModPlusHalfLevel: "=(roundDown(Level/2)+IntMod)",
+			InsightAbilModPlusHalfLevel: "=(roundDown(Level/2)+WisMod)",
+			IntimidateAbilModPlusHalfLevel: "=(roundDown(Level/2)+ChaMod)",
+			NatureAbilModPlusHalfLevel: "=(roundDown(Level/2)+WisMod)",
+			PerceptionAbilModPlusHalfLevel: "=(roundDown(Level/2)+WisMod)",
+			ReligionAbilModPlusHalfLevel: "=(roundDown(Level/2)+IntMod)",
+			StealthAbilModPlusHalfLevel: "=(roundDown(Level/2)+DexMod)",
+			StreetwiseAbilModPlusHalfLevel: "=(roundDown(Level/2)+ChaMod)",
+			ThieveryAbilModPlusHalfLevel: "=(roundDown(Level/2)+DexMod)"
+	})</script>
 	</head>
 	<body>
 		<div id='CharacterSheet'>
+			<div id="EditBox">
+				<div id="EditBoxTarget"></div>
+				<textarea id="EditBoxText"></textarea>
+				<div id="EditBoxTextMeasure"></div>
+				<div id="EditBoxButtons">
+					<a id="EditBoxSave">Save Changes</a>
+					<a id="EditBoxX">X</a>
+				</div>
+			</div>
 			<img class="page" id="Page1" src="CharacterSheetPage1.png"/>
 			<img class="page" id="Page2" src="CharacterSheetPage2.png"/>
 

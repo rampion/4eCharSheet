@@ -11,11 +11,17 @@
 	background: #bbffff;
 	z-index: 1;
 }
-#EditBoxX {
-	text-decoration: none;
+#EditBoxButtons {
 	position: fixed;
 	right: 5px;
 	top: 5px;
+}
+#EditBoxButtons a {
+	outline: 1px solid;
+	padding: 1px;
+	background: #aaaaff;
+	text-decoration: none;
+	color: black;
 }
 #EditBoxTarget {
 	padding: 5px;
