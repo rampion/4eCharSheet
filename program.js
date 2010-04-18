@@ -324,10 +324,19 @@
 			}
 		}, false);
 
-		// hide the EditBox when you click away
-		EditBox.addEventListener('click', function(click_event) { click_event.stopPropagation(); }, false);
-		EditBoxX.addEventListener('click', function(click_event) { EditBox.style.display = 'none'; return false;}, false);
-		region.addEventListener('click', function(click_event) { EditBox.style.display = 'none'; }, false);
+		// hide the EditBox when you click the X
+		EditBox.addEventListener('click', function(click_event) { 
+				click_event.stopPropagation(); 
+		}, false);
+		EditBoxX.addEventListener('click', function(click_event) { 
+				click_event.stopPropagation();
+				click_event.preventDefault();
+				EditBox.style.display = 'none'; 
+				return false;
+		}, false);
+		region.addEventListener('click', function(click_event) { 
+				EditBox.style.display = 'none'; 
+		}, false);
 		return program;
 	};
 	const program = addUI('CharacterSheet', {
