@@ -1,12 +1,14 @@
 (function(){
 
-	const cached = {};
-	const load = function(id, formula) {
+	const entries = document.getElementById('entries');
+	const cached = eval(entries.innerHTML);
+	const get_formula = function(id, formula) {
 		if (typeof cached[id] != "undefined") return cached[id];
 		return formula;
 	};
-	const save = function(id, formula) {
+	const set_formula = function(id, formula) {
 		cached[id] = formula;
+		entries.innerHTML = cached.toSource();
 		return true;
 	};
 
@@ -206,7 +208,7 @@
 					var id = span.id.slice(1);
 					boxes[id] = span;
 					if (!defaults[id]) defaults[id] = "";
-					formulas[id] = load( id, defaults[id] );
+					formulas[id] = get_formula( id, defaults[id] );
 					if (formulas[id] != defaults[id]) 
 						addClass(span, 'edited');
 				}
@@ -313,7 +315,7 @@
 						boxes[t_id].innerHTML = program.graph[t_id].value;
 					});
 					(program.graph[id].formula != defaults[id] ? addClass : remClass)(box, 'edited');
-					save( id, program.graph[id].formula );
+					set_formula( id, program.graph[id].formula );
 				}
 				remClass(box,'selected');
 			}
