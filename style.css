@@ -3,25 +3,37 @@
 .selected { background: #bbffff; }
 #EditBox {
 	outline: solid 2px #88ffff;
-	display: none;
 	position: fixed;
-	left: 100px;
-	right: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	display: none;
 	background: #bbffff;
-	width: 610;
 	z-index: 1;
+}
+#EditBoxButtons {
+	position: fixed;
+	right: 5px;
+	top: 5px;
+}
+#EditBoxButtons a {
+	outline: 1px solid;
+	padding: 1px;
+	background: #aaaaff;
+	text-decoration: none;
+	color: black;
 }
 #EditBoxTarget {
 	padding: 5px;
 	padding-bottom: 0px;
 }
 #EditBoxText {
-	width: 600px;
+	width: 90%;
 	margin: 5px;
 	height: auto;
-	overflow: hidden;
+	overflow: auto;
 }
 #EditBoxTextMeasure {
-	width: 600px;
+	width: 90%;
 	display: none;
 }
