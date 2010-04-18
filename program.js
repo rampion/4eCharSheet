@@ -213,7 +213,7 @@
 			stack.reverse().forEach(function(id) {
 				const result = evalScript( program.graph[id].script, program.context );
 				program.graph[id].value = result;
-				program.context[id] = result.match(/^[+-]?\d+$/) ? parseInt(result) : result;
+				program.context[id] = result.match(/^[+-]?\d+$/) ? parseInt(result) : (result == "" ? 0 : result);
 				//console.log('evaluating ' + id );
 			});
 			return stack;
