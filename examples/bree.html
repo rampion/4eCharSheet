@@ -54,165 +54,188 @@
 				return v | 0;
 			};
 		</script>
-		<script id="entries">
-		({
-Level:"3",
- TotalExperience:"=(\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for what's his name's ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
- Initiative:"=(InitiativeAbilMod + InitiativeHalfLevel + InitiativeMisc)",
- InitiativeAbilMod:"=(DexMod)",
- InitiativeHalfLevel:"=(roundDown(Level/2))",
- Str:"=(pointBuy(10,0))",
- Dex:"=(pointBuy(10,5) + 2 /* Halfling */)",
- Con:"=(pointBuy(10,2))",
- Wis:"=(pointBuy(10,3))",
- Int:"=(pointBuy(10,9))",
- Cha:"=(pointBuy(8,3) + 2 /* Halfling */)",
- StrMod:"=(roundDown(Str/2) - 5)",
- DexMod:"=(roundDown(Dex/2) - 5)",
- ConMod:"=(roundDown(Con/2) - 5)",
- WisMod:"=(roundDown(Wis/2) - 5)",
- IntMod:"=(roundDown(Int/2) - 5)",
- ChaMod:"=(roundDown(Cha/2) - 5)",
- StrModPlusHalfLevel:"=(StrMod + roundDown(Level/2))",
- DexModPlusHalfLevel:"=(DexMod + roundDown(Level/2))",
- ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
- WisModPlusHalfLevel:"=(WisMod + roundDown(Level/2))",
- IntModPlusHalfLevel:"=(IntMod + roundDown(Level/2))",
- ChaModPlusHalfLevel:"=(ChaMod + roundDown(Level/2))",
- ArmorClass:"=(ArmorClass10PlusHalfLevel + ArmorClassArmorSlashAbil + ArmorClassClass + ArmorClassFeat + ArmorClassEnh + ArmorClassMisc1 + ArmorClassMisc2)",
- ArmorClass10PlusHalfLevel:"=(10 + roundDown(Level/2))",
- ArmorClassArmorSlashAbil:"=(max(DexMod,IntMod) /* add light armor bonus, or replace with heavy armor bonus */)",
- Fortitude:"=(Fortitude10PlusHalfLevel + FortitudeAbil + FortitudeClass + FortitudeFeat + FortitudeEnh + FortitudeMisc1 + FortitudeMisc2)",
- Fortitude10PlusHalfLevel:"=(10 + roundDown(Level/2))",
- FortitudeAbil:"=(max(StrMod,ConMod))",
- Reflex:"=(Reflex10PlusHalfLevel + ReflexAbil + ReflexClass + ReflexFeat + ReflexEnh + ReflexMisc1 + ReflexMisc2)",
- Reflex10PlusHalfLevel:"=(10 + roundDown(Level/2))",
- ReflexAbil:"=(max(IntMod,DexMod) /* add shield bonus */)",
- Willpower:"=(Willpower10PlusHalfLevel + WillpowerAbil + WillpowerClass + WillpowerFeat + WillpowerEnh + WillpowerMisc1 + WillpowerMisc2)",
- Willpower10PlusHalfLevel:"=(10 + roundDown(Level/2))",
- WillpowerAbil:"=(max(WisMod,ChaMod))",
- Speed:"=(SpeedBase+SpeedArmor+SpeedItem+SpeedMisc)",
- PassiveInsight:"=(10+PassiveInsightSkillBonus)",
- PassiveInsightSkillBonus:"=(Insight)",
- PassivePerception:"=(10+PassivePerceptionSkillBonus)",
- PassivePerceptionSkillBonus:"=(Perception)",
- MaxHitPoints:"=(10 /* level 1 */ + Con + (Level - 1)*( 4 /* per level */))",
- BloodiedHitPoints:"=(roundDown(MaxHitPoints/2))",
- SurgeValue:"=(roundDown(MaxHitPoints/4))",
- SurgesPerDay:"7",
- CurrentHitPoints:"=(MaxHitPoints)",
- CurrentSurgeUses:"=(SurgesPerDay)",
- ActionPoints:"1",
- Attack1Ability:"Thief's Dagger melee",
- Attack1AttBonus:"=(Attack1HalfLevel + Attack1Abil + Attack1Class + Attack1Prof + Attack1Feat + Attack1Enh + Attack1Misc)",
- Attack1HalfLevel:"=(roundDown(Level/2))",
- Attack1Abil:"=(StrMod)",
- Attack2AttBonus:"=(Attack2HalfLevel + Attack2Abil + Attack2Class + Attack2Prof + Attack2Feat + Attack2Enh + Attack2Misc)",
- Attack2HalfLevel:"=(roundDown(Level/2))",
- Attack2Abil:"=(IntMod)",
- Damage1Ability:"=(Attack1Ability)",
- Damage1Damage:"1d4 + =(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
- Damage1Abil:"=(StrMod)",
- BasicAttack1Attack:"=(Attack1AttBonus)",
- BasicAttack2Attack:"=(roundDown(Level/2) + DexMod + 3 /* proficiency */ + 1 /* enhancement */)",
- BasicAttack1Defense:"AC",
- BasicAttack2Defense:"AC",
- Acrobatics:"=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
- Arcana:"=(ArcanaAbilModPlusHalfLevel + ArcanaTrained + ArcanaMisc)",
- Athletics:"=(AthleticsAbilModPlusHalfLevel + AthleticsTrained + AthleticsArmorPenalty + AthleticsMisc)",
- Bluff:"=(BluffAbilModPlusHalfLevel + BluffTrained + BluffMisc)",
- Diplomacy:"=(DiplomacyAbilModPlusHalfLevel + DiplomacyTrained + DiplomacyMisc)",
- Dungeoneering:"=(DungeoneeringAbilModPlusHalfLevel + DungeoneeringTrained + DungeoneeringMisc)",
- Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
- Heal:"=(HealAbilModPlusHalfLevel + HealTrained + HealMisc)",
- History:"=(HistoryAbilModPlusHalfLevel + HistoryTrained + HistoryMisc)",
- Insight:"=(InsightAbilModPlusHalfLevel + InsightTrained + InsightMisc)",
- Intimidate:"=(IntimidateAbilModPlusHalfLevel + IntimidateTrained + IntimidateMisc)",
- Nature:"=(NatureAbilModPlusHalfLevel + NatureTrained + NatureMisc)",
- Perception:"=(PerceptionAbilModPlusHalfLevel + PerceptionTrained + PerceptionMisc)",
- Religion:"=(ReligionAbilModPlusHalfLevel + ReligionTrained + ReligionMisc)",
- Stealth:"=(StealthAbilModPlusHalfLevel + StealthTrained + StealthArmorPenalty + StealthMisc)",
- Streetwise:"=(StreetwiseAbilModPlusHalfLevel + StreetwiseTrained + StreetwiseMisc)",
- AcrobaticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
- ArcanaAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
- AthleticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+StrMod)",
- BluffAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
- DiplomacyAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
- DungeoneeringAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
- EnduranceAbilModPlusHalfLevel:"=(roundDown(Level/2)+ConMod)",
- HealAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
- HistoryAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
- InsightAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
- IntimidateAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
- NatureAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
- PerceptionAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
- ReligionAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
- StealthAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
- StreetwiseAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
- ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
- PlayerName:"Noah Easterly",
- CharacterName:"Staffling Bree",
- Class:"Wizard",
- Race:"Halfling",
- Size:"Small",
- Age:"19",
- Gender:"Female",
- Height:"3'10\"",
- Weight:"75lb",
- Alignment:"Unaligned",
- InitiativeConditionalModifiers:"+2 if within 10 squares of Lenora",
- ArcanaTrained:"=(5 /* Trained */)",
- DiplomacyTrained:"=(5 /* Trained */)",
- HistoryTrained:"=(5 /* Trained */)",
- InsightTrained:"=(5 /* Trained */)",
- ThieveryTrained:"=(\n5 // Sneak of Shadows\n)",
- ThieveryMisc:"=(2 /* Halfling */)",
- AcrobaticsMisc:"=(2 /* Halfling */)",
- DiplomacyMisc:"=(2 /* Bonus from Thea */)",
- ArmorClassEnh:"=(1 /* Robe of Avoidance */)",
- ArmorClassMisc1:"=(1 /* Staff of Defense (p.157) */)",
- WillpowerClass:"2",
- RaceAbilityScoreMods:"+2 Dexterity & Charisma",
- RaceFeatures1:"Bold: +5 save vs fear",
- RaceFeatures2:"Nimble Reaction: +2 AC vs opportunity attacks",
- RaceFeatures3:"Second Chance: encounter power",
- ClassPathDestinyFeatures1:"Arcane Implement (Staff of Defense)",
- ClassPathDestinyFeatures2:"Cantrips: minor at-wills",
- ClassPathDestinyFeatures3:"Ritual Casting: bonus feat",
- LanguagesKnown1:"Common",
- LanguagesKnown2:"Draconic",
- SpeedBase:"6",
- Feats3:"Armor Proficiency (Wizard): cloth",
- Feats4:"Weapon Proficiency (Wizard): Dagger, Quarterstaff",
- Attack2Ability:"Implement: Staff",
- Attack1Prof:"3",
- Attack2Feat:"=(1 /* implement expertise */)",
- Attack1Enh:"1",
- BasicAttack1WeaponOrPower:"=(Attack1Ability)",
- Damage1Enh:"1",
- BasicAttack1Damage:"=(Damage1Damage)",
- BasicAttack2WeaponOrPower:"Thief's Dagger range",
- BasicAttack2Damage:"1d4 + =(DexMod + 1 /*enhancment*/)",
- BasicAttack3Attack:"=(roundDown(Level/2) + StrMod + 2 /* proficiency */)",
- BasicAttack3Defense:"AC",
- BasicAttack3Damage:"1d6 + =(StrMod)",
- BasicAttack3WeaponOrPower:"Quarterstaff",
- Thievery:"=(ThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc)<!-- normal -->/=(\nThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc + 2)<!-- locks, traps (thieves tools) -->",
- SavingThrowMods:"+5 vs. Fear <!-- Halfling -->",
- ArmorClassConditionalBonuses:"+2 vs opportunity attacks <!-- Nimble Reaction, p.44 -->",
- ClassPathDestinyFeatures4:"Spellbook: master rituals, alternate dailies & utilities<!--\n3 free 1st level rituals @ 1st level\n2 more free rituals of your level or lower @ 5th, 11th, 15th, 21st, & 25th levels\n\nselect an extra daily and utility power each time you gain one\nafter extended rest, can prepare a number of daily & utility spells according to what you \ncan cast per day for your level.\n-->",
- Feats1:"Sneak of Shadows: Thievery training, Backstab<!-- first level -->",
- Feats2:"Ritual Casting: can cast rituals<!-- wizard bonus feat -->",
- Feats5:"Implement Expertiese: Staff (+=(\nLevel < 15 ? 1 :\nLevel < 25 ? 2 : 3\n) to attack) <!-- 2nd level -->",
- Feats9:"future ideas: click here<!--\nmelee training (phb2) : use dex for melee basic attacks, dmg\nArcane Familiar\t\tArcane Pwr, p. 139\tGain a familiar\t\t\t\t\t\t\t\nAstral Fire\t\tp.193\t +1 (+2@11, +3@21) feat bonus to dmg with radiant or fire keyword powers\t\t\t\t\t\t\t\nDistant Advantage\t\tPHB2, p.184\tgain combat advantage for ranged/area attacks against foes flanked by allies\t\t\t\t\t\t\t\nArmor Proficiency (Leather)\t\tp.193\tgain training w/ leather armor\t\t\t\t\t\t\t\nExpanded Spellbook\t\tp.195\tLearn one extra daily attack spell/lvl\t\t\t\t\t\t\t\nHalfling Agility\t\tp.195\thalfling second chance adds -2 to new attack roll\t\t\t\t\t\t\t\nLost in the Crowd\t\tp.196\t +2 to AC when adjacent to 2 larger enemies\t\t\t\t\t\t\t\n-->"
-})
-</script>
+		<script id="entries">({
+			Acrobatics:"=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
+			AcrobaticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
+			AcrobaticsMisc:"=(2 /* Halfling */)",
+			ActionPoints:"1",
+			Age:"19",
+			Alignment:"Unaligned",
+			Arcana:"=(ArcanaAbilModPlusHalfLevel + ArcanaTrained + ArcanaMisc)",
+			ArcanaAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
+			ArcanaTrained:"=(5 /* Trained */)",
+			ArmorClass10PlusHalfLevel:"=(10 + roundDown(Level/2))",
+			ArmorClass:"=(ArmorClass10PlusHalfLevel + ArmorClassArmorSlashAbil + ArmorClassClass + ArmorClassFeat + ArmorClassEnh + ArmorClassMisc1 + ArmorClassMisc2)",
+			ArmorClassArmorSlashAbil:"=(max(DexMod,IntMod) /* add light armor bonus, or replace with heavy armor bonus */)",
+			ArmorClassConditionalBonuses:"+2 vs opportunity attacks <!-- Nimble Reaction, p.44 -->",
+			ArmorClassEnh:"=(1 /* Robe of Avoidance */)",
+			ArmorClassMisc1:"=(1 /* Staff of Defense (p.157) */)",
+			AtWillPowers1:"Ghost Sound: standard, range 10",
+			AtWillPowers2:"Light: minor, range 10",
+			AtWillPowers3:"Mage Hand: minor, range 5 (move 20lbs 5 squares)",
+			AtWillPowers4:"Prestigitation: magic trick (standard)",
+			AtWillPowers5:"Magic Missle: +=(Attack2AttBonus) vs Reflex, 2d4+=(IntMod) dmg, range 20",
+			AtWillPowers6:"Scorching Burst: +=(Attack2AttBonus) vs Reflex, 1d6+=(IntMod), burst 1 w/in 10",
+			Athletics:"=(AthleticsAbilModPlusHalfLevel + AthleticsTrained + AthleticsArmorPenalty + AthleticsMisc)",
+			AthleticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+StrMod)",
+			Attack1Abil:"=(StrMod)",
+			Attack1Ability:"Thief's Dagger melee",
+			Attack1AttBonus:"=(Attack1HalfLevel + Attack1Abil + Attack1Class + Attack1Prof + Attack1Feat + Attack1Enh + Attack1Misc)",
+			Attack1Enh:"1",
+			Attack1HalfLevel:"=(roundDown(Level/2))",
+			Attack1Prof:"3",
+			Attack2Abil:"=(IntMod)",
+			Attack2Ability:"Implement: Staff",
+			Attack2AttBonus:"=(Attack2HalfLevel + Attack2Abil + Attack2Class + Attack2Prof + Attack2Feat + Attack2Enh + Attack2Misc)",
+			Attack2Feat:"=(1 /* implement expertise */)",
+			Attack2HalfLevel:"=(roundDown(Level/2))",
+			BasicAttack1Attack:"=(Attack1AttBonus)",
+			BasicAttack1Damage:"=(Damage1Damage)",
+			BasicAttack1Defense:"AC",
+			BasicAttack1WeaponOrPower:"=(Attack1Ability)",
+			BasicAttack2Attack:"=(roundDown(Level/2) + DexMod + 3 /* proficiency */ + 1 /* enhancement */)",
+			BasicAttack2Damage:"1d4 + =(DexMod + 1 /*enhancment*/)",
+			BasicAttack2Defense:"AC",
+			BasicAttack2WeaponOrPower:"Thief's Dagger range",
+			BasicAttack3Attack:"=(roundDown(Level/2) + StrMod + 2 /* proficiency */)",
+			BasicAttack3Damage:"1d6 + =(StrMod)",
+			BasicAttack3Defense:"AC",
+			BasicAttack3WeaponOrPower:"Quarterstaff",
+			BloodiedHitPoints:"=(roundDown(MaxHitPoints/2))",
+			Bluff:"=(BluffAbilModPlusHalfLevel + BluffTrained + BluffMisc)",
+			BluffAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
+			Cha:"=(pointBuy(8,3) + 2 /* Halfling */)",
+			ChaMod:"=(roundDown(Cha/2) - 5)",
+			ChaModPlusHalfLevel:"=(ChaMod + roundDown(Level/2))",
+			CharacterName:"Staffling Bree",
+			Class:"Wizard",
+			ClassPathDestinyFeatures1:"Arcane Implement (Staff of Defense)",
+			ClassPathDestinyFeatures2:"Cantrips: minor at-wills",
+			ClassPathDestinyFeatures3:"Ritual Casting: bonus feat",
+			ClassPathDestinyFeatures4:"Spellbook: master rituals, alternate dailies & utilities<!--\n3 free 1st level rituals @ 1st level\n2 more free rituals of your level or lower @ 5th, 11th, 15th, 21st, & 25th levels\n\nselect an extra daily and utility power each time you gain one\nafter extended rest, can prepare a number of daily & utility spells according to what you \ncan cast per day for your level.\n-->",
+			Con:"=(pointBuy(10,2))",
+			ConMod:"=(roundDown(Con/2) - 5)",
+			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
+			CurrentHitPoints:"=(MaxHitPoints)",
+			CurrentSurgeUses:"=(SurgesPerDay)",
+			DailyPowers1:"Sleep: +=(Attack2AttBonus) vs Will, slow/fail/sleep, burst 2 w/in 20<!--\ntarget all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail -> unconsious, save ends); miss: slow (save ends) [standard action]\n-->",
+			DailyPowers2:"Freezing Cloud: +=(Attack2AttBonus) vs Fort, 1d8+=(IntMod) cold, 1/2 miss\n<!-- target all creatures in burst 2 w/in 10, Int vs Fort, hit: 1d8+Int cold dmg; miss: 1/2 dmg; effect: attack any creature entering cloud, starting turn their until end of next turn [standard action] -->",
+			DailyPowersCheck2:"X",
+			Damage1Abil:"=(StrMod)",
+			Damage1Ability:"=(Attack1Ability)",
+			Damage1Damage:"1d4 + =(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
+			Damage1Enh:"1",
+			Dex:"=(pointBuy(10,5) + 2 /* Halfling */)",
+			DexMod:"=(roundDown(Dex/2) - 5)",
+			DexModPlusHalfLevel:"=(DexMod + roundDown(Level/2))",
+			Diplomacy:"=(DiplomacyAbilModPlusHalfLevel + DiplomacyTrained + DiplomacyMisc)",
+			DiplomacyAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
+			DiplomacyMisc:"=(2 /* Bonus from Thea */)",
+			DiplomacyTrained:"=(5 /* Trained */)",
+			Dungeoneering:"=(DungeoneeringAbilModPlusHalfLevel + DungeoneeringTrained + DungeoneeringMisc)",
+			DungeoneeringAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
+			EncounterPowers1:"Force Orb: +=(Attack2AttBonus) vs Reflex, 2d8+=(IntMod) / 1d10+=(IntMod) dmg<!--\nranged 20, secondary hits all adjacent -->",
+			EncounterPowers2:"Second Chance:  force reroll of attack that hits me<!-- Halfling, immediate interrupt -->",
+			EncounterPowers3:"Staff Block: +1 AC <!-- Wizard implement -->",
+			EncounterPowers4:"Sneak Attack: +2d6 dmg w/ CA & light blade",
+			EncounterPowers5:"Robe of Avoidance: shift 1 after melee misses me",
+			EncounterPowers6:"Color Spray: +=(Attack2AttBonus) vs Will, 1d6+=(IntMod) rad, daze, CB 3<!-- close blast 3 -->",
+			Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
+			EnduranceAbilModPlusHalfLevel:"=(roundDown(Level/2)+ConMod)",
+			Feats1:"Sneak of Shadows: Thievery training, Backstab<!-- first level -->",
+			Feats2:"Ritual Casting: can cast rituals<!-- wizard bonus feat -->",
+			Feats3:"Armor Proficiency (Wizard): cloth",
+			Feats4:"Weapon Proficiency (Wizard): Dagger, Quarterstaff",
+			Feats5:"Implement Expertiese: Staff (+=(\nLevel < 15 ? 1 :\nLevel < 25 ? 2 : 3\n) to attack) <!-- 2nd level -->",
+			Feats9:"future ideas: click here<!--\nmelee training (phb2) : use dex for melee basic attacks, dmg\nArcane Familiar\t\tArcane Pwr, p. 139\tGain a familiar\t\t\t\t\t\t\t\nAstral Fire\t\tp.193\t +1 (+2@11, +3@21) feat bonus to dmg with radiant or fire keyword powers\t\t\t\t\t\t\t\nDistant Advantage\t\tPHB2, p.184\tgain combat advantage for ranged/area attacks against foes flanked by allies\t\t\t\t\t\t\t\nArmor Proficiency (Leather)\t\tp.193\tgain training w/ leather armor\t\t\t\t\t\t\t\nExpanded Spellbook\t\tp.195\tLearn one extra daily attack spell/lvl\t\t\t\t\t\t\t\nHalfling Agility\t\tp.195\thalfling second chance adds -2 to new attack roll\t\t\t\t\t\t\t\nLost in the Crowd\t\tp.196\t +2 to AC when adjacent to 2 larger enemies\t\t\t\t\t\t\t\n-->",
+			Fortitude10PlusHalfLevel:"=(10 + roundDown(Level/2))",
+			Fortitude:"=(Fortitude10PlusHalfLevel + FortitudeAbil + FortitudeClass + FortitudeFeat + FortitudeEnh + FortitudeMisc1 + FortitudeMisc2)",
+			FortitudeAbil:"=(max(StrMod,ConMod))",
+			Gender:"Female",
+			Heal:"=(HealAbilModPlusHalfLevel + HealTrained + HealMisc)",
+			HealAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
+			Height:"3'10\"",
+			History:"=(HistoryAbilModPlusHalfLevel + HistoryTrained + HistoryMisc)",
+			HistoryAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
+			HistoryTrained:"=(5 /* Trained */)",
+			Initiative:"=(InitiativeAbilMod + InitiativeHalfLevel + InitiativeMisc)",
+			InitiativeAbilMod:"=(DexMod)",
+			InitiativeConditionalModifiers:"+2 if within 10 squares of Lenora",
+			InitiativeHalfLevel:"=(roundDown(Level/2))",
+			Insight:"=(InsightAbilModPlusHalfLevel + InsightTrained + InsightMisc)",
+			InsightAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
+			InsightTrained:"=(5 /* Trained */)",
+			Int:"=(pointBuy(10,9))",
+			IntMod:"=(roundDown(Int/2) - 5)",
+			IntModPlusHalfLevel:"=(IntMod + roundDown(Level/2))",
+			Intimidate:"=(IntimidateAbilModPlusHalfLevel + IntimidateTrained + IntimidateMisc)",
+			IntimidateAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
+			LanguagesKnown1:"Common",
+			LanguagesKnown2:"Draconic",
+			Level:"3",
+			MagicItemsArmor:"Robe of Avoidance",
+			MagicItemsWeapon1:"Thief's Dagger: pickpocket on hit",
+			MaxHitPoints:"=(10 /* level 1 */ + Con + (Level - 1)*( 4 /* per level */))",
+			Nature:"=(NatureAbilModPlusHalfLevel + NatureTrained + NatureMisc)",
+			NatureAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
+			PassiveInsight:"=(10+PassiveInsightSkillBonus)",
+			PassiveInsightSkillBonus:"=(Insight)",
+			PassivePerception:"=(10+PassivePerceptionSkillBonus)",
+			PassivePerceptionSkillBonus:"=(Perception)",
+			Perception:"=(PerceptionAbilModPlusHalfLevel + PerceptionTrained + PerceptionMisc)",
+			PerceptionAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
+			PlayerName:"Noah Easterly",
+			Race:"Halfling",
+			RaceAbilityScoreMods:"+2 Dexterity & Charisma",
+			RaceFeatures1:"Bold: +5 save vs fear",
+			RaceFeatures2:"Nimble Reaction: +2 AC vs opportunity attacks",
+			RaceFeatures3:"Second Chance: encounter power",
+			Reflex10PlusHalfLevel:"=(10 + roundDown(Level/2))",
+			Reflex:"=(Reflex10PlusHalfLevel + ReflexAbil + ReflexClass + ReflexFeat + ReflexEnh + ReflexMisc1 + ReflexMisc2)",
+			ReflexAbil:"=(max(IntMod,DexMod) /* add shield bonus */)",
+			Religion:"=(ReligionAbilModPlusHalfLevel + ReligionTrained + ReligionMisc)",
+			ReligionAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
+			Rituals1:"Animal Messenger",
+			Rituals2:"Comprehend Languages",
+			Rituals3:"Silence",
+			Rituals4:"Secret Page",
+			Rituals5:"Fool's Gold",
+			SavingThrowMods:"+5 vs. Fear <!-- Halfling -->",
+			Size:"Small",
+			Speed:"=(SpeedBase+SpeedArmor+SpeedItem+SpeedMisc)",
+			SpeedBase:"6",
+			Stealth:"=(StealthAbilModPlusHalfLevel + StealthTrained + StealthArmorPenalty + StealthMisc)",
+			StealthAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
+			Str:"=(pointBuy(10,0))",
+			StrMod:"=(roundDown(Str/2) - 5)",
+			StrModPlusHalfLevel:"=(StrMod + roundDown(Level/2))",
+			Streetwise:"=(StreetwiseAbilModPlusHalfLevel + StreetwiseTrained + StreetwiseMisc)",
+			StreetwiseAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
+			SurgeValue:"=(roundDown(MaxHitPoints/4))",
+			SurgesPerDay:"7",
+			Thievery:"=(ThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc)<!-- normal -->/=(\nThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc + 2)<!-- locks, traps (thieves tools) -->",
+			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
+			ThieveryMisc:"=(2 /* Halfling */)",
+			ThieveryTrained:"=(\n5 // Sneak of Shadows\n)",
+			TotalExperience:"=(\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for what's his name's ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
+			UtilityPowers1:"Expeditious Retreat: shift =(Speed*2)",
+			UtilityPowers2:"Shield: +4 AC/Reflex for 1 turn when hit",
+			UtilityPowersCheck2:"X",
+			Weight:"75lb",
+			Willpower10PlusHalfLevel:"=(10 + roundDown(Level/2))",
+			Willpower:"=(Willpower10PlusHalfLevel + WillpowerAbil + WillpowerClass + WillpowerFeat + WillpowerEnh + WillpowerMisc1 + WillpowerMisc2)",
+			WillpowerAbil:"=(max(WisMod,ChaMod))",
+			WillpowerClass:"2",
+			Wis:"=(pointBuy(10,3))",
+			WisMod:"=(roundDown(Wis/2) - 5)",
+			WisModPlusHalfLevel:"=(WisMod + roundDown(Level/2))"
+		})</script>
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">Feats9</div>
-				<textarea style="height: 212px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">future ideas: click here&lt;!--<br>melee training (phb2) : use dex for melee basic attacks, dmg<br>Arcane Familiar		Arcane Pwr, p. 139	Gain a familiar							<br>Astral Fire		p.193	 +1 (+2@11, +3@21) feat bonus to dmg with radiant or fire keyword powers							<br>Distant Advantage		PHB2, p.184	gain combat advantage for ranged/area attacks against foes flanked by allies							<br>Armor Proficiency (Leather)		p.193	gain training w/ leather armor							<br>Expanded Spellbook		p.195	Learn one extra daily attack spell/lvl							<br>Halfling Agility		p.195	halfling second chance adds -2 to new attack roll							<br>Lost in the Crowd		p.196	 +2 to AC when adjacent to 2 larger enemies							<br>--!&gt;&nbsp;</div>
+				<div id="EditBoxTarget">Rituals5</div>
+				<textarea style="height: 39px;" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">Fool's Gold&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -536,27 +559,31 @@ Lost in the Crowd		p.196	 +2 to AC when adjacent to 2 larger enemies
 
 			<img class="page" id="Page2" src="http://rampion.github.com/4eCharSheet/CharacterSheetPage2.png">
 
-			<span tabindex="267" class="box" style="left: 43px; top: 1647px; width: 349px; height: 24px;" id="_AtWillPowers1"></span>
-			<span tabindex="268" class="box" style="left: 43px; top: 1678px; width: 349px; height: 23px;" id="_AtWillPowers2"></span>
-			<span tabindex="269" class="box" style="left: 43px; top: 1707px; width: 349px; height: 22px;" id="_AtWillPowers3"></span>
-			<span tabindex="270" class="box" style="left: 43px; top: 1736px; width: 349px; height: 22px;" id="_AtWillPowers4"></span>
-			<span tabindex="271" class="box" style="left: 43px; top: 1766px; width: 349px; height: 21px;" id="_AtWillPowers5"></span>
-			<span tabindex="272" class="box" style="left: 43px; top: 1794px; width: 349px; height: 22px;" id="_AtWillPowers6"></span>
+			<span tabindex="267" class="box" style="left: 43px; top: 1647px; width: 349px; height: 24px;" id="_AtWillPowers1">Ghost Sound: standard, range 10</span>
+			<span tabindex="268" class="box" style="left: 43px; top: 1678px; width: 349px; height: 23px;" id="_AtWillPowers2">Light: minor, range 10</span>
+			<span tabindex="269" class="box" style="left: 43px; top: 1707px; width: 349px; height: 22px;" id="_AtWillPowers3">Mage Hand: minor, range 5 (move 20lbs 5 squares)</span>
+			<span tabindex="270" class="box" style="left: 43px; top: 1736px; width: 349px; height: 22px;" id="_AtWillPowers4">Prestigitation: magic trick (standard)</span>
+			<span tabindex="271" class="box" style="left: 43px; top: 1766px; width: 349px; height: 21px;" id="_AtWillPowers5">Magic Missle: +5 vs Reflex, 2d4+3 dmg, range 20</span>
+			<span tabindex="272" class="box" style="left: 43px; top: 1794px; width: 349px; height: 22px;" id="_AtWillPowers6">Scorching Burst: +5 vs Reflex, 1d6+3, burst 1 w/in 10</span>
 
-			<span tabindex="273" class="box" style="left: 43px; top: 1853px; width: 321px; height: 20px;" id="_EncounterPowers1"></span>
-			<span tabindex="274" class="box" style="left: 43px; top: 1881px; width: 321px; height: 21px;" id="_EncounterPowers2"></span>
-			<span tabindex="275" class="box" style="left: 43px; top: 1907px; width: 321px; height: 25px;" id="_EncounterPowers3"></span>
-			<span tabindex="276" class="box" style="left: 43px; top: 1939px; width: 321px; height: 21px;" id="_EncounterPowers4"></span>
-			<span tabindex="277" class="box" style="left: 43px; top: 1967px; width: 321px; height: 21px;" id="_EncounterPowers5"></span>
-			<span tabindex="278" class="box" style="left: 43px; top: 1995px; width: 321px; height: 22px;" id="_EncounterPowers6"></span>
-			<span tabindex="279" class="box" style="left: 43px; top: 2052px; width: 321px; height: 24px;" id="_DailyPowers1"></span>
-			<span tabindex="280" class="box" style="left: 43px; top: 2081px; width: 321px; height: 23px;" id="_DailyPowers2"></span>
+			<span tabindex="273" class="box" style="left: 43px; top: 1853px; width: 321px; height: 20px;" id="_EncounterPowers1">Force Orb: +5 vs Reflex, 2d8+3 / 1d10+3 dmg<!--
+ranged 20, secondary hits all adjacent --></span>
+			<span tabindex="274" class="box" style="left: 43px; top: 1881px; width: 321px; height: 21px;" id="_EncounterPowers2">Second Chance:  force reroll of attack that hits me<!-- Halfling, immediate interrupt --></span>
+			<span tabindex="275" class="box" style="left: 43px; top: 1907px; width: 321px; height: 25px;" id="_EncounterPowers3">Staff Block: +1 AC <!-- Wizard implement --></span>
+			<span tabindex="276" class="box" style="left: 43px; top: 1939px; width: 321px; height: 21px;" id="_EncounterPowers4">Sneak Attack: +2d6 dmg w/ CA &amp; light blade</span>
+			<span tabindex="277" class="box" style="left: 43px; top: 1967px; width: 321px; height: 21px;" id="_EncounterPowers5">Robe of Avoidance: shift 1 after melee misses me</span>
+			<span tabindex="278" class="box" style="left: 43px; top: 1995px; width: 321px; height: 22px;" id="_EncounterPowers6">Color Spray: +5 vs Will, 1d6+3 rad, daze, CB 3<!-- close blast 3 --></span>
+			<span tabindex="279" class="box" style="left: 43px; top: 2052px; width: 321px; height: 24px;" id="_DailyPowers1">Sleep: +5 vs Will, slow/fail/sleep, burst 2 w/in 20<!--
+target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail -> unconsious, save ends); miss: slow (save ends) [standard action]
+--></span>
+			<span tabindex="280" class="box" style="left: 43px; top: 2081px; width: 321px; height: 23px;" id="_DailyPowers2">Freezing Cloud: +5 vs Fort, 1d8+3 cold, 1/2 miss
+<!-- target all creatures in burst 2 w/in 10, Int vs Fort, hit: 1d8+Int cold dmg; miss: 1/2 dmg; effect: attack any creature entering cloud, starting turn their until end of next turn [standard action] --></span>
 			<span tabindex="281" class="box" style="left: 43px; top: 2111px; width: 321px; height: 22px;" id="_DailyPowers3"></span>
 			<span tabindex="282" class="box" style="left: 43px; top: 2138px; width: 321px; height: 24px;" id="_DailyPowers4"></span>
 			<span tabindex="283" class="box" style="left: 43px; top: 2168px; width: 321px; height: 23px;" id="_DailyPowers5"></span>
 			<span tabindex="284" class="box" style="left: 43px; top: 2197px; width: 321px; height: 21px;" id="_DailyPowers6"></span>
-			<span tabindex="285" class="box" style="left: 43px; top: 2256px; width: 321px; height: 21px;" id="_UtilityPowers1"></span>
-			<span tabindex="286" class="box" style="left: 43px; top: 2283px; width: 321px; height: 23px;" id="_UtilityPowers2"></span>
+			<span tabindex="285" class="box" style="left: 43px; top: 2256px; width: 321px; height: 21px;" id="_UtilityPowers1">Expeditious Retreat: shift 12</span>
+			<span tabindex="286" class="box" style="left: 43px; top: 2283px; width: 321px; height: 23px;" id="_UtilityPowers2">Shield: +4 AC/Reflex for 1 turn when hit</span>
 			<span tabindex="287" class="box" style="left: 43px; top: 2311px; width: 321px; height: 25px;" id="_UtilityPowers3"></span>
 			<span tabindex="288" class="box" style="left: 43px; top: 2341px; width: 321px; height: 23px;" id="_UtilityPowers4"></span>
 			<span tabindex="289" class="box" style="left: 43px; top: 2369px; width: 321px; height: 23px;" id="_UtilityPowers5"></span>
@@ -571,13 +598,13 @@ Lost in the Crowd		p.196	 +2 to AC when adjacent to 2 larger enemies
 			<span tabindex="297" class="center box" style="left: 371px; top: 1977px; width: 10px; height: 9px;" id="_EncounterPowersCheck5"></span>
 			<span tabindex="298" class="center box" style="left: 371px; top: 2006px; width: 10px; height: 9px;" id="_EncounterPowersCheck6"></span>
 			<span tabindex="299" class="center box" style="left: 371px; top: 2064px; width: 10px; height: 9px;" id="_DailyPowersCheck1"></span>
-			<span tabindex="300" class="center box" style="left: 371px; top: 2092px; width: 10px; height: 9px;" id="_DailyPowersCheck2"></span>
+			<span tabindex="300" class="center box" style="left: 371px; top: 2092px; width: 10px; height: 9px;" id="_DailyPowersCheck2">X</span>
 			<span tabindex="301" class="center box" style="left: 371px; top: 2121px; width: 10px; height: 9px;" id="_DailyPowersCheck3"></span>
 			<span tabindex="302" class="center box" style="left: 371px; top: 2149px; width: 10px; height: 9px;" id="_DailyPowersCheck4"></span>
 			<span tabindex="303" class="center box" style="left: 371px; top: 2178px; width: 10px; height: 9px;" id="_DailyPowersCheck5"></span>
 			<span tabindex="304" class="center box" style="left: 371px; top: 2207px; width: 10px; height: 9px;" id="_DailyPowersCheck6"></span>
 			<span tabindex="305" class="center box" style="left: 371px; top: 2265px; width: 10px; height: 9px;" id="_UtilityPowersCheck1"></span>
-			<span tabindex="306" class="center box" style="left: 371px; top: 2294px; width: 10px; height: 9px;" id="_UtilityPowersCheck2"></span>
+			<span tabindex="306" class="center box" style="left: 371px; top: 2294px; width: 10px; height: 9px;" id="_UtilityPowersCheck2">X</span>
 			<span tabindex="307" class="center box" style="left: 371px; top: 2322px; width: 10px; height: 9px;" id="_UtilityPowersCheck3"></span>
 			<span tabindex="308" class="center box" style="left: 371px; top: 2352px; width: 10px; height: 9px;" id="_UtilityPowersCheck4"></span>
 			<span tabindex="309" class="center box" style="left: 371px; top: 2379px; width: 10px; height: 9px;" id="_UtilityPowersCheck5"></span>
@@ -585,11 +612,11 @@ Lost in the Crowd		p.196	 +2 to AC when adjacent to 2 larger enemies
 			<span tabindex="311" class="center box" style="left: 371px; top: 2437px; width: 10px; height: 9px;" id="_UtilityPowersCheck7"></span>
 			<span tabindex="312" class="center box" style="left: 371px; top: 2466px; width: 10px; height: 9px;" id="_UtilityPowersCheck8"></span>
 
-			<span tabindex="313" class="box" style="left: 445px; top: 1649px; width: 280px; height: 23px;" id="_MagicItemsWeapon1"></span>
+			<span tabindex="313" class="box" style="left: 445px; top: 1649px; width: 280px; height: 23px;" id="_MagicItemsWeapon1">Thief's Dagger: pickpocket on hit</span>
 			<span tabindex="314" class="box" style="left: 445px; top: 1679px; width: 280px; height: 22px;" id="_MagicItemsWeapon2"></span>
 			<span tabindex="315" class="box" style="left: 445px; top: 1708px; width: 280px; height: 23px;" id="_MagicItemsWeapon3"></span>
 			<span tabindex="316" class="box" style="left: 445px; top: 1737px; width: 280px; height: 23px;" id="_MagicItemsWeapon4"></span>
-			<span tabindex="317" class="box" style="left: 445px; top: 1764px; width: 280px; height: 24px;" id="_MagicItemsArmor"></span>
+			<span tabindex="317" class="box" style="left: 445px; top: 1764px; width: 280px; height: 24px;" id="_MagicItemsArmor">Robe of Avoidance</span>
 			<span tabindex="318" class="box" style="left: 445px; top: 1793px; width: 280px; height: 24px;" id="_MagicItemsArms"></span>
 			<span tabindex="319" class="box" style="left: 445px; top: 1821px; width: 280px; height: 25px;" id="_MagicItemsFeet"></span>
 			<span tabindex="320" class="box" style="left: 445px; top: 1851px; width: 280px; height: 21px;" id="_MagicItemsHands"></span>
@@ -705,11 +732,11 @@ Lost in the Crowd		p.196	 +2 to AC when adjacent to 2 larger enemies
 			<span tabindex="421" class="box" style="left: 41px; top: 2762px; width: 351px; height: 23px;" id="_OtherEquipment9"></span>
 			<span tabindex="422" class="box" style="left: 41px; top: 2791px; width: 351px; height: 22px;" id="_OtherEquipment10"></span>
 
-			<span tabindex="423" class="box" style="left: 407px; top: 2532px; width: 347px; height: 24px;" id="_Rituals1"></span>
-			<span tabindex="424" class="box" style="left: 407px; top: 2562px; width: 347px; height: 23px;" id="_Rituals2"></span>
-			<span tabindex="425" class="box" style="left: 407px; top: 2592px; width: 347px; height: 22px;" id="_Rituals3"></span>
-			<span tabindex="426" class="box" style="left: 407px; top: 2620px; width: 347px; height: 22px;" id="_Rituals4"></span>
-			<span tabindex="427" class="box" style="left: 407px; top: 2647px; width: 347px; height: 22px;" id="_Rituals5"></span>
+			<span tabindex="423" class="box" style="left: 407px; top: 2532px; width: 347px; height: 24px;" id="_Rituals1">Animal Messenger</span>
+			<span tabindex="424" class="box" style="left: 407px; top: 2562px; width: 347px; height: 23px;" id="_Rituals2">Comprehend Languages</span>
+			<span tabindex="425" class="box" style="left: 407px; top: 2592px; width: 347px; height: 22px;" id="_Rituals3">Silence</span>
+			<span tabindex="426" class="box" style="left: 407px; top: 2620px; width: 347px; height: 22px;" id="_Rituals4">Secret Page</span>
+			<span tabindex="427" class="box" style="left: 407px; top: 2647px; width: 347px; height: 22px;" id="_Rituals5">Fool's Gold</span>
 			<span tabindex="428" class="box" style="left: 407px; top: 2677px; width: 347px; height: 22px;" id="_Rituals6"></span>
 			<span tabindex="429" class="box" style="left: 407px; top: 2704px; width: 347px; height: 23px;" id="_Rituals7"></span>
 			<span tabindex="430" class="box" style="left: 407px; top: 2733px; width: 347px; height: 22px;" id="_Rituals8"></span>
