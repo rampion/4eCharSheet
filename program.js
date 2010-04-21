@@ -71,24 +71,24 @@
 		return {
 			save: function(){
 				try {
-				entries.innerHTML = "\n"+cached.toSource()+"\n";
+					entries.innerHTML = '({\n\t\t\t'+ cached.toSource().slice(2,-2).replace(/(\w+:"(?:[^\\"]|\\.)*"),\s*/g, '$1\n').split("\n").sort().join(',\n\t\t\t') + '\n\t\t})';
 
-				const originalPath = document.location.toString();
-				if(originalPath.substr(0,5) != "file:") 
-				{
-					alert("I'm sorry, this can only be saved locally.  Save this file to disk, then make your changes and try again");
-					return false;
-				}
-				const localPath = getLocalPath(originalPath);
-				if (mozillaSaveFile(localPath, '<html>' + html.innerHTML + '</html>'))
-				{
-					saved = eval(entries.innerHTML);
-					return true;
-				}
-				else
-				{
-					return false;
-				}
+					const originalPath = document.location.toString();
+					if(originalPath.substr(0,5) != "file:") 
+					{
+						alert("I'm sorry, this can only be saved locally.  Save this file to disk, then make your changes and try again");
+						return false;
+					}
+					const localPath = getLocalPath(originalPath);
+					if (mozillaSaveFile(localPath, '<html>' + html.innerHTML + '</html>'))
+					{
+						saved = eval(entries.innerHTML);
+						return true;
+					}
+					else
+					{
+						return false;
+					}
 				} catch (e) {
 					alert(e);
 					return false;
