@@ -113,6 +113,7 @@
 			ClassPathDestinyFeatures2:"Cantrips: minor at-wills",
 			ClassPathDestinyFeatures3:"Ritual Casting: bonus feat",
 			ClassPathDestinyFeatures4:"Spellbook: master rituals, alternate dailies & utilities<!--\n3 free 1st level rituals @ 1st level\n2 more free rituals of your level or lower @ 5th, 11th, 15th, 21st, & 25th levels\n\nselect an extra daily and utility power each time you gain one\nafter extended rest, can prepare a number of daily & utility spells according to what you \ncan cast per day for your level.\n-->",
+			CoinsAndOtherWealth:"Cash: =(\n +118   // haul from sewer trawl\n   -1   // Clothing 1 well worn overrobe, etc\n   -5   // Staff (small)\n   -4   // Daggers x4\n  -20   // Thieves Tool\n  -50   // Spellboo\n   -2   // Backpack\n   -1   // Belt pouch\n   -5   // 10 days rations\n   -1   // Waterskin\n +100   // Starting gold\n  -10   // Ritual Components  (used)\n)gp =(\n  +6  // haul from sewer trawl\n  -1  // Bedroll\n)sp =(\n  +7  // haul from sewer trawl\n)cp<br/>\nRitual Components: Gator eyes & liver (~20gp worth)<br/>\nBlack Marble Idol of Zehir<br/>\nGold Puzzle Ring (being held by Osmund)",
 			Con:"=(pointBuy(10,2))",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
@@ -178,6 +179,11 @@
 			MaxHitPoints:"=(10 /* level 1 */ + Con + (Level - 1)*( 4 /* per level */))",
 			Nature:"=(NatureAbilModPlusHalfLevel + NatureTrained + NatureMisc)",
 			NatureAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
+			OtherEquipment1:"Alchemist's Fire,  Thief's Tools",
+			OtherEquipment2:"Clothing, Robe of Avoidance <!--\nlevel 3, 680gp +1 AC, Encounter power: shift 1, [immediate reaction, when missed by melee attack]\n-->",
+			OtherEquipment3:"Waterskin, Rations, Belt pouch, Backpack, Bedroll",
+			OtherEquipment4:"Spell book, 3 ritual books<!--\n3 books found in alchemist's shop: Rituals of Secret Page, Unseen Servant, Fool's Gold, Pyrotechnics\n-->",
+			OtherEquipment5:"Staff, 4 daggers, Thief's Dagger +1",
 			PassiveInsight:"=(10+PassiveInsightSkillBonus)",
 			PassiveInsightSkillBonus:"=(Insight)",
 			PassivePerception:"=(10+PassivePerceptionSkillBonus)",
@@ -233,9 +239,9 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">Rituals5</div>
-				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">Fool's Gold&nbsp;</div>
+				<div id="EditBoxTarget">OtherEquipment2</div>
+				<textarea style="height: 78px; color: rgb(0, 0, 0);" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">Clothing, Robe of Avoidance &lt;!--<br>level 3, 680gp +1 AC, Encounter power: shift 1, [immediate reaction, when missed by melee attack]<br>--&gt;&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -721,11 +727,15 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 			<span tabindex="411" class="box" style="left: 957px; top: 2582px; width: 159px; height: 22px;" id="_CompanionsAndAlliesNotes7"></span>
 			<span tabindex="412" class="box" style="left: 957px; top: 2611px; width: 159px; height: 19px;" id="_CompanionsAndAlliesNotes8"></span>
 
-			<span tabindex="413" class="box" style="left: 41px; top: 2532px; width: 351px; height: 24px;" id="_OtherEquipment1"></span>
-			<span tabindex="414" class="box" style="left: 41px; top: 2562px; width: 351px; height: 23px;" id="_OtherEquipment2"></span>
-			<span tabindex="415" class="box" style="left: 41px; top: 2592px; width: 351px; height: 22px;" id="_OtherEquipment3"></span>
-			<span tabindex="416" class="box" style="left: 41px; top: 2620px; width: 351px; height: 22px;" id="_OtherEquipment4"></span>
-			<span tabindex="417" class="box" style="left: 41px; top: 2647px; width: 351px; height: 22px;" id="_OtherEquipment5"></span>
+			<span tabindex="413" class="box" style="left: 41px; top: 2532px; width: 351px; height: 24px;" id="_OtherEquipment1">Alchemist's Fire,  Thief's Tools</span>
+			<span tabindex="414" class="box" style="left: 41px; top: 2562px; width: 351px; height: 23px;" id="_OtherEquipment2">Clothing, Robe of Avoidance <!--
+level 3, 680gp +1 AC, Encounter power: shift 1, [immediate reaction, when missed by melee attack]
+--></span>
+			<span tabindex="415" class="box" style="left: 41px; top: 2592px; width: 351px; height: 22px;" id="_OtherEquipment3">Waterskin, Rations, Belt pouch, Backpack, Bedroll</span>
+			<span tabindex="416" class="box" style="left: 41px; top: 2620px; width: 351px; height: 22px;" id="_OtherEquipment4">Spell book, 3 ritual books<!--
+3 books found in alchemist's shop: Rituals of Secret Page, Unseen Servant, Fool's Gold, Pyrotechnics
+--></span>
+			<span tabindex="417" class="box" style="left: 41px; top: 2647px; width: 351px; height: 22px;" id="_OtherEquipment5">Staff, 4 daggers, Thief's Dagger +1</span>
 			<span tabindex="418" class="box" style="left: 41px; top: 2677px; width: 351px; height: 22px;" id="_OtherEquipment6"></span>
 			<span tabindex="419" class="box" style="left: 41px; top: 2704px; width: 351px; height: 23px;" id="_OtherEquipment7"></span>
 			<span tabindex="420" class="box" style="left: 41px; top: 2733px; width: 351px; height: 22px;" id="_OtherEquipment8"></span>
@@ -756,7 +766,10 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 			<span tabindex="443" class="box" style="left: 768px; top: 2955px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes11"></span>
 			<span tabindex="444" class="box" style="left: 768px; top: 2984px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes12"></span>
 
-			<span tabindex="445" class="box" style="left: 41px; top: 2850px; width: 713px; height: 159px;" id="_CoinsAndOtherWealth"></span>
+			<span tabindex="445" class="box" style="left: 41px; top: 2850px; width: 713px; height: 159px;" id="_CoinsAndOtherWealth">Cash: 119gp 5sp 7cp<br>
+Ritual Components: Gator eyes &amp; liver (~20gp worth)<br>
+Black Marble Idol of Zehir<br>
+Gold Puzzle Ring (being held by Osmund)</span>
 		</div>
 
 		<script src="http://rampion.github.com/4eCharSheet/program.js"></script>
