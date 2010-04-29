@@ -4,13 +4,11 @@
 		<style>
 			#CharacterSheet { 
 				position: relative; 
-				overflow: none;
 			}
 			.box { 
 				position: absolute;
 				padding: 2px;
 				cursor: pointer;
-				overflow: hidden;
 			}
 			.center {
 				text-align: center;
@@ -206,6 +204,7 @@
 			Rituals3:"Silence",
 			Rituals4:"Secret Page",
 			Rituals5:"Fool's Gold",
+			Rituals6:"Preservation",
 			SavingThrowMods:"+5 vs. Fear <!-- Halfling -->",
 			Size:"Small",
 			Speed:"=(SpeedBase+SpeedArmor+SpeedItem+SpeedMisc)",
@@ -223,7 +222,7 @@
 			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			ThieveryMisc:"=(2 /* Halfling */)",
 			ThieveryTrained:"=(\n5 // Sneak of Shadows\n)",
-			TotalExperience:"=(\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for what's his name's ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
+			TotalExperience:"=(\n        +175    // 4/21/2010    rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for osmund ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
 			UtilityPowers1:"Expeditious Retreat: shift =(Speed*2)",
 			UtilityPowers2:"Shield: +4 AC/Reflex for 1 turn when hit",
 			UtilityPowersCheck2:"X",
@@ -239,9 +238,9 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">OtherEquipment2</div>
-				<textarea style="height: 78px; color: rgb(0, 0, 0);" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">Clothing, Robe of Avoidance &lt;!--<br>level 3, 680gp +1 AC, Encounter power: shift 1, [immediate reaction, when missed by melee attack]<br>--&gt;&nbsp;</div>
+				<div id="EditBoxTarget">Rituals6</div>
+				<textarea style="height: 39px; color: rgb(0, 0, 0);" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">Preservation&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -256,7 +255,7 @@
 			<span tabindex="4" class="box" style="left: 464px; top: 71px; width: 160px; height: 24px;" id="_Class">Wizard</span>
 			<span tabindex="5" class="box" style="left: 633px; top: 72px; width: 167px; height: 23px;" id="_ParagonPath"></span>
 			<span tabindex="6" class="box" style="left: 810px; top: 72px; width: 173px; height: 23px;" id="_EpicDestiny"></span>
-			<span tabindex="7" class="center box" style="left: 990px; top: 76px; width: 102px; height: 19px;" id="_TotalExperience">3496
+			<span tabindex="7" class="center box" style="left: 990px; top: 76px; width: 102px; height: 19px;" id="_TotalExperience">3671
 </span>
 
 			<span tabindex="8" class="box" style="left: 29px; top: 116px; width: 203px; height: 16px;" id="_Race">Halfling</span>
@@ -747,7 +746,7 @@ level 3, 680gp +1 AC, Encounter power: shift 1, [immediate reaction, when missed
 			<span tabindex="425" class="box" style="left: 407px; top: 2592px; width: 347px; height: 22px;" id="_Rituals3">Silence</span>
 			<span tabindex="426" class="box" style="left: 407px; top: 2620px; width: 347px; height: 22px;" id="_Rituals4">Secret Page</span>
 			<span tabindex="427" class="box" style="left: 407px; top: 2647px; width: 347px; height: 22px;" id="_Rituals5">Fool's Gold</span>
-			<span tabindex="428" class="box" style="left: 407px; top: 2677px; width: 347px; height: 22px;" id="_Rituals6"></span>
+			<span tabindex="428" class="box" style="left: 407px; top: 2677px; width: 347px; height: 22px;" id="_Rituals6">Preservation</span>
 			<span tabindex="429" class="box" style="left: 407px; top: 2704px; width: 347px; height: 23px;" id="_Rituals7"></span>
 			<span tabindex="430" class="box" style="left: 407px; top: 2733px; width: 347px; height: 22px;" id="_Rituals8"></span>
 			<span tabindex="431" class="box" style="left: 407px; top: 2762px; width: 347px; height: 23px;" id="_Rituals9"></span>
