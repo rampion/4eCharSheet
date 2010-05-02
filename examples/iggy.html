@@ -67,8 +67,8 @@
 			ArmorClassArmorSlashAbil:"=(max(DexMod,IntMod,StrMod /* sorcerer: draconic resilience */) /* add light armor bonus, or replace with heavy armor bonus */)",
 			ArmorClassConditionalBonuses:"+4 when bloodied, +2 after <!-- scales of the dragon, bloodthread armor -->",
 			ArmorClassEnh:"=(\n1 /* bloodthread armor +1 */\n)",
-			AtWillPowers1:"Dragonfrost:+=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Fort, =(roundDown((Level+19)/20))d8+=(ChaMod+StrMod) cold/push 1, range 10",
-			AtWillPowers2:"Burning Spray:+=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Ref, =(roundDown((Level+19)/20))d8+=(ChaMod+StrMod) fire, blast 3, plus...\n<!--\non hit: next enemy that hits me w/ a melee attack before end of my next turn takes StrMod fire dmg\n-->",
+			AtWillPowers1:"Dragonfrost:+=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Fort, =(roundDown((Level+19)/20))d8+=(ChaMod+StrMod +2 /* magic dagger */) cold/push 1, range 10",
+			AtWillPowers2:"Burning Spray:+=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Ref, =(roundDown((Level+19)/20))d8+=(ChaMod+StrMod +2 /* magic dagger */) fire, blast 3, plus...\n<!--\non hit: next enemy that hits me w/ a melee attack before end of my next turn takes StrMod fire dmg\n-->",
 			Athletics:"=(AthleticsAbilModPlusHalfLevel + AthleticsTrained + AthleticsArmorPenalty + AthleticsMisc)",
 			AthleticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+StrMod)",
 			AthleticsTrained:"=(5 /* trained level 1 */)",
@@ -110,8 +110,8 @@
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
 			CurrentHitPoints:"=(MaxHitPoints)",
 			CurrentSurgeUses:"=(SurgesPerDay)",
-			DailyPowers1:"Lightning Breath: +=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Ref, 3d8+=(ChaMod+StrMod) ltg, blast 3...<!--\neffect: until end of next turn, when ever enemy hits me w/ melee attack, push enemy 1 square and they take 5 lightning dmg\nsustain minor\n-->",
-			DailyPowers2:"Thunder Leap:+=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Fort, 2d6+=(ChaMod+StrMod) thdr, burst 1...<!--\neffect: jump speed + ChaMod squares (does not provoke OA) and make secondary\nsecondary: burst 1, same attack & dmg plus push secondary target 1.\n-->",
+			DailyPowers1:"Lightning Breath: +=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Ref, 3d8+=(ChaMod+StrMod +2 /* magic dagger */) ltg, blast 3...<!--\neffect: until end of next turn, when ever enemy hits me w/ melee attack, push enemy 1 square and they take 5 lightning dmg\nsustain minor\n-->",
+			DailyPowers2:"Thunder Leap:+=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Fort, 2d6+=(ChaMod+StrMod +2 /* magic dagger */) thdr, burst 1...<!--\neffect: jump speed + ChaMod squares (does not provoke OA) and make secondary\nsecondary: burst 1, same attack & dmg plus push secondary target 1.\n-->",
 			Damage1Abil:"=(StrMod)",
 			Damage1Ability:"=(Attack1Ability)",
 			Damage1Damage:"1d4 + =(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
@@ -126,8 +126,8 @@
 			Dungeoneering:"=(DungeoneeringAbilModPlusHalfLevel + DungeoneeringTrained + DungeoneeringMisc)",
 			DungeoneeringAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
 			EncounterPowers1:"Dragon Breath: +=(StrModPlusHalfLevel + 2*roundDown((Level+9)/10)) vs Ref, =(roundDown((Level+9)/10))d6+=(ConMod) ltg, blast 3/=(5 /* enlarged dragon breath */)",
-			EncounterPowers2:"Tempest Breath:+=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Ref, 2d6+=(ChaMod+StrMod) acid, blast 3...\n<!--\ntarget can't gain combat advantage against anyone until end of my next turn\nI gain concealment until end of my next turn\n-->",
-			EncounterPowers3:"Poisonous Exhalation:+=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Fort, 2d8+=(ChaMod+StrMod) poison...\n<!--\n blast 3\n target takes -(1 + StrMod) to Fort until end of my next turn\n-->",
+			EncounterPowers2:"Tempest Breath:+=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Ref, 2d6+=(ChaMod+StrMod +2 /* magic dagger */) acid, blast 3...\n<!--\ntarget can't gain combat advantage against anyone until end of my next turn\nI gain concealment until end of my next turn\n-->",
+			EncounterPowers3:"Poisonous Exhalation:+=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Fort, 2d8+=(ChaMod+StrMod +2 /* magic dagger */) pois...\n<!--\n blast 3\n target takes -(1 + StrMod) to Fort until end of my next turn\n-->",
 			Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
 			EnduranceAbilModPlusHalfLevel:"=(roundDown(Level/2)+ConMod)",
 			Feats1:"Enlarged Dragon Breath: Dragon Breath is burst 3/5 <!-- level 1 -->",
@@ -213,9 +213,9 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">CoinsAndOtherWealth</div>
-				<textarea style="height: 325.5px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure"><br>840 gp &lt;!-- starting, level 5<br><br><br>Robes	-1	0	worn and somewhat singed							<br>Horse	-75		horse set to pull wagon							<br>Wagon	-20	-1000								<br>Bedroll	-0.1	5								<br>25 flasks	-0.75	25								<br>15 candles	-0.15	0								<br>Waterskin	-1	4								<br>Pouch	-1	0.5								<br>Hemp Rope	-1	10								<br>										<br>										<br>										<br>Starting gold level 1	100									<br>--&gt;&nbsp;</div>
+				<div id="EditBoxTarget">EncounterPowers3</div>
+				<textarea style="height: 116px;" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">Poisonous Exhalation:+=(ChaModPlusHalfLevel+1 /*implement expertise */ +2 /* magic dagger */) vs Fort, 2d8+=(ChaMod+StrMod +2 /* magic dagger */) pois...<br>&lt;!--<br> blast 3<br> target takes -(1 + StrMod) to Fort until end of my next turn<br>--&gt;&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -522,8 +522,8 @@
 
 			<img class="page" id="Page2" src="http://rampion.github.com/4eCharSheet/CharacterSheetPage2.png">
 
-			<span tabindex="267" class="box" style="left: 43px; top: 1647px; width: 349px; height: 24px;" id="_AtWillPowers1">Dragonfrost:+9 vs Fort, 1d8+8 cold/push 1, range 10</span>
-			<span tabindex="268" class="box" style="left: 43px; top: 1678px; width: 349px; height: 23px;" id="_AtWillPowers2">Burning Spray:+9 vs Ref, 1d8+8 fire, blast 3, plus...
+			<span tabindex="267" class="box" style="left: 43px; top: 1647px; width: 349px; height: 24px;" id="_AtWillPowers1">Dragonfrost:+9 vs Fort, 1d8+10 cold/push 1, range 10</span>
+			<span tabindex="268" class="box" style="left: 43px; top: 1678px; width: 349px; height: 23px;" id="_AtWillPowers2">Burning Spray:+9 vs Ref, 1d8+10 fire, blast 3, plus...
 <!--
 on hit: next enemy that hits me w/ a melee attack before end of my next turn takes StrMod fire dmg
 --></span>
@@ -533,12 +533,12 @@ on hit: next enemy that hits me w/ a melee attack before end of my next turn tak
 			<span tabindex="272" class="box" style="left: 43px; top: 1794px; width: 349px; height: 22px;" id="_AtWillPowers6"></span>
 
 			<span tabindex="273" class="box" style="left: 43px; top: 1853px; width: 321px; height: 20px;" id="_EncounterPowers1">Dragon Breath: +8 vs Ref, 1d6+2 ltg, blast 3/5</span>
-			<span tabindex="274" class="box" style="left: 43px; top: 1881px; width: 321px; height: 21px;" id="_EncounterPowers2">Tempest Breath:+9 vs Ref, 2d6+8 acid, blast 3...
+			<span tabindex="274" class="box" style="left: 43px; top: 1881px; width: 321px; height: 21px;" id="_EncounterPowers2">Tempest Breath:+9 vs Ref, 2d6+10 acid, blast 3...
 <!--
 target can't gain combat advantage against anyone until end of my next turn
 I gain concealment until end of my next turn
 --></span>
-			<span tabindex="275" class="box" style="left: 43px; top: 1907px; width: 321px; height: 25px;" id="_EncounterPowers3">Poisonous Exhalation:+9 vs Fort, 2d8+8 poison...
+			<span tabindex="275" class="box" style="left: 43px; top: 1907px; width: 321px; height: 25px;" id="_EncounterPowers3">Poisonous Exhalation:+9 vs Fort, 2d8+10 pois...
 <!--
  blast 3
  target takes -(1 + StrMod) to Fort until end of my next turn
@@ -546,11 +546,11 @@ I gain concealment until end of my next turn
 			<span tabindex="276" class="box" style="left: 43px; top: 1939px; width: 321px; height: 21px;" id="_EncounterPowers4"></span>
 			<span tabindex="277" class="box" style="left: 43px; top: 1967px; width: 321px; height: 21px;" id="_EncounterPowers5"></span>
 			<span tabindex="278" class="box" style="left: 43px; top: 1995px; width: 321px; height: 22px;" id="_EncounterPowers6"></span>
-			<span tabindex="279" class="box" style="left: 43px; top: 2052px; width: 321px; height: 24px;" id="_DailyPowers1">Lightning Breath: +9 vs Ref, 3d8+8 ltg, blast 3...<!--
+			<span tabindex="279" class="box" style="left: 43px; top: 2052px; width: 321px; height: 24px;" id="_DailyPowers1">Lightning Breath: +9 vs Ref, 3d8+10 ltg, blast 3...<!--
 effect: until end of next turn, when ever enemy hits me w/ melee attack, push enemy 1 square and they take 5 lightning dmg
 sustain minor
 --></span>
-			<span tabindex="280" class="box" style="left: 43px; top: 2081px; width: 321px; height: 23px;" id="_DailyPowers2">Thunder Leap:+9 vs Fort, 2d6+8 thdr, burst 1...<!--
+			<span tabindex="280" class="box" style="left: 43px; top: 2081px; width: 321px; height: 23px;" id="_DailyPowers2">Thunder Leap:+9 vs Fort, 2d6+10 thdr, burst 1...<!--
 effect: jump speed + ChaMod squares (does not provoke OA) and make secondary
 secondary: burst 1, same attack & dmg plus push secondary target 1.
 --></span>
