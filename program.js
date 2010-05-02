@@ -183,12 +183,12 @@
 
 		// sort the boxes and render them
 		const evalSublattice = function(ids, program) {
-			const seen = {};
+			const state = {};
 			const stack = [];
 			var i;
 			const dfs = function(id) {
-				if (seen[id]) {
-					if (seen[id] == i) {
+				if (state[id]) {
+					if (state[id] == 'active') {
 						var e = new RecursiveReferenceException;
 						e.loop = [id];
 						throw e;
@@ -196,7 +196,7 @@
 						return;
 					}
 				}
-				seen[id] = i;
+				state[id] = 'active';
 				try {
 					program.graph[id].occurences.forEach(dfs);
 				} catch(e) {
@@ -206,6 +206,7 @@
 					throw e;
 				}
 				stack.push(id);
+				state[id] = 'complete'
 				return;
 			}
 			for (i = 0; i < ids.length; ++i) 
