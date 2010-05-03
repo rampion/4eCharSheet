@@ -428,25 +428,25 @@
 
 		// tab between fields
 		document.addEventListener('keydown', function(keypress_event) {
+				if (keypress_event.keyCode != 9 /* DOM_VK_TAB */) return;
+				keypress_event.stopPropagation();
+				keypress_event.preventDefault();
+
+				const id = EditBoxTarget.innerHTML;
+				const box = boxes[id];
+
+				if (!box) return;
+
 				try  {
-					if (keypress_event.keyCode != 9 /* DOM_VK_TAB */) return;
-					keypress_event.stopPropagation();
-					keypress_event.preventDefault();
-
-					console.log('tab');
-
-					const id = EditBoxTarget.innerHTML;
-					const box = boxes[id];
-
-					if (!box) return;
-
 					const sibling_id = box[(keypress_event.shiftKey ? 'prev' : 'next')+'BoxId'];
 					if (sibling_id && on_blur(keypress_event)) {
 						box_select(sibling_id, boxes[sibling_id])(keypress_event);
 					}
 				}
 				catch(e) {
-					console.log(e);
+					handle(e);
+					EditBox.style.display = 'block';
+					EditBoxText.focus();
 				}
 		}, false);
 
