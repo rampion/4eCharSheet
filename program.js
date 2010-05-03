@@ -310,12 +310,18 @@
 		const boxes = (function(){
 			const spans = region.getElementsByTagName('span');
 			const boxes = {};
+			var prevBoxId = undefined;
 			for (var i=0; i < spans.length; ++i) {
 				var span = spans[i];
 				if (hasClass(span, 'box') && span.id.match(/^_/)) { 
 					var id = span.id.slice(1);
 					boxes[id] = span;
 					formulas[id] = memory.get( id );
+					if (prevBoxId) {
+						boxes[prevBoxId].nextBoxId = id;
+						span.prevBoxId = prevBoxId;
+					}
+					prevBoxId = id;
 				}
 			}
 			return boxes;
@@ -348,13 +354,9 @@
 		const EditBoxSave					= document.getElementById('EditBoxSave');
 		const EditBoxX						= document.getElementById('EditBoxX');
 
-		// go through each of the entry boxes
-		for (var id in boxes) (function(id, box){
-			// set display text
-			box.innerHTML = program.graph[id].value;
-
-			// edit this box on click/tab
-			const box_select = function(event) {
+		// edit this box on click/tab
+		const box_select = function(id, box) {
+			return function(event) {
 				EditBoxTarget.innerHTML = id;
 				EditBox.style.display = 'block';
 				addClass(box, 'selected');
@@ -363,8 +365,15 @@
 				EditBoxText.focus();
 				event.stopPropagation();
 			};
-			box.addEventListener("focus", box_select, false);
-			box.addEventListener("click", box_select, false);
+		};
+
+		// go through each of the entry boxes
+		for (var id in boxes) (function(id, box){
+			// set display text
+			box.innerHTML = program.graph[id].value;
+
+			box.addEventListener("focus", box_select(id, box), false);
+			box.addEventListener("click", box_select(id, box), false);
 
 			// highlight this box
 			box.addEventListener("mouseover", function(over_event) { addClass(box, "moused"); }, false);
@@ -389,12 +398,11 @@
 		};
 		EditBoxText.addEventListener('keyup', resizeEditBoxText, false);
 
-
 		// save changes when done
-		EditBoxText.addEventListener('blur', function(blur_event) {
+		const on_blur = function(blur_event) {
 			const id = EditBoxTarget.innerHTML;
 			const box = boxes[id];
-			if (!box) return;
+			if (!box) return false;
 
 			try {
 				var touched = program.update(id, EditBoxText.value);
@@ -406,12 +414,40 @@
 					(memory.set( id, program.graph[id].formula ) ? addClass : remClass)(box, 'edited');
 				}
 				remClass(box,'selected');
+				return true;
 			}
 			catch (e) {
 				handle(e);
 				EditBox.style.display = 'block';
 				EditBoxText.focus();
+				return false;
 			}
+		};
+
+		EditBoxText.addEventListener('blur', on_blur , false);
+
+		// tab between fields
+		document.addEventListener('keydown', function(keypress_event) {
+				try  {
+					if (keypress_event.keyCode != 9 /* DOM_VK_TAB */) return;
+					keypress_event.stopPropagation();
+					keypress_event.preventDefault();
+
+					console.log('tab');
+
+					const id = EditBoxTarget.innerHTML;
+					const box = boxes[id];
+
+					if (!box) return;
+
+					const sibling_id = box[(keypress_event.shiftKey ? 'prev' : 'next')+'BoxId'];
+					if (sibling_id && on_blur(keypress_event)) {
+						box_select(sibling_id, boxes[sibling_id])(keypress_event);
+					}
+				}
+				catch(e) {
+					console.log(e);
+				}
 		}, false);
 
 		// hide the EditBox when you click the X
