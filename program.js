@@ -113,7 +113,7 @@
 	const RecursiveReferenceException = function() {
 		this.loop = [];
 	};
-	const compileAndEval  = function(formulas){
+	const compileAndEval  = function(formulas, checks){
 		const consumeRegex = function( regex ) {
 			return function( state ) {
 				m = state.unparsed.match( regex )
@@ -149,32 +149,41 @@
 
 		// compile a formula into evaluatable javascript
 		const compile = function(formula) {
-			const sections = [];
-			const vars = [];
-			var start= 0;
-			var next;
-			while ( (next = formula.indexOf('=(', start)) >= 0 ) {
-				sections.push(formula.slice( start, next ).toSource());
+			switch (typeof formula) {
+			case "string":
+				const sections = [];
+				const vars = [];
+				var start= 0;
+				var next;
+				while ( (next = formula.indexOf('=(', start)) >= 0 ) {
+					sections.push(formula.slice( start, next ).toSource());
 
-				const state = {
-					unparsed: formula.slice(next+1),
-					parsed: "",
-					variables: vars
+					const state = {
+						unparsed: formula.slice(next+1),
+						parsed: "",
+						variables: vars
+					};
+					if ( !parseParens( state ) ) break;
+
+					sections.push( state.parsed );
+					start = next + 1 + state.parsed.length;
 				};
-				if ( !parseParens( state ) ) break;
+				sections.push(formula.slice( start ).toSource());
 
-				sections.push( state.parsed );
-				start = next + 1 + state.parsed.length;
-			};
-			sections.push(formula.slice( start ).toSource());
-
-			return {
-				formula: formula,
-				value: '?',
-				script: sections.join('+'),
-				variables: vars,
-				occurences: []
-			};
+				return {
+					formula: formula,
+					value: '?',
+					script: sections.join('+'),
+					variables: vars,
+					occurences: []
+				};
+			case "boolean":
+				return {
+					formula: formula,
+					variables: [],
+					occurences: []
+				};
+			}
 		};
 
 		const evalScript = function( source, context ) {
@@ -212,10 +221,16 @@
 			for (i = 0; i < ids.length; ++i) 
 				dfs(ids[i]);
 			stack.reverse().forEach(function(id) {
-				const result = evalScript( program.graph[id].script, program.context );
-				program.graph[id].value = result;
-				program.context[id] = result.match(/^[+-]?\d+$/) ? parseInt(result) : (result == "" ? 0 : result);
-				//console.log('evaluating ' + id );
+				switch(typeof program.graph[id].formula) {
+				case 'string':
+					const result = evalScript( program.graph[id].script, program.context );
+					program.graph[id].value = result;
+					program.context[id] = result.match(/^[+-]?\d+$/) ? parseInt(result) : (result == "" ? 0 : result);
+					break;
+				case 'boolean':
+					program.context[id] = program.graph[id].formula;
+					break;
+				}
 			});
 			return stack;
 		};
@@ -307,6 +322,20 @@
 
 		const formulas = {};
 		const region = document.getElementById(region_id);
+		const checks = (function(){
+			const inputs = region.getElementsByTagName('input');
+			const checks = {};
+			for (var i = 0; i < inputs.length; ++i) {
+				var input = inputs[i];
+				if (input.type == 'checkbox' && input.id.match(/^_/)) {
+					var id = input.id.slice(1);
+					checks[id] = input;
+					formulas[id] = memory.get( id ) ? true : false;
+					input.checked = formulas[id];
+				}
+			}
+			return checks;
+		})();
 		const boxes = (function(){
 			const spans = region.getElementsByTagName('span');
 			const boxes = {};
@@ -398,6 +427,30 @@
 		};
 		EditBoxText.addEventListener('keyup', resizeEditBoxText, false);
 
+		const toggle_edited = function(touched) {
+			touched.forEach(function(t_id) {
+				switch (typeof formulas[t_id]){
+				case 'string':
+					boxes[t_id].innerHTML = program.graph[t_id].value;
+					break;
+				case 'boolean':
+					checks[t_id].checked = program.graph[t_id].formula;
+					break;
+				}
+			});
+		};
+
+		// update other cells when we click a checkbox
+		for (var id in checks) (function(id, check){
+				check.addEventListener("change", function(change_event) {
+					const touched = program.update(id, check.checked);
+					if (touched.length > 0) {
+						toggle_edited(touched); 
+						(memory.set( id, program.graph[id].formula ) ? addClass : remClass)(check, 'edited');
+					}
+				}, false);
+		})(id, checks[id]);
+
 		// save changes when done
 		const on_blur = function(blur_event) {
 			const id = EditBoxTarget.innerHTML;
@@ -405,12 +458,9 @@
 			if (!box) return false;
 
 			try {
-				var touched = program.update(id, EditBoxText.value);
-				if (touched.length > 0)
-				{
-					touched.forEach(function(t_id){
-						boxes[t_id].innerHTML = program.graph[t_id].value;
-					});
+				const touched = program.update(id, EditBoxText.value);
+				if (touched.length > 0) {
+					toggle_edited(touched); 
 					(memory.set( id, program.graph[id].formula ) ? addClass : remClass)(box, 'edited');
 				}
 				remClass(box,'selected');
