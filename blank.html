@@ -2,9 +2,6 @@
 	<head>
 		<link href="style.css" type="text/css" rel="stylesheet">
 		<style>
-			#CharacterSheet { 
-				position: relative; 
-			}
 			.box { 
 				position: absolute;
 				padding: 2px;
@@ -14,8 +11,10 @@
 				text-align: center;
 			}
 			.page {
-				z-index: -1;
+				position: relative; 
 				overflow: none;
+			}
+			.page-background {
 				margin-left: -45px;
 				margin-top: -75px;
 			}
@@ -188,501 +187,502 @@
 					<a id="EditBoxX">X</a>
 				</div>
 			</div>
-			<img class="page" id="Page1" src="CharacterSheetPage1.png"/>
+			<div class="page" id="Page1">
+				<img class="page-background" id="Page1Background" src="CharacterSheetPage1.png"/>
+				<span tabIndex=1 class="box" style="left: 817px; top: 44px; width: 265px; height: 16px;" id="_PlayerName"></span>
 
-			<span tabIndex=1 class="box" style="left: 817px; top: 44px; width: 265px; height: 16px;" id="_PlayerName"></span>
+				<span tabIndex=2 class="box" style="left: 28px; top: 70px; width: 346px; height: 25px;" id="_CharacterName"></span>
+				<span tabIndex=3 class="center box" style="left: 392px; top: 76px; width: 54px; height: 21px;" id="_Level"></span>
+				<span tabIndex=4 class="box" style="left: 464px; top: 71px; width: 160px; height: 24px;" id="_Class"></span>
+				<span tabIndex=5 class="box" style="left: 633px; top: 72px; width: 167px; height: 23px;" id="_ParagonPath"></span>
+				<span tabIndex=6 class="box" style="left: 810px; top: 72px; width: 173px; height: 23px;" id="_EpicDestiny"></span>
+				<span tabIndex=7 class="center box" style="left: 990px; top: 76px; width: 102px; height: 19px;" id="_TotalExperience"></span>
 
-			<span tabIndex=2 class="box" style="left: 28px; top: 70px; width: 346px; height: 25px;" id="_CharacterName"></span>
-			<span tabIndex=3 class="center box" style="left: 392px; top: 76px; width: 54px; height: 21px;" id="_Level"></span>
-			<span tabIndex=4 class="box" style="left: 464px; top: 71px; width: 160px; height: 24px;" id="_Class"></span>
-			<span tabIndex=5 class="box" style="left: 633px; top: 72px; width: 167px; height: 23px;" id="_ParagonPath"></span>
-			<span tabIndex=6 class="box" style="left: 810px; top: 72px; width: 173px; height: 23px;" id="_EpicDestiny"></span>
-			<span tabIndex=7 class="center box" style="left: 990px; top: 76px; width: 102px; height: 19px;" id="_TotalExperience"></span>
+				<span tabIndex=8 class="box" style="left: 29px; top: 116px; width: 203px; height: 16px;" id="_Race"></span>
+				<span tabIndex=9 class="box" style="left: 244px; top: 112px; width: 52px; height: 20px;" id="_Size"></span>
+				<span tabIndex=10 class="box" style="left: 308px; top: 109px; width: 45px; height: 23px;" id="_Age"></span>
+				<span tabIndex=11 class="box" style="left: 363px; top: 110px; width: 49px; height: 21px;" id="_Gender"></span>
+				<span tabIndex=12 class="box" style="left: 425px; top: 116px; width: 47px; height: 16px;" id="_Height"></span>
+				<span tabIndex=13 class="box" style="left: 484px; top: 117px; width: 51px; height: 15px;" id="_Weight"></span>
+				<span tabIndex=14 class="box" style="left: 549px; top: 116px; width: 107px; height: 16px;" id="_Alignment"></span>
+				<span tabIndex=15 class="box" style="left: 671px; top: 116px; width: 109px; height: 16px;" id="_Deity"></span>
+				<span tabIndex=16 class="box" style="left: 791px; top: 115px; width: 306px; height: 17px;" id="_Affiliation"></span>
 
-			<span tabIndex=8 class="box" style="left: 29px; top: 116px; width: 203px; height: 16px;" id="_Race"></span>
-			<span tabIndex=9 class="box" style="left: 244px; top: 112px; width: 52px; height: 20px;" id="_Size"></span>
-			<span tabIndex=10 class="box" style="left: 308px; top: 109px; width: 45px; height: 23px;" id="_Age"></span>
-			<span tabIndex=11 class="box" style="left: 363px; top: 110px; width: 49px; height: 21px;" id="_Gender"></span>
-			<span tabIndex=12 class="box" style="left: 425px; top: 116px; width: 47px; height: 16px;" id="_Height"></span>
-			<span tabIndex=13 class="box" style="left: 484px; top: 117px; width: 51px; height: 15px;" id="_Weight"></span>
-			<span tabIndex=14 class="box" style="left: 549px; top: 116px; width: 107px; height: 16px;" id="_Alignment"></span>
-			<span tabIndex=15 class="box" style="left: 671px; top: 116px; width: 109px; height: 16px;" id="_Deity"></span>
-			<span tabIndex=16 class="box" style="left: 791px; top: 115px; width: 306px; height: 17px;" id="_Affiliation"></span>
+				<span tabIndex=17 class="center box" style="left: 39px; top: 199px; width: 40px; height: 19px;" id="_Initiative"></span>
+				<span tabIndex=18 class="box" style="left: 37px; top: 237px; width: 334px; height: 16px;" id="_InitiativeConditionalModifiers"></span>
+				<span tabIndex=19 class="center box" style="left: 191px; top: 199px; width: 29px; height: 19px;" id="_InitiativeAbilMod"></span>
+				<span tabIndex=20 class="center box" style="left: 232px; top: 199px; width: 29px; height: 20px;" id="_InitiativeHalfLevel"></span>
+				<span tabIndex=21 class="center box" style="left: 342px; top: 199px; width: 30px; height: 21px;" id="_InitiativeMisc"></span>
 
-			<span tabIndex=17 class="center box" style="left: 39px; top: 199px; width: 40px; height: 19px;" id="_Initiative"></span>
-			<span tabIndex=18 class="box" style="left: 37px; top: 237px; width: 334px; height: 16px;" id="_InitiativeConditionalModifiers"></span>
-			<span tabIndex=19 class="center box" style="left: 191px; top: 199px; width: 29px; height: 19px;" id="_InitiativeAbilMod"></span>
-			<span tabIndex=20 class="center box" style="left: 232px; top: 199px; width: 29px; height: 20px;" id="_InitiativeHalfLevel"></span>
-			<span tabIndex=21 class="center box" style="left: 342px; top: 199px; width: 30px; height: 21px;" id="_InitiativeMisc"></span>
+				<span tabIndex=22 class="center box" style="left: 38px; top: 299px; width: 44px; height: 20px;" id="_Str"></span>
+				<span tabIndex=23 class="center box" style="left: 38px; top: 336px; width: 44px; height: 20px;" id="_Con"></span>
+				<span tabIndex=24 class="center box" style="left: 38px; top: 387px; width: 44px; height: 20px;" id="_Dex"></span>
+				<span tabIndex=25 class="center box" style="left: 38px; top: 421px; width: 44px; height: 20px;" id="_Int"></span>
+				<span tabIndex=26 class="center box" style="left: 38px; top: 472px; width: 44px; height: 20px;" id="_Wis"></span>
+				<span tabIndex=27 class="center box" style="left: 38px; top: 507px; width: 44px; height: 20px;" id="_Cha"></span>
 
-			<span tabIndex=22 class="center box" style="left: 38px; top: 299px; width: 44px; height: 20px;" id="_Str"></span>
-			<span tabIndex=23 class="center box" style="left: 38px; top: 336px; width: 44px; height: 20px;" id="_Con"></span>
-			<span tabIndex=24 class="center box" style="left: 38px; top: 387px; width: 44px; height: 20px;" id="_Dex"></span>
-			<span tabIndex=25 class="center box" style="left: 38px; top: 421px; width: 44px; height: 20px;" id="_Int"></span>
-			<span tabIndex=26 class="center box" style="left: 38px; top: 472px; width: 44px; height: 20px;" id="_Wis"></span>
-			<span tabIndex=27 class="center box" style="left: 38px; top: 507px; width: 44px; height: 20px;" id="_Cha"></span>
+				<span tabIndex=28 class="center box" style="left: 215px; top: 299px; width: 44px; height: 20px;" id="_StrMod"></span>
+				<span tabIndex=29 class="center box" style="left: 215px; top: 336px; width: 44px; height: 20px;" id="_ConMod"></span>
+				<span tabIndex=30 class="center box" style="left: 215px; top: 387px; width: 44px; height: 20px;" id="_DexMod"></span>
+				<span tabIndex=31 class="center box" style="left: 215px; top: 421px; width: 44px; height: 20px;" id="_IntMod"></span>
+				<span tabIndex=32 class="center box" style="left: 215px; top: 472px; width: 44px; height: 20px;" id="_WisMod"></span>
+				<span tabIndex=33 class="center box" style="left: 215px; top: 507px; width: 44px; height: 20px;" id="_ChaMod"></span>
 
-			<span tabIndex=28 class="center box" style="left: 215px; top: 299px; width: 44px; height: 20px;" id="_StrMod"></span>
-			<span tabIndex=29 class="center box" style="left: 215px; top: 336px; width: 44px; height: 20px;" id="_ConMod"></span>
-			<span tabIndex=30 class="center box" style="left: 215px; top: 387px; width: 44px; height: 20px;" id="_DexMod"></span>
-			<span tabIndex=31 class="center box" style="left: 215px; top: 421px; width: 44px; height: 20px;" id="_IntMod"></span>
-			<span tabIndex=32 class="center box" style="left: 215px; top: 472px; width: 44px; height: 20px;" id="_WisMod"></span>
-			<span tabIndex=33 class="center box" style="left: 215px; top: 507px; width: 44px; height: 20px;" id="_ChaMod"></span>
+				<span tabIndex=34 class="center box" style="left: 308px; top: 299px; width: 44px; height: 20px;" id="_StrModPlusHalfLevel"></span>
+				<span tabIndex=35 class="center box" style="left: 308px; top: 336px; width: 44px; height: 20px;" id="_ConModPlusHalfLevel"></span>
+				<span tabIndex=36 class="center box" style="left: 308px; top: 387px; width: 44px; height: 20px;" id="_DexModPlusHalfLevel"></span>
+				<span tabIndex=37 class="center box" style="left: 308px; top: 421px; width: 44px; height: 20px;" id="_IntModPlusHalfLevel"></span>
+				<span tabIndex=38 class="center box" style="left: 308px; top: 472px; width: 44px; height: 20px;" id="_WisModPlusHalfLevel"></span>
+				<span tabIndex=39 class="center box" style="left: 308px; top: 507px; width: 44px; height: 20px;" id="_ChaModPlusHalfLevel"></span>
 
-			<span tabIndex=34 class="center box" style="left: 308px; top: 299px; width: 44px; height: 20px;" id="_StrModPlusHalfLevel"></span>
-			<span tabIndex=35 class="center box" style="left: 308px; top: 336px; width: 44px; height: 20px;" id="_ConModPlusHalfLevel"></span>
-			<span tabIndex=36 class="center box" style="left: 308px; top: 387px; width: 44px; height: 20px;" id="_DexModPlusHalfLevel"></span>
-			<span tabIndex=37 class="center box" style="left: 308px; top: 421px; width: 44px; height: 20px;" id="_IntModPlusHalfLevel"></span>
-			<span tabIndex=38 class="center box" style="left: 308px; top: 472px; width: 44px; height: 20px;" id="_WisModPlusHalfLevel"></span>
-			<span tabIndex=39 class="center box" style="left: 308px; top: 507px; width: 44px; height: 20px;" id="_ChaModPlusHalfLevel"></span>
+				<span tabIndex=40 class="center box" style="left: 399px; top: 207px; width: 29px; height: 25px;" id="_ArmorClass"></span>
+				<span tabIndex=41 class="center box" style="left: 505px; top: 212px; width: 29px; height: 20px;" id="_ArmorClass10PlusHalfLevel"></span>
+				<span tabIndex=42 class="center box" style="left: 539px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassArmorSlashAbil"></span>
+				<span tabIndex=43 class="center box" style="left: 574px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassClass"></span>
+				<span tabIndex=44 class="center box" style="left: 608px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassFeat"></span>
+				<span tabIndex=45 class="center box" style="left: 642px; top: 211px; width: 29px; height: 20px;" id="_ArmorClassEnh"></span>
+				<span tabIndex=46 class="center box" style="left: 676px; top: 211px; width: 29px; height: 20px;" id="_ArmorClassMisc1"></span>
+				<span tabIndex=47 class="center box" style="left: 711px; top: 211px; width: 29px; height: 20px;" id="_ArmorClassMisc2"></span>
+				<span tabIndex=48 class="box" style="left: 399px; top: 257px; width: 340px; height: 15px;" id="_ArmorClassConditionalBonuses"></span>
 
-			<span tabIndex=40 class="center box" style="left: 399px; top: 207px; width: 29px; height: 25px;" id="_ArmorClass"></span>
-			<span tabIndex=41 class="center box" style="left: 505px; top: 212px; width: 29px; height: 20px;" id="_ArmorClass10PlusHalfLevel"></span>
-			<span tabIndex=42 class="center box" style="left: 539px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassArmorSlashAbil"></span>
-			<span tabIndex=43 class="center box" style="left: 574px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassClass"></span>
-			<span tabIndex=44 class="center box" style="left: 608px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassFeat"></span>
-			<span tabIndex=45 class="center box" style="left: 642px; top: 211px; width: 29px; height: 20px;" id="_ArmorClassEnh"></span>
-			<span tabIndex=46 class="center box" style="left: 676px; top: 211px; width: 29px; height: 20px;" id="_ArmorClassMisc1"></span>
-			<span tabIndex=47 class="center box" style="left: 711px; top: 211px; width: 29px; height: 20px;" id="_ArmorClassMisc2"></span>
-			<span tabIndex=48 class="box" style="left: 399px; top: 257px; width: 340px; height: 15px;" id="_ArmorClassConditionalBonuses"></span>
+				<span tabIndex=49 class="center box" style="left: 399px; top: 306px; width: 29px; height: 25px;" id="_Fortitude"></span>
+				<span tabIndex=50 class="center box" style="left: 505px; top: 308px; width: 29px; height: 20px;" id="_Fortitude10PlusHalfLevel"></span>
+				<span tabIndex=51 class="center box" style="left: 539px; top: 308px; width: 29px; height: 20px;" id="_FortitudeAbil"></span>
+				<span tabIndex=52 class="center box" style="left: 574px; top: 308px; width: 29px; height: 20px;" id="_FortitudeClass"></span>
+				<span tabIndex=53 class="center box" style="left: 608px; top: 308px; width: 29px; height: 20px;" id="_FortitudeFeat"></span>
+				<span tabIndex=54 class="center box" style="left: 642px; top: 308px; width: 29px; height: 20px;" id="_FortitudeEnh"></span>
+				<span tabIndex=55 class="center box" style="left: 676px; top: 308px; width: 29px; height: 20px;" id="_FortitudeMisc1"></span>
+				<span tabIndex=56 class="center box" style="left: 711px; top: 308px; width: 29px; height: 20px;" id="_FortitudeMisc2"></span>
+				<span tabIndex=57 class="box" style="left: 399px; top: 351px; width: 340px; height: 15px;" id="_FortitudeConditionalBonuses"></span>
 
-			<span tabIndex=49 class="center box" style="left: 399px; top: 306px; width: 29px; height: 25px;" id="_Fortitude"></span>
-			<span tabIndex=50 class="center box" style="left: 505px; top: 308px; width: 29px; height: 20px;" id="_Fortitude10PlusHalfLevel"></span>
-			<span tabIndex=51 class="center box" style="left: 539px; top: 308px; width: 29px; height: 20px;" id="_FortitudeAbil"></span>
-			<span tabIndex=52 class="center box" style="left: 574px; top: 308px; width: 29px; height: 20px;" id="_FortitudeClass"></span>
-			<span tabIndex=53 class="center box" style="left: 608px; top: 308px; width: 29px; height: 20px;" id="_FortitudeFeat"></span>
-			<span tabIndex=54 class="center box" style="left: 642px; top: 308px; width: 29px; height: 20px;" id="_FortitudeEnh"></span>
-			<span tabIndex=55 class="center box" style="left: 676px; top: 308px; width: 29px; height: 20px;" id="_FortitudeMisc1"></span>
-			<span tabIndex=56 class="center box" style="left: 711px; top: 308px; width: 29px; height: 20px;" id="_FortitudeMisc2"></span>
-			<span tabIndex=57 class="box" style="left: 399px; top: 351px; width: 340px; height: 15px;" id="_FortitudeConditionalBonuses"></span>
+				<span tabIndex=58 class="center box" style="left: 399px; top: 390px; width: 29px; height: 25px;" id="_Reflex"></span>
+				<span tabIndex=59 class="center box" style="left: 505px; top: 392px; width: 29px; height: 20px;" id="_Reflex10PlusHalfLevel"></span>
+				<span tabIndex=60 class="center box" style="left: 539px; top: 392px; width: 29px; height: 20px;" id="_ReflexAbil"></span>
+				<span tabIndex=61 class="center box" style="left: 574px; top: 392px; width: 29px; height: 20px;" id="_ReflexClass"></span>
+				<span tabIndex=62 class="center box" style="left: 608px; top: 392px; width: 29px; height: 20px;" id="_ReflexFeat"></span>
+				<span tabIndex=63 class="center box" style="left: 642px; top: 392px; width: 29px; height: 20px;" id="_ReflexEnh"></span>
+				<span tabIndex=64 class="center box" style="left: 676px; top: 392px; width: 29px; height: 20px;" id="_ReflexMisc1"></span>
+				<span tabIndex=65 class="center box" style="left: 711px; top: 392px; width: 29px; height: 20px;" id="_ReflexMisc2"></span>
+				<span tabIndex=66 class="box" style="left: 399px; top: 436px; width: 340px; height: 16px;" id="_ReflexConditionalBonuses"></span>
 
-			<span tabIndex=58 class="center box" style="left: 399px; top: 390px; width: 29px; height: 25px;" id="_Reflex"></span>
-			<span tabIndex=59 class="center box" style="left: 505px; top: 392px; width: 29px; height: 20px;" id="_Reflex10PlusHalfLevel"></span>
-			<span tabIndex=60 class="center box" style="left: 539px; top: 392px; width: 29px; height: 20px;" id="_ReflexAbil"></span>
-			<span tabIndex=61 class="center box" style="left: 574px; top: 392px; width: 29px; height: 20px;" id="_ReflexClass"></span>
-			<span tabIndex=62 class="center box" style="left: 608px; top: 392px; width: 29px; height: 20px;" id="_ReflexFeat"></span>
-			<span tabIndex=63 class="center box" style="left: 642px; top: 392px; width: 29px; height: 20px;" id="_ReflexEnh"></span>
-			<span tabIndex=64 class="center box" style="left: 676px; top: 392px; width: 29px; height: 20px;" id="_ReflexMisc1"></span>
-			<span tabIndex=65 class="center box" style="left: 711px; top: 392px; width: 29px; height: 20px;" id="_ReflexMisc2"></span>
-			<span tabIndex=66 class="box" style="left: 399px; top: 436px; width: 340px; height: 16px;" id="_ReflexConditionalBonuses"></span>
+				<span tabIndex=67 class="center box" style="left: 399px; top: 478px; width: 29px; height: 25px;" id="_Willpower"></span>
+				<span tabIndex=68 class="center box" style="left: 505px; top: 480px; width: 29px; height: 20px;" id="_Willpower10PlusHalfLevel"></span>
+				<span tabIndex=69 class="center box" style="left: 539px; top: 480px; width: 29px; height: 20px;" id="_WillpowerAbil"></span>
+				<span tabIndex=70 class="center box" style="left: 574px; top: 480px; width: 29px; height: 20px;" id="_WillpowerClass"></span>
+				<span tabIndex=71 class="center box" style="left: 608px; top: 480px; width: 29px; height: 20px;" id="_WillpowerFeat"></span>
+				<span tabIndex=72 class="center box" style="left: 642px; top: 480px; width: 29px; height: 20px;" id="_WillpowerEnh"></span>
+				<span tabIndex=73 class="center box" style="left: 676px; top: 480px; width: 29px; height: 20px;" id="_WillpowerMisc1"></span>
+				<span tabIndex=74 class="center box" style="left: 711px; top: 480px; width: 29px; height: 20px;" id="_WillpowerMisc2"></span>
+				<span tabIndex=75 class="box" style="left: 399px; top: 522px; width: 340px; height: 18px;" id="_WillpowerConditionalBonuses"></span>
 
-			<span tabIndex=67 class="center box" style="left: 399px; top: 478px; width: 29px; height: 25px;" id="_Willpower"></span>
-			<span tabIndex=68 class="center box" style="left: 505px; top: 480px; width: 29px; height: 20px;" id="_Willpower10PlusHalfLevel"></span>
-			<span tabIndex=69 class="center box" style="left: 539px; top: 480px; width: 29px; height: 20px;" id="_WillpowerAbil"></span>
-			<span tabIndex=70 class="center box" style="left: 574px; top: 480px; width: 29px; height: 20px;" id="_WillpowerClass"></span>
-			<span tabIndex=71 class="center box" style="left: 608px; top: 480px; width: 29px; height: 20px;" id="_WillpowerFeat"></span>
-			<span tabIndex=72 class="center box" style="left: 642px; top: 480px; width: 29px; height: 20px;" id="_WillpowerEnh"></span>
-			<span tabIndex=73 class="center box" style="left: 676px; top: 480px; width: 29px; height: 20px;" id="_WillpowerMisc1"></span>
-			<span tabIndex=74 class="center box" style="left: 711px; top: 480px; width: 29px; height: 20px;" id="_WillpowerMisc2"></span>
-			<span tabIndex=75 class="box" style="left: 399px; top: 522px; width: 340px; height: 18px;" id="_WillpowerConditionalBonuses"></span>
+				<span tabIndex=76 class="center box" style="left: 757px;  top: 198px; width: 43px; height: 22px;" id="_Speed"></span>
+				<span tabIndex=77 class="center box" style="left: 949px;  top: 198px; width: 31px; height: 21px;" id="_SpeedBase"></span>
+				<span tabIndex=78 class="center box" style="left: 989px; top: 198px; width: 31px; height: 21px;" id="_SpeedArmor"></span>
+				<span tabIndex=79 class="center box" style="left: 1028px; top: 198px; width: 31px; height: 21px;" id="_SpeedItem"></span>
+				<span tabIndex=80 class="center box" style="left: 1067px; top: 198px; width: 31px; height: 21px;" id="_SpeedMisc"></span>
+				<span tabIndex=81 class="box" style="left: 758px; top: 241px; width: 340px; height: 19px;" id="_SpecialMovement"></span>
 
-			<span tabIndex=76 class="center box" style="left: 757px;  top: 198px; width: 43px; height: 22px;" id="_Speed"></span>
-			<span tabIndex=77 class="center box" style="left: 949px;  top: 198px; width: 31px; height: 21px;" id="_SpeedBase"></span>
-			<span tabIndex=78 class="center box" style="left: 989px; top: 198px; width: 31px; height: 21px;" id="_SpeedArmor"></span>
-			<span tabIndex=79 class="center box" style="left: 1028px; top: 198px; width: 31px; height: 21px;" id="_SpeedItem"></span>
-			<span tabIndex=80 class="center box" style="left: 1067px; top: 198px; width: 31px; height: 21px;" id="_SpeedMisc"></span>
-			<span tabIndex=81 class="box" style="left: 758px; top: 241px; width: 340px; height: 19px;" id="_SpecialMovement"></span>
+				<span tabIndex=82 class="center box" style="left: 759px; top: 306px; width: 37px; height: 18px;" id="_PassiveInsight"></span>
+				<span tabIndex=83 class="center box" style="left: 1041px; top: 306px; width: 43px; height: 19px;" id="_PassiveInsightSkillBonus"></span>
+				<span tabIndex=84 class="center box" style="left: 757px; top: 343px; width: 40px; height: 19px;" id="_PassivePerception"></span>
+				<span tabIndex=85 class="center box" style="left: 1041px; top: 343px; width: 44px; height: 19px;" id="_PassivePerceptionSkillBonus"></span>
+				<span tabIndex=86 class="box" style="left: 759px; top: 384px; width: 343px; height: 18px;" id="_SpecialSenses"></span>
 
-			<span tabIndex=82 class="center box" style="left: 759px; top: 306px; width: 37px; height: 18px;" id="_PassiveInsight"></span>
-			<span tabIndex=83 class="center box" style="left: 1041px; top: 306px; width: 43px; height: 19px;" id="_PassiveInsightSkillBonus"></span>
-			<span tabIndex=84 class="center box" style="left: 757px; top: 343px; width: 40px; height: 19px;" id="_PassivePerception"></span>
-			<span tabIndex=85 class="center box" style="left: 1041px; top: 343px; width: 44px; height: 19px;" id="_PassivePerceptionSkillBonus"></span>
-			<span tabIndex=86 class="box" style="left: 759px; top: 384px; width: 343px; height: 18px;" id="_SpecialSenses"></span>
+				<span tabIndex=87 class="center box" style="left: 29px; top: 592px; width: 71px; height: 37px;" id="_MaxHitPoints"></span>
+				<span tabIndex=88 class="center box" style="left: 115px; top: 602px; width: 77px; height: 22px;" id="_BloodiedHitPoints"></span>
+				<span tabIndex=89 class="center box" style="left: 214px; top: 602px; width: 79px; height: 22px;" id="_SurgeValue"></span>
+				<span tabIndex=90 class="center box" style="left: 305px; top: 602px; width: 71px; height: 22px;" id="_SurgesPerDay"></span>
+				<span tabIndex=91 class="center box" style="left: 29px; top: 656px; width: 238px; height: 62px;" id="_CurrentHitPoints"></span>
+				<span tabIndex=92 class="center box" style="left: 271px; top: 656px; width: 102px; height: 62px;" id="_CurrentSurgeUses"></span>
+				<input type="checkbox" tabIndex=93 class="center box" style="left: 326px; top: 723px;" id="_SecondWindUsed"/>
+				<span tabIndex=94 class="box" style="left: 29px; top: 756px; width: 348px; height: 29px;" id="_TemporaryHitPoints"></span>
+				<input type="checkbox" tabIndex=95 class="center box" style="left: 308px; top: 790px;" id="_DeathSavingThrowFailures1"/>
+				<input type="checkbox" tabIndex=96 class="center box" style="left: 331px; top: 790px;" id="_DeathSavingThrowFailures2"/>
+				<input type="checkbox" tabIndex=97 class="center box" style="left: 354px; top: 790px;" id="_DeathSavingThrowFailures3"/>
+				<span tabIndex=98 class="box" style="left: 29px; top: 819px; width: 348px; height: 20px;" id="_SavingThrowMods"></span>
+				<span tabIndex=99 class="box" style="left: 29px; top: 860px; width: 348px; height: 25px;" id="_Resistances"></span>
+				<span tabIndex=100 class="box" style="left: 29px; top: 904px; width: 348px; height: 22px;" id="_CurrentConditionsAndEffects"></span>
 
-			<span tabIndex=87 class="center box" style="left: 29px; top: 592px; width: 71px; height: 37px;" id="_MaxHitPoints"></span>
-			<span tabIndex=88 class="center box" style="left: 115px; top: 602px; width: 77px; height: 22px;" id="_BloodiedHitPoints"></span>
-			<span tabIndex=89 class="center box" style="left: 214px; top: 602px; width: 79px; height: 22px;" id="_SurgeValue"></span>
-			<span tabIndex=90 class="center box" style="left: 305px; top: 602px; width: 71px; height: 22px;" id="_SurgesPerDay"></span>
-			<span tabIndex=91 class="center box" style="left: 29px; top: 656px; width: 238px; height: 62px;" id="_CurrentHitPoints"></span>
-			<span tabIndex=92 class="center box" style="left: 271px; top: 656px; width: 102px; height: 62px;" id="_CurrentSurgeUses"></span>
-			<input type="checkbox" tabIndex=93 class="center box" style="left: 326px; top: 723px;" id="_SecondWindUsed"/>
-			<span tabIndex=94 class="box" style="left: 29px; top: 756px; width: 348px; height: 29px;" id="_TemporaryHitPoints"></span>
-			<input type="checkbox" tabIndex=95 class="center box" style="left: 308px; top: 790px;" id="_DeathSavingThrowFailures1"/>
-			<input type="checkbox" tabIndex=96 class="center box" style="left: 331px; top: 790px;" id="_DeathSavingThrowFailures2"/>
-			<input type="checkbox" tabIndex=97 class="center box" style="left: 354px; top: 790px;" id="_DeathSavingThrowFailures3"/>
-			<span tabIndex=98 class="box" style="left: 29px; top: 819px; width: 348px; height: 20px;" id="_SavingThrowMods"></span>
-			<span tabIndex=99 class="box" style="left: 29px; top: 860px; width: 348px; height: 25px;" id="_Resistances"></span>
-			<span tabIndex=100 class="box" style="left: 29px; top: 904px; width: 348px; height: 22px;" id="_CurrentConditionsAndEffects"></span>
+				<span tabIndex=101 class="center box" style="left: 394px; top: 578px; width: 47px; height: 24px;" id="_ActionPoints"></span>
+				<span tabIndex=102 class="box" style="left: 397px; top: 624px; width: 341px; height: 21px;" id="_ActionPointAddtionalEffects"></span>
 
-			<span tabIndex=101 class="center box" style="left: 394px; top: 578px; width: 47px; height: 24px;" id="_ActionPoints"></span>
-			<span tabIndex=102 class="box" style="left: 397px; top: 624px; width: 341px; height: 21px;" id="_ActionPointAddtionalEffects"></span>
+				<span tabIndex=103 class="box" style="left: 478px; top: 677px; width: 264px; height: 16px;" id="_RaceAbilityScoreMods"></span>
+				<span tabIndex=104 class="box" style="left: 395px; top: 699px; width: 347px; height: 22px;" id="_RaceFeatures1"></span>
+				<span tabIndex=105 class="box" style="left: 395px; top: 726px; width: 347px; height: 22px;" id="_RaceFeatures2"></span>
+				<span tabIndex=106 class="box" style="left: 395px; top: 756px; width: 347px; height: 22px;" id="_RaceFeatures3"></span>
+				<span tabIndex=107 class="box" style="left: 395px; top: 785px; width: 347px; height: 22px;" id="_RaceFeatures4"></span>
+				<span tabIndex=108 class="box" style="left: 395px; top: 811px; width: 347px; height: 22px;" id="_RaceFeatures5"></span>
+				<span tabIndex=109 class="box" style="left: 395px; top: 840px; width: 347px; height: 22px;" id="_RaceFeatures6"></span>
+				<span tabIndex=110 class="box" style="left: 395px; top: 868px; width: 347px; height: 22px;" id="_RaceFeatures7"></span>
+				<span tabIndex=111 class="box" style="left: 395px; top: 897px; width: 347px; height: 22px;" id="_RaceFeatures8"></span>
 
-			<span tabIndex=103 class="box" style="left: 478px; top: 677px; width: 264px; height: 16px;" id="_RaceAbilityScoreMods"></span>
-			<span tabIndex=104 class="box" style="left: 395px; top: 699px; width: 347px; height: 22px;" id="_RaceFeatures1"></span>
-			<span tabIndex=105 class="box" style="left: 395px; top: 726px; width: 347px; height: 22px;" id="_RaceFeatures2"></span>
-			<span tabIndex=106 class="box" style="left: 395px; top: 756px; width: 347px; height: 22px;" id="_RaceFeatures3"></span>
-			<span tabIndex=107 class="box" style="left: 395px; top: 785px; width: 347px; height: 22px;" id="_RaceFeatures4"></span>
-			<span tabIndex=108 class="box" style="left: 395px; top: 811px; width: 347px; height: 22px;" id="_RaceFeatures5"></span>
-			<span tabIndex=109 class="box" style="left: 395px; top: 840px; width: 347px; height: 22px;" id="_RaceFeatures6"></span>
-			<span tabIndex=110 class="box" style="left: 395px; top: 868px; width: 347px; height: 22px;" id="_RaceFeatures7"></span>
-			<span tabIndex=111 class="box" style="left: 395px; top: 897px; width: 347px; height: 22px;" id="_RaceFeatures8"></span>
+				<span tabIndex=112 class="box" style="left: 797px; top: 430px; width: 302px; height: 21px;" id="_Attack1Ability"></span>
+				<span tabIndex=113 class="center box" style="left: 774px; top: 471px; width:  43px; height: 20px;" id="_Attack1AttBonus"></span>
+				<span tabIndex=114 class="center box" style="left: 862px; top: 471px; width:  30px; height: 20px;" id="_Attack1HalfLevel"></span>
+				<span tabIndex=115 class="center box" style="left: 895px; top: 471px; width:  30px; height: 20px;" id="_Attack1Abil"></span>
+				<span tabIndex=116 class="center box" style="left: 930px; top: 471px; width:  30px; height: 20px;" id="_Attack1Class"></span>
+				<span tabIndex=117 class="center box" style="left: 964px; top: 471px; width:  30px; height: 20px;" id="_Attack1Prof"></span>
+				<span tabIndex=118 class="center box" style="left: 998px; top: 471px; width:  30px; height: 20px;" id="_Attack1Feat"></span>
+				<span tabIndex=119 class="center box" style="left: 1033px; top: 471px; width:  30px; height: 20px;" id="_Attack1Enh"></span>
+				<span tabIndex=120 class="center box" style="left: 1068px; top: 471px; width:  30px; height: 20px;" id="_Attack1Misc"></span>
 
-			<span tabIndex=112 class="box" style="left: 797px; top: 430px; width: 302px; height: 21px;" id="_Attack1Ability"></span>
-			<span tabIndex=113 class="center box" style="left: 774px; top: 471px; width:  43px; height: 20px;" id="_Attack1AttBonus"></span>
-			<span tabIndex=114 class="center box" style="left: 862px; top: 471px; width:  30px; height: 20px;" id="_Attack1HalfLevel"></span>
-			<span tabIndex=115 class="center box" style="left: 895px; top: 471px; width:  30px; height: 20px;" id="_Attack1Abil"></span>
-			<span tabIndex=116 class="center box" style="left: 930px; top: 471px; width:  30px; height: 20px;" id="_Attack1Class"></span>
-			<span tabIndex=117 class="center box" style="left: 964px; top: 471px; width:  30px; height: 20px;" id="_Attack1Prof"></span>
-			<span tabIndex=118 class="center box" style="left: 998px; top: 471px; width:  30px; height: 20px;" id="_Attack1Feat"></span>
-			<span tabIndex=119 class="center box" style="left: 1033px; top: 471px; width:  30px; height: 20px;" id="_Attack1Enh"></span>
-			<span tabIndex=120 class="center box" style="left: 1068px; top: 471px; width:  30px; height: 20px;" id="_Attack1Misc"></span>
+				<span tabIndex=121 class="box" style="left: 797px; top: 503px; width: 302px; height: 21px;" id="_Attack2Ability"></span>
+				<span tabIndex=122 class="center box" style="left: 774px; top: 543px; width:  43px; height: 20px;" id="_Attack2AttBonus"></span>
+				<span tabIndex=123 class="center box" style="left: 862px; top: 543px; width:  30px; height: 20px;" id="_Attack2HalfLevel"></span>
+				<span tabIndex=124 class="center box" style="left: 895px; top: 543px; width:  30px; height: 20px;" id="_Attack2Abil"></span>
+				<span tabIndex=125 class="center box" style="left: 930px; top: 543px; width:  30px; height: 20px;" id="_Attack2Class"></span>
+				<span tabIndex=126 class="center box" style="left: 964px; top: 543px; width:  30px; height: 20px;" id="_Attack2Prof"></span>
+				<span tabIndex=127 class="center box" style="left: 998px; top: 543px; width:  30px; height: 20px;" id="_Attack2Feat"></span>
+				<span tabIndex=128 class="center box" style="left: 1033px; top: 543px; width:  30px; height: 20px;" id="_Attack2Enh"></span>
+				<span tabIndex=129 class="center box" style="left: 1068px; top: 543px; width:  30px; height: 20px;" id="_Attack2Misc"></span>
 
-			<span tabIndex=121 class="box" style="left: 797px; top: 503px; width: 302px; height: 21px;" id="_Attack2Ability"></span>
-			<span tabIndex=122 class="center box" style="left: 774px; top: 543px; width:  43px; height: 20px;" id="_Attack2AttBonus"></span>
-			<span tabIndex=123 class="center box" style="left: 862px; top: 543px; width:  30px; height: 20px;" id="_Attack2HalfLevel"></span>
-			<span tabIndex=124 class="center box" style="left: 895px; top: 543px; width:  30px; height: 20px;" id="_Attack2Abil"></span>
-			<span tabIndex=125 class="center box" style="left: 930px; top: 543px; width:  30px; height: 20px;" id="_Attack2Class"></span>
-			<span tabIndex=126 class="center box" style="left: 964px; top: 543px; width:  30px; height: 20px;" id="_Attack2Prof"></span>
-			<span tabIndex=127 class="center box" style="left: 998px; top: 543px; width:  30px; height: 20px;" id="_Attack2Feat"></span>
-			<span tabIndex=128 class="center box" style="left: 1033px; top: 543px; width:  30px; height: 20px;" id="_Attack2Enh"></span>
-			<span tabIndex=129 class="center box" style="left: 1068px; top: 543px; width:  30px; height: 20px;" id="_Attack2Misc"></span>
+				<span tabIndex=130 class="box" style="left: 797px; top: 607px; width: 302px; height: 21px;" id="_Damage1Ability"></span>
+				<span tabIndex=131 class="center box" style="left: 757px; top: 648px; width:  66px; height: 20px;" id="_Damage1Damage"></span>
+				<span tabIndex=132 class="center box" style="left: 928px; top: 648px; width:  30px; height: 20px;" id="_Damage1Abil"></span>
+				<span tabIndex=133 class="center box" style="left: 963px; top: 648px; width:  30px; height: 20px;" id="_Damage1Feat"></span>
+				<span tabIndex=134 class="center box" style="left: 998px; top: 648px; width:  30px; height: 20px;" id="_Damage1Enh"></span>
+				<span tabIndex=135 class="center box" style="left: 1032px; top: 648px; width:  30px; height: 20px;" id="_Damage1Misc1"></span>
+				<span tabIndex=136 class="center box" style="left: 1065px; top: 648px; width:  30px; height: 20px;" id="_Damage1Misc2"></span>
 
-			<span tabIndex=130 class="box" style="left: 797px; top: 607px; width: 302px; height: 21px;" id="_Damage1Ability"></span>
-			<span tabIndex=131 class="center box" style="left: 757px; top: 648px; width:  66px; height: 20px;" id="_Damage1Damage"></span>
-			<span tabIndex=132 class="center box" style="left: 928px; top: 648px; width:  30px; height: 20px;" id="_Damage1Abil"></span>
-			<span tabIndex=133 class="center box" style="left: 963px; top: 648px; width:  30px; height: 20px;" id="_Damage1Feat"></span>
-			<span tabIndex=134 class="center box" style="left: 998px; top: 648px; width:  30px; height: 20px;" id="_Damage1Enh"></span>
-			<span tabIndex=135 class="center box" style="left: 1032px; top: 648px; width:  30px; height: 20px;" id="_Damage1Misc1"></span>
-			<span tabIndex=136 class="center box" style="left: 1065px; top: 648px; width:  30px; height: 20px;" id="_Damage1Misc2"></span>
+				<span tabIndex=137 class="box" style="left: 797px; top: 679px; width: 302px; height: 21px;" id="_Damage2Ability"></span>
+				<span tabIndex=138 class="center box" style="left: 757px; top: 720px; width:  66px; height: 20px;" id="_Damage2Damage"></span>
+				<span tabIndex=139 class="center box" style="left: 928px; top: 720px; width:  30px; height: 20px;" id="_Damage2Abil"></span>
+				<span tabIndex=140 class="center box" style="left: 963px; top: 720px; width:  30px; height: 20px;" id="_Damage2Feat"></span>
+				<span tabIndex=141 class="center box" style="left: 998px; top: 720px; width:  30px; height: 20px;" id="_Damage2Enh"></span>
+				<span tabIndex=142 class="center box" style="left: 1032px; top: 720px; width:  30px; height: 20px;" id="_Damage2Misc1"></span>
+				<span tabIndex=143 class="center box" style="left: 1065px; top: 720px; width:  30px; height: 20px;" id="_Damage2Misc2"></span>
 
-			<span tabIndex=137 class="box" style="left: 797px; top: 679px; width: 302px; height: 21px;" id="_Damage2Ability"></span>
-			<span tabIndex=138 class="center box" style="left: 757px; top: 720px; width:  66px; height: 20px;" id="_Damage2Damage"></span>
-			<span tabIndex=139 class="center box" style="left: 928px; top: 720px; width:  30px; height: 20px;" id="_Damage2Abil"></span>
-			<span tabIndex=140 class="center box" style="left: 963px; top: 720px; width:  30px; height: 20px;" id="_Damage2Feat"></span>
-			<span tabIndex=141 class="center box" style="left: 998px; top: 720px; width:  30px; height: 20px;" id="_Damage2Enh"></span>
-			<span tabIndex=142 class="center box" style="left: 1032px; top: 720px; width:  30px; height: 20px;" id="_Damage2Misc1"></span>
-			<span tabIndex=143 class="center box" style="left: 1065px; top: 720px; width:  30px; height: 20px;" id="_Damage2Misc2"></span>
+				<span tabIndex=144 class="center box" style="left: 758px; top: 797px; width: 40px; height: 25px;" id="_BasicAttack1Attack"></span>
+				<span tabIndex=145 class="center box" style="left: 758px; top: 832px; width: 40px; height: 25px;" id="_BasicAttack2Attack"></span>
+				<span tabIndex=146 class="center box" style="left: 758px; top: 867px; width: 40px; height: 25px;" id="_BasicAttack3Attack"></span>
+				<span tabIndex=147 class="center box" style="left: 759px; top: 900px; width: 40px; height: 25px;" id="_BasicAttack4Attack"></span>
 
-			<span tabIndex=144 class="center box" style="left: 758px; top: 797px; width: 40px; height: 25px;" id="_BasicAttack1Attack"></span>
-			<span tabIndex=145 class="center box" style="left: 758px; top: 832px; width: 40px; height: 25px;" id="_BasicAttack2Attack"></span>
-			<span tabIndex=146 class="center box" style="left: 758px; top: 867px; width: 40px; height: 25px;" id="_BasicAttack3Attack"></span>
-			<span tabIndex=147 class="center box" style="left: 759px; top: 900px; width: 40px; height: 25px;" id="_BasicAttack4Attack"></span>
+				<span tabIndex=148 class="center box" style="left: 827px; top: 797px; width: 40px; height: 25px;" id="_BasicAttack1Defense"></span>
+				<span tabIndex=149 class="center box" style="left: 827px; top: 832px; width: 40px; height: 25px;" id="_BasicAttack2Defense"></span>
+				<span tabIndex=150 class="center box" style="left: 827px; top: 867px; width: 40px; height: 25px;" id="_BasicAttack3Defense"></span>
+				<span tabIndex=151 class="center box" style="left: 827px; top: 900px; width: 40px; height: 25px;" id="_BasicAttack4Defense"></span>
 
-			<span tabIndex=148 class="center box" style="left: 827px; top: 797px; width: 40px; height: 25px;" id="_BasicAttack1Defense"></span>
-			<span tabIndex=149 class="center box" style="left: 827px; top: 832px; width: 40px; height: 25px;" id="_BasicAttack2Defense"></span>
-			<span tabIndex=150 class="center box" style="left: 827px; top: 867px; width: 40px; height: 25px;" id="_BasicAttack3Defense"></span>
-			<span tabIndex=151 class="center box" style="left: 827px; top: 900px; width: 40px; height: 25px;" id="_BasicAttack4Defense"></span>
+				<span tabIndex=152 class="box" style="left: 879px; top: 795px; width: 138px; height: 25px;" id="_BasicAttack1WeaponOrPower"></span>
+				<span tabIndex=153 class="box" style="left: 879px; top: 830px; width: 138px; height: 25px;" id="_BasicAttack2WeaponOrPower"></span>
+				<span tabIndex=154 class="box" style="left: 879px; top: 865px; width: 138px; height: 25px;" id="_BasicAttack3WeaponOrPower"></span>
+				<span tabIndex=155 class="box" style="left: 879px; top: 898px; width: 138px; height: 25px;" id="_BasicAttack4WeaponOrPower"></span>
+				<span tabIndex=156 class="box" style="left: 1029px; top: 795px; width: 72px; height: 25px;" id="_BasicAttack1Damage"></span>
+				<span tabIndex=157 class="box" style="left: 1029px; top: 830px; width: 72px; height: 25px;" id="_BasicAttack2Damage"></span>
+				<span tabIndex=158 class="box" style="left: 1029px; top: 865px; width: 72px; height: 25px;" id="_BasicAttack3Damage"></span>
+				<span tabIndex=159 class="box" style="left: 1029px; top: 898px; width: 72px; height: 25px;" id="_BasicAttack4Damage"></span>
 
-			<span tabIndex=152 class="box" style="left: 879px; top: 795px; width: 138px; height: 25px;" id="_BasicAttack1WeaponOrPower"></span>
-			<span tabIndex=153 class="box" style="left: 879px; top: 830px; width: 138px; height: 25px;" id="_BasicAttack2WeaponOrPower"></span>
-			<span tabIndex=154 class="box" style="left: 879px; top: 865px; width: 138px; height: 25px;" id="_BasicAttack3WeaponOrPower"></span>
-			<span tabIndex=155 class="box" style="left: 879px; top: 898px; width: 138px; height: 25px;" id="_BasicAttack4WeaponOrPower"></span>
-			<span tabIndex=156 class="box" style="left: 1029px; top: 795px; width: 72px; height: 25px;" id="_BasicAttack1Damage"></span>
-			<span tabIndex=157 class="box" style="left: 1029px; top: 830px; width: 72px; height: 25px;" id="_BasicAttack2Damage"></span>
-			<span tabIndex=158 class="box" style="left: 1029px; top: 865px; width: 72px; height: 25px;" id="_BasicAttack3Damage"></span>
-			<span tabIndex=159 class="box" style="left: 1029px; top: 898px; width: 72px; height: 25px;" id="_BasicAttack4Damage"></span>
+				<span tabIndex=160 class="center box" style="left: 26px; top: 987px; width: 35px; height: 19px;" id="_Acrobatics"></span>
+				<span tabIndex=161 class="center box" style="left: 26px; top: 1015px; width: 35px; height: 19px;" id="_Arcana"></span>
+				<span tabIndex=162 class="center box" style="left: 26px; top: 1043px; width: 35px; height: 19px;" id="_Athletics"></span>
+				<span tabIndex=163 class="center box" style="left: 26px; top: 1071px; width: 35px; height: 19px;" id="_Bluff"></span>
+				<span tabIndex=164 class="center box" style="left: 26px; top: 1099px; width: 35px; height: 19px;" id="_Diplomacy"></span>
+				<span tabIndex=165 class="center box" style="left: 26px; top: 1126px; width: 35px; height: 19px;" id="_Dungeoneering"></span>
+				<span tabIndex=166 class="center box" style="left: 26px; top: 1155px; width: 35px; height: 19px;" id="_Endurance"></span>
+				<span tabIndex=167 class="center box" style="left: 26px; top: 1182px; width: 35px; height: 19px;" id="_Heal"></span>
+				<span tabIndex=168 class="center box" style="left: 26px; top: 1211px; width: 35px; height: 19px;" id="_History"></span>
+				<span tabIndex=169 class="center box" style="left: 26px; top: 1239px; width: 35px; height: 19px;" id="_Insight"></span>
+				<span tabIndex=170 class="center box" style="left: 26px; top: 1267px; width: 35px; height: 19px;" id="_Intimidate"></span>
+				<span tabIndex=171 class="center box" style="left: 26px; top: 1295px; width: 35px; height: 19px;" id="_Nature"></span>
+				<span tabIndex=172 class="center box" style="left: 26px; top: 1322px; width: 35px; height: 19px;" id="_Perception"></span>
+				<span tabIndex=173 class="center box" style="left: 26px; top: 1350px; width: 35px; height: 19px;" id="_Religion"></span>
+				<span tabIndex=174 class="center box" style="left: 26px; top: 1378px; width: 35px; height: 19px;" id="_Stealth"></span>
+				<span tabIndex=175 class="center box" style="left: 26px; top: 1406px; width: 35px; height: 19px;" id="_Streetwise"></span>
+				<span tabIndex=176 class="center box" style="left: 26px; top: 1434px; width: 35px; height: 19px;" id="_Thievery"></span>
 
-			<span tabIndex=160 class="center box" style="left: 26px; top: 987px; width: 35px; height: 19px;" id="_Acrobatics"></span>
-			<span tabIndex=161 class="center box" style="left: 26px; top: 1015px; width: 35px; height: 19px;" id="_Arcana"></span>
-			<span tabIndex=162 class="center box" style="left: 26px; top: 1043px; width: 35px; height: 19px;" id="_Athletics"></span>
-			<span tabIndex=163 class="center box" style="left: 26px; top: 1071px; width: 35px; height: 19px;" id="_Bluff"></span>
-			<span tabIndex=164 class="center box" style="left: 26px; top: 1099px; width: 35px; height: 19px;" id="_Diplomacy"></span>
-			<span tabIndex=165 class="center box" style="left: 26px; top: 1126px; width: 35px; height: 19px;" id="_Dungeoneering"></span>
-			<span tabIndex=166 class="center box" style="left: 26px; top: 1155px; width: 35px; height: 19px;" id="_Endurance"></span>
-			<span tabIndex=167 class="center box" style="left: 26px; top: 1182px; width: 35px; height: 19px;" id="_Heal"></span>
-			<span tabIndex=168 class="center box" style="left: 26px; top: 1211px; width: 35px; height: 19px;" id="_History"></span>
-			<span tabIndex=169 class="center box" style="left: 26px; top: 1239px; width: 35px; height: 19px;" id="_Insight"></span>
-			<span tabIndex=170 class="center box" style="left: 26px; top: 1267px; width: 35px; height: 19px;" id="_Intimidate"></span>
-			<span tabIndex=171 class="center box" style="left: 26px; top: 1295px; width: 35px; height: 19px;" id="_Nature"></span>
-			<span tabIndex=172 class="center box" style="left: 26px; top: 1322px; width: 35px; height: 19px;" id="_Perception"></span>
-			<span tabIndex=173 class="center box" style="left: 26px; top: 1350px; width: 35px; height: 19px;" id="_Religion"></span>
-			<span tabIndex=174 class="center box" style="left: 26px; top: 1378px; width: 35px; height: 19px;" id="_Stealth"></span>
-			<span tabIndex=175 class="center box" style="left: 26px; top: 1406px; width: 35px; height: 19px;" id="_Streetwise"></span>
-			<span tabIndex=176 class="center box" style="left: 26px; top: 1434px; width: 35px; height: 19px;" id="_Thievery"></span>
+				<span tabIndex=177 class="center box" style="left: 231px; top: 988px; width: 21px; height: 17px;" id="_AcrobaticsAbilModPlusHalfLevel"></span>
+				<span tabIndex=178 class="center box" style="left: 231px; top: 1016px; width: 21px; height: 17px;" id="_ArcanaAbilModPlusHalfLevel"></span>
+				<span tabIndex=179 class="center box" style="left: 231px; top: 1044px; width: 21px; height: 17px;" id="_AthleticsAbilModPlusHalfLevel"></span>
+				<span tabIndex=180 class="center box" style="left: 231px; top: 1072px; width: 21px; height: 17px;" id="_BluffAbilModPlusHalfLevel"></span>
+				<span tabIndex=181 class="center box" style="left: 231px; top: 1100px; width: 21px; height: 17px;" id="_DiplomacyAbilModPlusHalfLevel"></span>
+				<span tabIndex=182 class="center box" style="left: 231px; top: 1127px; width: 21px; height: 17px;" id="_DungeoneeringAbilModPlusHalfLevel"></span>
+				<span tabIndex=183 class="center box" style="left: 231px; top: 1156px; width: 21px; height: 17px;" id="_EnduranceAbilModPlusHalfLevel"></span>
+				<span tabIndex=184 class="center box" style="left: 231px; top: 1183px; width: 21px; height: 17px;" id="_HealAbilModPlusHalfLevel"></span>
+				<span tabIndex=185 class="center box" style="left: 231px; top: 1212px; width: 21px; height: 17px;" id="_HistoryAbilModPlusHalfLevel"></span>
+				<span tabIndex=186 class="center box" style="left: 231px; top: 1240px; width: 21px; height: 17px;" id="_InsightAbilModPlusHalfLevel"></span>
+				<span tabIndex=187 class="center box" style="left: 231px; top: 1268px; width: 21px; height: 17px;" id="_IntimidateAbilModPlusHalfLevel"></span>
+				<span tabIndex=188 class="center box" style="left: 231px; top: 1296px; width: 21px; height: 17px;" id="_NatureAbilModPlusHalfLevel"></span>
+				<span tabIndex=189 class="center box" style="left: 231px; top: 1323px; width: 21px; height: 17px;" id="_PerceptionAbilModPlusHalfLevel"></span>
+				<span tabIndex=190 class="center box" style="left: 231px; top: 1351px; width: 21px; height: 17px;" id="_ReligionAbilModPlusHalfLevel"></span>
+				<span tabIndex=191 class="center box" style="left: 231px; top: 1379px; width: 21px; height: 17px;" id="_StealthAbilModPlusHalfLevel"></span>
+				<span tabIndex=192 class="center box" style="left: 231px; top: 1407px; width: 21px; height: 17px;" id="_StreetwiseAbilModPlusHalfLevel"></span>
+				<span tabIndex=193 class="center box" style="left: 231px; top: 1435px; width: 21px; height: 17px;" id="_ThieveryAbilModPlusHalfLevel"></span>
 
-			<span tabIndex=177 class="center box" style="left: 231px; top: 988px; width: 21px; height: 17px;" id="_AcrobaticsAbilModPlusHalfLevel"></span>
-			<span tabIndex=178 class="center box" style="left: 231px; top: 1016px; width: 21px; height: 17px;" id="_ArcanaAbilModPlusHalfLevel"></span>
-			<span tabIndex=179 class="center box" style="left: 231px; top: 1044px; width: 21px; height: 17px;" id="_AthleticsAbilModPlusHalfLevel"></span>
-			<span tabIndex=180 class="center box" style="left: 231px; top: 1072px; width: 21px; height: 17px;" id="_BluffAbilModPlusHalfLevel"></span>
-			<span tabIndex=181 class="center box" style="left: 231px; top: 1100px; width: 21px; height: 17px;" id="_DiplomacyAbilModPlusHalfLevel"></span>
-			<span tabIndex=182 class="center box" style="left: 231px; top: 1127px; width: 21px; height: 17px;" id="_DungeoneeringAbilModPlusHalfLevel"></span>
-			<span tabIndex=183 class="center box" style="left: 231px; top: 1156px; width: 21px; height: 17px;" id="_EnduranceAbilModPlusHalfLevel"></span>
-			<span tabIndex=184 class="center box" style="left: 231px; top: 1183px; width: 21px; height: 17px;" id="_HealAbilModPlusHalfLevel"></span>
-			<span tabIndex=185 class="center box" style="left: 231px; top: 1212px; width: 21px; height: 17px;" id="_HistoryAbilModPlusHalfLevel"></span>
-			<span tabIndex=186 class="center box" style="left: 231px; top: 1240px; width: 21px; height: 17px;" id="_InsightAbilModPlusHalfLevel"></span>
-			<span tabIndex=187 class="center box" style="left: 231px; top: 1268px; width: 21px; height: 17px;" id="_IntimidateAbilModPlusHalfLevel"></span>
-			<span tabIndex=188 class="center box" style="left: 231px; top: 1296px; width: 21px; height: 17px;" id="_NatureAbilModPlusHalfLevel"></span>
-			<span tabIndex=189 class="center box" style="left: 231px; top: 1323px; width: 21px; height: 17px;" id="_PerceptionAbilModPlusHalfLevel"></span>
-			<span tabIndex=190 class="center box" style="left: 231px; top: 1351px; width: 21px; height: 17px;" id="_ReligionAbilModPlusHalfLevel"></span>
-			<span tabIndex=191 class="center box" style="left: 231px; top: 1379px; width: 21px; height: 17px;" id="_StealthAbilModPlusHalfLevel"></span>
-			<span tabIndex=192 class="center box" style="left: 231px; top: 1407px; width: 21px; height: 17px;" id="_StreetwiseAbilModPlusHalfLevel"></span>
-			<span tabIndex=193 class="center box" style="left: 231px; top: 1435px; width: 21px; height: 17px;" id="_ThieveryAbilModPlusHalfLevel"></span>
+				<span tabIndex=194 class="center box" style="left: 277px; top: 988px; width: 21px; height: 17px;" id="_AcrobaticsTrained"></span>
+				<span tabIndex=195 class="center box" style="left: 277px; top: 1016px; width: 21px; height: 17px;" id="_ArcanaTrained"></span>
+				<span tabIndex=196 class="center box" style="left: 277px; top: 1044px; width: 21px; height: 17px;" id="_AthleticsTrained"></span>
+				<span tabIndex=197 class="center box" style="left: 277px; top: 1072px; width: 21px; height: 17px;" id="_BluffTrained"></span>
+				<span tabIndex=198 class="center box" style="left: 277px; top: 1100px; width: 21px; height: 17px;" id="_DiplomacyTrained"></span>
+				<span tabIndex=199 class="center box" style="left: 277px; top: 1127px; width: 21px; height: 17px;" id="_DungeoneeringTrained"></span>
+				<span tabIndex=200 class="center box" style="left: 277px; top: 1156px; width: 21px; height: 17px;" id="_EnduranceTrained"></span>
+				<span tabIndex=201 class="center box" style="left: 277px; top: 1183px; width: 21px; height: 17px;" id="_HealTrained"></span>
+				<span tabIndex=202 class="center box" style="left: 277px; top: 1212px; width: 21px; height: 17px;" id="_HistoryTrained"></span>
+				<span tabIndex=203 class="center box" style="left: 277px; top: 1240px; width: 21px; height: 17px;" id="_InsightTrained"></span>
+				<span tabIndex=204 class="center box" style="left: 277px; top: 1268px; width: 21px; height: 17px;" id="_IntimidateTrained"></span>
+				<span tabIndex=205 class="center box" style="left: 277px; top: 1296px; width: 21px; height: 17px;" id="_NatureTrained"></span>
+				<span tabIndex=206 class="center box" style="left: 277px; top: 1323px; width: 21px; height: 17px;" id="_PerceptionTrained"></span>
+				<span tabIndex=207 class="center box" style="left: 277px; top: 1351px; width: 21px; height: 17px;" id="_ReligionTrained"></span>
+				<span tabIndex=208 class="center box" style="left: 277px; top: 1379px; width: 21px; height: 17px;" id="_StealthTrained"></span>
+				<span tabIndex=209 class="center box" style="left: 277px; top: 1407px; width: 21px; height: 17px;" id="_StreetwiseTrained"></span>
+				<span tabIndex=210 class="center box" style="left: 277px; top: 1435px; width: 21px; height: 17px;" id="_ThieveryTrained"></span>
 
-			<span tabIndex=194 class="center box" style="left: 277px; top: 988px; width: 21px; height: 17px;" id="_AcrobaticsTrained"></span>
-			<span tabIndex=195 class="center box" style="left: 277px; top: 1016px; width: 21px; height: 17px;" id="_ArcanaTrained"></span>
-			<span tabIndex=196 class="center box" style="left: 277px; top: 1044px; width: 21px; height: 17px;" id="_AthleticsTrained"></span>
-			<span tabIndex=197 class="center box" style="left: 277px; top: 1072px; width: 21px; height: 17px;" id="_BluffTrained"></span>
-			<span tabIndex=198 class="center box" style="left: 277px; top: 1100px; width: 21px; height: 17px;" id="_DiplomacyTrained"></span>
-			<span tabIndex=199 class="center box" style="left: 277px; top: 1127px; width: 21px; height: 17px;" id="_DungeoneeringTrained"></span>
-			<span tabIndex=200 class="center box" style="left: 277px; top: 1156px; width: 21px; height: 17px;" id="_EnduranceTrained"></span>
-			<span tabIndex=201 class="center box" style="left: 277px; top: 1183px; width: 21px; height: 17px;" id="_HealTrained"></span>
-			<span tabIndex=202 class="center box" style="left: 277px; top: 1212px; width: 21px; height: 17px;" id="_HistoryTrained"></span>
-			<span tabIndex=203 class="center box" style="left: 277px; top: 1240px; width: 21px; height: 17px;" id="_InsightTrained"></span>
-			<span tabIndex=204 class="center box" style="left: 277px; top: 1268px; width: 21px; height: 17px;" id="_IntimidateTrained"></span>
-			<span tabIndex=205 class="center box" style="left: 277px; top: 1296px; width: 21px; height: 17px;" id="_NatureTrained"></span>
-			<span tabIndex=206 class="center box" style="left: 277px; top: 1323px; width: 21px; height: 17px;" id="_PerceptionTrained"></span>
-			<span tabIndex=207 class="center box" style="left: 277px; top: 1351px; width: 21px; height: 17px;" id="_ReligionTrained"></span>
-			<span tabIndex=208 class="center box" style="left: 277px; top: 1379px; width: 21px; height: 17px;" id="_StealthTrained"></span>
-			<span tabIndex=209 class="center box" style="left: 277px; top: 1407px; width: 21px; height: 17px;" id="_StreetwiseTrained"></span>
-			<span tabIndex=210 class="center box" style="left: 277px; top: 1435px; width: 21px; height: 17px;" id="_ThieveryTrained"></span>
+				<span tabIndex=211 class="center box" style="left: 307px; top: 985px; width: 27px; height: 18px;" id="_AcrobaticsArmorPenalty"></span>
+				<span tabIndex=212 class="center box" style="left: 307px; top: 1044px; width: 27px; height: 18px;" id="_AthleticsArmorPenalty"></span>
+				<span tabIndex=213 class="center box" style="left: 307px; top: 1156px; width: 27px; height: 18px;" id="_EnduranceArmorPenalty"></span>
+				<span tabIndex=214 class="center box" style="left: 307px; top: 1378px; width: 27px; height: 18px;" id="_StealthArmorPenalty"></span>
+				<span tabIndex=215 class="center box" style="left: 307px; top: 1436px; width: 27px; height: 18px;" id="_ThieveryArmorPenalty"></span>
 
-			<span tabIndex=211 class="center box" style="left: 307px; top: 985px; width: 27px; height: 18px;" id="_AcrobaticsArmorPenalty"></span>
-			<span tabIndex=212 class="center box" style="left: 307px; top: 1044px; width: 27px; height: 18px;" id="_AthleticsArmorPenalty"></span>
-			<span tabIndex=213 class="center box" style="left: 307px; top: 1156px; width: 27px; height: 18px;" id="_EnduranceArmorPenalty"></span>
-			<span tabIndex=214 class="center box" style="left: 307px; top: 1378px; width: 27px; height: 18px;" id="_StealthArmorPenalty"></span>
-			<span tabIndex=215 class="center box" style="left: 307px; top: 1436px; width: 27px; height: 18px;" id="_ThieveryArmorPenalty"></span>
+				<span tabIndex=216 class="center box" style="left: 346px; top: 985px; width: 27px; height: 18px;" id="_AcrobaticsMisc"></span>
+				<span tabIndex=217 class="center box" style="left: 346px; top: 1016px; width: 27px; height: 18px;" id="_ArcanaMisc"></span>
+				<span tabIndex=218 class="center box" style="left: 346px; top: 1044px; width: 27px; height: 18px;" id="_AthleticsMisc"></span>
+				<span tabIndex=219 class="center box" style="left: 346px; top: 1072px; width: 27px; height: 18px;" id="_BluffMisc"></span>
+				<span tabIndex=220 class="center box" style="left: 346px; top: 1099px; width: 27px; height: 18px;" id="_DiplomacyMisc"></span>
+				<span tabIndex=221 class="center box" style="left: 346px; top: 1129px; width: 27px; height: 18px;" id="_DungeoneeringMisc"></span>
+				<span tabIndex=222 class="center box" style="left: 346px; top: 1156px; width: 27px; height: 18px;" id="_EnduranceMisc"></span>
+				<span tabIndex=223 class="center box" style="left: 346px; top: 1182px; width: 27px; height: 18px;" id="_HealMisc"></span>
+				<span tabIndex=224 class="center box" style="left: 346px; top: 1213px; width: 27px; height: 18px;" id="_HistoryMisc"></span>
+				<span tabIndex=225 class="center box" style="left: 346px; top: 1239px; width: 27px; height: 18px;" id="_InsightMisc"></span>
+				<span tabIndex=226 class="center box" style="left: 346px; top: 1270px; width: 27px; height: 18px;" id="_IntimidateMisc"></span>
+				<span tabIndex=227 class="center box" style="left: 346px; top: 1295px; width: 27px; height: 18px;" id="_NatureMisc"></span>
+				<span tabIndex=228 class="center box" style="left: 346px; top: 1324px; width: 27px; height: 18px;" id="_PerceptionMisc"></span>
+				<span tabIndex=229 class="center box" style="left: 346px; top: 1352px; width: 27px; height: 18px;" id="_ReligionMisc"></span>
+				<span tabIndex=230 class="center box" style="left: 346px; top: 1378px; width: 27px; height: 18px;" id="_StealthMisc"></span>
+				<span tabIndex=231 class="center box" style="left: 346px; top: 1408px; width: 27px; height: 18px;" id="_StreetwiseMisc"></span>
+				<span tabIndex=232 class="center box" style="left: 346px; top: 1436px; width: 27px; height: 18px;" id="_ThieveryMisc"></span>
 
-			<span tabIndex=216 class="center box" style="left: 346px; top: 985px; width: 27px; height: 18px;" id="_AcrobaticsMisc"></span>
-			<span tabIndex=217 class="center box" style="left: 346px; top: 1016px; width: 27px; height: 18px;" id="_ArcanaMisc"></span>
-			<span tabIndex=218 class="center box" style="left: 346px; top: 1044px; width: 27px; height: 18px;" id="_AthleticsMisc"></span>
-			<span tabIndex=219 class="center box" style="left: 346px; top: 1072px; width: 27px; height: 18px;" id="_BluffMisc"></span>
-			<span tabIndex=220 class="center box" style="left: 346px; top: 1099px; width: 27px; height: 18px;" id="_DiplomacyMisc"></span>
-			<span tabIndex=221 class="center box" style="left: 346px; top: 1129px; width: 27px; height: 18px;" id="_DungeoneeringMisc"></span>
-			<span tabIndex=222 class="center box" style="left: 346px; top: 1156px; width: 27px; height: 18px;" id="_EnduranceMisc"></span>
-			<span tabIndex=223 class="center box" style="left: 346px; top: 1182px; width: 27px; height: 18px;" id="_HealMisc"></span>
-			<span tabIndex=224 class="center box" style="left: 346px; top: 1213px; width: 27px; height: 18px;" id="_HistoryMisc"></span>
-			<span tabIndex=225 class="center box" style="left: 346px; top: 1239px; width: 27px; height: 18px;" id="_InsightMisc"></span>
-			<span tabIndex=226 class="center box" style="left: 346px; top: 1270px; width: 27px; height: 18px;" id="_IntimidateMisc"></span>
-			<span tabIndex=227 class="center box" style="left: 346px; top: 1295px; width: 27px; height: 18px;" id="_NatureMisc"></span>
-			<span tabIndex=228 class="center box" style="left: 346px; top: 1324px; width: 27px; height: 18px;" id="_PerceptionMisc"></span>
-			<span tabIndex=229 class="center box" style="left: 346px; top: 1352px; width: 27px; height: 18px;" id="_ReligionMisc"></span>
-			<span tabIndex=230 class="center box" style="left: 346px; top: 1378px; width: 27px; height: 18px;" id="_StealthMisc"></span>
-			<span tabIndex=231 class="center box" style="left: 346px; top: 1408px; width: 27px; height: 18px;" id="_StreetwiseMisc"></span>
-			<span tabIndex=232 class="center box" style="left: 346px; top: 1436px; width: 27px; height: 18px;" id="_ThieveryMisc"></span>
+				<span tabIndex=233 class="box" style="left: 395px; top: 946px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures1"></span>
+				<span tabIndex=234 class="box" style="left: 395px; top: 976px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures2"></span>
+				<span tabIndex=235 class="box" style="left: 395px; top: 1006px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures3"></span>
+				<span tabIndex=236 class="box" style="left: 395px; top: 1034px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures4"></span>
+				<span tabIndex=237 class="box" style="left: 395px; top: 1062px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures5"></span>
+				<span tabIndex=238 class="box" style="left: 395px; top: 1090px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures6"></span>
+				<span tabIndex=239 class="box" style="left: 395px; top: 1118px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures7"></span>
+				<span tabIndex=240 class="box" style="left: 395px; top: 1146px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures8"></span>
+				<span tabIndex=241 class="box" style="left: 395px; top: 1174px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures9"></span>
+				<span tabIndex=242 class="box" style="left: 395px; top: 1202px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures10"></span>
+				<span tabIndex=243 class="box" style="left: 395px; top: 1230px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures11"></span>
+				<span tabIndex=244 class="box" style="left: 395px; top: 1258px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures12"></span>
+				<span tabIndex=245 class="box" style="left: 395px; top: 1286px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures13"></span>
+				<span tabIndex=246 class="box" style="left: 395px; top: 1314px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures14"></span>
+				
+				<span tabIndex=247 class="box" style="left: 758px; top: 980px; width: 345px; height: 23px;" id="_Feats1"></span>
+				<span tabIndex=248 class="box" style="left: 758px; top: 1008px; width: 346px; height: 23px;" id="_Feats2"></span>
+				<span tabIndex=249 class="box" style="left: 758px; top: 1036px; width: 346px; height: 23px;" id="_Feats3"></span>
+				<span tabIndex=250 class="box" style="left: 758px; top: 1064px; width: 346px; height: 23px;" id="_Feats4"></span>
+				<span tabIndex=251 class="box" style="left: 758px; top: 1092px; width: 346px; height: 23px;" id="_Feats5"></span>
+				<span tabIndex=252 class="box" style="left: 758px; top: 1120px; width: 346px; height: 23px;" id="_Feats6"></span>
+				<span tabIndex=253 class="box" style="left: 758px; top: 1148px; width: 346px; height: 23px;" id="_Feats7"></span>
+				<span tabIndex=254 class="box" style="left: 758px; top: 1176px; width: 346px; height: 23px;" id="_Feats8"></span>
+				<span tabIndex=255 class="box" style="left: 758px; top: 1204px; width: 346px; height: 23px;" id="_Feats9"></span>
+				<span tabIndex=256 class="box" style="left: 758px; top: 1232px; width: 346px; height: 23px;" id="_Feats10"></span>
+				<span tabIndex=257 class="box" style="left: 758px; top: 1260px; width: 346px; height: 23px;" id="_Feats11"></span>
+				<span tabIndex=258 class="box" style="left: 758px; top: 1288px; width: 346px; height: 23px;" id="_Feats12"></span>
+				<span tabIndex=259 class="box" style="left: 758px; top: 1316px; width: 346px; height: 23px;" id="_Feats13"></span>
+				<span tabIndex=260 class="box" style="left: 758px; top: 1344px; width: 346px; height: 23px;" id="_Feats14"></span>
+				<span tabIndex=261 class="box" style="left: 758px; top: 1372px; width: 346px; height: 23px;" id="_Feats15"></span>
+				<span tabIndex=262 class="box" style="left: 758px; top: 1400px; width: 346px; height: 23px;" id="_Feats16"></span>
+				<span tabIndex=263 class="box" style="left: 758px; top: 1428px; width: 346px; height: 23px;" id="_Feats17"></span>
 
-			<span tabIndex=233 class="box" style="left: 395px; top: 946px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures1"></span>
-			<span tabIndex=234 class="box" style="left: 395px; top: 976px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures2"></span>
-			<span tabIndex=235 class="box" style="left: 395px; top: 1006px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures3"></span>
-			<span tabIndex=236 class="box" style="left: 395px; top: 1034px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures4"></span>
-			<span tabIndex=237 class="box" style="left: 395px; top: 1062px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures5"></span>
-			<span tabIndex=238 class="box" style="left: 395px; top: 1090px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures6"></span>
-			<span tabIndex=239 class="box" style="left: 395px; top: 1118px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures7"></span>
-			<span tabIndex=240 class="box" style="left: 395px; top: 1146px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures8"></span>
-			<span tabIndex=241 class="box" style="left: 395px; top: 1174px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures9"></span>
-			<span tabIndex=242 class="box" style="left: 395px; top: 1202px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures10"></span>
-			<span tabIndex=243 class="box" style="left: 395px; top: 1230px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures11"></span>
-			<span tabIndex=244 class="box" style="left: 395px; top: 1258px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures12"></span>
-			<span tabIndex=245 class="box" style="left: 395px; top: 1286px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures13"></span>
-			<span tabIndex=246 class="box" style="left: 395px; top: 1314px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures14"></span>
-			
-			<span tabIndex=247 class="box" style="left: 758px; top: 980px; width: 345px; height: 23px;" id="_Feats1"></span>
-			<span tabIndex=248 class="box" style="left: 758px; top: 1008px; width: 346px; height: 23px;" id="_Feats2"></span>
-			<span tabIndex=249 class="box" style="left: 758px; top: 1036px; width: 346px; height: 23px;" id="_Feats3"></span>
-			<span tabIndex=250 class="box" style="left: 758px; top: 1064px; width: 346px; height: 23px;" id="_Feats4"></span>
-			<span tabIndex=251 class="box" style="left: 758px; top: 1092px; width: 346px; height: 23px;" id="_Feats5"></span>
-			<span tabIndex=252 class="box" style="left: 758px; top: 1120px; width: 346px; height: 23px;" id="_Feats6"></span>
-			<span tabIndex=253 class="box" style="left: 758px; top: 1148px; width: 346px; height: 23px;" id="_Feats7"></span>
-			<span tabIndex=254 class="box" style="left: 758px; top: 1176px; width: 346px; height: 23px;" id="_Feats8"></span>
-			<span tabIndex=255 class="box" style="left: 758px; top: 1204px; width: 346px; height: 23px;" id="_Feats9"></span>
-			<span tabIndex=256 class="box" style="left: 758px; top: 1232px; width: 346px; height: 23px;" id="_Feats10"></span>
-			<span tabIndex=257 class="box" style="left: 758px; top: 1260px; width: 346px; height: 23px;" id="_Feats11"></span>
-			<span tabIndex=258 class="box" style="left: 758px; top: 1288px; width: 346px; height: 23px;" id="_Feats12"></span>
-			<span tabIndex=259 class="box" style="left: 758px; top: 1316px; width: 346px; height: 23px;" id="_Feats13"></span>
-			<span tabIndex=260 class="box" style="left: 758px; top: 1344px; width: 346px; height: 23px;" id="_Feats14"></span>
-			<span tabIndex=261 class="box" style="left: 758px; top: 1372px; width: 346px; height: 23px;" id="_Feats15"></span>
-			<span tabIndex=262 class="box" style="left: 758px; top: 1400px; width: 346px; height: 23px;" id="_Feats16"></span>
-			<span tabIndex=263 class="box" style="left: 758px; top: 1428px; width: 346px; height: 23px;" id="_Feats17"></span>
+				<span tabIndex=264 class="box" style="left: 395px; top: 1368px; width: 346px; height: 25px;" id="_LanguagesKnown1"></span>
+				<span tabIndex=265 class="box" style="left: 395px; top: 1399px; width: 346px; height: 23px;" id="_LanguagesKnown2"></span>
+				<span tabIndex=266 class="box" style="left: 395px; top: 1427px; width: 346px; height: 23px;" id="_LanguagesKnown3"></span>
+			</div>
+			<div class="page" id="Page2">
+				<img class="page-background" id="Page2Background" src="CharacterSheetPage2.png"/>
+				<span tabIndex=267 class="box" style="left: 43px; top: 90px; width: 349px; height: 24px;" id="_AtWillPowers1"></span>
+				<span tabIndex=268 class="box" style="left: 43px; top: 121px; width: 349px; height: 23px;" id="_AtWillPowers2"></span>
+				<span tabIndex=269 class="box" style="left: 43px; top: 150px; width: 349px; height: 22px;" id="_AtWillPowers3"></span>
+				<span tabIndex=270 class="box" style="left: 43px; top: 179px; width: 349px; height: 22px;" id="_AtWillPowers4"></span>
+				<span tabIndex=271 class="box" style="left: 43px; top: 209px; width: 349px; height: 21px;" id="_AtWillPowers5"></span>
+				<span tabIndex=272 class="box" style="left: 43px; top: 237px; width: 349px; height: 22px;" id="_AtWillPowers6"></span>
 
-			<span tabIndex=264 class="box" style="left: 395px; top: 1368px; width: 346px; height: 25px;" id="_LanguagesKnown1"></span>
-			<span tabIndex=265 class="box" style="left: 395px; top: 1399px; width: 346px; height: 23px;" id="_LanguagesKnown2"></span>
-			<span tabIndex=266 class="box" style="left: 395px; top: 1427px; width: 346px; height: 23px;" id="_LanguagesKnown3"></span>
+				<span tabIndex=273 class="box" style="left: 43px; top: 296px; width: 321px; height: 20px;" id="_EncounterPowers1"></span>
+				<span tabIndex=274 class="box" style="left: 43px; top: 324px; width: 321px; height: 21px;" id="_EncounterPowers2"></span>
+				<span tabIndex=275 class="box" style="left: 43px; top: 350px; width: 321px; height: 25px;" id="_EncounterPowers3"></span>
+				<span tabIndex=276 class="box" style="left: 43px; top: 382px; width: 321px; height: 21px;" id="_EncounterPowers4"></span>
+				<span tabIndex=277 class="box" style="left: 43px; top: 410px; width: 321px; height: 21px;" id="_EncounterPowers5"></span>
+				<span tabIndex=278 class="box" style="left: 43px; top: 438px; width: 321px; height: 22px;" id="_EncounterPowers6"></span>
+				<span tabIndex=279 class="box" style="left: 43px; top: 495px; width: 321px; height: 24px;" id="_DailyPowers1"></span>
+				<span tabIndex=280 class="box" style="left: 43px; top: 524px; width: 321px; height: 23px;" id="_DailyPowers2"></span>
+				<span tabIndex=281 class="box" style="left: 43px; top: 554px; width: 321px; height: 22px;" id="_DailyPowers3"></span>
+				<span tabIndex=282 class="box" style="left: 43px; top: 581px; width: 321px; height: 24px;" id="_DailyPowers4"></span>
+				<span tabIndex=283 class="box" style="left: 43px; top: 611px; width: 321px; height: 23px;" id="_DailyPowers5"></span>
+				<span tabIndex=284 class="box" style="left: 43px; top: 640px; width: 321px; height: 21px;" id="_DailyPowers6"></span>
+				<span tabIndex=285 class="box" style="left: 43px; top: 699px; width: 321px; height: 21px;" id="_UtilityPowers1"></span>
+				<span tabIndex=286 class="box" style="left: 43px; top: 726px; width: 321px; height: 23px;" id="_UtilityPowers2"></span>
+				<span tabIndex=287 class="box" style="left: 43px; top: 754px; width: 321px; height: 25px;" id="_UtilityPowers3"></span>
+				<span tabIndex=288 class="box" style="left: 43px; top: 784px; width: 321px; height: 23px;" id="_UtilityPowers4"></span>
+				<span tabIndex=289 class="box" style="left: 43px; top: 812px; width: 321px; height: 23px;" id="_UtilityPowers5"></span>
+				<span tabIndex=290 class="box" style="left: 43px; top: 841px; width: 321px; height: 22px;" id="_UtilityPowers6"></span>
+				<span tabIndex=291 class="box" style="left: 43px; top: 869px; width: 321px; height: 23px;" id="_UtilityPowers7"></span>
+				<span tabIndex=292 class="box" style="left: 43px; top: 898px; width: 321px; height: 22px;" id="_UtilityPowers8"></span>
 
-			<img class="page" id="Page2" src="CharacterSheetPage2.png"/>
+				<input type="checkbox" tabIndex=293 class="box" style="left: 367px; top: 302px;" id="_EncounterPowersCheck1"/>
+				<input type="checkbox" tabIndex=294 class="box" style="left: 367px; top: 330px;" id="_EncounterPowersCheck2"/>
+				<input type="checkbox" tabIndex=295 class="box" style="left: 367px; top: 359px;" id="_EncounterPowersCheck3"/>
+				<input type="checkbox" tabIndex=296 class="box" style="left: 367px; top: 388px;" id="_EncounterPowersCheck4"/>
+				<input type="checkbox" tabIndex=297 class="box" style="left: 367px; top: 417px;" id="_EncounterPowersCheck5"/>
+				<input type="checkbox" tabIndex=298 class="box" style="left: 367px; top: 446px;" id="_EncounterPowersCheck6"/>
+				<input type="checkbox" tabIndex=299 class="box" style="left: 367px; top: 504px;" id="_DailyPowersCheck1"/>
+				<input type="checkbox" tabIndex=300 class="box" style="left: 367px; top: 532px;" id="_DailyPowersCheck2"/>
+				<input type="checkbox" tabIndex=301 class="box" style="left: 367px; top: 561px;" id="_DailyPowersCheck3"/>
+				<input type="checkbox" tabIndex=302 class="box" style="left: 367px; top: 589px;" id="_DailyPowersCheck4"/>
+				<input type="checkbox" tabIndex=303 class="box" style="left: 367px; top: 618px;" id="_DailyPowersCheck5"/>
+				<input type="checkbox" tabIndex=304 class="box" style="left: 367px; top: 647px;" id="_DailyPowersCheck6"/>
+				<input type="checkbox" tabIndex=305 class="box" style="left: 367px; top: 705px;" id="_UtilityPowersCheck1"/>
+				<input type="checkbox" tabIndex=306 class="box" style="left: 367px; top: 734px;" id="_UtilityPowersCheck2"/>
+				<input type="checkbox" tabIndex=307 class="box" style="left: 367px; top: 762px;" id="_UtilityPowersCheck3"/>
+				<input type="checkbox" tabIndex=308 class="box" style="left: 367px; top: 792px;" id="_UtilityPowersCheck4"/>
+				<input type="checkbox" tabIndex=309 class="box" style="left: 367px; top: 819px;" id="_UtilityPowersCheck5"/>
+				<input type="checkbox" tabIndex=310 class="box" style="left: 367px; top: 849px;" id="_UtilityPowersCheck6"/>
+				<input type="checkbox" tabIndex=311 class="box" style="left: 367px; top: 877px;" id="_UtilityPowersCheck7"/>
+				<input type="checkbox" tabIndex=312 class="box" style="left: 367px; top: 906px;" id="_UtilityPowersCheck8"/>
 
-			<span tabIndex=267 class="box" style="left: 43px; top: 1647px; width: 349px; height: 24px;" id="_AtWillPowers1"></span>
-			<span tabIndex=268 class="box" style="left: 43px; top: 1678px; width: 349px; height: 23px;" id="_AtWillPowers2"></span>
-			<span tabIndex=269 class="box" style="left: 43px; top: 1707px; width: 349px; height: 22px;" id="_AtWillPowers3"></span>
-			<span tabIndex=270 class="box" style="left: 43px; top: 1736px; width: 349px; height: 22px;" id="_AtWillPowers4"></span>
-			<span tabIndex=271 class="box" style="left: 43px; top: 1766px; width: 349px; height: 21px;" id="_AtWillPowers5"></span>
-			<span tabIndex=272 class="box" style="left: 43px; top: 1794px; width: 349px; height: 22px;" id="_AtWillPowers6"></span>
+				<span tabIndex=313 class="box" style="left: 445px; top: 92px; width: 280px; height: 23px;" id="_MagicItemsWeapon1"></span>
+				<span tabIndex=314 class="box" style="left: 445px; top: 122px; width: 280px; height: 22px;" id="_MagicItemsWeapon2"></span>
+				<span tabIndex=315 class="box" style="left: 445px; top: 151px; width: 280px; height: 23px;" id="_MagicItemsWeapon3"></span>
+				<span tabIndex=316 class="box" style="left: 445px; top: 180px; width: 280px; height: 23px;" id="_MagicItemsWeapon4"></span>
+				<span tabIndex=317 class="box" style="left: 445px; top: 207px; width: 280px; height: 24px;" id="_MagicItemsArmor"></span>
+				<span tabIndex=318 class="box" style="left: 445px; top: 236px; width: 280px; height: 24px;" id="_MagicItemsArms"></span>
+				<span tabIndex=319 class="box" style="left: 445px; top: 264px; width: 280px; height: 25px;" id="_MagicItemsFeet"></span>
+				<span tabIndex=320 class="box" style="left: 445px; top: 294px; width: 280px; height: 21px;" id="_MagicItemsHands"></span>
+				<span tabIndex=321 class="box" style="left: 445px; top: 322px; width: 280px; height: 24px;" id="_MagicItemsHead"></span>
+				<span tabIndex=322 class="box" style="left: 445px; top: 351px; width: 280px; height: 24px;" id="_MagicItemsNeck"></span>
+				<span tabIndex=323 class="box" style="left: 445px; top: 380px; width: 280px; height: 22px;" id="_MagicItemsRing1"></span>
+				<span tabIndex=324 class="box" style="left: 445px; top: 409px; width: 280px; height: 23px;" id="_MagicItemsRing2"></span>
+				<span tabIndex=325 class="box" style="left: 445px; top: 437px; width: 280px; height: 24px;" id="_MagicItemsWaist"></span>
+				<span tabIndex=326 class="box" style="left: 404px; top: 466px; width: 321px; height: 23px;" id="_MagicItemsMisc1"></span>
+				<span tabIndex=327 class="box" style="left: 404px; top: 496px; width: 321px; height: 22px;" id="_MagicItemsMisc2"></span>
+				<span tabIndex=328 class="box" style="left: 404px; top: 524px; width: 321px; height: 23px;" id="_MagicItemsMisc3"></span>
+				<span tabIndex=329 class="box" style="left: 404px; top: 553px; width: 321px; height: 22px;" id="_MagicItemsMisc4"></span>
+				<span tabIndex=330 class="box" style="left: 404px; top: 581px; width: 321px; height: 24px;" id="_MagicItemsMisc5"></span>
+				<span tabIndex=331 class="box" style="left: 404px; top: 610px; width: 321px; height: 24px;" id="_MagicItemsMisc6"></span>
+				<span tabIndex=332 class="box" style="left: 404px; top: 640px; width: 321px; height: 23px;" id="_MagicItemsMisc7"></span>
+				<span tabIndex=333 class="box" style="left: 404px; top: 669px; width: 321px; height: 24px;" id="_MagicItemsMisc8"></span>
+				<span tabIndex=334 class="box" style="left: 404px; top: 698px; width: 321px; height: 21px;" id="_MagicItemsMisc9"></span>
+				<span tabIndex=335 class="box" style="left: 404px; top: 724px; width: 321px; height: 26px;" id="_MagicItemsMisc10"></span>
+				<span tabIndex=336 class="box" style="left: 404px; top: 756px; width: 321px; height: 21px;" id="_MagicItemsMisc11"></span>
+				<span tabIndex=337 class="box" style="left: 404px; top: 784px; width: 321px; height: 21px;" id="_MagicItemsMisc12"></span>
 
-			<span tabIndex=273 class="box" style="left: 43px; top: 1853px; width: 321px; height: 20px;" id="_EncounterPowers1"></span>
-			<span tabIndex=274 class="box" style="left: 43px; top: 1881px; width: 321px; height: 21px;" id="_EncounterPowers2"></span>
-			<span tabIndex=275 class="box" style="left: 43px; top: 1907px; width: 321px; height: 25px;" id="_EncounterPowers3"></span>
-			<span tabIndex=276 class="box" style="left: 43px; top: 1939px; width: 321px; height: 21px;" id="_EncounterPowers4"></span>
-			<span tabIndex=277 class="box" style="left: 43px; top: 1967px; width: 321px; height: 21px;" id="_EncounterPowers5"></span>
-			<span tabIndex=278 class="box" style="left: 43px; top: 1995px; width: 321px; height: 22px;" id="_EncounterPowers6"></span>
-			<span tabIndex=279 class="box" style="left: 43px; top: 2052px; width: 321px; height: 24px;" id="_DailyPowers1"></span>
-			<span tabIndex=280 class="box" style="left: 43px; top: 2081px; width: 321px; height: 23px;" id="_DailyPowers2"></span>
-			<span tabIndex=281 class="box" style="left: 43px; top: 2111px; width: 321px; height: 22px;" id="_DailyPowers3"></span>
-			<span tabIndex=282 class="box" style="left: 43px; top: 2138px; width: 321px; height: 24px;" id="_DailyPowers4"></span>
-			<span tabIndex=283 class="box" style="left: 43px; top: 2168px; width: 321px; height: 23px;" id="_DailyPowers5"></span>
-			<span tabIndex=284 class="box" style="left: 43px; top: 2197px; width: 321px; height: 21px;" id="_DailyPowers6"></span>
-			<span tabIndex=285 class="box" style="left: 43px; top: 2256px; width: 321px; height: 21px;" id="_UtilityPowers1"></span>
-			<span tabIndex=286 class="box" style="left: 43px; top: 2283px; width: 321px; height: 23px;" id="_UtilityPowers2"></span>
-			<span tabIndex=287 class="box" style="left: 43px; top: 2311px; width: 321px; height: 25px;" id="_UtilityPowers3"></span>
-			<span tabIndex=288 class="box" style="left: 43px; top: 2341px; width: 321px; height: 23px;" id="_UtilityPowers4"></span>
-			<span tabIndex=289 class="box" style="left: 43px; top: 2369px; width: 321px; height: 23px;" id="_UtilityPowers5"></span>
-			<span tabIndex=290 class="box" style="left: 43px; top: 2398px; width: 321px; height: 22px;" id="_UtilityPowers6"></span>
-			<span tabIndex=291 class="box" style="left: 43px; top: 2426px; width: 321px; height: 23px;" id="_UtilityPowers7"></span>
-			<span tabIndex=292 class="box" style="left: 43px; top: 2455px; width: 321px; height: 22px;" id="_UtilityPowers8"></span>
+				<input type="checkbox" tabIndex=338 class="box" style="left: 731px; top: 100px;" id="_MagicItemsWeaponCheck1"/>
+				<input type="checkbox" tabIndex=339 class="box" style="left: 731px; top: 129px;" id="_MagicItemsWeaponCheck2"/>
+				<input type="checkbox" tabIndex=340 class="box" style="left: 731px; top: 158px;" id="_MagicItemsWeaponCheck3"/>
+				<input type="checkbox" tabIndex=341 class="box" style="left: 731px; top: 186px;" id="_MagicItemsWeaponCheck4"/>
+				<input type="checkbox" tabIndex=342 class="box" style="left: 731px; top: 216px;" id="_MagicItemsArmorCheck"/>
+				<input type="checkbox" tabIndex=343 class="box" style="left: 731px; top: 244px;" id="_MagicItemsArmsCheck"/>
+				<input type="checkbox" tabIndex=344 class="box" style="left: 731px; top: 273px;" id="_MagicItemsFeetCheck"/>
+				<input type="checkbox" tabIndex=345 class="box" style="left: 731px; top: 302px;" id="_MagicItemsHandsCheck"/>
+				<input type="checkbox" tabIndex=346 class="box" style="left: 731px; top: 330px;" id="_MagicItemsHeadCheck"/>
+				<input type="checkbox" tabIndex=347 class="box" style="left: 731px; top: 359px;" id="_MagicItemsNeckCheck"/>
+				<input type="checkbox" tabIndex=348 class="box" style="left: 731px; top: 388px;" id="_MagicItemsRingCheck1"/>
+				<input type="checkbox" tabIndex=349 class="box" style="left: 731px; top: 417px;" id="_MagicItemsRingCheck2"/>
+				<input type="checkbox" tabIndex=350 class="box" style="left: 731px; top: 446px;" id="_MagicItemsWaistCheck"/>
+				<input type="checkbox" tabIndex=351 class="box" style="left: 731px; top: 475px;" id="_MagicItemsMiscCheck1"/>
+				<input type="checkbox" tabIndex=352 class="box" style="left: 731px; top: 503px;" id="_MagicItemsMiscCheck2"/>
+				<input type="checkbox" tabIndex=353 class="box" style="left: 731px; top: 532px;" id="_MagicItemsMiscCheck3"/>
+				<input type="checkbox" tabIndex=354 class="box" style="left: 731px; top: 561px;" id="_MagicItemsMiscCheck4"/>
+				<input type="checkbox" tabIndex=355 class="box" style="left: 731px; top: 589px;" id="_MagicItemsMiscCheck5"/>
+				<input type="checkbox" tabIndex=356 class="box" style="left: 731px; top: 618px;" id="_MagicItemsMiscCheck6"/>
+				<input type="checkbox" tabIndex=357 class="box" style="left: 731px; top: 647px;" id="_MagicItemsMiscCheck7"/>
+				<input type="checkbox" tabIndex=358 class="box" style="left: 731px; top: 676px;" id="_MagicItemsMiscCheck8"/>
+				<input type="checkbox" tabIndex=359 class="box" style="left: 731px; top: 705px;" id="_MagicItemsMiscCheck9"/>
+				<input type="checkbox" tabIndex=360 class="box" style="left: 731px; top: 734px;" id="_MagicItemsMiscCheck10"/>
+				<input type="checkbox" tabIndex=361 class="box" style="left: 731px; top: 763px;" id="_MagicItemsMiscCheck11"/>
+				<input type="checkbox" tabIndex=362 class="box" style="left: 731px; top: 791px;" id="_MagicItemsMiscCheck12"/>
 
-			<input type="checkbox" tabIndex=293 class="box" style="left: 367px; top: 1859px;" id="_EncounterPowersCheck1"/>
-			<input type="checkbox" tabIndex=294 class="box" style="left: 367px; top: 1887px;" id="_EncounterPowersCheck2"/>
-			<input type="checkbox" tabIndex=295 class="box" style="left: 367px; top: 1916px;" id="_EncounterPowersCheck3"/>
-			<input type="checkbox" tabIndex=296 class="box" style="left: 367px; top: 1945px;" id="_EncounterPowersCheck4"/>
-			<input type="checkbox" tabIndex=297 class="box" style="left: 367px; top: 1974px;" id="_EncounterPowersCheck5"/>
-			<input type="checkbox" tabIndex=298 class="box" style="left: 367px; top: 2003px;" id="_EncounterPowersCheck6"/>
-			<input type="checkbox" tabIndex=299 class="box" style="left: 367px; top: 2061px;" id="_DailyPowersCheck1"/>
-			<input type="checkbox" tabIndex=300 class="box" style="left: 367px; top: 2089px;" id="_DailyPowersCheck2"/>
-			<input type="checkbox" tabIndex=301 class="box" style="left: 367px; top: 2118px;" id="_DailyPowersCheck3"/>
-			<input type="checkbox" tabIndex=302 class="box" style="left: 367px; top: 2146px;" id="_DailyPowersCheck4"/>
-			<input type="checkbox" tabIndex=303 class="box" style="left: 367px; top: 2175px;" id="_DailyPowersCheck5"/>
-			<input type="checkbox" tabIndex=304 class="box" style="left: 367px; top: 2204px;" id="_DailyPowersCheck6"/>
-			<input type="checkbox" tabIndex=305 class="box" style="left: 367px; top: 2262px;" id="_UtilityPowersCheck1"/>
-			<input type="checkbox" tabIndex=306 class="box" style="left: 367px; top: 2291px;" id="_UtilityPowersCheck2"/>
-			<input type="checkbox" tabIndex=307 class="box" style="left: 367px; top: 2319px;" id="_UtilityPowersCheck3"/>
-			<input type="checkbox" tabIndex=308 class="box" style="left: 367px; top: 2349px;" id="_UtilityPowersCheck4"/>
-			<input type="checkbox" tabIndex=309 class="box" style="left: 367px; top: 2376px;" id="_UtilityPowersCheck5"/>
-			<input type="checkbox" tabIndex=310 class="box" style="left: 367px; top: 2406px;" id="_UtilityPowersCheck6"/>
-			<input type="checkbox" tabIndex=311 class="box" style="left: 367px; top: 2434px;" id="_UtilityPowersCheck7"/>
-			<input type="checkbox" tabIndex=312 class="box" style="left: 367px; top: 2463px;" id="_UtilityPowersCheck8"/>
+				<span tabIndex=363 class="center box" style="left: 510px; top: 849px; width: 10px; height: 9px;" id="_DailyItemPowersHeroic"></span>
+				<span tabIndex=364 class="center box" style="left: 647px; top: 849px; width: 10px; height: 9px;" id="_DailyItemPowersHeroicMilestone1"></span>
+				<span tabIndex=365 class="center box" style="left: 672px; top: 849px; width: 10px; height: 9px;" id="_DailyItemPowersHeroicMilestone2"></span>
+				<span tabIndex=366 class="center box" style="left: 697px; top: 849px; width: 10px; height: 9px;" id="_DailyItemPowersHeroicMilestone3"></span>
+				<span tabIndex=367 class="center box" style="left: 723px; top: 849px; width: 10px; height: 9px;" id="_DailyItemPowersHeroicMilestone4"></span>
+				<span tabIndex=368 class="center box" style="left: 510px; top: 877px; width: 10px; height: 9px;" id="_DailyItemPowersParagon1"></span>
+				<span tabIndex=369 class="center box" style="left: 530px; top: 877px; width: 10px; height: 9px;" id="_DailyItemPowersParagon2"></span>
+				<span tabIndex=370 class="center box" style="left: 647px; top: 877px; width: 10px; height: 9px;" id="_DailyItemPowersParagonMilestone1"></span>
+				<span tabIndex=371 class="center box" style="left: 672px; top: 877px; width: 10px; height: 9px;" id="_DailyItemPowersParagonMilestone2"></span>
+				<span tabIndex=372 class="center box" style="left: 697px; top: 877px; width: 10px; height: 9px;" id="_DailyItemPowersParagonMilestone3"></span>
+				<span tabIndex=373 class="center box" style="left: 723px; top: 877px; width: 10px; height: 9px;" id="_DailyItemPowersParagonMilestone4"></span>
+				<span tabIndex=374 class="center box" style="left: 510px; top: 906px; width: 10px; height: 9px;" id="_DailyItemPowersEpic1"></span>
+				<span tabIndex=375 class="center box" style="left: 530px; top: 906px; width: 10px; height: 9px;" id="_DailyItemPowersEpic2"></span>
+				<span tabIndex=376 class="center box" style="left: 552px; top: 906px; width: 10px; height: 9px;" id="_DailyItemPowersEpic3"></span>
+				<span tabIndex=377 class="center box" style="left: 648px; top: 906px; width: 10px; height: 9px;" id="_DailyItemPowersEpicMilestone1"></span>
+				<span tabIndex=378 class="center box" style="left: 672px; top: 906px; width: 10px; height: 9px;" id="_DailyItemPowersEpicMilestone2"></span>
+				<span tabIndex=379 class="center box" style="left: 697px; top: 906px; width: 10px; height: 9px;" id="_DailyItemPowersEpicMilestone3"></span>
+				<span tabIndex=380 class="center box" style="left: 723px; top: 906px; width: 10px; height: 9px;" id="_DailyItemPowersEpicMilestone4"></span>
 
-			<span tabIndex=313 class="box" style="left: 445px; top: 1649px; width: 280px; height: 23px;" id="_MagicItemsWeapon1"></span>
-			<span tabIndex=314 class="box" style="left: 445px; top: 1679px; width: 280px; height: 22px;" id="_MagicItemsWeapon2"></span>
-			<span tabIndex=315 class="box" style="left: 445px; top: 1708px; width: 280px; height: 23px;" id="_MagicItemsWeapon3"></span>
-			<span tabIndex=316 class="box" style="left: 445px; top: 1737px; width: 280px; height: 23px;" id="_MagicItemsWeapon4"></span>
-			<span tabIndex=317 class="box" style="left: 445px; top: 1764px; width: 280px; height: 24px;" id="_MagicItemsArmor"></span>
-			<span tabIndex=318 class="box" style="left: 445px; top: 1793px; width: 280px; height: 24px;" id="_MagicItemsArms"></span>
-			<span tabIndex=319 class="box" style="left: 445px; top: 1821px; width: 280px; height: 25px;" id="_MagicItemsFeet"></span>
-			<span tabIndex=320 class="box" style="left: 445px; top: 1851px; width: 280px; height: 21px;" id="_MagicItemsHands"></span>
-			<span tabIndex=321 class="box" style="left: 445px; top: 1879px; width: 280px; height: 24px;" id="_MagicItemsHead"></span>
-			<span tabIndex=322 class="box" style="left: 445px; top: 1908px; width: 280px; height: 24px;" id="_MagicItemsNeck"></span>
-			<span tabIndex=323 class="box" style="left: 445px; top: 1937px; width: 280px; height: 22px;" id="_MagicItemsRing1"></span>
-			<span tabIndex=324 class="box" style="left: 445px; top: 1966px; width: 280px; height: 23px;" id="_MagicItemsRing2"></span>
-			<span tabIndex=325 class="box" style="left: 445px; top: 1994px; width: 280px; height: 24px;" id="_MagicItemsWaist"></span>
-			<span tabIndex=326 class="box" style="left: 404px; top: 2023px; width: 321px; height: 23px;" id="_MagicItemsMisc1"></span>
-			<span tabIndex=327 class="box" style="left: 404px; top: 2053px; width: 321px; height: 22px;" id="_MagicItemsMisc2"></span>
-			<span tabIndex=328 class="box" style="left: 404px; top: 2081px; width: 321px; height: 23px;" id="_MagicItemsMisc3"></span>
-			<span tabIndex=329 class="box" style="left: 404px; top: 2110px; width: 321px; height: 22px;" id="_MagicItemsMisc4"></span>
-			<span tabIndex=330 class="box" style="left: 404px; top: 2138px; width: 321px; height: 24px;" id="_MagicItemsMisc5"></span>
-			<span tabIndex=331 class="box" style="left: 404px; top: 2167px; width: 321px; height: 24px;" id="_MagicItemsMisc6"></span>
-			<span tabIndex=332 class="box" style="left: 404px; top: 2197px; width: 321px; height: 23px;" id="_MagicItemsMisc7"></span>
-			<span tabIndex=333 class="box" style="left: 404px; top: 2226px; width: 321px; height: 24px;" id="_MagicItemsMisc8"></span>
-			<span tabIndex=334 class="box" style="left: 404px; top: 2255px; width: 321px; height: 21px;" id="_MagicItemsMisc9"></span>
-			<span tabIndex=335 class="box" style="left: 404px; top: 2281px; width: 321px; height: 26px;" id="_MagicItemsMisc10"></span>
-			<span tabIndex=336 class="box" style="left: 404px; top: 2313px; width: 321px; height: 21px;" id="_MagicItemsMisc11"></span>
-			<span tabIndex=337 class="box" style="left: 404px; top: 2341px; width: 321px; height: 21px;" id="_MagicItemsMisc12"></span>
+				<span tabIndex=381 class="box" style="left: 777px; top: 2px; width: 336px; height: 308px;" id="_Portrait"></span>
 
-			<input type="checkbox" tabIndex=338 class="box" style="left: 731px; top: 1657px;" id="_MagicItemsWeaponCheck1"/>
-			<input type="checkbox" tabIndex=339 class="box" style="left: 731px; top: 1686px;" id="_MagicItemsWeaponCheck2"/>
-			<input type="checkbox" tabIndex=340 class="box" style="left: 731px; top: 1715px;" id="_MagicItemsWeaponCheck3"/>
-			<input type="checkbox" tabIndex=341 class="box" style="left: 731px; top: 1743px;" id="_MagicItemsWeaponCheck4"/>
-			<input type="checkbox" tabIndex=342 class="box" style="left: 731px; top: 1773px;" id="_MagicItemsArmorCheck"/>
-			<input type="checkbox" tabIndex=343 class="box" style="left: 731px; top: 1801px;" id="_MagicItemsArmsCheck"/>
-			<input type="checkbox" tabIndex=344 class="box" style="left: 731px; top: 1830px;" id="_MagicItemsFeetCheck"/>
-			<input type="checkbox" tabIndex=345 class="box" style="left: 731px; top: 1859px;" id="_MagicItemsHandsCheck"/>
-			<input type="checkbox" tabIndex=346 class="box" style="left: 731px; top: 1887px;" id="_MagicItemsHeadCheck"/>
-			<input type="checkbox" tabIndex=347 class="box" style="left: 731px; top: 1916px;" id="_MagicItemsNeckCheck"/>
-			<input type="checkbox" tabIndex=348 class="box" style="left: 731px; top: 1945px;" id="_MagicItemsRingCheck1"/>
-			<input type="checkbox" tabIndex=349 class="box" style="left: 731px; top: 1974px;" id="_MagicItemsRingCheck2"/>
-			<input type="checkbox" tabIndex=350 class="box" style="left: 731px; top: 2003px;" id="_MagicItemsWaistCheck"/>
-			<input type="checkbox" tabIndex=351 class="box" style="left: 731px; top: 2032px;" id="_MagicItemsMiscCheck1"/>
-			<input type="checkbox" tabIndex=352 class="box" style="left: 731px; top: 2060px;" id="_MagicItemsMiscCheck2"/>
-			<input type="checkbox" tabIndex=353 class="box" style="left: 731px; top: 2089px;" id="_MagicItemsMiscCheck3"/>
-			<input type="checkbox" tabIndex=354 class="box" style="left: 731px; top: 2118px;" id="_MagicItemsMiscCheck4"/>
-			<input type="checkbox" tabIndex=355 class="box" style="left: 731px; top: 2146px;" id="_MagicItemsMiscCheck5"/>
-			<input type="checkbox" tabIndex=356 class="box" style="left: 731px; top: 2175px;" id="_MagicItemsMiscCheck6"/>
-			<input type="checkbox" tabIndex=357 class="box" style="left: 731px; top: 2204px;" id="_MagicItemsMiscCheck7"/>
-			<input type="checkbox" tabIndex=358 class="box" style="left: 731px; top: 2233px;" id="_MagicItemsMiscCheck8"/>
-			<input type="checkbox" tabIndex=359 class="box" style="left: 731px; top: 2262px;" id="_MagicItemsMiscCheck9"/>
-			<input type="checkbox" tabIndex=360 class="box" style="left: 731px; top: 2291px;" id="_MagicItemsMiscCheck10"/>
-			<input type="checkbox" tabIndex=361 class="box" style="left: 731px; top: 2320px;" id="_MagicItemsMiscCheck11"/>
-			<input type="checkbox" tabIndex=362 class="box" style="left: 731px; top: 2348px;" id="_MagicItemsMiscCheck12"/>
+				<span tabIndex=382 class="box" style="left: 769px; top: 353px; width: 348px; height: 17px;" id="_PersonalityTraits1"></span>
+				<span tabIndex=383 class="box" style="left: 769px; top: 376px; width: 348px; height: 23px;" id="_PersonalityTraits2"></span>
+				<span tabIndex=384 class="box" style="left: 769px; top: 404px; width: 348px; height: 24px;" id="_PersonalityTraits3"></span>
+				<span tabIndex=385 class="box" style="left: 769px; top: 434px; width: 348px; height: 22px;" id="_PersonalityTraits4"></span>
+				<span tabIndex=386 class="box" style="left: 769px; top: 463px; width: 348px; height: 22px;" id="_PersonalityTraits5"></span>
+				<span tabIndex=387 class="box" style="left: 769px; top: 490px; width: 348px; height: 23px;" id="_PersonalityTraits6"></span>
 
-			<span tabIndex=363 class="center box" style="left: 510px; top: 2406px; width: 10px; height: 9px;" id="_DailyItemPowersHeroic"></span>
-			<span tabIndex=364 class="center box" style="left: 647px; top: 2406px; width: 10px; height: 9px;" id="_DailyItemPowersHeroicMilestone1"></span>
-			<span tabIndex=365 class="center box" style="left: 672px; top: 2406px; width: 10px; height: 9px;" id="_DailyItemPowersHeroicMilestone2"></span>
-			<span tabIndex=366 class="center box" style="left: 697px; top: 2406px; width: 10px; height: 9px;" id="_DailyItemPowersHeroicMilestone3"></span>
-			<span tabIndex=367 class="center box" style="left: 723px; top: 2406px; width: 10px; height: 9px;" id="_DailyItemPowersHeroicMilestone4"></span>
-			<span tabIndex=368 class="center box" style="left: 510px; top: 2434px; width: 10px; height: 9px;" id="_DailyItemPowersParagon1"></span>
-			<span tabIndex=369 class="center box" style="left: 530px; top: 2434px; width: 10px; height: 9px;" id="_DailyItemPowersParagon2"></span>
-			<span tabIndex=370 class="center box" style="left: 647px; top: 2434px; width: 10px; height: 9px;" id="_DailyItemPowersParagonMilestone1"></span>
-			<span tabIndex=371 class="center box" style="left: 672px; top: 2434px; width: 10px; height: 9px;" id="_DailyItemPowersParagonMilestone2"></span>
-			<span tabIndex=372 class="center box" style="left: 697px; top: 2434px; width: 10px; height: 9px;" id="_DailyItemPowersParagonMilestone3"></span>
-			<span tabIndex=373 class="center box" style="left: 723px; top: 2434px; width: 10px; height: 9px;" id="_DailyItemPowersParagonMilestone4"></span>
-			<span tabIndex=374 class="center box" style="left: 510px; top: 2463px; width: 10px; height: 9px;" id="_DailyItemPowersEpic1"></span>
-			<span tabIndex=375 class="center box" style="left: 530px; top: 2463px; width: 10px; height: 9px;" id="_DailyItemPowersEpic2"></span>
-			<span tabIndex=376 class="center box" style="left: 552px; top: 2463px; width: 10px; height: 9px;" id="_DailyItemPowersEpic3"></span>
-			<span tabIndex=377 class="center box" style="left: 648px; top: 2463px; width: 10px; height: 9px;" id="_DailyItemPowersEpicMilestone1"></span>
-			<span tabIndex=378 class="center box" style="left: 672px; top: 2463px; width: 10px; height: 9px;" id="_DailyItemPowersEpicMilestone2"></span>
-			<span tabIndex=379 class="center box" style="left: 697px; top: 2463px; width: 10px; height: 9px;" id="_DailyItemPowersEpicMilestone3"></span>
-			<span tabIndex=380 class="center box" style="left: 723px; top: 2463px; width: 10px; height: 9px;" id="_DailyItemPowersEpicMilestone4"></span>
+				<span tabIndex=388 class="box" style="left: 769px; top: 547px; width: 348px; height: 21px;" id="_MannerismsAndAppearance1"></span>
+				<span tabIndex=389 class="box" style="left: 769px; top: 573px; width: 348px; height: 23px;" id="_MannerismsAndAppearance2"></span>
+				<span tabIndex=390 class="box" style="left: 769px; top: 602px; width: 348px; height: 23px;" id="_MannerismsAndAppearance3"></span>
+				<span tabIndex=391 class="box" style="left: 769px; top: 630px; width: 348px; height: 23px;" id="_MannerismsAndAppearance4"></span>
+				<span tabIndex=392 class="box" style="left: 769px; top: 659px; width: 348px; height: 24px;" id="_MannerismsAndAppearance5"></span>
+				<span tabIndex=393 class="box" style="left: 769px; top: 718px; width: 348px; height: 22px;" id="_MannerismsAndAppearance6"></span>
 
-			<span tabIndex=381 class="box" style="left: 777px; top: 1559px; width: 336px; height: 308px;" id="_Portrait"></span>
+				<span tabIndex=394 class="box" style="left: 769px; top: 746px; width: 348px; height: 23px;" id="_CharacterBackground2"></span>
+				<span tabIndex=395 class="box" style="left: 769px; top: 775px; width: 348px; height: 22px;" id="_CharacterBackground3"></span>
+				<span tabIndex=396 class="box" style="left: 769px; top: 803px; width: 348px; height: 23px;" id="_CharacterBackground4"></span>
 
-			<span tabIndex=382 class="box" style="left: 769px; top: 1910px; width: 348px; height: 17px;" id="_PersonalityTraits1"></span>
-			<span tabIndex=383 class="box" style="left: 769px; top: 1933px; width: 348px; height: 23px;" id="_PersonalityTraits2"></span>
-			<span tabIndex=384 class="box" style="left: 769px; top: 1961px; width: 348px; height: 24px;" id="_PersonalityTraits3"></span>
-			<span tabIndex=385 class="box" style="left: 769px; top: 1991px; width: 348px; height: 22px;" id="_PersonalityTraits4"></span>
-			<span tabIndex=386 class="box" style="left: 769px; top: 2020px; width: 348px; height: 22px;" id="_PersonalityTraits5"></span>
-			<span tabIndex=387 class="box" style="left: 769px; top: 2047px; width: 348px; height: 23px;" id="_PersonalityTraits6"></span>
+				<span tabIndex=397 class="box" style="left: 791px; top: 860px; width: 133px; height: 19px;" id="_CompanionsAndAlliesName1"></span>
+				<span tabIndex=398 class="box" style="left: 791px; top: 885px; width: 133px; height: 20px;" id="_CompanionsAndAlliesName2"></span>
+				<span tabIndex=399 class="box" style="left: 791px; top: 911px; width: 133px; height: 22px;" id="_CompanionsAndAlliesName3"></span>
+				<span tabIndex=400 class="box" style="left: 791px; top: 940px; width: 133px; height: 25px;" id="_CompanionsAndAlliesName4"></span>
+				<span tabIndex=401 class="box" style="left: 791px; top: 970px; width: 133px; height: 22px;" id="_CompanionsAndAlliesName5"></span>
+				<span tabIndex=402 class="box" style="left: 791px; top: 999px; width: 133px; height: 19px;" id="_CompanionsAndAlliesName6"></span>
+				<span tabIndex=403 class="box" style="left: 791px; top: 1025px; width: 133px; height: 22px;" id="_CompanionsAndAlliesName7"></span>
+				<span tabIndex=404 class="box" style="left: 791px; top: 1054px; width: 133px; height: 19px;" id="_CompanionsAndAlliesName8"></span>
 
-			<span tabIndex=388 class="box" style="left: 769px; top: 2104px; width: 348px; height: 21px;" id="_MannerismsAndAppearance1"></span>
-			<span tabIndex=389 class="box" style="left: 769px; top: 2130px; width: 348px; height: 23px;" id="_MannerismsAndAppearance2"></span>
-			<span tabIndex=390 class="box" style="left: 769px; top: 2159px; width: 348px; height: 23px;" id="_MannerismsAndAppearance3"></span>
-			<span tabIndex=391 class="box" style="left: 769px; top: 2187px; width: 348px; height: 23px;" id="_MannerismsAndAppearance4"></span>
-			<span tabIndex=392 class="box" style="left: 769px; top: 2216px; width: 348px; height: 24px;" id="_MannerismsAndAppearance5"></span>
-			<span tabIndex=393 class="box" style="left: 769px; top: 2275px; width: 348px; height: 22px;" id="_MannerismsAndAppearance6"></span>
+				<span tabIndex=405 class="box" style="left: 957px; top: 860px; width: 159px; height: 19px;" id="_CompanionsAndAlliesNotes1"></span>
+				<span tabIndex=406 class="box" style="left: 957px; top: 885px; width: 159px; height: 20px;" id="_CompanionsAndAlliesNotes2"></span>
+				<span tabIndex=407 class="box" style="left: 957px; top: 911px; width: 159px; height: 22px;" id="_CompanionsAndAlliesNotes3"></span>
+				<span tabIndex=408 class="box" style="left: 957px; top: 940px; width: 159px; height: 25px;" id="_CompanionsAndAlliesNotes4"></span>
+				<span tabIndex=409 class="box" style="left: 957px; top: 970px; width: 159px; height: 22px;" id="_CompanionsAndAlliesNotes5"></span>
+				<span tabIndex=410 class="box" style="left: 957px; top: 999px; width: 159px; height: 19px;" id="_CompanionsAndAlliesNotes6"></span>
+				<span tabIndex=411 class="box" style="left: 957px; top: 1025px; width: 159px; height: 22px;" id="_CompanionsAndAlliesNotes7"></span>
+				<span tabIndex=412 class="box" style="left: 957px; top: 1054px; width: 159px; height: 19px;" id="_CompanionsAndAlliesNotes8"></span>
 
-			<span tabIndex=394 class="box" style="left: 769px; top: 2303px; width: 348px; height: 23px;" id="_CharacterBackground2"></span>
-			<span tabIndex=395 class="box" style="left: 769px; top: 2332px; width: 348px; height: 22px;" id="_CharacterBackground3"></span>
-			<span tabIndex=396 class="box" style="left: 769px; top: 2360px; width: 348px; height: 23px;" id="_CharacterBackground4"></span>
+				<span tabIndex=413 class="box" style="left: 41px; top: 975px; width: 351px; height: 24px;" id="_OtherEquipment1"></span>
+				<span tabIndex=414 class="box" style="left: 41px; top: 1005px; width: 351px; height: 23px;" id="_OtherEquipment2"></span>
+				<span tabIndex=415 class="box" style="left: 41px; top: 1035px; width: 351px; height: 22px;" id="_OtherEquipment3"></span>
+				<span tabIndex=416 class="box" style="left: 41px; top: 1063px; width: 351px; height: 22px;" id="_OtherEquipment4"></span>
+				<span tabIndex=417 class="box" style="left: 41px; top: 1090px; width: 351px; height: 22px;" id="_OtherEquipment5"></span>
+				<span tabIndex=418 class="box" style="left: 41px; top: 1120px; width: 351px; height: 22px;" id="_OtherEquipment6"></span>
+				<span tabIndex=419 class="box" style="left: 41px; top: 1147px; width: 351px; height: 23px;" id="_OtherEquipment7"></span>
+				<span tabIndex=420 class="box" style="left: 41px; top: 1176px; width: 351px; height: 22px;" id="_OtherEquipment8"></span>
+				<span tabIndex=421 class="box" style="left: 41px; top: 1205px; width: 351px; height: 23px;" id="_OtherEquipment9"></span>
+				<span tabIndex=422 class="box" style="left: 41px; top: 1234px; width: 351px; height: 22px;" id="_OtherEquipment10"></span>
 
-			<span tabIndex=397 class="box" style="left: 791px; top: 2417px; width: 133px; height: 19px;" id="_CompanionsAndAlliesName1"></span>
-			<span tabIndex=398 class="box" style="left: 791px; top: 2442px; width: 133px; height: 20px;" id="_CompanionsAndAlliesName2"></span>
-			<span tabIndex=399 class="box" style="left: 791px; top: 2468px; width: 133px; height: 22px;" id="_CompanionsAndAlliesName3"></span>
-			<span tabIndex=400 class="box" style="left: 791px; top: 2497px; width: 133px; height: 25px;" id="_CompanionsAndAlliesName4"></span>
-			<span tabIndex=401 class="box" style="left: 791px; top: 2527px; width: 133px; height: 22px;" id="_CompanionsAndAlliesName5"></span>
-			<span tabIndex=402 class="box" style="left: 791px; top: 2556px; width: 133px; height: 19px;" id="_CompanionsAndAlliesName6"></span>
-			<span tabIndex=403 class="box" style="left: 791px; top: 2582px; width: 133px; height: 22px;" id="_CompanionsAndAlliesName7"></span>
-			<span tabIndex=404 class="box" style="left: 791px; top: 2611px; width: 133px; height: 19px;" id="_CompanionsAndAlliesName8"></span>
+				<span tabIndex=423 class="box" style="left: 407px; top: 975px; width: 347px; height: 24px;" id="_Rituals1"></span>
+				<span tabIndex=424 class="box" style="left: 407px; top: 1005px; width: 347px; height: 23px;" id="_Rituals2"></span>
+				<span tabIndex=425 class="box" style="left: 407px; top: 1035px; width: 347px; height: 22px;" id="_Rituals3"></span>
+				<span tabIndex=426 class="box" style="left: 407px; top: 1063px; width: 347px; height: 22px;" id="_Rituals4"></span>
+				<span tabIndex=427 class="box" style="left: 407px; top: 1090px; width: 347px; height: 22px;" id="_Rituals5"></span>
+				<span tabIndex=428 class="box" style="left: 407px; top: 1120px; width: 347px; height: 22px;" id="_Rituals6"></span>
+				<span tabIndex=429 class="box" style="left: 407px; top: 1147px; width: 347px; height: 23px;" id="_Rituals7"></span>
+				<span tabIndex=430 class="box" style="left: 407px; top: 1176px; width: 347px; height: 22px;" id="_Rituals8"></span>
+				<span tabIndex=431 class="box" style="left: 407px; top: 1205px; width: 347px; height: 23px;" id="_Rituals9"></span>
+				<span tabIndex=432 class="box" style="left: 407px; top: 1234px; width: 347px; height: 22px;" id="_Rituals10"></span>
 
-			<span tabIndex=405 class="box" style="left: 957px; top: 2417px; width: 159px; height: 19px;" id="_CompanionsAndAlliesNotes1"></span>
-			<span tabIndex=406 class="box" style="left: 957px; top: 2442px; width: 159px; height: 20px;" id="_CompanionsAndAlliesNotes2"></span>
-			<span tabIndex=407 class="box" style="left: 957px; top: 2468px; width: 159px; height: 22px;" id="_CompanionsAndAlliesNotes3"></span>
-			<span tabIndex=408 class="box" style="left: 957px; top: 2497px; width: 159px; height: 25px;" id="_CompanionsAndAlliesNotes4"></span>
-			<span tabIndex=409 class="box" style="left: 957px; top: 2527px; width: 159px; height: 22px;" id="_CompanionsAndAlliesNotes5"></span>
-			<span tabIndex=410 class="box" style="left: 957px; top: 2556px; width: 159px; height: 19px;" id="_CompanionsAndAlliesNotes6"></span>
-			<span tabIndex=411 class="box" style="left: 957px; top: 2582px; width: 159px; height: 22px;" id="_CompanionsAndAlliesNotes7"></span>
-			<span tabIndex=412 class="box" style="left: 957px; top: 2611px; width: 159px; height: 19px;" id="_CompanionsAndAlliesNotes8"></span>
+				<span tabIndex=433 class="box" style="left: 768px; top: 1115px; width: 348px; height: 21px;" id="_SessionAndCampaignNotes1"></span>
+				<span tabIndex=434 class="box" style="left: 768px; top: 1143px; width: 348px; height: 21px;" id="_SessionAndCampaignNotes2"></span>
+				<span tabIndex=435 class="box" style="left: 768px; top: 1171px; width: 348px; height: 21px;" id="_SessionAndCampaignNotes3"></span>
+				<span tabIndex=436 class="box" style="left: 768px; top: 1199px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes4"></span>
+				<span tabIndex=437 class="box" style="left: 768px; top: 1229px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes5"></span>
+				<span tabIndex=438 class="box" style="left: 768px; top: 1257px; width: 348px; height: 22px;" id="_SessionAndCampaignNotes6"></span>
+				<span tabIndex=439 class="box" style="left: 768px; top: 1284px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes7"></span>
+				<span tabIndex=440 class="box" style="left: 768px; top: 1313px; width: 348px; height: 22px;" id="_SessionAndCampaignNotes8"></span>
+				<span tabIndex=441 class="box" style="left: 768px; top: 1340px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes9"></span>
+				<span tabIndex=442 class="box" style="left: 768px; top: 1369px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes10"></span>
+				<span tabIndex=443 class="box" style="left: 768px; top: 1398px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes11"></span>
+				<span tabIndex=444 class="box" style="left: 768px; top: 1427px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes12"></span>
 
-			<span tabIndex=413 class="box" style="left: 41px; top: 2532px; width: 351px; height: 24px;" id="_OtherEquipment1"></span>
-			<span tabIndex=414 class="box" style="left: 41px; top: 2562px; width: 351px; height: 23px;" id="_OtherEquipment2"></span>
-			<span tabIndex=415 class="box" style="left: 41px; top: 2592px; width: 351px; height: 22px;" id="_OtherEquipment3"></span>
-			<span tabIndex=416 class="box" style="left: 41px; top: 2620px; width: 351px; height: 22px;" id="_OtherEquipment4"></span>
-			<span tabIndex=417 class="box" style="left: 41px; top: 2647px; width: 351px; height: 22px;" id="_OtherEquipment5"></span>
-			<span tabIndex=418 class="box" style="left: 41px; top: 2677px; width: 351px; height: 22px;" id="_OtherEquipment6"></span>
-			<span tabIndex=419 class="box" style="left: 41px; top: 2704px; width: 351px; height: 23px;" id="_OtherEquipment7"></span>
-			<span tabIndex=420 class="box" style="left: 41px; top: 2733px; width: 351px; height: 22px;" id="_OtherEquipment8"></span>
-			<span tabIndex=421 class="box" style="left: 41px; top: 2762px; width: 351px; height: 23px;" id="_OtherEquipment9"></span>
-			<span tabIndex=422 class="box" style="left: 41px; top: 2791px; width: 351px; height: 22px;" id="_OtherEquipment10"></span>
-
-			<span tabIndex=423 class="box" style="left: 407px; top: 2532px; width: 347px; height: 24px;" id="_Rituals1"></span>
-			<span tabIndex=424 class="box" style="left: 407px; top: 2562px; width: 347px; height: 23px;" id="_Rituals2"></span>
-			<span tabIndex=425 class="box" style="left: 407px; top: 2592px; width: 347px; height: 22px;" id="_Rituals3"></span>
-			<span tabIndex=426 class="box" style="left: 407px; top: 2620px; width: 347px; height: 22px;" id="_Rituals4"></span>
-			<span tabIndex=427 class="box" style="left: 407px; top: 2647px; width: 347px; height: 22px;" id="_Rituals5"></span>
-			<span tabIndex=428 class="box" style="left: 407px; top: 2677px; width: 347px; height: 22px;" id="_Rituals6"></span>
-			<span tabIndex=429 class="box" style="left: 407px; top: 2704px; width: 347px; height: 23px;" id="_Rituals7"></span>
-			<span tabIndex=430 class="box" style="left: 407px; top: 2733px; width: 347px; height: 22px;" id="_Rituals8"></span>
-			<span tabIndex=431 class="box" style="left: 407px; top: 2762px; width: 347px; height: 23px;" id="_Rituals9"></span>
-			<span tabIndex=432 class="box" style="left: 407px; top: 2791px; width: 347px; height: 22px;" id="_Rituals10"></span>
-
-			<span tabIndex=433 class="box" style="left: 768px; top: 2672px; width: 348px; height: 21px;" id="_SessionAndCampaignNotes1"></span>
-			<span tabIndex=434 class="box" style="left: 768px; top: 2700px; width: 348px; height: 21px;" id="_SessionAndCampaignNotes2"></span>
-			<span tabIndex=435 class="box" style="left: 768px; top: 2728px; width: 348px; height: 21px;" id="_SessionAndCampaignNotes3"></span>
-			<span tabIndex=436 class="box" style="left: 768px; top: 2756px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes4"></span>
-			<span tabIndex=437 class="box" style="left: 768px; top: 2786px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes5"></span>
-			<span tabIndex=438 class="box" style="left: 768px; top: 2814px; width: 348px; height: 22px;" id="_SessionAndCampaignNotes6"></span>
-			<span tabIndex=439 class="box" style="left: 768px; top: 2841px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes7"></span>
-			<span tabIndex=440 class="box" style="left: 768px; top: 2870px; width: 348px; height: 22px;" id="_SessionAndCampaignNotes8"></span>
-			<span tabIndex=441 class="box" style="left: 768px; top: 2897px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes9"></span>
-			<span tabIndex=442 class="box" style="left: 768px; top: 2926px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes10"></span>
-			<span tabIndex=443 class="box" style="left: 768px; top: 2955px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes11"></span>
-			<span tabIndex=444 class="box" style="left: 768px; top: 2984px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes12"></span>
-
-			<span tabIndex=445 class="box" style="left: 41px; top: 2850px; width: 713px; height: 159px;" id="_CoinsAndOtherWealth"></span>
+				<span tabIndex=445 class="box" style="left: 41px; top: 1293px; width: 713px; height: 159px;" id="_CoinsAndOtherWealth"></span>
+			</div>
 		</div>
 
 		<script src="program.js"></script>
