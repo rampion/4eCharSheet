@@ -55,7 +55,6 @@
 			Acrobatics:"=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
 			AcrobaticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			AcrobaticsMisc:"=(2 /* Halfling */)",
-			ActionPoints:"1",
 			Age:"19",
 			Alignment:"Unaligned",
 			Arcana:"=(ArcanaAbilModPlusHalfLevel + ArcanaTrained + ArcanaMisc)",
@@ -75,7 +74,7 @@
 			AtWillPowers6:"Scorching Burst: +=(Attack2AttBonus) vs Reflex, 1d6+=(IntMod), burst 1 w/in 10",
 			Athletics:"=(AthleticsAbilModPlusHalfLevel + AthleticsTrained + AthleticsArmorPenalty + AthleticsMisc)",
 			AthleticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+StrMod)",
-			Attack1Abil:"=(StrMod)",
+			Attack1Abil:"=(IntMod /* melee training */)",
 			Attack1Ability:"Thief's Dagger melee",
 			Attack1AttBonus:"=(Attack1HalfLevel + Attack1Abil + Attack1Class + Attack1Prof + Attack1Feat + Attack1Enh + Attack1Misc)",
 			Attack1Enh:"1",
@@ -94,8 +93,8 @@
 			BasicAttack2Damage:"1d4 + =(DexMod + 1 /*enhancment*/)",
 			BasicAttack2Defense:"AC",
 			BasicAttack2WeaponOrPower:"Thief's Dagger range",
-			BasicAttack3Attack:"=(roundDown(Level/2) + StrMod + 2 /* proficiency */)",
-			BasicAttack3Damage:"1d6 + =(StrMod)",
+			BasicAttack3Attack:"=(roundDown(Level/2) + IntMod /* Melee Training */ + 2 /* proficiency */)",
+			BasicAttack3Damage:"1d6 + =(IntMod /* Melee Training */)",
 			BasicAttack3Defense:"AC",
 			BasicAttack3WeaponOrPower:"Quarterstaff",
 			BloodiedHitPoints:"=(roundDown(MaxHitPoints/2))",
@@ -114,17 +113,15 @@
 			Con:"=(pointBuy(10,2))",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
-			CurrentConditionsAndEffects:"immobilized",
-			CurrentHitPoints:"=(MaxHitPoints \n- 9  // column's psychic blast\n- 7  // captian's spectral touch\n- 10 // blast from blinky\n+ 14 // healing word after ghost combat\n+ 7  // healing surge after ghost combat\n)",
-			CurrentSurgeUses:"=(SurgesPerDay\n - 1 // healing word surge after ghost combat\n - 1 // surge after ghost combat\n)",
+			CurrentHitPoints:"=(MaxHitPoints \n- 9  // column's psychic blast\n- 7  // captian's spectral touch\n- 10 // blast from blinky\n+ 14 // healing word after ghost combat\n+ 7  // healing surge after ghost combat\n- 5 // hit by sword swinging skellington\n- 4 // shot by shortbow swinging skellington\n+ 8 // secondwind\n-4 // hit by another shortbow swinging skellington\n-6 // hit by helen\n-5 // hit by helen & ongoing 5\n-5 // ongoing damage\n-8 // hit by helen\n-5 // ongoing damage\n+5 // reset by healed\n+8 // beacon of hope healing\n-5 // ongoing\n)",
+			CurrentSurgeUses:"=(SurgesPerDay\n - 1 // healing word surge after ghost combat\n - 1 // surge after ghost combat\n -1 // second wind\n)",
 			DailyPowers1:"Sleep: +=(Attack2AttBonus) vs Will, slow/fail/sleep, burst 2 w/in 20<!--\ntarget all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail -> unconsious, save ends); miss: slow (save ends) [standard action]\n-->",
-			DailyPowers2:"Freezing Cloud: +=(Attack2AttBonus) vs Fort, 1d8+=(IntMod) cold, 1/2 miss\n<!-- target all creatures in burst 2 w/in 10, Int vs Fort, hit: 1d8+Int cold dmg; miss: 1/2 dmg; effect: attack any creature entering cloud, starting turn their until end of next turn [standard action] -->",
-			DailyPowersCheck2:"X",
-			Damage1Abil:"=(StrMod)",
+			DailyPowers2:"<s>Freezing Cloud: +=(Attack2AttBonus) vs Fort, 1d8+=(IntMod) cold, 1/2 miss</s>\n<!-- target all creatures in burst 2 w/in 10, Int vs Fort, hit: 1d8+Int cold dmg; miss: 1/2 dmg; effect: attack any creature entering cloud, starting turn their until end of next turn [standard action] -->",
+			Damage1Abil:"=(IntMod /* melee training */)",
 			Damage1Ability:"=(Attack1Ability)",
 			Damage1Damage:"1d4 + =(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
 			Damage1Enh:"1",
-			Dex:"=(pointBuy(10,5) + 2 /* Halfling */)",
+			Dex:"=(pointBuy(10,5) + 2 /* Halfling */ + 1 /* Level 4 */)",
 			DexMod:"=(roundDown(Dex/2) - 5)",
 			DexModPlusHalfLevel:"=(DexMod + roundDown(Level/2))",
 			Diplomacy:"=(DiplomacyAbilModPlusHalfLevel + DiplomacyTrained + DiplomacyMisc)",
@@ -137,10 +134,8 @@
 			EncounterPowers2:"Second Chance:  force reroll of attack that hits me<!-- Halfling, immediate interrupt -->",
 			EncounterPowers3:"Staff Block: +1 AC <!-- Wizard implement -->",
 			EncounterPowers4:"Sneak Attack: +2d6 dmg w/ CA & light blade",
-			EncounterPowers5:"Robe of Avoidance: shift 1 after melee misses me",
 			EncounterPowers6:"Color Spray: +=(Attack2AttBonus) vs Will, 1d6+=(IntMod) rad, daze, CB 3<!-- close blast 3 -->",
-			EncounterPowersCheck1:"X",
-			EncounterPowersCheck6:"X",
+			EncounterPowersCheck1:true, EncounterPowersCheck2:true, MagicItemsArmorCheck:true, SecondWindUsed:true, EncounterPowersCheck6:true, EncounterPowersCheck4:true,
 			Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
 			EnduranceAbilModPlusHalfLevel:"=(roundDown(Level/2)+ConMod)",
 			Feats1:"Sneak of Shadows: Thievery training, Backstab<!-- first level -->",
@@ -148,7 +143,8 @@
 			Feats3:"Armor Proficiency (Wizard): cloth",
 			Feats4:"Weapon Proficiency (Wizard): Dagger, Quarterstaff",
 			Feats5:"Implement Expertiese: Staff (+=(\nLevel < 15 ? 1 :\nLevel < 25 ? 2 : 3\n) to attack) <!-- 2nd level -->",
-			Feats9:"future ideas: click here<!--\nmelee training (phb2) : use dex for melee basic attacks, dmg\nArcane Familiar\t\tArcane Pwr, p. 139\tGain a familiar\t\t\t\t\t\t\t\nAstral Fire\t\tp.193\t +1 (+2@11, +3@21) feat bonus to dmg with radiant or fire keyword powers\t\t\t\t\t\t\t\nDistant Advantage\t\tPHB2, p.184\tgain combat advantage for ranged/area attacks against foes flanked by allies\t\t\t\t\t\t\t\nArmor Proficiency (Leather)\t\tp.193\tgain training w/ leather armor\t\t\t\t\t\t\t\nExpanded Spellbook\t\tp.195\tLearn one extra daily attack spell/lvl\t\t\t\t\t\t\t\nHalfling Agility\t\tp.195\thalfling second chance adds -2 to new attack roll\t\t\t\t\t\t\t\nLost in the Crowd\t\tp.196\t +2 to AC when adjacent to 2 larger enemies\t\t\t\t\t\t\t\n-->",
+			Feats6:"Melee Training: Use Int w/ basic melee attacks <!-- PHB2 p187 -->",
+			Feats9:"future ideas: click here<!--\nArcane Familiar\t\tArcane Pwr, p. 139\tGain a familiar\t\t\t\t\t\t\t\nAstral Fire\t\tp.193\t +1 (+2@11, +3@21) feat bonus to dmg with radiant or fire keyword powers\t\t\t\t\t\t\t\nDistant Advantage\t\tPHB2, p.184\tgain combat advantage for ranged/area attacks against foes flanked by allies\t\t\t\t\t\t\t\nArmor Proficiency (Leather)\t\tp.193\tgain training w/ leather armor\t\t\t\t\t\t\t\nExpanded Spellbook\t\tp.195\tLearn one extra daily attack spell/lvl\t\t\t\t\t\t\t\nHalfling Agility\t\tp.195\thalfling second chance adds -2 to new attack roll\t\t\t\t\t\t\t\nLost in the Crowd\t\tp.196\t +2 to AC when adjacent to 2 larger enemies\t\t\t\t\t\t\t\n-->",
 			Fortitude10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Fortitude:"=(Fortitude10PlusHalfLevel + FortitudeAbil + FortitudeClass + FortitudeFeat + FortitudeEnh + FortitudeMisc1 + FortitudeMisc2)",
 			FortitudeAbil:"=(max(StrMod,ConMod))",
@@ -161,20 +157,19 @@
 			HistoryTrained:"=(5 /* Trained */)",
 			Initiative:"=(InitiativeAbilMod + InitiativeHalfLevel + InitiativeMisc)",
 			InitiativeAbilMod:"=(DexMod)",
-			InitiativeConditionalModifiers:"+2 if within 10 squares of Lenora",
 			InitiativeHalfLevel:"=(roundDown(Level/2))",
 			Insight:"=(InsightAbilModPlusHalfLevel + InsightTrained + InsightMisc)",
 			InsightAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
 			InsightTrained:"=(5 /* Trained */)",
-			Int:"=(pointBuy(10,9))",
+			Int:"=(pointBuy(10,9) + 1 /* Level 4 */)",
 			IntMod:"=(roundDown(Int/2) - 5)",
 			IntModPlusHalfLevel:"=(IntMod + roundDown(Level/2))",
 			Intimidate:"=(IntimidateAbilModPlusHalfLevel + IntimidateTrained + IntimidateMisc)",
 			IntimidateAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
 			LanguagesKnown1:"Common",
 			LanguagesKnown2:"Draconic",
-			Level:"3",
-			MagicItemsArmor:"Robe of Avoidance",
+			Level:"4",
+			MagicItemsArmor:"Robe of Avoidance(E):shift after missed",
 			MagicItemsWeapon1:"Thief's Dagger: pickpocket on hit",
 			MaxHitPoints:"=(10 /* level 1 */ + Con + (Level - 1)*( 4 /* per level */))",
 			Nature:"=(NatureAbilModPlusHalfLevel + NatureTrained + NatureMisc)",
@@ -224,11 +219,9 @@
 			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			ThieveryMisc:"=(2 /* Halfling */)",
 			ThieveryTrained:"=(\n5 // Sneak of Shadows\n)",
-			TotalExperience:"=(\n        +175    // 4/21/2010    rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for osmund ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
-			UtilityPowers1:"Expeditious Retreat: shift =(Speed*2) daily",
+			TotalExperience:"=(\n        +125    // 4/28/2010    fighting ghosts in the sewers, and collecting more faymoss\n        +175    // 4/21/2010    rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for osmund ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
+			UtilityPowers1:"<s>Expeditious Retreat: shift =(Speed*2) daily</s>",
 			UtilityPowers2:"Shield: +4 AC/Reflex for 1 turn when hit (enc)",
-			UtilityPowersCheck1:"X",
-			UtilityPowersCheck2:"X",
 			Weight:"75lb",
 			Willpower10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Willpower:"=(Willpower10PlusHalfLevel + WillpowerAbil + WillpowerClass + WillpowerFeat + WillpowerEnh + WillpowerMisc1 + WillpowerMisc2)",
@@ -241,9 +234,9 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">OtherEquipment7</div>
-				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">&nbsp;</div>
+				<div id="EditBoxTarget">TotalExperience</div>
+				<textarea style="height: 325.5px;" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">=(<br>&nbsp;       +125&nbsp;   // 4/28/2010&nbsp;   fighting ghosts in the sewers, and collecting more faymoss<br>&nbsp;       +175&nbsp;   // 4/21/2010&nbsp;   rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund<br>	+175	// 4/7/2010	quest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat<br>	+10	// 4/7/2010	call &amp; response: where house? there house<br>	+175	// 4/7/2010	got orcs &amp; ogre out of the city on a boat<br>	+200	// 4/7/2010	roleplay via email to decide what to do with Dagog the Ogre<br>	+125	// 4/7/2010	decoded alladar's tomes and found rituals<br>	+150	// 4/7/2010	quest xp: gathered violet faymoss for osmund ritual<br>	+100	// 3/31/2010	beat tarin the stoat<br>	+200	// 3/24/2010	orcs &amp; bandits in stoat's den<br>	+75	// 3/17/2010	puzzle lock to stoat's den<br>	+150	// 3/10/2010	trapped door and giant croc<br>	+250	// 3/3/2010	Moral debate about orc prisoners, and looting the trunk<br>	+125	// 2/17/2010, 2/24/2010	Credit for playing as Salek in Corey's preview session vs. the were-rats<br>	+145	// 11/18/2009	Defeated group of orcs in catacombs with steamer trunk, looted robe of avoidance<br>	+154	// 11/4/2009	Defeated another flaming skeleton with skele-troops - scared off gaseous skull<br>	+79	// 11/4/2009	Beat away slimes next to pit<br>	+300	// 10/28/2009	Finished double combat vs. glove possessed skeletal warlords<br>	+125	// 10/21/2009	Solved map puzzle to open door to lower ocean catacombs<br>	+175	// 10/14/2009	Fought Skeleton things w/ Zoran<br>	+170	// 10/7/2009	Fought rats in crypt<br>	+190	// 9/30/2009	Fought skeletons in catacombs beneath House of Melora<br>	+60	// 9/30/2009	Tricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons<br>	+121	// 9/23/2009	Fought fowls in alchemists shop<br>	+142	// 9/16/2009	Brawl on the docks with pressgangers<br>	+100	// 9/16/2009	Barroom investigation skill challenge - find out what the Stoat is up to<br>)<br>&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -254,11 +247,11 @@
 				<span tabindex="1" class="box" style="left: 817px; top: 44px; width: 265px; height: 16px;" id="_PlayerName">Noah Easterly</span>
 
 				<span tabindex="2" class="box" style="left: 28px; top: 70px; width: 346px; height: 25px;" id="_CharacterName">Staffling Bree</span>
-				<span tabindex="3" class="center box" style="left: 392px; top: 76px; width: 54px; height: 21px;" id="_Level">3</span>
+				<span tabindex="3" class="center box" style="left: 392px; top: 76px; width: 54px; height: 21px;" id="_Level">4</span>
 				<span tabindex="4" class="box" style="left: 464px; top: 71px; width: 160px; height: 24px;" id="_Class">Wizard</span>
 				<span tabindex="5" class="box" style="left: 633px; top: 72px; width: 167px; height: 23px;" id="_ParagonPath"></span>
 				<span tabindex="6" class="box" style="left: 810px; top: 72px; width: 173px; height: 23px;" id="_EpicDestiny"></span>
-				<span tabindex="7" class="center box" style="left: 990px; top: 76px; width: 102px; height: 19px;" id="_TotalExperience">3671
+				<span tabindex="7" class="center box" style="left: 990px; top: 76px; width: 102px; height: 19px;" id="_TotalExperience">3796
 </span>
 
 				<span tabindex="8" class="box" style="left: 29px; top: 116px; width: 203px; height: 16px;" id="_Race">Halfling</span>
@@ -271,16 +264,16 @@
 				<span tabindex="15" class="box" style="left: 671px; top: 116px; width: 109px; height: 16px;" id="_Deity"></span>
 				<span tabindex="16" class="box" style="left: 791px; top: 115px; width: 306px; height: 17px;" id="_Affiliation"></span>
 
-				<span tabindex="17" class="center box" style="left: 39px; top: 199px; width: 40px; height: 19px;" id="_Initiative">4</span>
-				<span tabindex="18" class="box" style="left: 37px; top: 237px; width: 334px; height: 16px;" id="_InitiativeConditionalModifiers">+2 if within 10 squares of Lenora</span>
+				<span tabindex="17" class="center box" style="left: 39px; top: 199px; width: 40px; height: 19px;" id="_Initiative">5</span>
+				<span tabindex="18" class="box" style="left: 37px; top: 237px; width: 334px; height: 16px;" id="_InitiativeConditionalModifiers"></span>
 				<span tabindex="19" class="center box" style="left: 191px; top: 199px; width: 29px; height: 19px;" id="_InitiativeAbilMod">3</span>
-				<span tabindex="20" class="center box" style="left: 232px; top: 199px; width: 29px; height: 20px;" id="_InitiativeHalfLevel">1</span>
+				<span tabindex="20" class="center box" style="left: 232px; top: 199px; width: 29px; height: 20px;" id="_InitiativeHalfLevel">2</span>
 				<span tabindex="21" class="center box" style="left: 342px; top: 199px; width: 30px; height: 21px;" id="_InitiativeMisc"></span>
 
 				<span tabindex="22" class="center box" style="left: 38px; top: 299px; width: 44px; height: 20px;" id="_Str">10</span>
 				<span tabindex="23" class="center box" style="left: 38px; top: 336px; width: 44px; height: 20px;" id="_Con">12</span>
-				<span tabindex="24" class="center box" style="left: 38px; top: 387px; width: 44px; height: 20px;" id="_Dex">16</span>
-				<span tabindex="25" class="center box" style="left: 38px; top: 421px; width: 44px; height: 20px;" id="_Int">16</span>
+				<span tabindex="24" class="center box" style="left: 38px; top: 387px; width: 44px; height: 20px;" id="_Dex">17</span>
+				<span tabindex="25" class="center box" style="left: 38px; top: 421px; width: 44px; height: 20px;" id="_Int">17</span>
 				<span tabindex="26" class="center box" style="left: 38px; top: 472px; width: 44px; height: 20px;" id="_Wis">13</span>
 				<span tabindex="27" class="center box" style="left: 38px; top: 507px; width: 44px; height: 20px;" id="_Cha">13</span>
 
@@ -291,15 +284,15 @@
 				<span tabindex="32" class="center box" style="left: 215px; top: 472px; width: 44px; height: 20px;" id="_WisMod">1</span>
 				<span tabindex="33" class="center box" style="left: 215px; top: 507px; width: 44px; height: 20px;" id="_ChaMod">1</span>
 
-				<span tabindex="34" class="center box" style="left: 308px; top: 299px; width: 44px; height: 20px;" id="_StrModPlusHalfLevel">1</span>
-				<span tabindex="35" class="center box" style="left: 308px; top: 336px; width: 44px; height: 20px;" id="_ConModPlusHalfLevel">2</span>
-				<span tabindex="36" class="center box" style="left: 308px; top: 387px; width: 44px; height: 20px;" id="_DexModPlusHalfLevel">4</span>
-				<span tabindex="37" class="center box" style="left: 308px; top: 421px; width: 44px; height: 20px;" id="_IntModPlusHalfLevel">4</span>
-				<span tabindex="38" class="center box" style="left: 308px; top: 472px; width: 44px; height: 20px;" id="_WisModPlusHalfLevel">2</span>
-				<span tabindex="39" class="center box" style="left: 308px; top: 507px; width: 44px; height: 20px;" id="_ChaModPlusHalfLevel">2</span>
+				<span tabindex="34" class="center box" style="left: 308px; top: 299px; width: 44px; height: 20px;" id="_StrModPlusHalfLevel">2</span>
+				<span tabindex="35" class="center box" style="left: 308px; top: 336px; width: 44px; height: 20px;" id="_ConModPlusHalfLevel">3</span>
+				<span tabindex="36" class="center box" style="left: 308px; top: 387px; width: 44px; height: 20px;" id="_DexModPlusHalfLevel">5</span>
+				<span tabindex="37" class="center box" style="left: 308px; top: 421px; width: 44px; height: 20px;" id="_IntModPlusHalfLevel">5</span>
+				<span tabindex="38" class="center box" style="left: 308px; top: 472px; width: 44px; height: 20px;" id="_WisModPlusHalfLevel">3</span>
+				<span tabindex="39" class="center box" style="left: 308px; top: 507px; width: 44px; height: 20px;" id="_ChaModPlusHalfLevel">3</span>
 
-				<span tabindex="40" class="center box" style="left: 399px; top: 207px; width: 29px; height: 25px;" id="_ArmorClass">16</span>
-				<span tabindex="41" class="center box" style="left: 505px; top: 212px; width: 29px; height: 20px;" id="_ArmorClass10PlusHalfLevel">11</span>
+				<span tabindex="40" class="center box" style="left: 399px; top: 207px; width: 29px; height: 25px;" id="_ArmorClass">17</span>
+				<span tabindex="41" class="center box" style="left: 505px; top: 212px; width: 29px; height: 20px;" id="_ArmorClass10PlusHalfLevel">12</span>
 				<span tabindex="42" class="center box" style="left: 539px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassArmorSlashAbil">3</span>
 				<span tabindex="43" class="center box" style="left: 574px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassClass"></span>
 				<span tabindex="44" class="center box" style="left: 608px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassFeat"></span>
@@ -308,8 +301,8 @@
 				<span tabindex="47" class="center box" style="left: 711px; top: 211px; width: 29px; height: 20px;" id="_ArmorClassMisc2"></span>
 				<span tabindex="48" class="box" style="left: 399px; top: 257px; width: 340px; height: 15px;" id="_ArmorClassConditionalBonuses">+2 vs opportunity attacks <!-- Nimble Reaction, p.44 --></span>
 
-				<span tabindex="49" class="center box" style="left: 399px; top: 306px; width: 29px; height: 25px;" id="_Fortitude">12</span>
-				<span tabindex="50" class="center box" style="left: 505px; top: 308px; width: 29px; height: 20px;" id="_Fortitude10PlusHalfLevel">11</span>
+				<span tabindex="49" class="center box" style="left: 399px; top: 306px; width: 29px; height: 25px;" id="_Fortitude">13</span>
+				<span tabindex="50" class="center box" style="left: 505px; top: 308px; width: 29px; height: 20px;" id="_Fortitude10PlusHalfLevel">12</span>
 				<span tabindex="51" class="center box" style="left: 539px; top: 308px; width: 29px; height: 20px;" id="_FortitudeAbil">1</span>
 				<span tabindex="52" class="center box" style="left: 574px; top: 308px; width: 29px; height: 20px;" id="_FortitudeClass"></span>
 				<span tabindex="53" class="center box" style="left: 608px; top: 308px; width: 29px; height: 20px;" id="_FortitudeFeat"></span>
@@ -318,8 +311,8 @@
 				<span tabindex="56" class="center box" style="left: 711px; top: 308px; width: 29px; height: 20px;" id="_FortitudeMisc2"></span>
 				<span tabindex="57" class="box" style="left: 399px; top: 351px; width: 340px; height: 15px;" id="_FortitudeConditionalBonuses"></span>
 
-				<span tabindex="58" class="center box" style="left: 399px; top: 390px; width: 29px; height: 25px;" id="_Reflex">14</span>
-				<span tabindex="59" class="center box" style="left: 505px; top: 392px; width: 29px; height: 20px;" id="_Reflex10PlusHalfLevel">11</span>
+				<span tabindex="58" class="center box" style="left: 399px; top: 390px; width: 29px; height: 25px;" id="_Reflex">15</span>
+				<span tabindex="59" class="center box" style="left: 505px; top: 392px; width: 29px; height: 20px;" id="_Reflex10PlusHalfLevel">12</span>
 				<span tabindex="60" class="center box" style="left: 539px; top: 392px; width: 29px; height: 20px;" id="_ReflexAbil">3</span>
 				<span tabindex="61" class="center box" style="left: 574px; top: 392px; width: 29px; height: 20px;" id="_ReflexClass"></span>
 				<span tabindex="62" class="center box" style="left: 608px; top: 392px; width: 29px; height: 20px;" id="_ReflexFeat"></span>
@@ -328,8 +321,8 @@
 				<span tabindex="65" class="center box" style="left: 711px; top: 392px; width: 29px; height: 20px;" id="_ReflexMisc2"></span>
 				<span tabindex="66" class="box" style="left: 399px; top: 436px; width: 340px; height: 16px;" id="_ReflexConditionalBonuses"></span>
 
-				<span tabindex="67" class="center box" style="left: 399px; top: 478px; width: 29px; height: 25px;" id="_Willpower">14</span>
-				<span tabindex="68" class="center box" style="left: 505px; top: 480px; width: 29px; height: 20px;" id="_Willpower10PlusHalfLevel">11</span>
+				<span tabindex="67" class="center box" style="left: 399px; top: 478px; width: 29px; height: 25px;" id="_Willpower">15</span>
+				<span tabindex="68" class="center box" style="left: 505px; top: 480px; width: 29px; height: 20px;" id="_Willpower10PlusHalfLevel">12</span>
 				<span tabindex="69" class="center box" style="left: 539px; top: 480px; width: 29px; height: 20px;" id="_WillpowerAbil">1</span>
 				<span tabindex="70" class="center box" style="left: 574px; top: 480px; width: 29px; height: 20px;" id="_WillpowerClass">2</span>
 				<span tabindex="71" class="center box" style="left: 608px; top: 480px; width: 29px; height: 20px;" id="_WillpowerFeat"></span>
@@ -345,28 +338,28 @@
 				<span tabindex="80" class="center box" style="left: 1067px; top: 198px; width: 31px; height: 21px;" id="_SpeedMisc"></span>
 				<span tabindex="81" class="box" style="left: 758px; top: 241px; width: 340px; height: 19px;" id="_SpecialMovement"></span>
 
-				<span tabindex="82" class="center box" style="left: 759px; top: 306px; width: 37px; height: 18px;" id="_PassiveInsight">17</span>
-				<span tabindex="83" class="center box" style="left: 1041px; top: 306px; width: 43px; height: 19px;" id="_PassiveInsightSkillBonus">7</span>
-				<span tabindex="84" class="center box" style="left: 757px; top: 343px; width: 40px; height: 19px;" id="_PassivePerception">12</span>
-				<span tabindex="85" class="center box" style="left: 1041px; top: 343px; width: 44px; height: 19px;" id="_PassivePerceptionSkillBonus">2</span>
+				<span tabindex="82" class="center box" style="left: 759px; top: 306px; width: 37px; height: 18px;" id="_PassiveInsight">18</span>
+				<span tabindex="83" class="center box" style="left: 1041px; top: 306px; width: 43px; height: 19px;" id="_PassiveInsightSkillBonus">8</span>
+				<span tabindex="84" class="center box" style="left: 757px; top: 343px; width: 40px; height: 19px;" id="_PassivePerception">13</span>
+				<span tabindex="85" class="center box" style="left: 1041px; top: 343px; width: 44px; height: 19px;" id="_PassivePerceptionSkillBonus">3</span>
 				<span tabindex="86" class="box" style="left: 759px; top: 384px; width: 343px; height: 18px;" id="_SpecialSenses"></span>
 
-				<span tabindex="87" class="center box" style="left: 29px; top: 592px; width: 71px; height: 37px;" id="_MaxHitPoints">30</span>
-				<span tabindex="88" class="center box" style="left: 115px; top: 602px; width: 77px; height: 22px;" id="_BloodiedHitPoints">15</span>
-				<span tabindex="89" class="center box" style="left: 214px; top: 602px; width: 79px; height: 22px;" id="_SurgeValue">7</span>
+				<span tabindex="87" class="center box" style="left: 29px; top: 592px; width: 71px; height: 37px;" id="_MaxHitPoints">34</span>
+				<span tabindex="88" class="center box" style="left: 115px; top: 602px; width: 77px; height: 22px;" id="_BloodiedHitPoints">17</span>
+				<span tabindex="89" class="center box" style="left: 214px; top: 602px; width: 79px; height: 22px;" id="_SurgeValue">8</span>
 				<span tabindex="90" class="center box" style="left: 305px; top: 602px; width: 71px; height: 22px;" id="_SurgesPerDay">7</span>
-				<span tabindex="91" class="center box" style="left: 29px; top: 656px; width: 238px; height: 62px;" id="_CurrentHitPoints">25</span>
-				<span tabindex="92" class="center box" style="left: 271px; top: 656px; width: 102px; height: 62px;" id="_CurrentSurgeUses">5</span>
-				<input tabindex="93" class="center box" style="left: 326px; top: 723px;" id="_SecondWindUsed" type="checkbox">
+				<span tabindex="91" class="center box" style="left: 29px; top: 656px; width: 238px; height: 62px;" id="_CurrentHitPoints">3</span>
+				<span tabindex="92" class="center box" style="left: 271px; top: 656px; width: 102px; height: 62px;" id="_CurrentSurgeUses">4</span>
+				<input tabindex="93" class="center box edited" style="left: 326px; top: 723px;" id="_SecondWindUsed" type="checkbox">
 				<span tabindex="94" class="box" style="left: 29px; top: 756px; width: 348px; height: 29px;" id="_TemporaryHitPoints"></span>
 				<input tabindex="95" class="center box" style="left: 308px; top: 790px;" id="_DeathSavingThrowFailures1" type="checkbox">
 				<input tabindex="96" class="center box" style="left: 331px; top: 790px;" id="_DeathSavingThrowFailures2" type="checkbox">
 				<input tabindex="97" class="center box" style="left: 354px; top: 790px;" id="_DeathSavingThrowFailures3" type="checkbox">
 				<span tabindex="98" class="box" style="left: 29px; top: 819px; width: 348px; height: 20px;" id="_SavingThrowMods">+5 vs. Fear <!-- Halfling --></span>
 				<span tabindex="99" class="box" style="left: 29px; top: 860px; width: 348px; height: 25px;" id="_Resistances"></span>
-				<span tabindex="100" class="box" style="left: 29px; top: 904px; width: 348px; height: 22px;" id="_CurrentConditionsAndEffects">immobilized</span>
+				<span tabindex="100" class="box" style="left: 29px; top: 904px; width: 348px; height: 22px;" id="_CurrentConditionsAndEffects"></span>
 
-				<span tabindex="101" class="center box" style="left: 394px; top: 578px; width: 47px; height: 24px;" id="_ActionPoints">1</span>
+				<span tabindex="101" class="center box" style="left: 394px; top: 578px; width: 47px; height: 24px;" id="_ActionPoints"></span>
 				<span tabindex="102" class="box" style="left: 397px; top: 624px; width: 341px; height: 21px;" id="_ActionPointAddtionalEffects"></span>
 
 				<span tabindex="103" class="box" style="left: 478px; top: 677px; width: 264px; height: 16px;" id="_RaceAbilityScoreMods">+2 Dexterity &amp; Charisma</span>
@@ -380,9 +373,9 @@
 				<span tabindex="111" class="box" style="left: 395px; top: 897px; width: 347px; height: 22px;" id="_RaceFeatures8"></span>
 
 				<span tabindex="112" class="box" style="left: 797px; top: 430px; width: 302px; height: 21px;" id="_Attack1Ability">Thief's Dagger melee</span>
-				<span tabindex="113" class="center box" style="left: 774px; top: 471px; width: 43px; height: 20px;" id="_Attack1AttBonus">5</span>
-				<span tabindex="114" class="center box" style="left: 862px; top: 471px; width: 30px; height: 20px;" id="_Attack1HalfLevel">1</span>
-				<span tabindex="115" class="center box" style="left: 895px; top: 471px; width: 30px; height: 20px;" id="_Attack1Abil">0</span>
+				<span tabindex="113" class="center box" style="left: 774px; top: 471px; width: 43px; height: 20px;" id="_Attack1AttBonus">9</span>
+				<span tabindex="114" class="center box" style="left: 862px; top: 471px; width: 30px; height: 20px;" id="_Attack1HalfLevel">2</span>
+				<span tabindex="115" class="center box" style="left: 895px; top: 471px; width: 30px; height: 20px;" id="_Attack1Abil">3</span>
 				<span tabindex="116" class="center box" style="left: 930px; top: 471px; width: 30px; height: 20px;" id="_Attack1Class"></span>
 				<span tabindex="117" class="center box" style="left: 964px; top: 471px; width: 30px; height: 20px;" id="_Attack1Prof">3</span>
 				<span tabindex="118" class="center box" style="left: 998px; top: 471px; width: 30px; height: 20px;" id="_Attack1Feat"></span>
@@ -390,8 +383,8 @@
 				<span tabindex="120" class="center box" style="left: 1068px; top: 471px; width: 30px; height: 20px;" id="_Attack1Misc"></span>
 
 				<span tabindex="121" class="box" style="left: 797px; top: 503px; width: 302px; height: 21px;" id="_Attack2Ability">Implement: Staff</span>
-				<span tabindex="122" class="center box" style="left: 774px; top: 543px; width: 43px; height: 20px;" id="_Attack2AttBonus">5</span>
-				<span tabindex="123" class="center box" style="left: 862px; top: 543px; width: 30px; height: 20px;" id="_Attack2HalfLevel">1</span>
+				<span tabindex="122" class="center box" style="left: 774px; top: 543px; width: 43px; height: 20px;" id="_Attack2AttBonus">6</span>
+				<span tabindex="123" class="center box" style="left: 862px; top: 543px; width: 30px; height: 20px;" id="_Attack2HalfLevel">2</span>
 				<span tabindex="124" class="center box" style="left: 895px; top: 543px; width: 30px; height: 20px;" id="_Attack2Abil">3</span>
 				<span tabindex="125" class="center box" style="left: 930px; top: 543px; width: 30px; height: 20px;" id="_Attack2Class"></span>
 				<span tabindex="126" class="center box" style="left: 964px; top: 543px; width: 30px; height: 20px;" id="_Attack2Prof"></span>
@@ -400,8 +393,8 @@
 				<span tabindex="129" class="center box" style="left: 1068px; top: 543px; width: 30px; height: 20px;" id="_Attack2Misc"></span>
 
 				<span tabindex="130" class="box" style="left: 797px; top: 607px; width: 302px; height: 21px;" id="_Damage1Ability">Thief's Dagger melee</span>
-				<span tabindex="131" class="center box" style="left: 757px; top: 648px; width: 66px; height: 20px;" id="_Damage1Damage">1d4 + 1</span>
-				<span tabindex="132" class="center box" style="left: 928px; top: 648px; width: 30px; height: 20px;" id="_Damage1Abil">0</span>
+				<span tabindex="131" class="center box" style="left: 757px; top: 648px; width: 66px; height: 20px;" id="_Damage1Damage">1d4 + 4</span>
+				<span tabindex="132" class="center box" style="left: 928px; top: 648px; width: 30px; height: 20px;" id="_Damage1Abil">3</span>
 				<span tabindex="133" class="center box" style="left: 963px; top: 648px; width: 30px; height: 20px;" id="_Damage1Feat"></span>
 				<span tabindex="134" class="center box" style="left: 998px; top: 648px; width: 30px; height: 20px;" id="_Damage1Enh">1</span>
 				<span tabindex="135" class="center box" style="left: 1032px; top: 648px; width: 30px; height: 20px;" id="_Damage1Misc1"></span>
@@ -415,9 +408,9 @@
 				<span tabindex="142" class="center box" style="left: 1032px; top: 720px; width: 30px; height: 20px;" id="_Damage2Misc1"></span>
 				<span tabindex="143" class="center box" style="left: 1065px; top: 720px; width: 30px; height: 20px;" id="_Damage2Misc2"></span>
 
-				<span tabindex="144" class="center box" style="left: 758px; top: 797px; width: 40px; height: 25px;" id="_BasicAttack1Attack">5</span>
-				<span tabindex="145" class="center box" style="left: 758px; top: 832px; width: 40px; height: 25px;" id="_BasicAttack2Attack">8</span>
-				<span tabindex="146" class="center box" style="left: 758px; top: 867px; width: 40px; height: 25px;" id="_BasicAttack3Attack">3</span>
+				<span tabindex="144" class="center box" style="left: 758px; top: 797px; width: 40px; height: 25px;" id="_BasicAttack1Attack">9</span>
+				<span tabindex="145" class="center box" style="left: 758px; top: 832px; width: 40px; height: 25px;" id="_BasicAttack2Attack">9</span>
+				<span tabindex="146" class="center box" style="left: 758px; top: 867px; width: 40px; height: 25px;" id="_BasicAttack3Attack">7</span>
 				<span tabindex="147" class="center box" style="left: 759px; top: 900px; width: 40px; height: 25px;" id="_BasicAttack4Attack"></span>
 
 				<span tabindex="148" class="center box" style="left: 827px; top: 797px; width: 40px; height: 25px;" id="_BasicAttack1Defense">AC</span>
@@ -429,46 +422,46 @@
 				<span tabindex="153" class="box" style="left: 879px; top: 830px; width: 138px; height: 25px;" id="_BasicAttack2WeaponOrPower">Thief's Dagger range</span>
 				<span tabindex="154" class="box" style="left: 879px; top: 865px; width: 138px; height: 25px;" id="_BasicAttack3WeaponOrPower">Quarterstaff</span>
 				<span tabindex="155" class="box" style="left: 879px; top: 898px; width: 138px; height: 25px;" id="_BasicAttack4WeaponOrPower"></span>
-				<span tabindex="156" class="box" style="left: 1029px; top: 795px; width: 72px; height: 25px;" id="_BasicAttack1Damage">1d4 + 1</span>
+				<span tabindex="156" class="box" style="left: 1029px; top: 795px; width: 72px; height: 25px;" id="_BasicAttack1Damage">1d4 + 4</span>
 				<span tabindex="157" class="box" style="left: 1029px; top: 830px; width: 72px; height: 25px;" id="_BasicAttack2Damage">1d4 + 4</span>
-				<span tabindex="158" class="box" style="left: 1029px; top: 865px; width: 72px; height: 25px;" id="_BasicAttack3Damage">1d6 + 0</span>
+				<span tabindex="158" class="box" style="left: 1029px; top: 865px; width: 72px; height: 25px;" id="_BasicAttack3Damage">1d6 + 3</span>
 				<span tabindex="159" class="box" style="left: 1029px; top: 898px; width: 72px; height: 25px;" id="_BasicAttack4Damage"></span>
 
-				<span tabindex="160" class="center box" style="left: 26px; top: 987px; width: 35px; height: 19px;" id="_Acrobatics">6</span>
-				<span tabindex="161" class="center box" style="left: 26px; top: 1015px; width: 35px; height: 19px;" id="_Arcana">9</span>
-				<span tabindex="162" class="center box" style="left: 26px; top: 1043px; width: 35px; height: 19px;" id="_Athletics">1</span>
-				<span tabindex="163" class="center box" style="left: 26px; top: 1071px; width: 35px; height: 19px;" id="_Bluff">2</span>
-				<span tabindex="164" class="center box" style="left: 26px; top: 1099px; width: 35px; height: 19px;" id="_Diplomacy">9</span>
-				<span tabindex="165" class="center box" style="left: 26px; top: 1126px; width: 35px; height: 19px;" id="_Dungeoneering">2</span>
-				<span tabindex="166" class="center box" style="left: 26px; top: 1155px; width: 35px; height: 19px;" id="_Endurance">2</span>
-				<span tabindex="167" class="center box" style="left: 26px; top: 1182px; width: 35px; height: 19px;" id="_Heal">2</span>
-				<span tabindex="168" class="center box" style="left: 26px; top: 1211px; width: 35px; height: 19px;" id="_History">9</span>
-				<span tabindex="169" class="center box" style="left: 26px; top: 1239px; width: 35px; height: 19px;" id="_Insight">7</span>
-				<span tabindex="170" class="center box" style="left: 26px; top: 1267px; width: 35px; height: 19px;" id="_Intimidate">2</span>
-				<span tabindex="171" class="center box" style="left: 26px; top: 1295px; width: 35px; height: 19px;" id="_Nature">2</span>
-				<span tabindex="172" class="center box" style="left: 26px; top: 1322px; width: 35px; height: 19px;" id="_Perception">2</span>
-				<span tabindex="173" class="center box" style="left: 26px; top: 1350px; width: 35px; height: 19px;" id="_Religion">4</span>
-				<span tabindex="174" class="center box" style="left: 26px; top: 1378px; width: 35px; height: 19px;" id="_Stealth">4</span>
-				<span tabindex="175" class="center box" style="left: 26px; top: 1406px; width: 35px; height: 19px;" id="_Streetwise">2</span>
-				<span tabindex="176" class="center box" style="left: 26px; top: 1434px; width: 35px; height: 19px;" id="_Thievery">11<!-- normal -->/13<!-- locks, traps (thieves tools) --></span>
+				<span tabindex="160" class="center box" style="left: 26px; top: 987px; width: 35px; height: 19px;" id="_Acrobatics">7</span>
+				<span tabindex="161" class="center box" style="left: 26px; top: 1015px; width: 35px; height: 19px;" id="_Arcana">10</span>
+				<span tabindex="162" class="center box" style="left: 26px; top: 1043px; width: 35px; height: 19px;" id="_Athletics">2</span>
+				<span tabindex="163" class="center box" style="left: 26px; top: 1071px; width: 35px; height: 19px;" id="_Bluff">3</span>
+				<span tabindex="164" class="center box" style="left: 26px; top: 1099px; width: 35px; height: 19px;" id="_Diplomacy">10</span>
+				<span tabindex="165" class="center box" style="left: 26px; top: 1126px; width: 35px; height: 19px;" id="_Dungeoneering">3</span>
+				<span tabindex="166" class="center box" style="left: 26px; top: 1155px; width: 35px; height: 19px;" id="_Endurance">3</span>
+				<span tabindex="167" class="center box" style="left: 26px; top: 1182px; width: 35px; height: 19px;" id="_Heal">3</span>
+				<span tabindex="168" class="center box" style="left: 26px; top: 1211px; width: 35px; height: 19px;" id="_History">10</span>
+				<span tabindex="169" class="center box" style="left: 26px; top: 1239px; width: 35px; height: 19px;" id="_Insight">8</span>
+				<span tabindex="170" class="center box" style="left: 26px; top: 1267px; width: 35px; height: 19px;" id="_Intimidate">3</span>
+				<span tabindex="171" class="center box" style="left: 26px; top: 1295px; width: 35px; height: 19px;" id="_Nature">3</span>
+				<span tabindex="172" class="center box" style="left: 26px; top: 1322px; width: 35px; height: 19px;" id="_Perception">3</span>
+				<span tabindex="173" class="center box" style="left: 26px; top: 1350px; width: 35px; height: 19px;" id="_Religion">5</span>
+				<span tabindex="174" class="center box" style="left: 26px; top: 1378px; width: 35px; height: 19px;" id="_Stealth">5</span>
+				<span tabindex="175" class="center box" style="left: 26px; top: 1406px; width: 35px; height: 19px;" id="_Streetwise">3</span>
+				<span tabindex="176" class="center box" style="left: 26px; top: 1434px; width: 35px; height: 19px;" id="_Thievery">12<!-- normal -->/14<!-- locks, traps (thieves tools) --></span>
 
-				<span tabindex="177" class="center box" style="left: 231px; top: 988px; width: 21px; height: 17px;" id="_AcrobaticsAbilModPlusHalfLevel">4</span>
-				<span tabindex="178" class="center box" style="left: 231px; top: 1016px; width: 21px; height: 17px;" id="_ArcanaAbilModPlusHalfLevel">4</span>
-				<span tabindex="179" class="center box" style="left: 231px; top: 1044px; width: 21px; height: 17px;" id="_AthleticsAbilModPlusHalfLevel">1</span>
-				<span tabindex="180" class="center box" style="left: 231px; top: 1072px; width: 21px; height: 17px;" id="_BluffAbilModPlusHalfLevel">2</span>
-				<span tabindex="181" class="center box" style="left: 231px; top: 1100px; width: 21px; height: 17px;" id="_DiplomacyAbilModPlusHalfLevel">2</span>
-				<span tabindex="182" class="center box" style="left: 231px; top: 1127px; width: 21px; height: 17px;" id="_DungeoneeringAbilModPlusHalfLevel">2</span>
-				<span tabindex="183" class="center box" style="left: 231px; top: 1156px; width: 21px; height: 17px;" id="_EnduranceAbilModPlusHalfLevel">2</span>
-				<span tabindex="184" class="center box" style="left: 231px; top: 1183px; width: 21px; height: 17px;" id="_HealAbilModPlusHalfLevel">2</span>
-				<span tabindex="185" class="center box" style="left: 231px; top: 1212px; width: 21px; height: 17px;" id="_HistoryAbilModPlusHalfLevel">4</span>
-				<span tabindex="186" class="center box" style="left: 231px; top: 1240px; width: 21px; height: 17px;" id="_InsightAbilModPlusHalfLevel">2</span>
-				<span tabindex="187" class="center box" style="left: 231px; top: 1268px; width: 21px; height: 17px;" id="_IntimidateAbilModPlusHalfLevel">2</span>
-				<span tabindex="188" class="center box" style="left: 231px; top: 1296px; width: 21px; height: 17px;" id="_NatureAbilModPlusHalfLevel">2</span>
-				<span tabindex="189" class="center box" style="left: 231px; top: 1323px; width: 21px; height: 17px;" id="_PerceptionAbilModPlusHalfLevel">2</span>
-				<span tabindex="190" class="center box" style="left: 231px; top: 1351px; width: 21px; height: 17px;" id="_ReligionAbilModPlusHalfLevel">4</span>
-				<span tabindex="191" class="center box" style="left: 231px; top: 1379px; width: 21px; height: 17px;" id="_StealthAbilModPlusHalfLevel">4</span>
-				<span tabindex="192" class="center box" style="left: 231px; top: 1407px; width: 21px; height: 17px;" id="_StreetwiseAbilModPlusHalfLevel">2</span>
-				<span tabindex="193" class="center box" style="left: 231px; top: 1435px; width: 21px; height: 17px;" id="_ThieveryAbilModPlusHalfLevel">4</span>
+				<span tabindex="177" class="center box" style="left: 231px; top: 988px; width: 21px; height: 17px;" id="_AcrobaticsAbilModPlusHalfLevel">5</span>
+				<span tabindex="178" class="center box" style="left: 231px; top: 1016px; width: 21px; height: 17px;" id="_ArcanaAbilModPlusHalfLevel">5</span>
+				<span tabindex="179" class="center box" style="left: 231px; top: 1044px; width: 21px; height: 17px;" id="_AthleticsAbilModPlusHalfLevel">2</span>
+				<span tabindex="180" class="center box" style="left: 231px; top: 1072px; width: 21px; height: 17px;" id="_BluffAbilModPlusHalfLevel">3</span>
+				<span tabindex="181" class="center box" style="left: 231px; top: 1100px; width: 21px; height: 17px;" id="_DiplomacyAbilModPlusHalfLevel">3</span>
+				<span tabindex="182" class="center box" style="left: 231px; top: 1127px; width: 21px; height: 17px;" id="_DungeoneeringAbilModPlusHalfLevel">3</span>
+				<span tabindex="183" class="center box" style="left: 231px; top: 1156px; width: 21px; height: 17px;" id="_EnduranceAbilModPlusHalfLevel">3</span>
+				<span tabindex="184" class="center box" style="left: 231px; top: 1183px; width: 21px; height: 17px;" id="_HealAbilModPlusHalfLevel">3</span>
+				<span tabindex="185" class="center box" style="left: 231px; top: 1212px; width: 21px; height: 17px;" id="_HistoryAbilModPlusHalfLevel">5</span>
+				<span tabindex="186" class="center box" style="left: 231px; top: 1240px; width: 21px; height: 17px;" id="_InsightAbilModPlusHalfLevel">3</span>
+				<span tabindex="187" class="center box" style="left: 231px; top: 1268px; width: 21px; height: 17px;" id="_IntimidateAbilModPlusHalfLevel">3</span>
+				<span tabindex="188" class="center box" style="left: 231px; top: 1296px; width: 21px; height: 17px;" id="_NatureAbilModPlusHalfLevel">3</span>
+				<span tabindex="189" class="center box" style="left: 231px; top: 1323px; width: 21px; height: 17px;" id="_PerceptionAbilModPlusHalfLevel">3</span>
+				<span tabindex="190" class="center box" style="left: 231px; top: 1351px; width: 21px; height: 17px;" id="_ReligionAbilModPlusHalfLevel">5</span>
+				<span tabindex="191" class="center box" style="left: 231px; top: 1379px; width: 21px; height: 17px;" id="_StealthAbilModPlusHalfLevel">5</span>
+				<span tabindex="192" class="center box" style="left: 231px; top: 1407px; width: 21px; height: 17px;" id="_StreetwiseAbilModPlusHalfLevel">3</span>
+				<span tabindex="193" class="center box" style="left: 231px; top: 1435px; width: 21px; height: 17px;" id="_ThieveryAbilModPlusHalfLevel">5</span>
 
 				<span tabindex="194" class="center box" style="left: 277px; top: 988px; width: 21px; height: 17px;" id="_AcrobaticsTrained"></span>
 				<span tabindex="195" class="center box" style="left: 277px; top: 1016px; width: 21px; height: 17px;" id="_ArcanaTrained">5</span>
@@ -539,11 +532,10 @@ can cast per day for your level.
 				<span tabindex="249" class="box" style="left: 758px; top: 1036px; width: 346px; height: 23px;" id="_Feats3">Armor Proficiency (Wizard): cloth</span>
 				<span tabindex="250" class="box" style="left: 758px; top: 1064px; width: 346px; height: 23px;" id="_Feats4">Weapon Proficiency (Wizard): Dagger, Quarterstaff</span>
 				<span tabindex="251" class="box" style="left: 758px; top: 1092px; width: 346px; height: 23px;" id="_Feats5">Implement Expertiese: Staff (+1 to attack) <!-- 2nd level --></span>
-				<span tabindex="252" class="box" style="left: 758px; top: 1120px; width: 346px; height: 23px;" id="_Feats6"></span>
+				<span tabindex="252" class="box" style="left: 758px; top: 1120px; width: 346px; height: 23px;" id="_Feats6">Melee Training: Use Int w/ basic melee attacks <!-- PHB2 p187 --></span>
 				<span tabindex="253" class="box" style="left: 758px; top: 1148px; width: 346px; height: 23px;" id="_Feats7"></span>
 				<span tabindex="254" class="box" style="left: 758px; top: 1176px; width: 346px; height: 23px;" id="_Feats8"></span>
 				<span tabindex="255" class="box" style="left: 758px; top: 1204px; width: 346px; height: 23px;" id="_Feats9">future ideas: click here<!--
-melee training (phb2) : use dex for melee basic attacks, dmg
 Arcane Familiar		Arcane Pwr, p. 139	Gain a familiar							
 Astral Fire		p.193	 +1 (+2@11, +3@21) feat bonus to dmg with radiant or fire keyword powers							
 Distant Advantage		PHB2, p.184	gain combat advantage for ranged/area attacks against foes flanked by allies							
@@ -571,26 +563,26 @@ Lost in the Crowd		p.196	 +2 to AC when adjacent to 2 larger enemies
 				<span tabindex="268" class="box" style="left: 43px; top: 121px; width: 349px; height: 23px;" id="_AtWillPowers2">Light: minor, range 10</span>
 				<span tabindex="269" class="box" style="left: 43px; top: 150px; width: 349px; height: 22px;" id="_AtWillPowers3">Mage Hand: minor, range 5 (move 20lbs 5 squares)</span>
 				<span tabindex="270" class="box" style="left: 43px; top: 179px; width: 349px; height: 22px;" id="_AtWillPowers4">Prestigitation: magic trick (standard)</span>
-				<span tabindex="271" class="box" style="left: 43px; top: 209px; width: 349px; height: 21px;" id="_AtWillPowers5">Magic Missle: +5 vs Reflex, 2d4+3 dmg, range 20</span>
-				<span tabindex="272" class="box" style="left: 43px; top: 237px; width: 349px; height: 22px;" id="_AtWillPowers6">Scorching Burst: +5 vs Reflex, 1d6+3, burst 1 w/in 10</span>
+				<span tabindex="271" class="box" style="left: 43px; top: 209px; width: 349px; height: 21px;" id="_AtWillPowers5">Magic Missle: +6 vs Reflex, 2d4+3 dmg, range 20</span>
+				<span tabindex="272" class="box" style="left: 43px; top: 237px; width: 349px; height: 22px;" id="_AtWillPowers6">Scorching Burst: +6 vs Reflex, 1d6+3, burst 1 w/in 10</span>
 
-				<span tabindex="273" class="box" style="left: 43px; top: 296px; width: 321px; height: 20px;" id="_EncounterPowers1">Force Orb: +5 vs Reflex, 2d8+3 / 1d10+3 dmg<!--
+				<span tabindex="273" class="box" style="left: 43px; top: 296px; width: 321px; height: 20px;" id="_EncounterPowers1">Force Orb: +6 vs Reflex, 2d8+3 / 1d10+3 dmg<!--
 ranged 20, secondary hits all adjacent --></span>
 				<span tabindex="274" class="box" style="left: 43px; top: 324px; width: 321px; height: 21px;" id="_EncounterPowers2">Second Chance:  force reroll of attack that hits me<!-- Halfling, immediate interrupt --></span>
 				<span tabindex="275" class="box" style="left: 43px; top: 350px; width: 321px; height: 25px;" id="_EncounterPowers3">Staff Block: +1 AC <!-- Wizard implement --></span>
 				<span tabindex="276" class="box" style="left: 43px; top: 382px; width: 321px; height: 21px;" id="_EncounterPowers4">Sneak Attack: +2d6 dmg w/ CA &amp; light blade</span>
-				<span tabindex="277" class="box" style="left: 43px; top: 410px; width: 321px; height: 21px;" id="_EncounterPowers5">Robe of Avoidance: shift 1 after melee misses me</span>
-				<span tabindex="278" class="box" style="left: 43px; top: 438px; width: 321px; height: 22px;" id="_EncounterPowers6">Color Spray: +5 vs Will, 1d6+3 rad, daze, CB 3<!-- close blast 3 --></span>
-				<span tabindex="279" class="box" style="left: 43px; top: 495px; width: 321px; height: 24px;" id="_DailyPowers1">Sleep: +5 vs Will, slow/fail/sleep, burst 2 w/in 20<!--
+				<span tabindex="277" class="box" style="left: 43px; top: 410px; width: 321px; height: 21px;" id="_EncounterPowers5"></span>
+				<span tabindex="278" class="box" style="left: 43px; top: 438px; width: 321px; height: 22px;" id="_EncounterPowers6">Color Spray: +6 vs Will, 1d6+3 rad, daze, CB 3<!-- close blast 3 --></span>
+				<span tabindex="279" class="box" style="left: 43px; top: 495px; width: 321px; height: 24px;" id="_DailyPowers1">Sleep: +6 vs Will, slow/fail/sleep, burst 2 w/in 20<!--
 target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail -> unconsious, save ends); miss: slow (save ends) [standard action]
 --></span>
-				<span tabindex="280" class="box" style="left: 43px; top: 524px; width: 321px; height: 23px;" id="_DailyPowers2">Freezing Cloud: +5 vs Fort, 1d8+3 cold, 1/2 miss
+				<span tabindex="280" class="box" style="left: 43px; top: 524px; width: 321px; height: 23px;" id="_DailyPowers2"><s>Freezing Cloud: +6 vs Fort, 1d8+3 cold, 1/2 miss</s>
 <!-- target all creatures in burst 2 w/in 10, Int vs Fort, hit: 1d8+Int cold dmg; miss: 1/2 dmg; effect: attack any creature entering cloud, starting turn their until end of next turn [standard action] --></span>
 				<span tabindex="281" class="box" style="left: 43px; top: 554px; width: 321px; height: 22px;" id="_DailyPowers3"></span>
 				<span tabindex="282" class="box" style="left: 43px; top: 581px; width: 321px; height: 24px;" id="_DailyPowers4"></span>
 				<span tabindex="283" class="box" style="left: 43px; top: 611px; width: 321px; height: 23px;" id="_DailyPowers5"></span>
 				<span tabindex="284" class="box" style="left: 43px; top: 640px; width: 321px; height: 21px;" id="_DailyPowers6"></span>
-				<span tabindex="285" class="box" style="left: 43px; top: 699px; width: 321px; height: 21px;" id="_UtilityPowers1">Expeditious Retreat: shift 12 daily</span>
+				<span tabindex="285" class="box" style="left: 43px; top: 699px; width: 321px; height: 21px;" id="_UtilityPowers1"><s>Expeditious Retreat: shift 12 daily</s></span>
 				<span tabindex="286" class="box" style="left: 43px; top: 726px; width: 321px; height: 23px;" id="_UtilityPowers2">Shield: +4 AC/Reflex for 1 turn when hit (enc)</span>
 				<span tabindex="287" class="box" style="left: 43px; top: 754px; width: 321px; height: 25px;" id="_UtilityPowers3"></span>
 				<span tabindex="288" class="box" style="left: 43px; top: 784px; width: 321px; height: 23px;" id="_UtilityPowers4"></span>
@@ -599,20 +591,20 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 				<span tabindex="291" class="box" style="left: 43px; top: 869px; width: 321px; height: 23px;" id="_UtilityPowers7"></span>
 				<span tabindex="292" class="box" style="left: 43px; top: 898px; width: 321px; height: 22px;" id="_UtilityPowers8"></span>
 
-				<input tabindex="293" class="box" style="left: 367px; top: 302px;" id="_EncounterPowersCheck1" type="checkbox">
-				<input tabindex="294" class="box" style="left: 367px; top: 330px;" id="_EncounterPowersCheck2" type="checkbox">
+				<input tabindex="293" class="box edited" style="left: 367px; top: 302px;" id="_EncounterPowersCheck1" type="checkbox">
+				<input tabindex="294" class="box edited" style="left: 367px; top: 330px;" id="_EncounterPowersCheck2" type="checkbox">
 				<input tabindex="295" class="box" style="left: 367px; top: 359px;" id="_EncounterPowersCheck3" type="checkbox">
-				<input tabindex="296" class="box" style="left: 367px; top: 388px;" id="_EncounterPowersCheck4" type="checkbox">
+				<input tabindex="296" class="box edited" style="left: 367px; top: 388px;" id="_EncounterPowersCheck4" type="checkbox">
 				<input tabindex="297" class="box" style="left: 367px; top: 417px;" id="_EncounterPowersCheck5" type="checkbox">
-				<input tabindex="298" class="box" style="left: 367px; top: 446px;" id="_EncounterPowersCheck6" type="checkbox">
+				<input tabindex="298" class="box edited" style="left: 367px; top: 446px;" id="_EncounterPowersCheck6" type="checkbox">
 				<input tabindex="299" class="box" style="left: 367px; top: 504px;" id="_DailyPowersCheck1" type="checkbox">
-				<input tabindex="300" class="box" style="left: 367px; top: 532px;" id="_DailyPowersCheck2" type="checkbox">
+				<input tabindex="300" class="box edited" style="left: 367px; top: 532px;" id="_DailyPowersCheck2" type="checkbox">
 				<input tabindex="301" class="box" style="left: 367px; top: 561px;" id="_DailyPowersCheck3" type="checkbox">
 				<input tabindex="302" class="box" style="left: 367px; top: 589px;" id="_DailyPowersCheck4" type="checkbox">
 				<input tabindex="303" class="box" style="left: 367px; top: 618px;" id="_DailyPowersCheck5" type="checkbox">
 				<input tabindex="304" class="box" style="left: 367px; top: 647px;" id="_DailyPowersCheck6" type="checkbox">
 				<input tabindex="305" class="box" style="left: 367px; top: 705px;" id="_UtilityPowersCheck1" type="checkbox">
-				<input tabindex="306" class="box" style="left: 367px; top: 734px;" id="_UtilityPowersCheck2" type="checkbox">
+				<input tabindex="306" class="box edited" style="left: 367px; top: 734px;" id="_UtilityPowersCheck2" type="checkbox">
 				<input tabindex="307" class="box" style="left: 367px; top: 762px;" id="_UtilityPowersCheck3" type="checkbox">
 				<input tabindex="308" class="box" style="left: 367px; top: 792px;" id="_UtilityPowersCheck4" type="checkbox">
 				<input tabindex="309" class="box" style="left: 367px; top: 819px;" id="_UtilityPowersCheck5" type="checkbox">
@@ -624,7 +616,7 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 				<span tabindex="314" class="box" style="left: 445px; top: 122px; width: 280px; height: 22px;" id="_MagicItemsWeapon2"></span>
 				<span tabindex="315" class="box" style="left: 445px; top: 151px; width: 280px; height: 23px;" id="_MagicItemsWeapon3"></span>
 				<span tabindex="316" class="box" style="left: 445px; top: 180px; width: 280px; height: 23px;" id="_MagicItemsWeapon4"></span>
-				<span tabindex="317" class="box" style="left: 445px; top: 207px; width: 280px; height: 24px;" id="_MagicItemsArmor">Robe of Avoidance</span>
+				<span tabindex="317" class="box" style="left: 445px; top: 207px; width: 280px; height: 24px;" id="_MagicItemsArmor">Robe of Avoidance(E):shift after missed</span>
 				<span tabindex="318" class="box" style="left: 445px; top: 236px; width: 280px; height: 24px;" id="_MagicItemsArms"></span>
 				<span tabindex="319" class="box" style="left: 445px; top: 264px; width: 280px; height: 25px;" id="_MagicItemsFeet"></span>
 				<span tabindex="320" class="box" style="left: 445px; top: 294px; width: 280px; height: 21px;" id="_MagicItemsHands"></span>
@@ -650,7 +642,7 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 				<input tabindex="339" class="box" style="left: 731px; top: 129px;" id="_MagicItemsWeaponCheck2" type="checkbox">
 				<input tabindex="340" class="box" style="left: 731px; top: 158px;" id="_MagicItemsWeaponCheck3" type="checkbox">
 				<input tabindex="341" class="box" style="left: 731px; top: 186px;" id="_MagicItemsWeaponCheck4" type="checkbox">
-				<input tabindex="342" class="box" style="left: 731px; top: 216px;" id="_MagicItemsArmorCheck" type="checkbox">
+				<input tabindex="342" class="box edited" style="left: 731px; top: 216px;" id="_MagicItemsArmorCheck" type="checkbox">
 				<input tabindex="343" class="box" style="left: 731px; top: 244px;" id="_MagicItemsArmsCheck" type="checkbox">
 				<input tabindex="344" class="box" style="left: 731px; top: 273px;" id="_MagicItemsFeetCheck" type="checkbox">
 				<input tabindex="345" class="box" style="left: 731px; top: 302px;" id="_MagicItemsHandsCheck" type="checkbox">
