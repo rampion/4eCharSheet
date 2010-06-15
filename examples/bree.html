@@ -55,6 +55,7 @@
 			Acrobatics:"=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
 			AcrobaticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			AcrobaticsMisc:"=(2 /* Halfling */)",
+			ActionPoints:"0",
 			Age:"19",
 			Alignment:"Unaligned",
 			Arcana:"=(ArcanaAbilModPlusHalfLevel + ArcanaTrained + ArcanaMisc)",
@@ -113,10 +114,11 @@
 			Con:"=(pointBuy(10,2))",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
-			CurrentHitPoints:"=(MaxHitPoints \n- 9  // column's psychic blast\n- 7  // captian's spectral touch\n- 10 // blast from blinky\n+ 14 // healing word after ghost combat\n+ 7  // healing surge after ghost combat\n- 5 // hit by sword swinging skellington\n- 4 // shot by shortbow swinging skellington\n+ 8 // secondwind\n-4 // hit by another shortbow swinging skellington\n-6 // hit by helen\n-5 // hit by helen & ongoing 5\n-5 // ongoing damage\n-8 // hit by helen\n-5 // ongoing damage\n+5 // reset by healed\n+8 // beacon of hope healing\n-5 // ongoing\n)",
-			CurrentSurgeUses:"=(SurgesPerDay\n - 1 // healing word surge after ghost combat\n - 1 // surge after ghost combat\n -1 // second wind\n)",
+			CurrentHitPoints:"=(MaxHitPoints \n- 9  // column's psychic blast\n- 7  // captian's spectral touch\n- 10 // blast from blinky\n+ 14 // healing word after ghost combat\n+ 7  // healing surge after ghost combat\n- 5 // hit by sword swinging skellington\n- 4 // shot by shortbow swinging skellington\n+ 8 // secondwind\n-4 // hit by another shortbow swinging skellington\n-6 // hit by helen\n-5 // hit by helen & ongoing 5\n-5 // ongoing damage\n-8 // hit by helen\n-5 // ongoing damage\n+5 // reset by healed\n+8 // beacon of hope healing\n-5 // ongoing\n+26 // 2 healing surges w. wound patch\n-9 // hit by swarm\n-5// ongoing\n-5 // hit by swarm again\n+15 // healing word\n)",
+			CurrentSurgeUses:"=(SurgesPerDay\n -1 // healing word surge after ghost combat\n -1 // surge after ghost combat\n -1 // second wind\n -2 // healing after cloak combat\n -1 // healing word\n +6 // healing circle\n)",
 			DailyPowers1:"Sleep: +=(Attack2AttBonus) vs Will, slow/fail/sleep, burst 2 w/in 20<!--\ntarget all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail -> unconsious, save ends); miss: slow (save ends) [standard action]\n-->",
 			DailyPowers2:"<s>Freezing Cloud: +=(Attack2AttBonus) vs Fort, 1d8+=(IntMod) cold, 1/2 miss</s>\n<!-- target all creatures in burst 2 w/in 10, Int vs Fort, hit: 1d8+Int cold dmg; miss: 1/2 dmg; effect: attack any creature entering cloud, starting turn their until end of next turn [standard action] -->",
+			DailyPowersCheck1:true,
 			Damage1Abil:"=(IntMod /* melee training */)",
 			Damage1Ability:"=(Attack1Ability)",
 			Damage1Damage:"1d4 + =(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
@@ -135,7 +137,6 @@
 			EncounterPowers3:"Staff Block: +1 AC <!-- Wizard implement -->",
 			EncounterPowers4:"Sneak Attack: +2d6 dmg w/ CA & light blade",
 			EncounterPowers6:"Color Spray: +=(Attack2AttBonus) vs Will, 1d6+=(IntMod) rad, daze, CB 3<!-- close blast 3 -->",
-			EncounterPowersCheck1:true, EncounterPowersCheck2:true, MagicItemsArmorCheck:true, SecondWindUsed:true, EncounterPowersCheck6:true, EncounterPowersCheck4:true,
 			Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
 			EnduranceAbilModPlusHalfLevel:"=(roundDown(Level/2)+ConMod)",
 			Feats1:"Sneak of Shadows: Thievery training, Backstab<!-- first level -->",
@@ -219,7 +220,7 @@
 			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			ThieveryMisc:"=(2 /* Halfling */)",
 			ThieveryTrained:"=(\n5 // Sneak of Shadows\n)",
-			TotalExperience:"=(\n        +125    // 4/28/2010    fighting ghosts in the sewers, and collecting more faymoss\n        +175    // 4/21/2010    rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for osmund ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
+			TotalExperience:"=(\n        +236    // 6/7/2010     fighting skeletons in corridor (got knocked unconscious)\n        +125    // 4/28/2010    fighting ghosts in the sewers, and collecting more faymoss\n        +175    // 4/21/2010    rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for osmund ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
 			UtilityPowers1:"<s>Expeditious Retreat: shift =(Speed*2) daily</s>",
 			UtilityPowers2:"Shield: +4 AC/Reflex for 1 turn when hit (enc)",
 			Weight:"75lb",
@@ -234,9 +235,9 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">TotalExperience</div>
+				<div id="EditBoxTarget">CurrentHitPoints</div>
 				<textarea style="height: 325.5px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">=(<br>&nbsp;       +125&nbsp;   // 4/28/2010&nbsp;   fighting ghosts in the sewers, and collecting more faymoss<br>&nbsp;       +175&nbsp;   // 4/21/2010&nbsp;   rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund<br>	+175	// 4/7/2010	quest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat<br>	+10	// 4/7/2010	call &amp; response: where house? there house<br>	+175	// 4/7/2010	got orcs &amp; ogre out of the city on a boat<br>	+200	// 4/7/2010	roleplay via email to decide what to do with Dagog the Ogre<br>	+125	// 4/7/2010	decoded alladar's tomes and found rituals<br>	+150	// 4/7/2010	quest xp: gathered violet faymoss for osmund ritual<br>	+100	// 3/31/2010	beat tarin the stoat<br>	+200	// 3/24/2010	orcs &amp; bandits in stoat's den<br>	+75	// 3/17/2010	puzzle lock to stoat's den<br>	+150	// 3/10/2010	trapped door and giant croc<br>	+250	// 3/3/2010	Moral debate about orc prisoners, and looting the trunk<br>	+125	// 2/17/2010, 2/24/2010	Credit for playing as Salek in Corey's preview session vs. the were-rats<br>	+145	// 11/18/2009	Defeated group of orcs in catacombs with steamer trunk, looted robe of avoidance<br>	+154	// 11/4/2009	Defeated another flaming skeleton with skele-troops - scared off gaseous skull<br>	+79	// 11/4/2009	Beat away slimes next to pit<br>	+300	// 10/28/2009	Finished double combat vs. glove possessed skeletal warlords<br>	+125	// 10/21/2009	Solved map puzzle to open door to lower ocean catacombs<br>	+175	// 10/14/2009	Fought Skeleton things w/ Zoran<br>	+170	// 10/7/2009	Fought rats in crypt<br>	+190	// 9/30/2009	Fought skeletons in catacombs beneath House of Melora<br>	+60	// 9/30/2009	Tricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons<br>	+121	// 9/23/2009	Fought fowls in alchemists shop<br>	+142	// 9/16/2009	Brawl on the docks with pressgangers<br>	+100	// 9/16/2009	Barroom investigation skill challenge - find out what the Stoat is up to<br>)<br>&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">=(MaxHitPoints <br>- 9&nbsp; // column's psychic blast<br>- 7&nbsp; // captian's spectral touch<br>- 10 // blast from blinky<br>+ 14 // healing word after ghost combat<br>+ 7&nbsp; // healing surge after ghost combat<br>- 5 // hit by sword swinging skellington<br>- 4 // shot by shortbow swinging skellington<br>+ 8 // secondwind<br>-4 // hit by another shortbow swinging skellington<br>-6 // hit by helen<br>-5 // hit by helen &amp; ongoing 5<br>-5 // ongoing damage<br>-8 // hit by helen<br>-5 // ongoing damage<br>+5 // reset by healed<br>+8 // beacon of hope healing<br>-5 // ongoing<br>+26 // 2 healing surges w. wound patch<br>-9 // hit by swarm<br>-5// ongoing<br>-5 // hit by swarm again<br>+15 // healing word<br>)&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -251,7 +252,7 @@
 				<span tabindex="4" class="box" style="left: 464px; top: 71px; width: 160px; height: 24px;" id="_Class">Wizard</span>
 				<span tabindex="5" class="box" style="left: 633px; top: 72px; width: 167px; height: 23px;" id="_ParagonPath"></span>
 				<span tabindex="6" class="box" style="left: 810px; top: 72px; width: 173px; height: 23px;" id="_EpicDestiny"></span>
-				<span tabindex="7" class="center box" style="left: 990px; top: 76px; width: 102px; height: 19px;" id="_TotalExperience">3796
+				<span tabindex="7" class="center box" style="left: 990px; top: 76px; width: 102px; height: 19px;" id="_TotalExperience">4032
 </span>
 
 				<span tabindex="8" class="box" style="left: 29px; top: 116px; width: 203px; height: 16px;" id="_Race">Halfling</span>
@@ -348,8 +349,8 @@
 				<span tabindex="88" class="center box" style="left: 115px; top: 602px; width: 77px; height: 22px;" id="_BloodiedHitPoints">17</span>
 				<span tabindex="89" class="center box" style="left: 214px; top: 602px; width: 79px; height: 22px;" id="_SurgeValue">8</span>
 				<span tabindex="90" class="center box" style="left: 305px; top: 602px; width: 71px; height: 22px;" id="_SurgesPerDay">7</span>
-				<span tabindex="91" class="center box" style="left: 29px; top: 656px; width: 238px; height: 62px;" id="_CurrentHitPoints">3</span>
-				<span tabindex="92" class="center box" style="left: 271px; top: 656px; width: 102px; height: 62px;" id="_CurrentSurgeUses">4</span>
+				<span tabindex="91" class="center box" style="left: 29px; top: 656px; width: 238px; height: 62px;" id="_CurrentHitPoints">25</span>
+				<span tabindex="92" class="center box" style="left: 271px; top: 656px; width: 102px; height: 62px;" id="_CurrentSurgeUses">7</span>
 				<input tabindex="93" class="center box edited" style="left: 326px; top: 723px;" id="_SecondWindUsed" type="checkbox">
 				<span tabindex="94" class="box" style="left: 29px; top: 756px; width: 348px; height: 29px;" id="_TemporaryHitPoints"></span>
 				<input tabindex="95" class="center box" style="left: 308px; top: 790px;" id="_DeathSavingThrowFailures1" type="checkbox">
@@ -359,7 +360,7 @@
 				<span tabindex="99" class="box" style="left: 29px; top: 860px; width: 348px; height: 25px;" id="_Resistances"></span>
 				<span tabindex="100" class="box" style="left: 29px; top: 904px; width: 348px; height: 22px;" id="_CurrentConditionsAndEffects"></span>
 
-				<span tabindex="101" class="center box" style="left: 394px; top: 578px; width: 47px; height: 24px;" id="_ActionPoints"></span>
+				<span tabindex="101" class="center box" style="left: 394px; top: 578px; width: 47px; height: 24px;" id="_ActionPoints">0</span>
 				<span tabindex="102" class="box" style="left: 397px; top: 624px; width: 341px; height: 21px;" id="_ActionPointAddtionalEffects"></span>
 
 				<span tabindex="103" class="box" style="left: 478px; top: 677px; width: 264px; height: 16px;" id="_RaceAbilityScoreMods">+2 Dexterity &amp; Charisma</span>
@@ -597,7 +598,7 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 				<input tabindex="296" class="box edited" style="left: 367px; top: 388px;" id="_EncounterPowersCheck4" type="checkbox">
 				<input tabindex="297" class="box" style="left: 367px; top: 417px;" id="_EncounterPowersCheck5" type="checkbox">
 				<input tabindex="298" class="box edited" style="left: 367px; top: 446px;" id="_EncounterPowersCheck6" type="checkbox">
-				<input tabindex="299" class="box" style="left: 367px; top: 504px;" id="_DailyPowersCheck1" type="checkbox">
+				<input tabindex="299" class="box edited" style="left: 367px; top: 504px;" id="_DailyPowersCheck1" type="checkbox">
 				<input tabindex="300" class="box edited" style="left: 367px; top: 532px;" id="_DailyPowersCheck2" type="checkbox">
 				<input tabindex="301" class="box" style="left: 367px; top: 561px;" id="_DailyPowersCheck3" type="checkbox">
 				<input tabindex="302" class="box" style="left: 367px; top: 589px;" id="_DailyPowersCheck4" type="checkbox">
