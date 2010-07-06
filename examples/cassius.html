@@ -56,7 +56,7 @@
 			AcrobaticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			AcrobaticsArmorPenalty:"=( -2 /* plate armor */)",
 			ActionPoints:"1",
-			Age:"20",
+			Age:"25",
 			Alignment:"Lawful Good",
 			Arcana:"=(ArcanaAbilModPlusHalfLevel + ArcanaTrained + ArcanaMisc)",
 			ArcanaAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
@@ -113,7 +113,7 @@
 			DiplomacyAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
 			Dungeoneering:"=(DungeoneeringAbilModPlusHalfLevel + DungeoneeringTrained + DungeoneeringMisc)",
 			DungeoneeringAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
-			EncounterPowers1:"Goring Charge: =(max(StrMod,ConMod,DexMod)+4) vs AC, 1d6+=(max(StrMod,ConMod,DexMod)) and prone",
+			EncounterPowers1:"Goring Charge:+=(max(StrMod,ConMod,DexMod)+4) vs AC, 1d6+=(max(StrMod,ConMod,DexMod)) and prone",
 			EncounterPowers2:"CD: Divine Mettle: minor burst 10, grant save +=(ChaMod)",
 			EncounterPowers3:"CD: Divine Strength: minor, +=(StrMod) dmg next attack",
 			EncounterPowers4:"Piercing Smite:+=(Attack1AttBonus) v Ref, 2d12+=(StrMod) & mark =(WisMod) adj<!-- until end of next turn-->",
@@ -203,9 +203,9 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">OtherEquipment2</div>
+				<div id="EditBoxTarget">Age</div>
 				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">Greataxe&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">25&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -224,7 +224,7 @@
 
 				<span tabindex="8" class="box" style="left: 29px; top: 116px; width: 203px; height: 16px;" id="_Race">Minotaur</span>
 				<span tabindex="9" class="box" style="left: 244px; top: 112px; width: 52px; height: 20px;" id="_Size">Medium</span>
-				<span tabindex="10" class="box" style="left: 308px; top: 109px; width: 45px; height: 23px;" id="_Age">20</span>
+				<span tabindex="10" class="box" style="left: 308px; top: 109px; width: 45px; height: 23px;" id="_Age">25</span>
 				<span tabindex="11" class="box" style="left: 363px; top: 110px; width: 49px; height: 21px;" id="_Gender">Male</span>
 				<span tabindex="12" class="box" style="left: 425px; top: 116px; width: 47px; height: 16px;" id="_Height">7'5"</span>
 				<span tabindex="13" class="box" style="left: 484px; top: 117px; width: 51px; height: 15px;" id="_Weight">350 lb</span>
@@ -529,7 +529,7 @@
 				<span tabindex="271" class="box" style="left: 43px; top: 209px; width: 349px; height: 21px;" id="_AtWillPowers5"></span>
 				<span tabindex="272" class="box" style="left: 43px; top: 237px; width: 349px; height: 22px;" id="_AtWillPowers6"></span>
 
-				<span tabindex="273" class="box" style="left: 43px; top: 296px; width: 321px; height: 20px;" id="_EncounterPowers1">Goring Charge: 8 vs AC, 1d6+4 and prone</span>
+				<span tabindex="273" class="box" style="left: 43px; top: 296px; width: 321px; height: 20px;" id="_EncounterPowers1">Goring Charge:+8 vs AC, 1d6+4 and prone</span>
 				<span tabindex="274" class="box" style="left: 43px; top: 324px; width: 321px; height: 21px;" id="_EncounterPowers2">CD: Divine Mettle: minor burst 10, grant save +1</span>
 				<span tabindex="275" class="box" style="left: 43px; top: 350px; width: 321px; height: 25px;" id="_EncounterPowers3">CD: Divine Strength: minor, +4 dmg next attack</span>
 				<span tabindex="276" class="box" style="left: 43px; top: 382px; width: 321px; height: 21px;" id="_EncounterPowers4">Piercing Smite:+6 v Ref, 2d12+4 &amp; mark 4 adj<!-- until end of next turn--></span>
