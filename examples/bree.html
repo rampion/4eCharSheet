@@ -115,6 +115,7 @@
 			Con:"=(pointBuy(10,2))",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
+			CurrentConditionsAndEffects:"immobilized & marked\n",
 			CurrentHitPoints:"=(MaxHitPoints \n- 9  // column's psychic blast\n- 7  // captian's spectral touch\n- 10 // blast from blinky\n+ 14 // healing word after ghost combat\n+ 7  // healing surge after ghost combat\n- 5 // hit by sword swinging skellington\n- 4 // shot by shortbow swinging skellington\n+ 8 // secondwind\n-4 // hit by another shortbow swinging skellington\n-6 // hit by helen\n-5 // hit by helen & ongoing 5\n-5 // ongoing damage\n-8 // hit by helen\n-5 // ongoing damage\n+5 // reset by healed\n+8 // beacon of hope healing\n-5 // ongoing\n+26 // 2 healing surges w. wound patch\n-9 // hit by swarm\n-5// ongoing\n-5 // hit by swarm again\n+15 // healing word\n+8 // surge after fight w/ fire bats & swarm\n-18 // necrotic burst\n+12 // healed by darg\n+2 // various and sundry things\n)",
 			CurrentSurgeUses:"=(SurgesPerDay\n -1 // healing word surge after ghost combat\n -1 // surge after ghost combat\n -1 // second wind\n -2 // healing after cloak combat\n -1 // healing word\n +6 // healing circle\n -1 // surge after fight with fire bats & swarm\n -1 // healed by darg\n -1 // healing word from darg\n)",
 			DailyPowers1:"Sleep: +=(Attack2AttBonus) vs Will, slow/fail/sleep, burst 2 w/in 20<!--\ntarget all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail -> unconsious, save ends); miss: slow (save ends) [standard action]\n-->",
@@ -137,7 +138,6 @@
 			EncounterPowers3:"Staff Block: +1 AC <!-- Wizard implement -->",
 			EncounterPowers4:"Sneak Attack: +2d6 dmg w/ CA & light blade",
 			EncounterPowers6:"Color Spray: +=(Attack2AttBonus) vs Will, 1d6+=(IntMod +1 /*staff*/) rad, daze, CB 3<!-- close blast 3 -->",
-			EncounterPowersCheck6:true, MagicItemsWeaponCheck2:true, EncounterPowersCheck1:true, EncounterPowersCheck2:true, Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
 			EnduranceAbilModPlusHalfLevel:"=(roundDown(Level/2)+ConMod)",
 			Feats1:"Sneak of Shadows: Thievery training, Backstab<!-- first level -->",
 			Feats2:"Ritual Casting: can cast rituals<!-- wizard bonus feat -->",
@@ -173,6 +173,7 @@
 			MagicItemsArmor:"Robe of Avoidance(E):shift after missed<!--\nencounter power, immediate reaction\nemail from JR - November 23, 2009\n-->",
 			MagicItemsWeapon1:"Thief's Dagger: pickpocket on hit<!--\nDaily, on a hit, make a pickpocket check ignoring the -10 for combat, w/ +1 item bonus\nemail from JR - april 1, 2010\n-->",
 			MagicItemsWeapon2:"Staff of Light: lit undead take 1 radiant <!--\n\ndaily\nlight spell must be cast on tip of staff\nall undead w/in radius take 1 radiant at start of turn\n\ncritical: +1d6 dmg\nemail from JR - June 16, 2010\n -->",
+			MagicItemsWeaponCheck2:true, Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
 			MaxHitPoints:"=(10 /* level 1 */ + Con + (Level - 1)*( 4 /* per level */))",
 			Nature:"=(NatureAbilModPlusHalfLevel + NatureTrained + NatureMisc)",
 			NatureAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
@@ -221,7 +222,7 @@
 			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			ThieveryMisc:"=(2 /* Halfling */)",
 			ThieveryTrained:"=(\n5 // Sneak of Shadows\n)",
-			TotalExperience:"=(\n        +230    // 6/21/2010    fighting pit monster, then undead shaman and pile of corpses\n        +185    // 6/14/2010    fighting sturges & firebats in cage room\n        +236    // 6/7/2010     fighting skeletons in corridor (got knocked unconscious)\n        +125    // 4/28/2010    fighting ghosts in the sewers, and collecting more faymoss\n        +175    // 4/21/2010    rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for osmund ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
+			TotalExperience:"=(\n        +203    // 6/28/2010    fighting Garon & his cloak, gloves, & skull\n        +230    // 6/21/2010    fighting pit monster, then undead shaman and pile of corpses\n        +185    // 6/14/2010    fighting sturges & firebats in cage room\n        +236    // 6/7/2010     fighting skeletons in corridor (got knocked unconscious)\n        +125    // 4/28/2010    fighting ghosts in the sewers, and collecting more faymoss\n        +175    // 4/21/2010    rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for osmund ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
 			UtilityPowers1:"<s>Expeditious Retreat: shift =(Speed*2) daily</s>",
 			UtilityPowers2:"Shield: +4 AC/Reflex for 1 turn when hit (enc)",
 			Weight:"75lb",
@@ -236,9 +237,9 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">ClassPathDestinyFeatures4</div>
-				<textarea style="height: 174px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">Spellbook: master rituals, alternate dailies &amp; utilities&lt;!--<br>3 free 1st level rituals @ 1st level<br>2 more free rituals of your level or lower @ 5th, 11th, 15th, 21st, &amp; 25th levels<br><br>select an extra daily and utility power each time you gain one<br>after extended rest, can prepare a number of daily &amp; utility spells according to what you <br>can cast per day for your level.<br>--&gt;&nbsp;</div>
+				<div id="EditBoxTarget">MagicItemsWeapon1</div>
+				<textarea style="height: 97px;" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">Thief's Dagger: pickpocket on hit&lt;!--<br>Daily, on a hit, make a pickpocket check ignoring the -10 for combat, w/ +1 item bonus<br>email from JR - april 1, 2010<br>--&gt;&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -253,7 +254,7 @@
 				<span tabindex="4" class="box" style="left: 464px; top: 71px; width: 160px; height: 24px;" id="_Class">Wizard</span>
 				<span tabindex="5" class="box" style="left: 633px; top: 72px; width: 167px; height: 23px;" id="_ParagonPath"></span>
 				<span tabindex="6" class="box" style="left: 810px; top: 72px; width: 173px; height: 23px;" id="_EpicDestiny"></span>
-				<span tabindex="7" class="center box" style="left: 990px; top: 76px; width: 102px; height: 19px;" id="_TotalExperience">4447
+				<span tabindex="7" class="center box" style="left: 990px; top: 76px; width: 102px; height: 19px;" id="_TotalExperience">4650
 </span>
 
 				<span tabindex="8" class="box" style="left: 29px; top: 116px; width: 203px; height: 16px;" id="_Race">Halfling</span>
@@ -359,7 +360,8 @@
 				<input tabindex="97" class="center box" style="left: 354px; top: 790px;" id="_DeathSavingThrowFailures3" type="checkbox">
 				<span tabindex="98" class="box" style="left: 29px; top: 819px; width: 348px; height: 20px;" id="_SavingThrowMods">+5 vs. Fear <!-- Halfling --></span>
 				<span tabindex="99" class="box" style="left: 29px; top: 860px; width: 348px; height: 25px;" id="_Resistances"></span>
-				<span tabindex="100" class="box" style="left: 29px; top: 904px; width: 348px; height: 22px;" id="_CurrentConditionsAndEffects"></span>
+				<span tabindex="100" class="box" style="left: 29px; top: 904px; width: 348px; height: 22px;" id="_CurrentConditionsAndEffects">immobilized &amp; marked
+</span>
 
 				<span tabindex="101" class="center box" style="left: 394px; top: 578px; width: 47px; height: 24px;" id="_ActionPoints">0</span>
 				<span tabindex="102" class="box" style="left: 397px; top: 624px; width: 341px; height: 21px;" id="_ActionPointAddtionalEffects"></span>
