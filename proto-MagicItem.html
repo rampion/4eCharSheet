@@ -1,0 +1,56 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	
+		<style>
+			#CharacterSheet { 
+				position: relative; 
+				background: url(PowerCard-MagicItem.png);
+				width: 376px;
+				height: 526px;
+			}
+			.box { 
+				border: 1px dashed red;
+				width: 0px;
+				height: 0px;
+				position: absolute;
+				background: #ffbbbb;
+			}
+		</style>
+	</head><body>
+		<div id="CharacterSheet">
+			<div id="PowerCard-MagicItem-Name"			style="left: 28px; top: 34px;  width: 326px; height: 33px;" class="box"></div>
+			<div id="PowerCard-MagicItem-Cat" style="left: 28px; top: 74px;	 width: 326px; height: 33px;" class="box"></div>
+			<div id="PowerCard-MagicItem-Enh"		style="left: 28px; top: 114px; width: 326px; height: 33px;" class="box"></div>
+			<div id="PowerCard-MagicItem-Crt" 	style="left: 28px; top: 154px; width: 326px; height: 33px;" class="box"></div>
+			<div id="PowerCard-MagicItem-Details"	style="left: 50px; top: 194px; width: 304px; height: 318px;" class="box"></div>
+		</div>
+		<script>
+			const CharacterSheet = document.getElementById('CharacterSheet');
+			CharacterSheet.addEventListener('mousedown', function(down_event){
+				const box = document.createElement('div');
+				box.className = 'box';
+				box.style.left = down_event.pageX - CharacterSheet.offsetLeft - 2;
+				box.style.top = down_event.pageY - CharacterSheet.offsetTop - 2;
+				CharacterSheet.appendChild(box);
+
+				mousemove = function(move_event){
+					box.style.width = (move_event.pageX - down_event.pageX+2)+'px';
+					box.style.height = (move_event.pageY - down_event.pageY+2)+'px';
+				};
+				mouseup = function(up_event){
+					CharacterSheet.removeEventListener('mousemove', mousemove, false);
+					CharacterSheet.removeEventListener('mouseup', mouseup, false);
+					box.addEventListener('click', function(click_event) {
+						CharacterSheet.removeChild(box);
+						console.log('click!');
+					}, false);
+					box.id = prompt("What's the name for this field?");
+					console.log('mouseup!');
+				};
+				CharacterSheet.addEventListener('mousemove', mousemove, false);
+				CharacterSheet.addEventListener('mouseup', mouseup, false);
+				console.log("mousedown!");
+			}, false);
+			console.log("let's go!");
+		</script>
+	</body></html>
