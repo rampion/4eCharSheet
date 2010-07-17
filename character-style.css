@@ -1,0 +1,100 @@
+.box { 
+	position: absolute;
+	padding: 2px;
+	cursor: pointer;
+}
+.center {
+	text-align: center;
+}
+.page {
+	position: relative; 
+	overflow: none;
+}
+.page-background {
+	margin-left: -45px;
+	margin-top: -75px;
+}
+@media print {
+	#EditBox {
+		display: none !important;
+	}
+	.moused {
+		outline: none;
+	}
+}
+.PowerCard {
+	position: relative;
+	float: left;
+}
+.PersonalPower-Name {
+	height: 33px;
+	left: 28px;
+	width: 326px;
+	top: 34px;
+}
+.PersonalPower-Keywords {
+	height: 33px;
+	left: 28px;
+	width: 326px;
+	top: 74px;
+}
+.PersonalPower-Action {
+	height: 33px;
+	left: 28px;
+	width: 158px;
+	top: 114px;
+}
+.PersonalPower-Range {
+	height: 33px;
+	left: 200px;
+	width: 154px;
+	top: 114px;
+}
+.PersonalPower-Target {
+	height: 33px;
+	left: 28px;
+	width: 326px;
+	top: 154px;
+}
+.PersonalPower-Attack {
+	height: 33px;
+	left: 28px;
+	width: 326px;
+	top: 194px;
+}
+.PersonalPower-Details {
+	height: 272px;
+	left: 50px;
+	width: 304px;
+	top: 240px;
+}
+.MagicItemPower-Name {
+	height: 33px;
+	left: 28px;
+	width: 326px;
+	top: 34px;
+}
+.MagicItemPower-Keywords {
+	height: 33px;
+	left: 28px;
+	width: 326px;
+	top: 74px;
+}
+.MagicItemPower-Action {
+	height: 33px;
+	left: 28px;
+	width: 326px;
+	top: 114px;
+}
+.MagicItemPower-Target {
+	height: 33px;
+	left: 28px;
+	width: 326px;
+	top: 154px;
+}
+.MagicItemPower-Details {
+	height: 318px;
+	left: 50px;
+	width: 304px;
+	top: 194px;
+}
