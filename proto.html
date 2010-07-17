@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<style>
+			#CharacterSheet { 
+				position: relative; 
+			}
+			.box { 
+				border: 1px dashed red;
+				width: 0px;
+				height: 0px;
+				position: absolute;
+				background: #ffbbbb;
+			}
+		</style>
+	</head>
+	<body>
+		<div id='CharacterSheet'>
+			<img src="PowerCard-AtWill.png"/>
+		</div>
+		<script>
+			const CharacterSheet = document.getElementById('CharacterSheet');
+			CharacterSheet.addEventListener('mousedown', function(down_event){
+				const box = document.createElement('div');
+				box.className = 'box';
+				box.style.left = down_event.pageX - CharacterSheet.offsetLeft - 2;
+				box.style.top = down_event.pageY - CharacterSheet.offsetTop - 2;
+				CharacterSheet.appendChild(box);
+
+				mousemove = function(move_event){
+					box.style.width = (move_event.pageX - down_event.pageX+2)+'px';
+					box.style.height = (move_event.pageY - down_event.pageY+2)+'px';
+				};
+				mouseup = function(up_event){
+					CharacterSheet.removeEventListener('mousemove', mousemove, false);
+					CharacterSheet.removeEventListener('mouseup', mouseup, false);
+					box.addEventListener('click', function(click_event) {
+						CharacterSheet.removeChild(box);
+						console.log('click!');
+					}, false);
+					box.id = prompt("What's the name for this field?");
+					console.log('mouseup!');
+				};
+				CharacterSheet.addEventListener('mousemove', mousemove, false);
+				CharacterSheet.addEventListener('mouseup', mouseup, false);
+				console.log("mousedown!");
+			}, false);
+			console.log("let's go!");
+		</script>
+	</body>
+</html>
