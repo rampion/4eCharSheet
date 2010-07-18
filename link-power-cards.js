@@ -1,5 +1,9 @@
 (function(){
-	const image_urls=[ "PowerCard-AtWill.png", "PowerCard-Encounter.png", "PowerCard-Daily.png"];
+	const image_urls=[ 
+		"http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png", 
+		"http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png", 
+		"http://rampion.github.com/4eCharSheet/PowerCard-Daily.png"
+	];
 	const addClass = function(elt, class) {
 		const classes = elt.className.split(' ');
 		if (classes.indexOf(class) < 0)
