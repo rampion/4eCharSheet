@@ -35,57 +35,14 @@
 			ArmorClass10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			ArmorClass:"=(ArmorClass10PlusHalfLevel + ArmorClassArmorSlashAbil + ArmorClassClass + ArmorClassFeat + ArmorClassEnh + ArmorClassMisc1 + ArmorClassMisc2)",
 			ArmorClassArmorSlashAbil:"=(max(DexMod,IntMod) /* add light armor bonus, or replace with heavy armor bonus */)",
+			AtWillPowers1:"[1st Level:One Class At-Will Power]",
 			AtWillPowers1Name:"=(AtWillPowers1)",
+			AtWillPowers2:"[1st Level:Another Class At-Will Power]",
 			AtWillPowers2Name:"=(AtWillPowers2)",
 			AtWillPowers3Name:"=(AtWillPowers3)",
 			AtWillPowers4Name:"=(AtWillPowers4)",
 			AtWillPowers5Name:"=(AtWillPowers5)",
 			AtWillPowers6Name:"=(AtWillPowers6)",
-			EncounterPowers1Name:"=(EncounterPowers1)",
-			EncounterPowers2Name:"=(EncounterPowers2)",
-			EncounterPowers3Name:"=(EncounterPowers3)",
-			EncounterPowers4Name:"=(EncounterPowers4)",
-			EncounterPowers5Name:"=(EncounterPowers5)",
-			EncounterPowers6Name:"=(EncounterPowers6)",
-			DailyPowers1Name:"=(DailyPowers1)",
-			DailyPowers2Name:"=(DailyPowers2)",
-			DailyPowers3Name:"=(DailyPowers3)",
-			DailyPowers4Name:"=(DailyPowers4)",
-			DailyPowers5Name:"=(DailyPowers5)",
-			DailyPowers6Name:"=(DailyPowers6)",
-			UtilityPowers1Name:"=(UtilityPowers1)",
-			UtilityPowers2Name:"=(UtilityPowers2)",
-			UtilityPowers3Name:"=(UtilityPowers3)",
-			UtilityPowers4Name:"=(UtilityPowers4)",
-			UtilityPowers5Name:"=(UtilityPowers5)",
-			UtilityPowers6Name:"=(UtilityPowers6)",
-			UtilityPowers7Name:"=(UtilityPowers7)",
-			UtilityPowers8Name:"=(UtilityPowers8)",
-			MagicItemsWeapon1Name:"=(MagicItemsWeapon1)",
-			MagicItemsWeapon2Name:"=(MagicItemsWeapon2)",
-			MagicItemsWeapon3Name:"=(MagicItemsWeapon3)",
-			MagicItemsWeapon4Name:"=(MagicItemsWeapon4)",
-			MagicItemsArmorName:"=(MagicItemsArmor)",
-			MagicItemsArmsName:"=(MagicItemsArms)",
-			MagicItemsFeetName:"=(MagicItemsFeet)",
-			MagicItemsHandsName:"=(MagicItemsHands)",
-			MagicItemsHeadName:"=(MagicItemsHead)",
-			MagicItemsNeckName:"=(MagicItemsNeck)",
-			MagicItemsRing1Name:"=(MagicItemsRing1)",
-			MagicItemsRing2Name:"=(MagicItemsRing2)",
-			MagicItemsWaistName:"=(MagicItemsWaist)",
-			MagicItemsMisc1Name:"=(MagicItemsMisc1)",
-			MagicItemsMisc2Name:"=(MagicItemsMisc2)",
-			MagicItemsMisc3Name:"=(MagicItemsMisc3)",
-			MagicItemsMisc4Name:"=(MagicItemsMisc4)",
-			MagicItemsMisc5Name:"=(MagicItemsMisc5)",
-			MagicItemsMisc6Name:"=(MagicItemsMisc6)",
-			MagicItemsMisc7Name:"=(MagicItemsMisc7)",
-			MagicItemsMisc8Name:"=(MagicItemsMisc8)",
-			MagicItemsMisc9Name:"=(MagicItemsMisc9)",
-			MagicItemsMisc10Name:"=(MagicItemsMisc10)",
-			MagicItemsMisc11Name:"=(MagicItemsMisc11)",
-			MagicItemsMisc12Name:"=(MagicItemsMisc12)",
 			Athletics:"=(AthleticsAbilModPlusHalfLevel + AthleticsTrained + AthleticsArmorPenalty + AthleticsMisc)",
 			AthleticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+StrMod)",
 			Attack1Abil:"=(StrMod)",
@@ -115,6 +72,13 @@
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
 			CurrentHitPoints:"=(MaxHitPoints)",
 			CurrentSurgeUses:"=(SurgesPerDay)",
+			DailyPowers1:"[1st Level:Class Daily Power]",
+			DailyPowers1Name:"=(DailyPowers1)",
+			DailyPowers2Name:"=(DailyPowers2)",
+			DailyPowers3Name:"=(DailyPowers3)",
+			DailyPowers4Name:"=(DailyPowers4)",
+			DailyPowers5Name:"=(DailyPowers5)",
+			DailyPowers6Name:"=(DailyPowers6)",
 			Damage1Abil:"=(StrMod)",
 			Damage1Ability:"=(Attack1Ability)",
 			Damage1Damage:"1d4 + =(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
@@ -128,6 +92,13 @@
 			DiplomacyAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
 			Dungeoneering:"=(DungeoneeringAbilModPlusHalfLevel + DungeoneeringTrained + DungeoneeringMisc)",
 			DungeoneeringAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
+			EncounterPowers1:"[1st Level:Class Encounter Power]",
+			EncounterPowers1Name:"=(EncounterPowers1)",
+			EncounterPowers2Name:"=(EncounterPowers2)",
+			EncounterPowers3Name:"=(EncounterPowers3)",
+			EncounterPowers4Name:"=(EncounterPowers4)",
+			EncounterPowers5Name:"=(EncounterPowers5)",
+			EncounterPowers6Name:"=(EncounterPowers6)",
 			Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
 			EnduranceAbilModPlusHalfLevel:"=(roundDown(Level/2)+ConMod)",
 			Fortitude10PlusHalfLevel:"=(10 + roundDown(Level/2))",
@@ -148,6 +119,31 @@
 			Intimidate:"=(IntimidateAbilModPlusHalfLevel + IntimidateTrained + IntimidateMisc)",
 			IntimidateAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
 			Level:"1",
+			MagicItemsArmorName:"=(MagicItemsArmor)",
+			MagicItemsArmsName:"=(MagicItemsArms)",
+			MagicItemsFeetName:"=(MagicItemsFeet)",
+			MagicItemsHandsName:"=(MagicItemsHands)",
+			MagicItemsHeadName:"=(MagicItemsHead)",
+			MagicItemsMisc10Name:"=(MagicItemsMisc10)",
+			MagicItemsMisc11Name:"=(MagicItemsMisc11)",
+			MagicItemsMisc12Name:"=(MagicItemsMisc12)",
+			MagicItemsMisc1Name:"=(MagicItemsMisc1)",
+			MagicItemsMisc2Name:"=(MagicItemsMisc2)",
+			MagicItemsMisc3Name:"=(MagicItemsMisc3)",
+			MagicItemsMisc4Name:"=(MagicItemsMisc4)",
+			MagicItemsMisc5Name:"=(MagicItemsMisc5)",
+			MagicItemsMisc6Name:"=(MagicItemsMisc6)",
+			MagicItemsMisc7Name:"=(MagicItemsMisc7)",
+			MagicItemsMisc8Name:"=(MagicItemsMisc8)",
+			MagicItemsMisc9Name:"=(MagicItemsMisc9)",
+			MagicItemsNeckName:"=(MagicItemsNeck)",
+			MagicItemsRing1Name:"=(MagicItemsRing1)",
+			MagicItemsRing2Name:"=(MagicItemsRing2)",
+			MagicItemsWaistName:"=(MagicItemsWaist)",
+			MagicItemsWeapon1Name:"=(MagicItemsWeapon1)",
+			MagicItemsWeapon2Name:"=(MagicItemsWeapon2)",
+			MagicItemsWeapon3Name:"=(MagicItemsWeapon3)",
+			MagicItemsWeapon4Name:"=(MagicItemsWeapon4)",
 			MaxHitPoints:"=(Con + 0 /* level 1 */ + (Level - 1)*( 0 /* per level */))",
 			Nature:"=(NatureAbilModPlusHalfLevel + NatureTrained + NatureMisc)",
 			NatureAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
@@ -175,6 +171,14 @@
 			Thievery:"=(ThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc)",
 			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			TotalExperience:"0",
+			UtilityPowers1Name:"=(UtilityPowers1)",
+			UtilityPowers2Name:"=(UtilityPowers2)",
+			UtilityPowers3Name:"=(UtilityPowers3)",
+			UtilityPowers4Name:"=(UtilityPowers4)",
+			UtilityPowers5Name:"=(UtilityPowers5)",
+			UtilityPowers6Name:"=(UtilityPowers6)",
+			UtilityPowers7Name:"=(UtilityPowers7)",
+			UtilityPowers8Name:"=(UtilityPowers8)",
 			Willpower10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Willpower:"=(Willpower10PlusHalfLevel + WillpowerAbil + WillpowerClass + WillpowerFeat + WillpowerEnh + WillpowerMisc1 + WillpowerMisc2)",
 			WillpowerAbil:"=(max(WisMod,ChaMod))",
@@ -185,9 +189,9 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">AtWillPowers1Name</div>
+				<div id="EditBoxTarget">DailyPowers2</div>
 				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">=(AtWillPowers1)&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -494,20 +498,20 @@
 			</div>
 			<div class="page" id="Page2">
 				<img class="page-background" id="Page2Background" src="http://rampion.github.com/4eCharSheet/CharacterSheetPage2.png">
-				<span tabindex="267" class="box" style="left: 43px; top: 90px; width: 349px; height: 24px;" id="_AtWillPowers1"></span>
-				<span tabindex="268" class="box" style="left: 43px; top: 121px; width: 349px; height: 23px;" id="_AtWillPowers2"></span>
+				<span tabindex="267" class="box" style="left: 43px; top: 90px; width: 349px; height: 24px;" id="_AtWillPowers1">[1st Level:One Class At-Will Power]</span>
+				<span tabindex="268" class="box" style="left: 43px; top: 121px; width: 349px; height: 23px;" id="_AtWillPowers2">[1st Level:Another Class At-Will Power]</span>
 				<span tabindex="269" class="box" style="left: 43px; top: 150px; width: 349px; height: 22px;" id="_AtWillPowers3"></span>
 				<span tabindex="270" class="box" style="left: 43px; top: 179px; width: 349px; height: 22px;" id="_AtWillPowers4"></span>
 				<span tabindex="271" class="box" style="left: 43px; top: 209px; width: 349px; height: 21px;" id="_AtWillPowers5"></span>
 				<span tabindex="272" class="box" style="left: 43px; top: 237px; width: 349px; height: 22px;" id="_AtWillPowers6"></span>
 
-				<span tabindex="273" class="box" style="left: 43px; top: 296px; width: 321px; height: 20px;" id="_EncounterPowers1"></span>
+				<span tabindex="273" class="box" style="left: 43px; top: 296px; width: 321px; height: 20px;" id="_EncounterPowers1">[1st Level:Class Encounter Power]</span>
 				<span tabindex="274" class="box" style="left: 43px; top: 324px; width: 321px; height: 21px;" id="_EncounterPowers2"></span>
 				<span tabindex="275" class="box" style="left: 43px; top: 350px; width: 321px; height: 25px;" id="_EncounterPowers3"></span>
 				<span tabindex="276" class="box" style="left: 43px; top: 382px; width: 321px; height: 21px;" id="_EncounterPowers4"></span>
 				<span tabindex="277" class="box" style="left: 43px; top: 410px; width: 321px; height: 21px;" id="_EncounterPowers5"></span>
 				<span tabindex="278" class="box" style="left: 43px; top: 438px; width: 321px; height: 22px;" id="_EncounterPowers6"></span>
-				<span tabindex="279" class="box" style="left: 43px; top: 495px; width: 321px; height: 24px;" id="_DailyPowers1"></span>
+				<span tabindex="279" class="box" style="left: 43px; top: 495px; width: 321px; height: 24px;" id="_DailyPowers1">[1st Level:Class Daily Power]</span>
 				<span tabindex="280" class="box" style="left: 43px; top: 524px; width: 321px; height: 23px;" id="_DailyPowers2"></span>
 				<span tabindex="281" class="box" style="left: 43px; top: 554px; width: 321px; height: 22px;" id="_DailyPowers3"></span>
 				<span tabindex="282" class="box" style="left: 43px; top: 581px; width: 321px; height: 24px;" id="_DailyPowers4"></span>
@@ -690,9 +694,9 @@
 				<span tabindex="445" class="box" style="left: 41px; top: 1293px; width: 713px; height: 159px;" id="_CoinsAndOtherWealth"></span>
 			</div>
 			<div class="page" id="Page3">
-				<div id="_AtWillPowers1Card" class="power-card">
+				<div style="display: inline-block;" id="_AtWillPowers1Card" class="power-card">
 					<img id="_AtWillPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="446" id="_AtWillPowers1Name" class="box power-card-name"><!-- --></span>
+					<span tabindex="446" id="_AtWillPowers1Name" class="box power-card-name">[1st Level:One Class At-Will Power]</span>
 					<span tabindex="447" id="_AtWillPowers1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="448" id="_AtWillPowers1Box" class="box power-card-box" type="checkbox">
 					<span tabindex="449" id="_AtWillPowers1Action" class="box power-card-action"></span>
@@ -712,9 +716,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_AtWillPowers2Card" class="power-card">
+				<div style="display: inline-block;" id="_AtWillPowers2Card" class="power-card">
 					<img id="_AtWillPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="462" id="_AtWillPowers2Name" class="box power-card-name"></span>
+					<span tabindex="462" id="_AtWillPowers2Name" class="box power-card-name">[1st Level:Another Class At-Will Power]</span>
 					<span tabindex="463" id="_AtWillPowers2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="464" id="_AtWillPowers2Box" class="box power-card-box" type="checkbox">
 					<span tabindex="465" id="_AtWillPowers2Action" class="box power-card-action"></span>
@@ -734,9 +738,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_AtWillPowers3Card" class="power-card">
+				<div style="display: none;" id="_AtWillPowers3Card" class="power-card">
 					<img id="_AtWillPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="478" id="_AtWillPowers3Name" class="box power-card-name"></span>
+					<span tabindex="478" id="_AtWillPowers3Name" class="box power-card-name">0</span>
 					<span tabindex="479" id="_AtWillPowers3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="480" id="_AtWillPowers3Box" class="box power-card-box" type="checkbox">
 					<span tabindex="481" id="_AtWillPowers3Action" class="box power-card-action"></span>
@@ -756,9 +760,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_AtWillPowers4Card" class="power-card">
+				<div style="display: none;" id="_AtWillPowers4Card" class="power-card">
 					<img id="_AtWillPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="494" id="_AtWillPowers4Name" class="box power-card-name"></span>
+					<span tabindex="494" id="_AtWillPowers4Name" class="box power-card-name">0</span>
 					<span tabindex="495" id="_AtWillPowers4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="496" id="_AtWillPowers4Box" class="box power-card-box" type="checkbox">
 					<span tabindex="497" id="_AtWillPowers4Action" class="box power-card-action"></span>
@@ -778,9 +782,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_AtWillPowers5Card" class="power-card">
+				<div style="display: none;" id="_AtWillPowers5Card" class="power-card">
 					<img id="_AtWillPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="510" id="_AtWillPowers5Name" class="box power-card-name"></span>
+					<span tabindex="510" id="_AtWillPowers5Name" class="box power-card-name">0</span>
 					<span tabindex="511" id="_AtWillPowers5Keyword" class="box power-card-keyword"></span>
 					<input tabindex="512" id="_AtWillPowers5Box" class="box power-card-box" type="checkbox">
 					<span tabindex="513" id="_AtWillPowers5Action" class="box power-card-action"></span>
@@ -800,9 +804,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_AtWillPowers6Card" class="power-card">
+				<div style="display: none;" id="_AtWillPowers6Card" class="power-card">
 					<img id="_AtWillPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="526" id="_AtWillPowers6Name" class="box power-card-name"></span>
+					<span tabindex="526" id="_AtWillPowers6Name" class="box power-card-name">0</span>
 					<span tabindex="527" id="_AtWillPowers6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="528" id="_AtWillPowers6Box" class="box power-card-box" type="checkbox">
 					<span tabindex="529" id="_AtWillPowers6Action" class="box power-card-action"></span>
@@ -822,9 +826,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_EncounterPowers1Card" class="power-card">
+				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card">
 					<img id="_EncounterPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name"></span>
+					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name">[1st Level:Class Encounter Power]</span>
 					<span tabindex="543" id="_EncounterPowers1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="544" id="_EncounterPowers1Box" class="box power-card-box" type="checkbox">
 					<span tabindex="545" id="_EncounterPowers1Action" class="box power-card-action"></span>
@@ -844,9 +848,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_EncounterPowers2Card" class="power-card">
+				<div style="display: none;" id="_EncounterPowers2Card" class="power-card">
 					<img id="_EncounterPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name"></span>
+					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name">0</span>
 					<span tabindex="559" id="_EncounterPowers2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="560" id="_EncounterPowers2Box" class="box power-card-box" type="checkbox">
 					<span tabindex="561" id="_EncounterPowers2Action" class="box power-card-action"></span>
@@ -866,9 +870,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_EncounterPowers3Card" class="power-card">
+				<div style="display: none;" id="_EncounterPowers3Card" class="power-card">
 					<img id="_EncounterPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="574" id="_EncounterPowers3Name" class="box power-card-name"></span>
+					<span tabindex="574" id="_EncounterPowers3Name" class="box power-card-name">0</span>
 					<span tabindex="575" id="_EncounterPowers3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="576" id="_EncounterPowers3Box" class="box power-card-box" type="checkbox">
 					<span tabindex="577" id="_EncounterPowers3Action" class="box power-card-action"></span>
@@ -888,9 +892,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_EncounterPowers4Card" class="power-card">
+				<div style="display: none;" id="_EncounterPowers4Card" class="power-card">
 					<img id="_EncounterPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="590" id="_EncounterPowers4Name" class="box power-card-name"></span>
+					<span tabindex="590" id="_EncounterPowers4Name" class="box power-card-name">0</span>
 					<span tabindex="591" id="_EncounterPowers4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="592" id="_EncounterPowers4Box" class="box power-card-box" type="checkbox">
 					<span tabindex="593" id="_EncounterPowers4Action" class="box power-card-action"></span>
@@ -910,9 +914,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_EncounterPowers5Card" class="power-card">
+				<div style="display: none;" id="_EncounterPowers5Card" class="power-card">
 					<img id="_EncounterPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="606" id="_EncounterPowers5Name" class="box power-card-name"></span>
+					<span tabindex="606" id="_EncounterPowers5Name" class="box power-card-name">0</span>
 					<span tabindex="607" id="_EncounterPowers5Keyword" class="box power-card-keyword"></span>
 					<input tabindex="608" id="_EncounterPowers5Box" class="box power-card-box" type="checkbox">
 					<span tabindex="609" id="_EncounterPowers5Action" class="box power-card-action"></span>
@@ -932,9 +936,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_EncounterPowers6Card" class="power-card">
+				<div style="display: none;" id="_EncounterPowers6Card" class="power-card">
 					<img id="_EncounterPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name"></span>
+					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name">0</span>
 					<span tabindex="623" id="_EncounterPowers6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="624" id="_EncounterPowers6Box" class="box power-card-box" type="checkbox">
 					<span tabindex="625" id="_EncounterPowers6Action" class="box power-card-action"></span>
@@ -954,9 +958,9 @@
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_DailyPowers1Card" class="power-card">
+				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card">
 					<img id="_DailyPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name"></span>
+					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name">[1st Level:Class Daily Power]</span>
 					<span tabindex="639" id="_DailyPowers1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="640" id="_DailyPowers1Box" class="box power-card-box" type="checkbox">
 					<span tabindex="641" id="_DailyPowers1Action" class="box power-card-action"></span>
@@ -976,9 +980,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_DailyPowers2Card" class="power-card">
+				<div style="display: none;" id="_DailyPowers2Card" class="power-card">
 					<img id="_DailyPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="654" id="_DailyPowers2Name" class="box power-card-name"></span>
+					<span tabindex="654" id="_DailyPowers2Name" class="box power-card-name">0</span>
 					<span tabindex="655" id="_DailyPowers2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="656" id="_DailyPowers2Box" class="box power-card-box" type="checkbox">
 					<span tabindex="657" id="_DailyPowers2Action" class="box power-card-action"></span>
@@ -998,9 +1002,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_DailyPowers3Card" class="power-card">
+				<div style="display: none;" id="_DailyPowers3Card" class="power-card">
 					<img id="_DailyPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="670" id="_DailyPowers3Name" class="box power-card-name"></span>
+					<span tabindex="670" id="_DailyPowers3Name" class="box power-card-name">0</span>
 					<span tabindex="671" id="_DailyPowers3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="672" id="_DailyPowers3Box" class="box power-card-box" type="checkbox">
 					<span tabindex="673" id="_DailyPowers3Action" class="box power-card-action"></span>
@@ -1020,9 +1024,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_DailyPowers4Card" class="power-card">
+				<div style="display: none;" id="_DailyPowers4Card" class="power-card">
 					<img id="_DailyPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="686" id="_DailyPowers4Name" class="box power-card-name"></span>
+					<span tabindex="686" id="_DailyPowers4Name" class="box power-card-name">0</span>
 					<span tabindex="687" id="_DailyPowers4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="688" id="_DailyPowers4Box" class="box power-card-box" type="checkbox">
 					<span tabindex="689" id="_DailyPowers4Action" class="box power-card-action"></span>
@@ -1042,9 +1046,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_DailyPowers5Card" class="power-card">
+				<div style="display: none;" id="_DailyPowers5Card" class="power-card">
 					<img id="_DailyPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="702" id="_DailyPowers5Name" class="box power-card-name"></span>
+					<span tabindex="702" id="_DailyPowers5Name" class="box power-card-name">0</span>
 					<span tabindex="703" id="_DailyPowers5Keyword" class="box power-card-keyword"></span>
 					<input tabindex="704" id="_DailyPowers5Box" class="box power-card-box" type="checkbox">
 					<span tabindex="705" id="_DailyPowers5Action" class="box power-card-action"></span>
@@ -1064,9 +1068,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_DailyPowers6Card" class="power-card">
+				<div style="display: none;" id="_DailyPowers6Card" class="power-card">
 					<img id="_DailyPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="718" id="_DailyPowers6Name" class="box power-card-name"></span>
+					<span tabindex="718" id="_DailyPowers6Name" class="box power-card-name">0</span>
 					<span tabindex="719" id="_DailyPowers6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="720" id="_DailyPowers6Box" class="box power-card-box" type="checkbox">
 					<span tabindex="721" id="_DailyPowers6Action" class="box power-card-action"></span>
@@ -1086,9 +1090,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_UtilityPowers1Card" class="power-card">
+				<div style="display: none;" id="_UtilityPowers1Card" class="power-card">
 					<img id="_UtilityPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="734" id="_UtilityPowers1Name" class="box power-card-name"></span>
+					<span tabindex="734" id="_UtilityPowers1Name" class="box power-card-name">0</span>
 					<span tabindex="735" id="_UtilityPowers1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="736" id="_UtilityPowers1Box" class="box power-card-box" type="checkbox">
 					<span tabindex="737" id="_UtilityPowers1Action" class="box power-card-action"></span>
@@ -1108,9 +1112,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_UtilityPowers2Card" class="power-card">
+				<div style="display: none;" id="_UtilityPowers2Card" class="power-card">
 					<img id="_UtilityPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="750" id="_UtilityPowers2Name" class="box power-card-name"></span>
+					<span tabindex="750" id="_UtilityPowers2Name" class="box power-card-name">0</span>
 					<span tabindex="751" id="_UtilityPowers2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="752" id="_UtilityPowers2Box" class="box power-card-box" type="checkbox">
 					<span tabindex="753" id="_UtilityPowers2Action" class="box power-card-action"></span>
@@ -1130,9 +1134,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_UtilityPowers3Card" class="power-card">
+				<div style="display: none;" id="_UtilityPowers3Card" class="power-card">
 					<img id="_UtilityPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="766" id="_UtilityPowers3Name" class="box power-card-name"></span>
+					<span tabindex="766" id="_UtilityPowers3Name" class="box power-card-name">0</span>
 					<span tabindex="767" id="_UtilityPowers3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="768" id="_UtilityPowers3Box" class="box power-card-box" type="checkbox">
 					<span tabindex="769" id="_UtilityPowers3Action" class="box power-card-action"></span>
@@ -1152,9 +1156,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_UtilityPowers4Card" class="power-card">
+				<div style="display: none;" id="_UtilityPowers4Card" class="power-card">
 					<img id="_UtilityPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="782" id="_UtilityPowers4Name" class="box power-card-name"></span>
+					<span tabindex="782" id="_UtilityPowers4Name" class="box power-card-name">0</span>
 					<span tabindex="783" id="_UtilityPowers4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="784" id="_UtilityPowers4Box" class="box power-card-box" type="checkbox">
 					<span tabindex="785" id="_UtilityPowers4Action" class="box power-card-action"></span>
@@ -1174,9 +1178,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_UtilityPowers5Card" class="power-card">
+				<div style="display: none;" id="_UtilityPowers5Card" class="power-card">
 					<img id="_UtilityPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="798" id="_UtilityPowers5Name" class="box power-card-name"></span>
+					<span tabindex="798" id="_UtilityPowers5Name" class="box power-card-name">0</span>
 					<span tabindex="799" id="_UtilityPowers5Keyword" class="box power-card-keyword"></span>
 					<input tabindex="800" id="_UtilityPowers5Box" class="box power-card-box" type="checkbox">
 					<span tabindex="801" id="_UtilityPowers5Action" class="box power-card-action"></span>
@@ -1196,9 +1200,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_UtilityPowers6Card" class="power-card">
+				<div style="display: none;" id="_UtilityPowers6Card" class="power-card">
 					<img id="_UtilityPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="814" id="_UtilityPowers6Name" class="box power-card-name"></span>
+					<span tabindex="814" id="_UtilityPowers6Name" class="box power-card-name">0</span>
 					<span tabindex="815" id="_UtilityPowers6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="816" id="_UtilityPowers6Box" class="box power-card-box" type="checkbox">
 					<span tabindex="817" id="_UtilityPowers6Action" class="box power-card-action"></span>
@@ -1218,9 +1222,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_UtilityPowers7Card" class="power-card">
+				<div style="display: none;" id="_UtilityPowers7Card" class="power-card">
 					<img id="_UtilityPowers7Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="830" id="_UtilityPowers7Name" class="box power-card-name"></span>
+					<span tabindex="830" id="_UtilityPowers7Name" class="box power-card-name">0</span>
 					<span tabindex="831" id="_UtilityPowers7Keyword" class="box power-card-keyword"></span>
 					<input tabindex="832" id="_UtilityPowers7Box" class="box power-card-box" type="checkbox">
 					<span tabindex="833" id="_UtilityPowers7Action" class="box power-card-action"></span>
@@ -1240,9 +1244,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_UtilityPowers8Card" class="power-card">
+				<div style="display: none;" id="_UtilityPowers8Card" class="power-card">
 					<img id="_UtilityPowers8Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="846" id="_UtilityPowers8Name" class="box power-card-name"></span>
+					<span tabindex="846" id="_UtilityPowers8Name" class="box power-card-name">0</span>
 					<span tabindex="847" id="_UtilityPowers8Keyword" class="box power-card-keyword"></span>
 					<input tabindex="848" id="_UtilityPowers8Box" class="box power-card-box" type="checkbox">
 					<span tabindex="849" id="_UtilityPowers8Action" class="box power-card-action"></span>
@@ -1262,9 +1266,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsWeapon1Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsWeapon1Card" class="power-card">
 					<img id="_MagicItemsWeapon1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="446" id="_MagicItemsWeapon1Name" class="box power-card-name"></span>
+					<span tabindex="446" id="_MagicItemsWeapon1Name" class="box power-card-name">0</span>
 					<span tabindex="447" id="_MagicItemsWeapon1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="448" id="_MagicItemsWeapon1Box" class="box power-card-box" type="checkbox">
 					<span tabindex="449" id="_MagicItemsWeapon1Action" class="box power-card-action"></span>
@@ -1284,9 +1288,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsWeapon2Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsWeapon2Card" class="power-card">
 					<img id="_MagicItemsWeapon2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="462" id="_MagicItemsWeapon2Name" class="box power-card-name"></span>
+					<span tabindex="462" id="_MagicItemsWeapon2Name" class="box power-card-name">0</span>
 					<span tabindex="463" id="_MagicItemsWeapon2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="464" id="_MagicItemsWeapon2Box" class="box power-card-box" type="checkbox">
 					<span tabindex="465" id="_MagicItemsWeapon2Action" class="box power-card-action"></span>
@@ -1306,9 +1310,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsWeapon3Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsWeapon3Card" class="power-card">
 					<img id="_MagicItemsWeapon3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="478" id="_MagicItemsWeapon3Name" class="box power-card-name"></span>
+					<span tabindex="478" id="_MagicItemsWeapon3Name" class="box power-card-name">0</span>
 					<span tabindex="479" id="_MagicItemsWeapon3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="480" id="_MagicItemsWeapon3Box" class="box power-card-box" type="checkbox">
 					<span tabindex="481" id="_MagicItemsWeapon3Action" class="box power-card-action"></span>
@@ -1328,9 +1332,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsWeapon4Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsWeapon4Card" class="power-card">
 					<img id="_MagicItemsWeapon4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="494" id="_MagicItemsWeapon4Name" class="box power-card-name"></span>
+					<span tabindex="494" id="_MagicItemsWeapon4Name" class="box power-card-name">0</span>
 					<span tabindex="495" id="_MagicItemsWeapon4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="496" id="_MagicItemsWeapon4Box" class="box power-card-box" type="checkbox">
 					<span tabindex="497" id="_MagicItemsWeapon4Action" class="box power-card-action"></span>
@@ -1350,9 +1354,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsArmorCard" class="power-card">
+				<div style="display: none;" id="_MagicItemsArmorCard" class="power-card">
 					<img id="_MagicItemsArmorImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name"></span>
+					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">0</span>
 					<span tabindex="511" id="_MagicItemsArmorKeyword" class="box power-card-keyword"></span>
 					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box" type="checkbox">
 					<span tabindex="513" id="_MagicItemsArmorAction" class="box power-card-action"></span>
@@ -1372,9 +1376,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsArmsCard" class="power-card">
+				<div style="display: none;" id="_MagicItemsArmsCard" class="power-card">
 					<img id="_MagicItemsArmsImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="526" id="_MagicItemsArmsName" class="box power-card-name"></span>
+					<span tabindex="526" id="_MagicItemsArmsName" class="box power-card-name">0</span>
 					<span tabindex="527" id="_MagicItemsArmsKeyword" class="box power-card-keyword"></span>
 					<input tabindex="528" id="_MagicItemsArmsBox" class="box power-card-box" type="checkbox">
 					<span tabindex="529" id="_MagicItemsArmsAction" class="box power-card-action"></span>
@@ -1394,9 +1398,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsFeetCard" class="power-card">
+				<div style="display: none;" id="_MagicItemsFeetCard" class="power-card">
 					<img id="_MagicItemsFeetImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="542" id="_MagicItemsFeetName" class="box power-card-name"></span>
+					<span tabindex="542" id="_MagicItemsFeetName" class="box power-card-name">0</span>
 					<span tabindex="543" id="_MagicItemsFeetKeyword" class="box power-card-keyword"></span>
 					<input tabindex="544" id="_MagicItemsFeetBox" class="box power-card-box" type="checkbox">
 					<span tabindex="545" id="_MagicItemsFeetAction" class="box power-card-action"></span>
@@ -1416,9 +1420,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsHandsCard" class="power-card">
+				<div style="display: none;" id="_MagicItemsHandsCard" class="power-card">
 					<img id="_MagicItemsHandsImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="558" id="_MagicItemsHandsName" class="box power-card-name"></span>
+					<span tabindex="558" id="_MagicItemsHandsName" class="box power-card-name">0</span>
 					<span tabindex="559" id="_MagicItemsHandsKeyword" class="box power-card-keyword"></span>
 					<input tabindex="560" id="_MagicItemsHandsBox" class="box power-card-box" type="checkbox">
 					<span tabindex="561" id="_MagicItemsHandsAction" class="box power-card-action"></span>
@@ -1438,9 +1442,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsHeadCard" class="power-card">
+				<div style="display: none;" id="_MagicItemsHeadCard" class="power-card">
 					<img id="_MagicItemsHeadImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="574" id="_MagicItemsHeadName" class="box power-card-name"></span>
+					<span tabindex="574" id="_MagicItemsHeadName" class="box power-card-name">0</span>
 					<span tabindex="575" id="_MagicItemsHeadKeyword" class="box power-card-keyword"></span>
 					<input tabindex="576" id="_MagicItemsHeadBox" class="box power-card-box" type="checkbox">
 					<span tabindex="577" id="_MagicItemsHeadAction" class="box power-card-action"></span>
@@ -1460,9 +1464,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsNeckCard" class="power-card">
+				<div style="display: none;" id="_MagicItemsNeckCard" class="power-card">
 					<img id="_MagicItemsNeckImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name"></span>
+					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">0</span>
 					<span tabindex="591" id="_MagicItemsNeckKeyword" class="box power-card-keyword"></span>
 					<input tabindex="592" id="_MagicItemsNeckBox" class="box power-card-box" type="checkbox">
 					<span tabindex="593" id="_MagicItemsNeckAction" class="box power-card-action"></span>
@@ -1482,9 +1486,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsRing1Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsRing1Card" class="power-card">
 					<img id="_MagicItemsRing1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="606" id="_MagicItemsRing1Name" class="box power-card-name"></span>
+					<span tabindex="606" id="_MagicItemsRing1Name" class="box power-card-name">0</span>
 					<span tabindex="607" id="_MagicItemsRing1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="608" id="_MagicItemsRing1Box" class="box power-card-box" type="checkbox">
 					<span tabindex="609" id="_MagicItemsRing1Action" class="box power-card-action"></span>
@@ -1504,9 +1508,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsRing2Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsRing2Card" class="power-card">
 					<img id="_MagicItemsRing2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="622" id="_MagicItemsRing2Name" class="box power-card-name"></span>
+					<span tabindex="622" id="_MagicItemsRing2Name" class="box power-card-name">0</span>
 					<span tabindex="623" id="_MagicItemsRing2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="624" id="_MagicItemsRing2Box" class="box power-card-box" type="checkbox">
 					<span tabindex="625" id="_MagicItemsRing2Action" class="box power-card-action"></span>
@@ -1526,9 +1530,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsWaistCard" class="power-card">
+				<div style="display: none;" id="_MagicItemsWaistCard" class="power-card">
 					<img id="_MagicItemsWaistImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="638" id="_MagicItemsWaistName" class="box power-card-name"></span>
+					<span tabindex="638" id="_MagicItemsWaistName" class="box power-card-name">0</span>
 					<span tabindex="639" id="_MagicItemsWaistKeyword" class="box power-card-keyword"></span>
 					<input tabindex="640" id="_MagicItemsWaistBox" class="box power-card-box" type="checkbox">
 					<span tabindex="641" id="_MagicItemsWaistAction" class="box power-card-action"></span>
@@ -1548,9 +1552,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc1Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc1Card" class="power-card">
 					<img id="_MagicItemsMisc1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="654" id="_MagicItemsMisc1Name" class="box power-card-name"></span>
+					<span tabindex="654" id="_MagicItemsMisc1Name" class="box power-card-name">0</span>
 					<span tabindex="655" id="_MagicItemsMisc1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="656" id="_MagicItemsMisc1Box" class="box power-card-box" type="checkbox">
 					<span tabindex="657" id="_MagicItemsMisc1Action" class="box power-card-action"></span>
@@ -1570,9 +1574,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc2Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc2Card" class="power-card">
 					<img id="_MagicItemsMisc2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="670" id="_MagicItemsMisc2Name" class="box power-card-name"></span>
+					<span tabindex="670" id="_MagicItemsMisc2Name" class="box power-card-name">0</span>
 					<span tabindex="671" id="_MagicItemsMisc2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="672" id="_MagicItemsMisc2Box" class="box power-card-box" type="checkbox">
 					<span tabindex="673" id="_MagicItemsMisc2Action" class="box power-card-action"></span>
@@ -1592,9 +1596,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc3Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc3Card" class="power-card">
 					<img id="_MagicItemsMisc3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="686" id="_MagicItemsMisc3Name" class="box power-card-name"></span>
+					<span tabindex="686" id="_MagicItemsMisc3Name" class="box power-card-name">0</span>
 					<span tabindex="687" id="_MagicItemsMisc3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="688" id="_MagicItemsMisc3Box" class="box power-card-box" type="checkbox">
 					<span tabindex="689" id="_MagicItemsMisc3Action" class="box power-card-action"></span>
@@ -1614,9 +1618,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc4Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc4Card" class="power-card">
 					<img id="_MagicItemsMisc4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="702" id="_MagicItemsMisc4Name" class="box power-card-name"></span>
+					<span tabindex="702" id="_MagicItemsMisc4Name" class="box power-card-name">0</span>
 					<span tabindex="703" id="_MagicItemsMisc4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="704" id="_MagicItemsMisc4Box" class="box power-card-box" type="checkbox">
 					<span tabindex="705" id="_MagicItemsMisc4Action" class="box power-card-action"></span>
@@ -1636,9 +1640,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc5Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc5Card" class="power-card">
 					<img id="_MagicItemsMisc5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="718" id="_MagicItemsMisc5Name" class="box power-card-name"></span>
+					<span tabindex="718" id="_MagicItemsMisc5Name" class="box power-card-name">0</span>
 					<span tabindex="719" id="_MagicItemsMisc5Keyword" class="box power-card-keyword"></span>
 					<input tabindex="720" id="_MagicItemsMisc5Box" class="box power-card-box" type="checkbox">
 					<span tabindex="721" id="_MagicItemsMisc5Action" class="box power-card-action"></span>
@@ -1658,9 +1662,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc6Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc6Card" class="power-card">
 					<img id="_MagicItemsMisc6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="734" id="_MagicItemsMisc6Name" class="box power-card-name"></span>
+					<span tabindex="734" id="_MagicItemsMisc6Name" class="box power-card-name">0</span>
 					<span tabindex="735" id="_MagicItemsMisc6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="736" id="_MagicItemsMisc6Box" class="box power-card-box" type="checkbox">
 					<span tabindex="737" id="_MagicItemsMisc6Action" class="box power-card-action"></span>
@@ -1680,9 +1684,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc7Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc7Card" class="power-card">
 					<img id="_MagicItemsMisc7Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="750" id="_MagicItemsMisc7Name" class="box power-card-name"></span>
+					<span tabindex="750" id="_MagicItemsMisc7Name" class="box power-card-name">0</span>
 					<span tabindex="751" id="_MagicItemsMisc7Keyword" class="box power-card-keyword"></span>
 					<input tabindex="752" id="_MagicItemsMisc7Box" class="box power-card-box" type="checkbox">
 					<span tabindex="753" id="_MagicItemsMisc7Action" class="box power-card-action"></span>
@@ -1702,9 +1706,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc8Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc8Card" class="power-card">
 					<img id="_MagicItemsMisc8Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="766" id="_MagicItemsMisc8Name" class="box power-card-name"></span>
+					<span tabindex="766" id="_MagicItemsMisc8Name" class="box power-card-name">0</span>
 					<span tabindex="767" id="_MagicItemsMisc8Keyword" class="box power-card-keyword"></span>
 					<input tabindex="768" id="_MagicItemsMisc8Box" class="box power-card-box" type="checkbox">
 					<span tabindex="769" id="_MagicItemsMisc8Action" class="box power-card-action"></span>
@@ -1724,9 +1728,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc9Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc9Card" class="power-card">
 					<img id="_MagicItemsMisc9Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="782" id="_MagicItemsMisc9Name" class="box power-card-name"></span>
+					<span tabindex="782" id="_MagicItemsMisc9Name" class="box power-card-name">0</span>
 					<span tabindex="783" id="_MagicItemsMisc9Keyword" class="box power-card-keyword"></span>
 					<input tabindex="784" id="_MagicItemsMisc9Box" class="box power-card-box" type="checkbox">
 					<span tabindex="785" id="_MagicItemsMisc9Action" class="box power-card-action"></span>
@@ -1746,9 +1750,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc10Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc10Card" class="power-card">
 					<img id="_MagicItemsMisc10Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="798" id="_MagicItemsMisc10Name" class="box power-card-name"></span>
+					<span tabindex="798" id="_MagicItemsMisc10Name" class="box power-card-name">0</span>
 					<span tabindex="799" id="_MagicItemsMisc10Keyword" class="box power-card-keyword"></span>
 					<input tabindex="800" id="_MagicItemsMisc10Box" class="box power-card-box" type="checkbox">
 					<span tabindex="801" id="_MagicItemsMisc10Action" class="box power-card-action"></span>
@@ -1768,9 +1772,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc11Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc11Card" class="power-card">
 					<img id="_MagicItemsMisc11Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="814" id="_MagicItemsMisc11Name" class="box power-card-name"></span>
+					<span tabindex="814" id="_MagicItemsMisc11Name" class="box power-card-name">0</span>
 					<span tabindex="815" id="_MagicItemsMisc11Keyword" class="box power-card-keyword"></span>
 					<input tabindex="816" id="_MagicItemsMisc11Box" class="box power-card-box" type="checkbox">
 					<span tabindex="817" id="_MagicItemsMisc11Action" class="box power-card-action"></span>
@@ -1790,9 +1794,9 @@
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div id="_MagicItemsMisc12Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc12Card" class="power-card">
 					<img id="_MagicItemsMisc12Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="830" id="_MagicItemsMisc12Name" class="box power-card-name"></span>
+					<span tabindex="830" id="_MagicItemsMisc12Name" class="box power-card-name">0</span>
 					<span tabindex="831" id="_MagicItemsMisc12Keyword" class="box power-card-keyword"></span>
 					<input tabindex="832" id="_MagicItemsMisc12Box" class="box power-card-box" type="checkbox">
 					<span tabindex="833" id="_MagicItemsMisc12Action" class="box power-card-action"></span>
@@ -1817,4 +1821,3 @@
 		<script src="http://rampion.github.com/4eCharSheet/link-power-cards.js"></script>
 		<script src="http://rampion.github.com/4eCharSheet/program.js"></script>
 </body></html>
-
