@@ -26,6 +26,10 @@
 	position: relative;
 	float: left;
 }
+.Tapped {
+	opacity: 0.5;
+	-moz-transform: rotate(-180deg);
+}
 .PersonalPower-Name {
 	height: 33px;
 	left: 28px;

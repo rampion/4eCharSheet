@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+	
+		<style>
+			#CharacterSheet { 
+				position: relative; 
+				background-image: url(PowerCard-AtWill.png);
+				width: 376px;
+				height: 526px;
+			}
+			.box { 
+				border: 1px dashed red;
+				width: 0px;
+				height: 0px;
+				position: absolute;
+				background: #ffbbbb;
+			}
+		</style>
+	</head>
+<body>
+		<div id="CharacterSheet">
+			<div id="PowerCard-Name"				style="left: 5px; top: 5px; width: 360px; height: 44px;" class="box"></div>
+
+			<div id="PowerCard-Keyword"		style="left: 56px; top: 53px; width: 281px; height: 23px;" class="box"></div>
+			<input id="PowerCard-Box" class="box" style="center; left: 337px; top: 51px; width: 25px; height: 23px;" type="checkbox">
+
+			<div id="PowerCard-Action"			style="left: 5px; top: 80px; width: 64px; height: 25px;" class="box"></div>
+			<div id="PowerCard-AttackType"	style="left: 73px; top: 80px; width: 91px; height: 42px;" class="box"></div>
+			<div id="PowerCard-Range"			style="left: 167px; top: 80px; width: 198px; height: 25px;" class="box"></div>
+
+			<div id="PowerCard-Attack"			style="left: 5px; top: 126px; width: 66px; height: 25px;" class="box"></div>
+			<div id="PowerCard-Defense"		style="left: 93px; top: 126px; width: 71px; height: 25px;" class="box"></div>
+			<div id="PowerCard-Target"			style="left: 167px; top: 126px; width: 199px; height: 25px;" class="box"></div>
+
+			<div id="PowerCard-Details"		style="left: 5px; top: 172px; width: 360px; height: 219px;" class="box"></div>
+			<div id="PowerCard-Additional"	style="left: 5px; top: 407px; width: 360px; height: 55px;" class="box"></div>
+
+			<div id="PowerCard-Class"			style="left: 36px; top: 465px; width: 157px; height: 23px;" class="box"></div>
+			<div id="PowerCard-Level"			style="left: 226px; top: 465px; width: 31px; height: 23px;" class="box"></div>
+			<div id="PowerCard-Page"				style="left: 287px; top: 465px; width: 78px; height: 23px;" class="box"></div>
+
+			<select id="PowerCard-PowerType" style="position:absolute; top: 500px; left: 265px; width: 100px">
+				<option value="url(PowerCard-AtWill.png)" id="PowerCard-PowerType-AtWill">At Will</option>
+				<option value="url(PowerCard-Encounter.png)" id="PowerCard-PowerType-Encounter">Encounter</option>
+				<option value="url(PowerCard-Daily.png)" id="PowerCard-PowerType-Daily">Daily</option>
+			</select>
+		</div>
+		<script>
+			const CharacterSheet = document.getElementById('CharacterSheet');
+			const PowerType = document.getElementById('PowerCard-PowerType');
+			PowerType.addEventListener('change', function(change_event){
+				CharacterSheet.style.backgroundImage = PowerType.value;
+			}, false);
+
+			/*
+			const CharacterSheet = document.getElementById('CharacterSheet');
+			CharacterSheet.addEventListener('mousedown', function(down_event){
+				const box = document.createElement('div');
+				box.className = 'box';
+				box.style.left = down_event.pageX - CharacterSheet.offsetLeft - 2;
+				box.style.top = down_event.pageY - CharacterSheet.offsetTop - 2;
+				CharacterSheet.appendChild(box);
+
+				mousemove = function(move_event){
+					box.style.width = (move_event.pageX - down_event.pageX+2)+'px';
+					box.style.height = (move_event.pageY - down_event.pageY+2)+'px';
+				};
+				mouseup = function(up_event){
+					CharacterSheet.removeEventListener('mousemove', mousemove, false);
+					CharacterSheet.removeEventListener('mouseup', mouseup, false);
+					box.addEventListener('click', function(click_event) {
+						CharacterSheet.removeChild(box);
+						console.log('click!');
+					}, false);
+					box.id = prompt("What's the name for this field?");
+					console.log('mouseup!');
+				};
+				CharacterSheet.addEventListener('mousemove', mousemove, false);
+				CharacterSheet.addEventListener('mouseup', mouseup, false);
+				console.log("mousedown!");
+			}, false);
+			console.log("let's go!");
+			*/
+		</script>
+	</body>
+</html>
