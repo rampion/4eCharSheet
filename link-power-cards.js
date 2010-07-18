@@ -42,7 +42,7 @@
 		const power_name = document.getElementById(power_id + 'Name');
 		const power_type = document.getElementById(power_id + 'PowerType');
 		power.addEventListener('change', function(change_event){
-			power_card.style.display = /\S/.test(power.innerHTML) ? 'block' : 'none';
+			power_card.style.display = /\S/.test(power.innerHTML) ? 'inline-block' : 'none';
 			// for some reason, this displays wrong, so we'll fix it manually
 			const opts = power_type.getElementsByTagName('option');
 			for (i = 0; i < opts.length; i++){
