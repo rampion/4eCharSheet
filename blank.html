@@ -35,6 +35,57 @@
 			ArmorClass10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			ArmorClass:"=(ArmorClass10PlusHalfLevel + ArmorClassArmorSlashAbil + ArmorClassClass + ArmorClassFeat + ArmorClassEnh + ArmorClassMisc1 + ArmorClassMisc2)",
 			ArmorClassArmorSlashAbil:"=(max(DexMod,IntMod) /* add light armor bonus, or replace with heavy armor bonus */)",
+			AtWillPowers1Name:"=(AtWillPowers1)",
+			AtWillPowers2Name:"=(AtWillPowers2)",
+			AtWillPowers3Name:"=(AtWillPowers3)",
+			AtWillPowers4Name:"=(AtWillPowers4)",
+			AtWillPowers5Name:"=(AtWillPowers5)",
+			AtWillPowers6Name:"=(AtWillPowers6)",
+			EncounterPowers1Name:"=(EncounterPowers1)",
+			EncounterPowers2Name:"=(EncounterPowers2)",
+			EncounterPowers3Name:"=(EncounterPowers3)",
+			EncounterPowers4Name:"=(EncounterPowers4)",
+			EncounterPowers5Name:"=(EncounterPowers5)",
+			EncounterPowers6Name:"=(EncounterPowers6)",
+			DailyPowers1Name:"=(DailyPowers1)",
+			DailyPowers2Name:"=(DailyPowers2)",
+			DailyPowers3Name:"=(DailyPowers3)",
+			DailyPowers4Name:"=(DailyPowers4)",
+			DailyPowers5Name:"=(DailyPowers5)",
+			DailyPowers6Name:"=(DailyPowers6)",
+			UtilityPowers1Name:"=(UtilityPowers1)",
+			UtilityPowers2Name:"=(UtilityPowers2)",
+			UtilityPowers3Name:"=(UtilityPowers3)",
+			UtilityPowers4Name:"=(UtilityPowers4)",
+			UtilityPowers5Name:"=(UtilityPowers5)",
+			UtilityPowers6Name:"=(UtilityPowers6)",
+			UtilityPowers7Name:"=(UtilityPowers7)",
+			UtilityPowers8Name:"=(UtilityPowers8)",
+			MagicItemsWeapon1Name:"=(MagicItemsWeapon1)",
+			MagicItemsWeapon2Name:"=(MagicItemsWeapon2)",
+			MagicItemsWeapon3Name:"=(MagicItemsWeapon3)",
+			MagicItemsWeapon4Name:"=(MagicItemsWeapon4)",
+			MagicItemsArmorName:"=(MagicItemsArmor)",
+			MagicItemsArmsName:"=(MagicItemsArms)",
+			MagicItemsFeetName:"=(MagicItemsFeet)",
+			MagicItemsHandsName:"=(MagicItemsHands)",
+			MagicItemsHeadName:"=(MagicItemsHead)",
+			MagicItemsNeckName:"=(MagicItemsNeck)",
+			MagicItemsRing1Name:"=(MagicItemsRing1)",
+			MagicItemsRing2Name:"=(MagicItemsRing2)",
+			MagicItemsWaistName:"=(MagicItemsWaist)",
+			MagicItemsMisc1Name:"=(MagicItemsMisc1)",
+			MagicItemsMisc2Name:"=(MagicItemsMisc2)",
+			MagicItemsMisc3Name:"=(MagicItemsMisc3)",
+			MagicItemsMisc4Name:"=(MagicItemsMisc4)",
+			MagicItemsMisc5Name:"=(MagicItemsMisc5)",
+			MagicItemsMisc6Name:"=(MagicItemsMisc6)",
+			MagicItemsMisc7Name:"=(MagicItemsMisc7)",
+			MagicItemsMisc8Name:"=(MagicItemsMisc8)",
+			MagicItemsMisc9Name:"=(MagicItemsMisc9)",
+			MagicItemsMisc10Name:"=(MagicItemsMisc10)",
+			MagicItemsMisc11Name:"=(MagicItemsMisc11)",
+			MagicItemsMisc12Name:"=(MagicItemsMisc12)",
 			Athletics:"=(AthleticsAbilModPlusHalfLevel + AthleticsTrained + AthleticsArmorPenalty + AthleticsMisc)",
 			AthleticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+StrMod)",
 			Attack1Abil:"=(StrMod)",
@@ -134,9 +185,9 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">BasicAttack3Damage</div>
+				<div id="EditBoxTarget">AtWillPowers1Name</div>
 				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">=(AtWillPowers1)&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -639,606 +690,606 @@
 				<span tabindex="445" class="box" style="left: 41px; top: 1293px; width: 713px; height: 159px;" id="_CoinsAndOtherWealth"></span>
 			</div>
 			<div class="page" id="Page3">
-				<div id="_AtWillPowerCard1" class="power-card">
-					<img id="_AtWillPowerCard1Image" src="PowerCard-AtWill.png"/>
-					<span tabindex="446" id="_AtWillPowerCard1Name" class="box power-card-name"></span>
-					<span tabindex="447" id="_AtWillPowerCard1Keyword" class="box power-card-keyword"></span>
-					<input tabindex="448" id="_AtWillPowerCard1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="449" id="_AtWillPowerCard1Action" class="box power-card-action"></span>
-					<span tabindex="450" id="_AtWillPowerCard1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="451" id="_AtWillPowerCard1Range" class="box power-card-range"></span>
-					<span tabindex="452" id="_AtWillPowerCard1Attack" class="box power-card-attack"></span>
-					<span tabindex="453" id="_AtWillPowerCard1Defense" class="box power-card-defense"></span>
-					<span tabindex="454" id="_AtWillPowerCard1Target" class="box power-card-target"></span>
-					<span tabindex="455" id="_AtWillPowerCard1Details" class="box power-card-details"></span>
-					<span tabindex="456" id="_AtWillPowerCard1Additional" class="box power-card-additional"></span>
-					<span tabindex="457" id="_AtWillPowerCard1Class" class="box power-card-class"></span>
-					<span tabindex="459" id="_AtWillPowerCard1Level"	class="box power-card-level"></span>
-					<span tabindex="460" id="_AtWillPowerCard1Page" class="box power-card-page"></span>
-					<select tabindex="461" id="_AtWillPowerCard1PowerType" class="power-card-power-type">
-						<option selected value="PowerCard-AtWill.png">At Will</option>
+				<div id="_AtWillPowers1Card" class="power-card">
+					<img id="_AtWillPowers1Image" src="PowerCard-AtWill.png">
+					<span tabindex="446" id="_AtWillPowers1Name" class="box power-card-name"><!-- --></span>
+					<span tabindex="447" id="_AtWillPowers1Keyword" class="box power-card-keyword"></span>
+					<input tabindex="448" id="_AtWillPowers1Box" class="box power-card-box" type="checkbox">
+					<span tabindex="449" id="_AtWillPowers1Action" class="box power-card-action"></span>
+					<span tabindex="450" id="_AtWillPowers1AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="451" id="_AtWillPowers1Range" class="box power-card-range"></span>
+					<span tabindex="452" id="_AtWillPowers1Attack" class="box power-card-attack"></span>
+					<span tabindex="453" id="_AtWillPowers1Defense" class="box power-card-defense"></span>
+					<span tabindex="454" id="_AtWillPowers1Target" class="box power-card-target"></span>
+					<span tabindex="455" id="_AtWillPowers1Details" class="box power-card-details"></span>
+					<span tabindex="456" id="_AtWillPowers1Additional" class="box power-card-additional"></span>
+					<span tabindex="457" id="_AtWillPowers1Class" class="box power-card-class"></span>
+					<span tabindex="459" id="_AtWillPowers1Level" class="box power-card-level"></span>
+					<span tabindex="460" id="_AtWillPowers1Page" class="box power-card-page"></span>
+					<select tabindex="461" id="_AtWillPowers1PowerType" class="power-card-power-type">
+						<option selected="selected" value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_AtWillPowerCard1PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowerCard1Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_AtWillPowers1PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowers1Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_AtWillPowerCard2" class="power-card">
-					<img id="_AtWillPowerCard2Image" src="PowerCard-AtWill.png"/>
-					<span tabindex="462" id="_AtWillPowerCard2Name" class="box power-card-name"></span>
-					<span tabindex="463" id="_AtWillPowerCard2Keyword" class="box power-card-keyword"></span>
-					<input tabindex="464" id="_AtWillPowerCard2Box" class="box power-card-box" type="checkbox">
-					<span tabindex="465" id="_AtWillPowerCard2Action" class="box power-card-action"></span>
-					<span tabindex="466" id="_AtWillPowerCard2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="467" id="_AtWillPowerCard2Range" class="box power-card-range"></span>
-					<span tabindex="468" id="_AtWillPowerCard2Attack" class="box power-card-attack"></span>
-					<span tabindex="469" id="_AtWillPowerCard2Defense" class="box power-card-defense"></span>
-					<span tabindex="470" id="_AtWillPowerCard2Target" class="box power-card-target"></span>
-					<span tabindex="471" id="_AtWillPowerCard2Details" class="box power-card-details"></span>
-					<span tabindex="472" id="_AtWillPowerCard2Additional" class="box power-card-additional"></span>
-					<span tabindex="473" id="_AtWillPowerCard2Class" class="box power-card-class"></span>
-					<span tabindex="475" id="_AtWillPowerCard2Level"	class="box power-card-level"></span>
-					<span tabindex="476" id="_AtWillPowerCard2Page" class="box power-card-page"></span>
-					<select tabindex="477" id="_AtWillPowerCard2PowerType" class="power-card-power-type">
-						<option selected value="PowerCard-AtWill.png">At Will</option>
+				<div id="_AtWillPowers2Card" class="power-card">
+					<img id="_AtWillPowers2Image" src="PowerCard-AtWill.png">
+					<span tabindex="462" id="_AtWillPowers2Name" class="box power-card-name"></span>
+					<span tabindex="463" id="_AtWillPowers2Keyword" class="box power-card-keyword"></span>
+					<input tabindex="464" id="_AtWillPowers2Box" class="box power-card-box" type="checkbox">
+					<span tabindex="465" id="_AtWillPowers2Action" class="box power-card-action"></span>
+					<span tabindex="466" id="_AtWillPowers2AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="467" id="_AtWillPowers2Range" class="box power-card-range"></span>
+					<span tabindex="468" id="_AtWillPowers2Attack" class="box power-card-attack"></span>
+					<span tabindex="469" id="_AtWillPowers2Defense" class="box power-card-defense"></span>
+					<span tabindex="470" id="_AtWillPowers2Target" class="box power-card-target"></span>
+					<span tabindex="471" id="_AtWillPowers2Details" class="box power-card-details"></span>
+					<span tabindex="472" id="_AtWillPowers2Additional" class="box power-card-additional"></span>
+					<span tabindex="473" id="_AtWillPowers2Class" class="box power-card-class"></span>
+					<span tabindex="475" id="_AtWillPowers2Level" class="box power-card-level"></span>
+					<span tabindex="476" id="_AtWillPowers2Page" class="box power-card-page"></span>
+					<select tabindex="477" id="_AtWillPowers2PowerType" class="power-card-power-type">
+						<option selected="selected" value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_AtWillPowerCard2PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowerCard2Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_AtWillPowers2PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowers2Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_AtWillPowerCard3" class="power-card">
-					<img id="_AtWillPowerCard3Image" src="PowerCard-AtWill.png"/>
-					<span tabindex="478" id="_AtWillPowerCard3Name" class="box power-card-name"></span>
-					<span tabindex="479" id="_AtWillPowerCard3Keyword" class="box power-card-keyword"></span>
-					<input tabindex="480" id="_AtWillPowerCard3Box" class="box power-card-box" type="checkbox">
-					<span tabindex="481" id="_AtWillPowerCard3Action" class="box power-card-action"></span>
-					<span tabindex="482" id="_AtWillPowerCard3AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="483" id="_AtWillPowerCard3Range" class="box power-card-range"></span>
-					<span tabindex="484" id="_AtWillPowerCard3Attack" class="box power-card-attack"></span>
-					<span tabindex="485" id="_AtWillPowerCard3Defense" class="box power-card-defense"></span>
-					<span tabindex="486" id="_AtWillPowerCard3Target" class="box power-card-target"></span>
-					<span tabindex="487" id="_AtWillPowerCard3Details" class="box power-card-details"></span>
-					<span tabindex="488" id="_AtWillPowerCard3Additional" class="box power-card-additional"></span>
-					<span tabindex="489" id="_AtWillPowerCard3Class" class="box power-card-class"></span>
-					<span tabindex="491" id="_AtWillPowerCard3Level"	class="box power-card-level"></span>
-					<span tabindex="492" id="_AtWillPowerCard3Page" class="box power-card-page"></span>
-					<select tabindex="493" id="_AtWillPowerCard3PowerType" class="power-card-power-type">
-						<option selected value="PowerCard-AtWill.png">At Will</option>
+				<div id="_AtWillPowers3Card" class="power-card">
+					<img id="_AtWillPowers3Image" src="PowerCard-AtWill.png">
+					<span tabindex="478" id="_AtWillPowers3Name" class="box power-card-name"></span>
+					<span tabindex="479" id="_AtWillPowers3Keyword" class="box power-card-keyword"></span>
+					<input tabindex="480" id="_AtWillPowers3Box" class="box power-card-box" type="checkbox">
+					<span tabindex="481" id="_AtWillPowers3Action" class="box power-card-action"></span>
+					<span tabindex="482" id="_AtWillPowers3AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="483" id="_AtWillPowers3Range" class="box power-card-range"></span>
+					<span tabindex="484" id="_AtWillPowers3Attack" class="box power-card-attack"></span>
+					<span tabindex="485" id="_AtWillPowers3Defense" class="box power-card-defense"></span>
+					<span tabindex="486" id="_AtWillPowers3Target" class="box power-card-target"></span>
+					<span tabindex="487" id="_AtWillPowers3Details" class="box power-card-details"></span>
+					<span tabindex="488" id="_AtWillPowers3Additional" class="box power-card-additional"></span>
+					<span tabindex="489" id="_AtWillPowers3Class" class="box power-card-class"></span>
+					<span tabindex="491" id="_AtWillPowers3Level" class="box power-card-level"></span>
+					<span tabindex="492" id="_AtWillPowers3Page" class="box power-card-page"></span>
+					<select tabindex="493" id="_AtWillPowers3PowerType" class="power-card-power-type">
+						<option selected="selected" value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_AtWillPowerCard3PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowerCard3Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_AtWillPowers3PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowers3Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_AtWillPowerCard4" class="power-card">
-					<img id="_AtWillPowerCard4Image" src="PowerCard-AtWill.png"/>
-					<span tabindex="494" id="_AtWillPowerCard4Name" class="box power-card-name"></span>
-					<span tabindex="495" id="_AtWillPowerCard4Keyword" class="box power-card-keyword"></span>
-					<input tabindex="496" id="_AtWillPowerCard4Box" class="box power-card-box" type="checkbox">
-					<span tabindex="497" id="_AtWillPowerCard4Action" class="box power-card-action"></span>
-					<span tabindex="498" id="_AtWillPowerCard4AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="499" id="_AtWillPowerCard4Range" class="box power-card-range"></span>
-					<span tabindex="500" id="_AtWillPowerCard4Attack" class="box power-card-attack"></span>
-					<span tabindex="501" id="_AtWillPowerCard4Defense" class="box power-card-defense"></span>
-					<span tabindex="502" id="_AtWillPowerCard4Target" class="box power-card-target"></span>
-					<span tabindex="503" id="_AtWillPowerCard4Details" class="box power-card-details"></span>
-					<span tabindex="504" id="_AtWillPowerCard4Additional" class="box power-card-additional"></span>
-					<span tabindex="505" id="_AtWillPowerCard4Class" class="box power-card-class"></span>
-					<span tabindex="507" id="_AtWillPowerCard4Level"	class="box power-card-level"></span>
-					<span tabindex="508" id="_AtWillPowerCard4Page" class="box power-card-page"></span>
-					<select tabindex="509" id="_AtWillPowerCard4PowerType" class="power-card-power-type">
-						<option selected value="PowerCard-AtWill.png">At Will</option>
+				<div id="_AtWillPowers4Card" class="power-card">
+					<img id="_AtWillPowers4Image" src="PowerCard-AtWill.png">
+					<span tabindex="494" id="_AtWillPowers4Name" class="box power-card-name"></span>
+					<span tabindex="495" id="_AtWillPowers4Keyword" class="box power-card-keyword"></span>
+					<input tabindex="496" id="_AtWillPowers4Box" class="box power-card-box" type="checkbox">
+					<span tabindex="497" id="_AtWillPowers4Action" class="box power-card-action"></span>
+					<span tabindex="498" id="_AtWillPowers4AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="499" id="_AtWillPowers4Range" class="box power-card-range"></span>
+					<span tabindex="500" id="_AtWillPowers4Attack" class="box power-card-attack"></span>
+					<span tabindex="501" id="_AtWillPowers4Defense" class="box power-card-defense"></span>
+					<span tabindex="502" id="_AtWillPowers4Target" class="box power-card-target"></span>
+					<span tabindex="503" id="_AtWillPowers4Details" class="box power-card-details"></span>
+					<span tabindex="504" id="_AtWillPowers4Additional" class="box power-card-additional"></span>
+					<span tabindex="505" id="_AtWillPowers4Class" class="box power-card-class"></span>
+					<span tabindex="507" id="_AtWillPowers4Level" class="box power-card-level"></span>
+					<span tabindex="508" id="_AtWillPowers4Page" class="box power-card-page"></span>
+					<select tabindex="509" id="_AtWillPowers4PowerType" class="power-card-power-type">
+						<option selected="selected" value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_AtWillPowerCard4PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowerCard4Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_AtWillPowers4PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowers4Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_AtWillPowerCard5" class="power-card">
-					<img id="_AtWillPowerCard5Image" src="PowerCard-AtWill.png"/>
-					<span tabindex="510" id="_AtWillPowerCard5Name" class="box power-card-name"></span>
-					<span tabindex="511" id="_AtWillPowerCard5Keyword" class="box power-card-keyword"></span>
-					<input tabindex="512" id="_AtWillPowerCard5Box" class="box power-card-box" type="checkbox">
-					<span tabindex="513" id="_AtWillPowerCard5Action" class="box power-card-action"></span>
-					<span tabindex="514" id="_AtWillPowerCard5AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="515" id="_AtWillPowerCard5Range" class="box power-card-range"></span>
-					<span tabindex="516" id="_AtWillPowerCard5Attack" class="box power-card-attack"></span>
-					<span tabindex="517" id="_AtWillPowerCard5Defense" class="box power-card-defense"></span>
-					<span tabindex="518" id="_AtWillPowerCard5Target" class="box power-card-target"></span>
-					<span tabindex="519" id="_AtWillPowerCard5Details" class="box power-card-details"></span>
-					<span tabindex="520" id="_AtWillPowerCard5Additional" class="box power-card-additional"></span>
-					<span tabindex="521" id="_AtWillPowerCard5Class" class="box power-card-class"></span>
-					<span tabindex="523" id="_AtWillPowerCard5Level"	class="box power-card-level"></span>
-					<span tabindex="524" id="_AtWillPowerCard5Page" class="box power-card-page"></span>
-					<select tabindex="525" id="_AtWillPowerCard5PowerType" class="power-card-power-type">
-						<option selected value="PowerCard-AtWill.png">At Will</option>
+				<div id="_AtWillPowers5Card" class="power-card">
+					<img id="_AtWillPowers5Image" src="PowerCard-AtWill.png">
+					<span tabindex="510" id="_AtWillPowers5Name" class="box power-card-name"></span>
+					<span tabindex="511" id="_AtWillPowers5Keyword" class="box power-card-keyword"></span>
+					<input tabindex="512" id="_AtWillPowers5Box" class="box power-card-box" type="checkbox">
+					<span tabindex="513" id="_AtWillPowers5Action" class="box power-card-action"></span>
+					<span tabindex="514" id="_AtWillPowers5AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="515" id="_AtWillPowers5Range" class="box power-card-range"></span>
+					<span tabindex="516" id="_AtWillPowers5Attack" class="box power-card-attack"></span>
+					<span tabindex="517" id="_AtWillPowers5Defense" class="box power-card-defense"></span>
+					<span tabindex="518" id="_AtWillPowers5Target" class="box power-card-target"></span>
+					<span tabindex="519" id="_AtWillPowers5Details" class="box power-card-details"></span>
+					<span tabindex="520" id="_AtWillPowers5Additional" class="box power-card-additional"></span>
+					<span tabindex="521" id="_AtWillPowers5Class" class="box power-card-class"></span>
+					<span tabindex="523" id="_AtWillPowers5Level" class="box power-card-level"></span>
+					<span tabindex="524" id="_AtWillPowers5Page" class="box power-card-page"></span>
+					<select tabindex="525" id="_AtWillPowers5PowerType" class="power-card-power-type">
+						<option selected="selected" value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_AtWillPowerCard5PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowerCard5Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_AtWillPowers5PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowers5Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_AtWillPowerCard6" class="power-card">
-					<img id="_AtWillPowerCard6Image" src="PowerCard-AtWill.png"/>
-					<span tabindex="526" id="_AtWillPowerCard6Name" class="box power-card-name"></span>
-					<span tabindex="527" id="_AtWillPowerCard6Keyword" class="box power-card-keyword"></span>
-					<input tabindex="528" id="_AtWillPowerCard6Box" class="box power-card-box" type="checkbox">
-					<span tabindex="529" id="_AtWillPowerCard6Action" class="box power-card-action"></span>
-					<span tabindex="530" id="_AtWillPowerCard6AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="531" id="_AtWillPowerCard6Range" class="box power-card-range"></span>
-					<span tabindex="532" id="_AtWillPowerCard6Attack" class="box power-card-attack"></span>
-					<span tabindex="533" id="_AtWillPowerCard6Defense" class="box power-card-defense"></span>
-					<span tabindex="534" id="_AtWillPowerCard6Target" class="box power-card-target"></span>
-					<span tabindex="535" id="_AtWillPowerCard6Details" class="box power-card-details"></span>
-					<span tabindex="536" id="_AtWillPowerCard6Additional" class="box power-card-additional"></span>
-					<span tabindex="537" id="_AtWillPowerCard6Class" class="box power-card-class"></span>
-					<span tabindex="539" id="_AtWillPowerCard6Level"	class="box power-card-level"></span>
-					<span tabindex="540" id="_AtWillPowerCard6Page" class="box power-card-page"></span>
-					<select tabindex="541" id="_AtWillPowerCard6PowerType" class="power-card-power-type">
-						<option selected value="PowerCard-AtWill.png">At Will</option>
+				<div id="_AtWillPowers6Card" class="power-card">
+					<img id="_AtWillPowers6Image" src="PowerCard-AtWill.png">
+					<span tabindex="526" id="_AtWillPowers6Name" class="box power-card-name"></span>
+					<span tabindex="527" id="_AtWillPowers6Keyword" class="box power-card-keyword"></span>
+					<input tabindex="528" id="_AtWillPowers6Box" class="box power-card-box" type="checkbox">
+					<span tabindex="529" id="_AtWillPowers6Action" class="box power-card-action"></span>
+					<span tabindex="530" id="_AtWillPowers6AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="531" id="_AtWillPowers6Range" class="box power-card-range"></span>
+					<span tabindex="532" id="_AtWillPowers6Attack" class="box power-card-attack"></span>
+					<span tabindex="533" id="_AtWillPowers6Defense" class="box power-card-defense"></span>
+					<span tabindex="534" id="_AtWillPowers6Target" class="box power-card-target"></span>
+					<span tabindex="535" id="_AtWillPowers6Details" class="box power-card-details"></span>
+					<span tabindex="536" id="_AtWillPowers6Additional" class="box power-card-additional"></span>
+					<span tabindex="537" id="_AtWillPowers6Class" class="box power-card-class"></span>
+					<span tabindex="539" id="_AtWillPowers6Level" class="box power-card-level"></span>
+					<span tabindex="540" id="_AtWillPowers6Page" class="box power-card-page"></span>
+					<select tabindex="541" id="_AtWillPowers6PowerType" class="power-card-power-type">
+						<option selected="selected" value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_AtWillPowerCard6PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowerCard6Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_AtWillPowers6PowerType').addEventListener('change',function(e){document.getElementById('_AtWillPowers6Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_EncounterPowerCard1" class="power-card">
-					<img id="_EncounterPowerCard1Image" src="PowerCard-Encounter.png"/>
-					<span tabindex="542" id="_EncounterPowerCard1Name" class="box power-card-name"></span>
-					<span tabindex="543" id="_EncounterPowerCard1Keyword" class="box power-card-keyword"></span>
-					<input tabindex="544" id="_EncounterPowerCard1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="545" id="_EncounterPowerCard1Action" class="box power-card-action"></span>
-					<span tabindex="546" id="_EncounterPowerCard1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="547" id="_EncounterPowerCard1Range" class="box power-card-range"></span>
-					<span tabindex="548" id="_EncounterPowerCard1Attack" class="box power-card-attack"></span>
-					<span tabindex="549" id="_EncounterPowerCard1Defense" class="box power-card-defense"></span>
-					<span tabindex="550" id="_EncounterPowerCard1Target" class="box power-card-target"></span>
-					<span tabindex="551" id="_EncounterPowerCard1Details" class="box power-card-details"></span>
-					<span tabindex="552" id="_EncounterPowerCard1Additional" class="box power-card-additional"></span>
-					<span tabindex="553" id="_EncounterPowerCard1Class" class="box power-card-class"></span>
-					<span tabindex="555" id="_EncounterPowerCard1Level"	class="box power-card-level"></span>
-					<span tabindex="556" id="_EncounterPowerCard1Page" class="box power-card-page"></span>
-					<select tabindex="557" id="_EncounterPowerCard1PowerType" class="power-card-power-type">
+				<div id="_EncounterPowers1Card" class="power-card">
+					<img id="_EncounterPowers1Image" src="PowerCard-Encounter.png">
+					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name"></span>
+					<span tabindex="543" id="_EncounterPowers1Keyword" class="box power-card-keyword"></span>
+					<input tabindex="544" id="_EncounterPowers1Box" class="box power-card-box" type="checkbox">
+					<span tabindex="545" id="_EncounterPowers1Action" class="box power-card-action"></span>
+					<span tabindex="546" id="_EncounterPowers1AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="547" id="_EncounterPowers1Range" class="box power-card-range"></span>
+					<span tabindex="548" id="_EncounterPowers1Attack" class="box power-card-attack"></span>
+					<span tabindex="549" id="_EncounterPowers1Defense" class="box power-card-defense"></span>
+					<span tabindex="550" id="_EncounterPowers1Target" class="box power-card-target"></span>
+					<span tabindex="551" id="_EncounterPowers1Details" class="box power-card-details"></span>
+					<span tabindex="552" id="_EncounterPowers1Additional" class="box power-card-additional"></span>
+					<span tabindex="553" id="_EncounterPowers1Class" class="box power-card-class"></span>
+					<span tabindex="555" id="_EncounterPowers1Level" class="box power-card-level"></span>
+					<span tabindex="556" id="_EncounterPowers1Page" class="box power-card-page"></span>
+					<select tabindex="557" id="_EncounterPowers1PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
-						<option selected value="PowerCard-Encounter.png">Encounter</option>
+						<option selected="selected" value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_EncounterPowerCard1PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowerCard1Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_EncounterPowers1PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowers1Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_EncounterPowerCard2" class="power-card">
-					<img id="_EncounterPowerCard2Image" src="PowerCard-Encounter.png"/>
-					<span tabindex="558" id="_EncounterPowerCard2Name" class="box power-card-name"></span>
-					<span tabindex="559" id="_EncounterPowerCard2Keyword" class="box power-card-keyword"></span>
-					<input tabindex="560" id="_EncounterPowerCard2Box" class="box power-card-box" type="checkbox">
-					<span tabindex="561" id="_EncounterPowerCard2Action" class="box power-card-action"></span>
-					<span tabindex="562" id="_EncounterPowerCard2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="563" id="_EncounterPowerCard2Range" class="box power-card-range"></span>
-					<span tabindex="564" id="_EncounterPowerCard2Attack" class="box power-card-attack"></span>
-					<span tabindex="565" id="_EncounterPowerCard2Defense" class="box power-card-defense"></span>
-					<span tabindex="566" id="_EncounterPowerCard2Target" class="box power-card-target"></span>
-					<span tabindex="567" id="_EncounterPowerCard2Details" class="box power-card-details"></span>
-					<span tabindex="568" id="_EncounterPowerCard2Additional" class="box power-card-additional"></span>
-					<span tabindex="569" id="_EncounterPowerCard2Class" class="box power-card-class"></span>
-					<span tabindex="571" id="_EncounterPowerCard2Level"	class="box power-card-level"></span>
-					<span tabindex="572" id="_EncounterPowerCard2Page" class="box power-card-page"></span>
-					<select tabindex="573" id="_EncounterPowerCard2PowerType" class="power-card-power-type">
+				<div id="_EncounterPowers2Card" class="power-card">
+					<img id="_EncounterPowers2Image" src="PowerCard-Encounter.png">
+					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name"></span>
+					<span tabindex="559" id="_EncounterPowers2Keyword" class="box power-card-keyword"></span>
+					<input tabindex="560" id="_EncounterPowers2Box" class="box power-card-box" type="checkbox">
+					<span tabindex="561" id="_EncounterPowers2Action" class="box power-card-action"></span>
+					<span tabindex="562" id="_EncounterPowers2AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="563" id="_EncounterPowers2Range" class="box power-card-range"></span>
+					<span tabindex="564" id="_EncounterPowers2Attack" class="box power-card-attack"></span>
+					<span tabindex="565" id="_EncounterPowers2Defense" class="box power-card-defense"></span>
+					<span tabindex="566" id="_EncounterPowers2Target" class="box power-card-target"></span>
+					<span tabindex="567" id="_EncounterPowers2Details" class="box power-card-details"></span>
+					<span tabindex="568" id="_EncounterPowers2Additional" class="box power-card-additional"></span>
+					<span tabindex="569" id="_EncounterPowers2Class" class="box power-card-class"></span>
+					<span tabindex="571" id="_EncounterPowers2Level" class="box power-card-level"></span>
+					<span tabindex="572" id="_EncounterPowers2Page" class="box power-card-page"></span>
+					<select tabindex="573" id="_EncounterPowers2PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
-						<option selected value="PowerCard-Encounter.png">Encounter</option>
+						<option selected="selected" value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_EncounterPowerCard2PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowerCard2Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_EncounterPowers2PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowers2Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_EncounterPowerCard3" class="power-card">
-					<img id="_EncounterPowerCard3Image" src="PowerCard-Encounter.png"/>
-					<span tabindex="574" id="_EncounterPowerCard3Name" class="box power-card-name"></span>
-					<span tabindex="575" id="_EncounterPowerCard3Keyword" class="box power-card-keyword"></span>
-					<input tabindex="576" id="_EncounterPowerCard3Box" class="box power-card-box" type="checkbox">
-					<span tabindex="577" id="_EncounterPowerCard3Action" class="box power-card-action"></span>
-					<span tabindex="578" id="_EncounterPowerCard3AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="579" id="_EncounterPowerCard3Range" class="box power-card-range"></span>
-					<span tabindex="580" id="_EncounterPowerCard3Attack" class="box power-card-attack"></span>
-					<span tabindex="581" id="_EncounterPowerCard3Defense" class="box power-card-defense"></span>
-					<span tabindex="582" id="_EncounterPowerCard3Target" class="box power-card-target"></span>
-					<span tabindex="583" id="_EncounterPowerCard3Details" class="box power-card-details"></span>
-					<span tabindex="584" id="_EncounterPowerCard3Additional" class="box power-card-additional"></span>
-					<span tabindex="585" id="_EncounterPowerCard3Class" class="box power-card-class"></span>
-					<span tabindex="587" id="_EncounterPowerCard3Level"	class="box power-card-level"></span>
-					<span tabindex="588" id="_EncounterPowerCard3Page" class="box power-card-page"></span>
-					<select tabindex="589" id="_EncounterPowerCard3PowerType" class="power-card-power-type">
+				<div id="_EncounterPowers3Card" class="power-card">
+					<img id="_EncounterPowers3Image" src="PowerCard-Encounter.png">
+					<span tabindex="574" id="_EncounterPowers3Name" class="box power-card-name"></span>
+					<span tabindex="575" id="_EncounterPowers3Keyword" class="box power-card-keyword"></span>
+					<input tabindex="576" id="_EncounterPowers3Box" class="box power-card-box" type="checkbox">
+					<span tabindex="577" id="_EncounterPowers3Action" class="box power-card-action"></span>
+					<span tabindex="578" id="_EncounterPowers3AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="579" id="_EncounterPowers3Range" class="box power-card-range"></span>
+					<span tabindex="580" id="_EncounterPowers3Attack" class="box power-card-attack"></span>
+					<span tabindex="581" id="_EncounterPowers3Defense" class="box power-card-defense"></span>
+					<span tabindex="582" id="_EncounterPowers3Target" class="box power-card-target"></span>
+					<span tabindex="583" id="_EncounterPowers3Details" class="box power-card-details"></span>
+					<span tabindex="584" id="_EncounterPowers3Additional" class="box power-card-additional"></span>
+					<span tabindex="585" id="_EncounterPowers3Class" class="box power-card-class"></span>
+					<span tabindex="587" id="_EncounterPowers3Level" class="box power-card-level"></span>
+					<span tabindex="588" id="_EncounterPowers3Page" class="box power-card-page"></span>
+					<select tabindex="589" id="_EncounterPowers3PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
-						<option selected value="PowerCard-Encounter.png">Encounter</option>
+						<option selected="selected" value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_EncounterPowerCard3PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowerCard3Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_EncounterPowers3PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowers3Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_EncounterPowerCard4" class="power-card">
-					<img id="_EncounterPowerCard4Image" src="PowerCard-Encounter.png"/>
-					<span tabindex="590" id="_EncounterPowerCard4Name" class="box power-card-name"></span>
-					<span tabindex="591" id="_EncounterPowerCard4Keyword" class="box power-card-keyword"></span>
-					<input tabindex="592" id="_EncounterPowerCard4Box" class="box power-card-box" type="checkbox">
-					<span tabindex="593" id="_EncounterPowerCard4Action" class="box power-card-action"></span>
-					<span tabindex="594" id="_EncounterPowerCard4AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="595" id="_EncounterPowerCard4Range" class="box power-card-range"></span>
-					<span tabindex="596" id="_EncounterPowerCard4Attack" class="box power-card-attack"></span>
-					<span tabindex="597" id="_EncounterPowerCard4Defense" class="box power-card-defense"></span>
-					<span tabindex="598" id="_EncounterPowerCard4Target" class="box power-card-target"></span>
-					<span tabindex="599" id="_EncounterPowerCard4Details" class="box power-card-details"></span>
-					<span tabindex="600" id="_EncounterPowerCard4Additional" class="box power-card-additional"></span>
-					<span tabindex="601" id="_EncounterPowerCard4Class" class="box power-card-class"></span>
-					<span tabindex="603" id="_EncounterPowerCard4Level"	class="box power-card-level"></span>
-					<span tabindex="604" id="_EncounterPowerCard4Page" class="box power-card-page"></span>
-					<select tabindex="605" id="_EncounterPowerCard4PowerType" class="power-card-power-type">
+				<div id="_EncounterPowers4Card" class="power-card">
+					<img id="_EncounterPowers4Image" src="PowerCard-Encounter.png">
+					<span tabindex="590" id="_EncounterPowers4Name" class="box power-card-name"></span>
+					<span tabindex="591" id="_EncounterPowers4Keyword" class="box power-card-keyword"></span>
+					<input tabindex="592" id="_EncounterPowers4Box" class="box power-card-box" type="checkbox">
+					<span tabindex="593" id="_EncounterPowers4Action" class="box power-card-action"></span>
+					<span tabindex="594" id="_EncounterPowers4AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="595" id="_EncounterPowers4Range" class="box power-card-range"></span>
+					<span tabindex="596" id="_EncounterPowers4Attack" class="box power-card-attack"></span>
+					<span tabindex="597" id="_EncounterPowers4Defense" class="box power-card-defense"></span>
+					<span tabindex="598" id="_EncounterPowers4Target" class="box power-card-target"></span>
+					<span tabindex="599" id="_EncounterPowers4Details" class="box power-card-details"></span>
+					<span tabindex="600" id="_EncounterPowers4Additional" class="box power-card-additional"></span>
+					<span tabindex="601" id="_EncounterPowers4Class" class="box power-card-class"></span>
+					<span tabindex="603" id="_EncounterPowers4Level" class="box power-card-level"></span>
+					<span tabindex="604" id="_EncounterPowers4Page" class="box power-card-page"></span>
+					<select tabindex="605" id="_EncounterPowers4PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
-						<option selected value="PowerCard-Encounter.png">Encounter</option>
+						<option selected="selected" value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_EncounterPowerCard4PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowerCard4Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_EncounterPowers4PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowers4Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_EncounterPowerCard5" class="power-card">
-					<img id="_EncounterPowerCard5Image" src="PowerCard-Encounter.png"/>
-					<span tabindex="606" id="_EncounterPowerCard5Name" class="box power-card-name"></span>
-					<span tabindex="607" id="_EncounterPowerCard5Keyword" class="box power-card-keyword"></span>
-					<input tabindex="608" id="_EncounterPowerCard5Box" class="box power-card-box" type="checkbox">
-					<span tabindex="609" id="_EncounterPowerCard5Action" class="box power-card-action"></span>
-					<span tabindex="610" id="_EncounterPowerCard5AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="611" id="_EncounterPowerCard5Range" class="box power-card-range"></span>
-					<span tabindex="612" id="_EncounterPowerCard5Attack" class="box power-card-attack"></span>
-					<span tabindex="613" id="_EncounterPowerCard5Defense" class="box power-card-defense"></span>
-					<span tabindex="614" id="_EncounterPowerCard5Target" class="box power-card-target"></span>
-					<span tabindex="615" id="_EncounterPowerCard5Details" class="box power-card-details"></span>
-					<span tabindex="616" id="_EncounterPowerCard5Additional" class="box power-card-additional"></span>
-					<span tabindex="617" id="_EncounterPowerCard5Class" class="box power-card-class"></span>
-					<span tabindex="619" id="_EncounterPowerCard5Level"	class="box power-card-level"></span>
-					<span tabindex="620" id="_EncounterPowerCard5Page" class="box power-card-page"></span>
-					<select tabindex="621" id="_EncounterPowerCard5PowerType" class="power-card-power-type">
+				<div id="_EncounterPowers5Card" class="power-card">
+					<img id="_EncounterPowers5Image" src="PowerCard-Encounter.png">
+					<span tabindex="606" id="_EncounterPowers5Name" class="box power-card-name"></span>
+					<span tabindex="607" id="_EncounterPowers5Keyword" class="box power-card-keyword"></span>
+					<input tabindex="608" id="_EncounterPowers5Box" class="box power-card-box" type="checkbox">
+					<span tabindex="609" id="_EncounterPowers5Action" class="box power-card-action"></span>
+					<span tabindex="610" id="_EncounterPowers5AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="611" id="_EncounterPowers5Range" class="box power-card-range"></span>
+					<span tabindex="612" id="_EncounterPowers5Attack" class="box power-card-attack"></span>
+					<span tabindex="613" id="_EncounterPowers5Defense" class="box power-card-defense"></span>
+					<span tabindex="614" id="_EncounterPowers5Target" class="box power-card-target"></span>
+					<span tabindex="615" id="_EncounterPowers5Details" class="box power-card-details"></span>
+					<span tabindex="616" id="_EncounterPowers5Additional" class="box power-card-additional"></span>
+					<span tabindex="617" id="_EncounterPowers5Class" class="box power-card-class"></span>
+					<span tabindex="619" id="_EncounterPowers5Level" class="box power-card-level"></span>
+					<span tabindex="620" id="_EncounterPowers5Page" class="box power-card-page"></span>
+					<select tabindex="621" id="_EncounterPowers5PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
-						<option selected value="PowerCard-Encounter.png">Encounter</option>
+						<option selected="selected" value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_EncounterPowerCard5PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowerCard5Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_EncounterPowers5PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowers5Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_EncounterPowerCard6" class="power-card">
-					<img id="_EncounterPowerCard6Image" src="PowerCard-Encounter.png"/>
-					<span tabindex="622" id="_EncounterPowerCard6Name" class="box power-card-name"></span>
-					<span tabindex="623" id="_EncounterPowerCard6Keyword" class="box power-card-keyword"></span>
-					<input tabindex="624" id="_EncounterPowerCard6Box" class="box power-card-box" type="checkbox">
-					<span tabindex="625" id="_EncounterPowerCard6Action" class="box power-card-action"></span>
-					<span tabindex="626" id="_EncounterPowerCard6AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="627" id="_EncounterPowerCard6Range" class="box power-card-range"></span>
-					<span tabindex="628" id="_EncounterPowerCard6Attack" class="box power-card-attack"></span>
-					<span tabindex="629" id="_EncounterPowerCard6Defense" class="box power-card-defense"></span>
-					<span tabindex="630" id="_EncounterPowerCard6Target" class="box power-card-target"></span>
-					<span tabindex="631" id="_EncounterPowerCard6Details" class="box power-card-details"></span>
-					<span tabindex="632" id="_EncounterPowerCard6Additional" class="box power-card-additional"></span>
-					<span tabindex="633" id="_EncounterPowerCard6Class" class="box power-card-class"></span>
-					<span tabindex="635" id="_EncounterPowerCard6Level"	class="box power-card-level"></span>
-					<span tabindex="636" id="_EncounterPowerCard6Page" class="box power-card-page"></span>
-					<select tabindex="637" id="_EncounterPowerCard6PowerType" class="power-card-power-type">
+				<div id="_EncounterPowers6Card" class="power-card">
+					<img id="_EncounterPowers6Image" src="PowerCard-Encounter.png">
+					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name"></span>
+					<span tabindex="623" id="_EncounterPowers6Keyword" class="box power-card-keyword"></span>
+					<input tabindex="624" id="_EncounterPowers6Box" class="box power-card-box" type="checkbox">
+					<span tabindex="625" id="_EncounterPowers6Action" class="box power-card-action"></span>
+					<span tabindex="626" id="_EncounterPowers6AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="627" id="_EncounterPowers6Range" class="box power-card-range"></span>
+					<span tabindex="628" id="_EncounterPowers6Attack" class="box power-card-attack"></span>
+					<span tabindex="629" id="_EncounterPowers6Defense" class="box power-card-defense"></span>
+					<span tabindex="630" id="_EncounterPowers6Target" class="box power-card-target"></span>
+					<span tabindex="631" id="_EncounterPowers6Details" class="box power-card-details"></span>
+					<span tabindex="632" id="_EncounterPowers6Additional" class="box power-card-additional"></span>
+					<span tabindex="633" id="_EncounterPowers6Class" class="box power-card-class"></span>
+					<span tabindex="635" id="_EncounterPowers6Level" class="box power-card-level"></span>
+					<span tabindex="636" id="_EncounterPowers6Page" class="box power-card-page"></span>
+					<select tabindex="637" id="_EncounterPowers6PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
-						<option selected value="PowerCard-Encounter.png">Encounter</option>
+						<option selected="selected" value="PowerCard-Encounter.png">Encounter</option>
 						<option value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_EncounterPowerCard6PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowerCard6Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_EncounterPowers6PowerType').addEventListener('change',function(e){document.getElementById('_EncounterPowers6Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_DailyPowerCard1" class="power-card">
-					<img id="_DailyPowerCard1Image" src="PowerCard-Daily.png"/>
-					<span tabindex="638" id="_DailyPowerCard1Name" class="box power-card-name"></span>
-					<span tabindex="639" id="_DailyPowerCard1Keyword" class="box power-card-keyword"></span>
-					<input tabindex="640" id="_DailyPowerCard1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="641" id="_DailyPowerCard1Action" class="box power-card-action"></span>
-					<span tabindex="642" id="_DailyPowerCard1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="643" id="_DailyPowerCard1Range" class="box power-card-range"></span>
-					<span tabindex="644" id="_DailyPowerCard1Attack" class="box power-card-attack"></span>
-					<span tabindex="645" id="_DailyPowerCard1Defense" class="box power-card-defense"></span>
-					<span tabindex="646" id="_DailyPowerCard1Target" class="box power-card-target"></span>
-					<span tabindex="647" id="_DailyPowerCard1Details" class="box power-card-details"></span>
-					<span tabindex="648" id="_DailyPowerCard1Additional" class="box power-card-additional"></span>
-					<span tabindex="649" id="_DailyPowerCard1Class" class="box power-card-class"></span>
-					<span tabindex="651" id="_DailyPowerCard1Level"	class="box power-card-level"></span>
-					<span tabindex="652" id="_DailyPowerCard1Page" class="box power-card-page"></span>
-					<select tabindex="653" id="_DailyPowerCard1PowerType" class="power-card-power-type">
+				<div id="_DailyPowers1Card" class="power-card">
+					<img id="_DailyPowers1Image" src="PowerCard-Daily.png">
+					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name"></span>
+					<span tabindex="639" id="_DailyPowers1Keyword" class="box power-card-keyword"></span>
+					<input tabindex="640" id="_DailyPowers1Box" class="box power-card-box" type="checkbox">
+					<span tabindex="641" id="_DailyPowers1Action" class="box power-card-action"></span>
+					<span tabindex="642" id="_DailyPowers1AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="643" id="_DailyPowers1Range" class="box power-card-range"></span>
+					<span tabindex="644" id="_DailyPowers1Attack" class="box power-card-attack"></span>
+					<span tabindex="645" id="_DailyPowers1Defense" class="box power-card-defense"></span>
+					<span tabindex="646" id="_DailyPowers1Target" class="box power-card-target"></span>
+					<span tabindex="647" id="_DailyPowers1Details" class="box power-card-details"></span>
+					<span tabindex="648" id="_DailyPowers1Additional" class="box power-card-additional"></span>
+					<span tabindex="649" id="_DailyPowers1Class" class="box power-card-class"></span>
+					<span tabindex="651" id="_DailyPowers1Level" class="box power-card-level"></span>
+					<span tabindex="652" id="_DailyPowers1Page" class="box power-card-page"></span>
+					<select tabindex="653" id="_DailyPowers1PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_DailyPowerCard1PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowerCard1Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_DailyPowers1PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowers1Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_DailyPowerCard2" class="power-card">
-					<img id="_DailyPowerCard2Image" src="PowerCard-Daily.png"/>
-					<span tabindex="654" id="_DailyPowerCard2Name" class="box power-card-name"></span>
-					<span tabindex="655" id="_DailyPowerCard2Keyword" class="box power-card-keyword"></span>
-					<input tabindex="656" id="_DailyPowerCard2Box" class="box power-card-box" type="checkbox">
-					<span tabindex="657" id="_DailyPowerCard2Action" class="box power-card-action"></span>
-					<span tabindex="658" id="_DailyPowerCard2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="659" id="_DailyPowerCard2Range" class="box power-card-range"></span>
-					<span tabindex="660" id="_DailyPowerCard2Attack" class="box power-card-attack"></span>
-					<span tabindex="661" id="_DailyPowerCard2Defense" class="box power-card-defense"></span>
-					<span tabindex="662" id="_DailyPowerCard2Target" class="box power-card-target"></span>
-					<span tabindex="663" id="_DailyPowerCard2Details" class="box power-card-details"></span>
-					<span tabindex="664" id="_DailyPowerCard2Additional" class="box power-card-additional"></span>
-					<span tabindex="665" id="_DailyPowerCard2Class" class="box power-card-class"></span>
-					<span tabindex="667" id="_DailyPowerCard2Level"	class="box power-card-level"></span>
-					<span tabindex="668" id="_DailyPowerCard2Page" class="box power-card-page"></span>
-					<select tabindex="669" id="_DailyPowerCard2PowerType" class="power-card-power-type">
+				<div id="_DailyPowers2Card" class="power-card">
+					<img id="_DailyPowers2Image" src="PowerCard-Daily.png">
+					<span tabindex="654" id="_DailyPowers2Name" class="box power-card-name"></span>
+					<span tabindex="655" id="_DailyPowers2Keyword" class="box power-card-keyword"></span>
+					<input tabindex="656" id="_DailyPowers2Box" class="box power-card-box" type="checkbox">
+					<span tabindex="657" id="_DailyPowers2Action" class="box power-card-action"></span>
+					<span tabindex="658" id="_DailyPowers2AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="659" id="_DailyPowers2Range" class="box power-card-range"></span>
+					<span tabindex="660" id="_DailyPowers2Attack" class="box power-card-attack"></span>
+					<span tabindex="661" id="_DailyPowers2Defense" class="box power-card-defense"></span>
+					<span tabindex="662" id="_DailyPowers2Target" class="box power-card-target"></span>
+					<span tabindex="663" id="_DailyPowers2Details" class="box power-card-details"></span>
+					<span tabindex="664" id="_DailyPowers2Additional" class="box power-card-additional"></span>
+					<span tabindex="665" id="_DailyPowers2Class" class="box power-card-class"></span>
+					<span tabindex="667" id="_DailyPowers2Level" class="box power-card-level"></span>
+					<span tabindex="668" id="_DailyPowers2Page" class="box power-card-page"></span>
+					<select tabindex="669" id="_DailyPowers2PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_DailyPowerCard2PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowerCard2Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_DailyPowers2PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowers2Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_DailyPowerCard3" class="power-card">
-					<img id="_DailyPowerCard3Image" src="PowerCard-Daily.png"/>
-					<span tabindex="670" id="_DailyPowerCard3Name" class="box power-card-name"></span>
-					<span tabindex="671" id="_DailyPowerCard3Keyword" class="box power-card-keyword"></span>
-					<input tabindex="672" id="_DailyPowerCard3Box" class="box power-card-box" type="checkbox">
-					<span tabindex="673" id="_DailyPowerCard3Action" class="box power-card-action"></span>
-					<span tabindex="674" id="_DailyPowerCard3AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="675" id="_DailyPowerCard3Range" class="box power-card-range"></span>
-					<span tabindex="676" id="_DailyPowerCard3Attack" class="box power-card-attack"></span>
-					<span tabindex="677" id="_DailyPowerCard3Defense" class="box power-card-defense"></span>
-					<span tabindex="678" id="_DailyPowerCard3Target" class="box power-card-target"></span>
-					<span tabindex="679" id="_DailyPowerCard3Details" class="box power-card-details"></span>
-					<span tabindex="680" id="_DailyPowerCard3Additional" class="box power-card-additional"></span>
-					<span tabindex="681" id="_DailyPowerCard3Class" class="box power-card-class"></span>
-					<span tabindex="683" id="_DailyPowerCard3Level"	class="box power-card-level"></span>
-					<span tabindex="684" id="_DailyPowerCard3Page" class="box power-card-page"></span>
-					<select tabindex="685" id="_DailyPowerCard3PowerType" class="power-card-power-type">
+				<div id="_DailyPowers3Card" class="power-card">
+					<img id="_DailyPowers3Image" src="PowerCard-Daily.png">
+					<span tabindex="670" id="_DailyPowers3Name" class="box power-card-name"></span>
+					<span tabindex="671" id="_DailyPowers3Keyword" class="box power-card-keyword"></span>
+					<input tabindex="672" id="_DailyPowers3Box" class="box power-card-box" type="checkbox">
+					<span tabindex="673" id="_DailyPowers3Action" class="box power-card-action"></span>
+					<span tabindex="674" id="_DailyPowers3AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="675" id="_DailyPowers3Range" class="box power-card-range"></span>
+					<span tabindex="676" id="_DailyPowers3Attack" class="box power-card-attack"></span>
+					<span tabindex="677" id="_DailyPowers3Defense" class="box power-card-defense"></span>
+					<span tabindex="678" id="_DailyPowers3Target" class="box power-card-target"></span>
+					<span tabindex="679" id="_DailyPowers3Details" class="box power-card-details"></span>
+					<span tabindex="680" id="_DailyPowers3Additional" class="box power-card-additional"></span>
+					<span tabindex="681" id="_DailyPowers3Class" class="box power-card-class"></span>
+					<span tabindex="683" id="_DailyPowers3Level" class="box power-card-level"></span>
+					<span tabindex="684" id="_DailyPowers3Page" class="box power-card-page"></span>
+					<select tabindex="685" id="_DailyPowers3PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_DailyPowerCard3PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowerCard3Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_DailyPowers3PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowers3Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_DailyPowerCard4" class="power-card">
-					<img id="_DailyPowerCard4Image" src="PowerCard-Daily.png"/>
-					<span tabindex="686" id="_DailyPowerCard4Name" class="box power-card-name"></span>
-					<span tabindex="687" id="_DailyPowerCard4Keyword" class="box power-card-keyword"></span>
-					<input tabindex="688" id="_DailyPowerCard4Box" class="box power-card-box" type="checkbox">
-					<span tabindex="689" id="_DailyPowerCard4Action" class="box power-card-action"></span>
-					<span tabindex="690" id="_DailyPowerCard4AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="691" id="_DailyPowerCard4Range" class="box power-card-range"></span>
-					<span tabindex="692" id="_DailyPowerCard4Attack" class="box power-card-attack"></span>
-					<span tabindex="693" id="_DailyPowerCard4Defense" class="box power-card-defense"></span>
-					<span tabindex="694" id="_DailyPowerCard4Target" class="box power-card-target"></span>
-					<span tabindex="695" id="_DailyPowerCard4Details" class="box power-card-details"></span>
-					<span tabindex="696" id="_DailyPowerCard4Additional" class="box power-card-additional"></span>
-					<span tabindex="697" id="_DailyPowerCard4Class" class="box power-card-class"></span>
-					<span tabindex="699" id="_DailyPowerCard4Level"	class="box power-card-level"></span>
-					<span tabindex="700" id="_DailyPowerCard4Page" class="box power-card-page"></span>
-					<select tabindex="701" id="_DailyPowerCard4PowerType" class="power-card-power-type">
+				<div id="_DailyPowers4Card" class="power-card">
+					<img id="_DailyPowers4Image" src="PowerCard-Daily.png">
+					<span tabindex="686" id="_DailyPowers4Name" class="box power-card-name"></span>
+					<span tabindex="687" id="_DailyPowers4Keyword" class="box power-card-keyword"></span>
+					<input tabindex="688" id="_DailyPowers4Box" class="box power-card-box" type="checkbox">
+					<span tabindex="689" id="_DailyPowers4Action" class="box power-card-action"></span>
+					<span tabindex="690" id="_DailyPowers4AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="691" id="_DailyPowers4Range" class="box power-card-range"></span>
+					<span tabindex="692" id="_DailyPowers4Attack" class="box power-card-attack"></span>
+					<span tabindex="693" id="_DailyPowers4Defense" class="box power-card-defense"></span>
+					<span tabindex="694" id="_DailyPowers4Target" class="box power-card-target"></span>
+					<span tabindex="695" id="_DailyPowers4Details" class="box power-card-details"></span>
+					<span tabindex="696" id="_DailyPowers4Additional" class="box power-card-additional"></span>
+					<span tabindex="697" id="_DailyPowers4Class" class="box power-card-class"></span>
+					<span tabindex="699" id="_DailyPowers4Level" class="box power-card-level"></span>
+					<span tabindex="700" id="_DailyPowers4Page" class="box power-card-page"></span>
+					<select tabindex="701" id="_DailyPowers4PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_DailyPowerCard4PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowerCard4Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_DailyPowers4PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowers4Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_DailyPowerCard5" class="power-card">
-					<img id="_DailyPowerCard5Image" src="PowerCard-Daily.png"/>
-					<span tabindex="702" id="_DailyPowerCard5Name" class="box power-card-name"></span>
-					<span tabindex="703" id="_DailyPowerCard5Keyword" class="box power-card-keyword"></span>
-					<input tabindex="704" id="_DailyPowerCard5Box" class="box power-card-box" type="checkbox">
-					<span tabindex="705" id="_DailyPowerCard5Action" class="box power-card-action"></span>
-					<span tabindex="706" id="_DailyPowerCard5AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="707" id="_DailyPowerCard5Range" class="box power-card-range"></span>
-					<span tabindex="708" id="_DailyPowerCard5Attack" class="box power-card-attack"></span>
-					<span tabindex="709" id="_DailyPowerCard5Defense" class="box power-card-defense"></span>
-					<span tabindex="710" id="_DailyPowerCard5Target" class="box power-card-target"></span>
-					<span tabindex="711" id="_DailyPowerCard5Details" class="box power-card-details"></span>
-					<span tabindex="712" id="_DailyPowerCard5Additional" class="box power-card-additional"></span>
-					<span tabindex="713" id="_DailyPowerCard5Class" class="box power-card-class"></span>
-					<span tabindex="715" id="_DailyPowerCard5Level"	class="box power-card-level"></span>
-					<span tabindex="716" id="_DailyPowerCard5Page" class="box power-card-page"></span>
-					<select tabindex="717" id="_DailyPowerCard5PowerType" class="power-card-power-type">
+				<div id="_DailyPowers5Card" class="power-card">
+					<img id="_DailyPowers5Image" src="PowerCard-Daily.png">
+					<span tabindex="702" id="_DailyPowers5Name" class="box power-card-name"></span>
+					<span tabindex="703" id="_DailyPowers5Keyword" class="box power-card-keyword"></span>
+					<input tabindex="704" id="_DailyPowers5Box" class="box power-card-box" type="checkbox">
+					<span tabindex="705" id="_DailyPowers5Action" class="box power-card-action"></span>
+					<span tabindex="706" id="_DailyPowers5AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="707" id="_DailyPowers5Range" class="box power-card-range"></span>
+					<span tabindex="708" id="_DailyPowers5Attack" class="box power-card-attack"></span>
+					<span tabindex="709" id="_DailyPowers5Defense" class="box power-card-defense"></span>
+					<span tabindex="710" id="_DailyPowers5Target" class="box power-card-target"></span>
+					<span tabindex="711" id="_DailyPowers5Details" class="box power-card-details"></span>
+					<span tabindex="712" id="_DailyPowers5Additional" class="box power-card-additional"></span>
+					<span tabindex="713" id="_DailyPowers5Class" class="box power-card-class"></span>
+					<span tabindex="715" id="_DailyPowers5Level" class="box power-card-level"></span>
+					<span tabindex="716" id="_DailyPowers5Page" class="box power-card-page"></span>
+					<select tabindex="717" id="_DailyPowers5PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_DailyPowerCard5PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowerCard5Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_DailyPowers5PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowers5Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_DailyPowerCard6" class="power-card">
-					<img id="_DailyPowerCard6Image" src="PowerCard-Daily.png"/>
-					<span tabindex="718" id="_DailyPowerCard6Name" class="box power-card-name"></span>
-					<span tabindex="719" id="_DailyPowerCard6Keyword" class="box power-card-keyword"></span>
-					<input tabindex="720" id="_DailyPowerCard6Box" class="box power-card-box" type="checkbox">
-					<span tabindex="721" id="_DailyPowerCard6Action" class="box power-card-action"></span>
-					<span tabindex="722" id="_DailyPowerCard6AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="723" id="_DailyPowerCard6Range" class="box power-card-range"></span>
-					<span tabindex="724" id="_DailyPowerCard6Attack" class="box power-card-attack"></span>
-					<span tabindex="725" id="_DailyPowerCard6Defense" class="box power-card-defense"></span>
-					<span tabindex="726" id="_DailyPowerCard6Target" class="box power-card-target"></span>
-					<span tabindex="727" id="_DailyPowerCard6Details" class="box power-card-details"></span>
-					<span tabindex="728" id="_DailyPowerCard6Additional" class="box power-card-additional"></span>
-					<span tabindex="729" id="_DailyPowerCard6Class" class="box power-card-class"></span>
-					<span tabindex="731" id="_DailyPowerCard6Level"	class="box power-card-level"></span>
-					<span tabindex="732" id="_DailyPowerCard6Page" class="box power-card-page"></span>
-					<select tabindex="733" id="_DailyPowerCard6PowerType" class="power-card-power-type">
+				<div id="_DailyPowers6Card" class="power-card">
+					<img id="_DailyPowers6Image" src="PowerCard-Daily.png">
+					<span tabindex="718" id="_DailyPowers6Name" class="box power-card-name"></span>
+					<span tabindex="719" id="_DailyPowers6Keyword" class="box power-card-keyword"></span>
+					<input tabindex="720" id="_DailyPowers6Box" class="box power-card-box" type="checkbox">
+					<span tabindex="721" id="_DailyPowers6Action" class="box power-card-action"></span>
+					<span tabindex="722" id="_DailyPowers6AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="723" id="_DailyPowers6Range" class="box power-card-range"></span>
+					<span tabindex="724" id="_DailyPowers6Attack" class="box power-card-attack"></span>
+					<span tabindex="725" id="_DailyPowers6Defense" class="box power-card-defense"></span>
+					<span tabindex="726" id="_DailyPowers6Target" class="box power-card-target"></span>
+					<span tabindex="727" id="_DailyPowers6Details" class="box power-card-details"></span>
+					<span tabindex="728" id="_DailyPowers6Additional" class="box power-card-additional"></span>
+					<span tabindex="729" id="_DailyPowers6Class" class="box power-card-class"></span>
+					<span tabindex="731" id="_DailyPowers6Level" class="box power-card-level"></span>
+					<span tabindex="732" id="_DailyPowers6Page" class="box power-card-page"></span>
+					<select tabindex="733" id="_DailyPowers6PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_DailyPowerCard6PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowerCard6Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_DailyPowers6PowerType').addEventListener('change',function(e){document.getElementById('_DailyPowers6Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_UtilityPowerCard1" class="power-card">
-					<img id="_UtilityPowerCard1Image" src="PowerCard-Daily.png"/>
-					<span tabindex="734" id="_UtilityPowerCard1Name" class="box power-card-name"></span>
-					<span tabindex="735" id="_UtilityPowerCard1Keyword" class="box power-card-keyword"></span>
-					<input tabindex="736" id="_UtilityPowerCard1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="737" id="_UtilityPowerCard1Action" class="box power-card-action"></span>
-					<span tabindex="738" id="_UtilityPowerCard1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="739" id="_UtilityPowerCard1Range" class="box power-card-range"></span>
-					<span tabindex="740" id="_UtilityPowerCard1Attack" class="box power-card-attack"></span>
-					<span tabindex="741" id="_UtilityPowerCard1Defense" class="box power-card-defense"></span>
-					<span tabindex="742" id="_UtilityPowerCard1Target" class="box power-card-target"></span>
-					<span tabindex="743" id="_UtilityPowerCard1Details" class="box power-card-details"></span>
-					<span tabindex="744" id="_UtilityPowerCard1Additional" class="box power-card-additional"></span>
-					<span tabindex="745" id="_UtilityPowerCard1Class" class="box power-card-class"></span>
-					<span tabindex="747" id="_UtilityPowerCard1Level"	class="box power-card-level"></span>
-					<span tabindex="748" id="_UtilityPowerCard1Page" class="box power-card-page"></span>
-					<select tabindex="749" id="_UtilityPowerCard1PowerType" class="power-card-power-type">
+				<div id="_UtilityPowers1Card" class="power-card">
+					<img id="_UtilityPowers1Image" src="PowerCard-Daily.png">
+					<span tabindex="734" id="_UtilityPowers1Name" class="box power-card-name"></span>
+					<span tabindex="735" id="_UtilityPowers1Keyword" class="box power-card-keyword"></span>
+					<input tabindex="736" id="_UtilityPowers1Box" class="box power-card-box" type="checkbox">
+					<span tabindex="737" id="_UtilityPowers1Action" class="box power-card-action"></span>
+					<span tabindex="738" id="_UtilityPowers1AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="739" id="_UtilityPowers1Range" class="box power-card-range"></span>
+					<span tabindex="740" id="_UtilityPowers1Attack" class="box power-card-attack"></span>
+					<span tabindex="741" id="_UtilityPowers1Defense" class="box power-card-defense"></span>
+					<span tabindex="742" id="_UtilityPowers1Target" class="box power-card-target"></span>
+					<span tabindex="743" id="_UtilityPowers1Details" class="box power-card-details"></span>
+					<span tabindex="744" id="_UtilityPowers1Additional" class="box power-card-additional"></span>
+					<span tabindex="745" id="_UtilityPowers1Class" class="box power-card-class"></span>
+					<span tabindex="747" id="_UtilityPowers1Level" class="box power-card-level"></span>
+					<span tabindex="748" id="_UtilityPowers1Page" class="box power-card-page"></span>
+					<select tabindex="749" id="_UtilityPowers1PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_UtilityPowerCard1PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowerCard1Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_UtilityPowers1PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowers1Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_UtilityPowerCard2" class="power-card">
-					<img id="_UtilityPowerCard2Image" src="PowerCard-Daily.png"/>
-					<span tabindex="750" id="_UtilityPowerCard2Name" class="box power-card-name"></span>
-					<span tabindex="751" id="_UtilityPowerCard2Keyword" class="box power-card-keyword"></span>
-					<input tabindex="752" id="_UtilityPowerCard2Box" class="box power-card-box" type="checkbox">
-					<span tabindex="753" id="_UtilityPowerCard2Action" class="box power-card-action"></span>
-					<span tabindex="754" id="_UtilityPowerCard2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="755" id="_UtilityPowerCard2Range" class="box power-card-range"></span>
-					<span tabindex="756" id="_UtilityPowerCard2Attack" class="box power-card-attack"></span>
-					<span tabindex="757" id="_UtilityPowerCard2Defense" class="box power-card-defense"></span>
-					<span tabindex="758" id="_UtilityPowerCard2Target" class="box power-card-target"></span>
-					<span tabindex="759" id="_UtilityPowerCard2Details" class="box power-card-details"></span>
-					<span tabindex="760" id="_UtilityPowerCard2Additional" class="box power-card-additional"></span>
-					<span tabindex="761" id="_UtilityPowerCard2Class" class="box power-card-class"></span>
-					<span tabindex="763" id="_UtilityPowerCard2Level"	class="box power-card-level"></span>
-					<span tabindex="764" id="_UtilityPowerCard2Page" class="box power-card-page"></span>
-					<select tabindex="765" id="_UtilityPowerCard2PowerType" class="power-card-power-type">
+				<div id="_UtilityPowers2Card" class="power-card">
+					<img id="_UtilityPowers2Image" src="PowerCard-Daily.png">
+					<span tabindex="750" id="_UtilityPowers2Name" class="box power-card-name"></span>
+					<span tabindex="751" id="_UtilityPowers2Keyword" class="box power-card-keyword"></span>
+					<input tabindex="752" id="_UtilityPowers2Box" class="box power-card-box" type="checkbox">
+					<span tabindex="753" id="_UtilityPowers2Action" class="box power-card-action"></span>
+					<span tabindex="754" id="_UtilityPowers2AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="755" id="_UtilityPowers2Range" class="box power-card-range"></span>
+					<span tabindex="756" id="_UtilityPowers2Attack" class="box power-card-attack"></span>
+					<span tabindex="757" id="_UtilityPowers2Defense" class="box power-card-defense"></span>
+					<span tabindex="758" id="_UtilityPowers2Target" class="box power-card-target"></span>
+					<span tabindex="759" id="_UtilityPowers2Details" class="box power-card-details"></span>
+					<span tabindex="760" id="_UtilityPowers2Additional" class="box power-card-additional"></span>
+					<span tabindex="761" id="_UtilityPowers2Class" class="box power-card-class"></span>
+					<span tabindex="763" id="_UtilityPowers2Level" class="box power-card-level"></span>
+					<span tabindex="764" id="_UtilityPowers2Page" class="box power-card-page"></span>
+					<select tabindex="765" id="_UtilityPowers2PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_UtilityPowerCard2PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowerCard2Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_UtilityPowers2PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowers2Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_UtilityPowerCard3" class="power-card">
-					<img id="_UtilityPowerCard3Image" src="PowerCard-Daily.png"/>
-					<span tabindex="766" id="_UtilityPowerCard3Name" class="box power-card-name"></span>
-					<span tabindex="767" id="_UtilityPowerCard3Keyword" class="box power-card-keyword"></span>
-					<input tabindex="768" id="_UtilityPowerCard3Box" class="box power-card-box" type="checkbox">
-					<span tabindex="769" id="_UtilityPowerCard3Action" class="box power-card-action"></span>
-					<span tabindex="770" id="_UtilityPowerCard3AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="771" id="_UtilityPowerCard3Range" class="box power-card-range"></span>
-					<span tabindex="772" id="_UtilityPowerCard3Attack" class="box power-card-attack"></span>
-					<span tabindex="773" id="_UtilityPowerCard3Defense" class="box power-card-defense"></span>
-					<span tabindex="774" id="_UtilityPowerCard3Target" class="box power-card-target"></span>
-					<span tabindex="775" id="_UtilityPowerCard3Details" class="box power-card-details"></span>
-					<span tabindex="776" id="_UtilityPowerCard3Additional" class="box power-card-additional"></span>
-					<span tabindex="777" id="_UtilityPowerCard3Class" class="box power-card-class"></span>
-					<span tabindex="779" id="_UtilityPowerCard3Level"	class="box power-card-level"></span>
-					<span tabindex="780" id="_UtilityPowerCard3Page" class="box power-card-page"></span>
-					<select tabindex="781" id="_UtilityPowerCard3PowerType" class="power-card-power-type">
+				<div id="_UtilityPowers3Card" class="power-card">
+					<img id="_UtilityPowers3Image" src="PowerCard-Daily.png">
+					<span tabindex="766" id="_UtilityPowers3Name" class="box power-card-name"></span>
+					<span tabindex="767" id="_UtilityPowers3Keyword" class="box power-card-keyword"></span>
+					<input tabindex="768" id="_UtilityPowers3Box" class="box power-card-box" type="checkbox">
+					<span tabindex="769" id="_UtilityPowers3Action" class="box power-card-action"></span>
+					<span tabindex="770" id="_UtilityPowers3AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="771" id="_UtilityPowers3Range" class="box power-card-range"></span>
+					<span tabindex="772" id="_UtilityPowers3Attack" class="box power-card-attack"></span>
+					<span tabindex="773" id="_UtilityPowers3Defense" class="box power-card-defense"></span>
+					<span tabindex="774" id="_UtilityPowers3Target" class="box power-card-target"></span>
+					<span tabindex="775" id="_UtilityPowers3Details" class="box power-card-details"></span>
+					<span tabindex="776" id="_UtilityPowers3Additional" class="box power-card-additional"></span>
+					<span tabindex="777" id="_UtilityPowers3Class" class="box power-card-class"></span>
+					<span tabindex="779" id="_UtilityPowers3Level" class="box power-card-level"></span>
+					<span tabindex="780" id="_UtilityPowers3Page" class="box power-card-page"></span>
+					<select tabindex="781" id="_UtilityPowers3PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_UtilityPowerCard3PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowerCard3Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_UtilityPowers3PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowers3Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_UtilityPowerCard4" class="power-card">
-					<img id="_UtilityPowerCard4Image" src="PowerCard-Daily.png"/>
-					<span tabindex="782" id="_UtilityPowerCard4Name" class="box power-card-name"></span>
-					<span tabindex="783" id="_UtilityPowerCard4Keyword" class="box power-card-keyword"></span>
-					<input tabindex="784" id="_UtilityPowerCard4Box" class="box power-card-box" type="checkbox">
-					<span tabindex="785" id="_UtilityPowerCard4Action" class="box power-card-action"></span>
-					<span tabindex="786" id="_UtilityPowerCard4AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="787" id="_UtilityPowerCard4Range" class="box power-card-range"></span>
-					<span tabindex="788" id="_UtilityPowerCard4Attack" class="box power-card-attack"></span>
-					<span tabindex="789" id="_UtilityPowerCard4Defense" class="box power-card-defense"></span>
-					<span tabindex="790" id="_UtilityPowerCard4Target" class="box power-card-target"></span>
-					<span tabindex="791" id="_UtilityPowerCard4Details" class="box power-card-details"></span>
-					<span tabindex="792" id="_UtilityPowerCard4Additional" class="box power-card-additional"></span>
-					<span tabindex="793" id="_UtilityPowerCard4Class" class="box power-card-class"></span>
-					<span tabindex="795" id="_UtilityPowerCard4Level"	class="box power-card-level"></span>
-					<span tabindex="796" id="_UtilityPowerCard4Page" class="box power-card-page"></span>
-					<select tabindex="797" id="_UtilityPowerCard4PowerType" class="power-card-power-type">
+				<div id="_UtilityPowers4Card" class="power-card">
+					<img id="_UtilityPowers4Image" src="PowerCard-Daily.png">
+					<span tabindex="782" id="_UtilityPowers4Name" class="box power-card-name"></span>
+					<span tabindex="783" id="_UtilityPowers4Keyword" class="box power-card-keyword"></span>
+					<input tabindex="784" id="_UtilityPowers4Box" class="box power-card-box" type="checkbox">
+					<span tabindex="785" id="_UtilityPowers4Action" class="box power-card-action"></span>
+					<span tabindex="786" id="_UtilityPowers4AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="787" id="_UtilityPowers4Range" class="box power-card-range"></span>
+					<span tabindex="788" id="_UtilityPowers4Attack" class="box power-card-attack"></span>
+					<span tabindex="789" id="_UtilityPowers4Defense" class="box power-card-defense"></span>
+					<span tabindex="790" id="_UtilityPowers4Target" class="box power-card-target"></span>
+					<span tabindex="791" id="_UtilityPowers4Details" class="box power-card-details"></span>
+					<span tabindex="792" id="_UtilityPowers4Additional" class="box power-card-additional"></span>
+					<span tabindex="793" id="_UtilityPowers4Class" class="box power-card-class"></span>
+					<span tabindex="795" id="_UtilityPowers4Level" class="box power-card-level"></span>
+					<span tabindex="796" id="_UtilityPowers4Page" class="box power-card-page"></span>
+					<select tabindex="797" id="_UtilityPowers4PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_UtilityPowerCard4PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowerCard4Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_UtilityPowers4PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowers4Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_UtilityPowerCard5" class="power-card">
-					<img id="_UtilityPowerCard5Image" src="PowerCard-Daily.png"/>
-					<span tabindex="798" id="_UtilityPowerCard5Name" class="box power-card-name"></span>
-					<span tabindex="799" id="_UtilityPowerCard5Keyword" class="box power-card-keyword"></span>
-					<input tabindex="800" id="_UtilityPowerCard5Box" class="box power-card-box" type="checkbox">
-					<span tabindex="801" id="_UtilityPowerCard5Action" class="box power-card-action"></span>
-					<span tabindex="802" id="_UtilityPowerCard5AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="803" id="_UtilityPowerCard5Range" class="box power-card-range"></span>
-					<span tabindex="804" id="_UtilityPowerCard5Attack" class="box power-card-attack"></span>
-					<span tabindex="805" id="_UtilityPowerCard5Defense" class="box power-card-defense"></span>
-					<span tabindex="806" id="_UtilityPowerCard5Target" class="box power-card-target"></span>
-					<span tabindex="807" id="_UtilityPowerCard5Details" class="box power-card-details"></span>
-					<span tabindex="808" id="_UtilityPowerCard5Additional" class="box power-card-additional"></span>
-					<span tabindex="809" id="_UtilityPowerCard5Class" class="box power-card-class"></span>
-					<span tabindex="811" id="_UtilityPowerCard5Level"	class="box power-card-level"></span>
-					<span tabindex="812" id="_UtilityPowerCard5Page" class="box power-card-page"></span>
-					<select tabindex="813" id="_UtilityPowerCard5PowerType" class="power-card-power-type">
+				<div id="_UtilityPowers5Card" class="power-card">
+					<img id="_UtilityPowers5Image" src="PowerCard-Daily.png">
+					<span tabindex="798" id="_UtilityPowers5Name" class="box power-card-name"></span>
+					<span tabindex="799" id="_UtilityPowers5Keyword" class="box power-card-keyword"></span>
+					<input tabindex="800" id="_UtilityPowers5Box" class="box power-card-box" type="checkbox">
+					<span tabindex="801" id="_UtilityPowers5Action" class="box power-card-action"></span>
+					<span tabindex="802" id="_UtilityPowers5AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="803" id="_UtilityPowers5Range" class="box power-card-range"></span>
+					<span tabindex="804" id="_UtilityPowers5Attack" class="box power-card-attack"></span>
+					<span tabindex="805" id="_UtilityPowers5Defense" class="box power-card-defense"></span>
+					<span tabindex="806" id="_UtilityPowers5Target" class="box power-card-target"></span>
+					<span tabindex="807" id="_UtilityPowers5Details" class="box power-card-details"></span>
+					<span tabindex="808" id="_UtilityPowers5Additional" class="box power-card-additional"></span>
+					<span tabindex="809" id="_UtilityPowers5Class" class="box power-card-class"></span>
+					<span tabindex="811" id="_UtilityPowers5Level" class="box power-card-level"></span>
+					<span tabindex="812" id="_UtilityPowers5Page" class="box power-card-page"></span>
+					<select tabindex="813" id="_UtilityPowers5PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_UtilityPowerCard5PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowerCard5Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_UtilityPowers5PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowers5Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_UtilityPowerCard6" class="power-card">
-					<img id="_UtilityPowerCard6Image" src="PowerCard-Daily.png"/>
-					<span tabindex="814" id="_UtilityPowerCard6Name" class="box power-card-name"></span>
-					<span tabindex="815" id="_UtilityPowerCard6Keyword" class="box power-card-keyword"></span>
-					<input tabindex="816" id="_UtilityPowerCard6Box" class="box power-card-box" type="checkbox">
-					<span tabindex="817" id="_UtilityPowerCard6Action" class="box power-card-action"></span>
-					<span tabindex="818" id="_UtilityPowerCard6AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="819" id="_UtilityPowerCard6Range" class="box power-card-range"></span>
-					<span tabindex="820" id="_UtilityPowerCard6Attack" class="box power-card-attack"></span>
-					<span tabindex="821" id="_UtilityPowerCard6Defense" class="box power-card-defense"></span>
-					<span tabindex="822" id="_UtilityPowerCard6Target" class="box power-card-target"></span>
-					<span tabindex="823" id="_UtilityPowerCard6Details" class="box power-card-details"></span>
-					<span tabindex="824" id="_UtilityPowerCard6Additional" class="box power-card-additional"></span>
-					<span tabindex="825" id="_UtilityPowerCard6Class" class="box power-card-class"></span>
-					<span tabindex="827" id="_UtilityPowerCard6Level"	class="box power-card-level"></span>
-					<span tabindex="828" id="_UtilityPowerCard6Page" class="box power-card-page"></span>
-					<select tabindex="829" id="_UtilityPowerCard6PowerType" class="power-card-power-type">
+				<div id="_UtilityPowers6Card" class="power-card">
+					<img id="_UtilityPowers6Image" src="PowerCard-Daily.png">
+					<span tabindex="814" id="_UtilityPowers6Name" class="box power-card-name"></span>
+					<span tabindex="815" id="_UtilityPowers6Keyword" class="box power-card-keyword"></span>
+					<input tabindex="816" id="_UtilityPowers6Box" class="box power-card-box" type="checkbox">
+					<span tabindex="817" id="_UtilityPowers6Action" class="box power-card-action"></span>
+					<span tabindex="818" id="_UtilityPowers6AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="819" id="_UtilityPowers6Range" class="box power-card-range"></span>
+					<span tabindex="820" id="_UtilityPowers6Attack" class="box power-card-attack"></span>
+					<span tabindex="821" id="_UtilityPowers6Defense" class="box power-card-defense"></span>
+					<span tabindex="822" id="_UtilityPowers6Target" class="box power-card-target"></span>
+					<span tabindex="823" id="_UtilityPowers6Details" class="box power-card-details"></span>
+					<span tabindex="824" id="_UtilityPowers6Additional" class="box power-card-additional"></span>
+					<span tabindex="825" id="_UtilityPowers6Class" class="box power-card-class"></span>
+					<span tabindex="827" id="_UtilityPowers6Level" class="box power-card-level"></span>
+					<span tabindex="828" id="_UtilityPowers6Page" class="box power-card-page"></span>
+					<select tabindex="829" id="_UtilityPowers6PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_UtilityPowerCard6PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowerCard6Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_UtilityPowers6PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowers6Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_UtilityPowerCard7" class="power-card">
-					<img id="_UtilityPowerCard7Image" src="PowerCard-Daily.png"/>
-					<span tabindex="830" id="_UtilityPowerCard7Name" class="box power-card-name"></span>
-					<span tabindex="831" id="_UtilityPowerCard7Keyword" class="box power-card-keyword"></span>
-					<input tabindex="832" id="_UtilityPowerCard7Box" class="box power-card-box" type="checkbox">
-					<span tabindex="833" id="_UtilityPowerCard7Action" class="box power-card-action"></span>
-					<span tabindex="834" id="_UtilityPowerCard7AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="835" id="_UtilityPowerCard7Range" class="box power-card-range"></span>
-					<span tabindex="836" id="_UtilityPowerCard7Attack" class="box power-card-attack"></span>
-					<span tabindex="837" id="_UtilityPowerCard7Defense" class="box power-card-defense"></span>
-					<span tabindex="838" id="_UtilityPowerCard7Target" class="box power-card-target"></span>
-					<span tabindex="839" id="_UtilityPowerCard7Details" class="box power-card-details"></span>
-					<span tabindex="840" id="_UtilityPowerCard7Additional" class="box power-card-additional"></span>
-					<span tabindex="841" id="_UtilityPowerCard7Class" class="box power-card-class"></span>
-					<span tabindex="843" id="_UtilityPowerCard7Level"	class="box power-card-level"></span>
-					<span tabindex="844" id="_UtilityPowerCard7Page" class="box power-card-page"></span>
-					<select tabindex="845" id="_UtilityPowerCard7PowerType" class="power-card-power-type">
+				<div id="_UtilityPowers7Card" class="power-card">
+					<img id="_UtilityPowers7Image" src="PowerCard-Daily.png">
+					<span tabindex="830" id="_UtilityPowers7Name" class="box power-card-name"></span>
+					<span tabindex="831" id="_UtilityPowers7Keyword" class="box power-card-keyword"></span>
+					<input tabindex="832" id="_UtilityPowers7Box" class="box power-card-box" type="checkbox">
+					<span tabindex="833" id="_UtilityPowers7Action" class="box power-card-action"></span>
+					<span tabindex="834" id="_UtilityPowers7AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="835" id="_UtilityPowers7Range" class="box power-card-range"></span>
+					<span tabindex="836" id="_UtilityPowers7Attack" class="box power-card-attack"></span>
+					<span tabindex="837" id="_UtilityPowers7Defense" class="box power-card-defense"></span>
+					<span tabindex="838" id="_UtilityPowers7Target" class="box power-card-target"></span>
+					<span tabindex="839" id="_UtilityPowers7Details" class="box power-card-details"></span>
+					<span tabindex="840" id="_UtilityPowers7Additional" class="box power-card-additional"></span>
+					<span tabindex="841" id="_UtilityPowers7Class" class="box power-card-class"></span>
+					<span tabindex="843" id="_UtilityPowers7Level" class="box power-card-level"></span>
+					<span tabindex="844" id="_UtilityPowers7Page" class="box power-card-page"></span>
+					<select tabindex="845" id="_UtilityPowers7PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_UtilityPowerCard7PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowerCard7Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_UtilityPowers7PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowers7Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_UtilityPowerCard8" class="power-card">
-					<img id="_UtilityPowerCard8Image" src="PowerCard-Daily.png"/>
-					<span tabindex="846" id="_UtilityPowerCard8Name" class="box power-card-name"></span>
-					<span tabindex="847" id="_UtilityPowerCard8Keyword" class="box power-card-keyword"></span>
-					<input tabindex="848" id="_UtilityPowerCard8Box" class="box power-card-box" type="checkbox">
-					<span tabindex="849" id="_UtilityPowerCard8Action" class="box power-card-action"></span>
-					<span tabindex="850" id="_UtilityPowerCard8AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="851" id="_UtilityPowerCard8Range" class="box power-card-range"></span>
-					<span tabindex="852" id="_UtilityPowerCard8Attack" class="box power-card-attack"></span>
-					<span tabindex="853" id="_UtilityPowerCard8Defense" class="box power-card-defense"></span>
-					<span tabindex="854" id="_UtilityPowerCard8Target" class="box power-card-target"></span>
-					<span tabindex="855" id="_UtilityPowerCard8Details" class="box power-card-details"></span>
-					<span tabindex="856" id="_UtilityPowerCard8Additional" class="box power-card-additional"></span>
-					<span tabindex="857" id="_UtilityPowerCard8Class" class="box power-card-class"></span>
-					<span tabindex="859" id="_UtilityPowerCard8Level"	class="box power-card-level"></span>
-					<span tabindex="860" id="_UtilityPowerCard8Page" class="box power-card-page"></span>
-					<select tabindex="861" id="_UtilityPowerCard8PowerType" class="power-card-power-type">
+				<div id="_UtilityPowers8Card" class="power-card">
+					<img id="_UtilityPowers8Image" src="PowerCard-Daily.png">
+					<span tabindex="846" id="_UtilityPowers8Name" class="box power-card-name"></span>
+					<span tabindex="847" id="_UtilityPowers8Keyword" class="box power-card-keyword"></span>
+					<input tabindex="848" id="_UtilityPowers8Box" class="box power-card-box" type="checkbox">
+					<span tabindex="849" id="_UtilityPowers8Action" class="box power-card-action"></span>
+					<span tabindex="850" id="_UtilityPowers8AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="851" id="_UtilityPowers8Range" class="box power-card-range"></span>
+					<span tabindex="852" id="_UtilityPowers8Attack" class="box power-card-attack"></span>
+					<span tabindex="853" id="_UtilityPowers8Defense" class="box power-card-defense"></span>
+					<span tabindex="854" id="_UtilityPowers8Target" class="box power-card-target"></span>
+					<span tabindex="855" id="_UtilityPowers8Details" class="box power-card-details"></span>
+					<span tabindex="856" id="_UtilityPowers8Additional" class="box power-card-additional"></span>
+					<span tabindex="857" id="_UtilityPowers8Class" class="box power-card-class"></span>
+					<span tabindex="859" id="_UtilityPowers8Level" class="box power-card-level"></span>
+					<span tabindex="860" id="_UtilityPowers8Page" class="box power-card-page"></span>
+					<select tabindex="861" id="_UtilityPowers8PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
-					<script>document.getElementById('_UtilityPowerCard8PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowerCard8Image').src=e.target.value;},false);</script>
+					<script>document.getElementById('_UtilityPowers8PowerType').addEventListener('change',function(e){document.getElementById('_UtilityPowers8Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsWeapon1" class="power-card">
-					<img id="_MagicItemsWeapon1Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsWeapon1Card" class="power-card">
+					<img id="_MagicItemsWeapon1Image" src="PowerCard-Daily.png">
 					<span tabindex="446" id="_MagicItemsWeapon1Name" class="box power-card-name"></span>
 					<span tabindex="447" id="_MagicItemsWeapon1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="448" id="_MagicItemsWeapon1Box" class="box power-card-box" type="checkbox">
@@ -1251,17 +1302,17 @@
 					<span tabindex="455" id="_MagicItemsWeapon1Details" class="box power-card-details"></span>
 					<span tabindex="456" id="_MagicItemsWeapon1Additional" class="box power-card-additional"></span>
 					<span tabindex="457" id="_MagicItemsWeapon1Class" class="box power-card-class"></span>
-					<span tabindex="459" id="_MagicItemsWeapon1Level"	class="box power-card-level"></span>
+					<span tabindex="459" id="_MagicItemsWeapon1Level" class="box power-card-level"></span>
 					<span tabindex="460" id="_MagicItemsWeapon1Page" class="box power-card-page"></span>
 					<select tabindex="461" id="_MagicItemsWeapon1PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsWeapon1PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsWeapon1Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsWeapon2" class="power-card">
-					<img id="_MagicItemsWeapon2Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsWeapon2Card" class="power-card">
+					<img id="_MagicItemsWeapon2Image" src="PowerCard-Daily.png">
 					<span tabindex="462" id="_MagicItemsWeapon2Name" class="box power-card-name"></span>
 					<span tabindex="463" id="_MagicItemsWeapon2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="464" id="_MagicItemsWeapon2Box" class="box power-card-box" type="checkbox">
@@ -1274,17 +1325,17 @@
 					<span tabindex="471" id="_MagicItemsWeapon2Details" class="box power-card-details"></span>
 					<span tabindex="472" id="_MagicItemsWeapon2Additional" class="box power-card-additional"></span>
 					<span tabindex="473" id="_MagicItemsWeapon2Class" class="box power-card-class"></span>
-					<span tabindex="475" id="_MagicItemsWeapon2Level"	class="box power-card-level"></span>
+					<span tabindex="475" id="_MagicItemsWeapon2Level" class="box power-card-level"></span>
 					<span tabindex="476" id="_MagicItemsWeapon2Page" class="box power-card-page"></span>
 					<select tabindex="477" id="_MagicItemsWeapon2PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsWeapon2PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsWeapon2Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsWeapon3" class="power-card">
-					<img id="_MagicItemsWeapon3Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsWeapon3Card" class="power-card">
+					<img id="_MagicItemsWeapon3Image" src="PowerCard-Daily.png">
 					<span tabindex="478" id="_MagicItemsWeapon3Name" class="box power-card-name"></span>
 					<span tabindex="479" id="_MagicItemsWeapon3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="480" id="_MagicItemsWeapon3Box" class="box power-card-box" type="checkbox">
@@ -1297,17 +1348,17 @@
 					<span tabindex="487" id="_MagicItemsWeapon3Details" class="box power-card-details"></span>
 					<span tabindex="488" id="_MagicItemsWeapon3Additional" class="box power-card-additional"></span>
 					<span tabindex="489" id="_MagicItemsWeapon3Class" class="box power-card-class"></span>
-					<span tabindex="491" id="_MagicItemsWeapon3Level"	class="box power-card-level"></span>
+					<span tabindex="491" id="_MagicItemsWeapon3Level" class="box power-card-level"></span>
 					<span tabindex="492" id="_MagicItemsWeapon3Page" class="box power-card-page"></span>
 					<select tabindex="493" id="_MagicItemsWeapon3PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsWeapon3PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsWeapon3Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsWeapon4" class="power-card">
-					<img id="_MagicItemsWeapon4Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsWeapon4Card" class="power-card">
+					<img id="_MagicItemsWeapon4Image" src="PowerCard-Daily.png">
 					<span tabindex="494" id="_MagicItemsWeapon4Name" class="box power-card-name"></span>
 					<span tabindex="495" id="_MagicItemsWeapon4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="496" id="_MagicItemsWeapon4Box" class="box power-card-box" type="checkbox">
@@ -1320,17 +1371,17 @@
 					<span tabindex="503" id="_MagicItemsWeapon4Details" class="box power-card-details"></span>
 					<span tabindex="504" id="_MagicItemsWeapon4Additional" class="box power-card-additional"></span>
 					<span tabindex="505" id="_MagicItemsWeapon4Class" class="box power-card-class"></span>
-					<span tabindex="507" id="_MagicItemsWeapon4Level"	class="box power-card-level"></span>
+					<span tabindex="507" id="_MagicItemsWeapon4Level" class="box power-card-level"></span>
 					<span tabindex="508" id="_MagicItemsWeapon4Page" class="box power-card-page"></span>
 					<select tabindex="509" id="_MagicItemsWeapon4PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsWeapon4PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsWeapon4Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsArmor" class="power-card">
-					<img id="_MagicItemsArmorImage" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsArmorCard" class="power-card">
+					<img id="_MagicItemsArmorImage" src="PowerCard-Daily.png">
 					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name"></span>
 					<span tabindex="511" id="_MagicItemsArmorKeyword" class="box power-card-keyword"></span>
 					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box" type="checkbox">
@@ -1343,17 +1394,17 @@
 					<span tabindex="519" id="_MagicItemsArmorDetails" class="box power-card-details"></span>
 					<span tabindex="520" id="_MagicItemsArmorAdditional" class="box power-card-additional"></span>
 					<span tabindex="521" id="_MagicItemsArmorClass" class="box power-card-class"></span>
-					<span tabindex="523" id="_MagicItemsArmorLevel"	class="box power-card-level"></span>
+					<span tabindex="523" id="_MagicItemsArmorLevel" class="box power-card-level"></span>
 					<span tabindex="524" id="_MagicItemsArmorPage" class="box power-card-page"></span>
 					<select tabindex="525" id="_MagicItemsArmorPowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsArmorPowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsArmorImage').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsArms" class="power-card">
-					<img id="_MagicItemsArmsImage" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsArmsCard" class="power-card">
+					<img id="_MagicItemsArmsImage" src="PowerCard-Daily.png">
 					<span tabindex="526" id="_MagicItemsArmsName" class="box power-card-name"></span>
 					<span tabindex="527" id="_MagicItemsArmsKeyword" class="box power-card-keyword"></span>
 					<input tabindex="528" id="_MagicItemsArmsBox" class="box power-card-box" type="checkbox">
@@ -1366,17 +1417,17 @@
 					<span tabindex="535" id="_MagicItemsArmsDetails" class="box power-card-details"></span>
 					<span tabindex="536" id="_MagicItemsArmsAdditional" class="box power-card-additional"></span>
 					<span tabindex="537" id="_MagicItemsArmsClass" class="box power-card-class"></span>
-					<span tabindex="539" id="_MagicItemsArmsLevel"	class="box power-card-level"></span>
+					<span tabindex="539" id="_MagicItemsArmsLevel" class="box power-card-level"></span>
 					<span tabindex="540" id="_MagicItemsArmsPage" class="box power-card-page"></span>
 					<select tabindex="541" id="_MagicItemsArmsPowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsArmsPowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsArmsImage').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsFeet" class="power-card">
-					<img id="_MagicItemsFeetImage" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsFeetCard" class="power-card">
+					<img id="_MagicItemsFeetImage" src="PowerCard-Daily.png">
 					<span tabindex="542" id="_MagicItemsFeetName" class="box power-card-name"></span>
 					<span tabindex="543" id="_MagicItemsFeetKeyword" class="box power-card-keyword"></span>
 					<input tabindex="544" id="_MagicItemsFeetBox" class="box power-card-box" type="checkbox">
@@ -1389,17 +1440,17 @@
 					<span tabindex="551" id="_MagicItemsFeetDetails" class="box power-card-details"></span>
 					<span tabindex="552" id="_MagicItemsFeetAdditional" class="box power-card-additional"></span>
 					<span tabindex="553" id="_MagicItemsFeetClass" class="box power-card-class"></span>
-					<span tabindex="555" id="_MagicItemsFeetLevel"	class="box power-card-level"></span>
+					<span tabindex="555" id="_MagicItemsFeetLevel" class="box power-card-level"></span>
 					<span tabindex="556" id="_MagicItemsFeetPage" class="box power-card-page"></span>
 					<select tabindex="557" id="_MagicItemsFeetPowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsFeetPowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsFeetImage').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsHands" class="power-card">
-					<img id="_MagicItemsHandsImage" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsHandsCard" class="power-card">
+					<img id="_MagicItemsHandsImage" src="PowerCard-Daily.png">
 					<span tabindex="558" id="_MagicItemsHandsName" class="box power-card-name"></span>
 					<span tabindex="559" id="_MagicItemsHandsKeyword" class="box power-card-keyword"></span>
 					<input tabindex="560" id="_MagicItemsHandsBox" class="box power-card-box" type="checkbox">
@@ -1412,17 +1463,17 @@
 					<span tabindex="567" id="_MagicItemsHandsDetails" class="box power-card-details"></span>
 					<span tabindex="568" id="_MagicItemsHandsAdditional" class="box power-card-additional"></span>
 					<span tabindex="569" id="_MagicItemsHandsClass" class="box power-card-class"></span>
-					<span tabindex="571" id="_MagicItemsHandsLevel"	class="box power-card-level"></span>
+					<span tabindex="571" id="_MagicItemsHandsLevel" class="box power-card-level"></span>
 					<span tabindex="572" id="_MagicItemsHandsPage" class="box power-card-page"></span>
 					<select tabindex="573" id="_MagicItemsHandsPowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsHandsPowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsHandsImage').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsHead" class="power-card">
-					<img id="_MagicItemsHeadImage" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsHeadCard" class="power-card">
+					<img id="_MagicItemsHeadImage" src="PowerCard-Daily.png">
 					<span tabindex="574" id="_MagicItemsHeadName" class="box power-card-name"></span>
 					<span tabindex="575" id="_MagicItemsHeadKeyword" class="box power-card-keyword"></span>
 					<input tabindex="576" id="_MagicItemsHeadBox" class="box power-card-box" type="checkbox">
@@ -1435,17 +1486,17 @@
 					<span tabindex="583" id="_MagicItemsHeadDetails" class="box power-card-details"></span>
 					<span tabindex="584" id="_MagicItemsHeadAdditional" class="box power-card-additional"></span>
 					<span tabindex="585" id="_MagicItemsHeadClass" class="box power-card-class"></span>
-					<span tabindex="587" id="_MagicItemsHeadLevel"	class="box power-card-level"></span>
+					<span tabindex="587" id="_MagicItemsHeadLevel" class="box power-card-level"></span>
 					<span tabindex="588" id="_MagicItemsHeadPage" class="box power-card-page"></span>
 					<select tabindex="589" id="_MagicItemsHeadPowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsHeadPowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsHeadImage').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsNeck" class="power-card">
-					<img id="_MagicItemsNeckImage" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsNeckCard" class="power-card">
+					<img id="_MagicItemsNeckImage" src="PowerCard-Daily.png">
 					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name"></span>
 					<span tabindex="591" id="_MagicItemsNeckKeyword" class="box power-card-keyword"></span>
 					<input tabindex="592" id="_MagicItemsNeckBox" class="box power-card-box" type="checkbox">
@@ -1458,17 +1509,17 @@
 					<span tabindex="599" id="_MagicItemsNeckDetails" class="box power-card-details"></span>
 					<span tabindex="600" id="_MagicItemsNeckAdditional" class="box power-card-additional"></span>
 					<span tabindex="601" id="_MagicItemsNeckClass" class="box power-card-class"></span>
-					<span tabindex="603" id="_MagicItemsNeckLevel"	class="box power-card-level"></span>
+					<span tabindex="603" id="_MagicItemsNeckLevel" class="box power-card-level"></span>
 					<span tabindex="604" id="_MagicItemsNeckPage" class="box power-card-page"></span>
 					<select tabindex="605" id="_MagicItemsNeckPowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsNeckPowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsNeckImage').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsRing1" class="power-card">
-					<img id="_MagicItemsRing1Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsRing1Card" class="power-card">
+					<img id="_MagicItemsRing1Image" src="PowerCard-Daily.png">
 					<span tabindex="606" id="_MagicItemsRing1Name" class="box power-card-name"></span>
 					<span tabindex="607" id="_MagicItemsRing1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="608" id="_MagicItemsRing1Box" class="box power-card-box" type="checkbox">
@@ -1481,17 +1532,17 @@
 					<span tabindex="615" id="_MagicItemsRing1Details" class="box power-card-details"></span>
 					<span tabindex="616" id="_MagicItemsRing1Additional" class="box power-card-additional"></span>
 					<span tabindex="617" id="_MagicItemsRing1Class" class="box power-card-class"></span>
-					<span tabindex="619" id="_MagicItemsRing1Level"	class="box power-card-level"></span>
+					<span tabindex="619" id="_MagicItemsRing1Level" class="box power-card-level"></span>
 					<span tabindex="620" id="_MagicItemsRing1Page" class="box power-card-page"></span>
 					<select tabindex="621" id="_MagicItemsRing1PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsRing1PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsRing1Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsRing2" class="power-card">
-					<img id="_MagicItemsRing2Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsRing2Card" class="power-card">
+					<img id="_MagicItemsRing2Image" src="PowerCard-Daily.png">
 					<span tabindex="622" id="_MagicItemsRing2Name" class="box power-card-name"></span>
 					<span tabindex="623" id="_MagicItemsRing2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="624" id="_MagicItemsRing2Box" class="box power-card-box" type="checkbox">
@@ -1504,17 +1555,17 @@
 					<span tabindex="631" id="_MagicItemsRing2Details" class="box power-card-details"></span>
 					<span tabindex="632" id="_MagicItemsRing2Additional" class="box power-card-additional"></span>
 					<span tabindex="633" id="_MagicItemsRing2Class" class="box power-card-class"></span>
-					<span tabindex="635" id="_MagicItemsRing2Level"	class="box power-card-level"></span>
+					<span tabindex="635" id="_MagicItemsRing2Level" class="box power-card-level"></span>
 					<span tabindex="636" id="_MagicItemsRing2Page" class="box power-card-page"></span>
 					<select tabindex="637" id="_MagicItemsRing2PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsRing2PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsRing2Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsWaist" class="power-card">
-					<img id="_MagicItemsWaistImage" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsWaistCard" class="power-card">
+					<img id="_MagicItemsWaistImage" src="PowerCard-Daily.png">
 					<span tabindex="638" id="_MagicItemsWaistName" class="box power-card-name"></span>
 					<span tabindex="639" id="_MagicItemsWaistKeyword" class="box power-card-keyword"></span>
 					<input tabindex="640" id="_MagicItemsWaistBox" class="box power-card-box" type="checkbox">
@@ -1527,17 +1578,17 @@
 					<span tabindex="647" id="_MagicItemsWaistDetails" class="box power-card-details"></span>
 					<span tabindex="648" id="_MagicItemsWaistAdditional" class="box power-card-additional"></span>
 					<span tabindex="649" id="_MagicItemsWaistClass" class="box power-card-class"></span>
-					<span tabindex="651" id="_MagicItemsWaistLevel"	class="box power-card-level"></span>
+					<span tabindex="651" id="_MagicItemsWaistLevel" class="box power-card-level"></span>
 					<span tabindex="652" id="_MagicItemsWaistPage" class="box power-card-page"></span>
 					<select tabindex="653" id="_MagicItemsWaistPowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsWaistPowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsWaistImage').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc1" class="power-card">
-					<img id="_MagicItemsMisc1Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc1Card" class="power-card">
+					<img id="_MagicItemsMisc1Image" src="PowerCard-Daily.png">
 					<span tabindex="654" id="_MagicItemsMisc1Name" class="box power-card-name"></span>
 					<span tabindex="655" id="_MagicItemsMisc1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="656" id="_MagicItemsMisc1Box" class="box power-card-box" type="checkbox">
@@ -1550,17 +1601,17 @@
 					<span tabindex="663" id="_MagicItemsMisc1Details" class="box power-card-details"></span>
 					<span tabindex="664" id="_MagicItemsMisc1Additional" class="box power-card-additional"></span>
 					<span tabindex="665" id="_MagicItemsMisc1Class" class="box power-card-class"></span>
-					<span tabindex="667" id="_MagicItemsMisc1Level"	class="box power-card-level"></span>
+					<span tabindex="667" id="_MagicItemsMisc1Level" class="box power-card-level"></span>
 					<span tabindex="668" id="_MagicItemsMisc1Page" class="box power-card-page"></span>
 					<select tabindex="669" id="_MagicItemsMisc1PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc1PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc1Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc2" class="power-card">
-					<img id="_MagicItemsMisc2Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc2Card" class="power-card">
+					<img id="_MagicItemsMisc2Image" src="PowerCard-Daily.png">
 					<span tabindex="670" id="_MagicItemsMisc2Name" class="box power-card-name"></span>
 					<span tabindex="671" id="_MagicItemsMisc2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="672" id="_MagicItemsMisc2Box" class="box power-card-box" type="checkbox">
@@ -1573,17 +1624,17 @@
 					<span tabindex="679" id="_MagicItemsMisc2Details" class="box power-card-details"></span>
 					<span tabindex="680" id="_MagicItemsMisc2Additional" class="box power-card-additional"></span>
 					<span tabindex="681" id="_MagicItemsMisc2Class" class="box power-card-class"></span>
-					<span tabindex="683" id="_MagicItemsMisc2Level"	class="box power-card-level"></span>
+					<span tabindex="683" id="_MagicItemsMisc2Level" class="box power-card-level"></span>
 					<span tabindex="684" id="_MagicItemsMisc2Page" class="box power-card-page"></span>
 					<select tabindex="685" id="_MagicItemsMisc2PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc2PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc2Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc3" class="power-card">
-					<img id="_MagicItemsMisc3Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc3Card" class="power-card">
+					<img id="_MagicItemsMisc3Image" src="PowerCard-Daily.png">
 					<span tabindex="686" id="_MagicItemsMisc3Name" class="box power-card-name"></span>
 					<span tabindex="687" id="_MagicItemsMisc3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="688" id="_MagicItemsMisc3Box" class="box power-card-box" type="checkbox">
@@ -1596,17 +1647,17 @@
 					<span tabindex="695" id="_MagicItemsMisc3Details" class="box power-card-details"></span>
 					<span tabindex="696" id="_MagicItemsMisc3Additional" class="box power-card-additional"></span>
 					<span tabindex="697" id="_MagicItemsMisc3Class" class="box power-card-class"></span>
-					<span tabindex="699" id="_MagicItemsMisc3Level"	class="box power-card-level"></span>
+					<span tabindex="699" id="_MagicItemsMisc3Level" class="box power-card-level"></span>
 					<span tabindex="700" id="_MagicItemsMisc3Page" class="box power-card-page"></span>
 					<select tabindex="701" id="_MagicItemsMisc3PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc3PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc3Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc4" class="power-card">
-					<img id="_MagicItemsMisc4Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc4Card" class="power-card">
+					<img id="_MagicItemsMisc4Image" src="PowerCard-Daily.png">
 					<span tabindex="702" id="_MagicItemsMisc4Name" class="box power-card-name"></span>
 					<span tabindex="703" id="_MagicItemsMisc4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="704" id="_MagicItemsMisc4Box" class="box power-card-box" type="checkbox">
@@ -1619,17 +1670,17 @@
 					<span tabindex="711" id="_MagicItemsMisc4Details" class="box power-card-details"></span>
 					<span tabindex="712" id="_MagicItemsMisc4Additional" class="box power-card-additional"></span>
 					<span tabindex="713" id="_MagicItemsMisc4Class" class="box power-card-class"></span>
-					<span tabindex="715" id="_MagicItemsMisc4Level"	class="box power-card-level"></span>
+					<span tabindex="715" id="_MagicItemsMisc4Level" class="box power-card-level"></span>
 					<span tabindex="716" id="_MagicItemsMisc4Page" class="box power-card-page"></span>
 					<select tabindex="717" id="_MagicItemsMisc4PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc4PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc4Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc5" class="power-card">
-					<img id="_MagicItemsMisc5Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc5Card" class="power-card">
+					<img id="_MagicItemsMisc5Image" src="PowerCard-Daily.png">
 					<span tabindex="718" id="_MagicItemsMisc5Name" class="box power-card-name"></span>
 					<span tabindex="719" id="_MagicItemsMisc5Keyword" class="box power-card-keyword"></span>
 					<input tabindex="720" id="_MagicItemsMisc5Box" class="box power-card-box" type="checkbox">
@@ -1642,17 +1693,17 @@
 					<span tabindex="727" id="_MagicItemsMisc5Details" class="box power-card-details"></span>
 					<span tabindex="728" id="_MagicItemsMisc5Additional" class="box power-card-additional"></span>
 					<span tabindex="729" id="_MagicItemsMisc5Class" class="box power-card-class"></span>
-					<span tabindex="731" id="_MagicItemsMisc5Level"	class="box power-card-level"></span>
+					<span tabindex="731" id="_MagicItemsMisc5Level" class="box power-card-level"></span>
 					<span tabindex="732" id="_MagicItemsMisc5Page" class="box power-card-page"></span>
 					<select tabindex="733" id="_MagicItemsMisc5PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc5PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc5Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc6" class="power-card">
-					<img id="_MagicItemsMisc6Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc6Card" class="power-card">
+					<img id="_MagicItemsMisc6Image" src="PowerCard-Daily.png">
 					<span tabindex="734" id="_MagicItemsMisc6Name" class="box power-card-name"></span>
 					<span tabindex="735" id="_MagicItemsMisc6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="736" id="_MagicItemsMisc6Box" class="box power-card-box" type="checkbox">
@@ -1665,17 +1716,17 @@
 					<span tabindex="743" id="_MagicItemsMisc6Details" class="box power-card-details"></span>
 					<span tabindex="744" id="_MagicItemsMisc6Additional" class="box power-card-additional"></span>
 					<span tabindex="745" id="_MagicItemsMisc6Class" class="box power-card-class"></span>
-					<span tabindex="747" id="_MagicItemsMisc6Level"	class="box power-card-level"></span>
+					<span tabindex="747" id="_MagicItemsMisc6Level" class="box power-card-level"></span>
 					<span tabindex="748" id="_MagicItemsMisc6Page" class="box power-card-page"></span>
 					<select tabindex="749" id="_MagicItemsMisc6PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc6PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc6Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc7" class="power-card">
-					<img id="_MagicItemsMisc7Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc7Card" class="power-card">
+					<img id="_MagicItemsMisc7Image" src="PowerCard-Daily.png">
 					<span tabindex="750" id="_MagicItemsMisc7Name" class="box power-card-name"></span>
 					<span tabindex="751" id="_MagicItemsMisc7Keyword" class="box power-card-keyword"></span>
 					<input tabindex="752" id="_MagicItemsMisc7Box" class="box power-card-box" type="checkbox">
@@ -1688,17 +1739,17 @@
 					<span tabindex="759" id="_MagicItemsMisc7Details" class="box power-card-details"></span>
 					<span tabindex="760" id="_MagicItemsMisc7Additional" class="box power-card-additional"></span>
 					<span tabindex="761" id="_MagicItemsMisc7Class" class="box power-card-class"></span>
-					<span tabindex="763" id="_MagicItemsMisc7Level"	class="box power-card-level"></span>
+					<span tabindex="763" id="_MagicItemsMisc7Level" class="box power-card-level"></span>
 					<span tabindex="764" id="_MagicItemsMisc7Page" class="box power-card-page"></span>
 					<select tabindex="765" id="_MagicItemsMisc7PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc7PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc7Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc8" class="power-card">
-					<img id="_MagicItemsMisc8Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc8Card" class="power-card">
+					<img id="_MagicItemsMisc8Image" src="PowerCard-Daily.png">
 					<span tabindex="766" id="_MagicItemsMisc8Name" class="box power-card-name"></span>
 					<span tabindex="767" id="_MagicItemsMisc8Keyword" class="box power-card-keyword"></span>
 					<input tabindex="768" id="_MagicItemsMisc8Box" class="box power-card-box" type="checkbox">
@@ -1711,17 +1762,17 @@
 					<span tabindex="775" id="_MagicItemsMisc8Details" class="box power-card-details"></span>
 					<span tabindex="776" id="_MagicItemsMisc8Additional" class="box power-card-additional"></span>
 					<span tabindex="777" id="_MagicItemsMisc8Class" class="box power-card-class"></span>
-					<span tabindex="779" id="_MagicItemsMisc8Level"	class="box power-card-level"></span>
+					<span tabindex="779" id="_MagicItemsMisc8Level" class="box power-card-level"></span>
 					<span tabindex="780" id="_MagicItemsMisc8Page" class="box power-card-page"></span>
 					<select tabindex="781" id="_MagicItemsMisc8PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc8PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc8Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc9" class="power-card">
-					<img id="_MagicItemsMisc9Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc9Card" class="power-card">
+					<img id="_MagicItemsMisc9Image" src="PowerCard-Daily.png">
 					<span tabindex="782" id="_MagicItemsMisc9Name" class="box power-card-name"></span>
 					<span tabindex="783" id="_MagicItemsMisc9Keyword" class="box power-card-keyword"></span>
 					<input tabindex="784" id="_MagicItemsMisc9Box" class="box power-card-box" type="checkbox">
@@ -1734,17 +1785,17 @@
 					<span tabindex="791" id="_MagicItemsMisc9Details" class="box power-card-details"></span>
 					<span tabindex="792" id="_MagicItemsMisc9Additional" class="box power-card-additional"></span>
 					<span tabindex="793" id="_MagicItemsMisc9Class" class="box power-card-class"></span>
-					<span tabindex="795" id="_MagicItemsMisc9Level"	class="box power-card-level"></span>
+					<span tabindex="795" id="_MagicItemsMisc9Level" class="box power-card-level"></span>
 					<span tabindex="796" id="_MagicItemsMisc9Page" class="box power-card-page"></span>
 					<select tabindex="797" id="_MagicItemsMisc9PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc9PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc9Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc10" class="power-card">
-					<img id="_MagicItemsMisc10Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc10Card" class="power-card">
+					<img id="_MagicItemsMisc10Image" src="PowerCard-Daily.png">
 					<span tabindex="798" id="_MagicItemsMisc10Name" class="box power-card-name"></span>
 					<span tabindex="799" id="_MagicItemsMisc10Keyword" class="box power-card-keyword"></span>
 					<input tabindex="800" id="_MagicItemsMisc10Box" class="box power-card-box" type="checkbox">
@@ -1757,17 +1808,17 @@
 					<span tabindex="807" id="_MagicItemsMisc10Details" class="box power-card-details"></span>
 					<span tabindex="808" id="_MagicItemsMisc10Additional" class="box power-card-additional"></span>
 					<span tabindex="809" id="_MagicItemsMisc10Class" class="box power-card-class"></span>
-					<span tabindex="811" id="_MagicItemsMisc10Level"	class="box power-card-level"></span>
+					<span tabindex="811" id="_MagicItemsMisc10Level" class="box power-card-level"></span>
 					<span tabindex="812" id="_MagicItemsMisc10Page" class="box power-card-page"></span>
 					<select tabindex="813" id="_MagicItemsMisc10PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc10PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc10Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc11" class="power-card">
-					<img id="_MagicItemsMisc11Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc11Card" class="power-card">
+					<img id="_MagicItemsMisc11Image" src="PowerCard-Daily.png">
 					<span tabindex="814" id="_MagicItemsMisc11Name" class="box power-card-name"></span>
 					<span tabindex="815" id="_MagicItemsMisc11Keyword" class="box power-card-keyword"></span>
 					<input tabindex="816" id="_MagicItemsMisc11Box" class="box power-card-box" type="checkbox">
@@ -1780,17 +1831,17 @@
 					<span tabindex="823" id="_MagicItemsMisc11Details" class="box power-card-details"></span>
 					<span tabindex="824" id="_MagicItemsMisc11Additional" class="box power-card-additional"></span>
 					<span tabindex="825" id="_MagicItemsMisc11Class" class="box power-card-class"></span>
-					<span tabindex="827" id="_MagicItemsMisc11Level"	class="box power-card-level"></span>
+					<span tabindex="827" id="_MagicItemsMisc11Level" class="box power-card-level"></span>
 					<span tabindex="828" id="_MagicItemsMisc11Page" class="box power-card-page"></span>
 					<select tabindex="829" id="_MagicItemsMisc11PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc11PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc11Image').src=e.target.value;},false);</script>
 				</div>
-				<div id="_MagicItemsMisc12" class="power-card">
-					<img id="_MagicItemsMisc12Image" src="PowerCard-Daily.png"/>
+				<div id="_MagicItemsMisc12Card" class="power-card">
+					<img id="_MagicItemsMisc12Image" src="PowerCard-Daily.png">
 					<span tabindex="830" id="_MagicItemsMisc12Name" class="box power-card-name"></span>
 					<span tabindex="831" id="_MagicItemsMisc12Keyword" class="box power-card-keyword"></span>
 					<input tabindex="832" id="_MagicItemsMisc12Box" class="box power-card-box" type="checkbox">
@@ -1803,16 +1854,17 @@
 					<span tabindex="839" id="_MagicItemsMisc12Details" class="box power-card-details"></span>
 					<span tabindex="840" id="_MagicItemsMisc12Additional" class="box power-card-additional"></span>
 					<span tabindex="841" id="_MagicItemsMisc12Class" class="box power-card-class"></span>
-					<span tabindex="843" id="_MagicItemsMisc12Level"	class="box power-card-level"></span>
+					<span tabindex="843" id="_MagicItemsMisc12Level" class="box power-card-level"></span>
 					<span tabindex="844" id="_MagicItemsMisc12Page" class="box power-card-page"></span>
 					<select tabindex="845" id="_MagicItemsMisc12PowerType" class="power-card-power-type">
 						<option value="PowerCard-AtWill.png">At Will</option>
 						<option value="PowerCard-Encounter.png">Encounter</option>
-						<option selected value="PowerCard-Daily.png">Daily</option>
+						<option selected="selected" value="PowerCard-Daily.png">Daily</option>
 					</select>
 					<script>document.getElementById('_MagicItemsMisc12PowerType').addEventListener('change',function(e){document.getElementById('_MagicItemsMisc12Image').src=e.target.value;},false);</script>
 				</div>
 			</div>
 		</div>
 		<script src="http://rampion.github.com/4eCharSheet/program.js"></script>
-	</body></html>
+</body></html>
+
