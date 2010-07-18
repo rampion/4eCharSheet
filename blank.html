@@ -25,6 +25,9 @@
 			const roundDown = function(v){
 				return v | 0;
 			};
+			const tier = function(level){
+				return roundDown((level+9)/10);
+			};
 		</script>
 		<script id="entries">({
 			Acrobatics:"=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
