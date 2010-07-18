@@ -25,6 +25,7 @@
 .power-card {
 	position: relative;
 	float: left;
+	display: none;
 }
 .tapped {
 	opacity: 0.5;
