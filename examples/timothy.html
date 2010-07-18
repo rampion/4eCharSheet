@@ -84,6 +84,7 @@
 			ArmorClass10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			ArmorClass:"=(ArmorClass10PlusHalfLevel + ArmorClassArmorSlashAbil + ArmorClassClass + ArmorClassFeat + ArmorClassEnh + ArmorClassMisc1 + ArmorClassMisc2)",
 			ArmorClassArmorSlashAbil:"=(max(DexMod,IntMod) /* add light armor bonus, or replace with heavy armor bonus */ + 2 /* leather armor */)",
+			ArmorClassEnh:"=(1 /* luring leather armor + 1*/)",
 			AtWillPowers1:"Guiding Strike",
 			AtWillPowers1Action:"Standard",
 			AtWillPowers1Attack:"+=(ChaModPlusHalfLevel+3+1/*rapier songblade +1*/)",
@@ -165,7 +166,7 @@
 			ClassPathDestinyFeatures7:"Virtue of Valor: =(1+2*roundDown((Level-1)/10)+ConMod) temp HP to ally on enemy fall<!--\n once per round, to an ally w/in 5, when ally reduces an enemy to 0 or bloodies an enemy, grant temp HP as a free action -->",
 			ClassPathDestinyFeatures8:"Majestic Word encounter power",
 			ClassPathDestinyFeatures9:"Multiclass Versatility: More than one multiclass",
-			CoinsAndOtherWealth:"=(\n  -5 // flute\n  -1 // beltpouch\n -30 // fine clothing\n  -1 // dagger\n -25 // rapier\n -25 // leather armor\n+100 // starting money\n) gp",
+			CoinsAndOtherWealth:"=(\n -15 // adventurer's kit\n  -5 // flute\n  -1 // beltpouch\n -30 // fine clothing\n  -1 // dagger\n+100 // starting money\n) gp",
 			Con:"=(pointBuy(10,9))",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
@@ -333,7 +334,7 @@
 			MagicItemsMisc8Name:"=(MagicItemsMisc8)",
 			MagicItemsMisc9Name:"=(MagicItemsMisc9)",
 			MagicItemsNeck:"Amulet of Protection +1",
-			MagicItemsNeckBox:true, ArmorClassEnh:"=(1 /* luring leather armor + 1*/)",
+			MagicItemsNeckCheck:true,
 			MagicItemsNeckDetails:"No Power",
 			MagicItemsNeckName:"=(MagicItemsNeck)",
 			MagicItemsRing1Name:"=(MagicItemsRing1)",
@@ -357,8 +358,8 @@
 			Nature:"=(NatureAbilModPlusHalfLevel + NatureTrained + NatureMisc)",
 			NatureAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
 			NatureMisc:"=(1 /* bard: skill versatility */)",
-			OtherEquipment1:"Leather Armor",
-			OtherEquipment2:"Rapier",
+			OtherEquipment1:"Leather Armor of Luring Withdrawl -1",
+			OtherEquipment2:"Rapier (Harsh Songblade +1)",
 			OtherEquipment3:"Dagger",
 			OtherEquipment4:"Fine Clothing",
 			OtherEquipment5:"Belt Pouch",
@@ -612,9 +613,9 @@
 </style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">Rituals2</div>
-				<textarea style="height: 58px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">Traveler's Chant (PHB2 p217) travel faster&lt;!-- <br>for day/hour travel, group's speed is slowest + 2 --&gt;&nbsp;</div>
+				<div id="EditBoxTarget">AtWillPowers1Name</div>
+				<textarea style="height: 39px;" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">=(AtWillPowers1)&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -1012,7 +1013,7 @@ Longsword, Scimitar, Short Sword
 				<input tabindex="344" class="box" id="_MagicItemsFeetCheck" type="checkbox">
 				<input tabindex="345" class="box" id="_MagicItemsHandsCheck" type="checkbox">
 				<input tabindex="346" class="box" id="_MagicItemsHeadCheck" type="checkbox">
-				<input tabindex="347" class="box" id="_MagicItemsNeckCheck" type="checkbox">
+				<input tabindex="347" class="box edited" id="_MagicItemsNeckCheck" type="checkbox">
 				<input tabindex="348" class="box" id="_MagicItemsRingCheck1" type="checkbox">
 				<input tabindex="349" class="box" id="_MagicItemsRingCheck2" type="checkbox">
 				<input tabindex="350" class="box" id="_MagicItemsWaistCheck" type="checkbox">
@@ -1086,8 +1087,8 @@ Longsword, Scimitar, Short Sword
 				<span tabindex="411" class="box" id="_CompanionsAndAlliesNotes7"></span>
 				<span tabindex="412" class="box" id="_CompanionsAndAlliesNotes8"></span>
 
-				<span tabindex="413" class="box" id="_OtherEquipment1">Leather Armor</span>
-				<span tabindex="414" class="box" id="_OtherEquipment2">Rapier</span>
+				<span tabindex="413" class="box" id="_OtherEquipment1">Leather Armor of Luring Withdrawl -1</span>
+				<span tabindex="414" class="box" id="_OtherEquipment2">Rapier (Harsh Songblade +1)</span>
 				<span tabindex="415" class="box" id="_OtherEquipment3">Dagger</span>
 				<span tabindex="416" class="box" id="_OtherEquipment4">Fine Clothing</span>
 				<span tabindex="417" class="box" id="_OtherEquipment5">Belt Pouch</span>
@@ -1122,7 +1123,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 				<span tabindex="443" class="box" id="_SessionAndCampaignNotes11"></span>
 				<span tabindex="444" class="box" id="_SessionAndCampaignNotes12"></span>
 
-				<span tabindex="445" class="box" id="_CoinsAndOtherWealth">13 gp</span>
+				<span tabindex="445" class="box" id="_CoinsAndOtherWealth">48 gp</span>
 			</div>
 			<div class="page" id="Page3">
 				<div style="display: inline-block;" id="_AtWillPowers1Card" class="power-card">
@@ -1903,7 +1904,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_MagicItemsNeckCard" class="power-card tapped">
+				<div style="display: inline-block;" id="_MagicItemsNeckCard" class="power-card">
 					<img id="_MagicItemsNeckImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">Amulet of Protection +1</span>
 					<span tabindex="591" id="_MagicItemsNeckKeyword" class="box power-card-keyword"></span>
