@@ -50,3 +50,450 @@
 .power-card-level       {left: 226px; top: 465px; width: 31px; height: 23px;}
 .power-card-page        {left: 287px; top: 465px; width: 78px; height: 23px;}
 .power-card-power-type  {position:absolute; top: 500px; left: 265px; width: 100px}
+
+
+#_PlayerName	{left: 817px; top: 44px; width: 265px; height: 16px;}
+#_CharacterName	{left: 28px; top: 70px; width: 346px; height: 25px;}
+#_Level	{left: 392px; top: 76px; width: 54px; height: 21px;}
+#_Class	{left: 464px; top: 71px; width: 160px; height: 24px;}
+#_ParagonPath	{left: 633px; top: 72px; width: 167px; height: 23px;}
+#_EpicDestiny	{left: 810px; top: 72px; width: 173px; height: 23px;}
+#_TotalExperience	{left: 990px; top: 76px; width: 102px; height: 19px;}
+#_Race	{left: 29px; top: 116px; width: 203px; height: 16px;}
+#_Size	{left: 244px; top: 112px; width: 52px; height: 20px;}
+#_Age	{left: 308px; top: 109px; width: 45px; height: 23px;}
+#_Gender	{left: 363px; top: 110px; width: 49px; height: 21px;}
+#_Height	{left: 425px; top: 116px; width: 47px; height: 16px;}
+#_Weight	{left: 484px; top: 117px; width: 51px; height: 15px;}
+#_Alignment	{left: 549px; top: 116px; width: 107px; height: 16px;}
+#_Deity	{left: 671px; top: 116px; width: 109px; height: 16px;}
+#_Affiliation	{left: 791px; top: 115px; width: 306px; height: 17px;}
+#_Initiative	{left: 39px; top: 199px; width: 40px; height: 19px;}
+#_InitiativeConditionalModifiers	{left: 37px; top: 237px; width: 334px; height: 16px;}
+#_InitiativeAbilMod	{left: 191px; top: 199px; width: 29px; height: 19px;}
+#_InitiativeHalfLevel	{left: 232px; top: 199px; width: 29px; height: 20px;}
+#_InitiativeMisc	{left: 342px; top: 199px; width: 30px; height: 21px;}
+#_Str	{left: 38px; top: 299px; width: 44px; height: 20px;}
+#_Con	{left: 38px; top: 336px; width: 44px; height: 20px;}
+#_Dex	{left: 38px; top: 387px; width: 44px; height: 20px;}
+#_Int	{left: 38px; top: 421px; width: 44px; height: 20px;}
+#_Wis	{left: 38px; top: 472px; width: 44px; height: 20px;}
+#_Cha	{left: 38px; top: 507px; width: 44px; height: 20px;}
+#_StrMod	{left: 215px; top: 299px; width: 44px; height: 20px;}
+#_ConMod	{left: 215px; top: 336px; width: 44px; height: 20px;}
+#_DexMod	{left: 215px; top: 387px; width: 44px; height: 20px;}
+#_IntMod	{left: 215px; top: 421px; width: 44px; height: 20px;}
+#_WisMod	{left: 215px; top: 472px; width: 44px; height: 20px;}
+#_ChaMod	{left: 215px; top: 507px; width: 44px; height: 20px;}
+#_StrModPlusHalfLevel	{left: 308px; top: 299px; width: 44px; height: 20px;}
+#_ConModPlusHalfLevel	{left: 308px; top: 336px; width: 44px; height: 20px;}
+#_DexModPlusHalfLevel	{left: 308px; top: 387px; width: 44px; height: 20px;}
+#_IntModPlusHalfLevel	{left: 308px; top: 421px; width: 44px; height: 20px;}
+#_WisModPlusHalfLevel	{left: 308px; top: 472px; width: 44px; height: 20px;}
+#_ChaModPlusHalfLevel	{left: 308px; top: 507px; width: 44px; height: 20px;}
+#_ArmorClass	{left: 399px; top: 207px; width: 29px; height: 25px;}
+#_ArmorClass10PlusHalfLevel	{left: 505px; top: 212px; width: 29px; height: 20px;}
+#_ArmorClassArmorSlashAbil	{left: 539px; top: 212px; width: 29px; height: 20px;}
+#_ArmorClassClass	{left: 574px; top: 212px; width: 29px; height: 20px;}
+#_ArmorClassFeat	{left: 608px; top: 212px; width: 29px; height: 20px;}
+#_ArmorClassEnh	{left: 642px; top: 211px; width: 29px; height: 20px;}
+#_ArmorClassMisc1	{left: 676px; top: 211px; width: 29px; height: 20px;}
+#_ArmorClassMisc2	{left: 711px; top: 211px; width: 29px; height: 20px;}
+#_ArmorClassConditionalBonuses	{left: 399px; top: 257px; width: 340px; height: 15px;}
+#_Fortitude	{left: 399px; top: 306px; width: 29px; height: 25px;}
+#_Fortitude10PlusHalfLevel	{left: 505px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeAbil	{left: 539px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeClass	{left: 574px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeFeat	{left: 608px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeEnh	{left: 642px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeMisc1	{left: 676px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeMisc2	{left: 711px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeConditionalBonuses	{left: 399px; top: 351px; width: 340px; height: 15px;}
+#_Reflex	{left: 399px; top: 390px; width: 29px; height: 25px;}
+#_Reflex10PlusHalfLevel	{left: 505px; top: 392px; width: 29px; height: 20px;}
+#_ReflexAbil	{left: 539px; top: 392px; width: 29px; height: 20px;}
+#_ReflexClass	{left: 574px; top: 392px; width: 29px; height: 20px;}
+#_ReflexFeat	{left: 608px; top: 392px; width: 29px; height: 20px;}
+#_ReflexEnh	{left: 642px; top: 392px; width: 29px; height: 20px;}
+#_ReflexMisc1	{left: 676px; top: 392px; width: 29px; height: 20px;}
+#_ReflexMisc2	{left: 711px; top: 392px; width: 29px; height: 20px;}
+#_ReflexConditionalBonuses	{left: 399px; top: 436px; width: 340px; height: 16px;}
+#_Willpower	{left: 399px; top: 478px; width: 29px; height: 25px;}
+#_Willpower10PlusHalfLevel	{left: 505px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerAbil	{left: 539px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerClass	{left: 574px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerFeat	{left: 608px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerEnh	{left: 642px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerMisc1	{left: 676px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerMisc2	{left: 711px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerConditionalBonuses	{left: 399px; top: 522px; width: 340px; height: 18px;}
+#_Speed	{left: 757px; top: 198px; width: 43px; height: 22px;}
+#_SpeedBase	{left: 949px; top: 198px; width: 31px; height: 21px;}
+#_SpeedArmor	{left: 989px; top: 198px; width: 31px; height: 21px;}
+#_SpeedItem	{left: 1028px; top: 198px; width: 31px; height: 21px;}
+#_SpeedMisc	{left: 1067px; top: 198px; width: 31px; height: 21px;}
+#_SpecialMovement	{left: 758px; top: 241px; width: 340px; height: 19px;}
+#_PassiveInsight	{left: 759px; top: 306px; width: 37px; height: 18px;}
+#_PassiveInsightSkillBonus	{left: 1041px; top: 306px; width: 43px; height: 19px;}
+#_PassivePerception	{left: 757px; top: 343px; width: 40px; height: 19px;}
+#_PassivePerceptionSkillBonus	{left: 1041px; top: 343px; width: 44px; height: 19px;}
+#_SpecialSenses	{left: 759px; top: 384px; width: 343px; height: 18px;}
+#_MaxHitPoints	{left: 29px; top: 592px; width: 71px; height: 37px;}
+#_BloodiedHitPoints	{left: 115px; top: 602px; width: 77px; height: 22px;}
+#_SurgeValue	{left: 214px; top: 602px; width: 79px; height: 22px;}
+#_SurgesPerDay	{left: 305px; top: 602px; width: 71px; height: 22px;}
+#_CurrentHitPoints	{left: 29px; top: 656px; width: 238px; height: 62px;}
+#_CurrentSurgeUses	{left: 271px; top: 656px; width: 102px; height: 62px;}
+#_SecondWindUsed	{left: 326px; top: 723px;}
+#_TemporaryHitPoints	{left: 29px; top: 756px; width: 348px; height: 29px;}
+#_DeathSavingThrowFailures1	{left: 308px; top: 790px;}
+#_DeathSavingThrowFailures2	{left: 331px; top: 790px;}
+#_DeathSavingThrowFailures3	{left: 354px; top: 790px;}
+#_SavingThrowMods	{left: 29px; top: 819px; width: 348px; height: 20px;}
+#_Resistances	{left: 29px; top: 860px; width: 348px; height: 25px;}
+#_CurrentConditionsAndEffects	{left: 29px; top: 904px; width: 348px; height: 22px;}
+#_ActionPoints	{left: 394px; top: 578px; width: 47px; height: 24px;}
+#_ActionPointAddtionalEffects	{left: 397px; top: 624px; width: 341px; height: 21px;}
+#_RaceAbilityScoreMods	{left: 478px; top: 677px; width: 264px; height: 16px;}
+#_RaceFeatures1	{left: 395px; top: 699px; width: 347px; height: 22px;}
+#_RaceFeatures2	{left: 395px; top: 726px; width: 347px; height: 22px;}
+#_RaceFeatures3	{left: 395px; top: 756px; width: 347px; height: 22px;}
+#_RaceFeatures4	{left: 395px; top: 785px; width: 347px; height: 22px;}
+#_RaceFeatures5	{left: 395px; top: 811px; width: 347px; height: 22px;}
+#_RaceFeatures6	{left: 395px; top: 840px; width: 347px; height: 22px;}
+#_RaceFeatures7	{left: 395px; top: 868px; width: 347px; height: 22px;}
+#_RaceFeatures8	{left: 395px; top: 897px; width: 347px; height: 22px;}
+#_Attack1Ability	{left: 797px; top: 430px; width: 302px; height: 21px;}
+#_Attack1AttBonus	{left: 774px; top: 471px; width: 43px; height: 20px;}
+#_Attack1HalfLevel	{left: 862px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Abil	{left: 895px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Class	{left: 930px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Prof	{left: 964px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Feat	{left: 998px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Enh	{left: 1033px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Misc	{left: 1068px; top: 471px; width: 30px; height: 20px;}
+#_Attack2Ability	{left: 797px; top: 503px; width: 302px; height: 21px;}
+#_Attack2AttBonus	{left: 774px; top: 543px; width: 43px; height: 20px;}
+#_Attack2HalfLevel	{left: 862px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Abil	{left: 895px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Class	{left: 930px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Prof	{left: 964px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Feat	{left: 998px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Enh	{left: 1033px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Misc	{left: 1068px; top: 543px; width: 30px; height: 20px;}
+#_Damage1Ability	{left: 797px; top: 607px; width: 302px; height: 21px;}
+#_Damage1Damage	{left: 757px; top: 648px; width: 66px; height: 20px;}
+#_Damage1Abil	{left: 928px; top: 648px; width: 30px; height: 20px;}
+#_Damage1Feat	{left: 963px; top: 648px; width: 30px; height: 20px;}
+#_Damage1Enh	{left: 998px; top: 648px; width: 30px; height: 20px;}
+#_Damage1Misc1	{left: 1032px; top: 648px; width: 30px; height: 20px;}
+#_Damage1Misc2	{left: 1065px; top: 648px; width: 30px; height: 20px;}
+#_Damage2Ability	{left: 797px; top: 679px; width: 302px; height: 21px;}
+#_Damage2Damage	{left: 757px; top: 720px; width: 66px; height: 20px;}
+#_Damage2Abil	{left: 928px; top: 720px; width: 30px; height: 20px;}
+#_Damage2Feat	{left: 963px; top: 720px; width: 30px; height: 20px;}
+#_Damage2Enh	{left: 998px; top: 720px; width: 30px; height: 20px;}
+#_Damage2Misc1	{left: 1032px; top: 720px; width: 30px; height: 20px;}
+#_Damage2Misc2	{left: 1065px; top: 720px; width: 30px; height: 20px;}
+#_BasicAttack1Attack	{left: 758px; top: 797px; width: 40px; height: 25px;}
+#_BasicAttack2Attack	{left: 758px; top: 832px; width: 40px; height: 25px;}
+#_BasicAttack3Attack	{left: 758px; top: 867px; width: 40px; height: 25px;}
+#_BasicAttack4Attack	{left: 759px; top: 900px; width: 40px; height: 25px;}
+#_BasicAttack1Defense	{left: 827px; top: 797px; width: 40px; height: 25px;}
+#_BasicAttack2Defense	{left: 827px; top: 832px; width: 40px; height: 25px;}
+#_BasicAttack3Defense	{left: 827px; top: 867px; width: 40px; height: 25px;}
+#_BasicAttack4Defense	{left: 827px; top: 900px; width: 40px; height: 25px;}
+#_BasicAttack1WeaponOrPower	{left: 879px; top: 795px; width: 138px; height: 25px;}
+#_BasicAttack2WeaponOrPower	{left: 879px; top: 830px; width: 138px; height: 25px;}
+#_BasicAttack3WeaponOrPower	{left: 879px; top: 865px; width: 138px; height: 25px;}
+#_BasicAttack4WeaponOrPower	{left: 879px; top: 898px; width: 138px; height: 25px;}
+#_BasicAttack1Damage	{left: 1029px; top: 795px; width: 72px; height: 25px;}
+#_BasicAttack2Damage	{left: 1029px; top: 830px; width: 72px; height: 25px;}
+#_BasicAttack3Damage	{left: 1029px; top: 865px; width: 72px; height: 25px;}
+#_BasicAttack4Damage	{left: 1029px; top: 898px; width: 72px; height: 25px;}
+#_Acrobatics	{left: 26px; top: 987px; width: 35px; height: 19px;}
+#_Arcana	{left: 26px; top: 1015px; width: 35px; height: 19px;}
+#_Athletics	{left: 26px; top: 1043px; width: 35px; height: 19px;}
+#_Bluff	{left: 26px; top: 1071px; width: 35px; height: 19px;}
+#_Diplomacy	{left: 26px; top: 1099px; width: 35px; height: 19px;}
+#_Dungeoneering	{left: 26px; top: 1126px; width: 35px; height: 19px;}
+#_Endurance	{left: 26px; top: 1155px; width: 35px; height: 19px;}
+#_Heal	{left: 26px; top: 1182px; width: 35px; height: 19px;}
+#_History	{left: 26px; top: 1211px; width: 35px; height: 19px;}
+#_Insight	{left: 26px; top: 1239px; width: 35px; height: 19px;}
+#_Intimidate	{left: 26px; top: 1267px; width: 35px; height: 19px;}
+#_Nature	{left: 26px; top: 1295px; width: 35px; height: 19px;}
+#_Perception	{left: 26px; top: 1322px; width: 35px; height: 19px;}
+#_Religion	{left: 26px; top: 1350px; width: 35px; height: 19px;}
+#_Stealth	{left: 26px; top: 1378px; width: 35px; height: 19px;}
+#_Streetwise	{left: 26px; top: 1406px; width: 35px; height: 19px;}
+#_Thievery	{left: 26px; top: 1434px; width: 35px; height: 19px;}
+#_AcrobaticsAbilModPlusHalfLevel	{left: 231px; top: 988px; width: 21px; height: 17px;}
+#_ArcanaAbilModPlusHalfLevel	{left: 231px; top: 1016px; width: 21px; height: 17px;}
+#_AthleticsAbilModPlusHalfLevel	{left: 231px; top: 1044px; width: 21px; height: 17px;}
+#_BluffAbilModPlusHalfLevel	{left: 231px; top: 1072px; width: 21px; height: 17px;}
+#_DiplomacyAbilModPlusHalfLevel	{left: 231px; top: 1100px; width: 21px; height: 17px;}
+#_DungeoneeringAbilModPlusHalfLevel	{left: 231px; top: 1127px; width: 21px; height: 17px;}
+#_EnduranceAbilModPlusHalfLevel	{left: 231px; top: 1156px; width: 21px; height: 17px;}
+#_HealAbilModPlusHalfLevel	{left: 231px; top: 1183px; width: 21px; height: 17px;}
+#_HistoryAbilModPlusHalfLevel	{left: 231px; top: 1212px; width: 21px; height: 17px;}
+#_InsightAbilModPlusHalfLevel	{left: 231px; top: 1240px; width: 21px; height: 17px;}
+#_IntimidateAbilModPlusHalfLevel	{left: 231px; top: 1268px; width: 21px; height: 17px;}
+#_NatureAbilModPlusHalfLevel	{left: 231px; top: 1296px; width: 21px; height: 17px;}
+#_PerceptionAbilModPlusHalfLevel	{left: 231px; top: 1323px; width: 21px; height: 17px;}
+#_ReligionAbilModPlusHalfLevel	{left: 231px; top: 1351px; width: 21px; height: 17px;}
+#_StealthAbilModPlusHalfLevel	{left: 231px; top: 1379px; width: 21px; height: 17px;}
+#_StreetwiseAbilModPlusHalfLevel	{left: 231px; top: 1407px; width: 21px; height: 17px;}
+#_ThieveryAbilModPlusHalfLevel	{left: 231px; top: 1435px; width: 21px; height: 17px;}
+#_AcrobaticsTrained	{left: 277px; top: 988px; width: 21px; height: 17px;}
+#_ArcanaTrained	{left: 277px; top: 1016px; width: 21px; height: 17px;}
+#_AthleticsTrained	{left: 277px; top: 1044px; width: 21px; height: 17px;}
+#_BluffTrained	{left: 277px; top: 1072px; width: 21px; height: 17px;}
+#_DiplomacyTrained	{left: 277px; top: 1100px; width: 21px; height: 17px;}
+#_DungeoneeringTrained	{left: 277px; top: 1127px; width: 21px; height: 17px;}
+#_EnduranceTrained	{left: 277px; top: 1156px; width: 21px; height: 17px;}
+#_HealTrained	{left: 277px; top: 1183px; width: 21px; height: 17px;}
+#_HistoryTrained	{left: 277px; top: 1212px; width: 21px; height: 17px;}
+#_InsightTrained	{left: 277px; top: 1240px; width: 21px; height: 17px;}
+#_IntimidateTrained	{left: 277px; top: 1268px; width: 21px; height: 17px;}
+#_NatureTrained	{left: 277px; top: 1296px; width: 21px; height: 17px;}
+#_PerceptionTrained	{left: 277px; top: 1323px; width: 21px; height: 17px;}
+#_ReligionTrained	{left: 277px; top: 1351px; width: 21px; height: 17px;}
+#_StealthTrained	{left: 277px; top: 1379px; width: 21px; height: 17px;}
+#_StreetwiseTrained	{left: 277px; top: 1407px; width: 21px; height: 17px;}
+#_ThieveryTrained	{left: 277px; top: 1435px; width: 21px; height: 17px;}
+#_AcrobaticsArmorPenalty	{left: 307px; top: 985px; width: 27px; height: 18px;}
+#_AthleticsArmorPenalty	{left: 307px; top: 1044px; width: 27px; height: 18px;}
+#_EnduranceArmorPenalty	{left: 307px; top: 1156px; width: 27px; height: 18px;}
+#_StealthArmorPenalty	{left: 307px; top: 1378px; width: 27px; height: 18px;}
+#_ThieveryArmorPenalty	{left: 307px; top: 1436px; width: 27px; height: 18px;}
+#_AcrobaticsMisc	{left: 346px; top: 985px; width: 27px; height: 18px;}
+#_ArcanaMisc	{left: 346px; top: 1016px; width: 27px; height: 18px;}
+#_AthleticsMisc	{left: 346px; top: 1044px; width: 27px; height: 18px;}
+#_BluffMisc	{left: 346px; top: 1072px; width: 27px; height: 18px;}
+#_DiplomacyMisc	{left: 346px; top: 1099px; width: 27px; height: 18px;}
+#_DungeoneeringMisc	{left: 346px; top: 1129px; width: 27px; height: 18px;}
+#_EnduranceMisc	{left: 346px; top: 1156px; width: 27px; height: 18px;}
+#_HealMisc	{left: 346px; top: 1182px; width: 27px; height: 18px;}
+#_HistoryMisc	{left: 346px; top: 1213px; width: 27px; height: 18px;}
+#_InsightMisc	{left: 346px; top: 1239px; width: 27px; height: 18px;}
+#_IntimidateMisc	{left: 346px; top: 1270px; width: 27px; height: 18px;}
+#_NatureMisc	{left: 346px; top: 1295px; width: 27px; height: 18px;}
+#_PerceptionMisc	{left: 346px; top: 1324px; width: 27px; height: 18px;}
+#_ReligionMisc	{left: 346px; top: 1352px; width: 27px; height: 18px;}
+#_StealthMisc	{left: 346px; top: 1378px; width: 27px; height: 18px;}
+#_StreetwiseMisc	{left: 346px; top: 1408px; width: 27px; height: 18px;}
+#_ThieveryMisc	{left: 346px; top: 1436px; width: 27px; height: 18px;}
+#_ClassPathDestinyFeatures1	{left: 395px; top: 946px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures2	{left: 395px; top: 976px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures3	{left: 395px; top: 1006px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures4	{left: 395px; top: 1034px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures5	{left: 395px; top: 1062px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures6	{left: 395px; top: 1090px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures7	{left: 395px; top: 1118px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures8	{left: 395px; top: 1146px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures9	{left: 395px; top: 1174px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures10	{left: 395px; top: 1202px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures11	{left: 395px; top: 1230px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures12	{left: 395px; top: 1258px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures13	{left: 395px; top: 1286px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures14	{left: 395px; top: 1314px; width: 346px; height: 23px;}
+#_Feats1	{left: 758px; top: 980px; width: 345px; height: 23px;}
+#_Feats2	{left: 758px; top: 1008px; width: 346px; height: 23px;}
+#_Feats3	{left: 758px; top: 1036px; width: 346px; height: 23px;}
+#_Feats4	{left: 758px; top: 1064px; width: 346px; height: 23px;}
+#_Feats5	{left: 758px; top: 1092px; width: 346px; height: 23px;}
+#_Feats6	{left: 758px; top: 1120px; width: 346px; height: 23px;}
+#_Feats7	{left: 758px; top: 1148px; width: 346px; height: 23px;}
+#_Feats8	{left: 758px; top: 1176px; width: 346px; height: 23px;}
+#_Feats9	{left: 758px; top: 1204px; width: 346px; height: 23px;}
+#_Feats10	{left: 758px; top: 1232px; width: 346px; height: 23px;}
+#_Feats11	{left: 758px; top: 1260px; width: 346px; height: 23px;}
+#_Feats12	{left: 758px; top: 1288px; width: 346px; height: 23px;}
+#_Feats13	{left: 758px; top: 1316px; width: 346px; height: 23px;}
+#_Feats14	{left: 758px; top: 1344px; width: 346px; height: 23px;}
+#_Feats15	{left: 758px; top: 1372px; width: 346px; height: 23px;}
+#_Feats16	{left: 758px; top: 1400px; width: 346px; height: 23px;}
+#_Feats17	{left: 758px; top: 1428px; width: 346px; height: 23px;}
+#_LanguagesKnown1	{left: 395px; top: 1368px; width: 346px; height: 25px;}
+#_LanguagesKnown2	{left: 395px; top: 1399px; width: 346px; height: 23px;}
+#_LanguagesKnown3	{left: 395px; top: 1427px; width: 346px; height: 23px;}
+#_AtWillPowers1	{left: 43px; top: 90px; width: 349px; height: 24px;}
+#_AtWillPowers2	{left: 43px; top: 121px; width: 349px; height: 23px;}
+#_AtWillPowers3	{left: 43px; top: 150px; width: 349px; height: 22px;}
+#_AtWillPowers4	{left: 43px; top: 179px; width: 349px; height: 22px;}
+#_AtWillPowers5	{left: 43px; top: 209px; width: 349px; height: 21px;}
+#_AtWillPowers6	{left: 43px; top: 237px; width: 349px; height: 22px;}
+#_EncounterPowers1	{left: 43px; top: 296px; width: 321px; height: 20px;}
+#_EncounterPowers2	{left: 43px; top: 324px; width: 321px; height: 21px;}
+#_EncounterPowers3	{left: 43px; top: 350px; width: 321px; height: 25px;}
+#_EncounterPowers4	{left: 43px; top: 382px; width: 321px; height: 21px;}
+#_EncounterPowers5	{left: 43px; top: 410px; width: 321px; height: 21px;}
+#_EncounterPowers6	{left: 43px; top: 438px; width: 321px; height: 22px;}
+#_DailyPowers1	{left: 43px; top: 495px; width: 321px; height: 24px;}
+#_DailyPowers2	{left: 43px; top: 524px; width: 321px; height: 23px;}
+#_DailyPowers3	{left: 43px; top: 554px; width: 321px; height: 22px;}
+#_DailyPowers4	{left: 43px; top: 581px; width: 321px; height: 24px;}
+#_DailyPowers5	{left: 43px; top: 611px; width: 321px; height: 23px;}
+#_DailyPowers6	{left: 43px; top: 640px; width: 321px; height: 21px;}
+#_UtilityPowers1	{left: 43px; top: 699px; width: 321px; height: 21px;}
+#_UtilityPowers2	{left: 43px; top: 726px; width: 321px; height: 23px;}
+#_UtilityPowers3	{left: 43px; top: 754px; width: 321px; height: 25px;}
+#_UtilityPowers4	{left: 43px; top: 784px; width: 321px; height: 23px;}
+#_UtilityPowers5	{left: 43px; top: 812px; width: 321px; height: 23px;}
+#_UtilityPowers6	{left: 43px; top: 841px; width: 321px; height: 22px;}
+#_UtilityPowers7	{left: 43px; top: 869px; width: 321px; height: 23px;}
+#_UtilityPowers8	{left: 43px; top: 898px; width: 321px; height: 22px;}
+#_EncounterPowersCheck1	{left: 367px; top: 302px;}
+#_EncounterPowersCheck2	{left: 367px; top: 330px;}
+#_EncounterPowersCheck3	{left: 367px; top: 359px;}
+#_EncounterPowersCheck4	{left: 367px; top: 388px;}
+#_EncounterPowersCheck5	{left: 367px; top: 417px;}
+#_EncounterPowersCheck6	{left: 367px; top: 446px;}
+#_DailyPowersCheck1	{left: 367px; top: 504px;}
+#_DailyPowersCheck2	{left: 367px; top: 532px;}
+#_DailyPowersCheck3	{left: 367px; top: 561px;}
+#_DailyPowersCheck4	{left: 367px; top: 589px;}
+#_DailyPowersCheck5	{left: 367px; top: 618px;}
+#_DailyPowersCheck6	{left: 367px; top: 647px;}
+#_UtilityPowersCheck1	{left: 367px; top: 705px;}
+#_UtilityPowersCheck2	{left: 367px; top: 734px;}
+#_UtilityPowersCheck3	{left: 367px; top: 762px;}
+#_UtilityPowersCheck4	{left: 367px; top: 792px;}
+#_UtilityPowersCheck5	{left: 367px; top: 819px;}
+#_UtilityPowersCheck6	{left: 367px; top: 849px;}
+#_UtilityPowersCheck7	{left: 367px; top: 877px;}
+#_UtilityPowersCheck8	{left: 367px; top: 906px;}
+#_MagicItemsWeapon1	{left: 445px; top: 92px; width: 280px; height: 23px;}
+#_MagicItemsWeapon2	{left: 445px; top: 122px; width: 280px; height: 22px;}
+#_MagicItemsWeapon3	{left: 445px; top: 151px; width: 280px; height: 23px;}
+#_MagicItemsWeapon4	{left: 445px; top: 180px; width: 280px; height: 23px;}
+#_MagicItemsArmor	{left: 445px; top: 207px; width: 280px; height: 24px;}
+#_MagicItemsArms	{left: 445px; top: 236px; width: 280px; height: 24px;}
+#_MagicItemsFeet	{left: 445px; top: 264px; width: 280px; height: 25px;}
+#_MagicItemsHands	{left: 445px; top: 294px; width: 280px; height: 21px;}
+#_MagicItemsHead	{left: 445px; top: 322px; width: 280px; height: 24px;}
+#_MagicItemsNeck	{left: 445px; top: 351px; width: 280px; height: 24px;}
+#_MagicItemsRing1	{left: 445px; top: 380px; width: 280px; height: 22px;}
+#_MagicItemsRing2	{left: 445px; top: 409px; width: 280px; height: 23px;}
+#_MagicItemsWaist	{left: 445px; top: 437px; width: 280px; height: 24px;}
+#_MagicItemsMisc1	{left: 404px; top: 466px; width: 321px; height: 23px;}
+#_MagicItemsMisc2	{left: 404px; top: 496px; width: 321px; height: 22px;}
+#_MagicItemsMisc3	{left: 404px; top: 524px; width: 321px; height: 23px;}
+#_MagicItemsMisc4	{left: 404px; top: 553px; width: 321px; height: 22px;}
+#_MagicItemsMisc5	{left: 404px; top: 581px; width: 321px; height: 24px;}
+#_MagicItemsMisc6	{left: 404px; top: 610px; width: 321px; height: 24px;}
+#_MagicItemsMisc7	{left: 404px; top: 640px; width: 321px; height: 23px;}
+#_MagicItemsMisc8	{left: 404px; top: 669px; width: 321px; height: 24px;}
+#_MagicItemsMisc9	{left: 404px; top: 698px; width: 321px; height: 21px;}
+#_MagicItemsMisc10	{left: 404px; top: 724px; width: 321px; height: 26px;}
+#_MagicItemsMisc11	{left: 404px; top: 756px; width: 321px; height: 21px;}
+#_MagicItemsMisc12	{left: 404px; top: 784px; width: 321px; height: 21px;}
+#_MagicItemsWeaponCheck1	{left: 731px; top: 100px;}
+#_MagicItemsWeaponCheck2	{left: 731px; top: 129px;}
+#_MagicItemsWeaponCheck3	{left: 731px; top: 158px;}
+#_MagicItemsWeaponCheck4	{left: 731px; top: 186px;}
+#_MagicItemsArmorCheck	{left: 731px; top: 216px;}
+#_MagicItemsArmsCheck	{left: 731px; top: 244px;}
+#_MagicItemsFeetCheck	{left: 731px; top: 273px;}
+#_MagicItemsHandsCheck	{left: 731px; top: 302px;}
+#_MagicItemsHeadCheck	{left: 731px; top: 330px;}
+#_MagicItemsNeckCheck	{left: 731px; top: 359px;}
+#_MagicItemsRingCheck1	{left: 731px; top: 388px;}
+#_MagicItemsRingCheck2	{left: 731px; top: 417px;}
+#_MagicItemsWaistCheck	{left: 731px; top: 446px;}
+#_MagicItemsMiscCheck1	{left: 731px; top: 475px;}
+#_MagicItemsMiscCheck2	{left: 731px; top: 503px;}
+#_MagicItemsMiscCheck3	{left: 731px; top: 532px;}
+#_MagicItemsMiscCheck4	{left: 731px; top: 561px;}
+#_MagicItemsMiscCheck5	{left: 731px; top: 589px;}
+#_MagicItemsMiscCheck6	{left: 731px; top: 618px;}
+#_MagicItemsMiscCheck7	{left: 731px; top: 647px;}
+#_MagicItemsMiscCheck8	{left: 731px; top: 676px;}
+#_MagicItemsMiscCheck9	{left: 731px; top: 705px;}
+#_MagicItemsMiscCheck10	{left: 731px; top: 734px;}
+#_MagicItemsMiscCheck11	{left: 731px; top: 763px;}
+#_MagicItemsMiscCheck12	{left: 731px; top: 791px;}
+#_DailyItemPowersHeroic	{left: 507px; top: 845px;}
+#_DailyItemPowersHeroicMilestone1	{left: 644px; top: 845px;}
+#_DailyItemPowersHeroicMilestone2	{left: 669px; top: 845px;}
+#_DailyItemPowersHeroicMilestone3	{left: 694px; top: 845px;}
+#_DailyItemPowersHeroicMilestone4	{left: 719px; top: 845px;}
+#_DailyItemPowersParagon1	{left: 507px; top: 873px;}
+#_DailyItemPowersParagon2	{left: 527px; top: 873px;}
+#_DailyItemPowersParagonMilestone1	{left: 644px; top: 873px;}
+#_DailyItemPowersParagonMilestone2	{left: 669px; top: 873px;}
+#_DailyItemPowersParagonMilestone3	{left: 694px; top: 873px;}
+#_DailyItemPowersParagonMilestone4	{left: 719px; top: 873px;}
+#_DailyItemPowersEpic1	{left: 507px; top: 902px;}
+#_DailyItemPowersEpic2	{left: 527px; top: 902px;}
+#_DailyItemPowersEpic3	{left: 548px; top: 902px;}
+#_DailyItemPowersEpicMilestone1	{left: 645px; top: 902px;}
+#_DailyItemPowersEpicMilestone2	{left: 669px; top: 902px;}
+#_DailyItemPowersEpicMilestone3	{left: 694px; top: 902px;}
+#_DailyItemPowersEpicMilestone4	{left: 719px; top: 902px;}
+#_Portrait	{left: 777px; top: 2px; width: 336px; height: 308px;}
+#_PersonalityTraits1	{left: 769px; top: 353px; width: 348px; height: 17px;}
+#_PersonalityTraits2	{left: 769px; top: 376px; width: 348px; height: 23px;}
+#_PersonalityTraits3	{left: 769px; top: 404px; width: 348px; height: 24px;}
+#_PersonalityTraits4	{left: 769px; top: 434px; width: 348px; height: 22px;}
+#_PersonalityTraits5	{left: 769px; top: 463px; width: 348px; height: 22px;}
+#_PersonalityTraits6	{left: 769px; top: 490px; width: 348px; height: 23px;}
+#_MannerismsAndAppearance1	{left: 769px; top: 547px; width: 348px; height: 21px;}
+#_MannerismsAndAppearance2	{left: 769px; top: 573px; width: 348px; height: 23px;}
+#_MannerismsAndAppearance3	{left: 769px; top: 602px; width: 348px; height: 23px;}
+#_MannerismsAndAppearance4	{left: 769px; top: 630px; width: 348px; height: 23px;}
+#_MannerismsAndAppearance5	{left: 769px; top: 659px; width: 348px; height: 24px;}
+#_MannerismsAndAppearance6	{left: 769px; top: 718px; width: 348px; height: 22px;}
+#_CharacterBackground2	{left: 769px; top: 746px; width: 348px; height: 23px;}
+#_CharacterBackground3	{left: 769px; top: 775px; width: 348px; height: 22px;}
+#_CharacterBackground4	{left: 769px; top: 803px; width: 348px; height: 23px;}
+#_CompanionsAndAlliesName1	{left: 791px; top: 860px; width: 133px; height: 19px;}
+#_CompanionsAndAlliesName2	{left: 791px; top: 885px; width: 133px; height: 20px;}
+#_CompanionsAndAlliesName3	{left: 791px; top: 911px; width: 133px; height: 22px;}
+#_CompanionsAndAlliesName4	{left: 791px; top: 940px; width: 133px; height: 25px;}
+#_CompanionsAndAlliesName5	{left: 791px; top: 970px; width: 133px; height: 22px;}
+#_CompanionsAndAlliesName6	{left: 791px; top: 999px; width: 133px; height: 19px;}
+#_CompanionsAndAlliesName7	{left: 791px; top: 1025px; width: 133px; height: 22px;}
+#_CompanionsAndAlliesName8	{left: 791px; top: 1054px; width: 133px; height: 19px;}
+#_CompanionsAndAlliesNotes1	{left: 957px; top: 860px; width: 159px; height: 19px;}
+#_CompanionsAndAlliesNotes2	{left: 957px; top: 885px; width: 159px; height: 20px;}
+#_CompanionsAndAlliesNotes3	{left: 957px; top: 911px; width: 159px; height: 22px;}
+#_CompanionsAndAlliesNotes4	{left: 957px; top: 940px; width: 159px; height: 25px;}
+#_CompanionsAndAlliesNotes5	{left: 957px; top: 970px; width: 159px; height: 22px;}
+#_CompanionsAndAlliesNotes6	{left: 957px; top: 999px; width: 159px; height: 19px;}
+#_CompanionsAndAlliesNotes7	{left: 957px; top: 1025px; width: 159px; height: 22px;}
+#_CompanionsAndAlliesNotes8	{left: 957px; top: 1054px; width: 159px; height: 19px;}
+#_OtherEquipment1	{left: 41px; top: 975px; width: 351px; height: 24px;}
+#_OtherEquipment2	{left: 41px; top: 1005px; width: 351px; height: 23px;}
+#_OtherEquipment3	{left: 41px; top: 1035px; width: 351px; height: 22px;}
+#_OtherEquipment4	{left: 41px; top: 1063px; width: 351px; height: 22px;}
+#_OtherEquipment5	{left: 41px; top: 1090px; width: 351px; height: 22px;}
+#_OtherEquipment6	{left: 41px; top: 1120px; width: 351px; height: 22px;}
+#_OtherEquipment7	{left: 41px; top: 1147px; width: 351px; height: 23px;}
+#_OtherEquipment8	{left: 41px; top: 1176px; width: 351px; height: 22px;}
+#_OtherEquipment9	{left: 41px; top: 1205px; width: 351px; height: 23px;}
+#_OtherEquipment10	{left: 41px; top: 1234px; width: 351px; height: 22px;}
+#_Rituals1	{left: 407px; top: 975px; width: 347px; height: 24px;}
+#_Rituals2	{left: 407px; top: 1005px; width: 347px; height: 23px;}
+#_Rituals3	{left: 407px; top: 1035px; width: 347px; height: 22px;}
+#_Rituals4	{left: 407px; top: 1063px; width: 347px; height: 22px;}
+#_Rituals5	{left: 407px; top: 1090px; width: 347px; height: 22px;}
+#_Rituals6	{left: 407px; top: 1120px; width: 347px; height: 22px;}
+#_Rituals7	{left: 407px; top: 1147px; width: 347px; height: 23px;}
+#_Rituals8	{left: 407px; top: 1176px; width: 347px; height: 22px;}
+#_Rituals9	{left: 407px; top: 1205px; width: 347px; height: 23px;}
+#_Rituals10	{left: 407px; top: 1234px; width: 347px; height: 22px;}
+#_SessionAndCampaignNotes1	{left: 768px; top: 1115px; width: 348px; height: 21px;}
+#_SessionAndCampaignNotes2	{left: 768px; top: 1143px; width: 348px; height: 21px;}
+#_SessionAndCampaignNotes3	{left: 768px; top: 1171px; width: 348px; height: 21px;}
+#_SessionAndCampaignNotes4	{left: 768px; top: 1199px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes5	{left: 768px; top: 1229px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes6	{left: 768px; top: 1257px; width: 348px; height: 22px;}
+#_SessionAndCampaignNotes7	{left: 768px; top: 1284px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes8	{left: 768px; top: 1313px; width: 348px; height: 22px;}
+#_SessionAndCampaignNotes9	{left: 768px; top: 1340px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes10	{left: 768px; top: 1369px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes11	{left: 768px; top: 1398px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes12	{left: 768px; top: 1427px; width: 348px; height: 23px;}
+#_CoinsAndOtherWealth	{left: 41px; top: 1293px; width: 713px; height: 159px;}
