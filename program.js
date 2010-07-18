@@ -396,10 +396,17 @@
 			};
 		};
 
+		const announce_change = function(elt){
+			const change_event = document.createEvent('HTMLEvents');
+			change_event.initEvent('change', true, true);
+			elt.dispatchEvent(change_event);
+		};
+
 		// go through each of the entry boxes
 		for (var id in boxes) (function(id, box){
 			// set display text
 			box.innerHTML = program.graph[id].value;
+			announce_change(box);
 
 			box.addEventListener("focus", box_select(id, box), false);
 			box.addEventListener("click", box_select(id, box), false);
@@ -432,9 +439,11 @@
 				switch (typeof formulas[t_id]){
 				case 'string':
 					boxes[t_id].innerHTML = program.graph[t_id].value;
+					announce_change(boxes[t_id]);
 					break;
 				case 'boolean':
 					checks[t_id].checked = program.graph[t_id].formula;
+					announce_change(checks[t_id]);
 					break;
 				}
 			});

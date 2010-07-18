@@ -39,7 +39,7 @@
 	const power_card = document.getElementById(power_id + 'Card');
 	const power_name = document.getElementById(power_id + 'Name');
 	power.addEventListener('change', function(change_event){
-		power_card.style.display = /\S/.test(power.innerHTML) ? 'display' : 'none';
+		power_card.style.display = /\S/.test(power.innerHTML) ? 'block' : 'none';
 	}, false);
 
 	// coordinate the checkboxes, and tap the card if used
