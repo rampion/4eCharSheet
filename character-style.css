@@ -22,83 +22,27 @@
 		outline: none;
 	}
 }
-.PowerCard {
+.power-card {
 	position: relative;
 	float: left;
 }
-.Tapped {
+.tapped {
 	opacity: 0.5;
 	-moz-transform: rotate(-180deg);
 }
-.PersonalPower-Name {
-	height: 33px;
-	left: 28px;
-	width: 326px;
-	top: 34px;
-}
-.PersonalPower-Keywords {
-	height: 33px;
-	left: 28px;
-	width: 326px;
-	top: 74px;
-}
-.PersonalPower-Action {
-	height: 33px;
-	left: 28px;
-	width: 158px;
-	top: 114px;
-}
-.PersonalPower-Range {
-	height: 33px;
-	left: 200px;
-	width: 154px;
-	top: 114px;
-}
-.PersonalPower-Target {
-	height: 33px;
-	left: 28px;
-	width: 326px;
-	top: 154px;
-}
-.PersonalPower-Attack {
-	height: 33px;
-	left: 28px;
-	width: 326px;
-	top: 194px;
-}
-.PersonalPower-Details {
-	height: 272px;
-	left: 50px;
-	width: 304px;
-	top: 240px;
-}
-.MagicItemPower-Name {
-	height: 33px;
-	left: 28px;
-	width: 326px;
-	top: 34px;
-}
-.MagicItemPower-Keywords {
-	height: 33px;
-	left: 28px;
-	width: 326px;
-	top: 74px;
-}
-.MagicItemPower-Action {
-	height: 33px;
-	left: 28px;
-	width: 326px;
-	top: 114px;
-}
-.MagicItemPower-Target {
-	height: 33px;
-	left: 28px;
-	width: 326px;
-	top: 154px;
-}
-.MagicItemPower-Details {
-	height: 318px;
-	left: 50px;
-	width: 304px;
-	top: 194px;
-}
+
+.power-card-name        {left: 5px; top: 5px; width: 360px; height: 44px;}
+.power-card-keyword     {left: 56px; top: 53px; width: 281px; height: 23px;}
+.power-card-box         {left: 337px; top: 51px; width: 25px; height: 23px;}
+.power-card-action      {left: 5px; top: 80px; width: 64px; height: 25px;}
+.power-card-attack-type {left: 73px; top: 80px; width: 91px; height: 42px;}
+.power-card-range       {left: 167px; top: 80px; width: 198px; height: 25px;}
+.power-card-attack      {left: 5px; top: 126px; width: 66px; height: 25px;}
+.power-card-defense     {left: 93px; top: 126px; width: 71px; height: 25px;}
+.power-card-target      {left: 167px; top: 126px; width: 199px; height: 25px;}
+.power-card-details     {left: 5px; top: 172px; width: 360px; height: 219px;}
+.power-card-additional  {left: 5px; top: 407px; width: 360px; height: 55px;}
+.power-card-class       {left: 36px; top: 465px; width: 157px; height: 23px;}
+.power-card-level       {left: 226px; top: 465px; width: 31px; height: 23px;}
+.power-card-page        {left: 287px; top: 465px; width: 78px; height: 23px;}
+.power-card-power-type  {position:absolute; top: 500px; left: 265px; width: 100px}
