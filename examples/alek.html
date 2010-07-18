@@ -1,32 +1,7 @@
 <html><head>
 	
 		<link href="http://rampion.github.com/4eCharSheet/style.css" type="text/css" rel="stylesheet">
-		<style>
-			.box { 
-				position: absolute;
-				padding: 2px;
-				cursor: pointer;
-			}
-			.center {
-				text-align: center;
-			}
-			.page {
-				position: relative; 
-				overflow: none;
-			}
-			.page-background {
-				margin-left: -45px;
-				margin-top: -75px;
-			}
-			@media print {
-				#EditBox {
-					display: none !important;
-				}
-				.moused {
-					outline: none;
-				}
-			}
-		</style>
+		<link href="http://rampion.github.com/4eCharSheet/character-style.css" type="text/css" rel="stylesheet">
 		<script id="userFunctions">
 			const pointBuy =  function(base, points){
 				if (base == 8) {
@@ -50,8 +25,62 @@
 			const roundDown = function(v){
 				return v | 0;
 			};
+			const tier = function(level){
+				return roundDown((level+9)/10);
+			};
 		</script>
 		<script id="entries">({
+			AtWillPowers1Name:"=(AtWillPowers1)",
+			AtWillPowers2Name:"=(AtWillPowers2)",
+			AtWillPowers3Name:"=(AtWillPowers3)",
+			AtWillPowers4Name:"=(AtWillPowers4)",
+			AtWillPowers5Name:"=(AtWillPowers5)",
+			AtWillPowers6Name:"=(AtWillPowers6)",
+			DailyPowers1Name:"=(DailyPowers1)",
+			DailyPowers2Name:"=(DailyPowers2)",
+			DailyPowers3Name:"=(DailyPowers3)",
+			DailyPowers4Name:"=(DailyPowers4)",
+			DailyPowers5Name:"=(DailyPowers5)",
+			DailyPowers6Name:"=(DailyPowers6)",
+			EncounterPowers1Name:"=(EncounterPowers1)",
+			EncounterPowers2Name:"=(EncounterPowers2)",
+			EncounterPowers3Name:"=(EncounterPowers3)",
+			EncounterPowers4Name:"=(EncounterPowers4)",
+			EncounterPowers5Name:"=(EncounterPowers5)",
+			EncounterPowers6Name:"=(EncounterPowers6)",
+			MagicItemsArmorName:"=(MagicItemsArmor)",
+			MagicItemsArmsName:"=(MagicItemsArms)",
+			MagicItemsFeetName:"=(MagicItemsFeet)",
+			MagicItemsHandsName:"=(MagicItemsHands)",
+			MagicItemsHeadName:"=(MagicItemsHead)",
+			MagicItemsNeckName:"=(MagicItemsNeck)",
+			MagicItemsWaistName:"=(MagicItemsWaist)",
+			MagicItemsMisc10Name:"=(MagicItemsMisc10)",
+			MagicItemsMisc11Name:"=(MagicItemsMisc11)",
+			MagicItemsMisc12Name:"=(MagicItemsMisc12)",
+			MagicItemsMisc1Name:"=(MagicItemsMisc1)",
+			MagicItemsMisc2Name:"=(MagicItemsMisc2)",
+			MagicItemsMisc3Name:"=(MagicItemsMisc3)",
+			MagicItemsMisc4Name:"=(MagicItemsMisc4)",
+			MagicItemsMisc5Name:"=(MagicItemsMisc5)",
+			MagicItemsMisc6Name:"=(MagicItemsMisc6)",
+			MagicItemsMisc7Name:"=(MagicItemsMisc7)",
+			MagicItemsMisc8Name:"=(MagicItemsMisc8)",
+			MagicItemsMisc9Name:"=(MagicItemsMisc9)",
+			MagicItemsRing1Name:"=(MagicItemsRing1)",
+			MagicItemsRing2Name:"=(MagicItemsRing2)",
+			MagicItemsWeapon1Name:"=(MagicItemsWeapon1)",
+			MagicItemsWeapon2Name:"=(MagicItemsWeapon2)",
+			MagicItemsWeapon3Name:"=(MagicItemsWeapon3)",
+			MagicItemsWeapon4Name:"=(MagicItemsWeapon4)",
+			UtilityPowers1Name:"=(UtilityPowers1)",
+			UtilityPowers2Name:"=(UtilityPowers2)",
+			UtilityPowers3Name:"=(UtilityPowers3)",
+			UtilityPowers4Name:"=(UtilityPowers4)",
+			UtilityPowers5Name:"=(UtilityPowers5)",
+			UtilityPowers6Name:"=(UtilityPowers6)",
+			UtilityPowers7Name:"=(UtilityPowers7)",
+			UtilityPowers8Name:"=(UtilityPowers8)",
 			Acrobatics:"=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
 			AcrobaticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			ActionPointAddtionalEffects:"Grant ally w/in 10 free move",
@@ -248,7 +277,7 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">Portrait</div>
+				<div id="EditBoxTarget">DailyPowers2</div>
 				<textarea style="height: 39px;" id="EditBoxText"></textarea>
 				<div style="display: none;" id="EditBoxTextMeasure">&nbsp;</div>
 				<div id="EditBoxButtons">
@@ -258,597 +287,1625 @@
 			</div>
 			<div class="page" id="Page1">
 				<img class="page-background" id="Page1Background" src="http://rampion.github.com/4eCharSheet/CharacterSheetPage1.png">
-				<span tabindex="1" class="box" style="left: 817px; top: 44px; width: 265px; height: 16px;" id="_PlayerName">Noah Easterly</span>
+				<span tabindex="1" class="box" id="_PlayerName"></span>
 
-				<span tabindex="2" class="box" style="left: 28px; top: 70px; width: 346px; height: 25px;" id="_CharacterName">Bannerman Alek</span>
-				<span tabindex="3" class="center box" style="left: 392px; top: 76px; width: 54px; height: 21px;" id="_Level">12</span>
-				<span tabindex="4" class="box" style="left: 464px; top: 71px; width: 160px; height: 24px;" id="_Class">Warlord</span>
-				<span tabindex="5" class="box" style="left: 633px; top: 72px; width: 167px; height: 23px;" id="_ParagonPath">Combat Veteran</span>
-				<span tabindex="6" class="box" style="left: 810px; top: 72px; width: 173px; height: 23px;" id="_EpicDestiny"></span>
-				<span tabindex="7" class="center box" style="left: 990px; top: 76px; width: 102px; height: 19px;" id="_TotalExperience">32000</span>
+				<span tabindex="2" class="box" id="_CharacterName"></span>
+				<span tabindex="3" class="center box" id="_Level">1</span>
+				<span tabindex="4" class="box" id="_Class"></span>
+				<span tabindex="5" class="box" id="_ParagonPath"></span>
+				<span tabindex="6" class="box" id="_EpicDestiny"></span>
+				<span tabindex="7" class="center box" id="_TotalExperience">0</span>
 
-				<span tabindex="8" class="box" style="left: 29px; top: 116px; width: 203px; height: 16px;" id="_Race">Human</span>
-				<span tabindex="9" class="box" style="left: 244px; top: 112px; width: 52px; height: 20px;" id="_Size">Medium</span>
-				<span tabindex="10" class="box" style="left: 308px; top: 109px; width: 45px; height: 23px;" id="_Age">35</span>
-				<span tabindex="11" class="box" style="left: 363px; top: 110px; width: 49px; height: 21px;" id="_Gender">Male</span>
-				<span tabindex="12" class="box" style="left: 425px; top: 116px; width: 47px; height: 16px;" id="_Height">5'9"</span>
-				<span tabindex="13" class="box" style="left: 484px; top: 117px; width: 51px; height: 15px;" id="_Weight">150</span>
-				<span tabindex="14" class="box" style="left: 549px; top: 116px; width: 107px; height: 16px;" id="_Alignment">Evil</span>
-				<span tabindex="15" class="box" style="left: 671px; top: 116px; width: 109px; height: 16px;" id="_Deity"></span>
-				<span tabindex="16" class="box" style="left: 791px; top: 115px; width: 306px; height: 17px;" id="_Affiliation">SPQR</span>
+				<span tabindex="8" class="box" id="_Race"></span>
+				<span tabindex="9" class="box" id="_Size"></span>
+				<span tabindex="10" class="box" id="_Age"></span>
+				<span tabindex="11" class="box" id="_Gender"></span>
+				<span tabindex="12" class="box" id="_Height"></span>
+				<span tabindex="13" class="box" id="_Weight"></span>
+				<span tabindex="14" class="box" id="_Alignment"></span>
+				<span tabindex="15" class="box" id="_Deity"></span>
+				<span tabindex="16" class="box" id="_Affiliation"></span>
 
-				<span tabindex="17" class="center box" style="left: 39px; top: 199px; width: 40px; height: 19px;" id="_Initiative">14</span>
-				<span tabindex="18" class="box" style="left: 37px; top: 237px; width: 334px; height: 16px;" id="_InitiativeConditionalModifiers"></span>
-				<span tabindex="19" class="center box" style="left: 191px; top: 199px; width: 29px; height: 19px;" id="_InitiativeAbilMod">0</span>
-				<span tabindex="20" class="center box" style="left: 232px; top: 199px; width: 29px; height: 20px;" id="_InitiativeHalfLevel">6</span>
-				<span tabindex="21" class="center box" style="left: 342px; top: 199px; width: 30px; height: 21px;" id="_InitiativeMisc">8</span>
+				<span tabindex="17" class="center box" id="_Initiative">2</span>
+				<span tabindex="18" class="box" id="_InitiativeConditionalModifiers"></span>
+				<span tabindex="19" class="center box" id="_InitiativeAbilMod">2</span>
+				<span tabindex="20" class="center box" id="_InitiativeHalfLevel">0</span>
+				<span tabindex="21" class="center box" id="_InitiativeMisc"></span>
 
-				<span tabindex="22" class="center box" style="left: 38px; top: 299px; width: 44px; height: 20px;" id="_Str">18</span>
-				<span tabindex="23" class="center box" style="left: 38px; top: 336px; width: 44px; height: 20px;" id="_Con">14</span>
-				<span tabindex="24" class="center box" style="left: 38px; top: 387px; width: 44px; height: 20px;" id="_Dex">11</span>
-				<span tabindex="25" class="center box" style="left: 38px; top: 421px; width: 44px; height: 20px;" id="_Int">18</span>
-				<span tabindex="26" class="center box" style="left: 38px; top: 472px; width: 44px; height: 20px;" id="_Wis">13</span>
-				<span tabindex="27" class="center box" style="left: 38px; top: 507px; width: 44px; height: 20px;" id="_Cha">14</span>
+				<span tabindex="22" class="center box" id="_Str">16</span>
+				<span tabindex="23" class="center box" id="_Con">13</span>
+				<span tabindex="24" class="center box" id="_Dex">14</span>
+				<span tabindex="25" class="center box" id="_Int">11</span>
+				<span tabindex="26" class="center box" id="_Wis">12</span>
+				<span tabindex="27" class="center box" id="_Cha">10</span>
 
-				<span tabindex="28" class="center box" style="left: 215px; top: 299px; width: 44px; height: 20px;" id="_StrMod">4</span>
-				<span tabindex="29" class="center box" style="left: 215px; top: 336px; width: 44px; height: 20px;" id="_ConMod">2</span>
-				<span tabindex="30" class="center box" style="left: 215px; top: 387px; width: 44px; height: 20px;" id="_DexMod">0</span>
-				<span tabindex="31" class="center box" style="left: 215px; top: 421px; width: 44px; height: 20px;" id="_IntMod">4</span>
-				<span tabindex="32" class="center box" style="left: 215px; top: 472px; width: 44px; height: 20px;" id="_WisMod">1</span>
-				<span tabindex="33" class="center box" style="left: 215px; top: 507px; width: 44px; height: 20px;" id="_ChaMod">2</span>
+				<span tabindex="28" class="center box" id="_StrMod">3</span>
+				<span tabindex="29" class="center box" id="_ConMod">1</span>
+				<span tabindex="30" class="center box" id="_DexMod">2</span>
+				<span tabindex="31" class="center box" id="_IntMod">0</span>
+				<span tabindex="32" class="center box" id="_WisMod">1</span>
+				<span tabindex="33" class="center box" id="_ChaMod">0</span>
 
-				<span tabindex="34" class="center box" style="left: 308px; top: 299px; width: 44px; height: 20px;" id="_StrModPlusHalfLevel">10</span>
-				<span tabindex="35" class="center box" style="left: 308px; top: 336px; width: 44px; height: 20px;" id="_ConModPlusHalfLevel">8</span>
-				<span tabindex="36" class="center box" style="left: 308px; top: 387px; width: 44px; height: 20px;" id="_DexModPlusHalfLevel">6</span>
-				<span tabindex="37" class="center box" style="left: 308px; top: 421px; width: 44px; height: 20px;" id="_IntModPlusHalfLevel">10</span>
-				<span tabindex="38" class="center box" style="left: 308px; top: 472px; width: 44px; height: 20px;" id="_WisModPlusHalfLevel">7</span>
-				<span tabindex="39" class="center box" style="left: 308px; top: 507px; width: 44px; height: 20px;" id="_ChaModPlusHalfLevel">8</span>
+				<span tabindex="34" class="center box" id="_StrModPlusHalfLevel">3</span>
+				<span tabindex="35" class="center box" id="_ConModPlusHalfLevel">1</span>
+				<span tabindex="36" class="center box" id="_DexModPlusHalfLevel">2</span>
+				<span tabindex="37" class="center box" id="_IntModPlusHalfLevel">0</span>
+				<span tabindex="38" class="center box" id="_WisModPlusHalfLevel">1</span>
+				<span tabindex="39" class="center box" id="_ChaModPlusHalfLevel">0</span>
 
-				<span tabindex="40" class="center box" style="left: 399px; top: 207px; width: 29px; height: 25px;" id="_ArmorClass">23</span>
-				<span tabindex="41" class="center box" style="left: 505px; top: 212px; width: 29px; height: 20px;" id="_ArmorClass10PlusHalfLevel">16</span>
-				<span tabindex="42" class="center box" style="left: 539px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassArmorSlashAbil">7</span>
-				<span tabindex="43" class="center box" style="left: 574px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassClass"></span>
-				<span tabindex="44" class="center box" style="left: 608px; top: 212px; width: 29px; height: 20px;" id="_ArmorClassFeat"></span>
-				<span tabindex="45" class="center box" style="left: 642px; top: 211px; width: 29px; height: 20px;" id="_ArmorClassEnh"></span>
-				<span tabindex="46" class="center box" style="left: 676px; top: 211px; width: 29px; height: 20px;" id="_ArmorClassMisc1"></span>
-				<span tabindex="47" class="center box" style="left: 711px; top: 211px; width: 29px; height: 20px;" id="_ArmorClassMisc2"></span>
-				<span tabindex="48" class="box" style="left: 399px; top: 257px; width: 340px; height: 15px;" id="_ArmorClassConditionalBonuses">+1 when using light shield</span>
+				<span tabindex="40" class="center box" id="_ArmorClass">12</span>
+				<span tabindex="41" class="center box" id="_ArmorClass10PlusHalfLevel">10</span>
+				<span tabindex="42" class="center box" id="_ArmorClassArmorSlashAbil">2</span>
+				<span tabindex="43" class="center box" id="_ArmorClassClass"></span>
+				<span tabindex="44" class="center box" id="_ArmorClassFeat"></span>
+				<span tabindex="45" class="center box" id="_ArmorClassEnh"></span>
+				<span tabindex="46" class="center box" id="_ArmorClassMisc1"></span>
+				<span tabindex="47" class="center box" id="_ArmorClassMisc2"></span>
+				<span tabindex="48" class="box" id="_ArmorClassConditionalBonuses"></span>
 
-				<span tabindex="49" class="center box" style="left: 399px; top: 306px; width: 29px; height: 25px;" id="_Fortitude">22</span>
-				<span tabindex="50" class="center box" style="left: 505px; top: 308px; width: 29px; height: 20px;" id="_Fortitude10PlusHalfLevel">16</span>
-				<span tabindex="51" class="center box" style="left: 539px; top: 308px; width: 29px; height: 20px;" id="_FortitudeAbil">4</span>
-				<span tabindex="52" class="center box" style="left: 574px; top: 308px; width: 29px; height: 20px;" id="_FortitudeClass">1</span>
-				<span tabindex="53" class="center box" style="left: 608px; top: 308px; width: 29px; height: 20px;" id="_FortitudeFeat"></span>
-				<span tabindex="54" class="center box" style="left: 642px; top: 308px; width: 29px; height: 20px;" id="_FortitudeEnh"></span>
-				<span tabindex="55" class="center box" style="left: 676px; top: 308px; width: 29px; height: 20px;" id="_FortitudeMisc1">1</span>
-				<span tabindex="56" class="center box" style="left: 711px; top: 308px; width: 29px; height: 20px;" id="_FortitudeMisc2"></span>
-				<span tabindex="57" class="box" style="left: 399px; top: 351px; width: 340px; height: 15px;" id="_FortitudeConditionalBonuses"></span>
+				<span tabindex="49" class="center box" id="_Fortitude">13</span>
+				<span tabindex="50" class="center box" id="_Fortitude10PlusHalfLevel">10</span>
+				<span tabindex="51" class="center box" id="_FortitudeAbil">3</span>
+				<span tabindex="52" class="center box" id="_FortitudeClass"></span>
+				<span tabindex="53" class="center box" id="_FortitudeFeat"></span>
+				<span tabindex="54" class="center box" id="_FortitudeEnh"></span>
+				<span tabindex="55" class="center box" id="_FortitudeMisc1"></span>
+				<span tabindex="56" class="center box" id="_FortitudeMisc2"></span>
+				<span tabindex="57" class="box" id="_FortitudeConditionalBonuses"></span>
 
-				<span tabindex="58" class="center box" style="left: 399px; top: 390px; width: 29px; height: 25px;" id="_Reflex">21</span>
-				<span tabindex="59" class="center box" style="left: 505px; top: 392px; width: 29px; height: 20px;" id="_Reflex10PlusHalfLevel">16</span>
-				<span tabindex="60" class="center box" style="left: 539px; top: 392px; width: 29px; height: 20px;" id="_ReflexAbil">4</span>
-				<span tabindex="61" class="center box" style="left: 574px; top: 392px; width: 29px; height: 20px;" id="_ReflexClass"></span>
-				<span tabindex="62" class="center box" style="left: 608px; top: 392px; width: 29px; height: 20px;" id="_ReflexFeat"></span>
-				<span tabindex="63" class="center box" style="left: 642px; top: 392px; width: 29px; height: 20px;" id="_ReflexEnh"></span>
-				<span tabindex="64" class="center box" style="left: 676px; top: 392px; width: 29px; height: 20px;" id="_ReflexMisc1">1</span>
-				<span tabindex="65" class="center box" style="left: 711px; top: 392px; width: 29px; height: 20px;" id="_ReflexMisc2"></span>
-				<span tabindex="66" class="box" style="left: 399px; top: 436px; width: 340px; height: 16px;" id="_ReflexConditionalBonuses">+1 when using light shield</span>
+				<span tabindex="58" class="center box" id="_Reflex">12</span>
+				<span tabindex="59" class="center box" id="_Reflex10PlusHalfLevel">10</span>
+				<span tabindex="60" class="center box" id="_ReflexAbil">2</span>
+				<span tabindex="61" class="center box" id="_ReflexClass"></span>
+				<span tabindex="62" class="center box" id="_ReflexFeat"></span>
+				<span tabindex="63" class="center box" id="_ReflexEnh"></span>
+				<span tabindex="64" class="center box" id="_ReflexMisc1"></span>
+				<span tabindex="65" class="center box" id="_ReflexMisc2"></span>
+				<span tabindex="66" class="box" id="_ReflexConditionalBonuses"></span>
 
-				<span tabindex="67" class="center box" style="left: 399px; top: 478px; width: 29px; height: 25px;" id="_Willpower">20</span>
-				<span tabindex="68" class="center box" style="left: 505px; top: 480px; width: 29px; height: 20px;" id="_Willpower10PlusHalfLevel">16</span>
-				<span tabindex="69" class="center box" style="left: 539px; top: 480px; width: 29px; height: 20px;" id="_WillpowerAbil">2</span>
-				<span tabindex="70" class="center box" style="left: 574px; top: 480px; width: 29px; height: 20px;" id="_WillpowerClass">1</span>
-				<span tabindex="71" class="center box" style="left: 608px; top: 480px; width: 29px; height: 20px;" id="_WillpowerFeat"></span>
-				<span tabindex="72" class="center box" style="left: 642px; top: 480px; width: 29px; height: 20px;" id="_WillpowerEnh"></span>
-				<span tabindex="73" class="center box" style="left: 676px; top: 480px; width: 29px; height: 20px;" id="_WillpowerMisc1">1</span>
-				<span tabindex="74" class="center box" style="left: 711px; top: 480px; width: 29px; height: 20px;" id="_WillpowerMisc2"></span>
-				<span tabindex="75" class="box" style="left: 399px; top: 522px; width: 340px; height: 18px;" id="_WillpowerConditionalBonuses"></span>
+				<span tabindex="67" class="center box" id="_Willpower">11</span>
+				<span tabindex="68" class="center box" id="_Willpower10PlusHalfLevel">10</span>
+				<span tabindex="69" class="center box" id="_WillpowerAbil">1</span>
+				<span tabindex="70" class="center box" id="_WillpowerClass"></span>
+				<span tabindex="71" class="center box" id="_WillpowerFeat"></span>
+				<span tabindex="72" class="center box" id="_WillpowerEnh"></span>
+				<span tabindex="73" class="center box" id="_WillpowerMisc1"></span>
+				<span tabindex="74" class="center box" id="_WillpowerMisc2"></span>
+				<span tabindex="75" class="box" id="_WillpowerConditionalBonuses"></span>
 
-				<span tabindex="76" class="center box" style="left: 757px; top: 198px; width: 43px; height: 22px;" id="_Speed">5</span>
-				<span tabindex="77" class="center box" style="left: 949px; top: 198px; width: 31px; height: 21px;" id="_SpeedBase">6</span>
-				<span tabindex="78" class="center box" style="left: 989px; top: 198px; width: 31px; height: 21px;" id="_SpeedArmor">-1</span>
-				<span tabindex="79" class="center box" style="left: 1028px; top: 198px; width: 31px; height: 21px;" id="_SpeedItem"></span>
-				<span tabindex="80" class="center box" style="left: 1067px; top: 198px; width: 31px; height: 21px;" id="_SpeedMisc"></span>
-				<span tabindex="81" class="box" style="left: 758px; top: 241px; width: 340px; height: 19px;" id="_SpecialMovement"></span>
+				<span tabindex="76" class="center box" id="_Speed">0</span>
+				<span tabindex="77" class="center box" id="_SpeedBase"></span>
+				<span tabindex="78" class="center box" id="_SpeedArmor"></span>
+				<span tabindex="79" class="center box" id="_SpeedItem"></span>
+				<span tabindex="80" class="center box" id="_SpeedMisc"></span>
+				<span tabindex="81" class="box" id="_SpecialMovement"></span>
 
-				<span tabindex="82" class="center box" style="left: 759px; top: 306px; width: 37px; height: 18px;" id="_PassiveInsight">17</span>
-				<span tabindex="83" class="center box" style="left: 1041px; top: 306px; width: 43px; height: 19px;" id="_PassiveInsightSkillBonus">7</span>
-				<span tabindex="84" class="center box" style="left: 757px; top: 343px; width: 40px; height: 19px;" id="_PassivePerception">19</span>
-				<span tabindex="85" class="center box" style="left: 1041px; top: 343px; width: 44px; height: 19px;" id="_PassivePerceptionSkillBonus">9</span>
-				<span tabindex="86" class="box" style="left: 759px; top: 384px; width: 343px; height: 18px;" id="_SpecialSenses"></span>
+				<span tabindex="82" class="center box" id="_PassiveInsight">11</span>
+				<span tabindex="83" class="center box" id="_PassiveInsightSkillBonus">1</span>
+				<span tabindex="84" class="center box" id="_PassivePerception">11</span>
+				<span tabindex="85" class="center box" id="_PassivePerceptionSkillBonus">1</span>
+				<span tabindex="86" class="box" id="_SpecialSenses"></span>
 
-				<span tabindex="87" class="center box" style="left: 29px; top: 592px; width: 71px; height: 37px;" id="_MaxHitPoints">81</span>
-				<span tabindex="88" class="center box" style="left: 115px; top: 602px; width: 77px; height: 22px;" id="_BloodiedHitPoints">40</span>
-				<span tabindex="89" class="center box" style="left: 214px; top: 602px; width: 79px; height: 22px;" id="_SurgeValue">22</span>
-				<span tabindex="90" class="center box" style="left: 305px; top: 602px; width: 71px; height: 22px;" id="_SurgesPerDay">10</span>
-				<span tabindex="91" class="center box" style="left: 29px; top: 656px; width: 238px; height: 62px;" id="_CurrentHitPoints">81</span>
-				<span tabindex="92" class="center box" style="left: 271px; top: 656px; width: 102px; height: 62px;" id="_CurrentSurgeUses">10</span>
-				<input tabindex="93" class="center box" style="left: 326px; top: 723px;" id="_SecondWindUsed" type="checkbox">
-				<span tabindex="94" class="box" style="left: 29px; top: 756px; width: 348px; height: 29px;" id="_TemporaryHitPoints"></span>
-				<input tabindex="95" class="center box" style="left: 308px; top: 790px;" id="_DeathSavingThrowFailures1" type="checkbox">
-				<input tabindex="96" class="center box" style="left: 331px; top: 790px;" id="_DeathSavingThrowFailures2" type="checkbox">
-				<input tabindex="97" class="center box" style="left: 354px; top: 790px;" id="_DeathSavingThrowFailures3" type="checkbox">
-				<span tabindex="98" class="box" style="left: 29px; top: 819px; width: 348px; height: 20px;" id="_SavingThrowMods"></span>
-				<span tabindex="99" class="box" style="left: 29px; top: 860px; width: 348px; height: 25px;" id="_Resistances"></span>
-				<span tabindex="100" class="box" style="left: 29px; top: 904px; width: 348px; height: 22px;" id="_CurrentConditionsAndEffects"></span>
+				<span tabindex="87" class="center box" id="_MaxHitPoints">13</span>
+				<span tabindex="88" class="center box" id="_BloodiedHitPoints">6</span>
+				<span tabindex="89" class="center box" id="_SurgeValue">3</span>
+				<span tabindex="90" class="center box" id="_SurgesPerDay">0</span>
+				<span tabindex="91" class="center box" id="_CurrentHitPoints">13</span>
+				<span tabindex="92" class="center box" id="_CurrentSurgeUses">0</span>
+				<input tabindex="93" class="center box" id="_SecondWindUsed" type="checkbox">
+				<span tabindex="94" class="box" id="_TemporaryHitPoints"></span>
+				<input tabindex="95" class="center box" id="_DeathSavingThrowFailures1" type="checkbox">
+				<input tabindex="96" class="center box" id="_DeathSavingThrowFailures2" type="checkbox">
+				<input tabindex="97" class="center box" id="_DeathSavingThrowFailures3" type="checkbox">
+				<span tabindex="98" class="box" id="_SavingThrowMods"></span>
+				<span tabindex="99" class="box" id="_Resistances"></span>
+				<span tabindex="100" class="box" id="_CurrentConditionsAndEffects"></span>
 
-				<span tabindex="101" class="center box" style="left: 394px; top: 578px; width: 47px; height: 24px;" id="_ActionPoints">1</span>
-				<span tabindex="102" class="box" style="left: 397px; top: 624px; width: 341px; height: 21px;" id="_ActionPointAddtionalEffects">Grant ally w/in 10 free move</span>
+				<span tabindex="101" class="center box" id="_ActionPoints">1</span>
+				<span tabindex="102" class="box" id="_ActionPointAddtionalEffects"></span>
 
-				<span tabindex="103" class="box" style="left: 478px; top: 677px; width: 264px; height: 16px;" id="_RaceAbilityScoreMods">+2 to one ability (Intelligence)</span>
-				<span tabindex="104" class="box" style="left: 395px; top: 699px; width: 347px; height: 22px;" id="_RaceFeatures1">Bonus At-Will power (Commander's Strike)</span>
-				<span tabindex="105" class="box" style="left: 395px; top: 726px; width: 347px; height: 22px;" id="_RaceFeatures2">Bonus Feat (Combat Medic)</span>
-				<span tabindex="106" class="box" style="left: 395px; top: 756px; width: 347px; height: 22px;" id="_RaceFeatures3">+1 to Fort/Reflex/Will defenses</span>
-				<span tabindex="107" class="box" style="left: 395px; top: 785px; width: 347px; height: 22px;" id="_RaceFeatures4">Bonus skill (Athletics)</span>
-				<span tabindex="108" class="box" style="left: 395px; top: 811px; width: 347px; height: 22px;" id="_RaceFeatures5"></span>
-				<span tabindex="109" class="box" style="left: 395px; top: 840px; width: 347px; height: 22px;" id="_RaceFeatures6"></span>
-				<span tabindex="110" class="box" style="left: 395px; top: 868px; width: 347px; height: 22px;" id="_RaceFeatures7"></span>
-				<span tabindex="111" class="box" style="left: 395px; top: 897px; width: 347px; height: 22px;" id="_RaceFeatures8"></span>
+				<span tabindex="103" class="box" id="_RaceAbilityScoreMods"></span>
+				<span tabindex="104" class="box" id="_RaceFeatures1"></span>
+				<span tabindex="105" class="box" id="_RaceFeatures2"></span>
+				<span tabindex="106" class="box" id="_RaceFeatures3"></span>
+				<span tabindex="107" class="box" id="_RaceFeatures4"></span>
+				<span tabindex="108" class="box" id="_RaceFeatures5"></span>
+				<span tabindex="109" class="box" id="_RaceFeatures6"></span>
+				<span tabindex="110" class="box" id="_RaceFeatures7"></span>
+				<span tabindex="111" class="box" id="_RaceFeatures8"></span>
 
-				<span tabindex="112" class="box" style="left: 797px; top: 430px; width: 302px; height: 21px;" id="_Attack1Ability">Longspear (Reach)</span>
-				<span tabindex="113" class="center box" style="left: 774px; top: 471px; width: 43px; height: 20px;" id="_Attack1AttBonus">13</span>
-				<span tabindex="114" class="center box" style="left: 862px; top: 471px; width: 30px; height: 20px;" id="_Attack1HalfLevel">6</span>
-				<span tabindex="115" class="center box" style="left: 895px; top: 471px; width: 30px; height: 20px;" id="_Attack1Abil">4</span>
-				<span tabindex="116" class="center box" style="left: 930px; top: 471px; width: 30px; height: 20px;" id="_Attack1Class"></span>
-				<span tabindex="117" class="center box" style="left: 964px; top: 471px; width: 30px; height: 20px;" id="_Attack1Prof">2</span>
-				<span tabindex="118" class="center box" style="left: 998px; top: 471px; width: 30px; height: 20px;" id="_Attack1Feat">1</span>
-				<span tabindex="119" class="center box" style="left: 1033px; top: 471px; width: 30px; height: 20px;" id="_Attack1Enh"></span>
-				<span tabindex="120" class="center box" style="left: 1068px; top: 471px; width: 30px; height: 20px;" id="_Attack1Misc"></span>
+				<span tabindex="112" class="box" id="_Attack1Ability">Improvised Melee</span>
+				<span tabindex="113" class="center box" id="_Attack1AttBonus">3</span>
+				<span tabindex="114" class="center box" id="_Attack1HalfLevel">0</span>
+				<span tabindex="115" class="center box" id="_Attack1Abil">3</span>
+				<span tabindex="116" class="center box" id="_Attack1Class"></span>
+				<span tabindex="117" class="center box" id="_Attack1Prof"></span>
+				<span tabindex="118" class="center box" id="_Attack1Feat"></span>
+				<span tabindex="119" class="center box" id="_Attack1Enh"></span>
+				<span tabindex="120" class="center box" id="_Attack1Misc"></span>
 
-				<span tabindex="121" class="box" style="left: 797px; top: 503px; width: 302px; height: 21px;" id="_Attack2Ability">Gladius <!-- shortsword --></span>
-				<span tabindex="122" class="center box" style="left: 774px; top: 543px; width: 43px; height: 20px;" id="_Attack2AttBonus">13</span>
-				<span tabindex="123" class="center box" style="left: 862px; top: 543px; width: 30px; height: 20px;" id="_Attack2HalfLevel">6</span>
-				<span tabindex="124" class="center box" style="left: 895px; top: 543px; width: 30px; height: 20px;" id="_Attack2Abil">4</span>
-				<span tabindex="125" class="center box" style="left: 930px; top: 543px; width: 30px; height: 20px;" id="_Attack2Class"></span>
-				<span tabindex="126" class="center box" style="left: 964px; top: 543px; width: 30px; height: 20px;" id="_Attack2Prof">3</span>
-				<span tabindex="127" class="center box" style="left: 998px; top: 543px; width: 30px; height: 20px;" id="_Attack2Feat"></span>
-				<span tabindex="128" class="center box" style="left: 1033px; top: 543px; width: 30px; height: 20px;" id="_Attack2Enh"></span>
-				<span tabindex="129" class="center box" style="left: 1068px; top: 543px; width: 30px; height: 20px;" id="_Attack2Misc"></span>
+				<span tabindex="121" class="box" id="_Attack2Ability">Improvised Ranged</span>
+				<span tabindex="122" class="center box" id="_Attack2AttBonus">2</span>
+				<span tabindex="123" class="center box" id="_Attack2HalfLevel">0</span>
+				<span tabindex="124" class="center box" id="_Attack2Abil">2</span>
+				<span tabindex="125" class="center box" id="_Attack2Class"></span>
+				<span tabindex="126" class="center box" id="_Attack2Prof"></span>
+				<span tabindex="127" class="center box" id="_Attack2Feat"></span>
+				<span tabindex="128" class="center box" id="_Attack2Enh"></span>
+				<span tabindex="129" class="center box" id="_Attack2Misc"></span>
 
-				<span tabindex="130" class="box" style="left: 797px; top: 607px; width: 302px; height: 21px;" id="_Damage1Ability">Longspear (Reach)</span>
-				<span tabindex="131" class="center box" style="left: 757px; top: 648px; width: 66px; height: 20px;" id="_Damage1Damage">1d10 + 4</span>
-				<span tabindex="132" class="center box" style="left: 928px; top: 648px; width: 30px; height: 20px;" id="_Damage1Abil">4</span>
-				<span tabindex="133" class="center box" style="left: 963px; top: 648px; width: 30px; height: 20px;" id="_Damage1Feat"></span>
-				<span tabindex="134" class="center box" style="left: 998px; top: 648px; width: 30px; height: 20px;" id="_Damage1Enh"></span>
-				<span tabindex="135" class="center box" style="left: 1032px; top: 648px; width: 30px; height: 20px;" id="_Damage1Misc1"></span>
-				<span tabindex="136" class="center box" style="left: 1065px; top: 648px; width: 30px; height: 20px;" id="_Damage1Misc2"></span>
+				<span tabindex="130" class="box" id="_Damage1Ability">Improvised Melee</span>
+				<span tabindex="131" class="center box" id="_Damage1Damage">1d4 + 3</span>
+				<span tabindex="132" class="center box" id="_Damage1Abil">3</span>
+				<span tabindex="133" class="center box" id="_Damage1Feat"></span>
+				<span tabindex="134" class="center box" id="_Damage1Enh"></span>
+				<span tabindex="135" class="center box" id="_Damage1Misc1"></span>
+				<span tabindex="136" class="center box" id="_Damage1Misc2"></span>
 
-				<span tabindex="137" class="box" style="left: 797px; top: 679px; width: 302px; height: 21px;" id="_Damage2Ability">Gladius <!-- shortsword --></span>
-				<span tabindex="138" class="center box" style="left: 757px; top: 720px; width: 66px; height: 20px;" id="_Damage2Damage">1d6 + 4</span>
-				<span tabindex="139" class="center box" style="left: 928px; top: 720px; width: 30px; height: 20px;" id="_Damage2Abil">4</span>
-				<span tabindex="140" class="center box" style="left: 963px; top: 720px; width: 30px; height: 20px;" id="_Damage2Feat"></span>
-				<span tabindex="141" class="center box" style="left: 998px; top: 720px; width: 30px; height: 20px;" id="_Damage2Enh"></span>
-				<span tabindex="142" class="center box" style="left: 1032px; top: 720px; width: 30px; height: 20px;" id="_Damage2Misc1"></span>
-				<span tabindex="143" class="center box" style="left: 1065px; top: 720px; width: 30px; height: 20px;" id="_Damage2Misc2"></span>
+				<span tabindex="137" class="box" id="_Damage2Ability">Improvised Ranged</span>
+				<span tabindex="138" class="center box" id="_Damage2Damage">1d4 + 2</span>
+				<span tabindex="139" class="center box" id="_Damage2Abil">2</span>
+				<span tabindex="140" class="center box" id="_Damage2Feat"></span>
+				<span tabindex="141" class="center box" id="_Damage2Enh"></span>
+				<span tabindex="142" class="center box" id="_Damage2Misc1"></span>
+				<span tabindex="143" class="center box" id="_Damage2Misc2"></span>
 
-				<span tabindex="144" class="center box" style="left: 758px; top: 797px; width: 40px; height: 25px;" id="_BasicAttack1Attack">13</span>
-				<span tabindex="145" class="center box" style="left: 758px; top: 832px; width: 40px; height: 25px;" id="_BasicAttack2Attack">13</span>
-				<span tabindex="146" class="center box" style="left: 758px; top: 867px; width: 40px; height: 25px;" id="_BasicAttack3Attack">13</span>
-				<span tabindex="147" class="center box" style="left: 759px; top: 900px; width: 40px; height: 25px;" id="_BasicAttack4Attack"></span>
+				<span tabindex="144" class="center box" id="_BasicAttack1Attack">3</span>
+				<span tabindex="145" class="center box" id="_BasicAttack2Attack">2</span>
+				<span tabindex="146" class="center box" id="_BasicAttack3Attack"></span>
+				<span tabindex="147" class="center box" id="_BasicAttack4Attack"></span>
 
-				<span tabindex="148" class="center box" style="left: 827px; top: 797px; width: 40px; height: 25px;" id="_BasicAttack1Defense">AC</span>
-				<span tabindex="149" class="center box" style="left: 827px; top: 832px; width: 40px; height: 25px;" id="_BasicAttack2Defense">AC</span>
-				<span tabindex="150" class="center box" style="left: 827px; top: 867px; width: 40px; height: 25px;" id="_BasicAttack3Defense">AC</span>
-				<span tabindex="151" class="center box" style="left: 827px; top: 900px; width: 40px; height: 25px;" id="_BasicAttack4Defense"></span>
+				<span tabindex="148" class="center box" id="_BasicAttack1Defense">AC</span>
+				<span tabindex="149" class="center box" id="_BasicAttack2Defense">AC</span>
+				<span tabindex="150" class="center box" id="_BasicAttack3Defense"></span>
+				<span tabindex="151" class="center box" id="_BasicAttack4Defense"></span>
 
-				<span tabindex="152" class="box" style="left: 879px; top: 795px; width: 138px; height: 25px;" id="_BasicAttack1WeaponOrPower">Longspear (Reach)</span>
-				<span tabindex="153" class="box" style="left: 879px; top: 830px; width: 138px; height: 25px;" id="_BasicAttack2WeaponOrPower">Gladius <!-- shortsword --></span>
-				<span tabindex="154" class="box" style="left: 879px; top: 865px; width: 138px; height: 25px;" id="_BasicAttack3WeaponOrPower">Javelin (range 10/20)</span>
-				<span tabindex="155" class="box" style="left: 879px; top: 898px; width: 138px; height: 25px;" id="_BasicAttack4WeaponOrPower"></span>
-				<span tabindex="156" class="box" style="left: 1029px; top: 795px; width: 72px; height: 25px;" id="_BasicAttack1Damage">1d10 + 4</span>
-				<span tabindex="157" class="box" style="left: 1029px; top: 830px; width: 72px; height: 25px;" id="_BasicAttack2Damage">1d6 + 4</span>
-				<span tabindex="158" class="box" style="left: 1029px; top: 865px; width: 72px; height: 25px;" id="_BasicAttack3Damage">1d6 +4</span>
-				<span tabindex="159" class="box" style="left: 1029px; top: 898px; width: 72px; height: 25px;" id="_BasicAttack4Damage"></span>
+				<span tabindex="152" class="box" id="_BasicAttack1WeaponOrPower">Improvised Melee</span>
+				<span tabindex="153" class="box" id="_BasicAttack2WeaponOrPower">Improvised Ranged</span>
+				<span tabindex="154" class="box" id="_BasicAttack3WeaponOrPower"></span>
+				<span tabindex="155" class="box" id="_BasicAttack4WeaponOrPower"></span>
+				<span tabindex="156" class="box" id="_BasicAttack1Damage">1d4 + 3</span>
+				<span tabindex="157" class="box" id="_BasicAttack2Damage">1d4 + 2</span>
+				<span tabindex="158" class="box" id="_BasicAttack3Damage"></span>
+				<span tabindex="159" class="box" id="_BasicAttack4Damage"></span>
 
-				<span tabindex="160" class="center box" style="left: 26px; top: 987px; width: 35px; height: 19px;" id="_Acrobatics">6</span>
-				<span tabindex="161" class="center box" style="left: 26px; top: 1015px; width: 35px; height: 19px;" id="_Arcana">10</span>
-				<span tabindex="162" class="center box" style="left: 26px; top: 1043px; width: 35px; height: 19px;" id="_Athletics">15</span>
-				<span tabindex="163" class="center box" style="left: 26px; top: 1071px; width: 35px; height: 19px;" id="_Bluff">8</span>
-				<span tabindex="164" class="center box" style="left: 26px; top: 1099px; width: 35px; height: 19px;" id="_Diplomacy">8</span>
-				<span tabindex="165" class="center box" style="left: 26px; top: 1126px; width: 35px; height: 19px;" id="_Dungeoneering">7</span>
-				<span tabindex="166" class="center box" style="left: 26px; top: 1155px; width: 35px; height: 19px;" id="_Endurance">13</span>
-				<span tabindex="167" class="center box" style="left: 26px; top: 1182px; width: 35px; height: 19px;" id="_Heal">14</span>
-				<span tabindex="168" class="center box" style="left: 26px; top: 1211px; width: 35px; height: 19px;" id="_History">15</span>
-				<span tabindex="169" class="center box" style="left: 26px; top: 1239px; width: 35px; height: 19px;" id="_Insight">7</span>
-				<span tabindex="170" class="center box" style="left: 26px; top: 1267px; width: 35px; height: 19px;" id="_Intimidate">13</span>
-				<span tabindex="171" class="center box" style="left: 26px; top: 1295px; width: 35px; height: 19px;" id="_Nature">7</span>
-				<span tabindex="172" class="center box" style="left: 26px; top: 1322px; width: 35px; height: 19px;" id="_Perception">9</span>
-				<span tabindex="173" class="center box" style="left: 26px; top: 1350px; width: 35px; height: 19px;" id="_Religion">10</span>
-				<span tabindex="174" class="center box" style="left: 26px; top: 1378px; width: 35px; height: 19px;" id="_Stealth">6</span>
-				<span tabindex="175" class="center box" style="left: 26px; top: 1406px; width: 35px; height: 19px;" id="_Streetwise">8</span>
-				<span tabindex="176" class="center box" style="left: 26px; top: 1434px; width: 35px; height: 19px;" id="_Thievery">6</span>
+				<span tabindex="160" class="center box" id="_Acrobatics">2</span>
+				<span tabindex="161" class="center box" id="_Arcana">0</span>
+				<span tabindex="162" class="center box" id="_Athletics">3</span>
+				<span tabindex="163" class="center box" id="_Bluff">0</span>
+				<span tabindex="164" class="center box" id="_Diplomacy">0</span>
+				<span tabindex="165" class="center box" id="_Dungeoneering">1</span>
+				<span tabindex="166" class="center box" id="_Endurance">1</span>
+				<span tabindex="167" class="center box" id="_Heal">1</span>
+				<span tabindex="168" class="center box" id="_History">0</span>
+				<span tabindex="169" class="center box" id="_Insight">1</span>
+				<span tabindex="170" class="center box" id="_Intimidate">0</span>
+				<span tabindex="171" class="center box" id="_Nature">1</span>
+				<span tabindex="172" class="center box" id="_Perception">1</span>
+				<span tabindex="173" class="center box" id="_Religion">0</span>
+				<span tabindex="174" class="center box" id="_Stealth">2</span>
+				<span tabindex="175" class="center box" id="_Streetwise">0</span>
+				<span tabindex="176" class="center box" id="_Thievery">2</span>
 
-				<span tabindex="177" class="center box" style="left: 231px; top: 988px; width: 21px; height: 17px;" id="_AcrobaticsAbilModPlusHalfLevel">6</span>
-				<span tabindex="178" class="center box" style="left: 231px; top: 1016px; width: 21px; height: 17px;" id="_ArcanaAbilModPlusHalfLevel">10</span>
-				<span tabindex="179" class="center box" style="left: 231px; top: 1044px; width: 21px; height: 17px;" id="_AthleticsAbilModPlusHalfLevel">10</span>
-				<span tabindex="180" class="center box" style="left: 231px; top: 1072px; width: 21px; height: 17px;" id="_BluffAbilModPlusHalfLevel">8</span>
-				<span tabindex="181" class="center box" style="left: 231px; top: 1100px; width: 21px; height: 17px;" id="_DiplomacyAbilModPlusHalfLevel">8</span>
-				<span tabindex="182" class="center box" style="left: 231px; top: 1127px; width: 21px; height: 17px;" id="_DungeoneeringAbilModPlusHalfLevel">7</span>
-				<span tabindex="183" class="center box" style="left: 231px; top: 1156px; width: 21px; height: 17px;" id="_EnduranceAbilModPlusHalfLevel">8</span>
-				<span tabindex="184" class="center box" style="left: 231px; top: 1183px; width: 21px; height: 17px;" id="_HealAbilModPlusHalfLevel">7</span>
-				<span tabindex="185" class="center box" style="left: 231px; top: 1212px; width: 21px; height: 17px;" id="_HistoryAbilModPlusHalfLevel">10</span>
-				<span tabindex="186" class="center box" style="left: 231px; top: 1240px; width: 21px; height: 17px;" id="_InsightAbilModPlusHalfLevel">7</span>
-				<span tabindex="187" class="center box" style="left: 231px; top: 1268px; width: 21px; height: 17px;" id="_IntimidateAbilModPlusHalfLevel">8</span>
-				<span tabindex="188" class="center box" style="left: 231px; top: 1296px; width: 21px; height: 17px;" id="_NatureAbilModPlusHalfLevel">7</span>
-				<span tabindex="189" class="center box" style="left: 231px; top: 1323px; width: 21px; height: 17px;" id="_PerceptionAbilModPlusHalfLevel">7</span>
-				<span tabindex="190" class="center box" style="left: 231px; top: 1351px; width: 21px; height: 17px;" id="_ReligionAbilModPlusHalfLevel">10</span>
-				<span tabindex="191" class="center box" style="left: 231px; top: 1379px; width: 21px; height: 17px;" id="_StealthAbilModPlusHalfLevel">6</span>
-				<span tabindex="192" class="center box" style="left: 231px; top: 1407px; width: 21px; height: 17px;" id="_StreetwiseAbilModPlusHalfLevel">8</span>
-				<span tabindex="193" class="center box" style="left: 231px; top: 1435px; width: 21px; height: 17px;" id="_ThieveryAbilModPlusHalfLevel">6</span>
+				<span tabindex="177" class="center box" id="_AcrobaticsAbilModPlusHalfLevel">2</span>
+				<span tabindex="178" class="center box" id="_ArcanaAbilModPlusHalfLevel">0</span>
+				<span tabindex="179" class="center box" id="_AthleticsAbilModPlusHalfLevel">3</span>
+				<span tabindex="180" class="center box" id="_BluffAbilModPlusHalfLevel">0</span>
+				<span tabindex="181" class="center box" id="_DiplomacyAbilModPlusHalfLevel">0</span>
+				<span tabindex="182" class="center box" id="_DungeoneeringAbilModPlusHalfLevel">1</span>
+				<span tabindex="183" class="center box" id="_EnduranceAbilModPlusHalfLevel">1</span>
+				<span tabindex="184" class="center box" id="_HealAbilModPlusHalfLevel">1</span>
+				<span tabindex="185" class="center box" id="_HistoryAbilModPlusHalfLevel">0</span>
+				<span tabindex="186" class="center box" id="_InsightAbilModPlusHalfLevel">1</span>
+				<span tabindex="187" class="center box" id="_IntimidateAbilModPlusHalfLevel">0</span>
+				<span tabindex="188" class="center box" id="_NatureAbilModPlusHalfLevel">1</span>
+				<span tabindex="189" class="center box" id="_PerceptionAbilModPlusHalfLevel">1</span>
+				<span tabindex="190" class="center box" id="_ReligionAbilModPlusHalfLevel">0</span>
+				<span tabindex="191" class="center box" id="_StealthAbilModPlusHalfLevel">2</span>
+				<span tabindex="192" class="center box" id="_StreetwiseAbilModPlusHalfLevel">0</span>
+				<span tabindex="193" class="center box" id="_ThieveryAbilModPlusHalfLevel">2</span>
 
-				<span tabindex="194" class="center box" style="left: 277px; top: 988px; width: 21px; height: 17px;" id="_AcrobaticsTrained"></span>
-				<span tabindex="195" class="center box" style="left: 277px; top: 1016px; width: 21px; height: 17px;" id="_ArcanaTrained"></span>
-				<span tabindex="196" class="center box" style="left: 277px; top: 1044px; width: 21px; height: 17px;" id="_AthleticsTrained">5</span>
-				<span tabindex="197" class="center box" style="left: 277px; top: 1072px; width: 21px; height: 17px;" id="_BluffTrained"></span>
-				<span tabindex="198" class="center box" style="left: 277px; top: 1100px; width: 21px; height: 17px;" id="_DiplomacyTrained"></span>
-				<span tabindex="199" class="center box" style="left: 277px; top: 1127px; width: 21px; height: 17px;" id="_DungeoneeringTrained"></span>
-				<span tabindex="200" class="center box" style="left: 277px; top: 1156px; width: 21px; height: 17px;" id="_EnduranceTrained">5</span>
-				<span tabindex="201" class="center box" style="left: 277px; top: 1183px; width: 21px; height: 17px;" id="_HealTrained">5</span>
-				<span tabindex="202" class="center box" style="left: 277px; top: 1212px; width: 21px; height: 17px;" id="_HistoryTrained">5</span>
-				<span tabindex="203" class="center box" style="left: 277px; top: 1240px; width: 21px; height: 17px;" id="_InsightTrained"></span>
-				<span tabindex="204" class="center box" style="left: 277px; top: 1268px; width: 21px; height: 17px;" id="_IntimidateTrained">5</span>
-				<span tabindex="205" class="center box" style="left: 277px; top: 1296px; width: 21px; height: 17px;" id="_NatureTrained"></span>
-				<span tabindex="206" class="center box" style="left: 277px; top: 1323px; width: 21px; height: 17px;" id="_PerceptionTrained"></span>
-				<span tabindex="207" class="center box" style="left: 277px; top: 1351px; width: 21px; height: 17px;" id="_ReligionTrained"></span>
-				<span tabindex="208" class="center box" style="left: 277px; top: 1379px; width: 21px; height: 17px;" id="_StealthTrained"></span>
-				<span tabindex="209" class="center box" style="left: 277px; top: 1407px; width: 21px; height: 17px;" id="_StreetwiseTrained"></span>
-				<span tabindex="210" class="center box" style="left: 277px; top: 1435px; width: 21px; height: 17px;" id="_ThieveryTrained"></span>
+				<span tabindex="194" class="center box" id="_AcrobaticsTrained"></span>
+				<span tabindex="195" class="center box" id="_ArcanaTrained"></span>
+				<span tabindex="196" class="center box" id="_AthleticsTrained"></span>
+				<span tabindex="197" class="center box" id="_BluffTrained"></span>
+				<span tabindex="198" class="center box" id="_DiplomacyTrained"></span>
+				<span tabindex="199" class="center box" id="_DungeoneeringTrained"></span>
+				<span tabindex="200" class="center box" id="_EnduranceTrained"></span>
+				<span tabindex="201" class="center box" id="_HealTrained"></span>
+				<span tabindex="202" class="center box" id="_HistoryTrained"></span>
+				<span tabindex="203" class="center box" id="_InsightTrained"></span>
+				<span tabindex="204" class="center box" id="_IntimidateTrained"></span>
+				<span tabindex="205" class="center box" id="_NatureTrained"></span>
+				<span tabindex="206" class="center box" id="_PerceptionTrained"></span>
+				<span tabindex="207" class="center box" id="_ReligionTrained"></span>
+				<span tabindex="208" class="center box" id="_StealthTrained"></span>
+				<span tabindex="209" class="center box" id="_StreetwiseTrained"></span>
+				<span tabindex="210" class="center box" id="_ThieveryTrained"></span>
 
-				<span tabindex="211" class="center box" style="left: 307px; top: 985px; width: 27px; height: 18px;" id="_AcrobaticsArmorPenalty"></span>
-				<span tabindex="212" class="center box" style="left: 307px; top: 1044px; width: 27px; height: 18px;" id="_AthleticsArmorPenalty"></span>
-				<span tabindex="213" class="center box" style="left: 307px; top: 1156px; width: 27px; height: 18px;" id="_EnduranceArmorPenalty"></span>
-				<span tabindex="214" class="center box" style="left: 307px; top: 1378px; width: 27px; height: 18px;" id="_StealthArmorPenalty"></span>
-				<span tabindex="215" class="center box" style="left: 307px; top: 1436px; width: 27px; height: 18px;" id="_ThieveryArmorPenalty"></span>
+				<span tabindex="211" class="center box" id="_AcrobaticsArmorPenalty"></span>
+				<span tabindex="212" class="center box" id="_AthleticsArmorPenalty"></span>
+				<span tabindex="213" class="center box" id="_EnduranceArmorPenalty"></span>
+				<span tabindex="214" class="center box" id="_StealthArmorPenalty"></span>
+				<span tabindex="215" class="center box" id="_ThieveryArmorPenalty"></span>
 
-				<span tabindex="216" class="center box" style="left: 346px; top: 985px; width: 27px; height: 18px;" id="_AcrobaticsMisc"></span>
-				<span tabindex="217" class="center box" style="left: 346px; top: 1016px; width: 27px; height: 18px;" id="_ArcanaMisc"></span>
-				<span tabindex="218" class="center box" style="left: 346px; top: 1044px; width: 27px; height: 18px;" id="_AthleticsMisc"></span>
-				<span tabindex="219" class="center box" style="left: 346px; top: 1072px; width: 27px; height: 18px;" id="_BluffMisc"></span>
-				<span tabindex="220" class="center box" style="left: 346px; top: 1099px; width: 27px; height: 18px;" id="_DiplomacyMisc"></span>
-				<span tabindex="221" class="center box" style="left: 346px; top: 1129px; width: 27px; height: 18px;" id="_DungeoneeringMisc"></span>
-				<span tabindex="222" class="center box" style="left: 346px; top: 1156px; width: 27px; height: 18px;" id="_EnduranceMisc"></span>
-				<span tabindex="223" class="center box" style="left: 346px; top: 1182px; width: 27px; height: 18px;" id="_HealMisc">2</span>
-				<span tabindex="224" class="center box" style="left: 346px; top: 1213px; width: 27px; height: 18px;" id="_HistoryMisc"></span>
-				<span tabindex="225" class="center box" style="left: 346px; top: 1239px; width: 27px; height: 18px;" id="_InsightMisc"></span>
-				<span tabindex="226" class="center box" style="left: 346px; top: 1270px; width: 27px; height: 18px;" id="_IntimidateMisc"></span>
-				<span tabindex="227" class="center box" style="left: 346px; top: 1295px; width: 27px; height: 18px;" id="_NatureMisc"></span>
-				<span tabindex="228" class="center box" style="left: 346px; top: 1324px; width: 27px; height: 18px;" id="_PerceptionMisc">2</span>
-				<span tabindex="229" class="center box" style="left: 346px; top: 1352px; width: 27px; height: 18px;" id="_ReligionMisc"></span>
-				<span tabindex="230" class="center box" style="left: 346px; top: 1378px; width: 27px; height: 18px;" id="_StealthMisc"></span>
-				<span tabindex="231" class="center box" style="left: 346px; top: 1408px; width: 27px; height: 18px;" id="_StreetwiseMisc"></span>
-				<span tabindex="232" class="center box" style="left: 346px; top: 1436px; width: 27px; height: 18px;" id="_ThieveryMisc"></span>
+				<span tabindex="216" class="center box" id="_AcrobaticsMisc"></span>
+				<span tabindex="217" class="center box" id="_ArcanaMisc"></span>
+				<span tabindex="218" class="center box" id="_AthleticsMisc"></span>
+				<span tabindex="219" class="center box" id="_BluffMisc"></span>
+				<span tabindex="220" class="center box" id="_DiplomacyMisc"></span>
+				<span tabindex="221" class="center box" id="_DungeoneeringMisc"></span>
+				<span tabindex="222" class="center box" id="_EnduranceMisc"></span>
+				<span tabindex="223" class="center box" id="_HealMisc"></span>
+				<span tabindex="224" class="center box" id="_HistoryMisc"></span>
+				<span tabindex="225" class="center box" id="_InsightMisc"></span>
+				<span tabindex="226" class="center box" id="_IntimidateMisc"></span>
+				<span tabindex="227" class="center box" id="_NatureMisc"></span>
+				<span tabindex="228" class="center box" id="_PerceptionMisc"></span>
+				<span tabindex="229" class="center box" id="_ReligionMisc"></span>
+				<span tabindex="230" class="center box" id="_StealthMisc"></span>
+				<span tabindex="231" class="center box" id="_StreetwiseMisc"></span>
+				<span tabindex="232" class="center box" id="_ThieveryMisc"></span>
 
-				<span tabindex="233" class="box" style="left: 395px; top: 946px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures1">Inspiring Word (Warlord) encounter power</span>
-				<span tabindex="234" class="box" style="left: 395px; top: 976px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures2">Combat Leader (Warlord) +4 to party initiative <!--
-self, ally w/in 10 squares 
-Note: Combat Commander feat allows to use max(Int,Cha) mod for bonus
---></span>
-				<span tabindex="235" class="box" style="left: 395px; top: 1006px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures3">Tactical Presence (Warlord) +4 AP attack for ally
-<!-- when ally spends an action point, they get bonus to attack --></span>
-				<span tabindex="236" class="box" style="left: 395px; top: 1034px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures4">Armor Proficiency (Warlord)<!--
-cloth, leather, hide, chainmail, light shield
---></span>
-				<span tabindex="237" class="box" style="left: 395px; top: 1062px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures5">Weapon Proficiency (Warlord)
-<!--
-simple melee, military melee, simple ranged
---></span>
-				<span tabindex="238" class="box" style="left: 395px; top: 1090px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures6">Combat Veteran's Action: AP grants ally free move
-<!--
-PHB p154 ally must be w/in 10
---></span>
-				<span tabindex="239" class="box" style="left: 395px; top: 1118px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures7">Tough as Nails: extra healing
-<!--
-PHB p154
-extra healing surge
-add con modifier to healing surge
---></span>
-				<span tabindex="240" class="box" style="left: 395px; top: 1146px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures8"></span>
-				<span tabindex="241" class="box" style="left: 395px; top: 1174px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures9"></span>
-				<span tabindex="242" class="box" style="left: 395px; top: 1202px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures10"></span>
-				<span tabindex="243" class="box" style="left: 395px; top: 1230px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures11"></span>
-				<span tabindex="244" class="box" style="left: 395px; top: 1258px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures12"></span>
-				<span tabindex="245" class="box" style="left: 395px; top: 1286px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures13"></span>
-				<span tabindex="246" class="box" style="left: 395px; top: 1314px; width: 346px; height: 23px;" id="_ClassPathDestinyFeatures14"></span>
+				<span tabindex="233" class="box" id="_ClassPathDestinyFeatures1"></span>
+				<span tabindex="234" class="box" id="_ClassPathDestinyFeatures2"></span>
+				<span tabindex="235" class="box" id="_ClassPathDestinyFeatures3"></span>
+				<span tabindex="236" class="box" id="_ClassPathDestinyFeatures4"></span>
+				<span tabindex="237" class="box" id="_ClassPathDestinyFeatures5"></span>
+				<span tabindex="238" class="box" id="_ClassPathDestinyFeatures6"></span>
+				<span tabindex="239" class="box" id="_ClassPathDestinyFeatures7"></span>
+				<span tabindex="240" class="box" id="_ClassPathDestinyFeatures8"></span>
+				<span tabindex="241" class="box" id="_ClassPathDestinyFeatures9"></span>
+				<span tabindex="242" class="box" id="_ClassPathDestinyFeatures10"></span>
+				<span tabindex="243" class="box" id="_ClassPathDestinyFeatures11"></span>
+				<span tabindex="244" class="box" id="_ClassPathDestinyFeatures12"></span>
+				<span tabindex="245" class="box" id="_ClassPathDestinyFeatures13"></span>
+				<span tabindex="246" class="box" id="_ClassPathDestinyFeatures14"></span>
 				
-				<span tabindex="247" class="box" style="left: 758px; top: 980px; width: 345px; height: 23px;" id="_Feats1">Tactical Assault (1st Level) +4 AP dmg for ally
-<!-- When ally spends action point to make extra attack, they get dmg bonus equal to my INT modifier --></span>
-				<span tabindex="248" class="box" style="left: 758px; top: 1008px; width: 346px; height: 23px;" id="_Feats2">Combat Medic (Human) minor to stabilize dying <!-- 
-Stabilize dying as minor action, +2 to heal --></span>
-				<span tabindex="249" class="box" style="left: 758px; top: 1036px; width: 346px; height: 23px;" id="_Feats3">Improved Initiative (2nd Level) +4 to Initiative</span>
-				<span tabindex="250" class="box" style="left: 758px; top: 1064px; width: 346px; height: 23px;" id="_Feats4">Action Surge (4th level) +3 to AP attack
-<!-- PHB p193 --></span>
-				<span tabindex="251" class="box" style="left: 758px; top: 1092px; width: 346px; height: 23px;" id="_Feats5">Armor Proficency: Scale (6th level)
-<!-- PHB p. 193 --></span>
-				<span tabindex="252" class="box" style="left: 758px; top: 1120px; width: 346px; height: 23px;" id="_Feats6">Linguist (8th level)</span>
-				<span tabindex="253" class="box" style="left: 758px; top: 1148px; width: 346px; height: 23px;" id="_Feats7">Alertness (10th level) No CA when surprised
-<!-- PHB p193, +2 Perception --></span>
-				<span tabindex="254" class="box" style="left: 758px; top: 1176px; width: 346px; height: 23px;" id="_Feats8">Vexing Flanker: Flanked enemies grant CA to allies
-<!-- PHB2 p193; 11th level --></span>
-				<span tabindex="255" class="box" style="left: 758px; top: 1204px; width: 346px; height: 23px;" id="_Feats9">Combat Commander: Use IntMod for Combat Leader
-<!-- PHB p202, 12th level --></span>
-				<span tabindex="256" class="box" style="left: 758px; top: 1232px; width: 346px; height: 23px;" id="_Feats10">Weapon Expertise: Spears (Free!)
-<!-- PHB2 p190 --></span>
-				<span tabindex="257" class="box" style="left: 758px; top: 1260px; width: 346px; height: 23px;" id="_Feats11"></span>
-				<span tabindex="258" class="box" style="left: 758px; top: 1288px; width: 346px; height: 23px;" id="_Feats12"></span>
-				<span tabindex="259" class="box" style="left: 758px; top: 1316px; width: 346px; height: 23px;" id="_Feats13"></span>
-				<span tabindex="260" class="box" style="left: 758px; top: 1344px; width: 346px; height: 23px;" id="_Feats14"></span>
-				<span tabindex="261" class="box" style="left: 758px; top: 1372px; width: 346px; height: 23px;" id="_Feats15"></span>
-				<span tabindex="262" class="box" style="left: 758px; top: 1400px; width: 346px; height: 23px;" id="_Feats16"></span>
-				<span tabindex="263" class="box" style="left: 758px; top: 1428px; width: 346px; height: 23px;" id="_Feats17"></span>
+				<span tabindex="247" class="box" id="_Feats1"></span>
+				<span tabindex="248" class="box" id="_Feats2"></span>
+				<span tabindex="249" class="box" id="_Feats3"></span>
+				<span tabindex="250" class="box" id="_Feats4"></span>
+				<span tabindex="251" class="box" id="_Feats5"></span>
+				<span tabindex="252" class="box" id="_Feats6"></span>
+				<span tabindex="253" class="box" id="_Feats7"></span>
+				<span tabindex="254" class="box" id="_Feats8"></span>
+				<span tabindex="255" class="box" id="_Feats9"></span>
+				<span tabindex="256" class="box" id="_Feats10"></span>
+				<span tabindex="257" class="box" id="_Feats11"></span>
+				<span tabindex="258" class="box" id="_Feats12"></span>
+				<span tabindex="259" class="box" id="_Feats13"></span>
+				<span tabindex="260" class="box" id="_Feats14"></span>
+				<span tabindex="261" class="box" id="_Feats15"></span>
+				<span tabindex="262" class="box" id="_Feats16"></span>
+				<span tabindex="263" class="box" id="_Feats17"></span>
 
-				<span tabindex="264" class="box" style="left: 395px; top: 1368px; width: 346px; height: 25px;" id="_LanguagesKnown1">Latin</span>
-				<span tabindex="265" class="box" style="left: 395px; top: 1399px; width: 346px; height: 23px;" id="_LanguagesKnown2">Visigoth</span>
-				<span tabindex="266" class="box" style="left: 395px; top: 1427px; width: 346px; height: 23px;" id="_LanguagesKnown3">Greek, Egyptian, Gallic <!-- Linguist --></span>
+				<span tabindex="264" class="box" id="_LanguagesKnown1"></span>
+				<span tabindex="265" class="box" id="_LanguagesKnown2"></span>
+				<span tabindex="266" class="box" id="_LanguagesKnown3"></span>
 			</div>
 			<div class="page" id="Page2">
 				<img class="page-background" id="Page2Background" src="http://rampion.github.com/4eCharSheet/CharacterSheetPage2.png">
-				<span tabindex="267" class="box" style="left: 43px; top: 90px; width: 349px; height: 24px;" id="_AtWillPowers1">Wolf Pack Tactics: [W] vs AC, adj ally shift 1 before
-<!--
-Warlord Level 1 (PHB p145)
- Special: let one ally adjacent to self or target shift 1 before attack -->
-</span>
-				<span tabindex="268" class="box" style="left: 43px; top: 121px; width: 349px; height: 23px;" id="_AtWillPowers2">Viper's Strike: [W] vs AC, enemy move procs ally OA<!--
-Warlord Level 1 (PHB p145)
-Effect: If target shifts before start of next turn, procs opportunity attack from ally of my choice ----></span>
-				<span tabindex="269" class="box" style="left: 43px; top: 150px; width: 349px; height: 22px;" id="_AtWillPowers3">Commander's Strike: ally melee basic, extra +4 dmg <!--
-Human Bonus At Will (PHB p145)
-Enemy attacked must be w/in melee
---></span>
-				<span tabindex="270" class="box" style="left: 43px; top: 179px; width: 349px; height: 22px;" id="_AtWillPowers4"></span>
-				<span tabindex="271" class="box" style="left: 43px; top: 209px; width: 349px; height: 21px;" id="_AtWillPowers5"></span>
-				<span tabindex="272" class="box" style="left: 43px; top: 237px; width: 349px; height: 22px;" id="_AtWillPowers6"></span>
+				<span tabindex="267" class="box" id="_AtWillPowers1"></span>
+				<span tabindex="268" class="box" id="_AtWillPowers2"></span>
+				<span tabindex="269" class="box" id="_AtWillPowers3"></span>
+				<span tabindex="270" class="box" id="_AtWillPowers4"></span>
+				<span tabindex="271" class="box" id="_AtWillPowers5"></span>
+				<span tabindex="272" class="box" id="_AtWillPowers6"></span>
 
-				<span tabindex="273" class="box" style="left: 43px; top: 296px; width: 321px; height: 20px;" id="_EncounterPowers1">Warlord's Favor: 2[W] vs AC, +5 ally attack <!--
-Warlord Level 1 (PHB p145)
-STR vs AC, 2[W]+Str dmg, one ally w/in 5 squares gets 1+ my INT modifier to attacks vs target until end of my next turn
---></span>
-				<span tabindex="274" class="box" style="left: 43px; top: 324px; width: 321px; height: 21px;" id="_EncounterPowers2">Inspiring Word: ally gets healing surge + 1d6
-<!--
-Warlord class feature (PHB p145)
-close burst 5, 2x per encounter
---></span>
-				<span tabindex="275" class="box" style="left: 43px; top: 350px; width: 321px; height: 25px;" id="_EncounterPowers3">Steel Monsoon: 2[W] vs AC, 4 allies shift 1
-<!-- PHB p147
- allies must be w/in 5 squares
-     shift is a free action
-      would be 1 ally, tactical presence => IntMod --></span>
-				<span tabindex="276" class="box" style="left: 43px; top: 382px; width: 321px; height: 21px;" id="_EncounterPowers4">Surprise Attack: [W] vs AC, give free w/ CA +4 
-<!-- PHB p148
-ally w/in 5 makes melee basic w/ combat advantage 
-against target of their choice
-Tactical Presence: IntMod bonus to attack
---></span>
-				<span tabindex="277" class="box" style="left: 43px; top: 410px; width: 321px; height: 21px;" id="_EncounterPowers5">Skirmish Ploy: [W] vs Reflex, daze, shift pair
-<!--
-PHB p154 (Combat Veteran Paragon Path)
-on hit, target is dazed and 
-shift target 2 squares
-ally w/in 2 squares shifts 1 closer to target
---></span>
-				<span tabindex="278" class="box" style="left: 43px; top: 438px; width: 321px; height: 22px;" id="_EncounterPowers6"></span>
-				<span tabindex="279" class="box" style="left: 43px; top: 495px; width: 321px; height: 24px;" id="_DailyPowers1">White Raven Onslaught: [W] vs AC, 3[W]+4dmg<!--
-Warlord Level 1 (PHB p.146)
-slide adjacent ally 1 square, and until end of encounter when self or 
-any ally w/in 10 squares makes successful attack slide adjacent ally 1 squre.  
-Miss: Pick one ally to get sliding ability on successful attack
---></span>
-				<span tabindex="280" class="box" style="left: 43px; top: 524px; width: 321px; height: 23px;" id="_DailyPowers2">Stand the Fallen: 3[W] vs AC, allies get surge+2
-<!-- PHB p147; allies must be within 10 squares 
-healing is w/ or w/o hit
---></span>
-				<span tabindex="281" class="box" style="left: 43px; top: 554px; width: 321px; height: 22px;" id="_DailyPowers3">Knock them Down: 3[W] vs AC, prone-storm
-<!--
-PHB p148
-on hit, target is knocked prone
-and all allies w/in 10 can make free melee basic damageless attacks
-to knock a target prone.
-on miss, 1/2 damage & prone
---></span>
-				<span tabindex="282" class="box" style="left: 43px; top: 581px; width: 321px; height: 24px;" id="_DailyPowers4"></span>
-				<span tabindex="283" class="box" style="left: 43px; top: 611px; width: 321px; height: 23px;" id="_DailyPowers5"></span>
-				<span tabindex="284" class="box" style="left: 43px; top: 640px; width: 321px; height: 21px;" id="_DailyPowers6"></span>
-				<span tabindex="285" class="box" style="left: 43px; top: 699px; width: 321px; height: 21px;" id="_UtilityPowers1">Knight's Move: (E) give ally my move
-<!-- 
-Warlord Level 2 (PHB p146)
-uses up my move action
-ally must be w/in 10
---></span>
-				<span tabindex="286" class="box" style="left: 43px; top: 726px; width: 321px; height: 23px;" id="_UtilityPowers2">Guide the Charge: (E) +4 ally charge dmg + push
-<!--
-PHB p147
-immediate interrupt on ally charge
-if hits gets dmg bonus, and pushes target 2 squares
-ally can shift 2 to remain adjacent
---></span>
-				<span tabindex="287" class="box" style="left: 43px; top: 754px; width: 321px; height: 25px;" id="_UtilityPowers3">Tactical Shift: (D) hit ally shifts 5
-<!--
-PHB p149
-immediate interrupt
-ranged 10
---></span>
-				<span tabindex="288" class="box" style="left: 43px; top: 784px; width: 321px; height: 23px;" id="_UtilityPowers4">Miss Me Once: (E) enemy miss procs CA
-<!--
-PHB p154 (Combat Veteran Paragon Path)
-ranged 10
-immediate interrupt when enemy w/in range & in line of sight missses me w/ an attack
+				<span tabindex="273" class="box" id="_EncounterPowers1"></span>
+				<span tabindex="274" class="box" id="_EncounterPowers2"></span>
+				<span tabindex="275" class="box" id="_EncounterPowers3"></span>
+				<span tabindex="276" class="box" id="_EncounterPowers4"></span>
+				<span tabindex="277" class="box" id="_EncounterPowers5"></span>
+				<span tabindex="278" class="box" id="_EncounterPowers6"></span>
+				<span tabindex="279" class="box" id="_DailyPowers1"></span>
+				<span tabindex="280" class="box" id="_DailyPowers2"></span>
+				<span tabindex="281" class="box" id="_DailyPowers3"></span>
+				<span tabindex="282" class="box" id="_DailyPowers4"></span>
+				<span tabindex="283" class="box" id="_DailyPowers5"></span>
+				<span tabindex="284" class="box" id="_DailyPowers6"></span>
+				<span tabindex="285" class="box" id="_UtilityPowers1"></span>
+				<span tabindex="286" class="box" id="_UtilityPowers2"></span>
+				<span tabindex="287" class="box" id="_UtilityPowers3"></span>
+				<span tabindex="288" class="box" id="_UtilityPowers4"></span>
+				<span tabindex="289" class="box" id="_UtilityPowers5"></span>
+				<span tabindex="290" class="box" id="_UtilityPowers6"></span>
+				<span tabindex="291" class="box" id="_UtilityPowers7"></span>
+				<span tabindex="292" class="box" id="_UtilityPowers8"></span>
 
-enemy grants combat advantage to all allies who have line of sight 
-until start of its next turn
---></span>
-				<span tabindex="289" class="box" style="left: 43px; top: 812px; width: 321px; height: 23px;" id="_UtilityPowers5"></span>
-				<span tabindex="290" class="box" style="left: 43px; top: 841px; width: 321px; height: 22px;" id="_UtilityPowers6"></span>
-				<span tabindex="291" class="box" style="left: 43px; top: 869px; width: 321px; height: 23px;" id="_UtilityPowers7"></span>
-				<span tabindex="292" class="box" style="left: 43px; top: 898px; width: 321px; height: 22px;" id="_UtilityPowers8"></span>
+				<input tabindex="293" class="box" id="_EncounterPowersCheck1" type="checkbox">
+				<input tabindex="294" class="box" id="_EncounterPowersCheck2" type="checkbox">
+				<input tabindex="295" class="box" id="_EncounterPowersCheck3" type="checkbox">
+				<input tabindex="296" class="box" id="_EncounterPowersCheck4" type="checkbox">
+				<input tabindex="297" class="box" id="_EncounterPowersCheck5" type="checkbox">
+				<input tabindex="298" class="box" id="_EncounterPowersCheck6" type="checkbox">
+				<input tabindex="299" class="box" id="_DailyPowersCheck1" type="checkbox">
+				<input tabindex="300" class="box" id="_DailyPowersCheck2" type="checkbox">
+				<input tabindex="301" class="box" id="_DailyPowersCheck3" type="checkbox">
+				<input tabindex="302" class="box" id="_DailyPowersCheck4" type="checkbox">
+				<input tabindex="303" class="box" id="_DailyPowersCheck5" type="checkbox">
+				<input tabindex="304" class="box" id="_DailyPowersCheck6" type="checkbox">
+				<input tabindex="305" class="box" id="_UtilityPowersCheck1" type="checkbox">
+				<input tabindex="306" class="box" id="_UtilityPowersCheck2" type="checkbox">
+				<input tabindex="307" class="box" id="_UtilityPowersCheck3" type="checkbox">
+				<input tabindex="308" class="box" id="_UtilityPowersCheck4" type="checkbox">
+				<input tabindex="309" class="box" id="_UtilityPowersCheck5" type="checkbox">
+				<input tabindex="310" class="box" id="_UtilityPowersCheck6" type="checkbox">
+				<input tabindex="311" class="box" id="_UtilityPowersCheck7" type="checkbox">
+				<input tabindex="312" class="box" id="_UtilityPowersCheck8" type="checkbox">
 
-				<input tabindex="293" class="box" style="left: 367px; top: 302px;" id="_EncounterPowersCheck1" type="checkbox">
-				<input tabindex="294" class="box" style="left: 367px; top: 330px;" id="_EncounterPowersCheck2" type="checkbox">
-				<input tabindex="295" class="box" style="left: 367px; top: 359px;" id="_EncounterPowersCheck3" type="checkbox">
-				<input tabindex="296" class="box" style="left: 367px; top: 388px;" id="_EncounterPowersCheck4" type="checkbox">
-				<input tabindex="297" class="box" style="left: 367px; top: 417px;" id="_EncounterPowersCheck5" type="checkbox">
-				<input tabindex="298" class="box" style="left: 367px; top: 446px;" id="_EncounterPowersCheck6" type="checkbox">
-				<input tabindex="299" class="box" style="left: 367px; top: 504px;" id="_DailyPowersCheck1" type="checkbox">
-				<input tabindex="300" class="box" style="left: 367px; top: 532px;" id="_DailyPowersCheck2" type="checkbox">
-				<input tabindex="301" class="box" style="left: 367px; top: 561px;" id="_DailyPowersCheck3" type="checkbox">
-				<input tabindex="302" class="box" style="left: 367px; top: 589px;" id="_DailyPowersCheck4" type="checkbox">
-				<input tabindex="303" class="box" style="left: 367px; top: 618px;" id="_DailyPowersCheck5" type="checkbox">
-				<input tabindex="304" class="box" style="left: 367px; top: 647px;" id="_DailyPowersCheck6" type="checkbox">
-				<input tabindex="305" class="box" style="left: 367px; top: 705px;" id="_UtilityPowersCheck1" type="checkbox">
-				<input tabindex="306" class="box" style="left: 367px; top: 734px;" id="_UtilityPowersCheck2" type="checkbox">
-				<input tabindex="307" class="box" style="left: 367px; top: 762px;" id="_UtilityPowersCheck3" type="checkbox">
-				<input tabindex="308" class="box" style="left: 367px; top: 792px;" id="_UtilityPowersCheck4" type="checkbox">
-				<input tabindex="309" class="box" style="left: 367px; top: 819px;" id="_UtilityPowersCheck5" type="checkbox">
-				<input tabindex="310" class="box" style="left: 367px; top: 849px;" id="_UtilityPowersCheck6" type="checkbox">
-				<input tabindex="311" class="box" style="left: 367px; top: 877px;" id="_UtilityPowersCheck7" type="checkbox">
-				<input tabindex="312" class="box" style="left: 367px; top: 906px;" id="_UtilityPowersCheck8" type="checkbox">
+				<span tabindex="313" class="box" id="_MagicItemsWeapon1"></span>
+				<span tabindex="314" class="box" id="_MagicItemsWeapon2"></span>
+				<span tabindex="315" class="box" id="_MagicItemsWeapon3"></span>
+				<span tabindex="316" class="box" id="_MagicItemsWeapon4"></span>
+				<span tabindex="317" class="box" id="_MagicItemsArmor"></span>
+				<span tabindex="318" class="box" id="_MagicItemsArms"></span>
+				<span tabindex="319" class="box" id="_MagicItemsFeet"></span>
+				<span tabindex="320" class="box" id="_MagicItemsHands"></span>
+				<span tabindex="321" class="box" id="_MagicItemsHead"></span>
+				<span tabindex="322" class="box" id="_MagicItemsNeck"></span>
+				<span tabindex="323" class="box" id="_MagicItemsRing1"></span>
+				<span tabindex="324" class="box" id="_MagicItemsRing2"></span>
+				<span tabindex="325" class="box" id="_MagicItemsWaist"></span>
+				<span tabindex="326" class="box" id="_MagicItemsMisc1"></span>
+				<span tabindex="327" class="box" id="_MagicItemsMisc2"></span>
+				<span tabindex="328" class="box" id="_MagicItemsMisc3"></span>
+				<span tabindex="329" class="box" id="_MagicItemsMisc4"></span>
+				<span tabindex="330" class="box" id="_MagicItemsMisc5"></span>
+				<span tabindex="331" class="box" id="_MagicItemsMisc6"></span>
+				<span tabindex="332" class="box" id="_MagicItemsMisc7"></span>
+				<span tabindex="333" class="box" id="_MagicItemsMisc8"></span>
+				<span tabindex="334" class="box" id="_MagicItemsMisc9"></span>
+				<span tabindex="335" class="box" id="_MagicItemsMisc10"></span>
+				<span tabindex="336" class="box" id="_MagicItemsMisc11"></span>
+				<span tabindex="337" class="box" id="_MagicItemsMisc12"></span>
 
-				<span tabindex="313" class="box" style="left: 445px; top: 92px; width: 280px; height: 23px;" id="_MagicItemsWeapon1"></span>
-				<span tabindex="314" class="box" style="left: 445px; top: 122px; width: 280px; height: 22px;" id="_MagicItemsWeapon2"></span>
-				<span tabindex="315" class="box" style="left: 445px; top: 151px; width: 280px; height: 23px;" id="_MagicItemsWeapon3"></span>
-				<span tabindex="316" class="box" style="left: 445px; top: 180px; width: 280px; height: 23px;" id="_MagicItemsWeapon4"></span>
-				<span tabindex="317" class="box" style="left: 445px; top: 207px; width: 280px; height: 24px;" id="_MagicItemsArmor"></span>
-				<span tabindex="318" class="box" style="left: 445px; top: 236px; width: 280px; height: 24px;" id="_MagicItemsArms"></span>
-				<span tabindex="319" class="box" style="left: 445px; top: 264px; width: 280px; height: 25px;" id="_MagicItemsFeet"></span>
-				<span tabindex="320" class="box" style="left: 445px; top: 294px; width: 280px; height: 21px;" id="_MagicItemsHands"></span>
-				<span tabindex="321" class="box" style="left: 445px; top: 322px; width: 280px; height: 24px;" id="_MagicItemsHead"></span>
-				<span tabindex="322" class="box" style="left: 445px; top: 351px; width: 280px; height: 24px;" id="_MagicItemsNeck"></span>
-				<span tabindex="323" class="box" style="left: 445px; top: 380px; width: 280px; height: 22px;" id="_MagicItemsRing1"></span>
-				<span tabindex="324" class="box" style="left: 445px; top: 409px; width: 280px; height: 23px;" id="_MagicItemsRing2"></span>
-				<span tabindex="325" class="box" style="left: 445px; top: 437px; width: 280px; height: 24px;" id="_MagicItemsWaist"></span>
-				<span tabindex="326" class="box" style="left: 404px; top: 466px; width: 321px; height: 23px;" id="_MagicItemsMisc1"></span>
-				<span tabindex="327" class="box" style="left: 404px; top: 496px; width: 321px; height: 22px;" id="_MagicItemsMisc2"></span>
-				<span tabindex="328" class="box" style="left: 404px; top: 524px; width: 321px; height: 23px;" id="_MagicItemsMisc3"></span>
-				<span tabindex="329" class="box" style="left: 404px; top: 553px; width: 321px; height: 22px;" id="_MagicItemsMisc4"></span>
-				<span tabindex="330" class="box" style="left: 404px; top: 581px; width: 321px; height: 24px;" id="_MagicItemsMisc5"></span>
-				<span tabindex="331" class="box" style="left: 404px; top: 610px; width: 321px; height: 24px;" id="_MagicItemsMisc6"></span>
-				<span tabindex="332" class="box" style="left: 404px; top: 640px; width: 321px; height: 23px;" id="_MagicItemsMisc7"></span>
-				<span tabindex="333" class="box" style="left: 404px; top: 669px; width: 321px; height: 24px;" id="_MagicItemsMisc8"></span>
-				<span tabindex="334" class="box" style="left: 404px; top: 698px; width: 321px; height: 21px;" id="_MagicItemsMisc9"></span>
-				<span tabindex="335" class="box" style="left: 404px; top: 724px; width: 321px; height: 26px;" id="_MagicItemsMisc10"></span>
-				<span tabindex="336" class="box" style="left: 404px; top: 756px; width: 321px; height: 21px;" id="_MagicItemsMisc11"></span>
-				<span tabindex="337" class="box" style="left: 404px; top: 784px; width: 321px; height: 21px;" id="_MagicItemsMisc12"></span>
+				<input tabindex="338" class="box" id="_MagicItemsWeaponCheck1" type="checkbox">
+				<input tabindex="339" class="box" id="_MagicItemsWeaponCheck2" type="checkbox">
+				<input tabindex="340" class="box" id="_MagicItemsWeaponCheck3" type="checkbox">
+				<input tabindex="341" class="box" id="_MagicItemsWeaponCheck4" type="checkbox">
+				<input tabindex="342" class="box" id="_MagicItemsArmorCheck" type="checkbox">
+				<input tabindex="343" class="box" id="_MagicItemsArmsCheck" type="checkbox">
+				<input tabindex="344" class="box" id="_MagicItemsFeetCheck" type="checkbox">
+				<input tabindex="345" class="box" id="_MagicItemsHandsCheck" type="checkbox">
+				<input tabindex="346" class="box" id="_MagicItemsHeadCheck" type="checkbox">
+				<input tabindex="347" class="box" id="_MagicItemsNeckCheck" type="checkbox">
+				<input tabindex="348" class="box" id="_MagicItemsRingCheck1" type="checkbox">
+				<input tabindex="349" class="box" id="_MagicItemsRingCheck2" type="checkbox">
+				<input tabindex="350" class="box" id="_MagicItemsWaistCheck" type="checkbox">
+				<input tabindex="351" class="box" id="_MagicItemsMiscCheck1" type="checkbox">
+				<input tabindex="352" class="box" id="_MagicItemsMiscCheck2" type="checkbox">
+				<input tabindex="353" class="box" id="_MagicItemsMiscCheck3" type="checkbox">
+				<input tabindex="354" class="box" id="_MagicItemsMiscCheck4" type="checkbox">
+				<input tabindex="355" class="box" id="_MagicItemsMiscCheck5" type="checkbox">
+				<input tabindex="356" class="box" id="_MagicItemsMiscCheck6" type="checkbox">
+				<input tabindex="357" class="box" id="_MagicItemsMiscCheck7" type="checkbox">
+				<input tabindex="358" class="box" id="_MagicItemsMiscCheck8" type="checkbox">
+				<input tabindex="359" class="box" id="_MagicItemsMiscCheck9" type="checkbox">
+				<input tabindex="360" class="box" id="_MagicItemsMiscCheck10" type="checkbox">
+				<input tabindex="361" class="box" id="_MagicItemsMiscCheck11" type="checkbox">
+				<input tabindex="362" class="box" id="_MagicItemsMiscCheck12" type="checkbox">
 
-				<input tabindex="338" class="box" style="left: 731px; top: 100px;" id="_MagicItemsWeaponCheck1" type="checkbox">
-				<input tabindex="339" class="box" style="left: 731px; top: 129px;" id="_MagicItemsWeaponCheck2" type="checkbox">
-				<input tabindex="340" class="box" style="left: 731px; top: 158px;" id="_MagicItemsWeaponCheck3" type="checkbox">
-				<input tabindex="341" class="box" style="left: 731px; top: 186px;" id="_MagicItemsWeaponCheck4" type="checkbox">
-				<input tabindex="342" class="box" style="left: 731px; top: 216px;" id="_MagicItemsArmorCheck" type="checkbox">
-				<input tabindex="343" class="box" style="left: 731px; top: 244px;" id="_MagicItemsArmsCheck" type="checkbox">
-				<input tabindex="344" class="box" style="left: 731px; top: 273px;" id="_MagicItemsFeetCheck" type="checkbox">
-				<input tabindex="345" class="box" style="left: 731px; top: 302px;" id="_MagicItemsHandsCheck" type="checkbox">
-				<input tabindex="346" class="box" style="left: 731px; top: 330px;" id="_MagicItemsHeadCheck" type="checkbox">
-				<input tabindex="347" class="box" style="left: 731px; top: 359px;" id="_MagicItemsNeckCheck" type="checkbox">
-				<input tabindex="348" class="box" style="left: 731px; top: 388px;" id="_MagicItemsRingCheck1" type="checkbox">
-				<input tabindex="349" class="box" style="left: 731px; top: 417px;" id="_MagicItemsRingCheck2" type="checkbox">
-				<input tabindex="350" class="box" style="left: 731px; top: 446px;" id="_MagicItemsWaistCheck" type="checkbox">
-				<input tabindex="351" class="box" style="left: 731px; top: 475px;" id="_MagicItemsMiscCheck1" type="checkbox">
-				<input tabindex="352" class="box" style="left: 731px; top: 503px;" id="_MagicItemsMiscCheck2" type="checkbox">
-				<input tabindex="353" class="box" style="left: 731px; top: 532px;" id="_MagicItemsMiscCheck3" type="checkbox">
-				<input tabindex="354" class="box" style="left: 731px; top: 561px;" id="_MagicItemsMiscCheck4" type="checkbox">
-				<input tabindex="355" class="box" style="left: 731px; top: 589px;" id="_MagicItemsMiscCheck5" type="checkbox">
-				<input tabindex="356" class="box" style="left: 731px; top: 618px;" id="_MagicItemsMiscCheck6" type="checkbox">
-				<input tabindex="357" class="box" style="left: 731px; top: 647px;" id="_MagicItemsMiscCheck7" type="checkbox">
-				<input tabindex="358" class="box" style="left: 731px; top: 676px;" id="_MagicItemsMiscCheck8" type="checkbox">
-				<input tabindex="359" class="box" style="left: 731px; top: 705px;" id="_MagicItemsMiscCheck9" type="checkbox">
-				<input tabindex="360" class="box" style="left: 731px; top: 734px;" id="_MagicItemsMiscCheck10" type="checkbox">
-				<input tabindex="361" class="box" style="left: 731px; top: 763px;" id="_MagicItemsMiscCheck11" type="checkbox">
-				<input tabindex="362" class="box" style="left: 731px; top: 791px;" id="_MagicItemsMiscCheck12" type="checkbox">
+				<input tabindex="363" class="center box" id="_DailyItemPowersHeroic" type="checkbox">
+				<input tabindex="364" class="center box" id="_DailyItemPowersHeroicMilestone1" type="checkbox">
+				<input tabindex="365" class="center box" id="_DailyItemPowersHeroicMilestone2" type="checkbox">
+				<input tabindex="366" class="center box" id="_DailyItemPowersHeroicMilestone3" type="checkbox">
+				<input tabindex="367" class="center box" id="_DailyItemPowersHeroicMilestone4" type="checkbox">
+				<input tabindex="368" class="center box" id="_DailyItemPowersParagon1" type="checkbox">
+				<input tabindex="369" class="center box" id="_DailyItemPowersParagon2" type="checkbox">
+				<input tabindex="370" class="center box" id="_DailyItemPowersParagonMilestone1" type="checkbox">
+				<input tabindex="371" class="center box" id="_DailyItemPowersParagonMilestone2" type="checkbox">
+				<input tabindex="372" class="center box" id="_DailyItemPowersParagonMilestone3" type="checkbox">
+				<input tabindex="373" class="center box" id="_DailyItemPowersParagonMilestone4" type="checkbox">
+				<input tabindex="374" class="center box" id="_DailyItemPowersEpic1" type="checkbox">
+				<input tabindex="375" class="center box" id="_DailyItemPowersEpic2" type="checkbox">
+				<input tabindex="376" class="center box" id="_DailyItemPowersEpic3" type="checkbox">
+				<input tabindex="377" class="center box" id="_DailyItemPowersEpicMilestone1" type="checkbox">
+				<input tabindex="378" class="center box" id="_DailyItemPowersEpicMilestone2" type="checkbox">
+				<input tabindex="379" class="center box" id="_DailyItemPowersEpicMilestone3" type="checkbox">
+				<input tabindex="380" class="center box" id="_DailyItemPowersEpicMilestone4" type="checkbox">
 
-				<input tabindex="363" class="center box" style="left: 507px; top: 845px;" id="_DailyItemPowersHeroic" type="checkbox">
-				<input tabindex="364" class="center box" style="left: 644px; top: 845px;" id="_DailyItemPowersHeroicMilestone1" type="checkbox">
-				<input tabindex="365" class="center box" style="left: 669px; top: 845px;" id="_DailyItemPowersHeroicMilestone2" type="checkbox">
-				<input tabindex="366" class="center box" style="left: 694px; top: 845px;" id="_DailyItemPowersHeroicMilestone3" type="checkbox">
-				<input tabindex="367" class="center box" style="left: 719px; top: 845px;" id="_DailyItemPowersHeroicMilestone4" type="checkbox">
-				<input tabindex="368" class="center box" style="left: 507px; top: 873px;" id="_DailyItemPowersParagon1" type="checkbox">
-				<input tabindex="369" class="center box" style="left: 527px; top: 873px;" id="_DailyItemPowersParagon2" type="checkbox">
-				<input tabindex="370" class="center box" style="left: 644px; top: 873px;" id="_DailyItemPowersParagonMilestone1" type="checkbox">
-				<input tabindex="371" class="center box" style="left: 669px; top: 873px;" id="_DailyItemPowersParagonMilestone2" type="checkbox">
-				<input tabindex="372" class="center box" style="left: 694px; top: 873px;" id="_DailyItemPowersParagonMilestone3" type="checkbox">
-				<input tabindex="373" class="center box" style="left: 719px; top: 873px;" id="_DailyItemPowersParagonMilestone4" type="checkbox">
-				<input tabindex="374" class="center box" style="left: 507px; top: 902px;" id="_DailyItemPowersEpic1" type="checkbox">
-				<input tabindex="375" class="center box" style="left: 527px; top: 902px;" id="_DailyItemPowersEpic2" type="checkbox">
-				<input tabindex="376" class="center box" style="left: 548px; top: 902px;" id="_DailyItemPowersEpic3" type="checkbox">
-				<input tabindex="377" class="center box" style="left: 645px; top: 902px;" id="_DailyItemPowersEpicMilestone1" type="checkbox">
-				<input tabindex="378" class="center box" style="left: 669px; top: 902px;" id="_DailyItemPowersEpicMilestone2" type="checkbox">
-				<input tabindex="379" class="center box" style="left: 694px; top: 902px;" id="_DailyItemPowersEpicMilestone3" type="checkbox">
-				<input tabindex="380" class="center box" style="left: 719px; top: 902px;" id="_DailyItemPowersEpicMilestone4" type="checkbox">
+				<span tabindex="381" class="box" id="_Portrait"></span>
 
-				<span tabindex="381" class="box" style="left: 777px; top: 2px; width: 336px; height: 308px;" id="_Portrait"></span>
+				<span tabindex="382" class="box" id="_PersonalityTraits1"></span>
+				<span tabindex="383" class="box" id="_PersonalityTraits2"></span>
+				<span tabindex="384" class="box" id="_PersonalityTraits3"></span>
+				<span tabindex="385" class="box" id="_PersonalityTraits4"></span>
+				<span tabindex="386" class="box" id="_PersonalityTraits5"></span>
+				<span tabindex="387" class="box" id="_PersonalityTraits6"></span>
 
-				<span tabindex="382" class="box" style="left: 769px; top: 353px; width: 348px; height: 17px;" id="_PersonalityTraits1">Cruel.  Enjoys killing.</span>
-				<span tabindex="383" class="box" style="left: 769px; top: 376px; width: 348px; height: 23px;" id="_PersonalityTraits2">Extremely loyal to the legion.  Moreso to his unit</span>
-				<span tabindex="384" class="box" style="left: 769px; top: 404px; width: 348px; height: 24px;" id="_PersonalityTraits3"></span>
-				<span tabindex="385" class="box" style="left: 769px; top: 434px; width: 348px; height: 22px;" id="_PersonalityTraits4"></span>
-				<span tabindex="386" class="box" style="left: 769px; top: 463px; width: 348px; height: 22px;" id="_PersonalityTraits5"></span>
-				<span tabindex="387" class="box" style="left: 769px; top: 490px; width: 348px; height: 23px;" id="_PersonalityTraits6"></span>
+				<span tabindex="388" class="box" id="_MannerismsAndAppearance1"></span>
+				<span tabindex="389" class="box" id="_MannerismsAndAppearance2"></span>
+				<span tabindex="390" class="box" id="_MannerismsAndAppearance3"></span>
+				<span tabindex="391" class="box" id="_MannerismsAndAppearance4"></span>
+				<span tabindex="392" class="box" id="_MannerismsAndAppearance5"></span>
+				<span tabindex="393" class="box" id="_MannerismsAndAppearance6"></span>
 
-				<span tabindex="388" class="box" style="left: 769px; top: 547px; width: 348px; height: 21px;" id="_MannerismsAndAppearance1">Scarred.  Looks older than he is.  </span>
-				<span tabindex="389" class="box" style="left: 769px; top: 573px; width: 348px; height: 23px;" id="_MannerismsAndAppearance2"></span>
-				<span tabindex="390" class="box" style="left: 769px; top: 602px; width: 348px; height: 23px;" id="_MannerismsAndAppearance3"></span>
-				<span tabindex="391" class="box" style="left: 769px; top: 630px; width: 348px; height: 23px;" id="_MannerismsAndAppearance4"></span>
-				<span tabindex="392" class="box" style="left: 769px; top: 659px; width: 348px; height: 24px;" id="_MannerismsAndAppearance5"></span>
-				<span tabindex="393" class="box" style="left: 769px; top: 718px; width: 348px; height: 22px;" id="_MannerismsAndAppearance6">Been w/ the Legion 23 years (man &amp; boy)</span>
+				<span tabindex="394" class="box" id="_CharacterBackground2"></span>
+				<span tabindex="395" class="box" id="_CharacterBackground3"></span>
+				<span tabindex="396" class="box" id="_CharacterBackground4"></span>
 
-				<span tabindex="394" class="box" style="left: 769px; top: 746px; width: 348px; height: 23px;" id="_CharacterBackground2"></span>
-				<span tabindex="395" class="box" style="left: 769px; top: 775px; width: 348px; height: 22px;" id="_CharacterBackground3"></span>
-				<span tabindex="396" class="box" style="left: 769px; top: 803px; width: 348px; height: 23px;" id="_CharacterBackground4"></span>
+				<span tabindex="397" class="box" id="_CompanionsAndAlliesName1"></span>
+				<span tabindex="398" class="box" id="_CompanionsAndAlliesName2"></span>
+				<span tabindex="399" class="box" id="_CompanionsAndAlliesName3"></span>
+				<span tabindex="400" class="box" id="_CompanionsAndAlliesName4"></span>
+				<span tabindex="401" class="box" id="_CompanionsAndAlliesName5"></span>
+				<span tabindex="402" class="box" id="_CompanionsAndAlliesName6"></span>
+				<span tabindex="403" class="box" id="_CompanionsAndAlliesName7"></span>
+				<span tabindex="404" class="box" id="_CompanionsAndAlliesName8"></span>
 
-				<span tabindex="397" class="box" style="left: 791px; top: 860px; width: 133px; height: 19px;" id="_CompanionsAndAlliesName1"></span>
-				<span tabindex="398" class="box" style="left: 791px; top: 885px; width: 133px; height: 20px;" id="_CompanionsAndAlliesName2"></span>
-				<span tabindex="399" class="box" style="left: 791px; top: 911px; width: 133px; height: 22px;" id="_CompanionsAndAlliesName3"></span>
-				<span tabindex="400" class="box" style="left: 791px; top: 940px; width: 133px; height: 25px;" id="_CompanionsAndAlliesName4"></span>
-				<span tabindex="401" class="box" style="left: 791px; top: 970px; width: 133px; height: 22px;" id="_CompanionsAndAlliesName5"></span>
-				<span tabindex="402" class="box" style="left: 791px; top: 999px; width: 133px; height: 19px;" id="_CompanionsAndAlliesName6"></span>
-				<span tabindex="403" class="box" style="left: 791px; top: 1025px; width: 133px; height: 22px;" id="_CompanionsAndAlliesName7"></span>
-				<span tabindex="404" class="box" style="left: 791px; top: 1054px; width: 133px; height: 19px;" id="_CompanionsAndAlliesName8"></span>
+				<span tabindex="405" class="box" id="_CompanionsAndAlliesNotes1"></span>
+				<span tabindex="406" class="box" id="_CompanionsAndAlliesNotes2"></span>
+				<span tabindex="407" class="box" id="_CompanionsAndAlliesNotes3"></span>
+				<span tabindex="408" class="box" id="_CompanionsAndAlliesNotes4"></span>
+				<span tabindex="409" class="box" id="_CompanionsAndAlliesNotes5"></span>
+				<span tabindex="410" class="box" id="_CompanionsAndAlliesNotes6"></span>
+				<span tabindex="411" class="box" id="_CompanionsAndAlliesNotes7"></span>
+				<span tabindex="412" class="box" id="_CompanionsAndAlliesNotes8"></span>
 
-				<span tabindex="405" class="box" style="left: 957px; top: 860px; width: 159px; height: 19px;" id="_CompanionsAndAlliesNotes1"></span>
-				<span tabindex="406" class="box" style="left: 957px; top: 885px; width: 159px; height: 20px;" id="_CompanionsAndAlliesNotes2"></span>
-				<span tabindex="407" class="box" style="left: 957px; top: 911px; width: 159px; height: 22px;" id="_CompanionsAndAlliesNotes3"></span>
-				<span tabindex="408" class="box" style="left: 957px; top: 940px; width: 159px; height: 25px;" id="_CompanionsAndAlliesNotes4"></span>
-				<span tabindex="409" class="box" style="left: 957px; top: 970px; width: 159px; height: 22px;" id="_CompanionsAndAlliesNotes5"></span>
-				<span tabindex="410" class="box" style="left: 957px; top: 999px; width: 159px; height: 19px;" id="_CompanionsAndAlliesNotes6"></span>
-				<span tabindex="411" class="box" style="left: 957px; top: 1025px; width: 159px; height: 22px;" id="_CompanionsAndAlliesNotes7"></span>
-				<span tabindex="412" class="box" style="left: 957px; top: 1054px; width: 159px; height: 19px;" id="_CompanionsAndAlliesNotes8"></span>
+				<span tabindex="413" class="box" id="_OtherEquipment1"></span>
+				<span tabindex="414" class="box" id="_OtherEquipment2"></span>
+				<span tabindex="415" class="box" id="_OtherEquipment3"></span>
+				<span tabindex="416" class="box" id="_OtherEquipment4"></span>
+				<span tabindex="417" class="box" id="_OtherEquipment5"></span>
+				<span tabindex="418" class="box" id="_OtherEquipment6"></span>
+				<span tabindex="419" class="box" id="_OtherEquipment7"></span>
+				<span tabindex="420" class="box" id="_OtherEquipment8"></span>
+				<span tabindex="421" class="box" id="_OtherEquipment9"></span>
+				<span tabindex="422" class="box" id="_OtherEquipment10"></span>
 
-				<span tabindex="413" class="box" style="left: 41px; top: 975px; width: 351px; height: 24px;" id="_OtherEquipment1">belt pouch (flint &amp; steel, 2 sunrods)</span>
-				<span tabindex="414" class="box" style="left: 41px; top: 1005px; width: 351px; height: 23px;" id="_OtherEquipment2">backpack (bedroll, waterskin, hemp rope, trail rations)</span>
-				<span tabindex="415" class="box" style="left: 41px; top: 1035px; width: 351px; height: 22px;" id="_OtherEquipment3">light shield (strapped on backpack)</span>
-				<span tabindex="416" class="box" style="left: 41px; top: 1063px; width: 351px; height: 22px;" id="_OtherEquipment4">gladius (sheathed) <!-- shortsword --></span>
-				<span tabindex="417" class="box" style="left: 41px; top: 1090px; width: 351px; height: 22px;" id="_OtherEquipment5">longspear (equipped)</span>
-				<span tabindex="418" class="box" style="left: 41px; top: 1120px; width: 351px; height: 22px;" id="_OtherEquipment6">scale mail (equipped)</span>
-				<span tabindex="419" class="box" style="left: 41px; top: 1147px; width: 351px; height: 23px;" id="_OtherEquipment7">2 javelins</span>
-				<span tabindex="420" class="box" style="left: 41px; top: 1176px; width: 351px; height: 22px;" id="_OtherEquipment8"></span>
-				<span tabindex="421" class="box" style="left: 41px; top: 1205px; width: 351px; height: 23px;" id="_OtherEquipment9"></span>
-				<span tabindex="422" class="box" style="left: 41px; top: 1234px; width: 351px; height: 22px;" id="_OtherEquipment10"></span>
+				<span tabindex="423" class="box" id="_Rituals1"></span>
+				<span tabindex="424" class="box" id="_Rituals2"></span>
+				<span tabindex="425" class="box" id="_Rituals3"></span>
+				<span tabindex="426" class="box" id="_Rituals4"></span>
+				<span tabindex="427" class="box" id="_Rituals5"></span>
+				<span tabindex="428" class="box" id="_Rituals6"></span>
+				<span tabindex="429" class="box" id="_Rituals7"></span>
+				<span tabindex="430" class="box" id="_Rituals8"></span>
+				<span tabindex="431" class="box" id="_Rituals9"></span>
+				<span tabindex="432" class="box" id="_Rituals10"></span>
 
-				<span tabindex="423" class="box" style="left: 407px; top: 975px; width: 347px; height: 24px;" id="_Rituals1"></span>
-				<span tabindex="424" class="box" style="left: 407px; top: 1005px; width: 347px; height: 23px;" id="_Rituals2"></span>
-				<span tabindex="425" class="box" style="left: 407px; top: 1035px; width: 347px; height: 22px;" id="_Rituals3"></span>
-				<span tabindex="426" class="box" style="left: 407px; top: 1063px; width: 347px; height: 22px;" id="_Rituals4"></span>
-				<span tabindex="427" class="box" style="left: 407px; top: 1090px; width: 347px; height: 22px;" id="_Rituals5"></span>
-				<span tabindex="428" class="box" style="left: 407px; top: 1120px; width: 347px; height: 22px;" id="_Rituals6"></span>
-				<span tabindex="429" class="box" style="left: 407px; top: 1147px; width: 347px; height: 23px;" id="_Rituals7"></span>
-				<span tabindex="430" class="box" style="left: 407px; top: 1176px; width: 347px; height: 22px;" id="_Rituals8"></span>
-				<span tabindex="431" class="box" style="left: 407px; top: 1205px; width: 347px; height: 23px;" id="_Rituals9"></span>
-				<span tabindex="432" class="box" style="left: 407px; top: 1234px; width: 347px; height: 22px;" id="_Rituals10"></span>
+				<span tabindex="433" class="box" id="_SessionAndCampaignNotes1"></span>
+				<span tabindex="434" class="box" id="_SessionAndCampaignNotes2"></span>
+				<span tabindex="435" class="box" id="_SessionAndCampaignNotes3"></span>
+				<span tabindex="436" class="box" id="_SessionAndCampaignNotes4"></span>
+				<span tabindex="437" class="box" id="_SessionAndCampaignNotes5"></span>
+				<span tabindex="438" class="box" id="_SessionAndCampaignNotes6"></span>
+				<span tabindex="439" class="box" id="_SessionAndCampaignNotes7"></span>
+				<span tabindex="440" class="box" id="_SessionAndCampaignNotes8"></span>
+				<span tabindex="441" class="box" id="_SessionAndCampaignNotes9"></span>
+				<span tabindex="442" class="box" id="_SessionAndCampaignNotes10"></span>
+				<span tabindex="443" class="box" id="_SessionAndCampaignNotes11"></span>
+				<span tabindex="444" class="box" id="_SessionAndCampaignNotes12"></span>
 
-				<span tabindex="433" class="box" style="left: 768px; top: 1115px; width: 348px; height: 21px;" id="_SessionAndCampaignNotes1"></span>
-				<span tabindex="434" class="box" style="left: 768px; top: 1143px; width: 348px; height: 21px;" id="_SessionAndCampaignNotes2"></span>
-				<span tabindex="435" class="box" style="left: 768px; top: 1171px; width: 348px; height: 21px;" id="_SessionAndCampaignNotes3"></span>
-				<span tabindex="436" class="box" style="left: 768px; top: 1199px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes4"></span>
-				<span tabindex="437" class="box" style="left: 768px; top: 1229px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes5"></span>
-				<span tabindex="438" class="box" style="left: 768px; top: 1257px; width: 348px; height: 22px;" id="_SessionAndCampaignNotes6"></span>
-				<span tabindex="439" class="box" style="left: 768px; top: 1284px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes7"></span>
-				<span tabindex="440" class="box" style="left: 768px; top: 1313px; width: 348px; height: 22px;" id="_SessionAndCampaignNotes8"></span>
-				<span tabindex="441" class="box" style="left: 768px; top: 1340px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes9"></span>
-				<span tabindex="442" class="box" style="left: 768px; top: 1369px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes10"></span>
-				<span tabindex="443" class="box" style="left: 768px; top: 1398px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes11"></span>
-				<span tabindex="444" class="box" style="left: 768px; top: 1427px; width: 348px; height: 23px;" id="_SessionAndCampaignNotes12"></span>
-
-				<span tabindex="445" class="box" style="left: 41px; top: 1293px; width: 713px; height: 159px;" id="_CoinsAndOtherWealth">4 gold<br>
-9 silver</span>
+				<span tabindex="445" class="box" id="_CoinsAndOtherWealth"></span>
+			</div>
+			<div class="page" id="Page3">
+				<div style="display: none;" id="_AtWillPowers1Card" class="power-card">
+					<img id="_AtWillPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
+					<span tabindex="446" id="_AtWillPowers1Name" class="box power-card-name">0</span>
+					<span tabindex="447" id="_AtWillPowers1Keyword" class="box power-card-keyword"></span>
+					<input tabindex="448" id="_AtWillPowers1Box" class="box power-card-box" type="checkbox">
+					<span tabindex="449" id="_AtWillPowers1Action" class="box power-card-action"></span>
+					<span tabindex="450" id="_AtWillPowers1AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="451" id="_AtWillPowers1Range" class="box power-card-range"></span>
+					<span tabindex="452" id="_AtWillPowers1Attack" class="box power-card-attack"></span>
+					<span tabindex="453" id="_AtWillPowers1Defense" class="box power-card-defense"></span>
+					<span tabindex="454" id="_AtWillPowers1Target" class="box power-card-target"></span>
+					<span tabindex="455" id="_AtWillPowers1Details" class="box power-card-details"></span>
+					<span tabindex="456" id="_AtWillPowers1Additional" class="box power-card-additional"></span>
+					<span tabindex="457" id="_AtWillPowers1Class" class="box power-card-class"></span>
+					<span tabindex="459" id="_AtWillPowers1Level" class="box power-card-level"></span>
+					<span tabindex="460" id="_AtWillPowers1Page" class="box power-card-page"></span>
+					<select tabindex="461" id="_AtWillPowers1PowerType" class="power-card-power-type">
+						<option selected="selected" value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_AtWillPowers2Card" class="power-card">
+					<img id="_AtWillPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
+					<span tabindex="462" id="_AtWillPowers2Name" class="box power-card-name">0</span>
+					<span tabindex="463" id="_AtWillPowers2Keyword" class="box power-card-keyword"></span>
+					<input tabindex="464" id="_AtWillPowers2Box" class="box power-card-box" type="checkbox">
+					<span tabindex="465" id="_AtWillPowers2Action" class="box power-card-action"></span>
+					<span tabindex="466" id="_AtWillPowers2AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="467" id="_AtWillPowers2Range" class="box power-card-range"></span>
+					<span tabindex="468" id="_AtWillPowers2Attack" class="box power-card-attack"></span>
+					<span tabindex="469" id="_AtWillPowers2Defense" class="box power-card-defense"></span>
+					<span tabindex="470" id="_AtWillPowers2Target" class="box power-card-target"></span>
+					<span tabindex="471" id="_AtWillPowers2Details" class="box power-card-details"></span>
+					<span tabindex="472" id="_AtWillPowers2Additional" class="box power-card-additional"></span>
+					<span tabindex="473" id="_AtWillPowers2Class" class="box power-card-class"></span>
+					<span tabindex="475" id="_AtWillPowers2Level" class="box power-card-level"></span>
+					<span tabindex="476" id="_AtWillPowers2Page" class="box power-card-page"></span>
+					<select tabindex="477" id="_AtWillPowers2PowerType" class="power-card-power-type">
+						<option selected="selected" value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_AtWillPowers3Card" class="power-card">
+					<img id="_AtWillPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
+					<span tabindex="478" id="_AtWillPowers3Name" class="box power-card-name">0</span>
+					<span tabindex="479" id="_AtWillPowers3Keyword" class="box power-card-keyword"></span>
+					<input tabindex="480" id="_AtWillPowers3Box" class="box power-card-box" type="checkbox">
+					<span tabindex="481" id="_AtWillPowers3Action" class="box power-card-action"></span>
+					<span tabindex="482" id="_AtWillPowers3AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="483" id="_AtWillPowers3Range" class="box power-card-range"></span>
+					<span tabindex="484" id="_AtWillPowers3Attack" class="box power-card-attack"></span>
+					<span tabindex="485" id="_AtWillPowers3Defense" class="box power-card-defense"></span>
+					<span tabindex="486" id="_AtWillPowers3Target" class="box power-card-target"></span>
+					<span tabindex="487" id="_AtWillPowers3Details" class="box power-card-details"></span>
+					<span tabindex="488" id="_AtWillPowers3Additional" class="box power-card-additional"></span>
+					<span tabindex="489" id="_AtWillPowers3Class" class="box power-card-class"></span>
+					<span tabindex="491" id="_AtWillPowers3Level" class="box power-card-level"></span>
+					<span tabindex="492" id="_AtWillPowers3Page" class="box power-card-page"></span>
+					<select tabindex="493" id="_AtWillPowers3PowerType" class="power-card-power-type">
+						<option selected="selected" value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_AtWillPowers4Card" class="power-card">
+					<img id="_AtWillPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
+					<span tabindex="494" id="_AtWillPowers4Name" class="box power-card-name">0</span>
+					<span tabindex="495" id="_AtWillPowers4Keyword" class="box power-card-keyword"></span>
+					<input tabindex="496" id="_AtWillPowers4Box" class="box power-card-box" type="checkbox">
+					<span tabindex="497" id="_AtWillPowers4Action" class="box power-card-action"></span>
+					<span tabindex="498" id="_AtWillPowers4AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="499" id="_AtWillPowers4Range" class="box power-card-range"></span>
+					<span tabindex="500" id="_AtWillPowers4Attack" class="box power-card-attack"></span>
+					<span tabindex="501" id="_AtWillPowers4Defense" class="box power-card-defense"></span>
+					<span tabindex="502" id="_AtWillPowers4Target" class="box power-card-target"></span>
+					<span tabindex="503" id="_AtWillPowers4Details" class="box power-card-details"></span>
+					<span tabindex="504" id="_AtWillPowers4Additional" class="box power-card-additional"></span>
+					<span tabindex="505" id="_AtWillPowers4Class" class="box power-card-class"></span>
+					<span tabindex="507" id="_AtWillPowers4Level" class="box power-card-level"></span>
+					<span tabindex="508" id="_AtWillPowers4Page" class="box power-card-page"></span>
+					<select tabindex="509" id="_AtWillPowers4PowerType" class="power-card-power-type">
+						<option selected="selected" value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_AtWillPowers5Card" class="power-card">
+					<img id="_AtWillPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
+					<span tabindex="510" id="_AtWillPowers5Name" class="box power-card-name">0</span>
+					<span tabindex="511" id="_AtWillPowers5Keyword" class="box power-card-keyword"></span>
+					<input tabindex="512" id="_AtWillPowers5Box" class="box power-card-box" type="checkbox">
+					<span tabindex="513" id="_AtWillPowers5Action" class="box power-card-action"></span>
+					<span tabindex="514" id="_AtWillPowers5AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="515" id="_AtWillPowers5Range" class="box power-card-range"></span>
+					<span tabindex="516" id="_AtWillPowers5Attack" class="box power-card-attack"></span>
+					<span tabindex="517" id="_AtWillPowers5Defense" class="box power-card-defense"></span>
+					<span tabindex="518" id="_AtWillPowers5Target" class="box power-card-target"></span>
+					<span tabindex="519" id="_AtWillPowers5Details" class="box power-card-details"></span>
+					<span tabindex="520" id="_AtWillPowers5Additional" class="box power-card-additional"></span>
+					<span tabindex="521" id="_AtWillPowers5Class" class="box power-card-class"></span>
+					<span tabindex="523" id="_AtWillPowers5Level" class="box power-card-level"></span>
+					<span tabindex="524" id="_AtWillPowers5Page" class="box power-card-page"></span>
+					<select tabindex="525" id="_AtWillPowers5PowerType" class="power-card-power-type">
+						<option selected="selected" value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_AtWillPowers6Card" class="power-card">
+					<img id="_AtWillPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
+					<span tabindex="526" id="_AtWillPowers6Name" class="box power-card-name">0</span>
+					<span tabindex="527" id="_AtWillPowers6Keyword" class="box power-card-keyword"></span>
+					<input tabindex="528" id="_AtWillPowers6Box" class="box power-card-box" type="checkbox">
+					<span tabindex="529" id="_AtWillPowers6Action" class="box power-card-action"></span>
+					<span tabindex="530" id="_AtWillPowers6AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="531" id="_AtWillPowers6Range" class="box power-card-range"></span>
+					<span tabindex="532" id="_AtWillPowers6Attack" class="box power-card-attack"></span>
+					<span tabindex="533" id="_AtWillPowers6Defense" class="box power-card-defense"></span>
+					<span tabindex="534" id="_AtWillPowers6Target" class="box power-card-target"></span>
+					<span tabindex="535" id="_AtWillPowers6Details" class="box power-card-details"></span>
+					<span tabindex="536" id="_AtWillPowers6Additional" class="box power-card-additional"></span>
+					<span tabindex="537" id="_AtWillPowers6Class" class="box power-card-class"></span>
+					<span tabindex="539" id="_AtWillPowers6Level" class="box power-card-level"></span>
+					<span tabindex="540" id="_AtWillPowers6Page" class="box power-card-page"></span>
+					<select tabindex="541" id="_AtWillPowers6PowerType" class="power-card-power-type">
+						<option selected="selected" value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_EncounterPowers1Card" class="power-card">
+					<img id="_EncounterPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name">0</span>
+					<span tabindex="543" id="_EncounterPowers1Keyword" class="box power-card-keyword"></span>
+					<input tabindex="544" id="_EncounterPowers1Box" class="box power-card-box" type="checkbox">
+					<span tabindex="545" id="_EncounterPowers1Action" class="box power-card-action"></span>
+					<span tabindex="546" id="_EncounterPowers1AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="547" id="_EncounterPowers1Range" class="box power-card-range"></span>
+					<span tabindex="548" id="_EncounterPowers1Attack" class="box power-card-attack"></span>
+					<span tabindex="549" id="_EncounterPowers1Defense" class="box power-card-defense"></span>
+					<span tabindex="550" id="_EncounterPowers1Target" class="box power-card-target"></span>
+					<span tabindex="551" id="_EncounterPowers1Details" class="box power-card-details"></span>
+					<span tabindex="552" id="_EncounterPowers1Additional" class="box power-card-additional"></span>
+					<span tabindex="553" id="_EncounterPowers1Class" class="box power-card-class"></span>
+					<span tabindex="555" id="_EncounterPowers1Level" class="box power-card-level"></span>
+					<span tabindex="556" id="_EncounterPowers1Page" class="box power-card-page"></span>
+					<select tabindex="557" id="_EncounterPowers1PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option selected="selected" value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_EncounterPowers2Card" class="power-card">
+					<img id="_EncounterPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name">0</span>
+					<span tabindex="559" id="_EncounterPowers2Keyword" class="box power-card-keyword"></span>
+					<input tabindex="560" id="_EncounterPowers2Box" class="box power-card-box" type="checkbox">
+					<span tabindex="561" id="_EncounterPowers2Action" class="box power-card-action"></span>
+					<span tabindex="562" id="_EncounterPowers2AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="563" id="_EncounterPowers2Range" class="box power-card-range"></span>
+					<span tabindex="564" id="_EncounterPowers2Attack" class="box power-card-attack"></span>
+					<span tabindex="565" id="_EncounterPowers2Defense" class="box power-card-defense"></span>
+					<span tabindex="566" id="_EncounterPowers2Target" class="box power-card-target"></span>
+					<span tabindex="567" id="_EncounterPowers2Details" class="box power-card-details"></span>
+					<span tabindex="568" id="_EncounterPowers2Additional" class="box power-card-additional"></span>
+					<span tabindex="569" id="_EncounterPowers2Class" class="box power-card-class"></span>
+					<span tabindex="571" id="_EncounterPowers2Level" class="box power-card-level"></span>
+					<span tabindex="572" id="_EncounterPowers2Page" class="box power-card-page"></span>
+					<select tabindex="573" id="_EncounterPowers2PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option selected="selected" value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_EncounterPowers3Card" class="power-card">
+					<img id="_EncounterPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="574" id="_EncounterPowers3Name" class="box power-card-name">0</span>
+					<span tabindex="575" id="_EncounterPowers3Keyword" class="box power-card-keyword"></span>
+					<input tabindex="576" id="_EncounterPowers3Box" class="box power-card-box" type="checkbox">
+					<span tabindex="577" id="_EncounterPowers3Action" class="box power-card-action"></span>
+					<span tabindex="578" id="_EncounterPowers3AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="579" id="_EncounterPowers3Range" class="box power-card-range"></span>
+					<span tabindex="580" id="_EncounterPowers3Attack" class="box power-card-attack"></span>
+					<span tabindex="581" id="_EncounterPowers3Defense" class="box power-card-defense"></span>
+					<span tabindex="582" id="_EncounterPowers3Target" class="box power-card-target"></span>
+					<span tabindex="583" id="_EncounterPowers3Details" class="box power-card-details"></span>
+					<span tabindex="584" id="_EncounterPowers3Additional" class="box power-card-additional"></span>
+					<span tabindex="585" id="_EncounterPowers3Class" class="box power-card-class"></span>
+					<span tabindex="587" id="_EncounterPowers3Level" class="box power-card-level"></span>
+					<span tabindex="588" id="_EncounterPowers3Page" class="box power-card-page"></span>
+					<select tabindex="589" id="_EncounterPowers3PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option selected="selected" value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_EncounterPowers4Card" class="power-card">
+					<img id="_EncounterPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="590" id="_EncounterPowers4Name" class="box power-card-name">0</span>
+					<span tabindex="591" id="_EncounterPowers4Keyword" class="box power-card-keyword"></span>
+					<input tabindex="592" id="_EncounterPowers4Box" class="box power-card-box" type="checkbox">
+					<span tabindex="593" id="_EncounterPowers4Action" class="box power-card-action"></span>
+					<span tabindex="594" id="_EncounterPowers4AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="595" id="_EncounterPowers4Range" class="box power-card-range"></span>
+					<span tabindex="596" id="_EncounterPowers4Attack" class="box power-card-attack"></span>
+					<span tabindex="597" id="_EncounterPowers4Defense" class="box power-card-defense"></span>
+					<span tabindex="598" id="_EncounterPowers4Target" class="box power-card-target"></span>
+					<span tabindex="599" id="_EncounterPowers4Details" class="box power-card-details"></span>
+					<span tabindex="600" id="_EncounterPowers4Additional" class="box power-card-additional"></span>
+					<span tabindex="601" id="_EncounterPowers4Class" class="box power-card-class"></span>
+					<span tabindex="603" id="_EncounterPowers4Level" class="box power-card-level"></span>
+					<span tabindex="604" id="_EncounterPowers4Page" class="box power-card-page"></span>
+					<select tabindex="605" id="_EncounterPowers4PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option selected="selected" value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_EncounterPowers5Card" class="power-card">
+					<img id="_EncounterPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="606" id="_EncounterPowers5Name" class="box power-card-name">0</span>
+					<span tabindex="607" id="_EncounterPowers5Keyword" class="box power-card-keyword"></span>
+					<input tabindex="608" id="_EncounterPowers5Box" class="box power-card-box" type="checkbox">
+					<span tabindex="609" id="_EncounterPowers5Action" class="box power-card-action"></span>
+					<span tabindex="610" id="_EncounterPowers5AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="611" id="_EncounterPowers5Range" class="box power-card-range"></span>
+					<span tabindex="612" id="_EncounterPowers5Attack" class="box power-card-attack"></span>
+					<span tabindex="613" id="_EncounterPowers5Defense" class="box power-card-defense"></span>
+					<span tabindex="614" id="_EncounterPowers5Target" class="box power-card-target"></span>
+					<span tabindex="615" id="_EncounterPowers5Details" class="box power-card-details"></span>
+					<span tabindex="616" id="_EncounterPowers5Additional" class="box power-card-additional"></span>
+					<span tabindex="617" id="_EncounterPowers5Class" class="box power-card-class"></span>
+					<span tabindex="619" id="_EncounterPowers5Level" class="box power-card-level"></span>
+					<span tabindex="620" id="_EncounterPowers5Page" class="box power-card-page"></span>
+					<select tabindex="621" id="_EncounterPowers5PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option selected="selected" value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_EncounterPowers6Card" class="power-card">
+					<img id="_EncounterPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name">0</span>
+					<span tabindex="623" id="_EncounterPowers6Keyword" class="box power-card-keyword"></span>
+					<input tabindex="624" id="_EncounterPowers6Box" class="box power-card-box" type="checkbox">
+					<span tabindex="625" id="_EncounterPowers6Action" class="box power-card-action"></span>
+					<span tabindex="626" id="_EncounterPowers6AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="627" id="_EncounterPowers6Range" class="box power-card-range"></span>
+					<span tabindex="628" id="_EncounterPowers6Attack" class="box power-card-attack"></span>
+					<span tabindex="629" id="_EncounterPowers6Defense" class="box power-card-defense"></span>
+					<span tabindex="630" id="_EncounterPowers6Target" class="box power-card-target"></span>
+					<span tabindex="631" id="_EncounterPowers6Details" class="box power-card-details"></span>
+					<span tabindex="632" id="_EncounterPowers6Additional" class="box power-card-additional"></span>
+					<span tabindex="633" id="_EncounterPowers6Class" class="box power-card-class"></span>
+					<span tabindex="635" id="_EncounterPowers6Level" class="box power-card-level"></span>
+					<span tabindex="636" id="_EncounterPowers6Page" class="box power-card-page"></span>
+					<select tabindex="637" id="_EncounterPowers6PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option selected="selected" value="1">Encounter</option>
+						<option value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_DailyPowers1Card" class="power-card">
+					<img id="_DailyPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name">0</span>
+					<span tabindex="639" id="_DailyPowers1Keyword" class="box power-card-keyword"></span>
+					<input tabindex="640" id="_DailyPowers1Box" class="box power-card-box" type="checkbox">
+					<span tabindex="641" id="_DailyPowers1Action" class="box power-card-action"></span>
+					<span tabindex="642" id="_DailyPowers1AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="643" id="_DailyPowers1Range" class="box power-card-range"></span>
+					<span tabindex="644" id="_DailyPowers1Attack" class="box power-card-attack"></span>
+					<span tabindex="645" id="_DailyPowers1Defense" class="box power-card-defense"></span>
+					<span tabindex="646" id="_DailyPowers1Target" class="box power-card-target"></span>
+					<span tabindex="647" id="_DailyPowers1Details" class="box power-card-details"></span>
+					<span tabindex="648" id="_DailyPowers1Additional" class="box power-card-additional"></span>
+					<span tabindex="649" id="_DailyPowers1Class" class="box power-card-class"></span>
+					<span tabindex="651" id="_DailyPowers1Level" class="box power-card-level"></span>
+					<span tabindex="652" id="_DailyPowers1Page" class="box power-card-page"></span>
+					<select tabindex="653" id="_DailyPowers1PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_DailyPowers2Card" class="power-card">
+					<img id="_DailyPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="654" id="_DailyPowers2Name" class="box power-card-name">0</span>
+					<span tabindex="655" id="_DailyPowers2Keyword" class="box power-card-keyword"></span>
+					<input tabindex="656" id="_DailyPowers2Box" class="box power-card-box" type="checkbox">
+					<span tabindex="657" id="_DailyPowers2Action" class="box power-card-action"></span>
+					<span tabindex="658" id="_DailyPowers2AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="659" id="_DailyPowers2Range" class="box power-card-range"></span>
+					<span tabindex="660" id="_DailyPowers2Attack" class="box power-card-attack"></span>
+					<span tabindex="661" id="_DailyPowers2Defense" class="box power-card-defense"></span>
+					<span tabindex="662" id="_DailyPowers2Target" class="box power-card-target"></span>
+					<span tabindex="663" id="_DailyPowers2Details" class="box power-card-details"></span>
+					<span tabindex="664" id="_DailyPowers2Additional" class="box power-card-additional"></span>
+					<span tabindex="665" id="_DailyPowers2Class" class="box power-card-class"></span>
+					<span tabindex="667" id="_DailyPowers2Level" class="box power-card-level"></span>
+					<span tabindex="668" id="_DailyPowers2Page" class="box power-card-page"></span>
+					<select tabindex="669" id="_DailyPowers2PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_DailyPowers3Card" class="power-card">
+					<img id="_DailyPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="670" id="_DailyPowers3Name" class="box power-card-name">0</span>
+					<span tabindex="671" id="_DailyPowers3Keyword" class="box power-card-keyword"></span>
+					<input tabindex="672" id="_DailyPowers3Box" class="box power-card-box" type="checkbox">
+					<span tabindex="673" id="_DailyPowers3Action" class="box power-card-action"></span>
+					<span tabindex="674" id="_DailyPowers3AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="675" id="_DailyPowers3Range" class="box power-card-range"></span>
+					<span tabindex="676" id="_DailyPowers3Attack" class="box power-card-attack"></span>
+					<span tabindex="677" id="_DailyPowers3Defense" class="box power-card-defense"></span>
+					<span tabindex="678" id="_DailyPowers3Target" class="box power-card-target"></span>
+					<span tabindex="679" id="_DailyPowers3Details" class="box power-card-details"></span>
+					<span tabindex="680" id="_DailyPowers3Additional" class="box power-card-additional"></span>
+					<span tabindex="681" id="_DailyPowers3Class" class="box power-card-class"></span>
+					<span tabindex="683" id="_DailyPowers3Level" class="box power-card-level"></span>
+					<span tabindex="684" id="_DailyPowers3Page" class="box power-card-page"></span>
+					<select tabindex="685" id="_DailyPowers3PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_DailyPowers4Card" class="power-card">
+					<img id="_DailyPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="686" id="_DailyPowers4Name" class="box power-card-name">0</span>
+					<span tabindex="687" id="_DailyPowers4Keyword" class="box power-card-keyword"></span>
+					<input tabindex="688" id="_DailyPowers4Box" class="box power-card-box" type="checkbox">
+					<span tabindex="689" id="_DailyPowers4Action" class="box power-card-action"></span>
+					<span tabindex="690" id="_DailyPowers4AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="691" id="_DailyPowers4Range" class="box power-card-range"></span>
+					<span tabindex="692" id="_DailyPowers4Attack" class="box power-card-attack"></span>
+					<span tabindex="693" id="_DailyPowers4Defense" class="box power-card-defense"></span>
+					<span tabindex="694" id="_DailyPowers4Target" class="box power-card-target"></span>
+					<span tabindex="695" id="_DailyPowers4Details" class="box power-card-details"></span>
+					<span tabindex="696" id="_DailyPowers4Additional" class="box power-card-additional"></span>
+					<span tabindex="697" id="_DailyPowers4Class" class="box power-card-class"></span>
+					<span tabindex="699" id="_DailyPowers4Level" class="box power-card-level"></span>
+					<span tabindex="700" id="_DailyPowers4Page" class="box power-card-page"></span>
+					<select tabindex="701" id="_DailyPowers4PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_DailyPowers5Card" class="power-card">
+					<img id="_DailyPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="702" id="_DailyPowers5Name" class="box power-card-name">0</span>
+					<span tabindex="703" id="_DailyPowers5Keyword" class="box power-card-keyword"></span>
+					<input tabindex="704" id="_DailyPowers5Box" class="box power-card-box" type="checkbox">
+					<span tabindex="705" id="_DailyPowers5Action" class="box power-card-action"></span>
+					<span tabindex="706" id="_DailyPowers5AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="707" id="_DailyPowers5Range" class="box power-card-range"></span>
+					<span tabindex="708" id="_DailyPowers5Attack" class="box power-card-attack"></span>
+					<span tabindex="709" id="_DailyPowers5Defense" class="box power-card-defense"></span>
+					<span tabindex="710" id="_DailyPowers5Target" class="box power-card-target"></span>
+					<span tabindex="711" id="_DailyPowers5Details" class="box power-card-details"></span>
+					<span tabindex="712" id="_DailyPowers5Additional" class="box power-card-additional"></span>
+					<span tabindex="713" id="_DailyPowers5Class" class="box power-card-class"></span>
+					<span tabindex="715" id="_DailyPowers5Level" class="box power-card-level"></span>
+					<span tabindex="716" id="_DailyPowers5Page" class="box power-card-page"></span>
+					<select tabindex="717" id="_DailyPowers5PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_DailyPowers6Card" class="power-card">
+					<img id="_DailyPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="718" id="_DailyPowers6Name" class="box power-card-name">0</span>
+					<span tabindex="719" id="_DailyPowers6Keyword" class="box power-card-keyword"></span>
+					<input tabindex="720" id="_DailyPowers6Box" class="box power-card-box" type="checkbox">
+					<span tabindex="721" id="_DailyPowers6Action" class="box power-card-action"></span>
+					<span tabindex="722" id="_DailyPowers6AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="723" id="_DailyPowers6Range" class="box power-card-range"></span>
+					<span tabindex="724" id="_DailyPowers6Attack" class="box power-card-attack"></span>
+					<span tabindex="725" id="_DailyPowers6Defense" class="box power-card-defense"></span>
+					<span tabindex="726" id="_DailyPowers6Target" class="box power-card-target"></span>
+					<span tabindex="727" id="_DailyPowers6Details" class="box power-card-details"></span>
+					<span tabindex="728" id="_DailyPowers6Additional" class="box power-card-additional"></span>
+					<span tabindex="729" id="_DailyPowers6Class" class="box power-card-class"></span>
+					<span tabindex="731" id="_DailyPowers6Level" class="box power-card-level"></span>
+					<span tabindex="732" id="_DailyPowers6Page" class="box power-card-page"></span>
+					<select tabindex="733" id="_DailyPowers6PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_UtilityPowers1Card" class="power-card">
+					<img id="_UtilityPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="734" id="_UtilityPowers1Name" class="box power-card-name">0</span>
+					<span tabindex="735" id="_UtilityPowers1Keyword" class="box power-card-keyword"></span>
+					<input tabindex="736" id="_UtilityPowers1Box" class="box power-card-box" type="checkbox">
+					<span tabindex="737" id="_UtilityPowers1Action" class="box power-card-action"></span>
+					<span tabindex="738" id="_UtilityPowers1AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="739" id="_UtilityPowers1Range" class="box power-card-range"></span>
+					<span tabindex="740" id="_UtilityPowers1Attack" class="box power-card-attack"></span>
+					<span tabindex="741" id="_UtilityPowers1Defense" class="box power-card-defense"></span>
+					<span tabindex="742" id="_UtilityPowers1Target" class="box power-card-target"></span>
+					<span tabindex="743" id="_UtilityPowers1Details" class="box power-card-details"></span>
+					<span tabindex="744" id="_UtilityPowers1Additional" class="box power-card-additional"></span>
+					<span tabindex="745" id="_UtilityPowers1Class" class="box power-card-class"></span>
+					<span tabindex="747" id="_UtilityPowers1Level" class="box power-card-level"></span>
+					<span tabindex="748" id="_UtilityPowers1Page" class="box power-card-page"></span>
+					<select tabindex="749" id="_UtilityPowers1PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_UtilityPowers2Card" class="power-card">
+					<img id="_UtilityPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="750" id="_UtilityPowers2Name" class="box power-card-name">0</span>
+					<span tabindex="751" id="_UtilityPowers2Keyword" class="box power-card-keyword"></span>
+					<input tabindex="752" id="_UtilityPowers2Box" class="box power-card-box" type="checkbox">
+					<span tabindex="753" id="_UtilityPowers2Action" class="box power-card-action"></span>
+					<span tabindex="754" id="_UtilityPowers2AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="755" id="_UtilityPowers2Range" class="box power-card-range"></span>
+					<span tabindex="756" id="_UtilityPowers2Attack" class="box power-card-attack"></span>
+					<span tabindex="757" id="_UtilityPowers2Defense" class="box power-card-defense"></span>
+					<span tabindex="758" id="_UtilityPowers2Target" class="box power-card-target"></span>
+					<span tabindex="759" id="_UtilityPowers2Details" class="box power-card-details"></span>
+					<span tabindex="760" id="_UtilityPowers2Additional" class="box power-card-additional"></span>
+					<span tabindex="761" id="_UtilityPowers2Class" class="box power-card-class"></span>
+					<span tabindex="763" id="_UtilityPowers2Level" class="box power-card-level"></span>
+					<span tabindex="764" id="_UtilityPowers2Page" class="box power-card-page"></span>
+					<select tabindex="765" id="_UtilityPowers2PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_UtilityPowers3Card" class="power-card">
+					<img id="_UtilityPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="766" id="_UtilityPowers3Name" class="box power-card-name">0</span>
+					<span tabindex="767" id="_UtilityPowers3Keyword" class="box power-card-keyword"></span>
+					<input tabindex="768" id="_UtilityPowers3Box" class="box power-card-box" type="checkbox">
+					<span tabindex="769" id="_UtilityPowers3Action" class="box power-card-action"></span>
+					<span tabindex="770" id="_UtilityPowers3AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="771" id="_UtilityPowers3Range" class="box power-card-range"></span>
+					<span tabindex="772" id="_UtilityPowers3Attack" class="box power-card-attack"></span>
+					<span tabindex="773" id="_UtilityPowers3Defense" class="box power-card-defense"></span>
+					<span tabindex="774" id="_UtilityPowers3Target" class="box power-card-target"></span>
+					<span tabindex="775" id="_UtilityPowers3Details" class="box power-card-details"></span>
+					<span tabindex="776" id="_UtilityPowers3Additional" class="box power-card-additional"></span>
+					<span tabindex="777" id="_UtilityPowers3Class" class="box power-card-class"></span>
+					<span tabindex="779" id="_UtilityPowers3Level" class="box power-card-level"></span>
+					<span tabindex="780" id="_UtilityPowers3Page" class="box power-card-page"></span>
+					<select tabindex="781" id="_UtilityPowers3PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_UtilityPowers4Card" class="power-card">
+					<img id="_UtilityPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="782" id="_UtilityPowers4Name" class="box power-card-name">0</span>
+					<span tabindex="783" id="_UtilityPowers4Keyword" class="box power-card-keyword"></span>
+					<input tabindex="784" id="_UtilityPowers4Box" class="box power-card-box" type="checkbox">
+					<span tabindex="785" id="_UtilityPowers4Action" class="box power-card-action"></span>
+					<span tabindex="786" id="_UtilityPowers4AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="787" id="_UtilityPowers4Range" class="box power-card-range"></span>
+					<span tabindex="788" id="_UtilityPowers4Attack" class="box power-card-attack"></span>
+					<span tabindex="789" id="_UtilityPowers4Defense" class="box power-card-defense"></span>
+					<span tabindex="790" id="_UtilityPowers4Target" class="box power-card-target"></span>
+					<span tabindex="791" id="_UtilityPowers4Details" class="box power-card-details"></span>
+					<span tabindex="792" id="_UtilityPowers4Additional" class="box power-card-additional"></span>
+					<span tabindex="793" id="_UtilityPowers4Class" class="box power-card-class"></span>
+					<span tabindex="795" id="_UtilityPowers4Level" class="box power-card-level"></span>
+					<span tabindex="796" id="_UtilityPowers4Page" class="box power-card-page"></span>
+					<select tabindex="797" id="_UtilityPowers4PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_UtilityPowers5Card" class="power-card">
+					<img id="_UtilityPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="798" id="_UtilityPowers5Name" class="box power-card-name">0</span>
+					<span tabindex="799" id="_UtilityPowers5Keyword" class="box power-card-keyword"></span>
+					<input tabindex="800" id="_UtilityPowers5Box" class="box power-card-box" type="checkbox">
+					<span tabindex="801" id="_UtilityPowers5Action" class="box power-card-action"></span>
+					<span tabindex="802" id="_UtilityPowers5AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="803" id="_UtilityPowers5Range" class="box power-card-range"></span>
+					<span tabindex="804" id="_UtilityPowers5Attack" class="box power-card-attack"></span>
+					<span tabindex="805" id="_UtilityPowers5Defense" class="box power-card-defense"></span>
+					<span tabindex="806" id="_UtilityPowers5Target" class="box power-card-target"></span>
+					<span tabindex="807" id="_UtilityPowers5Details" class="box power-card-details"></span>
+					<span tabindex="808" id="_UtilityPowers5Additional" class="box power-card-additional"></span>
+					<span tabindex="809" id="_UtilityPowers5Class" class="box power-card-class"></span>
+					<span tabindex="811" id="_UtilityPowers5Level" class="box power-card-level"></span>
+					<span tabindex="812" id="_UtilityPowers5Page" class="box power-card-page"></span>
+					<select tabindex="813" id="_UtilityPowers5PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_UtilityPowers6Card" class="power-card">
+					<img id="_UtilityPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="814" id="_UtilityPowers6Name" class="box power-card-name">0</span>
+					<span tabindex="815" id="_UtilityPowers6Keyword" class="box power-card-keyword"></span>
+					<input tabindex="816" id="_UtilityPowers6Box" class="box power-card-box" type="checkbox">
+					<span tabindex="817" id="_UtilityPowers6Action" class="box power-card-action"></span>
+					<span tabindex="818" id="_UtilityPowers6AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="819" id="_UtilityPowers6Range" class="box power-card-range"></span>
+					<span tabindex="820" id="_UtilityPowers6Attack" class="box power-card-attack"></span>
+					<span tabindex="821" id="_UtilityPowers6Defense" class="box power-card-defense"></span>
+					<span tabindex="822" id="_UtilityPowers6Target" class="box power-card-target"></span>
+					<span tabindex="823" id="_UtilityPowers6Details" class="box power-card-details"></span>
+					<span tabindex="824" id="_UtilityPowers6Additional" class="box power-card-additional"></span>
+					<span tabindex="825" id="_UtilityPowers6Class" class="box power-card-class"></span>
+					<span tabindex="827" id="_UtilityPowers6Level" class="box power-card-level"></span>
+					<span tabindex="828" id="_UtilityPowers6Page" class="box power-card-page"></span>
+					<select tabindex="829" id="_UtilityPowers6PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_UtilityPowers7Card" class="power-card">
+					<img id="_UtilityPowers7Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="830" id="_UtilityPowers7Name" class="box power-card-name">0</span>
+					<span tabindex="831" id="_UtilityPowers7Keyword" class="box power-card-keyword"></span>
+					<input tabindex="832" id="_UtilityPowers7Box" class="box power-card-box" type="checkbox">
+					<span tabindex="833" id="_UtilityPowers7Action" class="box power-card-action"></span>
+					<span tabindex="834" id="_UtilityPowers7AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="835" id="_UtilityPowers7Range" class="box power-card-range"></span>
+					<span tabindex="836" id="_UtilityPowers7Attack" class="box power-card-attack"></span>
+					<span tabindex="837" id="_UtilityPowers7Defense" class="box power-card-defense"></span>
+					<span tabindex="838" id="_UtilityPowers7Target" class="box power-card-target"></span>
+					<span tabindex="839" id="_UtilityPowers7Details" class="box power-card-details"></span>
+					<span tabindex="840" id="_UtilityPowers7Additional" class="box power-card-additional"></span>
+					<span tabindex="841" id="_UtilityPowers7Class" class="box power-card-class"></span>
+					<span tabindex="843" id="_UtilityPowers7Level" class="box power-card-level"></span>
+					<span tabindex="844" id="_UtilityPowers7Page" class="box power-card-page"></span>
+					<select tabindex="845" id="_UtilityPowers7PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_UtilityPowers8Card" class="power-card">
+					<img id="_UtilityPowers8Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="846" id="_UtilityPowers8Name" class="box power-card-name">0</span>
+					<span tabindex="847" id="_UtilityPowers8Keyword" class="box power-card-keyword"></span>
+					<input tabindex="848" id="_UtilityPowers8Box" class="box power-card-box" type="checkbox">
+					<span tabindex="849" id="_UtilityPowers8Action" class="box power-card-action"></span>
+					<span tabindex="850" id="_UtilityPowers8AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="851" id="_UtilityPowers8Range" class="box power-card-range"></span>
+					<span tabindex="852" id="_UtilityPowers8Attack" class="box power-card-attack"></span>
+					<span tabindex="853" id="_UtilityPowers8Defense" class="box power-card-defense"></span>
+					<span tabindex="854" id="_UtilityPowers8Target" class="box power-card-target"></span>
+					<span tabindex="855" id="_UtilityPowers8Details" class="box power-card-details"></span>
+					<span tabindex="856" id="_UtilityPowers8Additional" class="box power-card-additional"></span>
+					<span tabindex="857" id="_UtilityPowers8Class" class="box power-card-class"></span>
+					<span tabindex="859" id="_UtilityPowers8Level" class="box power-card-level"></span>
+					<span tabindex="860" id="_UtilityPowers8Page" class="box power-card-page"></span>
+					<select tabindex="861" id="_UtilityPowers8PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsWeapon1Card" class="power-card">
+					<img id="_MagicItemsWeapon1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="446" id="_MagicItemsWeapon1Name" class="box power-card-name">0</span>
+					<span tabindex="447" id="_MagicItemsWeapon1Keyword" class="box power-card-keyword"></span>
+					<input tabindex="448" id="_MagicItemsWeapon1Box" class="box power-card-box" type="checkbox">
+					<span tabindex="449" id="_MagicItemsWeapon1Action" class="box power-card-action"></span>
+					<span tabindex="450" id="_MagicItemsWeapon1AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="451" id="_MagicItemsWeapon1Range" class="box power-card-range"></span>
+					<span tabindex="452" id="_MagicItemsWeapon1Attack" class="box power-card-attack"></span>
+					<span tabindex="453" id="_MagicItemsWeapon1Defense" class="box power-card-defense"></span>
+					<span tabindex="454" id="_MagicItemsWeapon1Target" class="box power-card-target"></span>
+					<span tabindex="455" id="_MagicItemsWeapon1Details" class="box power-card-details"></span>
+					<span tabindex="456" id="_MagicItemsWeapon1Additional" class="box power-card-additional"></span>
+					<span tabindex="457" id="_MagicItemsWeapon1Class" class="box power-card-class"></span>
+					<span tabindex="459" id="_MagicItemsWeapon1Level" class="box power-card-level"></span>
+					<span tabindex="460" id="_MagicItemsWeapon1Page" class="box power-card-page"></span>
+					<select tabindex="461" id="_MagicItemsWeapon1PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsWeapon2Card" class="power-card">
+					<img id="_MagicItemsWeapon2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="462" id="_MagicItemsWeapon2Name" class="box power-card-name">0</span>
+					<span tabindex="463" id="_MagicItemsWeapon2Keyword" class="box power-card-keyword"></span>
+					<input tabindex="464" id="_MagicItemsWeapon2Box" class="box power-card-box" type="checkbox">
+					<span tabindex="465" id="_MagicItemsWeapon2Action" class="box power-card-action"></span>
+					<span tabindex="466" id="_MagicItemsWeapon2AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="467" id="_MagicItemsWeapon2Range" class="box power-card-range"></span>
+					<span tabindex="468" id="_MagicItemsWeapon2Attack" class="box power-card-attack"></span>
+					<span tabindex="469" id="_MagicItemsWeapon2Defense" class="box power-card-defense"></span>
+					<span tabindex="470" id="_MagicItemsWeapon2Target" class="box power-card-target"></span>
+					<span tabindex="471" id="_MagicItemsWeapon2Details" class="box power-card-details"></span>
+					<span tabindex="472" id="_MagicItemsWeapon2Additional" class="box power-card-additional"></span>
+					<span tabindex="473" id="_MagicItemsWeapon2Class" class="box power-card-class"></span>
+					<span tabindex="475" id="_MagicItemsWeapon2Level" class="box power-card-level"></span>
+					<span tabindex="476" id="_MagicItemsWeapon2Page" class="box power-card-page"></span>
+					<select tabindex="477" id="_MagicItemsWeapon2PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsWeapon3Card" class="power-card">
+					<img id="_MagicItemsWeapon3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="478" id="_MagicItemsWeapon3Name" class="box power-card-name">0</span>
+					<span tabindex="479" id="_MagicItemsWeapon3Keyword" class="box power-card-keyword"></span>
+					<input tabindex="480" id="_MagicItemsWeapon3Box" class="box power-card-box" type="checkbox">
+					<span tabindex="481" id="_MagicItemsWeapon3Action" class="box power-card-action"></span>
+					<span tabindex="482" id="_MagicItemsWeapon3AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="483" id="_MagicItemsWeapon3Range" class="box power-card-range"></span>
+					<span tabindex="484" id="_MagicItemsWeapon3Attack" class="box power-card-attack"></span>
+					<span tabindex="485" id="_MagicItemsWeapon3Defense" class="box power-card-defense"></span>
+					<span tabindex="486" id="_MagicItemsWeapon3Target" class="box power-card-target"></span>
+					<span tabindex="487" id="_MagicItemsWeapon3Details" class="box power-card-details"></span>
+					<span tabindex="488" id="_MagicItemsWeapon3Additional" class="box power-card-additional"></span>
+					<span tabindex="489" id="_MagicItemsWeapon3Class" class="box power-card-class"></span>
+					<span tabindex="491" id="_MagicItemsWeapon3Level" class="box power-card-level"></span>
+					<span tabindex="492" id="_MagicItemsWeapon3Page" class="box power-card-page"></span>
+					<select tabindex="493" id="_MagicItemsWeapon3PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsWeapon4Card" class="power-card">
+					<img id="_MagicItemsWeapon4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="494" id="_MagicItemsWeapon4Name" class="box power-card-name">0</span>
+					<span tabindex="495" id="_MagicItemsWeapon4Keyword" class="box power-card-keyword"></span>
+					<input tabindex="496" id="_MagicItemsWeapon4Box" class="box power-card-box" type="checkbox">
+					<span tabindex="497" id="_MagicItemsWeapon4Action" class="box power-card-action"></span>
+					<span tabindex="498" id="_MagicItemsWeapon4AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="499" id="_MagicItemsWeapon4Range" class="box power-card-range"></span>
+					<span tabindex="500" id="_MagicItemsWeapon4Attack" class="box power-card-attack"></span>
+					<span tabindex="501" id="_MagicItemsWeapon4Defense" class="box power-card-defense"></span>
+					<span tabindex="502" id="_MagicItemsWeapon4Target" class="box power-card-target"></span>
+					<span tabindex="503" id="_MagicItemsWeapon4Details" class="box power-card-details"></span>
+					<span tabindex="504" id="_MagicItemsWeapon4Additional" class="box power-card-additional"></span>
+					<span tabindex="505" id="_MagicItemsWeapon4Class" class="box power-card-class"></span>
+					<span tabindex="507" id="_MagicItemsWeapon4Level" class="box power-card-level"></span>
+					<span tabindex="508" id="_MagicItemsWeapon4Page" class="box power-card-page"></span>
+					<select tabindex="509" id="_MagicItemsWeapon4PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsArmorCard" class="power-card">
+					<img id="_MagicItemsArmorImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">0</span>
+					<span tabindex="511" id="_MagicItemsArmorKeyword" class="box power-card-keyword"></span>
+					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box" type="checkbox">
+					<span tabindex="513" id="_MagicItemsArmorAction" class="box power-card-action"></span>
+					<span tabindex="514" id="_MagicItemsArmorAttackType" class="box power-card-attack-type"></span>
+					<span tabindex="515" id="_MagicItemsArmorRange" class="box power-card-range"></span>
+					<span tabindex="516" id="_MagicItemsArmorAttack" class="box power-card-attack"></span>
+					<span tabindex="517" id="_MagicItemsArmorDefense" class="box power-card-defense"></span>
+					<span tabindex="518" id="_MagicItemsArmorTarget" class="box power-card-target"></span>
+					<span tabindex="519" id="_MagicItemsArmorDetails" class="box power-card-details"></span>
+					<span tabindex="520" id="_MagicItemsArmorAdditional" class="box power-card-additional"></span>
+					<span tabindex="521" id="_MagicItemsArmorClass" class="box power-card-class"></span>
+					<span tabindex="523" id="_MagicItemsArmorLevel" class="box power-card-level"></span>
+					<span tabindex="524" id="_MagicItemsArmorPage" class="box power-card-page"></span>
+					<select tabindex="525" id="_MagicItemsArmorPowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsArmsCard" class="power-card">
+					<img id="_MagicItemsArmsImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="526" id="_MagicItemsArmsName" class="box power-card-name">0</span>
+					<span tabindex="527" id="_MagicItemsArmsKeyword" class="box power-card-keyword"></span>
+					<input tabindex="528" id="_MagicItemsArmsBox" class="box power-card-box" type="checkbox">
+					<span tabindex="529" id="_MagicItemsArmsAction" class="box power-card-action"></span>
+					<span tabindex="530" id="_MagicItemsArmsAttackType" class="box power-card-attack-type"></span>
+					<span tabindex="531" id="_MagicItemsArmsRange" class="box power-card-range"></span>
+					<span tabindex="532" id="_MagicItemsArmsAttack" class="box power-card-attack"></span>
+					<span tabindex="533" id="_MagicItemsArmsDefense" class="box power-card-defense"></span>
+					<span tabindex="534" id="_MagicItemsArmsTarget" class="box power-card-target"></span>
+					<span tabindex="535" id="_MagicItemsArmsDetails" class="box power-card-details"></span>
+					<span tabindex="536" id="_MagicItemsArmsAdditional" class="box power-card-additional"></span>
+					<span tabindex="537" id="_MagicItemsArmsClass" class="box power-card-class"></span>
+					<span tabindex="539" id="_MagicItemsArmsLevel" class="box power-card-level"></span>
+					<span tabindex="540" id="_MagicItemsArmsPage" class="box power-card-page"></span>
+					<select tabindex="541" id="_MagicItemsArmsPowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsFeetCard" class="power-card">
+					<img id="_MagicItemsFeetImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="542" id="_MagicItemsFeetName" class="box power-card-name">0</span>
+					<span tabindex="543" id="_MagicItemsFeetKeyword" class="box power-card-keyword"></span>
+					<input tabindex="544" id="_MagicItemsFeetBox" class="box power-card-box" type="checkbox">
+					<span tabindex="545" id="_MagicItemsFeetAction" class="box power-card-action"></span>
+					<span tabindex="546" id="_MagicItemsFeetAttackType" class="box power-card-attack-type"></span>
+					<span tabindex="547" id="_MagicItemsFeetRange" class="box power-card-range"></span>
+					<span tabindex="548" id="_MagicItemsFeetAttack" class="box power-card-attack"></span>
+					<span tabindex="549" id="_MagicItemsFeetDefense" class="box power-card-defense"></span>
+					<span tabindex="550" id="_MagicItemsFeetTarget" class="box power-card-target"></span>
+					<span tabindex="551" id="_MagicItemsFeetDetails" class="box power-card-details"></span>
+					<span tabindex="552" id="_MagicItemsFeetAdditional" class="box power-card-additional"></span>
+					<span tabindex="553" id="_MagicItemsFeetClass" class="box power-card-class"></span>
+					<span tabindex="555" id="_MagicItemsFeetLevel" class="box power-card-level"></span>
+					<span tabindex="556" id="_MagicItemsFeetPage" class="box power-card-page"></span>
+					<select tabindex="557" id="_MagicItemsFeetPowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsHandsCard" class="power-card">
+					<img id="_MagicItemsHandsImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="558" id="_MagicItemsHandsName" class="box power-card-name">0</span>
+					<span tabindex="559" id="_MagicItemsHandsKeyword" class="box power-card-keyword"></span>
+					<input tabindex="560" id="_MagicItemsHandsBox" class="box power-card-box" type="checkbox">
+					<span tabindex="561" id="_MagicItemsHandsAction" class="box power-card-action"></span>
+					<span tabindex="562" id="_MagicItemsHandsAttackType" class="box power-card-attack-type"></span>
+					<span tabindex="563" id="_MagicItemsHandsRange" class="box power-card-range"></span>
+					<span tabindex="564" id="_MagicItemsHandsAttack" class="box power-card-attack"></span>
+					<span tabindex="565" id="_MagicItemsHandsDefense" class="box power-card-defense"></span>
+					<span tabindex="566" id="_MagicItemsHandsTarget" class="box power-card-target"></span>
+					<span tabindex="567" id="_MagicItemsHandsDetails" class="box power-card-details"></span>
+					<span tabindex="568" id="_MagicItemsHandsAdditional" class="box power-card-additional"></span>
+					<span tabindex="569" id="_MagicItemsHandsClass" class="box power-card-class"></span>
+					<span tabindex="571" id="_MagicItemsHandsLevel" class="box power-card-level"></span>
+					<span tabindex="572" id="_MagicItemsHandsPage" class="box power-card-page"></span>
+					<select tabindex="573" id="_MagicItemsHandsPowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsHeadCard" class="power-card">
+					<img id="_MagicItemsHeadImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="574" id="_MagicItemsHeadName" class="box power-card-name">0</span>
+					<span tabindex="575" id="_MagicItemsHeadKeyword" class="box power-card-keyword"></span>
+					<input tabindex="576" id="_MagicItemsHeadBox" class="box power-card-box" type="checkbox">
+					<span tabindex="577" id="_MagicItemsHeadAction" class="box power-card-action"></span>
+					<span tabindex="578" id="_MagicItemsHeadAttackType" class="box power-card-attack-type"></span>
+					<span tabindex="579" id="_MagicItemsHeadRange" class="box power-card-range"></span>
+					<span tabindex="580" id="_MagicItemsHeadAttack" class="box power-card-attack"></span>
+					<span tabindex="581" id="_MagicItemsHeadDefense" class="box power-card-defense"></span>
+					<span tabindex="582" id="_MagicItemsHeadTarget" class="box power-card-target"></span>
+					<span tabindex="583" id="_MagicItemsHeadDetails" class="box power-card-details"></span>
+					<span tabindex="584" id="_MagicItemsHeadAdditional" class="box power-card-additional"></span>
+					<span tabindex="585" id="_MagicItemsHeadClass" class="box power-card-class"></span>
+					<span tabindex="587" id="_MagicItemsHeadLevel" class="box power-card-level"></span>
+					<span tabindex="588" id="_MagicItemsHeadPage" class="box power-card-page"></span>
+					<select tabindex="589" id="_MagicItemsHeadPowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsNeckCard" class="power-card">
+					<img id="_MagicItemsNeckImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">0</span>
+					<span tabindex="591" id="_MagicItemsNeckKeyword" class="box power-card-keyword"></span>
+					<input tabindex="592" id="_MagicItemsNeckBox" class="box power-card-box" type="checkbox">
+					<span tabindex="593" id="_MagicItemsNeckAction" class="box power-card-action"></span>
+					<span tabindex="594" id="_MagicItemsNeckAttackType" class="box power-card-attack-type"></span>
+					<span tabindex="595" id="_MagicItemsNeckRange" class="box power-card-range"></span>
+					<span tabindex="596" id="_MagicItemsNeckAttack" class="box power-card-attack"></span>
+					<span tabindex="597" id="_MagicItemsNeckDefense" class="box power-card-defense"></span>
+					<span tabindex="598" id="_MagicItemsNeckTarget" class="box power-card-target"></span>
+					<span tabindex="599" id="_MagicItemsNeckDetails" class="box power-card-details"></span>
+					<span tabindex="600" id="_MagicItemsNeckAdditional" class="box power-card-additional"></span>
+					<span tabindex="601" id="_MagicItemsNeckClass" class="box power-card-class"></span>
+					<span tabindex="603" id="_MagicItemsNeckLevel" class="box power-card-level"></span>
+					<span tabindex="604" id="_MagicItemsNeckPage" class="box power-card-page"></span>
+					<select tabindex="605" id="_MagicItemsNeckPowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsRing1Card" class="power-card">
+					<img id="_MagicItemsRing1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="606" id="_MagicItemsRing1Name" class="box power-card-name">0</span>
+					<span tabindex="607" id="_MagicItemsRing1Keyword" class="box power-card-keyword"></span>
+					<input tabindex="608" id="_MagicItemsRing1Box" class="box power-card-box" type="checkbox">
+					<span tabindex="609" id="_MagicItemsRing1Action" class="box power-card-action"></span>
+					<span tabindex="610" id="_MagicItemsRing1AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="611" id="_MagicItemsRing1Range" class="box power-card-range"></span>
+					<span tabindex="612" id="_MagicItemsRing1Attack" class="box power-card-attack"></span>
+					<span tabindex="613" id="_MagicItemsRing1Defense" class="box power-card-defense"></span>
+					<span tabindex="614" id="_MagicItemsRing1Target" class="box power-card-target"></span>
+					<span tabindex="615" id="_MagicItemsRing1Details" class="box power-card-details"></span>
+					<span tabindex="616" id="_MagicItemsRing1Additional" class="box power-card-additional"></span>
+					<span tabindex="617" id="_MagicItemsRing1Class" class="box power-card-class"></span>
+					<span tabindex="619" id="_MagicItemsRing1Level" class="box power-card-level"></span>
+					<span tabindex="620" id="_MagicItemsRing1Page" class="box power-card-page"></span>
+					<select tabindex="621" id="_MagicItemsRing1PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsRing2Card" class="power-card">
+					<img id="_MagicItemsRing2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="622" id="_MagicItemsRing2Name" class="box power-card-name">0</span>
+					<span tabindex="623" id="_MagicItemsRing2Keyword" class="box power-card-keyword"></span>
+					<input tabindex="624" id="_MagicItemsRing2Box" class="box power-card-box" type="checkbox">
+					<span tabindex="625" id="_MagicItemsRing2Action" class="box power-card-action"></span>
+					<span tabindex="626" id="_MagicItemsRing2AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="627" id="_MagicItemsRing2Range" class="box power-card-range"></span>
+					<span tabindex="628" id="_MagicItemsRing2Attack" class="box power-card-attack"></span>
+					<span tabindex="629" id="_MagicItemsRing2Defense" class="box power-card-defense"></span>
+					<span tabindex="630" id="_MagicItemsRing2Target" class="box power-card-target"></span>
+					<span tabindex="631" id="_MagicItemsRing2Details" class="box power-card-details"></span>
+					<span tabindex="632" id="_MagicItemsRing2Additional" class="box power-card-additional"></span>
+					<span tabindex="633" id="_MagicItemsRing2Class" class="box power-card-class"></span>
+					<span tabindex="635" id="_MagicItemsRing2Level" class="box power-card-level"></span>
+					<span tabindex="636" id="_MagicItemsRing2Page" class="box power-card-page"></span>
+					<select tabindex="637" id="_MagicItemsRing2PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsWaistCard" class="power-card">
+					<img id="_MagicItemsWaistImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="638" id="_MagicItemsWaistName" class="box power-card-name">0</span>
+					<span tabindex="639" id="_MagicItemsWaistKeyword" class="box power-card-keyword"></span>
+					<input tabindex="640" id="_MagicItemsWaistBox" class="box power-card-box" type="checkbox">
+					<span tabindex="641" id="_MagicItemsWaistAction" class="box power-card-action"></span>
+					<span tabindex="642" id="_MagicItemsWaistAttackType" class="box power-card-attack-type"></span>
+					<span tabindex="643" id="_MagicItemsWaistRange" class="box power-card-range"></span>
+					<span tabindex="644" id="_MagicItemsWaistAttack" class="box power-card-attack"></span>
+					<span tabindex="645" id="_MagicItemsWaistDefense" class="box power-card-defense"></span>
+					<span tabindex="646" id="_MagicItemsWaistTarget" class="box power-card-target"></span>
+					<span tabindex="647" id="_MagicItemsWaistDetails" class="box power-card-details"></span>
+					<span tabindex="648" id="_MagicItemsWaistAdditional" class="box power-card-additional"></span>
+					<span tabindex="649" id="_MagicItemsWaistClass" class="box power-card-class"></span>
+					<span tabindex="651" id="_MagicItemsWaistLevel" class="box power-card-level"></span>
+					<span tabindex="652" id="_MagicItemsWaistPage" class="box power-card-page"></span>
+					<select tabindex="653" id="_MagicItemsWaistPowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc1Card" class="power-card">
+					<img id="_MagicItemsMisc1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="654" id="_MagicItemsMisc1Name" class="box power-card-name">0</span>
+					<span tabindex="655" id="_MagicItemsMisc1Keyword" class="box power-card-keyword"></span>
+					<input tabindex="656" id="_MagicItemsMisc1Box" class="box power-card-box" type="checkbox">
+					<span tabindex="657" id="_MagicItemsMisc1Action" class="box power-card-action"></span>
+					<span tabindex="658" id="_MagicItemsMisc1AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="659" id="_MagicItemsMisc1Range" class="box power-card-range"></span>
+					<span tabindex="660" id="_MagicItemsMisc1Attack" class="box power-card-attack"></span>
+					<span tabindex="661" id="_MagicItemsMisc1Defense" class="box power-card-defense"></span>
+					<span tabindex="662" id="_MagicItemsMisc1Target" class="box power-card-target"></span>
+					<span tabindex="663" id="_MagicItemsMisc1Details" class="box power-card-details"></span>
+					<span tabindex="664" id="_MagicItemsMisc1Additional" class="box power-card-additional"></span>
+					<span tabindex="665" id="_MagicItemsMisc1Class" class="box power-card-class"></span>
+					<span tabindex="667" id="_MagicItemsMisc1Level" class="box power-card-level"></span>
+					<span tabindex="668" id="_MagicItemsMisc1Page" class="box power-card-page"></span>
+					<select tabindex="669" id="_MagicItemsMisc1PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc2Card" class="power-card">
+					<img id="_MagicItemsMisc2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="670" id="_MagicItemsMisc2Name" class="box power-card-name">0</span>
+					<span tabindex="671" id="_MagicItemsMisc2Keyword" class="box power-card-keyword"></span>
+					<input tabindex="672" id="_MagicItemsMisc2Box" class="box power-card-box" type="checkbox">
+					<span tabindex="673" id="_MagicItemsMisc2Action" class="box power-card-action"></span>
+					<span tabindex="674" id="_MagicItemsMisc2AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="675" id="_MagicItemsMisc2Range" class="box power-card-range"></span>
+					<span tabindex="676" id="_MagicItemsMisc2Attack" class="box power-card-attack"></span>
+					<span tabindex="677" id="_MagicItemsMisc2Defense" class="box power-card-defense"></span>
+					<span tabindex="678" id="_MagicItemsMisc2Target" class="box power-card-target"></span>
+					<span tabindex="679" id="_MagicItemsMisc2Details" class="box power-card-details"></span>
+					<span tabindex="680" id="_MagicItemsMisc2Additional" class="box power-card-additional"></span>
+					<span tabindex="681" id="_MagicItemsMisc2Class" class="box power-card-class"></span>
+					<span tabindex="683" id="_MagicItemsMisc2Level" class="box power-card-level"></span>
+					<span tabindex="684" id="_MagicItemsMisc2Page" class="box power-card-page"></span>
+					<select tabindex="685" id="_MagicItemsMisc2PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc3Card" class="power-card">
+					<img id="_MagicItemsMisc3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="686" id="_MagicItemsMisc3Name" class="box power-card-name">0</span>
+					<span tabindex="687" id="_MagicItemsMisc3Keyword" class="box power-card-keyword"></span>
+					<input tabindex="688" id="_MagicItemsMisc3Box" class="box power-card-box" type="checkbox">
+					<span tabindex="689" id="_MagicItemsMisc3Action" class="box power-card-action"></span>
+					<span tabindex="690" id="_MagicItemsMisc3AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="691" id="_MagicItemsMisc3Range" class="box power-card-range"></span>
+					<span tabindex="692" id="_MagicItemsMisc3Attack" class="box power-card-attack"></span>
+					<span tabindex="693" id="_MagicItemsMisc3Defense" class="box power-card-defense"></span>
+					<span tabindex="694" id="_MagicItemsMisc3Target" class="box power-card-target"></span>
+					<span tabindex="695" id="_MagicItemsMisc3Details" class="box power-card-details"></span>
+					<span tabindex="696" id="_MagicItemsMisc3Additional" class="box power-card-additional"></span>
+					<span tabindex="697" id="_MagicItemsMisc3Class" class="box power-card-class"></span>
+					<span tabindex="699" id="_MagicItemsMisc3Level" class="box power-card-level"></span>
+					<span tabindex="700" id="_MagicItemsMisc3Page" class="box power-card-page"></span>
+					<select tabindex="701" id="_MagicItemsMisc3PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc4Card" class="power-card">
+					<img id="_MagicItemsMisc4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="702" id="_MagicItemsMisc4Name" class="box power-card-name">0</span>
+					<span tabindex="703" id="_MagicItemsMisc4Keyword" class="box power-card-keyword"></span>
+					<input tabindex="704" id="_MagicItemsMisc4Box" class="box power-card-box" type="checkbox">
+					<span tabindex="705" id="_MagicItemsMisc4Action" class="box power-card-action"></span>
+					<span tabindex="706" id="_MagicItemsMisc4AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="707" id="_MagicItemsMisc4Range" class="box power-card-range"></span>
+					<span tabindex="708" id="_MagicItemsMisc4Attack" class="box power-card-attack"></span>
+					<span tabindex="709" id="_MagicItemsMisc4Defense" class="box power-card-defense"></span>
+					<span tabindex="710" id="_MagicItemsMisc4Target" class="box power-card-target"></span>
+					<span tabindex="711" id="_MagicItemsMisc4Details" class="box power-card-details"></span>
+					<span tabindex="712" id="_MagicItemsMisc4Additional" class="box power-card-additional"></span>
+					<span tabindex="713" id="_MagicItemsMisc4Class" class="box power-card-class"></span>
+					<span tabindex="715" id="_MagicItemsMisc4Level" class="box power-card-level"></span>
+					<span tabindex="716" id="_MagicItemsMisc4Page" class="box power-card-page"></span>
+					<select tabindex="717" id="_MagicItemsMisc4PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc5Card" class="power-card">
+					<img id="_MagicItemsMisc5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="718" id="_MagicItemsMisc5Name" class="box power-card-name">0</span>
+					<span tabindex="719" id="_MagicItemsMisc5Keyword" class="box power-card-keyword"></span>
+					<input tabindex="720" id="_MagicItemsMisc5Box" class="box power-card-box" type="checkbox">
+					<span tabindex="721" id="_MagicItemsMisc5Action" class="box power-card-action"></span>
+					<span tabindex="722" id="_MagicItemsMisc5AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="723" id="_MagicItemsMisc5Range" class="box power-card-range"></span>
+					<span tabindex="724" id="_MagicItemsMisc5Attack" class="box power-card-attack"></span>
+					<span tabindex="725" id="_MagicItemsMisc5Defense" class="box power-card-defense"></span>
+					<span tabindex="726" id="_MagicItemsMisc5Target" class="box power-card-target"></span>
+					<span tabindex="727" id="_MagicItemsMisc5Details" class="box power-card-details"></span>
+					<span tabindex="728" id="_MagicItemsMisc5Additional" class="box power-card-additional"></span>
+					<span tabindex="729" id="_MagicItemsMisc5Class" class="box power-card-class"></span>
+					<span tabindex="731" id="_MagicItemsMisc5Level" class="box power-card-level"></span>
+					<span tabindex="732" id="_MagicItemsMisc5Page" class="box power-card-page"></span>
+					<select tabindex="733" id="_MagicItemsMisc5PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc6Card" class="power-card">
+					<img id="_MagicItemsMisc6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="734" id="_MagicItemsMisc6Name" class="box power-card-name">0</span>
+					<span tabindex="735" id="_MagicItemsMisc6Keyword" class="box power-card-keyword"></span>
+					<input tabindex="736" id="_MagicItemsMisc6Box" class="box power-card-box" type="checkbox">
+					<span tabindex="737" id="_MagicItemsMisc6Action" class="box power-card-action"></span>
+					<span tabindex="738" id="_MagicItemsMisc6AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="739" id="_MagicItemsMisc6Range" class="box power-card-range"></span>
+					<span tabindex="740" id="_MagicItemsMisc6Attack" class="box power-card-attack"></span>
+					<span tabindex="741" id="_MagicItemsMisc6Defense" class="box power-card-defense"></span>
+					<span tabindex="742" id="_MagicItemsMisc6Target" class="box power-card-target"></span>
+					<span tabindex="743" id="_MagicItemsMisc6Details" class="box power-card-details"></span>
+					<span tabindex="744" id="_MagicItemsMisc6Additional" class="box power-card-additional"></span>
+					<span tabindex="745" id="_MagicItemsMisc6Class" class="box power-card-class"></span>
+					<span tabindex="747" id="_MagicItemsMisc6Level" class="box power-card-level"></span>
+					<span tabindex="748" id="_MagicItemsMisc6Page" class="box power-card-page"></span>
+					<select tabindex="749" id="_MagicItemsMisc6PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc7Card" class="power-card">
+					<img id="_MagicItemsMisc7Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="750" id="_MagicItemsMisc7Name" class="box power-card-name">0</span>
+					<span tabindex="751" id="_MagicItemsMisc7Keyword" class="box power-card-keyword"></span>
+					<input tabindex="752" id="_MagicItemsMisc7Box" class="box power-card-box" type="checkbox">
+					<span tabindex="753" id="_MagicItemsMisc7Action" class="box power-card-action"></span>
+					<span tabindex="754" id="_MagicItemsMisc7AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="755" id="_MagicItemsMisc7Range" class="box power-card-range"></span>
+					<span tabindex="756" id="_MagicItemsMisc7Attack" class="box power-card-attack"></span>
+					<span tabindex="757" id="_MagicItemsMisc7Defense" class="box power-card-defense"></span>
+					<span tabindex="758" id="_MagicItemsMisc7Target" class="box power-card-target"></span>
+					<span tabindex="759" id="_MagicItemsMisc7Details" class="box power-card-details"></span>
+					<span tabindex="760" id="_MagicItemsMisc7Additional" class="box power-card-additional"></span>
+					<span tabindex="761" id="_MagicItemsMisc7Class" class="box power-card-class"></span>
+					<span tabindex="763" id="_MagicItemsMisc7Level" class="box power-card-level"></span>
+					<span tabindex="764" id="_MagicItemsMisc7Page" class="box power-card-page"></span>
+					<select tabindex="765" id="_MagicItemsMisc7PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc8Card" class="power-card">
+					<img id="_MagicItemsMisc8Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="766" id="_MagicItemsMisc8Name" class="box power-card-name">0</span>
+					<span tabindex="767" id="_MagicItemsMisc8Keyword" class="box power-card-keyword"></span>
+					<input tabindex="768" id="_MagicItemsMisc8Box" class="box power-card-box" type="checkbox">
+					<span tabindex="769" id="_MagicItemsMisc8Action" class="box power-card-action"></span>
+					<span tabindex="770" id="_MagicItemsMisc8AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="771" id="_MagicItemsMisc8Range" class="box power-card-range"></span>
+					<span tabindex="772" id="_MagicItemsMisc8Attack" class="box power-card-attack"></span>
+					<span tabindex="773" id="_MagicItemsMisc8Defense" class="box power-card-defense"></span>
+					<span tabindex="774" id="_MagicItemsMisc8Target" class="box power-card-target"></span>
+					<span tabindex="775" id="_MagicItemsMisc8Details" class="box power-card-details"></span>
+					<span tabindex="776" id="_MagicItemsMisc8Additional" class="box power-card-additional"></span>
+					<span tabindex="777" id="_MagicItemsMisc8Class" class="box power-card-class"></span>
+					<span tabindex="779" id="_MagicItemsMisc8Level" class="box power-card-level"></span>
+					<span tabindex="780" id="_MagicItemsMisc8Page" class="box power-card-page"></span>
+					<select tabindex="781" id="_MagicItemsMisc8PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc9Card" class="power-card">
+					<img id="_MagicItemsMisc9Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="782" id="_MagicItemsMisc9Name" class="box power-card-name">0</span>
+					<span tabindex="783" id="_MagicItemsMisc9Keyword" class="box power-card-keyword"></span>
+					<input tabindex="784" id="_MagicItemsMisc9Box" class="box power-card-box" type="checkbox">
+					<span tabindex="785" id="_MagicItemsMisc9Action" class="box power-card-action"></span>
+					<span tabindex="786" id="_MagicItemsMisc9AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="787" id="_MagicItemsMisc9Range" class="box power-card-range"></span>
+					<span tabindex="788" id="_MagicItemsMisc9Attack" class="box power-card-attack"></span>
+					<span tabindex="789" id="_MagicItemsMisc9Defense" class="box power-card-defense"></span>
+					<span tabindex="790" id="_MagicItemsMisc9Target" class="box power-card-target"></span>
+					<span tabindex="791" id="_MagicItemsMisc9Details" class="box power-card-details"></span>
+					<span tabindex="792" id="_MagicItemsMisc9Additional" class="box power-card-additional"></span>
+					<span tabindex="793" id="_MagicItemsMisc9Class" class="box power-card-class"></span>
+					<span tabindex="795" id="_MagicItemsMisc9Level" class="box power-card-level"></span>
+					<span tabindex="796" id="_MagicItemsMisc9Page" class="box power-card-page"></span>
+					<select tabindex="797" id="_MagicItemsMisc9PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc10Card" class="power-card">
+					<img id="_MagicItemsMisc10Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="798" id="_MagicItemsMisc10Name" class="box power-card-name">0</span>
+					<span tabindex="799" id="_MagicItemsMisc10Keyword" class="box power-card-keyword"></span>
+					<input tabindex="800" id="_MagicItemsMisc10Box" class="box power-card-box" type="checkbox">
+					<span tabindex="801" id="_MagicItemsMisc10Action" class="box power-card-action"></span>
+					<span tabindex="802" id="_MagicItemsMisc10AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="803" id="_MagicItemsMisc10Range" class="box power-card-range"></span>
+					<span tabindex="804" id="_MagicItemsMisc10Attack" class="box power-card-attack"></span>
+					<span tabindex="805" id="_MagicItemsMisc10Defense" class="box power-card-defense"></span>
+					<span tabindex="806" id="_MagicItemsMisc10Target" class="box power-card-target"></span>
+					<span tabindex="807" id="_MagicItemsMisc10Details" class="box power-card-details"></span>
+					<span tabindex="808" id="_MagicItemsMisc10Additional" class="box power-card-additional"></span>
+					<span tabindex="809" id="_MagicItemsMisc10Class" class="box power-card-class"></span>
+					<span tabindex="811" id="_MagicItemsMisc10Level" class="box power-card-level"></span>
+					<span tabindex="812" id="_MagicItemsMisc10Page" class="box power-card-page"></span>
+					<select tabindex="813" id="_MagicItemsMisc10PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc11Card" class="power-card">
+					<img id="_MagicItemsMisc11Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="814" id="_MagicItemsMisc11Name" class="box power-card-name">0</span>
+					<span tabindex="815" id="_MagicItemsMisc11Keyword" class="box power-card-keyword"></span>
+					<input tabindex="816" id="_MagicItemsMisc11Box" class="box power-card-box" type="checkbox">
+					<span tabindex="817" id="_MagicItemsMisc11Action" class="box power-card-action"></span>
+					<span tabindex="818" id="_MagicItemsMisc11AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="819" id="_MagicItemsMisc11Range" class="box power-card-range"></span>
+					<span tabindex="820" id="_MagicItemsMisc11Attack" class="box power-card-attack"></span>
+					<span tabindex="821" id="_MagicItemsMisc11Defense" class="box power-card-defense"></span>
+					<span tabindex="822" id="_MagicItemsMisc11Target" class="box power-card-target"></span>
+					<span tabindex="823" id="_MagicItemsMisc11Details" class="box power-card-details"></span>
+					<span tabindex="824" id="_MagicItemsMisc11Additional" class="box power-card-additional"></span>
+					<span tabindex="825" id="_MagicItemsMisc11Class" class="box power-card-class"></span>
+					<span tabindex="827" id="_MagicItemsMisc11Level" class="box power-card-level"></span>
+					<span tabindex="828" id="_MagicItemsMisc11Page" class="box power-card-page"></span>
+					<select tabindex="829" id="_MagicItemsMisc11PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
+				<div style="display: none;" id="_MagicItemsMisc12Card" class="power-card">
+					<img id="_MagicItemsMisc12Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="830" id="_MagicItemsMisc12Name" class="box power-card-name">0</span>
+					<span tabindex="831" id="_MagicItemsMisc12Keyword" class="box power-card-keyword"></span>
+					<input tabindex="832" id="_MagicItemsMisc12Box" class="box power-card-box" type="checkbox">
+					<span tabindex="833" id="_MagicItemsMisc12Action" class="box power-card-action"></span>
+					<span tabindex="834" id="_MagicItemsMisc12AttackType" class="box power-card-attack-type"></span>
+					<span tabindex="835" id="_MagicItemsMisc12Range" class="box power-card-range"></span>
+					<span tabindex="836" id="_MagicItemsMisc12Attack" class="box power-card-attack"></span>
+					<span tabindex="837" id="_MagicItemsMisc12Defense" class="box power-card-defense"></span>
+					<span tabindex="838" id="_MagicItemsMisc12Target" class="box power-card-target"></span>
+					<span tabindex="839" id="_MagicItemsMisc12Details" class="box power-card-details"></span>
+					<span tabindex="840" id="_MagicItemsMisc12Additional" class="box power-card-additional"></span>
+					<span tabindex="841" id="_MagicItemsMisc12Class" class="box power-card-class"></span>
+					<span tabindex="843" id="_MagicItemsMisc12Level" class="box power-card-level"></span>
+					<span tabindex="844" id="_MagicItemsMisc12Page" class="box power-card-page"></span>
+					<select tabindex="845" id="_MagicItemsMisc12PowerType" class="power-card-power-type">
+						<option value="0">At Will</option>
+						<option value="1">Encounter</option>
+						<option selected="selected" value="2">Daily</option>
+					</select>
+				</div>
 			</div>
 		</div>
-
+		<script src="http://rampion.github.com/4eCharSheet/link-power-cards.js"></script>
 		<script src="http://rampion.github.com/4eCharSheet/program.js"></script>
-	</body></html>
+</body></html>
