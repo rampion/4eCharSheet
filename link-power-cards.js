@@ -55,7 +55,7 @@
 		}, false);
 
 		// coordinate the checkboxes, and tap the card if used
-		const power_check = document.getElementById(power_id.replace(/\d/, 'Check$&'));
+		const power_check = document.getElementById(power_id.replace(/\d|$/, 'Check$&'));
 		const power_box = document.getElementById(power_id + 'Box');
 		const check_change = function(change_event){
 			if (power_check) power_check.checked = change_event.target.checked;
