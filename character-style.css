@@ -21,6 +21,10 @@
 	.moused {
 		outline: none;
 	}
+	.power-card {
+		page-break-inside: avoid;
+		margin-left: -5px;
+	}
 }
 .power-card {
 	position: relative;
