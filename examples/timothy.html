@@ -86,10 +86,10 @@
 			ArmorClassArmorSlashAbil:"=(max(DexMod,IntMod) /* add light armor bonus, or replace with heavy armor bonus */ + 2 /* leather armor */)",
 			AtWillPowers1:"Guiding Strike",
 			AtWillPowers1Action:"Standard",
-			AtWillPowers1Attack:"+=(ChaModPlusHalfLevel+3/*rapier*/)",
+			AtWillPowers1Attack:"+=(ChaModPlusHalfLevel+3+1/*rapier songblade +1*/)",
 			AtWillPowers1Class:"Bard",
 			AtWillPowers1Defense:"AC",
-			AtWillPowers1Details:"<b>Hit:</b> =(tier(Level) >= 2 ? 2 : 1)d8+=(ChaMod) damage (rapier), and target takes -2 penalty to defense of my choice until end of my next turn.",
+			AtWillPowers1Details:"<b>Hit:</b> =(tier(Level) >= 2 ? 2 : 1)d8+=(ChaMod +1) damage (rapier songblade +1), and target takes -2 penalty to defense of my choice until end of my next turn.",
 			AtWillPowers1Keyword:"Arcane, Weapon",
 			AtWillPowers1Level:"1",
 			AtWillPowers1Name:"=(AtWillPowers1)",
@@ -98,10 +98,10 @@
 			AtWillPowers1Target:"One creature",
 			AtWillPowers2:"Vicious Mockery",
 			AtWillPowers2Action:"Standard",
-			AtWillPowers2Attack:"+=(ChaModPlusHalfLevel)",
+			AtWillPowers2Attack:"+=(ChaModPlusHalfLevel +1 /*songblade implement */)",
 			AtWillPowers2Class:"Bard",
 			AtWillPowers2Defense:"Will",
-			AtWillPowers2Details:"<b>Hit:</b> =(tier(Level) >= 2 ? 2 : 1)d6+=(ChaMod) damage, and the target takes a -2 penalty to attack rolls until the end of my next turn",
+			AtWillPowers2Details:"<b>Hit:</b> =(tier(Level) >= 2 ? 2 : 1)d6+=(ChaMod + 1) damage (songblade implement), and the target takes a -2 penalty to attack rolls until the end of my next turn",
 			AtWillPowers2Keyword:"Arcane, Implement",
 			AtWillPowers2Level:"1",
 			AtWillPowers2Name:"=(AtWillPowers2)",
@@ -113,7 +113,7 @@
 			AtWillPowers3Attack:"n/a",
 			AtWillPowers3Class:"Bard",
 			AtWillPowers3Defense:"n/a",
-			AtWillPowers3Details:"<p><b>Trigger:</b> Once per round, when any ally within 5 squares of you reduces an enemy to 0 hit points or bloodies an enemy.</p>\n<p><b>Effect:</b> Grant =(ConMod+2*roundDown((Level+9)/10)-1) temporary hit points to the triggering ally.  Also, the ally gains +2 bonus to the next damage roll they make before the end of my next turn (Strength of Valor feat).",
+			AtWillPowers3Details:"<p><b>Trigger:</b> Once per round, when any ally within 5 squares of you reduces an enemy to 0 hit points or bloodies an enemy.</p>\n<p><b>Effect:</b> Grant =(ConMod+2*roundDown((Level+9)/10)-1) temporary hit points to the triggering ally.",
 			AtWillPowers3Level:"n/a",
 			AtWillPowers3Name:"=(AtWillPowers3)",
 			AtWillPowers3Page:"PHB2p67",
@@ -126,8 +126,9 @@
 			AthleticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+StrMod)",
 			AthleticsMisc:"=(1 /* bard: skill versatility */)",
 			Attack1Abil:"=(StrMod)",
-			Attack1Ability:"Rapier",
+			Attack1Ability:"Rapier Songblade +1",
 			Attack1AttBonus:"=(Attack1HalfLevel + Attack1Abil + Attack1Class + Attack1Prof + Attack1Feat + Attack1Enh + Attack1Misc)",
+			Attack1Enh:"1",
 			Attack1HalfLevel:"=(roundDown(Level/2))",
 			Attack1Prof:"3",
 			Attack2Abil:"=(DexMod)",
@@ -172,10 +173,10 @@
 			CurrentSurgeUses:"=(SurgesPerDay)",
 			DailyPowers1:"Slayer's Song",
 			DailyPowers1Action:"Standard",
-			DailyPowers1Attack:"+=(ChaModPlusHalfLevel+3/*rapier*/)",
+			DailyPowers1Attack:"+=(ChaModPlusHalfLevel+3+1/*rapier songblade +1*/)",
 			DailyPowers1Class:"Bard",
 			DailyPowers1Defense:"AC",
-			DailyPowers1Details:"<p><b>Hit:</b> 2d8+=(ChaMod) damage (rapier), and the target grants combat advantage to you and your allies (save ends).</p>\n<p><b>Miss:</b> Half damage.</p>\n<p><b>Effect:</b> Until the end of the encounter, whenever you hit an enemy, that enemy grants combat advantage to you and your allies until the end of your next turn.</p>",
+			DailyPowers1Details:"<p><b>Hit:</b> 2d8+=(ChaMod+1) damage (rapier songblade +1), and the target grants combat advantage to you and your allies (save ends).</p>\n<p><b>Miss:</b> Half damage.</p>\n<p><b>Effect:</b> Until the end of the encounter, whenever you hit an enemy, that enemy grants combat advantage to you and your allies until the end of your next turn.</p>",
 			DailyPowers1Keyword:"Arcane, Weapon",
 			DailyPowers1Level:"1",
 			DailyPowers1Name:"=(DailyPowers1)",
@@ -190,6 +191,7 @@
 			Damage1Abil:"=(StrMod)",
 			Damage1Ability:"=(Attack1Ability)",
 			Damage1Damage:"1d8 + =(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
+			Damage1Enh:"1",
 			Damage2Abil:"=(DexMod)",
 			Damage2Ability:"=(Attack2Ability)",
 			Damage2Damage:"1d4 + =(Damage2Abil + Damage2Feat + Damage2Enh + Damage2Misc1 + Damage2Misc2)",
@@ -249,26 +251,37 @@
 			EncounterPowers4Target:"Self",
 			EncounterPowers5:"Shout of Triumph",
 			EncounterPowers5Action:"Standard",
-			EncounterPowers5Attack:"+=(ChaModPlusHalfLevel)",
+			EncounterPowers5Attack:"+=(ChaModPlusHalfLevel +1 /*songblade implement*/)",
 			EncounterPowers5Class:"Bard",
 			EncounterPowers5Defense:"Fortitude",
-			EncounterPowers5Details:"<p><b>Hit:</b> 1d6+=(ChaMod) thunder damage, and you push the target =(ConMod) squres.</p>\n<p><b>Effect:</b> Slide each ally in the blast 1 square.</p>",
+			EncounterPowers5Details:"<p><b>Hit:</b> 1d6+=(ChaMod+1) thunder damage (songblade implement), and you push the target =(ConMod) squres.</p>\n<p><b>Effect:</b> Slide each ally in the blast 1 square.</p>",
 			EncounterPowers5Keyword:"Arcane, Implement, Thunder",
 			EncounterPowers5Level:"1",
 			EncounterPowers5Name:"=(EncounterPowers5)",
 			EncounterPowers5Page:"PHB2p69",
 			EncounterPowers5Range:"Close blast 3",
 			EncounterPowers5Target:"Each enemy in blast",
+			EncounterPowers6:"Battle Feint",
+			EncounterPowers6Action:"Minor",
+			EncounterPowers6Attack:"+=(Bluff)",
+			EncounterPowers6Class:"Bluff Skill Power",
+			EncounterPowers6Defense:"P. Insight",
+			EncounterPowers6Details:"<b>Effect:</b> You make a Bluff check opposed by the target's passive Insight check.  If the check succeeds, one ally adjacent to you gains combat advantage against the target for that ally's next attack against it before the end of your next turn.",
+			EncounterPowers6Level:"2",
 			EncounterPowers6Name:"=(EncounterPowers6)",
+			EncounterPowers6Page:"PHB3p166",
+			EncounterPowers6Range:"Melee 1",
+			EncounterPowers6Target:"One creature",
 			Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
 			EnduranceAbilModPlusHalfLevel:"=(roundDown(Level/2)+ConMod)",
 			EnduranceMisc:"=(1 /* bard: skill versatility */)",
 			Feats1:"Weapon Proficiency: Rapier <!-- level 1 -->",
 			Feats2:"Ritual Caster <!-- Bardic Training -->",
-			Feats3:"Strength of Valor: Virtue of Valor grants +2 dmg",
+			Feats3:"Skill Power: Bluff (False Bravado)",
 			Fortitude10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Fortitude:"=(Fortitude10PlusHalfLevel + FortitudeAbil + FortitudeClass + FortitudeFeat + FortitudeEnh + FortitudeMisc1 + FortitudeMisc2)",
 			FortitudeAbil:"=(max(StrMod,ConMod))",
+			FortitudeEnh:"=(1 /* amulet of protection */)",
 			Gender:"Male",
 			Heal:"=(HealAbilModPlusHalfLevel + HealTrained + HealMisc)",
 			HealAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
@@ -292,7 +305,17 @@
 			LanguagesKnown1:"Common",
 			LanguagesKnown2:"Elven",
 			Level:"2",
+			MagicItemsArmor:"Leather Armor of Luring Withdrawl +1",
+			MagicItemsArmorAction:"Reaction",
+			MagicItemsArmorAttack:"n/a",
+			MagicItemsArmorClass:"Item Power",
+			MagicItemsArmorDefense:"n/a",
+			MagicItemsArmorDetails:"<p><b>Trigger:</b> An enemy misses you with a melee attack.</p>\n<p><b>Effect:</b>You shift 1 square and slide the triggering enemy into the space you vacated.</p>",
+			MagicItemsArmorLevel:"2",
 			MagicItemsArmorName:"=(MagicItemsArmor)",
+			MagicItemsArmorPage:"PHB2p201",
+			MagicItemsArmorRange:"n/a",
+			MagicItemsArmorTarget:"n/a",
 			MagicItemsArmsName:"=(MagicItemsArms)",
 			MagicItemsFeetName:"=(MagicItemsFeet)",
 			MagicItemsHandsName:"=(MagicItemsHands)",
@@ -309,11 +332,23 @@
 			MagicItemsMisc7Name:"=(MagicItemsMisc7)",
 			MagicItemsMisc8Name:"=(MagicItemsMisc8)",
 			MagicItemsMisc9Name:"=(MagicItemsMisc9)",
+			MagicItemsNeck:"Amulet of Protection +1",
+			MagicItemsNeckBox:true, ArmorClassEnh:"=(1 /* luring leather armor + 1*/)",
+			MagicItemsNeckDetails:"No Power",
 			MagicItemsNeckName:"=(MagicItemsNeck)",
 			MagicItemsRing1Name:"=(MagicItemsRing1)",
 			MagicItemsRing2Name:"=(MagicItemsRing2)",
 			MagicItemsWaistName:"=(MagicItemsWaist)",
+			MagicItemsWeapon1:"Harsh Songblade +1",
+			MagicItemsWeapon1Action:"Free",
+			MagicItemsWeapon1Additional:"<p><b>Property:</b> May be used as an implement for bard powers</p>\n<p><b>Critical:</b> +1d8 damage</p>",
+			MagicItemsWeapon1Attack:"n/a",
+			MagicItemsWeapon1Class:"Item",
+			MagicItemsWeapon1Defense:"n/a",
+			MagicItemsWeapon1Details:"<p><b>Trigger:</b> You hit an enemy with a bard thunder power using this blade.</p>\n<p><b>Effect:</b> Each enemy within 2 squares of the triggering enemy is dazed until the end of your next turn.</p>",
+			MagicItemsWeapon1Level:"3",
 			MagicItemsWeapon1Name:"=(MagicItemsWeapon1)",
+			MagicItemsWeapon1Page:"PHB2p204",
 			MagicItemsWeapon2Name:"=(MagicItemsWeapon2)",
 			MagicItemsWeapon3Name:"=(MagicItemsWeapon3)",
 			MagicItemsWeapon4Name:"=(MagicItemsWeapon4)",
@@ -348,11 +383,12 @@
 			Reflex:"=(Reflex10PlusHalfLevel + ReflexAbil + ReflexClass + ReflexFeat + ReflexEnh + ReflexMisc1 + ReflexMisc2)",
 			ReflexAbil:"=(max(IntMod,DexMod) /* add shield bonus */)",
 			ReflexClass:"=(1 /* bard */)",
+			ReflexEnh:"=(1 /* amulet of protection */)",
 			Religion:"=(ReligionAbilModPlusHalfLevel + ReligionTrained + ReligionMisc)",
 			ReligionAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
 			ReligionMisc:"=(1 /* bard: skill versatility */)",
 			Rituals1:"Glib Limerick (PHB2 p215) roll bluff checks twice",
-			Rituals2:"Traveler's Chant (PHB2 p217) travel faster<!-- \nfor day/hur travel, group's speed is slowest + 2 -->",
+			Rituals2:"Traveler's Chant (PHB2 p217) travel faster<!-- \nfor day/hour travel, group's speed is slowest + 2 -->",
 			Size:"Medium",
 			SpecialSenses:"Darkvision",
 			Speed:"=(SpeedBase+SpeedArmor+SpeedItem+SpeedMisc)",
@@ -371,7 +407,7 @@
 			Thievery:"=(ThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc)",
 			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			ThieveryMisc:"=(1 /* bard: skill versatility */)",
-			TotalExperience:"0",
+			TotalExperience:"=(\n1000 // start at level 2\n)",
 			UtilityPowers1:"Song of Courage",
 			UtilityPowers1Action:"Minor",
 			UtilityPowers1Attack:"n/a",
@@ -396,6 +432,7 @@
 			Willpower:"=(Willpower10PlusHalfLevel + WillpowerAbil + WillpowerClass + WillpowerFeat + WillpowerEnh + WillpowerMisc1 + WillpowerMisc2)",
 			WillpowerAbil:"=(max(WisMod,ChaMod))",
 			WillpowerClass:"=(1 /* bard */)",
+			WillpowerEnh:"=(1 /* amulet of protection */)",
 			Wis:"=(pointBuy(8,1))",
 			WisMod:"=(roundDown(Wis/2) - 5)",
 			WisModPlusHalfLevel:"=(WisMod + roundDown(Level/2))"
@@ -575,9 +612,9 @@
 </style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">AtWillPowers3Action</div>
-				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">Free&nbsp;</div>
+				<div id="EditBoxTarget">Rituals2</div>
+				<textarea style="height: 58px;" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">Traveler's Chant (PHB2 p217) travel faster&lt;!-- <br>for day/hour travel, group's speed is slowest + 2 --&gt;&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -592,7 +629,7 @@
 				<span tabindex="4" class="box" id="_Class">Bard</span>
 				<span tabindex="5" class="box" id="_ParagonPath"></span>
 				<span tabindex="6" class="box" id="_EpicDestiny"></span>
-				<span tabindex="7" class="center box" id="_TotalExperience">0</span>
+				<span tabindex="7" class="center box" id="_TotalExperience">1000</span>
 
 				<span tabindex="8" class="box" id="_Race">Shade Elf (Drow)</span>
 				<span tabindex="9" class="box" id="_Size">Medium</span>
@@ -631,42 +668,42 @@
 				<span tabindex="38" class="center box" id="_WisModPlusHalfLevel">0</span>
 				<span tabindex="39" class="center box" id="_ChaModPlusHalfLevel">5</span>
 
-				<span tabindex="40" class="center box" id="_ArmorClass">15</span>
+				<span tabindex="40" class="center box" id="_ArmorClass">16</span>
 				<span tabindex="41" class="center box" id="_ArmorClass10PlusHalfLevel">11</span>
 				<span tabindex="42" class="center box" id="_ArmorClassArmorSlashAbil">4</span>
 				<span tabindex="43" class="center box" id="_ArmorClassClass"></span>
 				<span tabindex="44" class="center box" id="_ArmorClassFeat"></span>
-				<span tabindex="45" class="center box" id="_ArmorClassEnh"></span>
+				<span tabindex="45" class="center box" id="_ArmorClassEnh">1</span>
 				<span tabindex="46" class="center box" id="_ArmorClassMisc1"></span>
 				<span tabindex="47" class="center box" id="_ArmorClassMisc2"></span>
 				<span tabindex="48" class="box" id="_ArmorClassConditionalBonuses"></span>
 
-				<span tabindex="49" class="center box" id="_Fortitude">14</span>
+				<span tabindex="49" class="center box" id="_Fortitude">15</span>
 				<span tabindex="50" class="center box" id="_Fortitude10PlusHalfLevel">11</span>
 				<span tabindex="51" class="center box" id="_FortitudeAbil">3</span>
 				<span tabindex="52" class="center box" id="_FortitudeClass"></span>
 				<span tabindex="53" class="center box" id="_FortitudeFeat"></span>
-				<span tabindex="54" class="center box" id="_FortitudeEnh"></span>
+				<span tabindex="54" class="center box" id="_FortitudeEnh">1</span>
 				<span tabindex="55" class="center box" id="_FortitudeMisc1"></span>
 				<span tabindex="56" class="center box" id="_FortitudeMisc2"></span>
 				<span tabindex="57" class="box" id="_FortitudeConditionalBonuses"></span>
 
-				<span tabindex="58" class="center box" id="_Reflex">14</span>
+				<span tabindex="58" class="center box" id="_Reflex">15</span>
 				<span tabindex="59" class="center box" id="_Reflex10PlusHalfLevel">11</span>
 				<span tabindex="60" class="center box" id="_ReflexAbil">2</span>
 				<span tabindex="61" class="center box" id="_ReflexClass">1</span>
 				<span tabindex="62" class="center box" id="_ReflexFeat"></span>
-				<span tabindex="63" class="center box" id="_ReflexEnh"></span>
+				<span tabindex="63" class="center box" id="_ReflexEnh">1</span>
 				<span tabindex="64" class="center box" id="_ReflexMisc1"></span>
 				<span tabindex="65" class="center box" id="_ReflexMisc2"></span>
 				<span tabindex="66" class="box" id="_ReflexConditionalBonuses"></span>
 
-				<span tabindex="67" class="center box" id="_Willpower">16</span>
+				<span tabindex="67" class="center box" id="_Willpower">17</span>
 				<span tabindex="68" class="center box" id="_Willpower10PlusHalfLevel">11</span>
 				<span tabindex="69" class="center box" id="_WillpowerAbil">4</span>
 				<span tabindex="70" class="center box" id="_WillpowerClass">1</span>
 				<span tabindex="71" class="center box" id="_WillpowerFeat"></span>
-				<span tabindex="72" class="center box" id="_WillpowerEnh"></span>
+				<span tabindex="72" class="center box" id="_WillpowerEnh">1</span>
 				<span tabindex="73" class="center box" id="_WillpowerMisc1"></span>
 				<span tabindex="74" class="center box" id="_WillpowerMisc2"></span>
 				<span tabindex="75" class="box" id="_WillpowerConditionalBonuses"></span>
@@ -712,14 +749,14 @@
 				<span tabindex="110" class="box" id="_RaceFeatures7"></span>
 				<span tabindex="111" class="box" id="_RaceFeatures8"></span>
 
-				<span tabindex="112" class="box" id="_Attack1Ability">Rapier</span>
-				<span tabindex="113" class="center box" id="_Attack1AttBonus">4</span>
+				<span tabindex="112" class="box" id="_Attack1Ability">Rapier Songblade +1</span>
+				<span tabindex="113" class="center box" id="_Attack1AttBonus">5</span>
 				<span tabindex="114" class="center box" id="_Attack1HalfLevel">1</span>
 				<span tabindex="115" class="center box" id="_Attack1Abil">0</span>
 				<span tabindex="116" class="center box" id="_Attack1Class"></span>
 				<span tabindex="117" class="center box" id="_Attack1Prof">3</span>
 				<span tabindex="118" class="center box" id="_Attack1Feat"></span>
-				<span tabindex="119" class="center box" id="_Attack1Enh"></span>
+				<span tabindex="119" class="center box" id="_Attack1Enh">1</span>
 				<span tabindex="120" class="center box" id="_Attack1Misc"></span>
 
 				<span tabindex="121" class="box" id="_Attack2Ability">Thrown Dagger</span>
@@ -732,11 +769,11 @@
 				<span tabindex="128" class="center box" id="_Attack2Enh"></span>
 				<span tabindex="129" class="center box" id="_Attack2Misc"></span>
 
-				<span tabindex="130" class="box" id="_Damage1Ability">Rapier</span>
-				<span tabindex="131" class="center box" id="_Damage1Damage">1d8 + 0</span>
+				<span tabindex="130" class="box" id="_Damage1Ability">Rapier Songblade +1</span>
+				<span tabindex="131" class="center box" id="_Damage1Damage">1d8 + 1</span>
 				<span tabindex="132" class="center box" id="_Damage1Abil">0</span>
 				<span tabindex="133" class="center box" id="_Damage1Feat"></span>
-				<span tabindex="134" class="center box" id="_Damage1Enh"></span>
+				<span tabindex="134" class="center box" id="_Damage1Enh">1</span>
 				<span tabindex="135" class="center box" id="_Damage1Misc1"></span>
 				<span tabindex="136" class="center box" id="_Damage1Misc2"></span>
 
@@ -748,7 +785,7 @@
 				<span tabindex="142" class="center box" id="_Damage2Misc1"></span>
 				<span tabindex="143" class="center box" id="_Damage2Misc2"></span>
 
-				<span tabindex="144" class="center box" id="_BasicAttack1Attack">4</span>
+				<span tabindex="144" class="center box" id="_BasicAttack1Attack">5</span>
 				<span tabindex="145" class="center box" id="_BasicAttack2Attack">6</span>
 				<span tabindex="146" class="center box" id="_BasicAttack3Attack"></span>
 				<span tabindex="147" class="center box" id="_BasicAttack4Attack"></span>
@@ -758,11 +795,11 @@
 				<span tabindex="150" class="center box" id="_BasicAttack3Defense"></span>
 				<span tabindex="151" class="center box" id="_BasicAttack4Defense"></span>
 
-				<span tabindex="152" class="box" id="_BasicAttack1WeaponOrPower">Rapier</span>
+				<span tabindex="152" class="box" id="_BasicAttack1WeaponOrPower">Rapier Songblade +1</span>
 				<span tabindex="153" class="box" id="_BasicAttack2WeaponOrPower">Thrown Dagger</span>
 				<span tabindex="154" class="box" id="_BasicAttack3WeaponOrPower"></span>
 				<span tabindex="155" class="box" id="_BasicAttack4WeaponOrPower"></span>
-				<span tabindex="156" class="box" id="_BasicAttack1Damage">1d8 + 0</span>
+				<span tabindex="156" class="box" id="_BasicAttack1Damage">1d8 + 1</span>
 				<span tabindex="157" class="box" id="_BasicAttack2Damage">1d4 + 2</span>
 				<span tabindex="158" class="box" id="_BasicAttack3Damage"></span>
 				<span tabindex="159" class="box" id="_BasicAttack4Damage"></span>
@@ -869,7 +906,7 @@ Longsword, Scimitar, Short Sword
 				
 				<span tabindex="247" class="box" id="_Feats1">Weapon Proficiency: Rapier <!-- level 1 --></span>
 				<span tabindex="248" class="box" id="_Feats2">Ritual Caster <!-- Bardic Training --></span>
-				<span tabindex="249" class="box" id="_Feats3">Strength of Valor: Virtue of Valor grants +2 dmg</span>
+				<span tabindex="249" class="box" id="_Feats3">Skill Power: Bluff (False Bravado)</span>
 				<span tabindex="250" class="box" id="_Feats4"></span>
 				<span tabindex="251" class="box" id="_Feats5"></span>
 				<span tabindex="252" class="box" id="_Feats6"></span>
@@ -903,7 +940,7 @@ Longsword, Scimitar, Short Sword
 				<span tabindex="275" class="box" id="_EncounterPowers3">Majestic Word</span>
 				<span tabindex="276" class="box" id="_EncounterPowers4">Words of Friendship</span>
 				<span tabindex="277" class="box" id="_EncounterPowers5">Shout of Triumph</span>
-				<span tabindex="278" class="box" id="_EncounterPowers6"></span>
+				<span tabindex="278" class="box" id="_EncounterPowers6">Battle Feint</span>
 				<span tabindex="279" class="box" id="_DailyPowers1">Slayer's Song</span>
 				<span tabindex="280" class="box" id="_DailyPowers2"></span>
 				<span tabindex="281" class="box" id="_DailyPowers3"></span>
@@ -940,16 +977,16 @@ Longsword, Scimitar, Short Sword
 				<input tabindex="311" class="box" id="_UtilityPowersCheck7" type="checkbox">
 				<input tabindex="312" class="box" id="_UtilityPowersCheck8" type="checkbox">
 
-				<span tabindex="313" class="box" id="_MagicItemsWeapon1"></span>
+				<span tabindex="313" class="box" id="_MagicItemsWeapon1">Harsh Songblade +1</span>
 				<span tabindex="314" class="box" id="_MagicItemsWeapon2"></span>
 				<span tabindex="315" class="box" id="_MagicItemsWeapon3"></span>
 				<span tabindex="316" class="box" id="_MagicItemsWeapon4"></span>
-				<span tabindex="317" class="box" id="_MagicItemsArmor"></span>
+				<span tabindex="317" class="box" id="_MagicItemsArmor">Leather Armor of Luring Withdrawl +1</span>
 				<span tabindex="318" class="box" id="_MagicItemsArms"></span>
 				<span tabindex="319" class="box" id="_MagicItemsFeet"></span>
 				<span tabindex="320" class="box" id="_MagicItemsHands"></span>
 				<span tabindex="321" class="box" id="_MagicItemsHead"></span>
-				<span tabindex="322" class="box" id="_MagicItemsNeck"></span>
+				<span tabindex="322" class="box" id="_MagicItemsNeck">Amulet of Protection +1</span>
 				<span tabindex="323" class="box" id="_MagicItemsRing1"></span>
 				<span tabindex="324" class="box" id="_MagicItemsRing2"></span>
 				<span tabindex="325" class="box" id="_MagicItemsWaist"></span>
@@ -1062,7 +1099,7 @@ Longsword, Scimitar, Short Sword
 
 				<span tabindex="423" class="box" id="_Rituals1">Glib Limerick (PHB2 p215) roll bluff checks twice</span>
 				<span tabindex="424" class="box" id="_Rituals2">Traveler's Chant (PHB2 p217) travel faster<!-- 
-for day/hur travel, group's speed is slowest + 2 --></span>
+for day/hour travel, group's speed is slowest + 2 --></span>
 				<span tabindex="425" class="box" id="_Rituals3"></span>
 				<span tabindex="426" class="box" id="_Rituals4"></span>
 				<span tabindex="427" class="box" id="_Rituals5"></span>
@@ -1096,10 +1133,10 @@ for day/hur travel, group's speed is slowest + 2 --></span>
 					<span tabindex="449" id="_AtWillPowers1Action" class="box power-card-action">Standard</span>
 					<span tabindex="450" id="_AtWillPowers1AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="451" id="_AtWillPowers1Range" class="box power-card-range">Melee Weapon</span>
-					<span tabindex="452" id="_AtWillPowers1Attack" class="box power-card-attack">+8</span>
+					<span tabindex="452" id="_AtWillPowers1Attack" class="box power-card-attack">+9</span>
 					<span tabindex="453" id="_AtWillPowers1Defense" class="box power-card-defense">AC</span>
 					<span tabindex="454" id="_AtWillPowers1Target" class="box power-card-target">One creature</span>
-					<span tabindex="455" id="_AtWillPowers1Details" class="box power-card-details"><b>Hit:</b> 1d8+4 damage (rapier), and target takes -2 penalty to defense of my choice until end of my next turn.</span>
+					<span tabindex="455" id="_AtWillPowers1Details" class="box power-card-details"><b>Hit:</b> 1d8+5 damage (rapier songblade +1), and target takes -2 penalty to defense of my choice until end of my next turn.</span>
 					<span tabindex="456" id="_AtWillPowers1Additional" class="box power-card-additional"></span>
 					<span tabindex="457" id="_AtWillPowers1Class" class="box power-card-class">Bard</span>
 					<span tabindex="459" id="_AtWillPowers1Level" class="box power-card-level">1</span>
@@ -1118,10 +1155,10 @@ for day/hur travel, group's speed is slowest + 2 --></span>
 					<span tabindex="465" id="_AtWillPowers2Action" class="box power-card-action">Standard</span>
 					<span tabindex="466" id="_AtWillPowers2AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="467" id="_AtWillPowers2Range" class="box power-card-range">Ranged 10</span>
-					<span tabindex="468" id="_AtWillPowers2Attack" class="box power-card-attack">+5</span>
+					<span tabindex="468" id="_AtWillPowers2Attack" class="box power-card-attack">+6</span>
 					<span tabindex="469" id="_AtWillPowers2Defense" class="box power-card-defense">Will</span>
 					<span tabindex="470" id="_AtWillPowers2Target" class="box power-card-target">One creature</span>
-					<span tabindex="471" id="_AtWillPowers2Details" class="box power-card-details"><b>Hit:</b> 1d6+4 damage, and the target takes a -2 penalty to attack rolls until the end of my next turn</span>
+					<span tabindex="471" id="_AtWillPowers2Details" class="box power-card-details"><b>Hit:</b> 1d6+5 damage (songblade implement), and the target takes a -2 penalty to attack rolls until the end of my next turn</span>
 					<span tabindex="472" id="_AtWillPowers2Additional" class="box power-card-additional"></span>
 					<span tabindex="473" id="_AtWillPowers2Class" class="box power-card-class">Bard</span>
 					<span tabindex="475" id="_AtWillPowers2Level" class="box power-card-level">1</span>
@@ -1144,7 +1181,7 @@ for day/hur travel, group's speed is slowest + 2 --></span>
 					<span tabindex="485" id="_AtWillPowers3Defense" class="box power-card-defense">n/a</span>
 					<span tabindex="486" id="_AtWillPowers3Target" class="box power-card-target">One ally</span>
 					<span tabindex="487" id="_AtWillPowers3Details" class="box power-card-details"><p><b>Trigger:</b> Once per round, when any ally within 5 squares of you reduces an enemy to 0 hit points or bloodies an enemy.</p>
-<p><b>Effect:</b> Grant 4 temporary hit points to the triggering ally.  Also, the ally gains +2 bonus to the next damage roll they make before the end of my next turn (Strength of Valor feat).</p></span>
+<p><b>Effect:</b> Grant 4 temporary hit points to the triggering ally.</p></span>
 					<span tabindex="488" id="_AtWillPowers3Additional" class="box power-card-additional"></span>
 					<span tabindex="489" id="_AtWillPowers3Class" class="box power-card-class">Bard</span>
 					<span tabindex="491" id="_AtWillPowers3Level" class="box power-card-level">n/a</span>
@@ -1317,10 +1354,10 @@ for day/hur travel, group's speed is slowest + 2 --></span>
 					<span tabindex="609" id="_EncounterPowers5Action" class="box power-card-action">Standard</span>
 					<span tabindex="610" id="_EncounterPowers5AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="611" id="_EncounterPowers5Range" class="box power-card-range">Close blast 3</span>
-					<span tabindex="612" id="_EncounterPowers5Attack" class="box power-card-attack">+5</span>
+					<span tabindex="612" id="_EncounterPowers5Attack" class="box power-card-attack">+6</span>
 					<span tabindex="613" id="_EncounterPowers5Defense" class="box power-card-defense">Fortitude</span>
 					<span tabindex="614" id="_EncounterPowers5Target" class="box power-card-target">Each enemy in blast</span>
-					<span tabindex="615" id="_EncounterPowers5Details" class="box power-card-details"><p><b>Hit:</b> 1d6+4 thunder damage, and you push the target 3 squres.</p>
+					<span tabindex="615" id="_EncounterPowers5Details" class="box power-card-details"><p><b>Hit:</b> 1d6+5 thunder damage (songblade implement), and you push the target 3 squres.</p>
 <p><b>Effect:</b> Slide each ally in the blast 1 square.</p></span>
 					<span tabindex="616" id="_EncounterPowers5Additional" class="box power-card-additional"></span>
 					<span tabindex="617" id="_EncounterPowers5Class" class="box power-card-class">Bard</span>
@@ -1332,22 +1369,22 @@ for day/hur travel, group's speed is slowest + 2 --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: none;" id="_EncounterPowers6Card" class="power-card">
+				<div style="display: inline-block;" id="_EncounterPowers6Card" class="power-card">
 					<img id="_EncounterPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name">0</span>
+					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name">Battle Feint</span>
 					<span tabindex="623" id="_EncounterPowers6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="624" id="_EncounterPowers6Box" class="box power-card-box" type="checkbox">
-					<span tabindex="625" id="_EncounterPowers6Action" class="box power-card-action"></span>
+					<span tabindex="625" id="_EncounterPowers6Action" class="box power-card-action">Minor</span>
 					<span tabindex="626" id="_EncounterPowers6AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="627" id="_EncounterPowers6Range" class="box power-card-range"></span>
-					<span tabindex="628" id="_EncounterPowers6Attack" class="box power-card-attack"></span>
-					<span tabindex="629" id="_EncounterPowers6Defense" class="box power-card-defense"></span>
-					<span tabindex="630" id="_EncounterPowers6Target" class="box power-card-target"></span>
-					<span tabindex="631" id="_EncounterPowers6Details" class="box power-card-details"></span>
+					<span tabindex="627" id="_EncounterPowers6Range" class="box power-card-range">Melee 1</span>
+					<span tabindex="628" id="_EncounterPowers6Attack" class="box power-card-attack">+10</span>
+					<span tabindex="629" id="_EncounterPowers6Defense" class="box power-card-defense">P. Insight</span>
+					<span tabindex="630" id="_EncounterPowers6Target" class="box power-card-target">One creature</span>
+					<span tabindex="631" id="_EncounterPowers6Details" class="box power-card-details"><b>Effect:</b> You make a Bluff check opposed by the target's passive Insight check.  If the check succeeds, one ally adjacent to you gains combat advantage against the target for that ally's next attack against it before the end of your next turn.</span>
 					<span tabindex="632" id="_EncounterPowers6Additional" class="box power-card-additional"></span>
-					<span tabindex="633" id="_EncounterPowers6Class" class="box power-card-class"></span>
-					<span tabindex="635" id="_EncounterPowers6Level" class="box power-card-level"></span>
-					<span tabindex="636" id="_EncounterPowers6Page" class="box power-card-page"></span>
+					<span tabindex="633" id="_EncounterPowers6Class" class="box power-card-class">Bluff Skill Power</span>
+					<span tabindex="635" id="_EncounterPowers6Level" class="box power-card-level">2</span>
+					<span tabindex="636" id="_EncounterPowers6Page" class="box power-card-page">PHB3p166</span>
 					<select tabindex="637" id="_EncounterPowers6PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
@@ -1362,10 +1399,10 @@ for day/hur travel, group's speed is slowest + 2 --></span>
 					<span tabindex="641" id="_DailyPowers1Action" class="box power-card-action">Standard</span>
 					<span tabindex="642" id="_DailyPowers1AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="643" id="_DailyPowers1Range" class="box power-card-range">Melee Weapon</span>
-					<span tabindex="644" id="_DailyPowers1Attack" class="box power-card-attack">+8</span>
+					<span tabindex="644" id="_DailyPowers1Attack" class="box power-card-attack">+9</span>
 					<span tabindex="645" id="_DailyPowers1Defense" class="box power-card-defense">AC</span>
 					<span tabindex="646" id="_DailyPowers1Target" class="box power-card-target">One creature</span>
-					<span tabindex="647" id="_DailyPowers1Details" class="box power-card-details"><p><b>Hit:</b> 2d8+4 damage (rapier), and the target grants combat advantage to you and your allies (save ends).</p>
+					<span tabindex="647" id="_DailyPowers1Details" class="box power-card-details"><p><b>Hit:</b> 2d8+5 damage (rapier songblade +1), and the target grants combat advantage to you and your allies (save ends).</p>
 <p><b>Miss:</b> Half damage.</p>
 <p><b>Effect:</b> Until the end of the encounter, whenever you hit an enemy, that enemy grants combat advantage to you and your allies until the end of your next turn.</p></span>
 					<span tabindex="648" id="_DailyPowers1Additional" class="box power-card-additional"></span>
@@ -1665,22 +1702,24 @@ for day/hur travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: none;" id="_MagicItemsWeapon1Card" class="power-card">
+				<div style="display: inline-block;" id="_MagicItemsWeapon1Card" class="power-card">
 					<img id="_MagicItemsWeapon1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="446" id="_MagicItemsWeapon1Name" class="box power-card-name">0</span>
+					<span tabindex="446" id="_MagicItemsWeapon1Name" class="box power-card-name">Harsh Songblade +1</span>
 					<span tabindex="447" id="_MagicItemsWeapon1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="448" id="_MagicItemsWeapon1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="449" id="_MagicItemsWeapon1Action" class="box power-card-action"></span>
+					<span tabindex="449" id="_MagicItemsWeapon1Action" class="box power-card-action">Free</span>
 					<span tabindex="450" id="_MagicItemsWeapon1AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="451" id="_MagicItemsWeapon1Range" class="box power-card-range"></span>
-					<span tabindex="452" id="_MagicItemsWeapon1Attack" class="box power-card-attack"></span>
-					<span tabindex="453" id="_MagicItemsWeapon1Defense" class="box power-card-defense"></span>
+					<span tabindex="452" id="_MagicItemsWeapon1Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="453" id="_MagicItemsWeapon1Defense" class="box power-card-defense">n/a</span>
 					<span tabindex="454" id="_MagicItemsWeapon1Target" class="box power-card-target"></span>
-					<span tabindex="455" id="_MagicItemsWeapon1Details" class="box power-card-details"></span>
-					<span tabindex="456" id="_MagicItemsWeapon1Additional" class="box power-card-additional"></span>
-					<span tabindex="457" id="_MagicItemsWeapon1Class" class="box power-card-class"></span>
-					<span tabindex="459" id="_MagicItemsWeapon1Level" class="box power-card-level"></span>
-					<span tabindex="460" id="_MagicItemsWeapon1Page" class="box power-card-page"></span>
+					<span tabindex="455" id="_MagicItemsWeapon1Details" class="box power-card-details"><p><b>Trigger:</b> You hit an enemy with a bard thunder power using this blade.</p>
+<p><b>Effect:</b> Each enemy within 2 squares of the triggering enemy is dazed until the end of your next turn.</p></span>
+					<span tabindex="456" id="_MagicItemsWeapon1Additional" class="box power-card-additional"><p><b>Property:</b> May be used as an implement for bard powers</p>
+<p><b>Critical:</b> +1d8 damage</p></span>
+					<span tabindex="457" id="_MagicItemsWeapon1Class" class="box power-card-class">Item</span>
+					<span tabindex="459" id="_MagicItemsWeapon1Level" class="box power-card-level">3</span>
+					<span tabindex="460" id="_MagicItemsWeapon1Page" class="box power-card-page">PHB2p204</span>
 					<select tabindex="461" id="_MagicItemsWeapon1PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -1753,22 +1792,23 @@ for day/hur travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: none;" id="_MagicItemsArmorCard" class="power-card">
+				<div style="display: inline-block;" id="_MagicItemsArmorCard" class="power-card">
 					<img id="_MagicItemsArmorImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">0</span>
+					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">Leather Armor of Luring Withdrawl +1</span>
 					<span tabindex="511" id="_MagicItemsArmorKeyword" class="box power-card-keyword"></span>
 					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box" type="checkbox">
-					<span tabindex="513" id="_MagicItemsArmorAction" class="box power-card-action"></span>
+					<span tabindex="513" id="_MagicItemsArmorAction" class="box power-card-action">Reaction</span>
 					<span tabindex="514" id="_MagicItemsArmorAttackType" class="box power-card-attack-type"></span>
-					<span tabindex="515" id="_MagicItemsArmorRange" class="box power-card-range"></span>
-					<span tabindex="516" id="_MagicItemsArmorAttack" class="box power-card-attack"></span>
-					<span tabindex="517" id="_MagicItemsArmorDefense" class="box power-card-defense"></span>
-					<span tabindex="518" id="_MagicItemsArmorTarget" class="box power-card-target"></span>
-					<span tabindex="519" id="_MagicItemsArmorDetails" class="box power-card-details"></span>
+					<span tabindex="515" id="_MagicItemsArmorRange" class="box power-card-range">n/a</span>
+					<span tabindex="516" id="_MagicItemsArmorAttack" class="box power-card-attack">n/a</span>
+					<span tabindex="517" id="_MagicItemsArmorDefense" class="box power-card-defense">n/a</span>
+					<span tabindex="518" id="_MagicItemsArmorTarget" class="box power-card-target">n/a</span>
+					<span tabindex="519" id="_MagicItemsArmorDetails" class="box power-card-details"><p><b>Trigger:</b> An enemy misses you with a melee attack.</p>
+<p><b>Effect:</b>You shift 1 square and slide the triggering enemy into the space you vacated.</p></span>
 					<span tabindex="520" id="_MagicItemsArmorAdditional" class="box power-card-additional"></span>
-					<span tabindex="521" id="_MagicItemsArmorClass" class="box power-card-class"></span>
-					<span tabindex="523" id="_MagicItemsArmorLevel" class="box power-card-level"></span>
-					<span tabindex="524" id="_MagicItemsArmorPage" class="box power-card-page"></span>
+					<span tabindex="521" id="_MagicItemsArmorClass" class="box power-card-class">Item Power</span>
+					<span tabindex="523" id="_MagicItemsArmorLevel" class="box power-card-level">2</span>
+					<span tabindex="524" id="_MagicItemsArmorPage" class="box power-card-page">PHB2p201</span>
 					<select tabindex="525" id="_MagicItemsArmorPowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -1863,18 +1903,18 @@ for day/hur travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: none;" id="_MagicItemsNeckCard" class="power-card">
+				<div style="display: inline-block;" id="_MagicItemsNeckCard" class="power-card tapped">
 					<img id="_MagicItemsNeckImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">0</span>
+					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">Amulet of Protection +1</span>
 					<span tabindex="591" id="_MagicItemsNeckKeyword" class="box power-card-keyword"></span>
-					<input tabindex="592" id="_MagicItemsNeckBox" class="box power-card-box" type="checkbox">
+					<input tabindex="592" id="_MagicItemsNeckBox" class="box power-card-box edited" type="checkbox">
 					<span tabindex="593" id="_MagicItemsNeckAction" class="box power-card-action"></span>
 					<span tabindex="594" id="_MagicItemsNeckAttackType" class="box power-card-attack-type"></span>
 					<span tabindex="595" id="_MagicItemsNeckRange" class="box power-card-range"></span>
 					<span tabindex="596" id="_MagicItemsNeckAttack" class="box power-card-attack"></span>
 					<span tabindex="597" id="_MagicItemsNeckDefense" class="box power-card-defense"></span>
 					<span tabindex="598" id="_MagicItemsNeckTarget" class="box power-card-target"></span>
-					<span tabindex="599" id="_MagicItemsNeckDetails" class="box power-card-details"></span>
+					<span tabindex="599" id="_MagicItemsNeckDetails" class="box power-card-details">No Power</span>
 					<span tabindex="600" id="_MagicItemsNeckAdditional" class="box power-card-additional"></span>
 					<span tabindex="601" id="_MagicItemsNeckClass" class="box power-card-class"></span>
 					<span tabindex="603" id="_MagicItemsNeckLevel" class="box power-card-level"></span>
