@@ -35,14 +35,16 @@
 	-moz-transform: rotate(-180deg);
 }
 
+p { margin: 0; padding: 0 }
+
 .power-card-name        {left: 5px; top: 5px; width: 360px; height: 44px;}
 .power-card-keyword     {left: 56px; top: 53px; width: 281px; height: 23px;}
 .power-card-box         {left: 337px; top: 51px; width: 25px; height: 23px;}
 .power-card-action      {left: 5px; top: 80px; width: 64px; height: 25px;}
 .power-card-attack-type {left: 73px; top: 80px; width: 91px; height: 42px;}
 .power-card-range       {left: 167px; top: 80px; width: 198px; height: 25px;}
-.power-card-attack      {left: 5px; top: 126px; width: 66px; height: 25px;}
-.power-card-defense     {left: 93px; top: 126px; width: 71px; height: 25px;}
+.power-card-attack      {text-align: center; left: 5px; top: 126px; width: 66px; height: 25px;}
+.power-card-defense     {text-align: center; left: 93px; top: 126px; width: 71px; height: 25px;}
 .power-card-target      {left: 167px; top: 126px; width: 199px; height: 25px;}
 .power-card-details     {left: 5px; top: 172px; width: 360px; height: 219px;}
 .power-card-additional  {left: 5px; top: 407px; width: 360px; height: 55px;}
