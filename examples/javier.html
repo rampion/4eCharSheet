@@ -1,7 +1,7 @@
 <html><head>
 	
-		<link href="../style.css" type="text/css" rel="stylesheet">
-		<link href="../character-style.css" type="text/css" rel="stylesheet">
+		<link href="http://rampion.github.com/4eCharSheet/style.css" type="text/css" rel="stylesheet">
+		<link href="http://rampion.github.com/4eCharSheet/character-style.css" type="text/css" rel="stylesheet">
 		<script id="userFunctions">
 			const pointBuy =  function(base, points){
 				if (base == 8) {
@@ -32,69 +32,122 @@
 		<script id="entries">({
 			Acrobatics:"=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
 			AcrobaticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
-			AcrobaticsArmorPenalty:"=( -2 /* plate armor */)",
 			ActionPoints:"1",
 			Age:"25",
-			Alignment:"Lawful Good",
+			Alignment:"Unaligned",
 			Arcana:"=(ArcanaAbilModPlusHalfLevel + ArcanaTrained + ArcanaMisc)",
 			ArcanaAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
+			ArcanaMisc:"=(2 /* gnome */)",
+			ArcanaTrained:"5",
 			ArmorClass10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			ArmorClass:"=(ArmorClass10PlusHalfLevel + ArmorClassArmorSlashAbil + ArmorClassClass + ArmorClassFeat + ArmorClassEnh + ArmorClassMisc1 + ArmorClassMisc2)",
-			ArmorClassArmorSlashAbil:"=(8 /* plate armor */)",
-			ArmorClassConditionalBonuses:"+2 against opportunity attacks when charging",
-			AtWillPowers1:"Divine Challenge: minor burst 5, mark 1 until reused<!--\n  must either attack it or end turn next to it to hold mark\n  target takes -2 to attacks that don't involve me\n  target takes =(3*roundDown((Level+9)/10)+ChaMod /* ie, 4 */) radiant dmg first time it makes a take that doesn't involve me\n\n  if fail to hold mark or mark another target, mark ends & can't use divine challenge on next turn\n--> ",
-			AtWillPowers1Action:"Minor",
-			AtWillPowers1Additional:"Can only be used once per turn.  Cannot be used on a creature already affected by a divine challenge.",
-			AtWillPowers1Attack:"n/a",
-			AtWillPowers1Class:"Paladin",
-			AtWillPowers1Defense:"n/a",
-			AtWillPowers1Details:"<b>Effect:</b> Mark the target until<ul>\n<li>use this power against another target</li>\n<li>fail to engage the target by either attacking it or end adjacent to it on your turn.  If this happens, you cannot use this power on your next turn.</li></ul>\nMarked target takes -2 penalty to attack rolls for any attack that doesn't include me as a target.  Also, it takes =(3*tier(Level)+ChaMod) radiant damage the first time it makes an attack that doesn't include you as a target before start of my next turn.",
-			AtWillPowers1Level:"n/a",
+			ArmorClassArmorSlashAbil:"=(max(DexMod,IntMod) + 2 /* leather armor */)",
+			AtWillPowers1:"Eldritch Blast",
+			AtWillPowers1Action:"Standard",
+			AtWillPowers1Attack:"+=(ChaModPlusHalfLevel)",
+			AtWillPowers1Class:"Warlock",
+			AtWillPowers1Defense:"Reflex",
+			AtWillPowers1Details:"<p><b>Hit:</b> =(roundDown((Level+19)/20))d10+=(ChaMod) damage</p>\n<p><b>Special:</b> Counts as a ranged basic attack.  When a power allows you to make a ranged basic attack, you can use this power.</p>",
+			AtWillPowers1Keyword:"Arcane, Implement",
+			AtWillPowers1Level:"1",
 			AtWillPowers1Name:"=(AtWillPowers1)",
-			AtWillPowers1Page:"PHB1p91",
-			AtWillPowers1Range:"Close burst 5",
-			AtWillPowers1Target:"One creature in burst",
-			AtWillPowers2:"Lay on hands: minor, spend own surge to heal ally<!--\n  range touch,\n  limit to =(WisMod) times per day\n  ally gains their surge value\n-->",
+			AtWillPowers1Page:"PHB1p132",
+			AtWillPowers1Range:"Ranged 10",
+			AtWillPowers1Target:"One creature",
+			AtWillPowers2:"Eyebite",
+			AtWillPowers2Action:"Standard",
+			AtWillPowers2Attack:"+=(ChaModPlusHalfLevel)",
+			AtWillPowers2Class:"Warlock",
+			AtWillPowers2Defense:"Will",
+			AtWillPowers2Details:"<b>Hit:</b> =(roundDown((Level+19)/20))d6 + =(ChaMod) psychic damage, and you are invisible to the target until the start of your next turn.",
+			AtWillPowers2Keyword:"Arcane, Charm, Implement, Psychic",
+			AtWillPowers2Level:"1",
 			AtWillPowers2Name:"=(AtWillPowers2)",
-			AtWillPowers3:"Holy Strike:+=(Attack1AttBonus) v AC,=(roundDown((Level+19)/20))d12+=(StrMod)(=(roundDown((Level+19)/20))d12+=(StrMod+WisMod) v mark) radiant",
+			AtWillPowers2Page:"PHB1p132",
+			AtWillPowers2Range:"Ranged 10",
+			AtWillPowers2Target:"One creature",
+			AtWillPowers3:"Misty Step",
+			AtWillPowers3Action:"Free",
+			AtWillPowers3Attack:"n/a",
+			AtWillPowers3Class:"Warlock Fey Pact Boon",
+			AtWillPowers3Defense:"n/a",
+			AtWillPowers3Details:"<p><b>Trigger:</b> When an enemy under your Warlock's Curse is reduced to 0 hit points or fewer</p>\n<p><b>Effect:</b> Immediately teleport 3 squares</p>",
+			AtWillPowers3Level:"n/a",
 			AtWillPowers3Name:"=(AtWillPowers3)",
-			AtWillPowers4:"Valiant Strike:+=(Attack1AttBonus)+#adj.enemy v AC,=(roundDown((Level+19)/20))d12+=(StrMod)",
+			AtWillPowers3Page:"PHB1p130",
+			AtWillPowers3Range:"Personal",
+			AtWillPowers3Target:"n/a",
+			AtWillPowers4:"Warlock's Curse",
+			AtWillPowers4Action:"Minor",
+			AtWillPowers4Attack:"n/a",
+			AtWillPowers4Class:"Warlock",
+			AtWillPowers4Defense:"n/a",
+			AtWillPowers4Details:"<b>Effect:</b> Curse the target until the end of the encounter, or until it drops to 0 hit points.  Once per round, you may chose to deal =(tier(Level))d6 extra damage to a cursed enemy.  You can decide whether to use the curse dice after you make the regular damage roll.  You may not curse a target already affected by a Warlock's Curse.",
+			AtWillPowers4Level:"n/a",
 			AtWillPowers4Name:"=(AtWillPowers4)",
+			AtWillPowers4Page:"PHB1p131",
+			AtWillPowers4Range:"n/a",
+			AtWillPowers4Target:"Nearest visible enemy",
 			AtWillPowers5Name:"=(AtWillPowers5)",
 			AtWillPowers6Name:"=(AtWillPowers6)",
 			Athletics:"=(AthleticsAbilModPlusHalfLevel + AthleticsTrained + AthleticsArmorPenalty + AthleticsMisc)",
 			AthleticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+StrMod)",
-			AthleticsArmorPenalty:"=( -2 /* plate armor */)",
 			Attack1Abil:"=(StrMod)",
-			Attack1Ability:"Greataxe (two hands)",
+			Attack1Ability:"Sickle",
 			Attack1AttBonus:"=(Attack1HalfLevel + Attack1Abil + Attack1Class + Attack1Prof + Attack1Feat + Attack1Enh + Attack1Misc)",
 			Attack1HalfLevel:"=(roundDown(Level/2))",
-			Attack1Prof:"=(2)",
+			Attack1Prof:"2",
+			Attack2Abil:"=(DexMod)",
+			Attack2Ability:"Sling",
 			Attack2AttBonus:"=(Attack2HalfLevel + Attack2Abil + Attack2Class + Attack2Prof + Attack2Feat + Attack2Enh + Attack2Misc)",
 			Attack2HalfLevel:"=(roundDown(Level/2))",
+			Attack2Prof:"2",
 			BasicAttack1Attack:"=(Attack1AttBonus)",
 			BasicAttack1Damage:"=(Damage1Damage)",
 			BasicAttack1Defense:"AC",
 			BasicAttack1WeaponOrPower:"=(Attack1Ability)",
+			BasicAttack2Attack:"=(Attack2AttBonus)",
+			BasicAttack2Damage:"=(Damage2Damage)",
+			BasicAttack2Defense:"AC",
+			BasicAttack2WeaponOrPower:"=(Attack2Ability)",
 			BloodiedHitPoints:"=(roundDown(MaxHitPoints/2))",
 			Bluff:"=(BluffAbilModPlusHalfLevel + BluffTrained + BluffMisc)",
 			BluffAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
-			Cha:"=(pointBuy(10,2))",
+			BluffTrained:"5",
+			Cha:"=(pointBuy(10,12)+2/*gnome*/)",
 			ChaMod:"=(roundDown(Cha/2) - 5)",
 			ChaModPlusHalfLevel:"=(ChaMod + roundDown(Level/2))",
-			CharacterName:"Cassius (the Redeeming)",
-			Class:"Paladin",
-			ClassPathDestinyFeatures1:"Channel Divinity: 1 CD power/encounter",
-			ClassPathDestinyFeatures2:"Divine Challenge: at-will power",
-			ClassPathDestinyFeatures3:"Lay On Hands: at-will power (=(WisMod) times/day)",
-			CoinsAndOtherWealth:" =(\n - 15 // adventurer's kit\n - 30 // greataxe\n - 50 // plate armor\n +100 // starting wealth\n)gp",
-			Con:"=(pointBuy(10,2))",
+			CharacterName:"Javier of the Empty Heart",
+			Class:"Warlock (Fey Pact)",
+			ClassPathDestinyFeatures10:"Weapon Proficiences: Simple melee, simple ranged",
+			ClassPathDestinyFeatures11:"Bonus to Defense: +1 Reflex & Will",
+			ClassPathDestinyFeatures1:"Eldritch Blast: at-will power",
+			ClassPathDestinyFeatures2:"Eldritch Pact: Fey Pact",
+			ClassPathDestinyFeatures3:"Eyebite(Fey Pact): at-will power",
+			ClassPathDestinyFeatures4:"Misty Step(Fey Pact): teleport 3(free) on cursed death",
+			ClassPathDestinyFeatures5:"Prime Shot: +1 ranged attack when closest ally",
+			ClassPathDestinyFeatures6:"Shadow Walk: gain concealment if move at least 3",
+			ClassPathDestinyFeatures7:"Warlock's Curse: minor action, 1/turn",
+			ClassPathDestinyFeatures8:"Implements: Rods, Wands, Pact Blades",
+			ClassPathDestinyFeatures9:"Armor Proficiencies: Cloth, Leather",
+			CoinsAndOtherWealth:"=(\n -25 // leather armor\n - 1 // sling\n - 2 // sickle\n - 1 // 20 sling bullets\n -15 // adventurer's kit\n     // - backpack\n     // - bedroll\n     // - flint & steel\n     // - belt pouch\n     // - trail rations (10 days)\n     // - hempen rope (50 ft)\n     // - sunrods (2)\n     // - waterskin\n+100 // starting money\n)gp",
+			Con:"=(pointBuy(10,3))",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
 			CurrentHitPoints:"=(MaxHitPoints)",
 			CurrentSurgeUses:"=(SurgesPerDay)",
-			DailyPowers1:"Paladin's Judgement:ally surge,+=(Attack1AttBonus) v AC, 3d12+=(StrMod)<!-- ally must be within 5 squares, and may heal hit or miss -->",
+			DailyPowers1:"Curse of the Dark Dream",
+			DailyPowers1Action:"Standard",
+			DailyPowers1Attack:"+=(ChaModPlusHalfLevel)",
+			DailyPowers1Class:"Warlock",
+			DailyPowers1Defense:"Will",
+			DailyPowers1Details:"<p><b>Hit:</b> 3d8+=(ChaMod) psychic damage, and you slide the target 3 squares.</p>\n<p><b>Sustain Minor:</b> You slide the target 1 square, whether you hit or miss (save ends).</p>",
+			DailyPowers1Keyword:"Arcane, Charm, Implement, Psychic",
+			DailyPowers1Level:"1",
 			DailyPowers1Name:"=(DailyPowers1)",
+			DailyPowers1Page:"PHB1p133",
+			DailyPowers1Range:"Ranged 10",
+			DailyPowers1Target:"One creature",
 			DailyPowers2Name:"=(DailyPowers2)",
 			DailyPowers3Name:"=(DailyPowers3)",
 			DailyPowers4Name:"=(DailyPowers4)",
@@ -102,58 +155,91 @@
 			DailyPowers6Name:"=(DailyPowers6)",
 			Damage1Abil:"=(StrMod)",
 			Damage1Ability:"=(Attack1Ability)",
-			Damage1Damage:"1d12+=(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
+			Damage1Damage:"1d6 +=(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
+			Damage2Abil:"=(DexMod)",
 			Damage2Ability:"=(Attack2Ability)",
-			Damage2Damage:"<!-- 1d4 + =(Damage2Abil + Damage2Feat + Damage2Enh + Damage2Misc1 + Damage2Misc2) -->",
-			Deity:"Bahamut",
-			Dex:"=(pointBuy(8,0))",
+			Damage2Damage:"1d6 + =(Damage2Abil + Damage2Feat + Damage2Enh + Damage2Misc1 + Damage2Misc2)",
+			Dex:"=(pointBuy(10,3))",
 			DexMod:"=(roundDown(Dex/2) - 5)",
 			DexModPlusHalfLevel:"=(DexMod + roundDown(Level/2))",
 			Diplomacy:"=(DiplomacyAbilModPlusHalfLevel + DiplomacyTrained + DiplomacyMisc)",
 			DiplomacyAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
 			Dungeoneering:"=(DungeoneeringAbilModPlusHalfLevel + DungeoneeringTrained + DungeoneeringMisc)",
 			DungeoneeringAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
-			EncounterPowers1:"Goring Charge:+=(max(StrMod,ConMod,DexMod)+4) vs AC, 1d6+=(max(StrMod,ConMod,DexMod)) and prone",
+			EncounterPowers1:"Ghost Sound",
+			EncounterPowers1Action:"Minor",
+			EncounterPowers1Attack:"n/a",
+			EncounterPowers1Class:"Wizard (Gnome Racial)",
+			EncounterPowers1Defense:"n/a",
+			EncounterPowers1Details:"<b>Effect</b>: You cause a sound as quiet as a whisper or as loud as a yelling or fighting creature to emanate from the target.  You can produce nonvocal sounds such as the ringing of a sword blow, jingling armor, or scraping stone.  If you whisper, you can whisper quietly enough that only creatures adjacent to the target can hear your words.",
+			EncounterPowers1Keyword:"Arcane, Illusion",
+			EncounterPowers1Level:"n/a",
 			EncounterPowers1Name:"=(EncounterPowers1)",
-			EncounterPowers2:"CD: Divine Mettle: minor burst 10, grant save +=(ChaMod)",
+			EncounterPowers1Page:"PHB1p158",
+			EncounterPowers1Range:"Ranged 10",
+			EncounterPowers1Target:"One object or unoccupied square",
+			EncounterPowers2:"Fade Away",
+			EncounterPowers2Action:"Reaction",
+			EncounterPowers2Attack:"n/",
+			EncounterPowers2Class:"Gnome Racial",
+			EncounterPowers2Defense:"n/a",
+			EncounterPowers2Details:"<p><b>Trigger:</b> You take damage</p><p><b>Effect:</b> You are invisible until you attack or until the end of your next turn.</p>",
+			EncounterPowers2Keyword:"illusion",
+			EncounterPowers2Level:"n/a",
 			EncounterPowers2Name:"=(EncounterPowers2)",
-			EncounterPowers3:"CD: Divine Strength: minor, +=(StrMod) dmg next attack",
+			EncounterPowers2Page:"PHB2p10",
+			EncounterPowers2Range:"Personal",
+			EncounterPowers2Target:"n/a",
+			EncounterPowers3:"Witchfire",
+			EncounterPowers3Action:"Standard",
+			EncounterPowers3Attack:"+=(ChaModPlusHalfLevel)",
+			EncounterPowers3Class:"Warlock",
+			EncounterPowers3Defense:"Reflex",
+			EncounterPowers3Details:"<b>Hit:</b> 2d6+=(ChaMod) fire damage, and the target takes a -=(2+IntMod) penalty to attack rolls until the end of my next turn.",
+			EncounterPowers3Keyword:"Arcane, Fire, Implement",
+			EncounterPowers3Level:"1",
 			EncounterPowers3Name:"=(EncounterPowers3)",
-			EncounterPowers4:"Piercing Smite:+=(Attack1AttBonus) v Ref, 2d12+=(StrMod) & mark =(WisMod) adj<!-- until end of next turn-->",
+			EncounterPowers3Page:"PHB1p132",
+			EncounterPowers3Range:"Ranged 10",
+			EncounterPowers3Target:"One creature",
+			EncounterPowers4:"Hunter's Quarry",
+			EncounterPowers4Action:"Minor",
+			EncounterPowers4Attack:"n/a",
+			EncounterPowers4Class:"Ranger",
+			EncounterPowers4Defense:"n/a",
+			EncounterPowers4Details:"<b>Effect:</b> Designate target as your quarry until end of your next turn.  Once per round, may choose to deal =(tier(Level))d6 extra damage to the quarry.",
+			EncounterPowers4Level:"n/a",
 			EncounterPowers4Name:"=(EncounterPowers4)",
+			EncounterPowers4Page:"PHBp104",
+			EncounterPowers4Range:"n/a",
+			EncounterPowers4Target:"Nearest enemy",
 			EncounterPowers5Name:"=(EncounterPowers5)",
 			EncounterPowers6Name:"=(EncounterPowers6)",
 			Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
 			EnduranceAbilModPlusHalfLevel:"=(roundDown(Level/2)+ConMod)",
-			EnduranceArmorPenalty:"=( -2 /* plate armor */)",
-			EnduranceTrained:"5",
-			Feats1:"Toughness: 5 extra HP per tier",
-			Feats2:"Durable: extra 2 healing surges",
+			Feats1:"Warrior of the Wild: (Stealth, Hunter's Quarry)",
 			Fortitude10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Fortitude:"=(Fortitude10PlusHalfLevel + FortitudeAbil + FortitudeClass + FortitudeFeat + FortitudeEnh + FortitudeMisc1 + FortitudeMisc2)",
 			FortitudeAbil:"=(max(StrMod,ConMod))",
-			FortitudeClass:"=( 1 /* paladin */ )",
-			Gender:"Male",
 			Heal:"=(HealAbilModPlusHalfLevel + HealTrained + HealMisc)",
 			HealAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
-			HealTrained:"5",
-			Height:"7'5\"",
+			Height:"3'6\"",
 			History:"=(HistoryAbilModPlusHalfLevel + HistoryTrained + HistoryMisc)",
 			HistoryAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
+			HistoryTrained:"5",
 			Initiative:"=(InitiativeAbilMod + InitiativeHalfLevel + InitiativeMisc)",
 			InitiativeAbilMod:"=(DexMod)",
 			InitiativeHalfLevel:"=(roundDown(Level/2))",
 			Insight:"=(InsightAbilModPlusHalfLevel + InsightTrained + InsightMisc)",
 			InsightAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
-			InsightTrained:"5",
-			Int:"=(pointBuy(10,0))",
+			Int:"=(pointBuy(10,3)+2/*gnome*/)",
 			IntMod:"=(roundDown(Int/2) - 5)",
 			IntModPlusHalfLevel:"=(IntMod + roundDown(Level/2))",
 			Intimidate:"=(IntimidateAbilModPlusHalfLevel + IntimidateTrained + IntimidateMisc)",
 			IntimidateAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
 			LanguagesKnown1:"Common",
-			LanguagesKnown2:"Goblin",
-			Level:"2",
+			LanguagesKnown2:"Elven",
+			Level:"1",
 			MagicItemsArmorName:"=(MagicItemsArmor)",
 			MagicItemsArmsName:"=(MagicItemsArms)",
 			MagicItemsFeetName:"=(MagicItemsFeet)",
@@ -179,12 +265,13 @@
 			MagicItemsWeapon2Name:"=(MagicItemsWeapon2)",
 			MagicItemsWeapon3Name:"=(MagicItemsWeapon3)",
 			MagicItemsWeapon4Name:"=(MagicItemsWeapon4)",
-			MaxHitPoints:"=(15 /* level 1 */ + Con +  (Level - 1)*( 6 /* per level */) + 5 * roundDown((Level + 9)/10) /* Toughness feat */)",
+			MaxHitPoints:"=(Con + 12 /* level 1 */ + (Level - 1)*( 5 /* per level */))",
 			Nature:"=(NatureAbilModPlusHalfLevel + NatureTrained + NatureMisc)",
 			NatureAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
-			OtherEquipment1:"Adventurer's Kit<!--\n backpack\n bedroll\n flint & steal\n belt pouch\n 10 days trail rations\n 50 ft hemp rope\n 2 sunrods\n waterskin\n-->",
-			OtherEquipment2:"Greataxe",
-			OtherEquipment3:"Plate armor",
+			OtherEquipment1:"leather armor",
+			OtherEquipment2:"sickle",
+			OtherEquipment3:"sling & 20 bullets",
+			OtherEquipment4:"adventurer's kit",
 			PassiveInsight:"=(10+PassiveInsightSkillBonus)",
 			PassiveInsightSkillBonus:"=(Insight)",
 			PassivePerception:"=(10+PassivePerceptionSkillBonus)",
@@ -192,38 +279,40 @@
 			Perception:"=(PerceptionAbilModPlusHalfLevel + PerceptionTrained + PerceptionMisc)",
 			PerceptionAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
 			PlayerName:"Noah Luck Easterly",
-			Race:"Minotaur",
-			RaceAbilityScoreMods:"+2 Str, +2 Con or Wis",
-			RaceFeatures1:"Vitality: Additional Healing Surge",
-			RaceFeatures2:"Ferocity: Make melee basic when drop to 0<!-- immediate interrupt -->",
-			RaceFeatures3:"Heedless Charge: +2 AC vs OA when charging",
-			RaceFeatures4:"Goring Charge: Encounter power",
+			Race:"Gnome",
+			RaceAbilityScoreMods:"+2 Intelligence, +2 Charisma",
+			RaceFeatures1:"+2 bonus to Arcana & Stealth",
+			RaceFeatures2:"Fey Origin: considered fey creature",
+			RaceFeatures3:"Master Trickster: <i>ghost sound</i> as encounter minor",
+			RaceFeatures4:"Reactive Stealth: make stealth check w/ initiative<!-- when have cover or concealment -->",
+			RaceFeatures5:"Trickster's Cunning: +5 save vs illusions",
+			RaceFeatures6:"Fade Away: encounter power",
 			Reflex10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Reflex:"=(Reflex10PlusHalfLevel + ReflexAbil + ReflexClass + ReflexFeat + ReflexEnh + ReflexMisc1 + ReflexMisc2)",
 			ReflexAbil:"=(max(IntMod,DexMod) /* add shield bonus */)",
-			ReflexClass:"=( 1 /* paladin */ )",
+			ReflexClass:"1",
 			Religion:"=(ReligionAbilModPlusHalfLevel + ReligionTrained + ReligionMisc)",
 			ReligionAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
-			ReligionTrained:"5",
-			Size:"Medium",
+			SavingThrowMods:"+5 vs illusions <!-- gnome -->",
+			Size:"Small",
+			SpecialSenses:"Low-light vision",
 			Speed:"=(SpeedBase+SpeedArmor+SpeedItem+SpeedMisc)",
-			SpeedArmor:"=( -1 /* plate armor */ )",
-			SpeedBase:"=(6 /* minotaur */)",
+			SpeedBase:"5",
 			Stealth:"=(StealthAbilModPlusHalfLevel + StealthTrained + StealthArmorPenalty + StealthMisc)",
 			StealthAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
-			StealthArmorPenalty:"=( -2 /* plate armor */)",
-			Str:"=(pointBuy(10,9) + 2 /* minotaur */)",
+			StealthMisc:"=(2 /* gnome */)",
+			StealthTrained:"=( 5 /* warrior of the wild feat */)",
+			Str:"=(pointBuy(8,1))",
 			StrMod:"=(roundDown(Str/2) - 5)",
 			StrModPlusHalfLevel:"=(StrMod + roundDown(Level/2))",
 			Streetwise:"=(StreetwiseAbilModPlusHalfLevel + StreetwiseTrained + StreetwiseMisc)",
 			StreetwiseAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
+			StreetwiseTrained:"5",
 			SurgeValue:"=(roundDown(MaxHitPoints/4))",
-			SurgesPerDay:"=(10 + ConMod + 1 /* minotaur */ + 2 /* durable feat */)",
+			SurgesPerDay:"=(6+ConMod)",
 			Thievery:"=(ThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc)",
 			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
-			ThieveryArmorPenalty:"=( -2 /* plate armor */)",
 			TotalExperience:"0",
-			UtilityPowers1:"Martyr's blessing (daily int) take dmg for adj ally",
 			UtilityPowers1Name:"=(UtilityPowers1)",
 			UtilityPowers2Name:"=(UtilityPowers2)",
 			UtilityPowers3Name:"=(UtilityPowers3)",
@@ -232,97 +321,97 @@
 			UtilityPowers6Name:"=(UtilityPowers6)",
 			UtilityPowers7Name:"=(UtilityPowers7)",
 			UtilityPowers8Name:"=(UtilityPowers8)",
-			Weight:"350 lb",
+			Weight:"63 lb.",
 			Willpower10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Willpower:"=(Willpower10PlusHalfLevel + WillpowerAbil + WillpowerClass + WillpowerFeat + WillpowerEnh + WillpowerMisc1 + WillpowerMisc2)",
 			WillpowerAbil:"=(max(WisMod,ChaMod))",
-			WillpowerClass:"=( 1 /* paladin */ )",
-			Wis:"=(pointBuy(10,9) + 2 /* minotaur */)",
+			WillpowerClass:"1",
+			Wis:"=(pointBuy(10,0))",
 			WisMod:"=(roundDown(Wis/2) - 5)",
 			WisModPlusHalfLevel:"=(WisMod + roundDown(Level/2))"
 		})</script>
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">AtWillPowers1Page</div>
+				<div id="EditBoxTarget">EncounterPowers1Page</div>
 				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">PHB1p91&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">PHB1p158&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
 				</div>
 			</div>
 			<div class="page" id="Page1">
-				<img class="page-background" id="Page1Background" src="../CharacterSheetPage1.png">
+				<img class="page-background" id="Page1Background" src="http://rampion.github.com/4eCharSheet/CharacterSheetPage1.png">
 				<span tabindex="1" class="box" id="_PlayerName">Noah Luck Easterly</span>
 
-				<span tabindex="2" class="box" id="_CharacterName">Cassius (the Redeeming)</span>
-				<span tabindex="3" class="center box" id="_Level">2</span>
-				<span tabindex="4" class="box" id="_Class">Paladin</span>
+				<span tabindex="2" class="box" id="_CharacterName">Javier of the Empty Heart</span>
+				<span tabindex="3" class="center box" id="_Level">1</span>
+				<span tabindex="4" class="box" id="_Class">Warlock (Fey Pact)</span>
 				<span tabindex="5" class="box" id="_ParagonPath"></span>
 				<span tabindex="6" class="box" id="_EpicDestiny"></span>
 				<span tabindex="7" class="center box" id="_TotalExperience">0</span>
 
-				<span tabindex="8" class="box" id="_Race">Minotaur</span>
-				<span tabindex="9" class="box" id="_Size">Medium</span>
+				<span tabindex="8" class="box" id="_Race">Gnome</span>
+				<span tabindex="9" class="box" id="_Size">Small</span>
 				<span tabindex="10" class="box" id="_Age">25</span>
-				<span tabindex="11" class="box" id="_Gender">Male</span>
-				<span tabindex="12" class="box" id="_Height">7'5"</span>
-				<span tabindex="13" class="box" id="_Weight">350 lb</span>
-				<span tabindex="14" class="box" id="_Alignment">Lawful Good</span>
-				<span tabindex="15" class="box" id="_Deity">Bahamut</span>
+				<span tabindex="11" class="box" id="_Gender"></span>
+				<span tabindex="12" class="box" id="_Height">3'6"</span>
+				<span tabindex="13" class="box" id="_Weight">63 lb.</span>
+				<span tabindex="14" class="box" id="_Alignment">Unaligned</span>
+				<span tabindex="15" class="box" id="_Deity"></span>
 				<span tabindex="16" class="box" id="_Affiliation"></span>
 
-				<span tabindex="17" class="center box" id="_Initiative">0</span>
+				<span tabindex="17" class="center box" id="_Initiative">1</span>
 				<span tabindex="18" class="box" id="_InitiativeConditionalModifiers"></span>
-				<span tabindex="19" class="center box" id="_InitiativeAbilMod">-1</span>
-				<span tabindex="20" class="center box" id="_InitiativeHalfLevel">1</span>
+				<span tabindex="19" class="center box" id="_InitiativeAbilMod">1</span>
+				<span tabindex="20" class="center box" id="_InitiativeHalfLevel">0</span>
 				<span tabindex="21" class="center box" id="_InitiativeMisc"></span>
 
-				<span tabindex="22" class="center box" id="_Str">18</span>
-				<span tabindex="23" class="center box" id="_Con">12</span>
-				<span tabindex="24" class="center box" id="_Dex">8</span>
-				<span tabindex="25" class="center box" id="_Int">10</span>
-				<span tabindex="26" class="center box" id="_Wis">18</span>
-				<span tabindex="27" class="center box" id="_Cha">12</span>
+				<span tabindex="22" class="center box" id="_Str">9</span>
+				<span tabindex="23" class="center box" id="_Con">13</span>
+				<span tabindex="24" class="center box" id="_Dex">13</span>
+				<span tabindex="25" class="center box" id="_Int">15</span>
+				<span tabindex="26" class="center box" id="_Wis">10</span>
+				<span tabindex="27" class="center box" id="_Cha">19</span>
 
-				<span tabindex="28" class="center box" id="_StrMod">4</span>
+				<span tabindex="28" class="center box" id="_StrMod">-1</span>
 				<span tabindex="29" class="center box" id="_ConMod">1</span>
-				<span tabindex="30" class="center box" id="_DexMod">-1</span>
-				<span tabindex="31" class="center box" id="_IntMod">0</span>
-				<span tabindex="32" class="center box" id="_WisMod">4</span>
-				<span tabindex="33" class="center box" id="_ChaMod">1</span>
+				<span tabindex="30" class="center box" id="_DexMod">1</span>
+				<span tabindex="31" class="center box" id="_IntMod">2</span>
+				<span tabindex="32" class="center box" id="_WisMod">0</span>
+				<span tabindex="33" class="center box" id="_ChaMod">4</span>
 
-				<span tabindex="34" class="center box" id="_StrModPlusHalfLevel">5</span>
-				<span tabindex="35" class="center box" id="_ConModPlusHalfLevel">2</span>
-				<span tabindex="36" class="center box" id="_DexModPlusHalfLevel">0</span>
-				<span tabindex="37" class="center box" id="_IntModPlusHalfLevel">1</span>
-				<span tabindex="38" class="center box" id="_WisModPlusHalfLevel">5</span>
-				<span tabindex="39" class="center box" id="_ChaModPlusHalfLevel">2</span>
+				<span tabindex="34" class="center box" id="_StrModPlusHalfLevel">-1</span>
+				<span tabindex="35" class="center box" id="_ConModPlusHalfLevel">1</span>
+				<span tabindex="36" class="center box" id="_DexModPlusHalfLevel">1</span>
+				<span tabindex="37" class="center box" id="_IntModPlusHalfLevel">2</span>
+				<span tabindex="38" class="center box" id="_WisModPlusHalfLevel">0</span>
+				<span tabindex="39" class="center box" id="_ChaModPlusHalfLevel">4</span>
 
-				<span tabindex="40" class="center box" id="_ArmorClass">19</span>
-				<span tabindex="41" class="center box" id="_ArmorClass10PlusHalfLevel">11</span>
-				<span tabindex="42" class="center box" id="_ArmorClassArmorSlashAbil">8</span>
+				<span tabindex="40" class="center box" id="_ArmorClass">14</span>
+				<span tabindex="41" class="center box" id="_ArmorClass10PlusHalfLevel">10</span>
+				<span tabindex="42" class="center box" id="_ArmorClassArmorSlashAbil">4</span>
 				<span tabindex="43" class="center box" id="_ArmorClassClass"></span>
 				<span tabindex="44" class="center box" id="_ArmorClassFeat"></span>
 				<span tabindex="45" class="center box" id="_ArmorClassEnh"></span>
 				<span tabindex="46" class="center box" id="_ArmorClassMisc1"></span>
 				<span tabindex="47" class="center box" id="_ArmorClassMisc2"></span>
-				<span tabindex="48" class="box" id="_ArmorClassConditionalBonuses">+2 against opportunity attacks when charging</span>
+				<span tabindex="48" class="box" id="_ArmorClassConditionalBonuses"></span>
 
-				<span tabindex="49" class="center box" id="_Fortitude">16</span>
-				<span tabindex="50" class="center box" id="_Fortitude10PlusHalfLevel">11</span>
-				<span tabindex="51" class="center box" id="_FortitudeAbil">4</span>
-				<span tabindex="52" class="center box" id="_FortitudeClass">1</span>
+				<span tabindex="49" class="center box" id="_Fortitude">11</span>
+				<span tabindex="50" class="center box" id="_Fortitude10PlusHalfLevel">10</span>
+				<span tabindex="51" class="center box" id="_FortitudeAbil">1</span>
+				<span tabindex="52" class="center box" id="_FortitudeClass"></span>
 				<span tabindex="53" class="center box" id="_FortitudeFeat"></span>
 				<span tabindex="54" class="center box" id="_FortitudeEnh"></span>
 				<span tabindex="55" class="center box" id="_FortitudeMisc1"></span>
 				<span tabindex="56" class="center box" id="_FortitudeMisc2"></span>
 				<span tabindex="57" class="box" id="_FortitudeConditionalBonuses"></span>
 
-				<span tabindex="58" class="center box" id="_Reflex">12</span>
-				<span tabindex="59" class="center box" id="_Reflex10PlusHalfLevel">11</span>
-				<span tabindex="60" class="center box" id="_ReflexAbil">0</span>
+				<span tabindex="58" class="center box" id="_Reflex">13</span>
+				<span tabindex="59" class="center box" id="_Reflex10PlusHalfLevel">10</span>
+				<span tabindex="60" class="center box" id="_ReflexAbil">2</span>
 				<span tabindex="61" class="center box" id="_ReflexClass">1</span>
 				<span tabindex="62" class="center box" id="_ReflexFeat"></span>
 				<span tabindex="63" class="center box" id="_ReflexEnh"></span>
@@ -330,8 +419,8 @@
 				<span tabindex="65" class="center box" id="_ReflexMisc2"></span>
 				<span tabindex="66" class="box" id="_ReflexConditionalBonuses"></span>
 
-				<span tabindex="67" class="center box" id="_Willpower">16</span>
-				<span tabindex="68" class="center box" id="_Willpower10PlusHalfLevel">11</span>
+				<span tabindex="67" class="center box" id="_Willpower">15</span>
+				<span tabindex="68" class="center box" id="_Willpower10PlusHalfLevel">10</span>
 				<span tabindex="69" class="center box" id="_WillpowerAbil">4</span>
 				<span tabindex="70" class="center box" id="_WillpowerClass">1</span>
 				<span tabindex="71" class="center box" id="_WillpowerFeat"></span>
@@ -341,163 +430,163 @@
 				<span tabindex="75" class="box" id="_WillpowerConditionalBonuses"></span>
 
 				<span tabindex="76" class="center box" id="_Speed">5</span>
-				<span tabindex="77" class="center box" id="_SpeedBase">6</span>
-				<span tabindex="78" class="center box" id="_SpeedArmor">-1</span>
+				<span tabindex="77" class="center box" id="_SpeedBase">5</span>
+				<span tabindex="78" class="center box" id="_SpeedArmor"></span>
 				<span tabindex="79" class="center box" id="_SpeedItem"></span>
 				<span tabindex="80" class="center box" id="_SpeedMisc"></span>
 				<span tabindex="81" class="box" id="_SpecialMovement"></span>
 
-				<span tabindex="82" class="center box" id="_PassiveInsight">20</span>
-				<span tabindex="83" class="center box" id="_PassiveInsightSkillBonus">10</span>
-				<span tabindex="84" class="center box" id="_PassivePerception">15</span>
-				<span tabindex="85" class="center box" id="_PassivePerceptionSkillBonus">5</span>
-				<span tabindex="86" class="box" id="_SpecialSenses"></span>
+				<span tabindex="82" class="center box" id="_PassiveInsight">10</span>
+				<span tabindex="83" class="center box" id="_PassiveInsightSkillBonus">0</span>
+				<span tabindex="84" class="center box" id="_PassivePerception">10</span>
+				<span tabindex="85" class="center box" id="_PassivePerceptionSkillBonus">0</span>
+				<span tabindex="86" class="box" id="_SpecialSenses">Low-light vision</span>
 
-				<span tabindex="87" class="center box" id="_MaxHitPoints">38</span>
-				<span tabindex="88" class="center box" id="_BloodiedHitPoints">19</span>
-				<span tabindex="89" class="center box" id="_SurgeValue">9</span>
-				<span tabindex="90" class="center box" id="_SurgesPerDay">14</span>
-				<span tabindex="91" class="center box" id="_CurrentHitPoints">38</span>
-				<span tabindex="92" class="center box" id="_CurrentSurgeUses">14</span>
+				<span tabindex="87" class="center box" id="_MaxHitPoints">25</span>
+				<span tabindex="88" class="center box" id="_BloodiedHitPoints">12</span>
+				<span tabindex="89" class="center box" id="_SurgeValue">6</span>
+				<span tabindex="90" class="center box" id="_SurgesPerDay">7</span>
+				<span tabindex="91" class="center box" id="_CurrentHitPoints">25</span>
+				<span tabindex="92" class="center box" id="_CurrentSurgeUses">7</span>
 				<input tabindex="93" class="center box" id="_SecondWindUsed" type="checkbox">
 				<span tabindex="94" class="box" id="_TemporaryHitPoints"></span>
 				<input tabindex="95" class="center box" id="_DeathSavingThrowFailures1" type="checkbox">
 				<input tabindex="96" class="center box" id="_DeathSavingThrowFailures2" type="checkbox">
 				<input tabindex="97" class="center box" id="_DeathSavingThrowFailures3" type="checkbox">
-				<span tabindex="98" class="box" id="_SavingThrowMods"></span>
+				<span tabindex="98" class="box" id="_SavingThrowMods">+5 vs illusions <!-- gnome --></span>
 				<span tabindex="99" class="box" id="_Resistances"></span>
 				<span tabindex="100" class="box" id="_CurrentConditionsAndEffects"></span>
 
 				<span tabindex="101" class="center box" id="_ActionPoints">1</span>
 				<span tabindex="102" class="box" id="_ActionPointAddtionalEffects"></span>
 
-				<span tabindex="103" class="box" id="_RaceAbilityScoreMods">+2 Str, +2 Con or Wis</span>
-				<span tabindex="104" class="box" id="_RaceFeatures1">Vitality: Additional Healing Surge</span>
-				<span tabindex="105" class="box" id="_RaceFeatures2">Ferocity: Make melee basic when drop to 0<!-- immediate interrupt --></span>
-				<span tabindex="106" class="box" id="_RaceFeatures3">Heedless Charge: +2 AC vs OA when charging</span>
-				<span tabindex="107" class="box" id="_RaceFeatures4">Goring Charge: Encounter power</span>
-				<span tabindex="108" class="box" id="_RaceFeatures5"></span>
-				<span tabindex="109" class="box" id="_RaceFeatures6"></span>
+				<span tabindex="103" class="box" id="_RaceAbilityScoreMods">+2 Intelligence, +2 Charisma</span>
+				<span tabindex="104" class="box" id="_RaceFeatures1">+2 bonus to Arcana &amp; Stealth</span>
+				<span tabindex="105" class="box" id="_RaceFeatures2">Fey Origin: considered fey creature</span>
+				<span tabindex="106" class="box" id="_RaceFeatures3">Master Trickster: <i>ghost sound</i> as encounter minor</span>
+				<span tabindex="107" class="box" id="_RaceFeatures4">Reactive Stealth: make stealth check w/ initiative<!-- when have cover or concealment --></span>
+				<span tabindex="108" class="box" id="_RaceFeatures5">Trickster's Cunning: +5 save vs illusions</span>
+				<span tabindex="109" class="box" id="_RaceFeatures6">Fade Away: encounter power</span>
 				<span tabindex="110" class="box" id="_RaceFeatures7"></span>
 				<span tabindex="111" class="box" id="_RaceFeatures8"></span>
 
-				<span tabindex="112" class="box" id="_Attack1Ability">Greataxe (two hands)</span>
-				<span tabindex="113" class="center box" id="_Attack1AttBonus">7</span>
-				<span tabindex="114" class="center box" id="_Attack1HalfLevel">1</span>
-				<span tabindex="115" class="center box" id="_Attack1Abil">4</span>
+				<span tabindex="112" class="box" id="_Attack1Ability">Sickle</span>
+				<span tabindex="113" class="center box" id="_Attack1AttBonus">1</span>
+				<span tabindex="114" class="center box" id="_Attack1HalfLevel">0</span>
+				<span tabindex="115" class="center box" id="_Attack1Abil">-1</span>
 				<span tabindex="116" class="center box" id="_Attack1Class"></span>
 				<span tabindex="117" class="center box" id="_Attack1Prof">2</span>
 				<span tabindex="118" class="center box" id="_Attack1Feat"></span>
 				<span tabindex="119" class="center box" id="_Attack1Enh"></span>
 				<span tabindex="120" class="center box" id="_Attack1Misc"></span>
 
-				<span tabindex="121" class="box" id="_Attack2Ability"></span>
-				<span tabindex="122" class="center box" id="_Attack2AttBonus">1</span>
-				<span tabindex="123" class="center box" id="_Attack2HalfLevel">1</span>
-				<span tabindex="124" class="center box" id="_Attack2Abil"></span>
+				<span tabindex="121" class="box" id="_Attack2Ability">Sling</span>
+				<span tabindex="122" class="center box" id="_Attack2AttBonus">3</span>
+				<span tabindex="123" class="center box" id="_Attack2HalfLevel">0</span>
+				<span tabindex="124" class="center box" id="_Attack2Abil">1</span>
 				<span tabindex="125" class="center box" id="_Attack2Class"></span>
-				<span tabindex="126" class="center box" id="_Attack2Prof"></span>
+				<span tabindex="126" class="center box" id="_Attack2Prof">2</span>
 				<span tabindex="127" class="center box" id="_Attack2Feat"></span>
 				<span tabindex="128" class="center box" id="_Attack2Enh"></span>
 				<span tabindex="129" class="center box" id="_Attack2Misc"></span>
 
-				<span tabindex="130" class="box" id="_Damage1Ability">Greataxe (two hands)</span>
-				<span tabindex="131" class="center box" id="_Damage1Damage">1d12+4</span>
-				<span tabindex="132" class="center box" id="_Damage1Abil">4</span>
+				<span tabindex="130" class="box" id="_Damage1Ability">Sickle</span>
+				<span tabindex="131" class="center box" id="_Damage1Damage">1d6 +-1</span>
+				<span tabindex="132" class="center box" id="_Damage1Abil">-1</span>
 				<span tabindex="133" class="center box" id="_Damage1Feat"></span>
 				<span tabindex="134" class="center box" id="_Damage1Enh"></span>
 				<span tabindex="135" class="center box" id="_Damage1Misc1"></span>
 				<span tabindex="136" class="center box" id="_Damage1Misc2"></span>
 
-				<span tabindex="137" class="box" id="_Damage2Ability">0</span>
-				<span tabindex="138" class="center box" id="_Damage2Damage"><!-- 1d4 + 0 --></span>
-				<span tabindex="139" class="center box" id="_Damage2Abil"></span>
+				<span tabindex="137" class="box" id="_Damage2Ability">Sling</span>
+				<span tabindex="138" class="center box" id="_Damage2Damage">1d6 + 1</span>
+				<span tabindex="139" class="center box" id="_Damage2Abil">1</span>
 				<span tabindex="140" class="center box" id="_Damage2Feat"></span>
 				<span tabindex="141" class="center box" id="_Damage2Enh"></span>
 				<span tabindex="142" class="center box" id="_Damage2Misc1"></span>
 				<span tabindex="143" class="center box" id="_Damage2Misc2"></span>
 
-				<span tabindex="144" class="center box" id="_BasicAttack1Attack">7</span>
-				<span tabindex="145" class="center box" id="_BasicAttack2Attack"></span>
+				<span tabindex="144" class="center box" id="_BasicAttack1Attack">1</span>
+				<span tabindex="145" class="center box" id="_BasicAttack2Attack">3</span>
 				<span tabindex="146" class="center box" id="_BasicAttack3Attack"></span>
 				<span tabindex="147" class="center box" id="_BasicAttack4Attack"></span>
 
 				<span tabindex="148" class="center box" id="_BasicAttack1Defense">AC</span>
-				<span tabindex="149" class="center box" id="_BasicAttack2Defense"></span>
+				<span tabindex="149" class="center box" id="_BasicAttack2Defense">AC</span>
 				<span tabindex="150" class="center box" id="_BasicAttack3Defense"></span>
 				<span tabindex="151" class="center box" id="_BasicAttack4Defense"></span>
 
-				<span tabindex="152" class="box" id="_BasicAttack1WeaponOrPower">Greataxe (two hands)</span>
-				<span tabindex="153" class="box" id="_BasicAttack2WeaponOrPower"></span>
+				<span tabindex="152" class="box" id="_BasicAttack1WeaponOrPower">Sickle</span>
+				<span tabindex="153" class="box" id="_BasicAttack2WeaponOrPower">Sling</span>
 				<span tabindex="154" class="box" id="_BasicAttack3WeaponOrPower"></span>
 				<span tabindex="155" class="box" id="_BasicAttack4WeaponOrPower"></span>
-				<span tabindex="156" class="box" id="_BasicAttack1Damage">1d12+4</span>
-				<span tabindex="157" class="box" id="_BasicAttack2Damage"></span>
+				<span tabindex="156" class="box" id="_BasicAttack1Damage">1d6 +-1</span>
+				<span tabindex="157" class="box" id="_BasicAttack2Damage">1d6 + 1</span>
 				<span tabindex="158" class="box" id="_BasicAttack3Damage"></span>
 				<span tabindex="159" class="box" id="_BasicAttack4Damage"></span>
 
-				<span tabindex="160" class="center box" id="_Acrobatics">-2</span>
-				<span tabindex="161" class="center box" id="_Arcana">1</span>
-				<span tabindex="162" class="center box" id="_Athletics">3</span>
-				<span tabindex="163" class="center box" id="_Bluff">2</span>
-				<span tabindex="164" class="center box" id="_Diplomacy">2</span>
-				<span tabindex="165" class="center box" id="_Dungeoneering">5</span>
-				<span tabindex="166" class="center box" id="_Endurance">5</span>
-				<span tabindex="167" class="center box" id="_Heal">10</span>
-				<span tabindex="168" class="center box" id="_History">1</span>
-				<span tabindex="169" class="center box" id="_Insight">10</span>
-				<span tabindex="170" class="center box" id="_Intimidate">2</span>
-				<span tabindex="171" class="center box" id="_Nature">5</span>
-				<span tabindex="172" class="center box" id="_Perception">5</span>
-				<span tabindex="173" class="center box" id="_Religion">6</span>
-				<span tabindex="174" class="center box" id="_Stealth">-2</span>
-				<span tabindex="175" class="center box" id="_Streetwise">2</span>
-				<span tabindex="176" class="center box" id="_Thievery">-2</span>
+				<span tabindex="160" class="center box" id="_Acrobatics">1</span>
+				<span tabindex="161" class="center box" id="_Arcana">9</span>
+				<span tabindex="162" class="center box" id="_Athletics">-1</span>
+				<span tabindex="163" class="center box" id="_Bluff">9</span>
+				<span tabindex="164" class="center box" id="_Diplomacy">4</span>
+				<span tabindex="165" class="center box" id="_Dungeoneering">0</span>
+				<span tabindex="166" class="center box" id="_Endurance">1</span>
+				<span tabindex="167" class="center box" id="_Heal">0</span>
+				<span tabindex="168" class="center box" id="_History">7</span>
+				<span tabindex="169" class="center box" id="_Insight">0</span>
+				<span tabindex="170" class="center box" id="_Intimidate">4</span>
+				<span tabindex="171" class="center box" id="_Nature">0</span>
+				<span tabindex="172" class="center box" id="_Perception">0</span>
+				<span tabindex="173" class="center box" id="_Religion">2</span>
+				<span tabindex="174" class="center box" id="_Stealth">8</span>
+				<span tabindex="175" class="center box" id="_Streetwise">9</span>
+				<span tabindex="176" class="center box" id="_Thievery">1</span>
 
-				<span tabindex="177" class="center box" id="_AcrobaticsAbilModPlusHalfLevel">0</span>
-				<span tabindex="178" class="center box" id="_ArcanaAbilModPlusHalfLevel">1</span>
-				<span tabindex="179" class="center box" id="_AthleticsAbilModPlusHalfLevel">5</span>
-				<span tabindex="180" class="center box" id="_BluffAbilModPlusHalfLevel">2</span>
-				<span tabindex="181" class="center box" id="_DiplomacyAbilModPlusHalfLevel">2</span>
-				<span tabindex="182" class="center box" id="_DungeoneeringAbilModPlusHalfLevel">5</span>
-				<span tabindex="183" class="center box" id="_EnduranceAbilModPlusHalfLevel">2</span>
-				<span tabindex="184" class="center box" id="_HealAbilModPlusHalfLevel">5</span>
-				<span tabindex="185" class="center box" id="_HistoryAbilModPlusHalfLevel">1</span>
-				<span tabindex="186" class="center box" id="_InsightAbilModPlusHalfLevel">5</span>
-				<span tabindex="187" class="center box" id="_IntimidateAbilModPlusHalfLevel">2</span>
-				<span tabindex="188" class="center box" id="_NatureAbilModPlusHalfLevel">5</span>
-				<span tabindex="189" class="center box" id="_PerceptionAbilModPlusHalfLevel">5</span>
-				<span tabindex="190" class="center box" id="_ReligionAbilModPlusHalfLevel">1</span>
-				<span tabindex="191" class="center box" id="_StealthAbilModPlusHalfLevel">0</span>
-				<span tabindex="192" class="center box" id="_StreetwiseAbilModPlusHalfLevel">2</span>
-				<span tabindex="193" class="center box" id="_ThieveryAbilModPlusHalfLevel">0</span>
+				<span tabindex="177" class="center box" id="_AcrobaticsAbilModPlusHalfLevel">1</span>
+				<span tabindex="178" class="center box" id="_ArcanaAbilModPlusHalfLevel">2</span>
+				<span tabindex="179" class="center box" id="_AthleticsAbilModPlusHalfLevel">-1</span>
+				<span tabindex="180" class="center box" id="_BluffAbilModPlusHalfLevel">4</span>
+				<span tabindex="181" class="center box" id="_DiplomacyAbilModPlusHalfLevel">4</span>
+				<span tabindex="182" class="center box" id="_DungeoneeringAbilModPlusHalfLevel">0</span>
+				<span tabindex="183" class="center box" id="_EnduranceAbilModPlusHalfLevel">1</span>
+				<span tabindex="184" class="center box" id="_HealAbilModPlusHalfLevel">0</span>
+				<span tabindex="185" class="center box" id="_HistoryAbilModPlusHalfLevel">2</span>
+				<span tabindex="186" class="center box" id="_InsightAbilModPlusHalfLevel">0</span>
+				<span tabindex="187" class="center box" id="_IntimidateAbilModPlusHalfLevel">4</span>
+				<span tabindex="188" class="center box" id="_NatureAbilModPlusHalfLevel">0</span>
+				<span tabindex="189" class="center box" id="_PerceptionAbilModPlusHalfLevel">0</span>
+				<span tabindex="190" class="center box" id="_ReligionAbilModPlusHalfLevel">2</span>
+				<span tabindex="191" class="center box" id="_StealthAbilModPlusHalfLevel">1</span>
+				<span tabindex="192" class="center box" id="_StreetwiseAbilModPlusHalfLevel">4</span>
+				<span tabindex="193" class="center box" id="_ThieveryAbilModPlusHalfLevel">1</span>
 
 				<span tabindex="194" class="center box" id="_AcrobaticsTrained"></span>
-				<span tabindex="195" class="center box" id="_ArcanaTrained"></span>
+				<span tabindex="195" class="center box" id="_ArcanaTrained">5</span>
 				<span tabindex="196" class="center box" id="_AthleticsTrained"></span>
-				<span tabindex="197" class="center box" id="_BluffTrained"></span>
+				<span tabindex="197" class="center box" id="_BluffTrained">5</span>
 				<span tabindex="198" class="center box" id="_DiplomacyTrained"></span>
 				<span tabindex="199" class="center box" id="_DungeoneeringTrained"></span>
-				<span tabindex="200" class="center box" id="_EnduranceTrained">5</span>
-				<span tabindex="201" class="center box" id="_HealTrained">5</span>
-				<span tabindex="202" class="center box" id="_HistoryTrained"></span>
-				<span tabindex="203" class="center box" id="_InsightTrained">5</span>
+				<span tabindex="200" class="center box" id="_EnduranceTrained"></span>
+				<span tabindex="201" class="center box" id="_HealTrained"></span>
+				<span tabindex="202" class="center box" id="_HistoryTrained">5</span>
+				<span tabindex="203" class="center box" id="_InsightTrained"></span>
 				<span tabindex="204" class="center box" id="_IntimidateTrained"></span>
 				<span tabindex="205" class="center box" id="_NatureTrained"></span>
 				<span tabindex="206" class="center box" id="_PerceptionTrained"></span>
-				<span tabindex="207" class="center box" id="_ReligionTrained">5</span>
-				<span tabindex="208" class="center box" id="_StealthTrained"></span>
-				<span tabindex="209" class="center box" id="_StreetwiseTrained"></span>
+				<span tabindex="207" class="center box" id="_ReligionTrained"></span>
+				<span tabindex="208" class="center box" id="_StealthTrained">5</span>
+				<span tabindex="209" class="center box" id="_StreetwiseTrained">5</span>
 				<span tabindex="210" class="center box" id="_ThieveryTrained"></span>
 
-				<span tabindex="211" class="center box" id="_AcrobaticsArmorPenalty">-2</span>
-				<span tabindex="212" class="center box" id="_AthleticsArmorPenalty">-2</span>
-				<span tabindex="213" class="center box" id="_EnduranceArmorPenalty">-2</span>
-				<span tabindex="214" class="center box" id="_StealthArmorPenalty">-2</span>
-				<span tabindex="215" class="center box" id="_ThieveryArmorPenalty">-2</span>
+				<span tabindex="211" class="center box" id="_AcrobaticsArmorPenalty"></span>
+				<span tabindex="212" class="center box" id="_AthleticsArmorPenalty"></span>
+				<span tabindex="213" class="center box" id="_EnduranceArmorPenalty"></span>
+				<span tabindex="214" class="center box" id="_StealthArmorPenalty"></span>
+				<span tabindex="215" class="center box" id="_ThieveryArmorPenalty"></span>
 
 				<span tabindex="216" class="center box" id="_AcrobaticsMisc"></span>
-				<span tabindex="217" class="center box" id="_ArcanaMisc"></span>
+				<span tabindex="217" class="center box" id="_ArcanaMisc">2</span>
 				<span tabindex="218" class="center box" id="_AthleticsMisc"></span>
 				<span tabindex="219" class="center box" id="_BluffMisc"></span>
 				<span tabindex="220" class="center box" id="_DiplomacyMisc"></span>
@@ -510,27 +599,27 @@
 				<span tabindex="227" class="center box" id="_NatureMisc"></span>
 				<span tabindex="228" class="center box" id="_PerceptionMisc"></span>
 				<span tabindex="229" class="center box" id="_ReligionMisc"></span>
-				<span tabindex="230" class="center box" id="_StealthMisc"></span>
+				<span tabindex="230" class="center box" id="_StealthMisc">2</span>
 				<span tabindex="231" class="center box" id="_StreetwiseMisc"></span>
 				<span tabindex="232" class="center box" id="_ThieveryMisc"></span>
 
-				<span tabindex="233" class="box" id="_ClassPathDestinyFeatures1">Channel Divinity: 1 CD power/encounter</span>
-				<span tabindex="234" class="box" id="_ClassPathDestinyFeatures2">Divine Challenge: at-will power</span>
-				<span tabindex="235" class="box" id="_ClassPathDestinyFeatures3">Lay On Hands: at-will power (4 times/day)</span>
-				<span tabindex="236" class="box" id="_ClassPathDestinyFeatures4"></span>
-				<span tabindex="237" class="box" id="_ClassPathDestinyFeatures5"></span>
-				<span tabindex="238" class="box" id="_ClassPathDestinyFeatures6"></span>
-				<span tabindex="239" class="box" id="_ClassPathDestinyFeatures7"></span>
-				<span tabindex="240" class="box" id="_ClassPathDestinyFeatures8"></span>
-				<span tabindex="241" class="box" id="_ClassPathDestinyFeatures9"></span>
-				<span tabindex="242" class="box" id="_ClassPathDestinyFeatures10"></span>
-				<span tabindex="243" class="box" id="_ClassPathDestinyFeatures11"></span>
+				<span tabindex="233" class="box" id="_ClassPathDestinyFeatures1">Eldritch Blast: at-will power</span>
+				<span tabindex="234" class="box" id="_ClassPathDestinyFeatures2">Eldritch Pact: Fey Pact</span>
+				<span tabindex="235" class="box" id="_ClassPathDestinyFeatures3">Eyebite(Fey Pact): at-will power</span>
+				<span tabindex="236" class="box" id="_ClassPathDestinyFeatures4">Misty Step(Fey Pact): teleport 3(free) on cursed death</span>
+				<span tabindex="237" class="box" id="_ClassPathDestinyFeatures5">Prime Shot: +1 ranged attack when closest ally</span>
+				<span tabindex="238" class="box" id="_ClassPathDestinyFeatures6">Shadow Walk: gain concealment if move at least 3</span>
+				<span tabindex="239" class="box" id="_ClassPathDestinyFeatures7">Warlock's Curse: minor action, 1/turn</span>
+				<span tabindex="240" class="box" id="_ClassPathDestinyFeatures8">Implements: Rods, Wands, Pact Blades</span>
+				<span tabindex="241" class="box" id="_ClassPathDestinyFeatures9">Armor Proficiencies: Cloth, Leather</span>
+				<span tabindex="242" class="box" id="_ClassPathDestinyFeatures10">Weapon Proficiences: Simple melee, simple ranged</span>
+				<span tabindex="243" class="box" id="_ClassPathDestinyFeatures11">Bonus to Defense: +1 Reflex &amp; Will</span>
 				<span tabindex="244" class="box" id="_ClassPathDestinyFeatures12"></span>
 				<span tabindex="245" class="box" id="_ClassPathDestinyFeatures13"></span>
 				<span tabindex="246" class="box" id="_ClassPathDestinyFeatures14"></span>
 				
-				<span tabindex="247" class="box" id="_Feats1">Toughness: 5 extra HP per tier</span>
-				<span tabindex="248" class="box" id="_Feats2">Durable: extra 2 healing surges</span>
+				<span tabindex="247" class="box" id="_Feats1">Warrior of the Wild: (Stealth, Hunter's Quarry)</span>
+				<span tabindex="248" class="box" id="_Feats2"></span>
 				<span tabindex="249" class="box" id="_Feats3"></span>
 				<span tabindex="250" class="box" id="_Feats4"></span>
 				<span tabindex="251" class="box" id="_Feats5"></span>
@@ -548,41 +637,31 @@
 				<span tabindex="263" class="box" id="_Feats17"></span>
 
 				<span tabindex="264" class="box" id="_LanguagesKnown1">Common</span>
-				<span tabindex="265" class="box" id="_LanguagesKnown2">Goblin</span>
+				<span tabindex="265" class="box" id="_LanguagesKnown2">Elven</span>
 				<span tabindex="266" class="box" id="_LanguagesKnown3"></span>
 			</div>
 			<div class="page" id="Page2">
-				<img class="page-background" id="Page2Background" src="../CharacterSheetPage2.png">
-				<span tabindex="267" class="box" id="_AtWillPowers1">Divine Challenge: minor burst 5, mark 1 until reused<!--
-  must either attack it or end turn next to it to hold mark
-  target takes -2 to attacks that don't involve me
-  target takes 4 radiant dmg first time it makes a take that doesn't involve me
-
-  if fail to hold mark or mark another target, mark ends & can't use divine challenge on next turn
---> </span>
-				<span tabindex="268" class="box" id="_AtWillPowers2">Lay on hands: minor, spend own surge to heal ally<!--
-  range touch,
-  limit to 4 times per day
-  ally gains their surge value
---></span>
-				<span tabindex="269" class="box" id="_AtWillPowers3">Holy Strike:+7 v AC,1d12+4(1d12+8 v mark) radiant</span>
-				<span tabindex="270" class="box" id="_AtWillPowers4">Valiant Strike:+7+#adj.enemy v AC,1d12+4</span>
+				<img class="page-background" id="Page2Background" src="http://rampion.github.com/4eCharSheet/CharacterSheetPage2.png">
+				<span tabindex="267" class="box" id="_AtWillPowers1">Eldritch Blast</span>
+				<span tabindex="268" class="box" id="_AtWillPowers2">Eyebite</span>
+				<span tabindex="269" class="box" id="_AtWillPowers3">Misty Step</span>
+				<span tabindex="270" class="box" id="_AtWillPowers4">Warlock's Curse</span>
 				<span tabindex="271" class="box" id="_AtWillPowers5"></span>
 				<span tabindex="272" class="box" id="_AtWillPowers6"></span>
 
-				<span tabindex="273" class="box" id="_EncounterPowers1">Goring Charge:+8 vs AC, 1d6+4 and prone</span>
-				<span tabindex="274" class="box" id="_EncounterPowers2">CD: Divine Mettle: minor burst 10, grant save +1</span>
-				<span tabindex="275" class="box" id="_EncounterPowers3">CD: Divine Strength: minor, +4 dmg next attack</span>
-				<span tabindex="276" class="box" id="_EncounterPowers4">Piercing Smite:+7 v Ref, 2d12+4 &amp; mark 4 adj<!-- until end of next turn--></span>
+				<span tabindex="273" class="box" id="_EncounterPowers1">Ghost Sound</span>
+				<span tabindex="274" class="box" id="_EncounterPowers2">Fade Away</span>
+				<span tabindex="275" class="box" id="_EncounterPowers3">Witchfire</span>
+				<span tabindex="276" class="box" id="_EncounterPowers4">Hunter's Quarry</span>
 				<span tabindex="277" class="box" id="_EncounterPowers5"></span>
 				<span tabindex="278" class="box" id="_EncounterPowers6"></span>
-				<span tabindex="279" class="box" id="_DailyPowers1">Paladin's Judgement:ally surge,+7 v AC, 3d12+4<!-- ally must be within 5 squares, and may heal hit or miss --></span>
+				<span tabindex="279" class="box" id="_DailyPowers1">Curse of the Dark Dream</span>
 				<span tabindex="280" class="box" id="_DailyPowers2"></span>
 				<span tabindex="281" class="box" id="_DailyPowers3"></span>
 				<span tabindex="282" class="box" id="_DailyPowers4"></span>
 				<span tabindex="283" class="box" id="_DailyPowers5"></span>
 				<span tabindex="284" class="box" id="_DailyPowers6"></span>
-				<span tabindex="285" class="box" id="_UtilityPowers1">Martyr's blessing (daily int) take dmg for adj ally</span>
+				<span tabindex="285" class="box" id="_UtilityPowers1"></span>
 				<span tabindex="286" class="box" id="_UtilityPowers2"></span>
 				<span tabindex="287" class="box" id="_UtilityPowers3"></span>
 				<span tabindex="288" class="box" id="_UtilityPowers4"></span>
@@ -721,19 +800,10 @@
 				<span tabindex="411" class="box" id="_CompanionsAndAlliesNotes7"></span>
 				<span tabindex="412" class="box" id="_CompanionsAndAlliesNotes8"></span>
 
-				<span tabindex="413" class="box" id="_OtherEquipment1">Adventurer's Kit<!--
- backpack
- bedroll
- flint & steal
- belt pouch
- 10 days trail rations
- 50 ft hemp rope
- 2 sunrods
- waterskin
---></span>
-				<span tabindex="414" class="box" id="_OtherEquipment2">Greataxe</span>
-				<span tabindex="415" class="box" id="_OtherEquipment3">Plate armor</span>
-				<span tabindex="416" class="box" id="_OtherEquipment4"></span>
+				<span tabindex="413" class="box" id="_OtherEquipment1">leather armor</span>
+				<span tabindex="414" class="box" id="_OtherEquipment2">sickle</span>
+				<span tabindex="415" class="box" id="_OtherEquipment3">sling &amp; 20 bullets</span>
+				<span tabindex="416" class="box" id="_OtherEquipment4">adventurer's kit</span>
 				<span tabindex="417" class="box" id="_OtherEquipment5"></span>
 				<span tabindex="418" class="box" id="_OtherEquipment6"></span>
 				<span tabindex="419" class="box" id="_OtherEquipment7"></span>
@@ -765,34 +835,26 @@
 				<span tabindex="443" class="box" id="_SessionAndCampaignNotes11"></span>
 				<span tabindex="444" class="box" id="_SessionAndCampaignNotes12"></span>
 
-				<span tabindex="445" class="box" id="_CoinsAndOtherWealth"> 5gp</span>
+				<span tabindex="445" class="box" id="_CoinsAndOtherWealth">56gp</span>
 			</div>
 			<div class="page" id="Page3">
 				<div style="display: inline-block;" id="_AtWillPowers1Card" class="power-card">
-					<img id="_AtWillPowers1Image" src="../PowerCard-AtWill.png">
-					<span tabindex="446" id="_AtWillPowers1Name" class="box power-card-name">Divine Challenge: minor burst 5, mark 1 until reused<!--
-  must either attack it or end turn next to it to hold mark
-  target takes -2 to attacks that don't involve me
-  target takes 4 radiant dmg first time it makes a take that doesn't involve me
-
-  if fail to hold mark or mark another target, mark ends & can't use divine challenge on next turn
---> </span>
-					<span tabindex="447" id="_AtWillPowers1Keyword" class="box power-card-keyword"></span>
+					<img id="_AtWillPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
+					<span tabindex="446" id="_AtWillPowers1Name" class="box power-card-name">Eldritch Blast</span>
+					<span tabindex="447" id="_AtWillPowers1Keyword" class="box power-card-keyword">Arcane, Implement</span>
 					<input tabindex="448" id="_AtWillPowers1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="449" id="_AtWillPowers1Action" class="box power-card-action">Minor</span>
+					<span tabindex="449" id="_AtWillPowers1Action" class="box power-card-action">Standard</span>
 					<span tabindex="450" id="_AtWillPowers1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="451" id="_AtWillPowers1Range" class="box power-card-range">Close burst 5</span>
-					<span tabindex="452" id="_AtWillPowers1Attack" class="box power-card-attack">n/a</span>
-					<span tabindex="453" id="_AtWillPowers1Defense" class="box power-card-defense">n/a</span>
-					<span tabindex="454" id="_AtWillPowers1Target" class="box power-card-target">One creature in burst</span>
-					<span tabindex="455" id="_AtWillPowers1Details" class="box power-card-details"><b>Effect:</b> Mark the target until<ul>
-<li>use this power against another target</li>
-<li>fail to engage the target by either attacking it or end adjacent to it on your turn.  If this happens, you cannot use this power on your next turn.</li></ul>
-Marked target takes -2 penalty to attack rolls for any attack that doesn't include me as a target.  Also, it takes 4 radiant damage the first time it makes an attack that doesn't include you as a target before start of my next turn.</span>
-					<span tabindex="456" id="_AtWillPowers1Additional" class="box power-card-additional">Can only be used once per turn.  Cannot be used on a creature already affected by a divine challenge.</span>
-					<span tabindex="457" id="_AtWillPowers1Class" class="box power-card-class">Paladin</span>
-					<span tabindex="459" id="_AtWillPowers1Level" class="box power-card-level">n/a</span>
-					<span tabindex="460" id="_AtWillPowers1Page" class="box power-card-page">PHB1p91</span>
+					<span tabindex="451" id="_AtWillPowers1Range" class="box power-card-range">Ranged 10</span>
+					<span tabindex="452" id="_AtWillPowers1Attack" class="box power-card-attack">+4</span>
+					<span tabindex="453" id="_AtWillPowers1Defense" class="box power-card-defense">Reflex</span>
+					<span tabindex="454" id="_AtWillPowers1Target" class="box power-card-target">One creature</span>
+					<span tabindex="455" id="_AtWillPowers1Details" class="box power-card-details"><p><b>Hit:</b> 1d10+4 damage</p>
+<p><b>Special:</b> Counts as a ranged basic attack.  When a power allows you to make a ranged basic attack, you can use this power.</p></span>
+					<span tabindex="456" id="_AtWillPowers1Additional" class="box power-card-additional"></span>
+					<span tabindex="457" id="_AtWillPowers1Class" class="box power-card-class">Warlock</span>
+					<span tabindex="459" id="_AtWillPowers1Level" class="box power-card-level">1</span>
+					<span tabindex="460" id="_AtWillPowers1Page" class="box power-card-page">PHB1p132</span>
 					<select tabindex="461" id="_AtWillPowers1PowerType" class="power-card-power-type">
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -800,25 +862,21 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers2Card" class="power-card">
-					<img id="_AtWillPowers2Image" src="../PowerCard-AtWill.png">
-					<span tabindex="462" id="_AtWillPowers2Name" class="box power-card-name">Lay on hands: minor, spend own surge to heal ally<!--
-  range touch,
-  limit to 4 times per day
-  ally gains their surge value
---></span>
-					<span tabindex="463" id="_AtWillPowers2Keyword" class="box power-card-keyword"></span>
+					<img id="_AtWillPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
+					<span tabindex="462" id="_AtWillPowers2Name" class="box power-card-name">Eyebite</span>
+					<span tabindex="463" id="_AtWillPowers2Keyword" class="box power-card-keyword">Arcane, Charm, Implement, Psychic</span>
 					<input tabindex="464" id="_AtWillPowers2Box" class="box power-card-box" type="checkbox">
-					<span tabindex="465" id="_AtWillPowers2Action" class="box power-card-action"></span>
+					<span tabindex="465" id="_AtWillPowers2Action" class="box power-card-action">Standard</span>
 					<span tabindex="466" id="_AtWillPowers2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="467" id="_AtWillPowers2Range" class="box power-card-range"></span>
-					<span tabindex="468" id="_AtWillPowers2Attack" class="box power-card-attack"></span>
-					<span tabindex="469" id="_AtWillPowers2Defense" class="box power-card-defense"></span>
-					<span tabindex="470" id="_AtWillPowers2Target" class="box power-card-target"></span>
-					<span tabindex="471" id="_AtWillPowers2Details" class="box power-card-details"></span>
+					<span tabindex="467" id="_AtWillPowers2Range" class="box power-card-range">Ranged 10</span>
+					<span tabindex="468" id="_AtWillPowers2Attack" class="box power-card-attack">+4</span>
+					<span tabindex="469" id="_AtWillPowers2Defense" class="box power-card-defense">Will</span>
+					<span tabindex="470" id="_AtWillPowers2Target" class="box power-card-target">One creature</span>
+					<span tabindex="471" id="_AtWillPowers2Details" class="box power-card-details"><b>Hit:</b> 1d6 + 4 psychic damage, and you are invisible to the target until the start of your next turn.</span>
 					<span tabindex="472" id="_AtWillPowers2Additional" class="box power-card-additional"></span>
-					<span tabindex="473" id="_AtWillPowers2Class" class="box power-card-class"></span>
-					<span tabindex="475" id="_AtWillPowers2Level" class="box power-card-level"></span>
-					<span tabindex="476" id="_AtWillPowers2Page" class="box power-card-page"></span>
+					<span tabindex="473" id="_AtWillPowers2Class" class="box power-card-class">Warlock</span>
+					<span tabindex="475" id="_AtWillPowers2Level" class="box power-card-level">1</span>
+					<span tabindex="476" id="_AtWillPowers2Page" class="box power-card-page">PHB1p132</span>
 					<select tabindex="477" id="_AtWillPowers2PowerType" class="power-card-power-type">
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -826,21 +884,22 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers3Card" class="power-card">
-					<img id="_AtWillPowers3Image" src="../PowerCard-AtWill.png">
-					<span tabindex="478" id="_AtWillPowers3Name" class="box power-card-name">Holy Strike:+7 v AC,1d12+4(1d12+8 v mark) radiant</span>
+					<img id="_AtWillPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
+					<span tabindex="478" id="_AtWillPowers3Name" class="box power-card-name">Misty Step</span>
 					<span tabindex="479" id="_AtWillPowers3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="480" id="_AtWillPowers3Box" class="box power-card-box" type="checkbox">
-					<span tabindex="481" id="_AtWillPowers3Action" class="box power-card-action"></span>
+					<span tabindex="481" id="_AtWillPowers3Action" class="box power-card-action">Free</span>
 					<span tabindex="482" id="_AtWillPowers3AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="483" id="_AtWillPowers3Range" class="box power-card-range"></span>
-					<span tabindex="484" id="_AtWillPowers3Attack" class="box power-card-attack"></span>
-					<span tabindex="485" id="_AtWillPowers3Defense" class="box power-card-defense"></span>
-					<span tabindex="486" id="_AtWillPowers3Target" class="box power-card-target"></span>
-					<span tabindex="487" id="_AtWillPowers3Details" class="box power-card-details"></span>
+					<span tabindex="483" id="_AtWillPowers3Range" class="box power-card-range">Personal</span>
+					<span tabindex="484" id="_AtWillPowers3Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="485" id="_AtWillPowers3Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="486" id="_AtWillPowers3Target" class="box power-card-target">n/a</span>
+					<span tabindex="487" id="_AtWillPowers3Details" class="box power-card-details"><p><b>Trigger:</b> When an enemy under your Warlock's Curse is reduced to 0 hit points or fewer</p>
+<p><b>Effect:</b> Immediately teleport 3 squares</p></span>
 					<span tabindex="488" id="_AtWillPowers3Additional" class="box power-card-additional"></span>
-					<span tabindex="489" id="_AtWillPowers3Class" class="box power-card-class"></span>
-					<span tabindex="491" id="_AtWillPowers3Level" class="box power-card-level"></span>
-					<span tabindex="492" id="_AtWillPowers3Page" class="box power-card-page"></span>
+					<span tabindex="489" id="_AtWillPowers3Class" class="box power-card-class">Warlock Fey Pact Boon</span>
+					<span tabindex="491" id="_AtWillPowers3Level" class="box power-card-level">n/a</span>
+					<span tabindex="492" id="_AtWillPowers3Page" class="box power-card-page">PHB1p130</span>
 					<select tabindex="493" id="_AtWillPowers3PowerType" class="power-card-power-type">
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -848,21 +907,21 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers4Card" class="power-card">
-					<img id="_AtWillPowers4Image" src="../PowerCard-AtWill.png">
-					<span tabindex="494" id="_AtWillPowers4Name" class="box power-card-name">Valiant Strike:+7+#adj.enemy v AC,1d12+4</span>
+					<img id="_AtWillPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
+					<span tabindex="494" id="_AtWillPowers4Name" class="box power-card-name">Warlock's Curse</span>
 					<span tabindex="495" id="_AtWillPowers4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="496" id="_AtWillPowers4Box" class="box power-card-box" type="checkbox">
-					<span tabindex="497" id="_AtWillPowers4Action" class="box power-card-action"></span>
+					<span tabindex="497" id="_AtWillPowers4Action" class="box power-card-action">Minor</span>
 					<span tabindex="498" id="_AtWillPowers4AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="499" id="_AtWillPowers4Range" class="box power-card-range"></span>
-					<span tabindex="500" id="_AtWillPowers4Attack" class="box power-card-attack"></span>
-					<span tabindex="501" id="_AtWillPowers4Defense" class="box power-card-defense"></span>
-					<span tabindex="502" id="_AtWillPowers4Target" class="box power-card-target"></span>
-					<span tabindex="503" id="_AtWillPowers4Details" class="box power-card-details"></span>
+					<span tabindex="499" id="_AtWillPowers4Range" class="box power-card-range">n/a</span>
+					<span tabindex="500" id="_AtWillPowers4Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="501" id="_AtWillPowers4Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="502" id="_AtWillPowers4Target" class="box power-card-target">Nearest visible enemy</span>
+					<span tabindex="503" id="_AtWillPowers4Details" class="box power-card-details"><b>Effect:</b> Curse the target until the end of the encounter, or until it drops to 0 hit points.  Once per round, you may chose to deal 1d6 extra damage to a cursed enemy.  You can decide whether to use the curse dice after you make the regular damage roll.  You may not curse a target already affected by a Warlock's Curse.</span>
 					<span tabindex="504" id="_AtWillPowers4Additional" class="box power-card-additional"></span>
-					<span tabindex="505" id="_AtWillPowers4Class" class="box power-card-class"></span>
-					<span tabindex="507" id="_AtWillPowers4Level" class="box power-card-level"></span>
-					<span tabindex="508" id="_AtWillPowers4Page" class="box power-card-page"></span>
+					<span tabindex="505" id="_AtWillPowers4Class" class="box power-card-class">Warlock</span>
+					<span tabindex="507" id="_AtWillPowers4Level" class="box power-card-level">n/a</span>
+					<span tabindex="508" id="_AtWillPowers4Page" class="box power-card-page">PHB1p131</span>
 					<select tabindex="509" id="_AtWillPowers4PowerType" class="power-card-power-type">
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -870,7 +929,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_AtWillPowers5Card" class="power-card">
-					<img id="_AtWillPowers5Image" src="../PowerCard-AtWill.png">
+					<img id="_AtWillPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
 					<span tabindex="510" id="_AtWillPowers5Name" class="box power-card-name">0</span>
 					<span tabindex="511" id="_AtWillPowers5Keyword" class="box power-card-keyword"></span>
 					<input tabindex="512" id="_AtWillPowers5Box" class="box power-card-box" type="checkbox">
@@ -892,7 +951,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_AtWillPowers6Card" class="power-card">
-					<img id="_AtWillPowers6Image" src="../PowerCard-AtWill.png">
+					<img id="_AtWillPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
 					<span tabindex="526" id="_AtWillPowers6Name" class="box power-card-name">0</span>
 					<span tabindex="527" id="_AtWillPowers6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="528" id="_AtWillPowers6Box" class="box power-card-box" type="checkbox">
@@ -914,21 +973,21 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card">
-					<img id="_EncounterPowers1Image" src="../PowerCard-Encounter.png">
-					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name">Goring Charge:+8 vs AC, 1d6+4 and prone</span>
-					<span tabindex="543" id="_EncounterPowers1Keyword" class="box power-card-keyword"></span>
+					<img id="_EncounterPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name">Ghost Sound</span>
+					<span tabindex="543" id="_EncounterPowers1Keyword" class="box power-card-keyword">Arcane, Illusion</span>
 					<input tabindex="544" id="_EncounterPowers1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="545" id="_EncounterPowers1Action" class="box power-card-action"></span>
+					<span tabindex="545" id="_EncounterPowers1Action" class="box power-card-action">Minor</span>
 					<span tabindex="546" id="_EncounterPowers1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="547" id="_EncounterPowers1Range" class="box power-card-range"></span>
-					<span tabindex="548" id="_EncounterPowers1Attack" class="box power-card-attack"></span>
-					<span tabindex="549" id="_EncounterPowers1Defense" class="box power-card-defense"></span>
-					<span tabindex="550" id="_EncounterPowers1Target" class="box power-card-target"></span>
-					<span tabindex="551" id="_EncounterPowers1Details" class="box power-card-details"></span>
+					<span tabindex="547" id="_EncounterPowers1Range" class="box power-card-range">Ranged 10</span>
+					<span tabindex="548" id="_EncounterPowers1Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="549" id="_EncounterPowers1Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="550" id="_EncounterPowers1Target" class="box power-card-target">One object or unoccupied square</span>
+					<span tabindex="551" id="_EncounterPowers1Details" class="box power-card-details"><b>Effect</b>: You cause a sound as quiet as a whisper or as loud as a yelling or fighting creature to emanate from the target.  You can produce nonvocal sounds such as the ringing of a sword blow, jingling armor, or scraping stone.  If you whisper, you can whisper quietly enough that only creatures adjacent to the target can hear your words.</span>
 					<span tabindex="552" id="_EncounterPowers1Additional" class="box power-card-additional"></span>
-					<span tabindex="553" id="_EncounterPowers1Class" class="box power-card-class"></span>
-					<span tabindex="555" id="_EncounterPowers1Level" class="box power-card-level"></span>
-					<span tabindex="556" id="_EncounterPowers1Page" class="box power-card-page"></span>
+					<span tabindex="553" id="_EncounterPowers1Class" class="box power-card-class">Wizard (Gnome Racial)</span>
+					<span tabindex="555" id="_EncounterPowers1Level" class="box power-card-level">n/a</span>
+					<span tabindex="556" id="_EncounterPowers1Page" class="box power-card-page">PHB1p158</span>
 					<select tabindex="557" id="_EncounterPowers1PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
@@ -936,21 +995,21 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers2Card" class="power-card">
-					<img id="_EncounterPowers2Image" src="../PowerCard-Encounter.png">
-					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name">CD: Divine Mettle: minor burst 10, grant save +1</span>
-					<span tabindex="559" id="_EncounterPowers2Keyword" class="box power-card-keyword"></span>
+					<img id="_EncounterPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name">Fade Away</span>
+					<span tabindex="559" id="_EncounterPowers2Keyword" class="box power-card-keyword">illusion</span>
 					<input tabindex="560" id="_EncounterPowers2Box" class="box power-card-box" type="checkbox">
-					<span tabindex="561" id="_EncounterPowers2Action" class="box power-card-action"></span>
+					<span tabindex="561" id="_EncounterPowers2Action" class="box power-card-action">Reaction</span>
 					<span tabindex="562" id="_EncounterPowers2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="563" id="_EncounterPowers2Range" class="box power-card-range"></span>
-					<span tabindex="564" id="_EncounterPowers2Attack" class="box power-card-attack"></span>
-					<span tabindex="565" id="_EncounterPowers2Defense" class="box power-card-defense"></span>
-					<span tabindex="566" id="_EncounterPowers2Target" class="box power-card-target"></span>
-					<span tabindex="567" id="_EncounterPowers2Details" class="box power-card-details"></span>
+					<span tabindex="563" id="_EncounterPowers2Range" class="box power-card-range">Personal</span>
+					<span tabindex="564" id="_EncounterPowers2Attack" class="box power-card-attack">n/</span>
+					<span tabindex="565" id="_EncounterPowers2Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="566" id="_EncounterPowers2Target" class="box power-card-target">n/a</span>
+					<span tabindex="567" id="_EncounterPowers2Details" class="box power-card-details"><p><b>Trigger:</b> You take damage</p><p><b>Effect:</b> You are invisible until you attack or until the end of your next turn.</p></span>
 					<span tabindex="568" id="_EncounterPowers2Additional" class="box power-card-additional"></span>
-					<span tabindex="569" id="_EncounterPowers2Class" class="box power-card-class"></span>
-					<span tabindex="571" id="_EncounterPowers2Level" class="box power-card-level"></span>
-					<span tabindex="572" id="_EncounterPowers2Page" class="box power-card-page"></span>
+					<span tabindex="569" id="_EncounterPowers2Class" class="box power-card-class">Gnome Racial</span>
+					<span tabindex="571" id="_EncounterPowers2Level" class="box power-card-level">n/a</span>
+					<span tabindex="572" id="_EncounterPowers2Page" class="box power-card-page">PHB2p10</span>
 					<select tabindex="573" id="_EncounterPowers2PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
@@ -958,21 +1017,21 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers3Card" class="power-card">
-					<img id="_EncounterPowers3Image" src="../PowerCard-Encounter.png">
-					<span tabindex="574" id="_EncounterPowers3Name" class="box power-card-name">CD: Divine Strength: minor, +4 dmg next attack</span>
-					<span tabindex="575" id="_EncounterPowers3Keyword" class="box power-card-keyword"></span>
+					<img id="_EncounterPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="574" id="_EncounterPowers3Name" class="box power-card-name">Witchfire</span>
+					<span tabindex="575" id="_EncounterPowers3Keyword" class="box power-card-keyword">Arcane, Fire, Implement</span>
 					<input tabindex="576" id="_EncounterPowers3Box" class="box power-card-box" type="checkbox">
-					<span tabindex="577" id="_EncounterPowers3Action" class="box power-card-action"></span>
+					<span tabindex="577" id="_EncounterPowers3Action" class="box power-card-action">Standard</span>
 					<span tabindex="578" id="_EncounterPowers3AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="579" id="_EncounterPowers3Range" class="box power-card-range"></span>
-					<span tabindex="580" id="_EncounterPowers3Attack" class="box power-card-attack"></span>
-					<span tabindex="581" id="_EncounterPowers3Defense" class="box power-card-defense"></span>
-					<span tabindex="582" id="_EncounterPowers3Target" class="box power-card-target"></span>
-					<span tabindex="583" id="_EncounterPowers3Details" class="box power-card-details"></span>
+					<span tabindex="579" id="_EncounterPowers3Range" class="box power-card-range">Ranged 10</span>
+					<span tabindex="580" id="_EncounterPowers3Attack" class="box power-card-attack">+4</span>
+					<span tabindex="581" id="_EncounterPowers3Defense" class="box power-card-defense">Reflex</span>
+					<span tabindex="582" id="_EncounterPowers3Target" class="box power-card-target">One creature</span>
+					<span tabindex="583" id="_EncounterPowers3Details" class="box power-card-details"><b>Hit:</b> 2d6+4 fire damage, and the target takes a -4 penalty to attack rolls until the end of my next turn.</span>
 					<span tabindex="584" id="_EncounterPowers3Additional" class="box power-card-additional"></span>
-					<span tabindex="585" id="_EncounterPowers3Class" class="box power-card-class"></span>
-					<span tabindex="587" id="_EncounterPowers3Level" class="box power-card-level"></span>
-					<span tabindex="588" id="_EncounterPowers3Page" class="box power-card-page"></span>
+					<span tabindex="585" id="_EncounterPowers3Class" class="box power-card-class">Warlock</span>
+					<span tabindex="587" id="_EncounterPowers3Level" class="box power-card-level">1</span>
+					<span tabindex="588" id="_EncounterPowers3Page" class="box power-card-page">PHB1p132</span>
 					<select tabindex="589" id="_EncounterPowers3PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
@@ -980,21 +1039,21 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers4Card" class="power-card">
-					<img id="_EncounterPowers4Image" src="../PowerCard-Encounter.png">
-					<span tabindex="590" id="_EncounterPowers4Name" class="box power-card-name">Piercing Smite:+7 v Ref, 2d12+4 &amp; mark 4 adj<!-- until end of next turn--></span>
+					<img id="_EncounterPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="590" id="_EncounterPowers4Name" class="box power-card-name">Hunter's Quarry</span>
 					<span tabindex="591" id="_EncounterPowers4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="592" id="_EncounterPowers4Box" class="box power-card-box" type="checkbox">
-					<span tabindex="593" id="_EncounterPowers4Action" class="box power-card-action"></span>
+					<span tabindex="593" id="_EncounterPowers4Action" class="box power-card-action">Minor</span>
 					<span tabindex="594" id="_EncounterPowers4AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="595" id="_EncounterPowers4Range" class="box power-card-range"></span>
-					<span tabindex="596" id="_EncounterPowers4Attack" class="box power-card-attack"></span>
-					<span tabindex="597" id="_EncounterPowers4Defense" class="box power-card-defense"></span>
-					<span tabindex="598" id="_EncounterPowers4Target" class="box power-card-target"></span>
-					<span tabindex="599" id="_EncounterPowers4Details" class="box power-card-details"></span>
+					<span tabindex="595" id="_EncounterPowers4Range" class="box power-card-range">n/a</span>
+					<span tabindex="596" id="_EncounterPowers4Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="597" id="_EncounterPowers4Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="598" id="_EncounterPowers4Target" class="box power-card-target">Nearest enemy</span>
+					<span tabindex="599" id="_EncounterPowers4Details" class="box power-card-details"><b>Effect:</b> Designate target as your quarry until end of your next turn.  Once per round, may choose to deal 1d6 extra damage to the quarry.</span>
 					<span tabindex="600" id="_EncounterPowers4Additional" class="box power-card-additional"></span>
-					<span tabindex="601" id="_EncounterPowers4Class" class="box power-card-class"></span>
-					<span tabindex="603" id="_EncounterPowers4Level" class="box power-card-level"></span>
-					<span tabindex="604" id="_EncounterPowers4Page" class="box power-card-page"></span>
+					<span tabindex="601" id="_EncounterPowers4Class" class="box power-card-class">Ranger</span>
+					<span tabindex="603" id="_EncounterPowers4Level" class="box power-card-level">n/a</span>
+					<span tabindex="604" id="_EncounterPowers4Page" class="box power-card-page">PHBp104</span>
 					<select tabindex="605" id="_EncounterPowers4PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
@@ -1002,7 +1061,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_EncounterPowers5Card" class="power-card">
-					<img id="_EncounterPowers5Image" src="../PowerCard-Encounter.png">
+					<img id="_EncounterPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="606" id="_EncounterPowers5Name" class="box power-card-name">0</span>
 					<span tabindex="607" id="_EncounterPowers5Keyword" class="box power-card-keyword"></span>
 					<input tabindex="608" id="_EncounterPowers5Box" class="box power-card-box" type="checkbox">
@@ -1024,7 +1083,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_EncounterPowers6Card" class="power-card">
-					<img id="_EncounterPowers6Image" src="../PowerCard-Encounter.png">
+					<img id="_EncounterPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name">0</span>
 					<span tabindex="623" id="_EncounterPowers6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="624" id="_EncounterPowers6Box" class="box power-card-box" type="checkbox">
@@ -1046,21 +1105,22 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card">
-					<img id="_DailyPowers1Image" src="../PowerCard-Daily.png">
-					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name">Paladin's Judgement:ally surge,+7 v AC, 3d12+4<!-- ally must be within 5 squares, and may heal hit or miss --></span>
-					<span tabindex="639" id="_DailyPowers1Keyword" class="box power-card-keyword"></span>
+					<img id="_DailyPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name">Curse of the Dark Dream</span>
+					<span tabindex="639" id="_DailyPowers1Keyword" class="box power-card-keyword">Arcane, Charm, Implement, Psychic</span>
 					<input tabindex="640" id="_DailyPowers1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="641" id="_DailyPowers1Action" class="box power-card-action"></span>
+					<span tabindex="641" id="_DailyPowers1Action" class="box power-card-action">Standard</span>
 					<span tabindex="642" id="_DailyPowers1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="643" id="_DailyPowers1Range" class="box power-card-range"></span>
-					<span tabindex="644" id="_DailyPowers1Attack" class="box power-card-attack"></span>
-					<span tabindex="645" id="_DailyPowers1Defense" class="box power-card-defense"></span>
-					<span tabindex="646" id="_DailyPowers1Target" class="box power-card-target"></span>
-					<span tabindex="647" id="_DailyPowers1Details" class="box power-card-details"></span>
+					<span tabindex="643" id="_DailyPowers1Range" class="box power-card-range">Ranged 10</span>
+					<span tabindex="644" id="_DailyPowers1Attack" class="box power-card-attack">+4</span>
+					<span tabindex="645" id="_DailyPowers1Defense" class="box power-card-defense">Will</span>
+					<span tabindex="646" id="_DailyPowers1Target" class="box power-card-target">One creature</span>
+					<span tabindex="647" id="_DailyPowers1Details" class="box power-card-details"><p><b>Hit:</b> 3d8+4 psychic damage, and you slide the target 3 squares.</p>
+<p><b>Sustain Minor:</b> You slide the target 1 square, whether you hit or miss (save ends).</p></span>
 					<span tabindex="648" id="_DailyPowers1Additional" class="box power-card-additional"></span>
-					<span tabindex="649" id="_DailyPowers1Class" class="box power-card-class"></span>
-					<span tabindex="651" id="_DailyPowers1Level" class="box power-card-level"></span>
-					<span tabindex="652" id="_DailyPowers1Page" class="box power-card-page"></span>
+					<span tabindex="649" id="_DailyPowers1Class" class="box power-card-class">Warlock</span>
+					<span tabindex="651" id="_DailyPowers1Level" class="box power-card-level">1</span>
+					<span tabindex="652" id="_DailyPowers1Page" class="box power-card-page">PHB1p133</span>
 					<select tabindex="653" id="_DailyPowers1PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -1068,7 +1128,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_DailyPowers2Card" class="power-card">
-					<img id="_DailyPowers2Image" src="../PowerCard-Daily.png">
+					<img id="_DailyPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="654" id="_DailyPowers2Name" class="box power-card-name">0</span>
 					<span tabindex="655" id="_DailyPowers2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="656" id="_DailyPowers2Box" class="box power-card-box" type="checkbox">
@@ -1090,7 +1150,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_DailyPowers3Card" class="power-card">
-					<img id="_DailyPowers3Image" src="../PowerCard-Daily.png">
+					<img id="_DailyPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="670" id="_DailyPowers3Name" class="box power-card-name">0</span>
 					<span tabindex="671" id="_DailyPowers3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="672" id="_DailyPowers3Box" class="box power-card-box" type="checkbox">
@@ -1112,7 +1172,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_DailyPowers4Card" class="power-card">
-					<img id="_DailyPowers4Image" src="../PowerCard-Daily.png">
+					<img id="_DailyPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="686" id="_DailyPowers4Name" class="box power-card-name">0</span>
 					<span tabindex="687" id="_DailyPowers4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="688" id="_DailyPowers4Box" class="box power-card-box" type="checkbox">
@@ -1134,7 +1194,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_DailyPowers5Card" class="power-card">
-					<img id="_DailyPowers5Image" src="../PowerCard-Daily.png">
+					<img id="_DailyPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="702" id="_DailyPowers5Name" class="box power-card-name">0</span>
 					<span tabindex="703" id="_DailyPowers5Keyword" class="box power-card-keyword"></span>
 					<input tabindex="704" id="_DailyPowers5Box" class="box power-card-box" type="checkbox">
@@ -1156,7 +1216,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_DailyPowers6Card" class="power-card">
-					<img id="_DailyPowers6Image" src="../PowerCard-Daily.png">
+					<img id="_DailyPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="718" id="_DailyPowers6Name" class="box power-card-name">0</span>
 					<span tabindex="719" id="_DailyPowers6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="720" id="_DailyPowers6Box" class="box power-card-box" type="checkbox">
@@ -1177,9 +1237,9 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_UtilityPowers1Card" class="power-card">
-					<img id="_UtilityPowers1Image" src="../PowerCard-Daily.png">
-					<span tabindex="734" id="_UtilityPowers1Name" class="box power-card-name">Martyr's blessing (daily int) take dmg for adj ally</span>
+				<div style="display: none;" id="_UtilityPowers1Card" class="power-card">
+					<img id="_UtilityPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<span tabindex="734" id="_UtilityPowers1Name" class="box power-card-name">0</span>
 					<span tabindex="735" id="_UtilityPowers1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="736" id="_UtilityPowers1Box" class="box power-card-box" type="checkbox">
 					<span tabindex="737" id="_UtilityPowers1Action" class="box power-card-action"></span>
@@ -1200,7 +1260,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_UtilityPowers2Card" class="power-card">
-					<img id="_UtilityPowers2Image" src="../PowerCard-Daily.png">
+					<img id="_UtilityPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="750" id="_UtilityPowers2Name" class="box power-card-name">0</span>
 					<span tabindex="751" id="_UtilityPowers2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="752" id="_UtilityPowers2Box" class="box power-card-box" type="checkbox">
@@ -1222,7 +1282,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_UtilityPowers3Card" class="power-card">
-					<img id="_UtilityPowers3Image" src="../PowerCard-Daily.png">
+					<img id="_UtilityPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="766" id="_UtilityPowers3Name" class="box power-card-name">0</span>
 					<span tabindex="767" id="_UtilityPowers3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="768" id="_UtilityPowers3Box" class="box power-card-box" type="checkbox">
@@ -1244,7 +1304,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_UtilityPowers4Card" class="power-card">
-					<img id="_UtilityPowers4Image" src="../PowerCard-Daily.png">
+					<img id="_UtilityPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="782" id="_UtilityPowers4Name" class="box power-card-name">0</span>
 					<span tabindex="783" id="_UtilityPowers4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="784" id="_UtilityPowers4Box" class="box power-card-box" type="checkbox">
@@ -1266,7 +1326,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_UtilityPowers5Card" class="power-card">
-					<img id="_UtilityPowers5Image" src="../PowerCard-Daily.png">
+					<img id="_UtilityPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="798" id="_UtilityPowers5Name" class="box power-card-name">0</span>
 					<span tabindex="799" id="_UtilityPowers5Keyword" class="box power-card-keyword"></span>
 					<input tabindex="800" id="_UtilityPowers5Box" class="box power-card-box" type="checkbox">
@@ -1288,7 +1348,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_UtilityPowers6Card" class="power-card">
-					<img id="_UtilityPowers6Image" src="../PowerCard-Daily.png">
+					<img id="_UtilityPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="814" id="_UtilityPowers6Name" class="box power-card-name">0</span>
 					<span tabindex="815" id="_UtilityPowers6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="816" id="_UtilityPowers6Box" class="box power-card-box" type="checkbox">
@@ -1310,7 +1370,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_UtilityPowers7Card" class="power-card">
-					<img id="_UtilityPowers7Image" src="../PowerCard-Daily.png">
+					<img id="_UtilityPowers7Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="830" id="_UtilityPowers7Name" class="box power-card-name">0</span>
 					<span tabindex="831" id="_UtilityPowers7Keyword" class="box power-card-keyword"></span>
 					<input tabindex="832" id="_UtilityPowers7Box" class="box power-card-box" type="checkbox">
@@ -1332,7 +1392,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_UtilityPowers8Card" class="power-card">
-					<img id="_UtilityPowers8Image" src="../PowerCard-Daily.png">
+					<img id="_UtilityPowers8Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="846" id="_UtilityPowers8Name" class="box power-card-name">0</span>
 					<span tabindex="847" id="_UtilityPowers8Keyword" class="box power-card-keyword"></span>
 					<input tabindex="848" id="_UtilityPowers8Box" class="box power-card-box" type="checkbox">
@@ -1354,7 +1414,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsWeapon1Card" class="power-card">
-					<img id="_MagicItemsWeapon1Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsWeapon1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="446" id="_MagicItemsWeapon1Name" class="box power-card-name">0</span>
 					<span tabindex="447" id="_MagicItemsWeapon1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="448" id="_MagicItemsWeapon1Box" class="box power-card-box" type="checkbox">
@@ -1376,7 +1436,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsWeapon2Card" class="power-card">
-					<img id="_MagicItemsWeapon2Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsWeapon2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="462" id="_MagicItemsWeapon2Name" class="box power-card-name">0</span>
 					<span tabindex="463" id="_MagicItemsWeapon2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="464" id="_MagicItemsWeapon2Box" class="box power-card-box" type="checkbox">
@@ -1398,7 +1458,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsWeapon3Card" class="power-card">
-					<img id="_MagicItemsWeapon3Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsWeapon3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="478" id="_MagicItemsWeapon3Name" class="box power-card-name">0</span>
 					<span tabindex="479" id="_MagicItemsWeapon3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="480" id="_MagicItemsWeapon3Box" class="box power-card-box" type="checkbox">
@@ -1420,7 +1480,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsWeapon4Card" class="power-card">
-					<img id="_MagicItemsWeapon4Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsWeapon4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="494" id="_MagicItemsWeapon4Name" class="box power-card-name">0</span>
 					<span tabindex="495" id="_MagicItemsWeapon4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="496" id="_MagicItemsWeapon4Box" class="box power-card-box" type="checkbox">
@@ -1442,7 +1502,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsArmorCard" class="power-card">
-					<img id="_MagicItemsArmorImage" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsArmorImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">0</span>
 					<span tabindex="511" id="_MagicItemsArmorKeyword" class="box power-card-keyword"></span>
 					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box" type="checkbox">
@@ -1464,7 +1524,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsArmsCard" class="power-card">
-					<img id="_MagicItemsArmsImage" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsArmsImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="526" id="_MagicItemsArmsName" class="box power-card-name">0</span>
 					<span tabindex="527" id="_MagicItemsArmsKeyword" class="box power-card-keyword"></span>
 					<input tabindex="528" id="_MagicItemsArmsBox" class="box power-card-box" type="checkbox">
@@ -1486,7 +1546,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsFeetCard" class="power-card">
-					<img id="_MagicItemsFeetImage" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsFeetImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="542" id="_MagicItemsFeetName" class="box power-card-name">0</span>
 					<span tabindex="543" id="_MagicItemsFeetKeyword" class="box power-card-keyword"></span>
 					<input tabindex="544" id="_MagicItemsFeetBox" class="box power-card-box" type="checkbox">
@@ -1508,7 +1568,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsHandsCard" class="power-card">
-					<img id="_MagicItemsHandsImage" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsHandsImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="558" id="_MagicItemsHandsName" class="box power-card-name">0</span>
 					<span tabindex="559" id="_MagicItemsHandsKeyword" class="box power-card-keyword"></span>
 					<input tabindex="560" id="_MagicItemsHandsBox" class="box power-card-box" type="checkbox">
@@ -1530,7 +1590,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsHeadCard" class="power-card">
-					<img id="_MagicItemsHeadImage" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsHeadImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="574" id="_MagicItemsHeadName" class="box power-card-name">0</span>
 					<span tabindex="575" id="_MagicItemsHeadKeyword" class="box power-card-keyword"></span>
 					<input tabindex="576" id="_MagicItemsHeadBox" class="box power-card-box" type="checkbox">
@@ -1552,7 +1612,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsNeckCard" class="power-card">
-					<img id="_MagicItemsNeckImage" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsNeckImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">0</span>
 					<span tabindex="591" id="_MagicItemsNeckKeyword" class="box power-card-keyword"></span>
 					<input tabindex="592" id="_MagicItemsNeckBox" class="box power-card-box" type="checkbox">
@@ -1574,7 +1634,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsRing1Card" class="power-card">
-					<img id="_MagicItemsRing1Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsRing1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="606" id="_MagicItemsRing1Name" class="box power-card-name">0</span>
 					<span tabindex="607" id="_MagicItemsRing1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="608" id="_MagicItemsRing1Box" class="box power-card-box" type="checkbox">
@@ -1596,7 +1656,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsRing2Card" class="power-card">
-					<img id="_MagicItemsRing2Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsRing2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="622" id="_MagicItemsRing2Name" class="box power-card-name">0</span>
 					<span tabindex="623" id="_MagicItemsRing2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="624" id="_MagicItemsRing2Box" class="box power-card-box" type="checkbox">
@@ -1618,7 +1678,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsWaistCard" class="power-card">
-					<img id="_MagicItemsWaistImage" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsWaistImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="638" id="_MagicItemsWaistName" class="box power-card-name">0</span>
 					<span tabindex="639" id="_MagicItemsWaistKeyword" class="box power-card-keyword"></span>
 					<input tabindex="640" id="_MagicItemsWaistBox" class="box power-card-box" type="checkbox">
@@ -1640,7 +1700,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc1Card" class="power-card">
-					<img id="_MagicItemsMisc1Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="654" id="_MagicItemsMisc1Name" class="box power-card-name">0</span>
 					<span tabindex="655" id="_MagicItemsMisc1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="656" id="_MagicItemsMisc1Box" class="box power-card-box" type="checkbox">
@@ -1662,7 +1722,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc2Card" class="power-card">
-					<img id="_MagicItemsMisc2Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="670" id="_MagicItemsMisc2Name" class="box power-card-name">0</span>
 					<span tabindex="671" id="_MagicItemsMisc2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="672" id="_MagicItemsMisc2Box" class="box power-card-box" type="checkbox">
@@ -1684,7 +1744,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc3Card" class="power-card">
-					<img id="_MagicItemsMisc3Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="686" id="_MagicItemsMisc3Name" class="box power-card-name">0</span>
 					<span tabindex="687" id="_MagicItemsMisc3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="688" id="_MagicItemsMisc3Box" class="box power-card-box" type="checkbox">
@@ -1706,7 +1766,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc4Card" class="power-card">
-					<img id="_MagicItemsMisc4Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="702" id="_MagicItemsMisc4Name" class="box power-card-name">0</span>
 					<span tabindex="703" id="_MagicItemsMisc4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="704" id="_MagicItemsMisc4Box" class="box power-card-box" type="checkbox">
@@ -1728,7 +1788,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc5Card" class="power-card">
-					<img id="_MagicItemsMisc5Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="718" id="_MagicItemsMisc5Name" class="box power-card-name">0</span>
 					<span tabindex="719" id="_MagicItemsMisc5Keyword" class="box power-card-keyword"></span>
 					<input tabindex="720" id="_MagicItemsMisc5Box" class="box power-card-box" type="checkbox">
@@ -1750,7 +1810,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc6Card" class="power-card">
-					<img id="_MagicItemsMisc6Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="734" id="_MagicItemsMisc6Name" class="box power-card-name">0</span>
 					<span tabindex="735" id="_MagicItemsMisc6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="736" id="_MagicItemsMisc6Box" class="box power-card-box" type="checkbox">
@@ -1772,7 +1832,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc7Card" class="power-card">
-					<img id="_MagicItemsMisc7Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc7Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="750" id="_MagicItemsMisc7Name" class="box power-card-name">0</span>
 					<span tabindex="751" id="_MagicItemsMisc7Keyword" class="box power-card-keyword"></span>
 					<input tabindex="752" id="_MagicItemsMisc7Box" class="box power-card-box" type="checkbox">
@@ -1794,7 +1854,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc8Card" class="power-card">
-					<img id="_MagicItemsMisc8Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc8Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="766" id="_MagicItemsMisc8Name" class="box power-card-name">0</span>
 					<span tabindex="767" id="_MagicItemsMisc8Keyword" class="box power-card-keyword"></span>
 					<input tabindex="768" id="_MagicItemsMisc8Box" class="box power-card-box" type="checkbox">
@@ -1816,7 +1876,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc9Card" class="power-card">
-					<img id="_MagicItemsMisc9Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc9Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="782" id="_MagicItemsMisc9Name" class="box power-card-name">0</span>
 					<span tabindex="783" id="_MagicItemsMisc9Keyword" class="box power-card-keyword"></span>
 					<input tabindex="784" id="_MagicItemsMisc9Box" class="box power-card-box" type="checkbox">
@@ -1838,7 +1898,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc10Card" class="power-card">
-					<img id="_MagicItemsMisc10Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc10Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="798" id="_MagicItemsMisc10Name" class="box power-card-name">0</span>
 					<span tabindex="799" id="_MagicItemsMisc10Keyword" class="box power-card-keyword"></span>
 					<input tabindex="800" id="_MagicItemsMisc10Box" class="box power-card-box" type="checkbox">
@@ -1860,7 +1920,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc11Card" class="power-card">
-					<img id="_MagicItemsMisc11Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc11Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="814" id="_MagicItemsMisc11Name" class="box power-card-name">0</span>
 					<span tabindex="815" id="_MagicItemsMisc11Keyword" class="box power-card-keyword"></span>
 					<input tabindex="816" id="_MagicItemsMisc11Box" class="box power-card-box" type="checkbox">
@@ -1882,7 +1942,7 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc12Card" class="power-card">
-					<img id="_MagicItemsMisc12Image" src="../PowerCard-Daily.png">
+					<img id="_MagicItemsMisc12Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="830" id="_MagicItemsMisc12Name" class="box power-card-name">0</span>
 					<span tabindex="831" id="_MagicItemsMisc12Keyword" class="box power-card-keyword"></span>
 					<input tabindex="832" id="_MagicItemsMisc12Box" class="box power-card-box" type="checkbox">
@@ -1905,6 +1965,6 @@ Marked target takes -2 penalty to attack rolls for any attack that doesn't inclu
 				</div>
 			</div>
 		</div>
-		<script src="../link-power-cards.js"></script>
-		<script src="../program.js"></script>
+		<script src="http://rampion.github.com/4eCharSheet/link-power-cards.js"></script>
+		<script src="http://rampion.github.com/4eCharSheet/program.js"></script>
 </body></html>

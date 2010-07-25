@@ -22,9 +22,8 @@
 					if (arguments[i] < m) m = arguments[i];
 				return m;
 			};
-			const roundDown = function(v){
-				return v | 0;
-			};
+			const roundDown = Math.floor;
+			const roundUp = Math.ceil;
 		</script>
 		<script id="entries">({
 			Acrobatics:"=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
@@ -42,18 +41,76 @@
 			ArmorClassConditionalBonuses:"+2 vs opportunity attacks <!-- Nimble Reaction, p.44 -->",
 			ArmorClassEnh:"=(1 /* Robe of Avoidance */)",
 			ArmorClassMisc1:"=(1 /* Staff of Defense (p.157) */)",
-			AtWillPowers1:"Ghost Sound: standard, range 10",
+			ArmorClassMisc2:"=(1 /* Lenora's bastion of defense */)",
+			AtWillPowers1:"Ghost Sound",
+			AtWillPowers1Action:"Standard",
+			AtWillPowers1Attack:"n/a",
+			AtWillPowers1Class:"Wizard Cantrip",
+			AtWillPowers1Defense:"n/a",
+			AtWillPowers1Details:"<b>Effect:</b> You cause a sound as quiet as a whisper or as loud as a yelling or fighting creature to emanate from the target.  Youcan produce nonvocal sounds such as the ringing of a sword blow, jingling armor, or scraping stone.  If you whisper, you can whisper quietly enough that only creatures adjacent to the target can hear your words.",
+			AtWillPowers1Keyword:"Arcane, Illusion",
+			AtWillPowers1Level:"n/a",
 			AtWillPowers1Name:"=(AtWillPowers1)",
-			AtWillPowers2:"Light: minor, range 10",
+			AtWillPowers1Page:"PHB1p158",
+			AtWillPowers1Range:"Ranged 10",
+			AtWillPowers1Target:"One object/unoccupied square",
+			AtWillPowers2:"Light",
+			AtWillPowers2Action:"Minor",
+			AtWillPowers2Attack:"n/a",
+			AtWillPowers2Class:"Wizard Cantrip",
+			AtWillPowers2Defense:"n/a",
+			AtWillPowers2Details:"<p><b>Effect:</b> You cause the target to shed bright light.  The light fills the target's square and all squares within 4 squares of it.  The light lasts for 5 minutes.  Putting out the light is a free action.</p>\n<p><b>Special:</b> You can have only one <i>light</i> cantrip active at a time.  If you create a new light, your previously cast light winks out.</p>",
+			AtWillPowers2Keyword:"Arcane",
+			AtWillPowers2Level:"n/a",
 			AtWillPowers2Name:"=(AtWillPowers2)",
-			AtWillPowers3:"Mage Hand: minor, range 5 (move 20lbs 5 squares)",
+			AtWillPowers2Page:"PHB1p158",
+			AtWillPowers2Range:"Ranged 5",
+			AtWillPowers2Target:"One object/unoccupied square",
+			AtWillPowers3:"Mage Hand",
+			AtWillPowers3Action:"Minor",
+			AtWillPowers3Attack:"n/a",
+			AtWillPowers3Defense:"n/a",
+			AtWillPowers3Details:"<p><b>Effect: </b>You conjure a spectral, floating hand in an unoccupied square within range.  The hand picks up, moves, or manipulates an adjacent object weighing 20 pounds or less and carries it up to 5 squares.</p>\n<p>As a move action, you can move the hand up to 5 squares.  As a minor action, you can cause the hand to pick up or manipulate a different object.</p>\n<p><b>Sustain Minor:</b> You can sustain the hand indefinitely.</p>\n<p><b>Special:</b> You can create only one hand at a time.</p>\n",
+			AtWillPowers3Keyword:"Arcane, Conjuration",
 			AtWillPowers3Name:"=(AtWillPowers3)",
-			AtWillPowers4:"Prestigitation: magic trick (standard)",
+			AtWillPowers3Range:"Ranged 5",
+			AtWillPowers3Target:"n/a",
+			AtWillPowers4:"Prestigitation",
+			AtWillPowers4Action:"Standard",
+			AtWillPowers4Additional:"<b>Special:</b> You can have as many as three prestigitation effects active at one time.",
+			AtWillPowers4Attack:"n/a",
+			AtWillPowers4Class:"Wizard Cantrip",
+			AtWillPowers4Defense:"n/a",
+			AtWillPowers4Details:"<p><b>Effect:</b> Use this cantrip to accomplish one of the effects given below.<ul>\n<li>Move up to 1 pound of material.</li>\n<li>Create a harmless sensory effect.</li>\n<li>Color clean or soil items for 1 hour.</li>\n<li>Instantly light/snuff a fire</li>\n<li>Chill, warm or flavor food for 1 hour</li>\n<li>Make a small mark or symbol for 1 hour</li>\n<li>Make a small item or image for a turn</li>\n<li>Make a small item invisible for a turn</li>\n</ul></p>\nNothing you create can deal damage or hinder.",
+			AtWillPowers4Keyword:"Arcane",
+			AtWillPowers4Level:"n/a",
 			AtWillPowers4Name:"=(AtWillPowers4)",
+			AtWillPowers4Page:"PHBp159",
+			AtWillPowers4Range:"2",
+			AtWillPowers4Target:"n/a",
 			AtWillPowers5:"Magic Missle: +=(Attack2AttBonus) vs Reflex, 2d4+=(IntMod +1 /*staff*/) dmg, range 20",
+			AtWillPowers5Action:"Standard",
+			AtWillPowers5Attack:"+=(Attack2AttBonus)",
+			AtWillPowers5Class:"Wizard",
+			AtWillPowers5Defense:"Reflex",
+			AtWillPowers5Keyword:"Arcane, Force, Implement",
+			AtWillPowers5Level:"1",
 			AtWillPowers5Name:"=(AtWillPowers5)",
+			AtWillPowers5Page:"PHB1p159",
+			AtWillPowers5Range:"Ranged 20",
+			AtWillPowers5Target:"One creature",
 			AtWillPowers6:"Scorching Burst: +=(Attack2AttBonus) vs Reflex, 1d6+=(IntMod +1 /*staff*/), burst 1 w/in 10",
+			AtWillPowers6Action:"Standard",
+			AtWillPowers6Attack:"+=(Attack2AttBonus)",
+			AtWillPowers6Class:"Wizard",
+			AtWillPowers6Defense:"Reflex",
+			AtWillPowers6Details:"<b>Hit:</b> =(roundUp(Level/20))d6+=(IntMod +1 /*staff*/) fire damage.",
+			AtWillPowers6Keyword:"Arcane, Fire, Implement",
+			AtWillPowers6Level:"1",
 			AtWillPowers6Name:"=(AtWillPowers6)",
+			AtWillPowers6Page:"PHB1p159",
+			AtWillPowers6Range:"Area burst 1 within 10 squares",
+			AtWillPowers6Target:"Each creature in burst",
 			Athletics:"=(AthleticsAbilModPlusHalfLevel + AthleticsTrained + AthleticsArmorPenalty + AthleticsMisc)",
 			AthleticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+StrMod)",
 			Attack1Abil:"=(IntMod /* melee training */)",
@@ -96,8 +153,7 @@
 			Con:"=(pointBuy(10,2))",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
-			CurrentConditionsAndEffects:"immobilized & marked\n",
-			CurrentHitPoints:"=(MaxHitPoints \n- 9  // column's psychic blast\n- 7  // captian's spectral touch\n- 10 // blast from blinky\n+ 14 // healing word after ghost combat\n+ 7  // healing surge after ghost combat\n- 5 // hit by sword swinging skellington\n- 4 // shot by shortbow swinging skellington\n+ 8 // secondwind\n-4 // hit by another shortbow swinging skellington\n-6 // hit by helen\n-5 // hit by helen & ongoing 5\n-5 // ongoing damage\n-8 // hit by helen\n-5 // ongoing damage\n+5 // reset by healed\n+8 // beacon of hope healing\n-5 // ongoing\n+26 // 2 healing surges w. wound patch\n-9 // hit by swarm\n-5// ongoing\n-5 // hit by swarm again\n+15 // healing word\n+8 // surge after fight w/ fire bats & swarm\n-18 // necrotic burst\n+12 // healed by darg\n+2 // various and sundry things\n)",
+			CurrentHitPoints:"=(MaxHitPoints \n- 2  // scared by face of worms\n- 9  // column's psychic blast\n- 7  // captian's spectral touch\n- 10 // blast from blinky\n+ 14 // healing word after ghost combat\n+ 7  // healing surge after ghost combat\n- 5 // hit by sword swinging skellington\n- 4 // shot by shortbow swinging skellington\n+ 8 // secondwind\n-4 // hit by another shortbow swinging skellington\n-6 // hit by helen\n-5 // hit by helen & ongoing 5\n-5 // ongoing damage\n-8 // hit by helen\n-5 // ongoing damage\n+5 // reset by healed\n+8 // beacon of hope healing\n-5 // ongoing\n+26 // 2 healing surges w. wound patch\n-9 // hit by swarm\n-5// ongoing\n-5 // hit by swarm again\n+15 // healing word\n+8 // surge after fight w/ fire bats & swarm\n-18 // necrotic burst\n+12 // healed by darg\n+2 // various and sundry things\n)",
 			CurrentSurgeUses:"=(SurgesPerDay\n -1 // healing word surge after ghost combat\n -1 // surge after ghost combat\n -1 // second wind\n -2 // healing after cloak combat\n -1 // healing word\n +6 // healing circle\n -1 // surge after fight with fire bats & swarm\n -1 // healed by darg\n -1 // healing word from darg\n)",
 			DailyPowers1:"Sleep: +=(Attack2AttBonus) vs Will, slow/fail/sleep, burst 2 w/in 20<!--\ntarget all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail -> unconsious, save ends); miss: slow (save ends) [standard action]\n-->",
 			DailyPowers1Box:true, MagicItemsWeapon2Box:true, MagicItemsArmorName:"=(MagicItemsArmor)",
@@ -109,8 +165,7 @@
 			DailyPowers5Name:"=(DailyPowers5)",
 			DailyPowers6Name:"=(DailyPowers6)",
 			DailyPowersCheck1:true, Damage1Abil:"=(IntMod /* melee training */)",
-			DailyPowersCheck2:true, UtilityPowersCheck1:true,
-			Damage1Ability:"=(Attack1Ability)",
+			DailyPowersCheck2:true, UtilityPowersCheck1:true, Damage1Ability:"=(Attack1Ability)",
 			Damage1Damage:"1d4 + =(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
 			Damage1Enh:"1",
 			Dex:"=(pointBuy(10,5) + 2 /* Halfling */ + 1 /* Level 4 */)",
@@ -132,7 +187,17 @@
 			EncounterPowers4Name:"=(EncounterPowers4)",
 			EncounterPowers5Name:"=(EncounterPowers5)",
 			EncounterPowers6:"Color Spray: +=(Attack2AttBonus) vs Will, 1d6+=(IntMod +1 /*staff*/) rad, daze, CB 3<!-- close blast 3 -->",
+			EncounterPowers6Action:"Standard",
+			EncounterPowers6Attack:"=(Attack2AttBonus)",
+			EncounterPowers6Class:"Wizard",
+			EncounterPowers6Defense:"Willpower",
+			EncounterPowers6Details:"<b>Hit:</b> 1d6+=(IntMod + 1 /* staff of light */) radiant damage, and the target is dazed until the end of my next turn.",
+			EncounterPowers6Level:"3",
 			EncounterPowers6Name:"=(EncounterPowers6)",
+			EncounterPowers6Page:"PHP1p161",
+			EncounterPowers6Range:"Close blast 3",
+			EncounterPowers6Target:"Each creature in blast",
+			EncounterPowersCheck1:true, MagicItemsMisc1:"Bump & Run",
 			EnduranceAbilModPlusHalfLevel:"=(roundDown(Level/2)+ConMod)",
 			Feats1:"Sneak of Shadows: Thievery training, Backstab<!-- first level -->",
 			Feats2:"Ritual Casting: can cast rituals<!-- wizard bonus feat -->",
@@ -144,6 +209,7 @@
 			Fortitude10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Fortitude:"=(Fortitude10PlusHalfLevel + FortitudeAbil + FortitudeClass + FortitudeFeat + FortitudeEnh + FortitudeMisc1 + FortitudeMisc2)",
 			FortitudeAbil:"=(max(StrMod,ConMod))",
+			FortitudeMisc2:"=(1 /* Lenora's bastion of defense */)",
 			Gender:"Female",
 			Heal:"=(HealAbilModPlusHalfLevel + HealTrained + HealMisc)",
 			HealAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
@@ -173,8 +239,31 @@
 			MagicItemsMisc10Name:"=(MagicItemsMisc10)",
 			MagicItemsMisc11Name:"=(MagicItemsMisc11)",
 			MagicItemsMisc12Name:"=(MagicItemsMisc12)",
+			MagicItemsMisc1Action:"No",
+			MagicItemsMisc1Additional:"One time use",
+			MagicItemsMisc1Attack:"n/a",
+			MagicItemsMisc1Class:"n/a",
+			MagicItemsMisc1Defense:"n/a",
+			MagicItemsMisc1Details:"<b>Effect:</b> No Action, when you hit an enemy with a melee\nattack: you can push the target 1 square.",
+			MagicItemsMisc1Keyword:"table of fun",
+			MagicItemsMisc1Level:"n/a",
 			MagicItemsMisc1Name:"=(MagicItemsMisc1)",
+			MagicItemsMisc1Page:"n/a",
+			MagicItemsMisc1Range:"Melee 1",
+			MagicItemsMisc1Target:"n/a",
+			MagicItemsMisc2:"Thick Skinned",
+			MagicItemsMisc2Action:"Interrupt",
+			MagicItemsMisc2Additional:"One time use",
+			MagicItemsMisc2Attack:"n/a",
+			MagicItemsMisc2Class:"n/a",
+			MagicItemsMisc2Defense:"n/a",
+			MagicItemsMisc2Details:"<b>Effect:</b> +4 AC until end of my next turn",
+			MagicItemsMisc2Keyword:"table of fun",
+			MagicItemsMisc2Level:"n/a",
 			MagicItemsMisc2Name:"=(MagicItemsMisc2)",
+			MagicItemsMisc2Page:"n/a",
+			MagicItemsMisc2Range:"n/a",
+			MagicItemsMisc2Target:"self",
 			MagicItemsMisc3Name:"=(MagicItemsMisc3)",
 			MagicItemsMisc4Name:"=(MagicItemsMisc4)",
 			MagicItemsMisc5Name:"=(MagicItemsMisc5)",
@@ -216,6 +305,7 @@
 			Reflex10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Reflex:"=(Reflex10PlusHalfLevel + ReflexAbil + ReflexClass + ReflexFeat + ReflexEnh + ReflexMisc1 + ReflexMisc2)",
 			ReflexAbil:"=(max(IntMod,DexMod) /* add shield bonus */)",
+			ReflexMisc2:"=(1 /* Lenora's bastion of defense */)",
 			Religion:"=(ReligionAbilModPlusHalfLevel + ReligionTrained + ReligionMisc)",
 			ReligionAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
 			Rituals1:"Animal Messenger",
@@ -237,11 +327,12 @@
 			StreetwiseAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
 			SurgeValue:"=(roundDown(MaxHitPoints/4))",
 			SurgesPerDay:"7",
+			TemporaryHitPoints:"=(\n-2 // scared by face of worms\n-6 // psychic\n+8 /* bastion of defense */)",
 			Thievery:"=(ThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc)<!-- normal -->/=(\nThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc + 2)<!-- locks, traps (thieves tools) -->",
 			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			ThieveryMisc:"=(2 /* Halfling */)",
 			ThieveryTrained:"=(\n5 // Sneak of Shadows\n)",
-			TotalExperience:"=(\n        +203    // 6/28/2010    fighting Garon & his cloak, gloves, & skull\n        +230    // 6/21/2010    fighting pit monster, then undead shaman and pile of corpses\n        +185    // 6/14/2010    fighting sturges & firebats in cage room\n        +236    // 6/7/2010     fighting skeletons in corridor (got knocked unconscious)\n        +125    // 4/28/2010    fighting ghosts in the sewers, and collecting more faymoss\n        +175    // 4/21/2010    rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for osmund ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
+			TotalExperience:"=(\n        +235    // 7/19/2010    fighting Kral, the illusionist\n        +187    // 7/12/2010    filler session between Garon & Kral\n        +203    // 6/28/2010    fighting Garon & his cloak, gloves, & skull\n        +230    // 6/21/2010    fighting pit monster, then undead shaman and pile of corpses\n        +185    // 6/14/2010    fighting sturges & firebats in cage room\n        +236    // 6/7/2010     fighting skeletons in corridor (got knocked unconscious)\n        +125    // 4/28/2010    fighting ghosts in the sewers, and collecting more faymoss\n        +175    // 4/21/2010    rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for osmund ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
 			UtilityPowers1:"<s>Expeditious Retreat: shift =(Speed*2) daily</s>",
 			UtilityPowers1Name:"=(UtilityPowers1)",
 			UtilityPowers2:"Shield: +4 AC/Reflex for 1 turn when hit (enc)",
@@ -252,11 +343,13 @@
 			UtilityPowers6Name:"=(UtilityPowers6)",
 			UtilityPowers7Name:"=(UtilityPowers7)",
 			UtilityPowers8Name:"=(UtilityPowers8)",
+			UtilityPowersCheck2:true, EncounterPowersCheck6:true, AtWillPowers5Details:"<p><b>Hit:</b> =(2*roundUp(Level/20))d4+=(IntMod +1 /*staff*/) force damage</p>\n<p><b>Special:</b> This power counts as a ranged basic attack.  When a power allows you to make a ranged basic attack, you can use this power.</p>",
 			Weight:"75lb",
 			Willpower10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Willpower:"=(Willpower10PlusHalfLevel + WillpowerAbil + WillpowerClass + WillpowerFeat + WillpowerEnh + WillpowerMisc1 + WillpowerMisc2)",
 			WillpowerAbil:"=(max(WisMod,ChaMod))",
 			WillpowerClass:"2",
+			WillpowerMisc2:"=(1 /* Lenora's bastion of defense */)",
 			Wis:"=(pointBuy(10,3))",
 			WisMod:"=(roundDown(Wis/2) - 5)",
 			WisModPlusHalfLevel:"=(WisMod + roundDown(Level/2))"
@@ -264,9 +357,9 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">AtWillPowers1Name</div>
+				<div id="EditBoxTarget">AtWillPowers5Additional</div>
 				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">=(AtWillPowers1)&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -281,7 +374,7 @@
 				<span tabindex="4" class="box" id="_Class">Wizard</span>
 				<span tabindex="5" class="box" id="_ParagonPath"></span>
 				<span tabindex="6" class="box" id="_EpicDestiny"></span>
-				<span tabindex="7" class="center box" id="_TotalExperience">4650
+				<span tabindex="7" class="center box" id="_TotalExperience">5072
 </span>
 
 				<span tabindex="8" class="box" id="_Race">Halfling</span>
@@ -321,44 +414,44 @@
 				<span tabindex="38" class="center box" id="_WisModPlusHalfLevel">3</span>
 				<span tabindex="39" class="center box" id="_ChaModPlusHalfLevel">3</span>
 
-				<span tabindex="40" class="center box" id="_ArmorClass">17</span>
+				<span tabindex="40" class="center box" id="_ArmorClass">18</span>
 				<span tabindex="41" class="center box" id="_ArmorClass10PlusHalfLevel">12</span>
 				<span tabindex="42" class="center box" id="_ArmorClassArmorSlashAbil">3</span>
 				<span tabindex="43" class="center box" id="_ArmorClassClass"></span>
 				<span tabindex="44" class="center box" id="_ArmorClassFeat"></span>
 				<span tabindex="45" class="center box" id="_ArmorClassEnh">1</span>
 				<span tabindex="46" class="center box" id="_ArmorClassMisc1">1</span>
-				<span tabindex="47" class="center box" id="_ArmorClassMisc2"></span>
+				<span tabindex="47" class="center box" id="_ArmorClassMisc2">1</span>
 				<span tabindex="48" class="box" id="_ArmorClassConditionalBonuses">+2 vs opportunity attacks <!-- Nimble Reaction, p.44 --></span>
 
-				<span tabindex="49" class="center box" id="_Fortitude">13</span>
+				<span tabindex="49" class="center box" id="_Fortitude">14</span>
 				<span tabindex="50" class="center box" id="_Fortitude10PlusHalfLevel">12</span>
 				<span tabindex="51" class="center box" id="_FortitudeAbil">1</span>
 				<span tabindex="52" class="center box" id="_FortitudeClass"></span>
 				<span tabindex="53" class="center box" id="_FortitudeFeat"></span>
 				<span tabindex="54" class="center box" id="_FortitudeEnh"></span>
 				<span tabindex="55" class="center box" id="_FortitudeMisc1"></span>
-				<span tabindex="56" class="center box" id="_FortitudeMisc2"></span>
+				<span tabindex="56" class="center box" id="_FortitudeMisc2">1</span>
 				<span tabindex="57" class="box" id="_FortitudeConditionalBonuses"></span>
 
-				<span tabindex="58" class="center box" id="_Reflex">15</span>
+				<span tabindex="58" class="center box" id="_Reflex">16</span>
 				<span tabindex="59" class="center box" id="_Reflex10PlusHalfLevel">12</span>
 				<span tabindex="60" class="center box" id="_ReflexAbil">3</span>
 				<span tabindex="61" class="center box" id="_ReflexClass"></span>
 				<span tabindex="62" class="center box" id="_ReflexFeat"></span>
 				<span tabindex="63" class="center box" id="_ReflexEnh"></span>
 				<span tabindex="64" class="center box" id="_ReflexMisc1"></span>
-				<span tabindex="65" class="center box" id="_ReflexMisc2"></span>
+				<span tabindex="65" class="center box" id="_ReflexMisc2">1</span>
 				<span tabindex="66" class="box" id="_ReflexConditionalBonuses"></span>
 
-				<span tabindex="67" class="center box" id="_Willpower">15</span>
+				<span tabindex="67" class="center box" id="_Willpower">16</span>
 				<span tabindex="68" class="center box" id="_Willpower10PlusHalfLevel">12</span>
 				<span tabindex="69" class="center box" id="_WillpowerAbil">1</span>
 				<span tabindex="70" class="center box" id="_WillpowerClass">2</span>
 				<span tabindex="71" class="center box" id="_WillpowerFeat"></span>
 				<span tabindex="72" class="center box" id="_WillpowerEnh"></span>
 				<span tabindex="73" class="center box" id="_WillpowerMisc1"></span>
-				<span tabindex="74" class="center box" id="_WillpowerMisc2"></span>
+				<span tabindex="74" class="center box" id="_WillpowerMisc2">1</span>
 				<span tabindex="75" class="box" id="_WillpowerConditionalBonuses"></span>
 
 				<span tabindex="76" class="center box" id="_Speed">6</span>
@@ -378,17 +471,16 @@
 				<span tabindex="88" class="center box" id="_BloodiedHitPoints">17</span>
 				<span tabindex="89" class="center box" id="_SurgeValue">8</span>
 				<span tabindex="90" class="center box" id="_SurgesPerDay">7</span>
-				<span tabindex="91" class="center box" id="_CurrentHitPoints">29</span>
+				<span tabindex="91" class="center box" id="_CurrentHitPoints">27</span>
 				<span tabindex="92" class="center box" id="_CurrentSurgeUses">4</span>
 				<input tabindex="93" class="center box" id="_SecondWindUsed" type="checkbox">
-				<span tabindex="94" class="box" id="_TemporaryHitPoints"></span>
+				<span tabindex="94" class="box" id="_TemporaryHitPoints">0</span>
 				<input tabindex="95" class="center box" id="_DeathSavingThrowFailures1" type="checkbox">
 				<input tabindex="96" class="center box" id="_DeathSavingThrowFailures2" type="checkbox">
 				<input tabindex="97" class="center box" id="_DeathSavingThrowFailures3" type="checkbox">
 				<span tabindex="98" class="box" id="_SavingThrowMods">+5 vs. Fear <!-- Halfling --></span>
 				<span tabindex="99" class="box" id="_Resistances"></span>
-				<span tabindex="100" class="box" id="_CurrentConditionsAndEffects">immobilized &amp; marked
-</span>
+				<span tabindex="100" class="box" id="_CurrentConditionsAndEffects"></span>
 
 				<span tabindex="101" class="center box" id="_ActionPoints">0</span>
 				<span tabindex="102" class="box" id="_ActionPointAddtionalEffects"></span>
@@ -590,10 +682,10 @@ Lost in the Crowd		p.196	 +2 to AC when adjacent to 2 larger enemies
 			</div>
 			<div class="page" id="Page2">
 				<img class="page-background" id="Page2Background" src="http://rampion.github.com/4eCharSheet/CharacterSheetPage2.png">
-				<span tabindex="267" class="box" id="_AtWillPowers1">Ghost Sound: standard, range 10</span>
-				<span tabindex="268" class="box" id="_AtWillPowers2">Light: minor, range 10</span>
-				<span tabindex="269" class="box" id="_AtWillPowers3">Mage Hand: minor, range 5 (move 20lbs 5 squares)</span>
-				<span tabindex="270" class="box" id="_AtWillPowers4">Prestigitation: magic trick (standard)</span>
+				<span tabindex="267" class="box" id="_AtWillPowers1">Ghost Sound</span>
+				<span tabindex="268" class="box" id="_AtWillPowers2">Light</span>
+				<span tabindex="269" class="box" id="_AtWillPowers3">Mage Hand</span>
+				<span tabindex="270" class="box" id="_AtWillPowers4">Prestigitation</span>
 				<span tabindex="271" class="box" id="_AtWillPowers5">Magic Missle: +7 vs Reflex, 2d4+4 dmg, range 20</span>
 				<span tabindex="272" class="box" id="_AtWillPowers6">Scorching Burst: +7 vs Reflex, 1d6+4, burst 1 w/in 10</span>
 
@@ -622,12 +714,12 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 				<span tabindex="291" class="box" id="_UtilityPowers7"></span>
 				<span tabindex="292" class="box" id="_UtilityPowers8"></span>
 
-				<input tabindex="293" class="box" id="_EncounterPowersCheck1" type="checkbox">
+				<input tabindex="293" class="box edited" id="_EncounterPowersCheck1" type="checkbox">
 				<input tabindex="294" class="box" id="_EncounterPowersCheck2" type="checkbox">
 				<input tabindex="295" class="box" id="_EncounterPowersCheck3" type="checkbox">
 				<input tabindex="296" class="box" id="_EncounterPowersCheck4" type="checkbox">
 				<input tabindex="297" class="box" id="_EncounterPowersCheck5" type="checkbox">
-				<input tabindex="298" class="box" id="_EncounterPowersCheck6" type="checkbox">
+				<input tabindex="298" class="box edited" id="_EncounterPowersCheck6" type="checkbox">
 				<input tabindex="299" class="box" id="_DailyPowersCheck1" type="checkbox">
 				<input tabindex="300" class="box edited" id="_DailyPowersCheck2" type="checkbox">
 				<input tabindex="301" class="box" id="_DailyPowersCheck3" type="checkbox">
@@ -635,7 +727,7 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 				<input tabindex="303" class="box" id="_DailyPowersCheck5" type="checkbox">
 				<input tabindex="304" class="box" id="_DailyPowersCheck6" type="checkbox">
 				<input tabindex="305" class="box edited" id="_UtilityPowersCheck1" type="checkbox">
-				<input tabindex="306" class="box" id="_UtilityPowersCheck2" type="checkbox">
+				<input tabindex="306" class="box edited" id="_UtilityPowersCheck2" type="checkbox">
 				<input tabindex="307" class="box" id="_UtilityPowersCheck3" type="checkbox">
 				<input tabindex="308" class="box" id="_UtilityPowersCheck4" type="checkbox">
 				<input tabindex="309" class="box" id="_UtilityPowersCheck5" type="checkbox">
@@ -670,8 +762,8 @@ email from JR - November 23, 2009
 				<span tabindex="323" class="box" id="_MagicItemsRing1"></span>
 				<span tabindex="324" class="box" id="_MagicItemsRing2"></span>
 				<span tabindex="325" class="box" id="_MagicItemsWaist"></span>
-				<span tabindex="326" class="box" id="_MagicItemsMisc1"></span>
-				<span tabindex="327" class="box" id="_MagicItemsMisc2"></span>
+				<span tabindex="326" class="box" id="_MagicItemsMisc1">Bump &amp; Run</span>
+				<span tabindex="327" class="box" id="_MagicItemsMisc2">Thick Skinned</span>
 				<span tabindex="328" class="box" id="_MagicItemsMisc3"></span>
 				<span tabindex="329" class="box" id="_MagicItemsMisc4"></span>
 				<span tabindex="330" class="box" id="_MagicItemsMisc5"></span>
@@ -813,20 +905,20 @@ Gold Puzzle Ring (being held by Osmund)</span>
 			<div class="page" id="Page3">
 				<div style="display: inline-block;" id="_AtWillPowers1Card" class="power-card">
 					<img id="_AtWillPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="446" id="_AtWillPowers1Name" class="box power-card-name">Ghost Sound: standard, range 10</span>
-					<span tabindex="447" id="_AtWillPowers1Keyword" class="box power-card-keyword"></span>
+					<span tabindex="446" id="_AtWillPowers1Name" class="box power-card-name">Ghost Sound</span>
+					<span tabindex="447" id="_AtWillPowers1Keyword" class="box power-card-keyword">Arcane, Illusion</span>
 					<input tabindex="448" id="_AtWillPowers1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="449" id="_AtWillPowers1Action" class="box power-card-action"></span>
+					<span tabindex="449" id="_AtWillPowers1Action" class="box power-card-action">Standard</span>
 					<span tabindex="450" id="_AtWillPowers1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="451" id="_AtWillPowers1Range" class="box power-card-range"></span>
-					<span tabindex="452" id="_AtWillPowers1Attack" class="box power-card-attack"></span>
-					<span tabindex="453" id="_AtWillPowers1Defense" class="box power-card-defense"></span>
-					<span tabindex="454" id="_AtWillPowers1Target" class="box power-card-target"></span>
-					<span tabindex="455" id="_AtWillPowers1Details" class="box power-card-details"></span>
+					<span tabindex="451" id="_AtWillPowers1Range" class="box power-card-range">Ranged 10</span>
+					<span tabindex="452" id="_AtWillPowers1Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="453" id="_AtWillPowers1Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="454" id="_AtWillPowers1Target" class="box power-card-target">One object/unoccupied square</span>
+					<span tabindex="455" id="_AtWillPowers1Details" class="box power-card-details"><b>Effect:</b> You cause a sound as quiet as a whisper or as loud as a yelling or fighting creature to emanate from the target.  Youcan produce nonvocal sounds such as the ringing of a sword blow, jingling armor, or scraping stone.  If you whisper, you can whisper quietly enough that only creatures adjacent to the target can hear your words.</span>
 					<span tabindex="456" id="_AtWillPowers1Additional" class="box power-card-additional"></span>
-					<span tabindex="457" id="_AtWillPowers1Class" class="box power-card-class"></span>
-					<span tabindex="459" id="_AtWillPowers1Level" class="box power-card-level"></span>
-					<span tabindex="460" id="_AtWillPowers1Page" class="box power-card-page"></span>
+					<span tabindex="457" id="_AtWillPowers1Class" class="box power-card-class">Wizard Cantrip</span>
+					<span tabindex="459" id="_AtWillPowers1Level" class="box power-card-level">n/a</span>
+					<span tabindex="460" id="_AtWillPowers1Page" class="box power-card-page">PHB1p158</span>
 					<select tabindex="461" id="_AtWillPowers1PowerType" class="power-card-power-type">
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -835,20 +927,21 @@ Gold Puzzle Ring (being held by Osmund)</span>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers2Card" class="power-card">
 					<img id="_AtWillPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="462" id="_AtWillPowers2Name" class="box power-card-name">Light: minor, range 10</span>
-					<span tabindex="463" id="_AtWillPowers2Keyword" class="box power-card-keyword"></span>
+					<span tabindex="462" id="_AtWillPowers2Name" class="box power-card-name">Light</span>
+					<span tabindex="463" id="_AtWillPowers2Keyword" class="box power-card-keyword">Arcane</span>
 					<input tabindex="464" id="_AtWillPowers2Box" class="box power-card-box" type="checkbox">
-					<span tabindex="465" id="_AtWillPowers2Action" class="box power-card-action"></span>
+					<span tabindex="465" id="_AtWillPowers2Action" class="box power-card-action">Minor</span>
 					<span tabindex="466" id="_AtWillPowers2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="467" id="_AtWillPowers2Range" class="box power-card-range"></span>
-					<span tabindex="468" id="_AtWillPowers2Attack" class="box power-card-attack"></span>
-					<span tabindex="469" id="_AtWillPowers2Defense" class="box power-card-defense"></span>
-					<span tabindex="470" id="_AtWillPowers2Target" class="box power-card-target"></span>
-					<span tabindex="471" id="_AtWillPowers2Details" class="box power-card-details"></span>
+					<span tabindex="467" id="_AtWillPowers2Range" class="box power-card-range">Ranged 5</span>
+					<span tabindex="468" id="_AtWillPowers2Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="469" id="_AtWillPowers2Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="470" id="_AtWillPowers2Target" class="box power-card-target">One object/unoccupied square</span>
+					<span tabindex="471" id="_AtWillPowers2Details" class="box power-card-details"><p><b>Effect:</b> You cause the target to shed bright light.  The light fills the target's square and all squares within 4 squares of it.  The light lasts for 5 minutes.  Putting out the light is a free action.</p>
+<p><b>Special:</b> You can have only one <i>light</i> cantrip active at a time.  If you create a new light, your previously cast light winks out.</p></span>
 					<span tabindex="472" id="_AtWillPowers2Additional" class="box power-card-additional"></span>
-					<span tabindex="473" id="_AtWillPowers2Class" class="box power-card-class"></span>
-					<span tabindex="475" id="_AtWillPowers2Level" class="box power-card-level"></span>
-					<span tabindex="476" id="_AtWillPowers2Page" class="box power-card-page"></span>
+					<span tabindex="473" id="_AtWillPowers2Class" class="box power-card-class">Wizard Cantrip</span>
+					<span tabindex="475" id="_AtWillPowers2Level" class="box power-card-level">n/a</span>
+					<span tabindex="476" id="_AtWillPowers2Page" class="box power-card-page">PHB1p158</span>
 					<select tabindex="477" id="_AtWillPowers2PowerType" class="power-card-power-type">
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -857,16 +950,20 @@ Gold Puzzle Ring (being held by Osmund)</span>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers3Card" class="power-card">
 					<img id="_AtWillPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="478" id="_AtWillPowers3Name" class="box power-card-name">Mage Hand: minor, range 5 (move 20lbs 5 squares)</span>
-					<span tabindex="479" id="_AtWillPowers3Keyword" class="box power-card-keyword"></span>
+					<span tabindex="478" id="_AtWillPowers3Name" class="box power-card-name">Mage Hand</span>
+					<span tabindex="479" id="_AtWillPowers3Keyword" class="box power-card-keyword">Arcane, Conjuration</span>
 					<input tabindex="480" id="_AtWillPowers3Box" class="box power-card-box" type="checkbox">
-					<span tabindex="481" id="_AtWillPowers3Action" class="box power-card-action"></span>
+					<span tabindex="481" id="_AtWillPowers3Action" class="box power-card-action">Minor</span>
 					<span tabindex="482" id="_AtWillPowers3AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="483" id="_AtWillPowers3Range" class="box power-card-range"></span>
-					<span tabindex="484" id="_AtWillPowers3Attack" class="box power-card-attack"></span>
-					<span tabindex="485" id="_AtWillPowers3Defense" class="box power-card-defense"></span>
-					<span tabindex="486" id="_AtWillPowers3Target" class="box power-card-target"></span>
-					<span tabindex="487" id="_AtWillPowers3Details" class="box power-card-details"></span>
+					<span tabindex="483" id="_AtWillPowers3Range" class="box power-card-range">Ranged 5</span>
+					<span tabindex="484" id="_AtWillPowers3Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="485" id="_AtWillPowers3Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="486" id="_AtWillPowers3Target" class="box power-card-target">n/a</span>
+					<span tabindex="487" id="_AtWillPowers3Details" class="box power-card-details"><p><b>Effect: </b>You conjure a spectral, floating hand in an unoccupied square within range.  The hand picks up, moves, or manipulates an adjacent object weighing 20 pounds or less and carries it up to 5 squares.</p>
+<p>As a move action, you can move the hand up to 5 squares.  As a minor action, you can cause the hand to pick up or manipulate a different object.</p>
+<p><b>Sustain Minor:</b> You can sustain the hand indefinitely.</p>
+<p><b>Special:</b> You can create only one hand at a time.</p>
+</span>
 					<span tabindex="488" id="_AtWillPowers3Additional" class="box power-card-additional"></span>
 					<span tabindex="489" id="_AtWillPowers3Class" class="box power-card-class"></span>
 					<span tabindex="491" id="_AtWillPowers3Level" class="box power-card-level"></span>
@@ -879,20 +976,30 @@ Gold Puzzle Ring (being held by Osmund)</span>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers4Card" class="power-card">
 					<img id="_AtWillPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="494" id="_AtWillPowers4Name" class="box power-card-name">Prestigitation: magic trick (standard)</span>
-					<span tabindex="495" id="_AtWillPowers4Keyword" class="box power-card-keyword"></span>
+					<span tabindex="494" id="_AtWillPowers4Name" class="box power-card-name">Prestigitation</span>
+					<span tabindex="495" id="_AtWillPowers4Keyword" class="box power-card-keyword">Arcane</span>
 					<input tabindex="496" id="_AtWillPowers4Box" class="box power-card-box" type="checkbox">
-					<span tabindex="497" id="_AtWillPowers4Action" class="box power-card-action"></span>
+					<span tabindex="497" id="_AtWillPowers4Action" class="box power-card-action">Standard</span>
 					<span tabindex="498" id="_AtWillPowers4AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="499" id="_AtWillPowers4Range" class="box power-card-range"></span>
-					<span tabindex="500" id="_AtWillPowers4Attack" class="box power-card-attack"></span>
-					<span tabindex="501" id="_AtWillPowers4Defense" class="box power-card-defense"></span>
-					<span tabindex="502" id="_AtWillPowers4Target" class="box power-card-target"></span>
-					<span tabindex="503" id="_AtWillPowers4Details" class="box power-card-details"></span>
-					<span tabindex="504" id="_AtWillPowers4Additional" class="box power-card-additional"></span>
-					<span tabindex="505" id="_AtWillPowers4Class" class="box power-card-class"></span>
-					<span tabindex="507" id="_AtWillPowers4Level" class="box power-card-level"></span>
-					<span tabindex="508" id="_AtWillPowers4Page" class="box power-card-page"></span>
+					<span tabindex="499" id="_AtWillPowers4Range" class="box power-card-range">2</span>
+					<span tabindex="500" id="_AtWillPowers4Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="501" id="_AtWillPowers4Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="502" id="_AtWillPowers4Target" class="box power-card-target">n/a</span>
+					<span tabindex="503" id="_AtWillPowers4Details" class="box power-card-details"><p><b>Effect:</b> Use this cantrip to accomplish one of the effects given below.</p><ul>
+<li>Move up to 1 pound of material.</li>
+<li>Create a harmless sensory effect.</li>
+<li>Color clean or soil items for 1 hour.</li>
+<li>Instantly light/snuff a fire</li>
+<li>Chill, warm or flavor food for 1 hour</li>
+<li>Make a small mark or symbol for 1 hour</li>
+<li>Make a small item or image for a turn</li>
+<li>Make a small item invisible for a turn</li>
+</ul><p></p>
+Nothing you create can deal damage or hinder.</span>
+					<span tabindex="504" id="_AtWillPowers4Additional" class="box power-card-additional"><b>Special:</b> You can have as many as three prestigitation effects active at one time.</span>
+					<span tabindex="505" id="_AtWillPowers4Class" class="box power-card-class">Wizard Cantrip</span>
+					<span tabindex="507" id="_AtWillPowers4Level" class="box power-card-level">n/a</span>
+					<span tabindex="508" id="_AtWillPowers4Page" class="box power-card-page">PHBp159</span>
 					<select tabindex="509" id="_AtWillPowers4PowerType" class="power-card-power-type">
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -902,19 +1009,20 @@ Gold Puzzle Ring (being held by Osmund)</span>
 				<div style="display: inline-block;" id="_AtWillPowers5Card" class="power-card">
 					<img id="_AtWillPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
 					<span tabindex="510" id="_AtWillPowers5Name" class="box power-card-name">Magic Missle: +7 vs Reflex, 2d4+4 dmg, range 20</span>
-					<span tabindex="511" id="_AtWillPowers5Keyword" class="box power-card-keyword"></span>
+					<span tabindex="511" id="_AtWillPowers5Keyword" class="box power-card-keyword">Arcane, Force, Implement</span>
 					<input tabindex="512" id="_AtWillPowers5Box" class="box power-card-box" type="checkbox">
-					<span tabindex="513" id="_AtWillPowers5Action" class="box power-card-action"></span>
+					<span tabindex="513" id="_AtWillPowers5Action" class="box power-card-action">Standard</span>
 					<span tabindex="514" id="_AtWillPowers5AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="515" id="_AtWillPowers5Range" class="box power-card-range"></span>
-					<span tabindex="516" id="_AtWillPowers5Attack" class="box power-card-attack"></span>
-					<span tabindex="517" id="_AtWillPowers5Defense" class="box power-card-defense"></span>
-					<span tabindex="518" id="_AtWillPowers5Target" class="box power-card-target"></span>
-					<span tabindex="519" id="_AtWillPowers5Details" class="box power-card-details"></span>
+					<span tabindex="515" id="_AtWillPowers5Range" class="box power-card-range">Ranged 20</span>
+					<span tabindex="516" id="_AtWillPowers5Attack" class="box power-card-attack">+7</span>
+					<span tabindex="517" id="_AtWillPowers5Defense" class="box power-card-defense">Reflex</span>
+					<span tabindex="518" id="_AtWillPowers5Target" class="box power-card-target">One creature</span>
+					<span tabindex="519" id="_AtWillPowers5Details" class="box power-card-details"><p><b>Hit:</b> 2d4+4 force damage</p>
+<p><b>Special:</b> This power counts as a ranged basic attack.  When a power allows you to make a ranged basic attack, you can use this power.</p></span>
 					<span tabindex="520" id="_AtWillPowers5Additional" class="box power-card-additional"></span>
-					<span tabindex="521" id="_AtWillPowers5Class" class="box power-card-class"></span>
-					<span tabindex="523" id="_AtWillPowers5Level" class="box power-card-level"></span>
-					<span tabindex="524" id="_AtWillPowers5Page" class="box power-card-page"></span>
+					<span tabindex="521" id="_AtWillPowers5Class" class="box power-card-class">Wizard</span>
+					<span tabindex="523" id="_AtWillPowers5Level" class="box power-card-level">1</span>
+					<span tabindex="524" id="_AtWillPowers5Page" class="box power-card-page">PHB1p159</span>
 					<select tabindex="525" id="_AtWillPowers5PowerType" class="power-card-power-type">
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -924,26 +1032,26 @@ Gold Puzzle Ring (being held by Osmund)</span>
 				<div style="display: inline-block;" id="_AtWillPowers6Card" class="power-card">
 					<img id="_AtWillPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
 					<span tabindex="526" id="_AtWillPowers6Name" class="box power-card-name">Scorching Burst: +7 vs Reflex, 1d6+4, burst 1 w/in 10</span>
-					<span tabindex="527" id="_AtWillPowers6Keyword" class="box power-card-keyword"></span>
+					<span tabindex="527" id="_AtWillPowers6Keyword" class="box power-card-keyword">Arcane, Fire, Implement</span>
 					<input tabindex="528" id="_AtWillPowers6Box" class="box power-card-box" type="checkbox">
-					<span tabindex="529" id="_AtWillPowers6Action" class="box power-card-action"></span>
+					<span tabindex="529" id="_AtWillPowers6Action" class="box power-card-action">Standard</span>
 					<span tabindex="530" id="_AtWillPowers6AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="531" id="_AtWillPowers6Range" class="box power-card-range"></span>
-					<span tabindex="532" id="_AtWillPowers6Attack" class="box power-card-attack"></span>
-					<span tabindex="533" id="_AtWillPowers6Defense" class="box power-card-defense"></span>
-					<span tabindex="534" id="_AtWillPowers6Target" class="box power-card-target"></span>
-					<span tabindex="535" id="_AtWillPowers6Details" class="box power-card-details"></span>
+					<span tabindex="531" id="_AtWillPowers6Range" class="box power-card-range">Area burst 1 within 10 squares</span>
+					<span tabindex="532" id="_AtWillPowers6Attack" class="box power-card-attack">+7</span>
+					<span tabindex="533" id="_AtWillPowers6Defense" class="box power-card-defense">Reflex</span>
+					<span tabindex="534" id="_AtWillPowers6Target" class="box power-card-target">Each creature in burst</span>
+					<span tabindex="535" id="_AtWillPowers6Details" class="box power-card-details"><b>Hit:</b> 1d6+4 fire damage.</span>
 					<span tabindex="536" id="_AtWillPowers6Additional" class="box power-card-additional"></span>
-					<span tabindex="537" id="_AtWillPowers6Class" class="box power-card-class"></span>
-					<span tabindex="539" id="_AtWillPowers6Level" class="box power-card-level"></span>
-					<span tabindex="540" id="_AtWillPowers6Page" class="box power-card-page"></span>
+					<span tabindex="537" id="_AtWillPowers6Class" class="box power-card-class">Wizard</span>
+					<span tabindex="539" id="_AtWillPowers6Level" class="box power-card-level">1</span>
+					<span tabindex="540" id="_AtWillPowers6Page" class="box power-card-page">PHB1p159</span>
 					<select tabindex="541" id="_AtWillPowers6PowerType" class="power-card-power-type">
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card">
+				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card tapped">
 					<img id="_EncounterPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name">Force Orb: +7 vs Reflex, 2d8+3 / 1d10+4 dmg<!--
 ranged 20, secondary hits all adjacent --></span>
@@ -1054,22 +1162,22 @@ ranged 20, secondary hits all adjacent --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_EncounterPowers6Card" class="power-card">
+				<div style="display: inline-block;" id="_EncounterPowers6Card" class="power-card tapped">
 					<img id="_EncounterPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name">Color Spray: +7 vs Will, 1d6+4 rad, daze, CB 3<!-- close blast 3 --></span>
 					<span tabindex="623" id="_EncounterPowers6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="624" id="_EncounterPowers6Box" class="box power-card-box" type="checkbox">
-					<span tabindex="625" id="_EncounterPowers6Action" class="box power-card-action"></span>
+					<span tabindex="625" id="_EncounterPowers6Action" class="box power-card-action">Standard</span>
 					<span tabindex="626" id="_EncounterPowers6AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="627" id="_EncounterPowers6Range" class="box power-card-range"></span>
-					<span tabindex="628" id="_EncounterPowers6Attack" class="box power-card-attack"></span>
-					<span tabindex="629" id="_EncounterPowers6Defense" class="box power-card-defense"></span>
-					<span tabindex="630" id="_EncounterPowers6Target" class="box power-card-target"></span>
-					<span tabindex="631" id="_EncounterPowers6Details" class="box power-card-details"></span>
+					<span tabindex="627" id="_EncounterPowers6Range" class="box power-card-range">Close blast 3</span>
+					<span tabindex="628" id="_EncounterPowers6Attack" class="box power-card-attack">7</span>
+					<span tabindex="629" id="_EncounterPowers6Defense" class="box power-card-defense">Willpower</span>
+					<span tabindex="630" id="_EncounterPowers6Target" class="box power-card-target">Each creature in blast</span>
+					<span tabindex="631" id="_EncounterPowers6Details" class="box power-card-details"><b>Hit:</b> 1d6+4 radiant damage, and the target is dazed until the end of my next turn.</span>
 					<span tabindex="632" id="_EncounterPowers6Additional" class="box power-card-additional"></span>
-					<span tabindex="633" id="_EncounterPowers6Class" class="box power-card-class"></span>
-					<span tabindex="635" id="_EncounterPowers6Level" class="box power-card-level"></span>
-					<span tabindex="636" id="_EncounterPowers6Page" class="box power-card-page"></span>
+					<span tabindex="633" id="_EncounterPowers6Class" class="box power-card-class">Wizard</span>
+					<span tabindex="635" id="_EncounterPowers6Level" class="box power-card-level">3</span>
+					<span tabindex="636" id="_EncounterPowers6Page" class="box power-card-page">PHP1p161</span>
 					<select tabindex="637" id="_EncounterPowers6PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
@@ -1233,7 +1341,7 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_UtilityPowers2Card" class="power-card">
+				<div style="display: inline-block;" id="_UtilityPowers2Card" class="power-card tapped">
 					<img id="_UtilityPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="750" id="_UtilityPowers2Name" class="box power-card-name">Shield: +4 AC/Reflex for 1 turn when hit (enc)</span>
 					<span tabindex="751" id="_UtilityPowers2Keyword" class="box power-card-keyword"></span>
@@ -1687,44 +1795,45 @@ email from JR - November 23, 2009
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: none;" id="_MagicItemsMisc1Card" class="power-card">
+				<div style="display: inline-block;" id="_MagicItemsMisc1Card" class="power-card">
 					<img id="_MagicItemsMisc1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="654" id="_MagicItemsMisc1Name" class="box power-card-name">0</span>
-					<span tabindex="655" id="_MagicItemsMisc1Keyword" class="box power-card-keyword"></span>
+					<span tabindex="654" id="_MagicItemsMisc1Name" class="box power-card-name">Bump &amp; Run</span>
+					<span tabindex="655" id="_MagicItemsMisc1Keyword" class="box power-card-keyword">table of fun</span>
 					<input tabindex="656" id="_MagicItemsMisc1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="657" id="_MagicItemsMisc1Action" class="box power-card-action"></span>
+					<span tabindex="657" id="_MagicItemsMisc1Action" class="box power-card-action">No</span>
 					<span tabindex="658" id="_MagicItemsMisc1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="659" id="_MagicItemsMisc1Range" class="box power-card-range"></span>
-					<span tabindex="660" id="_MagicItemsMisc1Attack" class="box power-card-attack"></span>
-					<span tabindex="661" id="_MagicItemsMisc1Defense" class="box power-card-defense"></span>
-					<span tabindex="662" id="_MagicItemsMisc1Target" class="box power-card-target"></span>
-					<span tabindex="663" id="_MagicItemsMisc1Details" class="box power-card-details"></span>
-					<span tabindex="664" id="_MagicItemsMisc1Additional" class="box power-card-additional"></span>
-					<span tabindex="665" id="_MagicItemsMisc1Class" class="box power-card-class"></span>
-					<span tabindex="667" id="_MagicItemsMisc1Level" class="box power-card-level"></span>
-					<span tabindex="668" id="_MagicItemsMisc1Page" class="box power-card-page"></span>
+					<span tabindex="659" id="_MagicItemsMisc1Range" class="box power-card-range">Melee 1</span>
+					<span tabindex="660" id="_MagicItemsMisc1Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="661" id="_MagicItemsMisc1Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="662" id="_MagicItemsMisc1Target" class="box power-card-target">n/a</span>
+					<span tabindex="663" id="_MagicItemsMisc1Details" class="box power-card-details"><b>Effect:</b> No Action, when you hit an enemy with a melee
+attack: you can push the target 1 square.</span>
+					<span tabindex="664" id="_MagicItemsMisc1Additional" class="box power-card-additional">One time use</span>
+					<span tabindex="665" id="_MagicItemsMisc1Class" class="box power-card-class">n/a</span>
+					<span tabindex="667" id="_MagicItemsMisc1Level" class="box power-card-level">n/a</span>
+					<span tabindex="668" id="_MagicItemsMisc1Page" class="box power-card-page">n/a</span>
 					<select tabindex="669" id="_MagicItemsMisc1PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: none;" id="_MagicItemsMisc2Card" class="power-card">
+				<div style="display: inline-block;" id="_MagicItemsMisc2Card" class="power-card">
 					<img id="_MagicItemsMisc2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="670" id="_MagicItemsMisc2Name" class="box power-card-name">0</span>
-					<span tabindex="671" id="_MagicItemsMisc2Keyword" class="box power-card-keyword"></span>
+					<span tabindex="670" id="_MagicItemsMisc2Name" class="box power-card-name">Thick Skinned</span>
+					<span tabindex="671" id="_MagicItemsMisc2Keyword" class="box power-card-keyword">table of fun</span>
 					<input tabindex="672" id="_MagicItemsMisc2Box" class="box power-card-box" type="checkbox">
-					<span tabindex="673" id="_MagicItemsMisc2Action" class="box power-card-action"></span>
+					<span tabindex="673" id="_MagicItemsMisc2Action" class="box power-card-action">Interrupt</span>
 					<span tabindex="674" id="_MagicItemsMisc2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="675" id="_MagicItemsMisc2Range" class="box power-card-range"></span>
-					<span tabindex="676" id="_MagicItemsMisc2Attack" class="box power-card-attack"></span>
-					<span tabindex="677" id="_MagicItemsMisc2Defense" class="box power-card-defense"></span>
-					<span tabindex="678" id="_MagicItemsMisc2Target" class="box power-card-target"></span>
-					<span tabindex="679" id="_MagicItemsMisc2Details" class="box power-card-details"></span>
-					<span tabindex="680" id="_MagicItemsMisc2Additional" class="box power-card-additional"></span>
-					<span tabindex="681" id="_MagicItemsMisc2Class" class="box power-card-class"></span>
-					<span tabindex="683" id="_MagicItemsMisc2Level" class="box power-card-level"></span>
-					<span tabindex="684" id="_MagicItemsMisc2Page" class="box power-card-page"></span>
+					<span tabindex="675" id="_MagicItemsMisc2Range" class="box power-card-range">n/a</span>
+					<span tabindex="676" id="_MagicItemsMisc2Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="677" id="_MagicItemsMisc2Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="678" id="_MagicItemsMisc2Target" class="box power-card-target">self</span>
+					<span tabindex="679" id="_MagicItemsMisc2Details" class="box power-card-details"><b>Effect:</b> +4 AC until end of my next turn</span>
+					<span tabindex="680" id="_MagicItemsMisc2Additional" class="box power-card-additional">One time use</span>
+					<span tabindex="681" id="_MagicItemsMisc2Class" class="box power-card-class">n/a</span>
+					<span tabindex="683" id="_MagicItemsMisc2Level" class="box power-card-level">n/a</span>
+					<span tabindex="684" id="_MagicItemsMisc2Page" class="box power-card-page">n/a</span>
 					<select tabindex="685" id="_MagicItemsMisc2PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
