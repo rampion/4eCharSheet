@@ -171,7 +171,7 @@
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
 			CurrentHitPoints:"=(\n+4 // restored by gurnis's charge\n-7 // hit by a cutpurse\n+MaxHitPoints)",
-			CurrentSurgeUses:"=(SurgesPerDay)",
+			CurrentSurgeUses:"=(SurgesPerDay\n-2 // partial success trying to save the ship\n)",
 			DailyPowers1:"Slayer's Song",
 			DailyPowers1Action:"Standard",
 			DailyPowers1Attack:"+=(ChaModPlusHalfLevel+3+1/*rapier songblade +1*/)",
@@ -210,7 +210,7 @@
 			EncounterPowers1Action:"Minor",
 			EncounterPowers1Additional:"<b>Special:</b> Can use either this or Cloud of Darkness in a single encounter.",
 			EncounterPowers1Attack:"+=(ChaModPlusHalfLevel+2+2*roundDown((Level+9)/10))",
-			EncounterPowers1Box:true, EncounterPowers3Box:true, EncounterPowers4Box:true, EncounterPowers1Class:"Drow Racial",
+			EncounterPowers1Class:"Drow Racial",
 			EncounterPowers1Defense:"Reflex",
 			EncounterPowers1Details:"<b>Hit</b>: Until the end of your next turn, all attacks against the target have combat advantage, and the target cannot benefit from invisibility or concealment.",
 			EncounterPowers1Level:"n/a",
@@ -220,6 +220,7 @@
 			EncounterPowers1Target:"One creature",
 			EncounterPowers2:"Cloud of Darkness",
 			EncounterPowers2Action:"Minor",
+			EncounterPowers2Additional:"<b>Special:</b> Can use either this or Darkfire in a single encounter.",
 			EncounterPowers2Class:"Drow Racial",
 			EncounterPowers2Details:"<b>Effect:</b> The burst creates a cloud of darkness that remains in place until the end of your next turn.  The cloud blocks line of sight, squares within it are totally obscured, and creates entirely within it are blinded until they exit.  You are immune to these effects.",
 			EncounterPowers2Level:"n/a",
@@ -254,7 +255,6 @@
 			EncounterPowers5:"Shout of Triumph",
 			EncounterPowers5Action:"Standard",
 			EncounterPowers5Attack:"+=(ChaModPlusHalfLevel +1 /*songblade implement*/)",
-			EncounterPowers5Box:true, EncounterPowers2Box:true, EncounterPowers2Additional:"<b>Special:</b> Can use either this or Darkfire in a single encounter.",
 			EncounterPowers5Class:"Bard",
 			EncounterPowers5Defense:"Fortitude",
 			EncounterPowers5Details:"<p><b>Hit:</b> 1d6+=(ChaMod+1) thunder damage (songblade implement), and you push the target =(ConMod) squres.</p>\n<p><b>Effect:</b> Slide each ally in the blast 1 square.</p>",
@@ -325,7 +325,19 @@
 			MagicItemsHeadName:"=(MagicItemsHead)",
 			MagicItemsMisc10Name:"=(MagicItemsMisc10)",
 			MagicItemsMisc11Name:"=(MagicItemsMisc11)",
+			MagicItemsMisc12:"Action Point",
+			MagicItemsMisc12Action:"Free",
+			MagicItemsMisc12Additional:"Regain after each extended rest or milestone.",
+			MagicItemsMisc12Attack:"n/a",
+			MagicItemsMisc12Box:true,
+			MagicItemsMisc12Class:"n/a",
+			MagicItemsMisc12Defense:"n/a",
+			MagicItemsMisc12Details:"<b>Effect:</b> Take a Standard, Move, or Minor action.",
+			MagicItemsMisc12Level:"n/a",
 			MagicItemsMisc12Name:"=(MagicItemsMisc12)",
+			MagicItemsMisc12Page:"n/a",
+			MagicItemsMisc12Range:"Personal",
+			MagicItemsMisc12Target:"n/a",
 			MagicItemsMisc1Name:"=(MagicItemsMisc1)",
 			MagicItemsMisc2Name:"=(MagicItemsMisc2)",
 			MagicItemsMisc3Name:"=(MagicItemsMisc3)",
@@ -336,8 +348,7 @@
 			MagicItemsMisc8Name:"=(MagicItemsMisc8)",
 			MagicItemsMisc9Name:"=(MagicItemsMisc9)",
 			MagicItemsNeck:"Amulet of Protection +1",
-			MagicItemsNeckCheck:true, EncounterPowersCheck4:true,
-			MagicItemsNeckDetails:"No Power",
+			MagicItemsNeckCheck:true, EncounterPowersCheck4:true, MagicItemsNeckDetails:"No Power",
 			MagicItemsNeckName:"=(MagicItemsNeck)",
 			MagicItemsRing1Name:"=(MagicItemsRing1)",
 			MagicItemsRing2Name:"=(MagicItemsRing2)",
@@ -615,9 +626,9 @@
 </style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">CoinsAndOtherWealth</div>
-				<textarea style="height: 193px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">=(<br> +20 // gold found on thug#2<br> -15 // adventurer's kit<br>&nbsp; -5 // flute<br>&nbsp; -1 // beltpouch<br> -30 // fine clothing<br>&nbsp; -1 // dagger<br>+100 // starting money<br>) gp&nbsp;</div>
+				<div id="EditBoxTarget">EncounterPowers4Additional</div>
+				<textarea style="height: 39px;" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -729,7 +740,7 @@
 				<span tabindex="89" class="center box" id="_SurgeValue">8</span>
 				<span tabindex="90" class="center box" id="_SurgesPerDay">10</span>
 				<span tabindex="91" class="center box" id="_CurrentHitPoints">30</span>
-				<span tabindex="92" class="center box" id="_CurrentSurgeUses">10</span>
+				<span tabindex="92" class="center box" id="_CurrentSurgeUses">8</span>
 				<input tabindex="93" class="center box" id="_SecondWindUsed" type="checkbox">
 				<span tabindex="94" class="box" id="_TemporaryHitPoints"></span>
 				<input tabindex="95" class="center box" id="_DeathSavingThrowFailures1" type="checkbox">
@@ -1004,7 +1015,7 @@ Longsword, Scimitar, Short Sword
 				<span tabindex="334" class="box" id="_MagicItemsMisc9"></span>
 				<span tabindex="335" class="box" id="_MagicItemsMisc10"></span>
 				<span tabindex="336" class="box" id="_MagicItemsMisc11"></span>
-				<span tabindex="337" class="box" id="_MagicItemsMisc12"></span>
+				<span tabindex="337" class="box" id="_MagicItemsMisc12">Action Point</span>
 
 				<input tabindex="338" class="box" id="_MagicItemsWeaponCheck1" type="checkbox">
 				<input tabindex="339" class="box" id="_MagicItemsWeaponCheck2" type="checkbox">
@@ -1327,7 +1338,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_EncounterPowers4Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_EncounterPowers4Card" class="power-card">
 					<img id="_EncounterPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="590" id="_EncounterPowers4Name" class="box power-card-name">Words of Friendship</span>
 					<span tabindex="591" id="_EncounterPowers4Keyword" class="box power-card-keyword">Arcane</span>
@@ -1376,7 +1387,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 					<img id="_EncounterPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name">Battle Feint</span>
 					<span tabindex="623" id="_EncounterPowers6Keyword" class="box power-card-keyword"></span>
-					<input tabindex="624" id="_EncounterPowers6Box" class="box power-card-box" type="checkbox">
+					<input tabindex="624" id="_EncounterPowers6Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="625" id="_EncounterPowers6Action" class="box power-card-action">Minor</span>
 					<span tabindex="626" id="_EncounterPowers6AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="627" id="_EncounterPowers6Range" class="box power-card-range">Melee 1</span>
@@ -1906,7 +1917,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_MagicItemsNeckCard" class="power-card tapped">
+				<div style="display: inline-block;" id="_MagicItemsNeckCard" class="power-card">
 					<img id="_MagicItemsNeckImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">Amulet of Protection +1</span>
 					<span tabindex="591" id="_MagicItemsNeckKeyword" class="box power-card-keyword"></span>
@@ -2236,22 +2247,22 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: none;" id="_MagicItemsMisc12Card" class="power-card">
-					<img id="_MagicItemsMisc12Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="830" id="_MagicItemsMisc12Name" class="box power-card-name">0</span>
+				<div style="display: inline-block;" id="_MagicItemsMisc12Card" class="power-card tapped">
+					<img id="_MagicItemsMisc12Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="830" id="_MagicItemsMisc12Name" class="box power-card-name">Action Point</span>
 					<span tabindex="831" id="_MagicItemsMisc12Keyword" class="box power-card-keyword"></span>
 					<input tabindex="832" id="_MagicItemsMisc12Box" class="box power-card-box" type="checkbox">
-					<span tabindex="833" id="_MagicItemsMisc12Action" class="box power-card-action"></span>
+					<span tabindex="833" id="_MagicItemsMisc12Action" class="box power-card-action">Free</span>
 					<span tabindex="834" id="_MagicItemsMisc12AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="835" id="_MagicItemsMisc12Range" class="box power-card-range"></span>
-					<span tabindex="836" id="_MagicItemsMisc12Attack" class="box power-card-attack"></span>
-					<span tabindex="837" id="_MagicItemsMisc12Defense" class="box power-card-defense"></span>
-					<span tabindex="838" id="_MagicItemsMisc12Target" class="box power-card-target"></span>
-					<span tabindex="839" id="_MagicItemsMisc12Details" class="box power-card-details"></span>
-					<span tabindex="840" id="_MagicItemsMisc12Additional" class="box power-card-additional"></span>
-					<span tabindex="841" id="_MagicItemsMisc12Class" class="box power-card-class"></span>
-					<span tabindex="843" id="_MagicItemsMisc12Level" class="box power-card-level"></span>
-					<span tabindex="844" id="_MagicItemsMisc12Page" class="box power-card-page"></span>
+					<span tabindex="835" id="_MagicItemsMisc12Range" class="box power-card-range">Personal</span>
+					<span tabindex="836" id="_MagicItemsMisc12Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="837" id="_MagicItemsMisc12Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="838" id="_MagicItemsMisc12Target" class="box power-card-target">n/a</span>
+					<span tabindex="839" id="_MagicItemsMisc12Details" class="box power-card-details"><b>Effect:</b> Take a Standard, Move, or Minor action.</span>
+					<span tabindex="840" id="_MagicItemsMisc12Additional" class="box power-card-additional">Regain after each extended rest or milestone.</span>
+					<span tabindex="841" id="_MagicItemsMisc12Class" class="box power-card-class">n/a</span>
+					<span tabindex="843" id="_MagicItemsMisc12Level" class="box power-card-level">n/a</span>
+					<span tabindex="844" id="_MagicItemsMisc12Page" class="box power-card-page">n/a</span>
 					<select tabindex="845" id="_MagicItemsMisc12PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>

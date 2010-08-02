@@ -1,7 +1,514 @@
 <html><head>
 	
 		<link href="http://rampion.github.com/4eCharSheet/style.css" type="text/css" rel="stylesheet">
-		<link href="http://rampion.github.com/4eCharSheet/character-style.css" type="text/css" rel="stylesheet">
+		<link href="http://rampion.github.com/4eCharSheet/character-style.css" type="text/css" rel="stylesheet"><style base="/4eCharSheet/" type="text/css">blockquote {
+margin-bottom: 0;
+margin-top: 0;
+}
+
+.box { 
+	position: absolute;
+	padding: 2px;
+	cursor: pointer;
+}
+.center {
+	text-align: center;
+}
+.page {
+	position: relative; 
+	overflow: none;
+}
+.page-background {
+	margin-left: -45px;
+	margin-top: -75px;
+}
+@media print {
+	#EditBox {
+		display: none !important;
+	}
+	.moused {
+		outline: none;
+	}
+	.power-card {
+		page-break-inside: avoid;
+		margin-left: -5px;
+	}
+}
+.power-card {
+	position: relative;
+	display: none;
+}
+.tapped {
+	opacity: 0.5;
+	-moz-transform: rotate(-180deg);
+}
+
+p{ margin: 0; padding: 0 }
+ul{ margin: 0; }
+
+.power-card-name        {left: 5px; top: 5px; width: 360px; height: 44px;}
+.power-card-keyword     {left: 56px; top: 53px; width: 281px; height: 23px;}
+.power-card-box         {left: 337px; top: 51px; width: 25px; height: 23px;}
+.power-card-action      {left: 5px; top: 80px; width: 64px; height: 25px;}
+.power-card-attack-type {left: 73px; top: 80px; width: 91px; height: 42px;}
+.power-card-range       {left: 167px; top: 80px; width: 198px; height: 25px;}
+.power-card-attack      {text-align: center; left: 5px; top: 126px; width: 66px; height: 25px;}
+.power-card-defense     {text-align: center; left: 93px; top: 126px; width: 71px; height: 25px;}
+.power-card-target      {left: 167px; top: 126px; width: 199px; height: 25px;}
+.power-card-details     {left: 5px; top: 172px; width: 360px; height: 219px;}
+.power-card-additional  {left: 5px; top: 407px; width: 360px; height: 55px;}
+.power-card-class       {left: 36px; top: 465px; width: 157px; height: 23px;}
+.power-card-level       {left: 226px; top: 465px; width: 31px; height: 23px;}
+.power-card-page        {left: 287px; top: 465px; width: 78px; height: 23px;}
+.power-card-power-type  {position:absolute; top: 500px; left: 265px; width: 100px}
+
+
+#_PlayerName	{left: 817px; top: 44px; width: 265px; height: 16px;}
+#_CharacterName	{left: 28px; top: 70px; width: 346px; height: 25px;}
+#_Level	{left: 392px; top: 76px; width: 54px; height: 21px;}
+#_Class	{left: 464px; top: 71px; width: 160px; height: 24px;}
+#_ParagonPath	{left: 633px; top: 72px; width: 167px; height: 23px;}
+#_EpicDestiny	{left: 810px; top: 72px; width: 173px; height: 23px;}
+#_TotalExperience	{left: 990px; top: 76px; width: 102px; height: 19px;}
+#_Race	{left: 29px; top: 116px; width: 203px; height: 16px;}
+#_Size	{left: 244px; top: 112px; width: 52px; height: 20px;}
+#_Age	{left: 308px; top: 109px; width: 45px; height: 23px;}
+#_Gender	{left: 363px; top: 110px; width: 49px; height: 21px;}
+#_Height	{left: 425px; top: 116px; width: 47px; height: 16px;}
+#_Weight	{left: 484px; top: 117px; width: 51px; height: 15px;}
+#_Alignment	{left: 549px; top: 116px; width: 107px; height: 16px;}
+#_Deity	{left: 671px; top: 116px; width: 109px; height: 16px;}
+#_Affiliation	{left: 791px; top: 115px; width: 306px; height: 17px;}
+#_Initiative	{left: 39px; top: 199px; width: 40px; height: 19px;}
+#_InitiativeConditionalModifiers	{left: 37px; top: 237px; width: 334px; height: 16px;}
+#_InitiativeAbilMod	{left: 191px; top: 199px; width: 29px; height: 19px;}
+#_InitiativeHalfLevel	{left: 232px; top: 199px; width: 29px; height: 20px;}
+#_InitiativeMisc	{left: 342px; top: 199px; width: 30px; height: 21px;}
+#_Str	{left: 38px; top: 299px; width: 44px; height: 20px;}
+#_Con	{left: 38px; top: 336px; width: 44px; height: 20px;}
+#_Dex	{left: 38px; top: 387px; width: 44px; height: 20px;}
+#_Int	{left: 38px; top: 421px; width: 44px; height: 20px;}
+#_Wis	{left: 38px; top: 472px; width: 44px; height: 20px;}
+#_Cha	{left: 38px; top: 507px; width: 44px; height: 20px;}
+#_StrMod	{left: 215px; top: 299px; width: 44px; height: 20px;}
+#_ConMod	{left: 215px; top: 336px; width: 44px; height: 20px;}
+#_DexMod	{left: 215px; top: 387px; width: 44px; height: 20px;}
+#_IntMod	{left: 215px; top: 421px; width: 44px; height: 20px;}
+#_WisMod	{left: 215px; top: 472px; width: 44px; height: 20px;}
+#_ChaMod	{left: 215px; top: 507px; width: 44px; height: 20px;}
+#_StrModPlusHalfLevel	{left: 308px; top: 299px; width: 44px; height: 20px;}
+#_ConModPlusHalfLevel	{left: 308px; top: 336px; width: 44px; height: 20px;}
+#_DexModPlusHalfLevel	{left: 308px; top: 387px; width: 44px; height: 20px;}
+#_IntModPlusHalfLevel	{left: 308px; top: 421px; width: 44px; height: 20px;}
+#_WisModPlusHalfLevel	{left: 308px; top: 472px; width: 44px; height: 20px;}
+#_ChaModPlusHalfLevel	{left: 308px; top: 507px; width: 44px; height: 20px;}
+#_ArmorClass	{left: 399px; top: 207px; width: 29px; height: 25px;}
+#_ArmorClass10PlusHalfLevel	{left: 505px; top: 212px; width: 29px; height: 20px;}
+#_ArmorClassArmorSlashAbil	{left: 539px; top: 212px; width: 29px; height: 20px;}
+#_ArmorClassClass	{left: 574px; top: 212px; width: 29px; height: 20px;}
+#_ArmorClassFeat	{left: 608px; top: 212px; width: 29px; height: 20px;}
+#_ArmorClassEnh	{left: 642px; top: 211px; width: 29px; height: 20px;}
+#_ArmorClassMisc1	{left: 676px; top: 211px; width: 29px; height: 20px;}
+#_ArmorClassMisc2	{left: 711px; top: 211px; width: 29px; height: 20px;}
+#_ArmorClassConditionalBonuses	{left: 399px; top: 257px; width: 340px; height: 15px;}
+#_Fortitude	{left: 399px; top: 306px; width: 29px; height: 25px;}
+#_Fortitude10PlusHalfLevel	{left: 505px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeAbil	{left: 539px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeClass	{left: 574px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeFeat	{left: 608px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeEnh	{left: 642px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeMisc1	{left: 676px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeMisc2	{left: 711px; top: 308px; width: 29px; height: 20px;}
+#_FortitudeConditionalBonuses	{left: 399px; top: 351px; width: 340px; height: 15px;}
+#_Reflex	{left: 399px; top: 390px; width: 29px; height: 25px;}
+#_Reflex10PlusHalfLevel	{left: 505px; top: 392px; width: 29px; height: 20px;}
+#_ReflexAbil	{left: 539px; top: 392px; width: 29px; height: 20px;}
+#_ReflexClass	{left: 574px; top: 392px; width: 29px; height: 20px;}
+#_ReflexFeat	{left: 608px; top: 392px; width: 29px; height: 20px;}
+#_ReflexEnh	{left: 642px; top: 392px; width: 29px; height: 20px;}
+#_ReflexMisc1	{left: 676px; top: 392px; width: 29px; height: 20px;}
+#_ReflexMisc2	{left: 711px; top: 392px; width: 29px; height: 20px;}
+#_ReflexConditionalBonuses	{left: 399px; top: 436px; width: 340px; height: 16px;}
+#_Willpower	{left: 399px; top: 478px; width: 29px; height: 25px;}
+#_Willpower10PlusHalfLevel	{left: 505px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerAbil	{left: 539px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerClass	{left: 574px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerFeat	{left: 608px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerEnh	{left: 642px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerMisc1	{left: 676px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerMisc2	{left: 711px; top: 480px; width: 29px; height: 20px;}
+#_WillpowerConditionalBonuses	{left: 399px; top: 522px; width: 340px; height: 18px;}
+#_Speed	{left: 757px; top: 198px; width: 43px; height: 22px;}
+#_SpeedBase	{left: 949px; top: 198px; width: 31px; height: 21px;}
+#_SpeedArmor	{left: 989px; top: 198px; width: 31px; height: 21px;}
+#_SpeedItem	{left: 1028px; top: 198px; width: 31px; height: 21px;}
+#_SpeedMisc	{left: 1067px; top: 198px; width: 31px; height: 21px;}
+#_SpecialMovement	{left: 758px; top: 241px; width: 340px; height: 19px;}
+#_PassiveInsight	{left: 759px; top: 306px; width: 37px; height: 18px;}
+#_PassiveInsightSkillBonus	{left: 1041px; top: 306px; width: 43px; height: 19px;}
+#_PassivePerception	{left: 757px; top: 343px; width: 40px; height: 19px;}
+#_PassivePerceptionSkillBonus	{left: 1041px; top: 343px; width: 44px; height: 19px;}
+#_SpecialSenses	{left: 759px; top: 384px; width: 343px; height: 18px;}
+#_MaxHitPoints	{left: 29px; top: 592px; width: 71px; height: 37px;}
+#_BloodiedHitPoints	{left: 115px; top: 602px; width: 77px; height: 22px;}
+#_SurgeValue	{left: 214px; top: 602px; width: 79px; height: 22px;}
+#_SurgesPerDay	{left: 305px; top: 602px; width: 71px; height: 22px;}
+#_CurrentHitPoints	{left: 29px; top: 656px; width: 238px; height: 62px;}
+#_CurrentSurgeUses	{left: 271px; top: 656px; width: 102px; height: 62px;}
+#_SecondWindUsed	{left: 326px; top: 723px;}
+#_TemporaryHitPoints	{left: 29px; top: 756px; width: 348px; height: 29px;}
+#_DeathSavingThrowFailures1	{left: 308px; top: 790px;}
+#_DeathSavingThrowFailures2	{left: 331px; top: 790px;}
+#_DeathSavingThrowFailures3	{left: 354px; top: 790px;}
+#_SavingThrowMods	{left: 29px; top: 819px; width: 348px; height: 20px;}
+#_Resistances	{left: 29px; top: 860px; width: 348px; height: 25px;}
+#_CurrentConditionsAndEffects	{left: 29px; top: 904px; width: 348px; height: 22px;}
+#_ActionPoints	{left: 394px; top: 578px; width: 47px; height: 24px;}
+#_ActionPointAddtionalEffects	{left: 397px; top: 624px; width: 341px; height: 21px;}
+#_RaceAbilityScoreMods	{left: 478px; top: 677px; width: 264px; height: 16px;}
+#_RaceFeatures1	{left: 395px; top: 699px; width: 347px; height: 22px;}
+#_RaceFeatures2	{left: 395px; top: 726px; width: 347px; height: 22px;}
+#_RaceFeatures3	{left: 395px; top: 756px; width: 347px; height: 22px;}
+#_RaceFeatures4	{left: 395px; top: 785px; width: 347px; height: 22px;}
+#_RaceFeatures5	{left: 395px; top: 811px; width: 347px; height: 22px;}
+#_RaceFeatures6	{left: 395px; top: 840px; width: 347px; height: 22px;}
+#_RaceFeatures7	{left: 395px; top: 868px; width: 347px; height: 22px;}
+#_RaceFeatures8	{left: 395px; top: 897px; width: 347px; height: 22px;}
+#_Attack1Ability	{left: 797px; top: 430px; width: 302px; height: 21px;}
+#_Attack1AttBonus	{left: 774px; top: 471px; width: 43px; height: 20px;}
+#_Attack1HalfLevel	{left: 862px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Abil	{left: 895px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Class	{left: 930px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Prof	{left: 964px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Feat	{left: 998px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Enh	{left: 1033px; top: 471px; width: 30px; height: 20px;}
+#_Attack1Misc	{left: 1068px; top: 471px; width: 30px; height: 20px;}
+#_Attack2Ability	{left: 797px; top: 503px; width: 302px; height: 21px;}
+#_Attack2AttBonus	{left: 774px; top: 543px; width: 43px; height: 20px;}
+#_Attack2HalfLevel	{left: 862px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Abil	{left: 895px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Class	{left: 930px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Prof	{left: 964px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Feat	{left: 998px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Enh	{left: 1033px; top: 543px; width: 30px; height: 20px;}
+#_Attack2Misc	{left: 1068px; top: 543px; width: 30px; height: 20px;}
+#_Damage1Ability	{left: 797px; top: 607px; width: 302px; height: 21px;}
+#_Damage1Damage	{left: 757px; top: 648px; width: 66px; height: 20px;}
+#_Damage1Abil	{left: 928px; top: 648px; width: 30px; height: 20px;}
+#_Damage1Feat	{left: 963px; top: 648px; width: 30px; height: 20px;}
+#_Damage1Enh	{left: 998px; top: 648px; width: 30px; height: 20px;}
+#_Damage1Misc1	{left: 1032px; top: 648px; width: 30px; height: 20px;}
+#_Damage1Misc2	{left: 1065px; top: 648px; width: 30px; height: 20px;}
+#_Damage2Ability	{left: 797px; top: 679px; width: 302px; height: 21px;}
+#_Damage2Damage	{left: 757px; top: 720px; width: 66px; height: 20px;}
+#_Damage2Abil	{left: 928px; top: 720px; width: 30px; height: 20px;}
+#_Damage2Feat	{left: 963px; top: 720px; width: 30px; height: 20px;}
+#_Damage2Enh	{left: 998px; top: 720px; width: 30px; height: 20px;}
+#_Damage2Misc1	{left: 1032px; top: 720px; width: 30px; height: 20px;}
+#_Damage2Misc2	{left: 1065px; top: 720px; width: 30px; height: 20px;}
+#_BasicAttack1Attack	{left: 758px; top: 797px; width: 40px; height: 25px;}
+#_BasicAttack2Attack	{left: 758px; top: 832px; width: 40px; height: 25px;}
+#_BasicAttack3Attack	{left: 758px; top: 867px; width: 40px; height: 25px;}
+#_BasicAttack4Attack	{left: 759px; top: 900px; width: 40px; height: 25px;}
+#_BasicAttack1Defense	{left: 827px; top: 797px; width: 40px; height: 25px;}
+#_BasicAttack2Defense	{left: 827px; top: 832px; width: 40px; height: 25px;}
+#_BasicAttack3Defense	{left: 827px; top: 867px; width: 40px; height: 25px;}
+#_BasicAttack4Defense	{left: 827px; top: 900px; width: 40px; height: 25px;}
+#_BasicAttack1WeaponOrPower	{left: 879px; top: 795px; width: 138px; height: 25px;}
+#_BasicAttack2WeaponOrPower	{left: 879px; top: 830px; width: 138px; height: 25px;}
+#_BasicAttack3WeaponOrPower	{left: 879px; top: 865px; width: 138px; height: 25px;}
+#_BasicAttack4WeaponOrPower	{left: 879px; top: 898px; width: 138px; height: 25px;}
+#_BasicAttack1Damage	{left: 1029px; top: 795px; width: 72px; height: 25px;}
+#_BasicAttack2Damage	{left: 1029px; top: 830px; width: 72px; height: 25px;}
+#_BasicAttack3Damage	{left: 1029px; top: 865px; width: 72px; height: 25px;}
+#_BasicAttack4Damage	{left: 1029px; top: 898px; width: 72px; height: 25px;}
+#_Acrobatics	{left: 26px; top: 987px; width: 35px; height: 19px;}
+#_Arcana	{left: 26px; top: 1015px; width: 35px; height: 19px;}
+#_Athletics	{left: 26px; top: 1043px; width: 35px; height: 19px;}
+#_Bluff	{left: 26px; top: 1071px; width: 35px; height: 19px;}
+#_Diplomacy	{left: 26px; top: 1099px; width: 35px; height: 19px;}
+#_Dungeoneering	{left: 26px; top: 1126px; width: 35px; height: 19px;}
+#_Endurance	{left: 26px; top: 1155px; width: 35px; height: 19px;}
+#_Heal	{left: 26px; top: 1182px; width: 35px; height: 19px;}
+#_History	{left: 26px; top: 1211px; width: 35px; height: 19px;}
+#_Insight	{left: 26px; top: 1239px; width: 35px; height: 19px;}
+#_Intimidate	{left: 26px; top: 1267px; width: 35px; height: 19px;}
+#_Nature	{left: 26px; top: 1295px; width: 35px; height: 19px;}
+#_Perception	{left: 26px; top: 1322px; width: 35px; height: 19px;}
+#_Religion	{left: 26px; top: 1350px; width: 35px; height: 19px;}
+#_Stealth	{left: 26px; top: 1378px; width: 35px; height: 19px;}
+#_Streetwise	{left: 26px; top: 1406px; width: 35px; height: 19px;}
+#_Thievery	{left: 26px; top: 1434px; width: 35px; height: 19px;}
+#_AcrobaticsAbilModPlusHalfLevel	{left: 231px; top: 988px; width: 21px; height: 17px;}
+#_ArcanaAbilModPlusHalfLevel	{left: 231px; top: 1016px; width: 21px; height: 17px;}
+#_AthleticsAbilModPlusHalfLevel	{left: 231px; top: 1044px; width: 21px; height: 17px;}
+#_BluffAbilModPlusHalfLevel	{left: 231px; top: 1072px; width: 21px; height: 17px;}
+#_DiplomacyAbilModPlusHalfLevel	{left: 231px; top: 1100px; width: 21px; height: 17px;}
+#_DungeoneeringAbilModPlusHalfLevel	{left: 231px; top: 1127px; width: 21px; height: 17px;}
+#_EnduranceAbilModPlusHalfLevel	{left: 231px; top: 1156px; width: 21px; height: 17px;}
+#_HealAbilModPlusHalfLevel	{left: 231px; top: 1183px; width: 21px; height: 17px;}
+#_HistoryAbilModPlusHalfLevel	{left: 231px; top: 1212px; width: 21px; height: 17px;}
+#_InsightAbilModPlusHalfLevel	{left: 231px; top: 1240px; width: 21px; height: 17px;}
+#_IntimidateAbilModPlusHalfLevel	{left: 231px; top: 1268px; width: 21px; height: 17px;}
+#_NatureAbilModPlusHalfLevel	{left: 231px; top: 1296px; width: 21px; height: 17px;}
+#_PerceptionAbilModPlusHalfLevel	{left: 231px; top: 1323px; width: 21px; height: 17px;}
+#_ReligionAbilModPlusHalfLevel	{left: 231px; top: 1351px; width: 21px; height: 17px;}
+#_StealthAbilModPlusHalfLevel	{left: 231px; top: 1379px; width: 21px; height: 17px;}
+#_StreetwiseAbilModPlusHalfLevel	{left: 231px; top: 1407px; width: 21px; height: 17px;}
+#_ThieveryAbilModPlusHalfLevel	{left: 231px; top: 1435px; width: 21px; height: 17px;}
+#_AcrobaticsTrained	{left: 277px; top: 988px; width: 21px; height: 17px;}
+#_ArcanaTrained	{left: 277px; top: 1016px; width: 21px; height: 17px;}
+#_AthleticsTrained	{left: 277px; top: 1044px; width: 21px; height: 17px;}
+#_BluffTrained	{left: 277px; top: 1072px; width: 21px; height: 17px;}
+#_DiplomacyTrained	{left: 277px; top: 1100px; width: 21px; height: 17px;}
+#_DungeoneeringTrained	{left: 277px; top: 1127px; width: 21px; height: 17px;}
+#_EnduranceTrained	{left: 277px; top: 1156px; width: 21px; height: 17px;}
+#_HealTrained	{left: 277px; top: 1183px; width: 21px; height: 17px;}
+#_HistoryTrained	{left: 277px; top: 1212px; width: 21px; height: 17px;}
+#_InsightTrained	{left: 277px; top: 1240px; width: 21px; height: 17px;}
+#_IntimidateTrained	{left: 277px; top: 1268px; width: 21px; height: 17px;}
+#_NatureTrained	{left: 277px; top: 1296px; width: 21px; height: 17px;}
+#_PerceptionTrained	{left: 277px; top: 1323px; width: 21px; height: 17px;}
+#_ReligionTrained	{left: 277px; top: 1351px; width: 21px; height: 17px;}
+#_StealthTrained	{left: 277px; top: 1379px; width: 21px; height: 17px;}
+#_StreetwiseTrained	{left: 277px; top: 1407px; width: 21px; height: 17px;}
+#_ThieveryTrained	{left: 277px; top: 1435px; width: 21px; height: 17px;}
+#_AcrobaticsArmorPenalty	{left: 307px; top: 985px; width: 27px; height: 18px;}
+#_AthleticsArmorPenalty	{left: 307px; top: 1044px; width: 27px; height: 18px;}
+#_EnduranceArmorPenalty	{left: 307px; top: 1156px; width: 27px; height: 18px;}
+#_StealthArmorPenalty	{left: 307px; top: 1378px; width: 27px; height: 18px;}
+#_ThieveryArmorPenalty	{left: 307px; top: 1436px; width: 27px; height: 18px;}
+#_AcrobaticsMisc	{left: 346px; top: 985px; width: 27px; height: 18px;}
+#_ArcanaMisc	{left: 346px; top: 1016px; width: 27px; height: 18px;}
+#_AthleticsMisc	{left: 346px; top: 1044px; width: 27px; height: 18px;}
+#_BluffMisc	{left: 346px; top: 1072px; width: 27px; height: 18px;}
+#_DiplomacyMisc	{left: 346px; top: 1099px; width: 27px; height: 18px;}
+#_DungeoneeringMisc	{left: 346px; top: 1129px; width: 27px; height: 18px;}
+#_EnduranceMisc	{left: 346px; top: 1156px; width: 27px; height: 18px;}
+#_HealMisc	{left: 346px; top: 1182px; width: 27px; height: 18px;}
+#_HistoryMisc	{left: 346px; top: 1213px; width: 27px; height: 18px;}
+#_InsightMisc	{left: 346px; top: 1239px; width: 27px; height: 18px;}
+#_IntimidateMisc	{left: 346px; top: 1270px; width: 27px; height: 18px;}
+#_NatureMisc	{left: 346px; top: 1295px; width: 27px; height: 18px;}
+#_PerceptionMisc	{left: 346px; top: 1324px; width: 27px; height: 18px;}
+#_ReligionMisc	{left: 346px; top: 1352px; width: 27px; height: 18px;}
+#_StealthMisc	{left: 346px; top: 1378px; width: 27px; height: 18px;}
+#_StreetwiseMisc	{left: 346px; top: 1408px; width: 27px; height: 18px;}
+#_ThieveryMisc	{left: 346px; top: 1436px; width: 27px; height: 18px;}
+#_ClassPathDestinyFeatures1	{left: 395px; top: 946px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures2	{left: 395px; top: 976px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures3	{left: 395px; top: 1006px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures4	{left: 395px; top: 1034px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures5	{left: 395px; top: 1062px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures6	{left: 395px; top: 1090px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures7	{left: 395px; top: 1118px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures8	{left: 395px; top: 1146px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures9	{left: 395px; top: 1174px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures10	{left: 395px; top: 1202px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures11	{left: 395px; top: 1230px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures12	{left: 395px; top: 1258px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures13	{left: 395px; top: 1286px; width: 346px; height: 23px;}
+#_ClassPathDestinyFeatures14	{left: 395px; top: 1314px; width: 346px; height: 23px;}
+#_Feats1	{left: 758px; top: 980px; width: 345px; height: 23px;}
+#_Feats2	{left: 758px; top: 1008px; width: 346px; height: 23px;}
+#_Feats3	{left: 758px; top: 1036px; width: 346px; height: 23px;}
+#_Feats4	{left: 758px; top: 1064px; width: 346px; height: 23px;}
+#_Feats5	{left: 758px; top: 1092px; width: 346px; height: 23px;}
+#_Feats6	{left: 758px; top: 1120px; width: 346px; height: 23px;}
+#_Feats7	{left: 758px; top: 1148px; width: 346px; height: 23px;}
+#_Feats8	{left: 758px; top: 1176px; width: 346px; height: 23px;}
+#_Feats9	{left: 758px; top: 1204px; width: 346px; height: 23px;}
+#_Feats10	{left: 758px; top: 1232px; width: 346px; height: 23px;}
+#_Feats11	{left: 758px; top: 1260px; width: 346px; height: 23px;}
+#_Feats12	{left: 758px; top: 1288px; width: 346px; height: 23px;}
+#_Feats13	{left: 758px; top: 1316px; width: 346px; height: 23px;}
+#_Feats14	{left: 758px; top: 1344px; width: 346px; height: 23px;}
+#_Feats15	{left: 758px; top: 1372px; width: 346px; height: 23px;}
+#_Feats16	{left: 758px; top: 1400px; width: 346px; height: 23px;}
+#_Feats17	{left: 758px; top: 1428px; width: 346px; height: 23px;}
+#_LanguagesKnown1	{left: 395px; top: 1368px; width: 346px; height: 25px;}
+#_LanguagesKnown2	{left: 395px; top: 1399px; width: 346px; height: 23px;}
+#_LanguagesKnown3	{left: 395px; top: 1427px; width: 346px; height: 23px;}
+#_AtWillPowers1	{left: 43px; top: 90px; width: 349px; height: 24px;}
+#_AtWillPowers2	{left: 43px; top: 121px; width: 349px; height: 23px;}
+#_AtWillPowers3	{left: 43px; top: 150px; width: 349px; height: 22px;}
+#_AtWillPowers4	{left: 43px; top: 179px; width: 349px; height: 22px;}
+#_AtWillPowers5	{left: 43px; top: 209px; width: 349px; height: 21px;}
+#_AtWillPowers6	{left: 43px; top: 237px; width: 349px; height: 22px;}
+#_EncounterPowers1	{left: 43px; top: 296px; width: 321px; height: 20px;}
+#_EncounterPowers2	{left: 43px; top: 324px; width: 321px; height: 21px;}
+#_EncounterPowers3	{left: 43px; top: 350px; width: 321px; height: 25px;}
+#_EncounterPowers4	{left: 43px; top: 382px; width: 321px; height: 21px;}
+#_EncounterPowers5	{left: 43px; top: 410px; width: 321px; height: 21px;}
+#_EncounterPowers6	{left: 43px; top: 438px; width: 321px; height: 22px;}
+#_DailyPowers1	{left: 43px; top: 495px; width: 321px; height: 24px;}
+#_DailyPowers2	{left: 43px; top: 524px; width: 321px; height: 23px;}
+#_DailyPowers3	{left: 43px; top: 554px; width: 321px; height: 22px;}
+#_DailyPowers4	{left: 43px; top: 581px; width: 321px; height: 24px;}
+#_DailyPowers5	{left: 43px; top: 611px; width: 321px; height: 23px;}
+#_DailyPowers6	{left: 43px; top: 640px; width: 321px; height: 21px;}
+#_UtilityPowers1	{left: 43px; top: 699px; width: 321px; height: 21px;}
+#_UtilityPowers2	{left: 43px; top: 726px; width: 321px; height: 23px;}
+#_UtilityPowers3	{left: 43px; top: 754px; width: 321px; height: 25px;}
+#_UtilityPowers4	{left: 43px; top: 784px; width: 321px; height: 23px;}
+#_UtilityPowers5	{left: 43px; top: 812px; width: 321px; height: 23px;}
+#_UtilityPowers6	{left: 43px; top: 841px; width: 321px; height: 22px;}
+#_UtilityPowers7	{left: 43px; top: 869px; width: 321px; height: 23px;}
+#_UtilityPowers8	{left: 43px; top: 898px; width: 321px; height: 22px;}
+#_EncounterPowersCheck1	{left: 367px; top: 302px;}
+#_EncounterPowersCheck2	{left: 367px; top: 330px;}
+#_EncounterPowersCheck3	{left: 367px; top: 359px;}
+#_EncounterPowersCheck4	{left: 367px; top: 388px;}
+#_EncounterPowersCheck5	{left: 367px; top: 417px;}
+#_EncounterPowersCheck6	{left: 367px; top: 446px;}
+#_DailyPowersCheck1	{left: 367px; top: 504px;}
+#_DailyPowersCheck2	{left: 367px; top: 532px;}
+#_DailyPowersCheck3	{left: 367px; top: 561px;}
+#_DailyPowersCheck4	{left: 367px; top: 589px;}
+#_DailyPowersCheck5	{left: 367px; top: 618px;}
+#_DailyPowersCheck6	{left: 367px; top: 647px;}
+#_UtilityPowersCheck1	{left: 367px; top: 705px;}
+#_UtilityPowersCheck2	{left: 367px; top: 734px;}
+#_UtilityPowersCheck3	{left: 367px; top: 762px;}
+#_UtilityPowersCheck4	{left: 367px; top: 792px;}
+#_UtilityPowersCheck5	{left: 367px; top: 819px;}
+#_UtilityPowersCheck6	{left: 367px; top: 849px;}
+#_UtilityPowersCheck7	{left: 367px; top: 877px;}
+#_UtilityPowersCheck8	{left: 367px; top: 906px;}
+#_MagicItemsWeapon1	{left: 445px; top: 92px; width: 280px; height: 23px;}
+#_MagicItemsWeapon2	{left: 445px; top: 122px; width: 280px; height: 22px;}
+#_MagicItemsWeapon3	{left: 445px; top: 151px; width: 280px; height: 23px;}
+#_MagicItemsWeapon4	{left: 445px; top: 180px; width: 280px; height: 23px;}
+#_MagicItemsArmor	{left: 445px; top: 207px; width: 280px; height: 24px;}
+#_MagicItemsArms	{left: 445px; top: 236px; width: 280px; height: 24px;}
+#_MagicItemsFeet	{left: 445px; top: 264px; width: 280px; height: 25px;}
+#_MagicItemsHands	{left: 445px; top: 294px; width: 280px; height: 21px;}
+#_MagicItemsHead	{left: 445px; top: 322px; width: 280px; height: 24px;}
+#_MagicItemsNeck	{left: 445px; top: 351px; width: 280px; height: 24px;}
+#_MagicItemsRing1	{left: 445px; top: 380px; width: 280px; height: 22px;}
+#_MagicItemsRing2	{left: 445px; top: 409px; width: 280px; height: 23px;}
+#_MagicItemsWaist	{left: 445px; top: 437px; width: 280px; height: 24px;}
+#_MagicItemsMisc1	{left: 404px; top: 466px; width: 321px; height: 23px;}
+#_MagicItemsMisc2	{left: 404px; top: 496px; width: 321px; height: 22px;}
+#_MagicItemsMisc3	{left: 404px; top: 524px; width: 321px; height: 23px;}
+#_MagicItemsMisc4	{left: 404px; top: 553px; width: 321px; height: 22px;}
+#_MagicItemsMisc5	{left: 404px; top: 581px; width: 321px; height: 24px;}
+#_MagicItemsMisc6	{left: 404px; top: 610px; width: 321px; height: 24px;}
+#_MagicItemsMisc7	{left: 404px; top: 640px; width: 321px; height: 23px;}
+#_MagicItemsMisc8	{left: 404px; top: 669px; width: 321px; height: 24px;}
+#_MagicItemsMisc9	{left: 404px; top: 698px; width: 321px; height: 21px;}
+#_MagicItemsMisc10	{left: 404px; top: 724px; width: 321px; height: 26px;}
+#_MagicItemsMisc11	{left: 404px; top: 756px; width: 321px; height: 21px;}
+#_MagicItemsMisc12	{left: 404px; top: 784px; width: 321px; height: 21px;}
+#_MagicItemsWeaponCheck1	{left: 731px; top: 100px;}
+#_MagicItemsWeaponCheck2	{left: 731px; top: 129px;}
+#_MagicItemsWeaponCheck3	{left: 731px; top: 158px;}
+#_MagicItemsWeaponCheck4	{left: 731px; top: 186px;}
+#_MagicItemsArmorCheck	{left: 731px; top: 216px;}
+#_MagicItemsArmsCheck	{left: 731px; top: 244px;}
+#_MagicItemsFeetCheck	{left: 731px; top: 273px;}
+#_MagicItemsHandsCheck	{left: 731px; top: 302px;}
+#_MagicItemsHeadCheck	{left: 731px; top: 330px;}
+#_MagicItemsNeckCheck	{left: 731px; top: 359px;}
+#_MagicItemsRingCheck1	{left: 731px; top: 388px;}
+#_MagicItemsRingCheck2	{left: 731px; top: 417px;}
+#_MagicItemsWaistCheck	{left: 731px; top: 446px;}
+#_MagicItemsMiscCheck1	{left: 731px; top: 475px;}
+#_MagicItemsMiscCheck2	{left: 731px; top: 503px;}
+#_MagicItemsMiscCheck3	{left: 731px; top: 532px;}
+#_MagicItemsMiscCheck4	{left: 731px; top: 561px;}
+#_MagicItemsMiscCheck5	{left: 731px; top: 589px;}
+#_MagicItemsMiscCheck6	{left: 731px; top: 618px;}
+#_MagicItemsMiscCheck7	{left: 731px; top: 647px;}
+#_MagicItemsMiscCheck8	{left: 731px; top: 676px;}
+#_MagicItemsMiscCheck9	{left: 731px; top: 705px;}
+#_MagicItemsMiscCheck10	{left: 731px; top: 734px;}
+#_MagicItemsMiscCheck11	{left: 731px; top: 763px;}
+#_MagicItemsMiscCheck12	{left: 731px; top: 791px;}
+#_DailyItemPowersHeroic	{left: 507px; top: 845px;}
+#_DailyItemPowersHeroicMilestone1	{left: 644px; top: 845px;}
+#_DailyItemPowersHeroicMilestone2	{left: 669px; top: 845px;}
+#_DailyItemPowersHeroicMilestone3	{left: 694px; top: 845px;}
+#_DailyItemPowersHeroicMilestone4	{left: 719px; top: 845px;}
+#_DailyItemPowersParagon1	{left: 507px; top: 873px;}
+#_DailyItemPowersParagon2	{left: 527px; top: 873px;}
+#_DailyItemPowersParagonMilestone1	{left: 644px; top: 873px;}
+#_DailyItemPowersParagonMilestone2	{left: 669px; top: 873px;}
+#_DailyItemPowersParagonMilestone3	{left: 694px; top: 873px;}
+#_DailyItemPowersParagonMilestone4	{left: 719px; top: 873px;}
+#_DailyItemPowersEpic1	{left: 507px; top: 902px;}
+#_DailyItemPowersEpic2	{left: 527px; top: 902px;}
+#_DailyItemPowersEpic3	{left: 548px; top: 902px;}
+#_DailyItemPowersEpicMilestone1	{left: 645px; top: 902px;}
+#_DailyItemPowersEpicMilestone2	{left: 669px; top: 902px;}
+#_DailyItemPowersEpicMilestone3	{left: 694px; top: 902px;}
+#_DailyItemPowersEpicMilestone4	{left: 719px; top: 902px;}
+#_Portrait	{left: 777px; top: 2px; width: 336px; height: 308px;}
+#_PersonalityTraits1	{left: 769px; top: 353px; width: 348px; height: 17px;}
+#_PersonalityTraits2	{left: 769px; top: 376px; width: 348px; height: 23px;}
+#_PersonalityTraits3	{left: 769px; top: 404px; width: 348px; height: 24px;}
+#_PersonalityTraits4	{left: 769px; top: 434px; width: 348px; height: 22px;}
+#_PersonalityTraits5	{left: 769px; top: 463px; width: 348px; height: 22px;}
+#_PersonalityTraits6	{left: 769px; top: 490px; width: 348px; height: 23px;}
+#_MannerismsAndAppearance1	{left: 769px; top: 547px; width: 348px; height: 21px;}
+#_MannerismsAndAppearance2	{left: 769px; top: 573px; width: 348px; height: 23px;}
+#_MannerismsAndAppearance3	{left: 769px; top: 602px; width: 348px; height: 23px;}
+#_MannerismsAndAppearance4	{left: 769px; top: 630px; width: 348px; height: 23px;}
+#_MannerismsAndAppearance5	{left: 769px; top: 659px; width: 348px; height: 24px;}
+#_MannerismsAndAppearance6	{left: 769px; top: 718px; width: 348px; height: 22px;}
+#_CharacterBackground2	{left: 769px; top: 746px; width: 348px; height: 23px;}
+#_CharacterBackground3	{left: 769px; top: 775px; width: 348px; height: 22px;}
+#_CharacterBackground4	{left: 769px; top: 803px; width: 348px; height: 23px;}
+#_CompanionsAndAlliesName1	{left: 791px; top: 860px; width: 133px; height: 19px;}
+#_CompanionsAndAlliesName2	{left: 791px; top: 885px; width: 133px; height: 20px;}
+#_CompanionsAndAlliesName3	{left: 791px; top: 911px; width: 133px; height: 22px;}
+#_CompanionsAndAlliesName4	{left: 791px; top: 940px; width: 133px; height: 25px;}
+#_CompanionsAndAlliesName5	{left: 791px; top: 970px; width: 133px; height: 22px;}
+#_CompanionsAndAlliesName6	{left: 791px; top: 999px; width: 133px; height: 19px;}
+#_CompanionsAndAlliesName7	{left: 791px; top: 1025px; width: 133px; height: 22px;}
+#_CompanionsAndAlliesName8	{left: 791px; top: 1054px; width: 133px; height: 19px;}
+#_CompanionsAndAlliesNotes1	{left: 957px; top: 860px; width: 159px; height: 19px;}
+#_CompanionsAndAlliesNotes2	{left: 957px; top: 885px; width: 159px; height: 20px;}
+#_CompanionsAndAlliesNotes3	{left: 957px; top: 911px; width: 159px; height: 22px;}
+#_CompanionsAndAlliesNotes4	{left: 957px; top: 940px; width: 159px; height: 25px;}
+#_CompanionsAndAlliesNotes5	{left: 957px; top: 970px; width: 159px; height: 22px;}
+#_CompanionsAndAlliesNotes6	{left: 957px; top: 999px; width: 159px; height: 19px;}
+#_CompanionsAndAlliesNotes7	{left: 957px; top: 1025px; width: 159px; height: 22px;}
+#_CompanionsAndAlliesNotes8	{left: 957px; top: 1054px; width: 159px; height: 19px;}
+#_OtherEquipment1	{left: 41px; top: 975px; width: 351px; height: 24px;}
+#_OtherEquipment2	{left: 41px; top: 1005px; width: 351px; height: 23px;}
+#_OtherEquipment3	{left: 41px; top: 1035px; width: 351px; height: 22px;}
+#_OtherEquipment4	{left: 41px; top: 1063px; width: 351px; height: 22px;}
+#_OtherEquipment5	{left: 41px; top: 1090px; width: 351px; height: 22px;}
+#_OtherEquipment6	{left: 41px; top: 1120px; width: 351px; height: 22px;}
+#_OtherEquipment7	{left: 41px; top: 1147px; width: 351px; height: 23px;}
+#_OtherEquipment8	{left: 41px; top: 1176px; width: 351px; height: 22px;}
+#_OtherEquipment9	{left: 41px; top: 1205px; width: 351px; height: 23px;}
+#_OtherEquipment10	{left: 41px; top: 1234px; width: 351px; height: 22px;}
+#_Rituals1	{left: 407px; top: 975px; width: 347px; height: 24px;}
+#_Rituals2	{left: 407px; top: 1005px; width: 347px; height: 23px;}
+#_Rituals3	{left: 407px; top: 1035px; width: 347px; height: 22px;}
+#_Rituals4	{left: 407px; top: 1063px; width: 347px; height: 22px;}
+#_Rituals5	{left: 407px; top: 1090px; width: 347px; height: 22px;}
+#_Rituals6	{left: 407px; top: 1120px; width: 347px; height: 22px;}
+#_Rituals7	{left: 407px; top: 1147px; width: 347px; height: 23px;}
+#_Rituals8	{left: 407px; top: 1176px; width: 347px; height: 22px;}
+#_Rituals9	{left: 407px; top: 1205px; width: 347px; height: 23px;}
+#_Rituals10	{left: 407px; top: 1234px; width: 347px; height: 22px;}
+#_SessionAndCampaignNotes1	{left: 768px; top: 1115px; width: 348px; height: 21px;}
+#_SessionAndCampaignNotes2	{left: 768px; top: 1143px; width: 348px; height: 21px;}
+#_SessionAndCampaignNotes3	{left: 768px; top: 1171px; width: 348px; height: 21px;}
+#_SessionAndCampaignNotes4	{left: 768px; top: 1199px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes5	{left: 768px; top: 1229px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes6	{left: 768px; top: 1257px; width: 348px; height: 22px;}
+#_SessionAndCampaignNotes7	{left: 768px; top: 1284px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes8	{left: 768px; top: 1313px; width: 348px; height: 22px;}
+#_SessionAndCampaignNotes9	{left: 768px; top: 1340px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes10	{left: 768px; top: 1369px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes11	{left: 768px; top: 1398px; width: 348px; height: 23px;}
+#_SessionAndCampaignNotes12	{left: 768px; top: 1427px; width: 348px; height: 23px;}
+#_CoinsAndOtherWealth	{left: 41px; top: 1293px; width: 713px; height: 159px;}
+</style>
 		<script id="userFunctions">
 			const pointBuy =  function(base, points){
 				if (base == 8) {
@@ -29,7 +536,7 @@
 			Acrobatics:"=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
 			AcrobaticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			AcrobaticsMisc:"=(2 /* Halfling */)",
-			ActionPoints:"0",
+			ActionPoints:"1",
 			Age:"19",
 			Alignment:"Unaligned",
 			Arcana:"=(ArcanaAbilModPlusHalfLevel + ArcanaTrained + ArcanaMisc)",
@@ -69,10 +576,13 @@
 			AtWillPowers3:"Mage Hand",
 			AtWillPowers3Action:"Minor",
 			AtWillPowers3Attack:"n/a",
+			AtWillPowers3Class:"Wizard Cantrip",
 			AtWillPowers3Defense:"n/a",
 			AtWillPowers3Details:"<p><b>Effect: </b>You conjure a spectral, floating hand in an unoccupied square within range.  The hand picks up, moves, or manipulates an adjacent object weighing 20 pounds or less and carries it up to 5 squares.</p>\n<p>As a move action, you can move the hand up to 5 squares.  As a minor action, you can cause the hand to pick up or manipulate a different object.</p>\n<p><b>Sustain Minor:</b> You can sustain the hand indefinitely.</p>\n<p><b>Special:</b> You can create only one hand at a time.</p>\n",
 			AtWillPowers3Keyword:"Arcane, Conjuration",
+			AtWillPowers3Level:"n/a",
 			AtWillPowers3Name:"=(AtWillPowers3)",
+			AtWillPowers3Page:"PHBp158",
 			AtWillPowers3Range:"Ranged 5",
 			AtWillPowers3Target:"n/a",
 			AtWillPowers4:"Prestigitation",
@@ -88,7 +598,7 @@
 			AtWillPowers4Page:"PHBp159",
 			AtWillPowers4Range:"2",
 			AtWillPowers4Target:"n/a",
-			AtWillPowers5:"Magic Missle: +=(Attack2AttBonus) vs Reflex, 2d4+=(IntMod +1 /*staff*/) dmg, range 20",
+			AtWillPowers5:"Magic Missle",
 			AtWillPowers5Action:"Standard",
 			AtWillPowers5Attack:"+=(Attack2AttBonus)",
 			AtWillPowers5Class:"Wizard",
@@ -99,7 +609,7 @@
 			AtWillPowers5Page:"PHB1p159",
 			AtWillPowers5Range:"Ranged 20",
 			AtWillPowers5Target:"One creature",
-			AtWillPowers6:"Scorching Burst: +=(Attack2AttBonus) vs Reflex, 1d6+=(IntMod +1 /*staff*/), burst 1 w/in 10",
+			AtWillPowers6:"Scorching Burst",
 			AtWillPowers6Action:"Standard",
 			AtWillPowers6Attack:"+=(Attack2AttBonus)",
 			AtWillPowers6Class:"Wizard",
@@ -149,23 +659,45 @@
 			ClassPathDestinyFeatures2:"Cantrips: minor at-wills",
 			ClassPathDestinyFeatures3:"Ritual Casting: bonus feat",
 			ClassPathDestinyFeatures4:"Spellbook: master rituals, alternate dailies & utilities<!--\n3 free 1st level rituals @ 1st level\n2 more free rituals of your level or lower @ 5th, 11th, 15th, 21st, & 25th levels\n\nselect an extra daily and utility power each time you gain one\nafter extended rest, can prepare a number of daily & utility spells according to what you \ncan cast per day for your level.\n-->",
-			CoinsAndOtherWealth:"Cash: =(\n +118   // haul from sewer trawl\n   -1   // Clothing 1 well worn overrobe, etc\n   -5   // Staff (small)\n   -4   // Daggers x4\n  -20   // Thieves Tool\n  -50   // Spellboo\n   -2   // Backpack\n   -1   // Belt pouch\n   -5   // 10 days rations\n   -1   // Waterskin\n +100   // Starting gold\n  -10   // Ritual Components  (used)\n)gp =(\n  +6  // haul from sewer trawl\n  -1  // Bedroll\n)sp =(\n  +7  // haul from sewer trawl\n)cp<br/>\nRitual Components: Gator eyes & liver (~20gp worth)<br/>\nBlack Marble Idol of Zehir<br/>\nGold Puzzle Ring (being held by Osmund)",
+			CoinsAndOtherWealth:"Cash: =(\n  -10   // given to Illian\n +118   // haul from sewer trawl\n   -1   // Clothing 1 well worn overrobe, etc\n   -5   // Staff (small)\n   -4   // Daggers x4\n  -20   // Thieves Tool\n  -50   // Spellboo\n   -2   // Backpack\n   -1   // Belt pouch\n   -5   // 10 days rations\n   -1   // Waterskin\n +100   // Starting gold\n  -10   // Ritual Components  (used)\n)gp =(\n  +6  // haul from sewer trawl\n  -1  // Bedroll\n)sp =(\n  +7  // haul from sewer trawl\n)cp<br/>\nRitual Components: Gator eyes & liver (~20gp worth)<br/>\nBlack Marble Idol of Zehir (being sold by Darg & Shard)<br/>\nGold Puzzle Ring",
 			Con:"=(pointBuy(10,2))",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
-			CurrentHitPoints:"=(MaxHitPoints \n- 2  // scared by face of worms\n- 9  // column's psychic blast\n- 7  // captian's spectral touch\n- 10 // blast from blinky\n+ 14 // healing word after ghost combat\n+ 7  // healing surge after ghost combat\n- 5 // hit by sword swinging skellington\n- 4 // shot by shortbow swinging skellington\n+ 8 // secondwind\n-4 // hit by another shortbow swinging skellington\n-6 // hit by helen\n-5 // hit by helen & ongoing 5\n-5 // ongoing damage\n-8 // hit by helen\n-5 // ongoing damage\n+5 // reset by healed\n+8 // beacon of hope healing\n-5 // ongoing\n+26 // 2 healing surges w. wound patch\n-9 // hit by swarm\n-5// ongoing\n-5 // hit by swarm again\n+15 // healing word\n+8 // surge after fight w/ fire bats & swarm\n-18 // necrotic burst\n+12 // healed by darg\n+2 // various and sundry things\n)",
-			CurrentSurgeUses:"=(SurgesPerDay\n -1 // healing word surge after ghost combat\n -1 // surge after ghost combat\n -1 // second wind\n -2 // healing after cloak combat\n -1 // healing word\n +6 // healing circle\n -1 // surge after fight with fire bats & swarm\n -1 // healed by darg\n -1 // healing word from darg\n)",
-			DailyPowers1:"Sleep: +=(Attack2AttBonus) vs Will, slow/fail/sleep, burst 2 w/in 20<!--\ntarget all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail -> unconsious, save ends); miss: slow (save ends) [standard action]\n-->",
+			CurrentHitPoints:"=(MaxHitPoints \n)",
+			CurrentSurgeUses:"=(SurgesPerDay\n)",
+			DailyPowers1:"Sleep",
+			DailyPowers1Action:"Standard",
+			DailyPowers1Additional:"<b>Extra:</b> Memorize at most one Daily power per day",
+			DailyPowers1Attack:"+=(Attack2AttBonus)",
 			DailyPowers1Box:true, MagicItemsWeapon2Box:true, MagicItemsArmorName:"=(MagicItemsArmor)",
+			DailyPowers1Class:"Wizard",
+			DailyPowers1Defense:"Will",
+			DailyPowers1Details:"<p><b>Hit:</b> The target is slowed (save ends).  If the target fails its first saving throw against this power, the target becomes unconscious (save ends).</p>\n<p><b>Miss:</b> The target is slowed (save ends).</p>",
+			DailyPowers1Keyword:"Arcane, Implement, Sleep",
+			DailyPowers1Level:"1",
 			DailyPowers1Name:"=(DailyPowers1)",
-			DailyPowers2:"<s>Freezing Cloud: +=(Attack2AttBonus) vs Fort, 1d8+=(IntMod +1 /*staff*/) cold, 1/2 miss</s>\n<!-- target all creatures in burst 2 w/in 10, Int vs Fort, hit: 1d8+Int cold dmg; miss: 1/2 dmg; effect: attack any creature entering cloud, starting turn their until end of next turn [standard action] -->",
+			DailyPowers1Page:"PHBp160",
+			DailyPowers1Range:"Area burst 2 within 20 squares",
+			DailyPowers1Target:"Each creature in burst",
+			DailyPowers2:"Freezing Cloud",
+			DailyPowers2Action:"Standard",
+			DailyPowers2Additional:"<b>Extra:</b> Memorize at most one Daily power per day",
+			DailyPowers2Attack:"+=(Attack2AttBonus)",
+			DailyPowers2Class:"Wizard",
+			DailyPowers2Defense:"Fortitude",
+			DailyPowers2Details:"<p><b>Hit:</b> 1d8 + =(IntMod) cold damage</p><p><b>Miss:</b> Half damage</p>\n<p><b>Effect:</b> The cloud lasts until the end of your next turn.  Any creature that enters the cloud or starts its turn there is subject to another attack.  You can dismiss the cloud as a minor action.</p>",
+			DailyPowers2Keyword:"Arcane, Cold, Implement",
+			DailyPowers2Level:"1",
 			DailyPowers2Name:"=(DailyPowers2)",
+			DailyPowers2Page:"PHB1p160",
+			DailyPowers2Range:"Area burst 2 within 10 squares",
+			DailyPowers2Target:"Each creature in burst",
 			DailyPowers3Name:"=(DailyPowers3)",
 			DailyPowers4Name:"=(DailyPowers4)",
 			DailyPowers5Name:"=(DailyPowers5)",
 			DailyPowers6Name:"=(DailyPowers6)",
-			DailyPowersCheck1:true, Damage1Abil:"=(IntMod /* melee training */)",
-			DailyPowersCheck2:true, UtilityPowersCheck1:true, Damage1Ability:"=(Attack1Ability)",
+			DailyPowersCheck2:true, Damage1Ability:"=(Attack1Ability)",
+			Damage1Abil:"=(IntMod /* melee training */)",
 			Damage1Damage:"1d4 + =(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
 			Damage1Enh:"1",
 			Dex:"=(pointBuy(10,5) + 2 /* Halfling */ + 1 /* Level 4 */)",
@@ -177,18 +709,55 @@
 			DiplomacyTrained:"=(5 /* Trained */)",
 			Dungeoneering:"=(DungeoneeringAbilModPlusHalfLevel + DungeoneeringTrained + DungeoneeringMisc)",
 			DungeoneeringAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
-			EncounterPowers1:"Force Orb: +=(Attack2AttBonus) vs Reflex, 2d8+=(IntMod) / 1d10+=(IntMod +1 /*staff*/) dmg<!--\nranged 20, secondary hits all adjacent -->",
+			EncounterPowers1:"Force Orb",
+			EncounterPowers1Action:"Standard",
+			EncounterPowers1Attack:"+=(Attack2AttBonus)",
+			EncounterPowers1Class:"Wizard",
+			EncounterPowers1Defense:"Reflex",
+			EncounterPowers1Details:"<p><b>Hit:</b> 2d8+=(IntMod) force damage.  Make a secondary attack.\n<blockquote>\n<p><b>Secondary Target:</b> Each enemy adjacent to the primary target.</p>\n<p><b>Secondary Attack:</b> +=(Attack2AttBonus) vs Reflex.</p>\n<p><b>Hit:</b> 1d10+=(IntMod) force damage.</p>\n</blockquote>\n</p>",
+			EncounterPowers1Keyword:"Arcane, Force, Implement",
+			EncounterPowers1Level:"1",
 			EncounterPowers1Name:"=(EncounterPowers1)",
-			EncounterPowers2:"Second Chance:  force reroll of attack that hits me<!-- Halfling, immediate interrupt -->",
+			EncounterPowers1Page:"PHBp160",
+			EncounterPowers1Range:"Ranged 20",
+			EncounterPowers1Target:"One creature or object",
+			EncounterPowers2:"Second Chance",
+			EncounterPowers2Action:"Interrupt",
+			EncounterPowers2Attack:"n/a",
+			EncounterPowers2Class:"Halfling Racial",
+			EncounterPowers2Defense:"n/a",
+			EncounterPowers2Details:"<b>Effect:</b> When an attack hits you, force an enemy to roll the attack again.  The enemy uses the second roll, even if it's lower.",
+			EncounterPowers2Level:"n/a",
 			EncounterPowers2Name:"=(EncounterPowers2)",
-			EncounterPowers3:"Staff Block: +1 AC <!-- Wizard implement -->",
+			EncounterPowers2Page:"PHB1p44",
+			EncounterPowers2Range:"Personal",
+			EncounterPowers2Target:"n/a",
+			EncounterPowers3:"Staff Block",
+			EncounterPowers3Action:"Interrrupt",
+			EncounterPowers3Attack:"n/a",
+			EncounterPowers3Class:"Wizard",
+			EncounterPowers3Defense:"n/a",
+			EncounterPowers3Details:"<b>Effect:</b> Gain a bonus +=(ConMod) bonus to defense.  You can declare the bonus after the Dungeon Master has already told you the damage total.",
+			EncounterPowers3Level:"n/a",
 			EncounterPowers3Name:"=(EncounterPowers3)",
-			EncounterPowers4:"Sneak Attack: +2d6 dmg w/ CA & light blade",
+			EncounterPowers3Page:"PHB1p157",
+			EncounterPowers3Range:"Personal",
+			EncounterPowers3Target:"n/a",
+			EncounterPowers4:"Sneak Attack",
+			EncounterPowers4Action:"Free",
+			EncounterPowers4Attack:"n/a",
+			EncounterPowers4Class:"Rogue Feature",
+			EncounterPowers4Defense:"n/a",
+			EncounterPowers4Details:"<p><b>Effect:</b> Once per round, when you have combat advantage against an enemy and are using a weapon from the light blade, the crossbow, or the sling weapon group, an attack you make against that enemy deals extra =(Math.ceil(Level/10)+Math.ceil(Level/20))d6 damage.</p>",
+			EncounterPowers4Level:"n/a",
 			EncounterPowers4Name:"=(EncounterPowers4)",
+			EncounterPowers4Page:"PHB1p117",
+			EncounterPowers4Range:"Personal",
+			EncounterPowers4Target:"n/a",
 			EncounterPowers5Name:"=(EncounterPowers5)",
-			EncounterPowers6:"Color Spray: +=(Attack2AttBonus) vs Will, 1d6+=(IntMod +1 /*staff*/) rad, daze, CB 3<!-- close blast 3 -->",
+			EncounterPowers6:"Color Spray",
 			EncounterPowers6Action:"Standard",
-			EncounterPowers6Attack:"=(Attack2AttBonus)",
+			EncounterPowers6Attack:"+=(Attack2AttBonus)",
 			EncounterPowers6Class:"Wizard",
 			EncounterPowers6Defense:"Willpower",
 			EncounterPowers6Details:"<b>Hit:</b> 1d6+=(IntMod + 1 /* staff of light */) radiant damage, and the target is dazed until the end of my next turn.",
@@ -198,6 +767,7 @@
 			EncounterPowers6Range:"Close blast 3",
 			EncounterPowers6Target:"Each creature in blast",
 			EncounterPowersCheck1:true, MagicItemsMisc1:"Bump & Run",
+			Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
 			EnduranceAbilModPlusHalfLevel:"=(roundDown(Level/2)+ConMod)",
 			Feats1:"Sneak of Shadows: Thievery training, Backstab<!-- first level -->",
 			Feats2:"Ritual Casting: can cast rituals<!-- wizard bonus feat -->",
@@ -231,7 +801,16 @@
 			LanguagesKnown1:"Common",
 			LanguagesKnown2:"Draconic",
 			Level:"4",
-			MagicItemsArmor:"Robe of Avoidance(E):shift after missed<!--\nencounter power, immediate reaction\nemail from JR - November 23, 2009\n-->",
+			MagicItemsArmor:"Robe of Avoidance",
+			MagicItemsArmorAction:"Reaction",
+			MagicItemsArmorAttack:"n/a",
+			MagicItemsArmorClass:"n/a",
+			MagicItemsArmorDefense:"n/a",
+			MagicItemsArmorDetails:"<p><b>Trigger:</b> You are missed by an attack.</p>\n<p><b>Effect:</b> Shift one.</p>",
+			MagicItemsArmorLevel:"n/a",
+			MagicItemsArmorPage:"n/a",
+			MagicItemsArmorRange:"Personal",
+			MagicItemsArmorTarget:"n/a",
 			MagicItemsArmsName:"=(MagicItemsArms)",
 			MagicItemsFeetName:"=(MagicItemsFeet)",
 			MagicItemsHandsName:"=(MagicItemsHands)",
@@ -275,13 +854,30 @@
 			MagicItemsRing1Name:"=(MagicItemsRing1)",
 			MagicItemsRing2Name:"=(MagicItemsRing2)",
 			MagicItemsWaistName:"=(MagicItemsWaist)",
-			MagicItemsWeapon1:"Thief's Dagger: pickpocket on hit<!--\nDaily, on a hit, make a pickpocket check ignoring the -10 for combat, w/ +1 item bonus\nemail from JR - april 1, 2010\n-->",
+			MagicItemsWeapon1:"Thief's Dagger",
+			MagicItemsWeapon1Action:"Free",
+			MagicItemsWeapon1Attack:"n/a",
+			MagicItemsWeapon1Class:"n/a",
+			MagicItemsWeapon1Defense:"n/a",
+			MagicItemsWeapon1Details:"<b>Effect:</b> On hit, make a Thievery check as a minor action.",
+			MagicItemsWeapon1Level:"n/a",
 			MagicItemsWeapon1Name:"=(MagicItemsWeapon1)",
-			MagicItemsWeapon2:"Staff of Light: lit undead take 1 radiant <!--\n\ndaily\nlight spell must be cast on tip of staff\nall undead w/in radius take 1 radiant at start of turn\n\ncritical: +1d6 dmg\nemail from JR - June 16, 2010\n -->",
+			MagicItemsWeapon1Page:"n/a",
+			MagicItemsWeapon1Range:"Melee weapon",
+			MagicItemsWeapon1Target:"One creature",
+			MagicItemsWeapon2:"Staff of Light",
+			MagicItemsWeapon2Action:"Minor",
+			MagicItemsWeapon2Attack:"n/a",
+			MagicItemsWeapon2Class:"n/a",
+			MagicItemsWeapon2Defense:"n/a",
+			MagicItemsWeapon2Details:"<p><b>Effect:</b> The burst becomes an aura (burst 5) that lasts 5 minutes or until the end of the encounter.  Each undead that begins its turn in the burst takes 1 radiant damage.</p>\n<p><b>Special:</b> You must have a light spell cast on the staff before using this item power.</p>",
+			MagicItemsWeapon2Level:"n/a",
 			MagicItemsWeapon2Name:"=(MagicItemsWeapon2)",
+			MagicItemsWeapon2Page:"n/a",
+			MagicItemsWeapon2Range:"Close burst 5",
+			MagicItemsWeapon2Target:"All undead in burst",
 			MagicItemsWeapon3Name:"=(MagicItemsWeapon3)",
 			MagicItemsWeapon4Name:"=(MagicItemsWeapon4)",
-			MagicItemsWeaponCheck2:true, Endurance:"=(EnduranceAbilModPlusHalfLevel + EnduranceTrained + EnduranceArmorPenalty + EnduranceMisc)",
 			MaxHitPoints:"=(10 /* level 1 */ + Con + (Level - 1)*( 4 /* per level */))",
 			Nature:"=(NatureAbilModPlusHalfLevel + NatureTrained + NatureMisc)",
 			NatureAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
@@ -332,11 +928,32 @@
 			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			ThieveryMisc:"=(2 /* Halfling */)",
 			ThieveryTrained:"=(\n5 // Sneak of Shadows\n)",
-			TotalExperience:"=(\n        +235    // 7/19/2010    fighting Kral, the illusionist\n        +187    // 7/12/2010    filler session between Garon & Kral\n        +203    // 6/28/2010    fighting Garon & his cloak, gloves, & skull\n        +230    // 6/21/2010    fighting pit monster, then undead shaman and pile of corpses\n        +185    // 6/14/2010    fighting sturges & firebats in cage room\n        +236    // 6/7/2010     fighting skeletons in corridor (got knocked unconscious)\n        +125    // 4/28/2010    fighting ghosts in the sewers, and collecting more faymoss\n        +175    // 4/21/2010    rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for osmund ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
-			UtilityPowers1:"<s>Expeditious Retreat: shift =(Speed*2) daily</s>",
+			TotalExperience:"=(\n        +200    // 7/26/2010    bringing back Katya's squad, getting paid off for the faymoss, meeting admiral godwin\n        +235    // 7/19/2010    fighting Kral, the illusionist\n        +187    // 7/12/2010    filler session between Garon & Kral\n        +203    // 6/28/2010    fighting Garon & his cloak, gloves, & skull\n        +230    // 6/21/2010    fighting pit monster, then undead shaman and pile of corpses\n        +185    // 6/14/2010    fighting sturges & firebats in cage room\n        +236    // 6/7/2010     fighting skeletons in corridor (got knocked unconscious)\n        +125    // 4/28/2010    fighting ghosts in the sewers, and collecting more faymoss\n        +175    // 4/21/2010    rp: going to osmund's shop and bargaining to track down who stole faymoss from osmund\n\t+175\t// 4/7/2010\tquest xp: discharged warrent to Lord Wossname to take down Tarin the Stoat\n\t+10\t// 4/7/2010\tcall & response: where house? there house\n\t+175\t// 4/7/2010\tgot orcs & ogre out of the city on a boat\n\t+200\t// 4/7/2010\troleplay via email to decide what to do with Dagog the Ogre\n\t+125\t// 4/7/2010\tdecoded alladar's tomes and found rituals\n\t+150\t// 4/7/2010\tquest xp: gathered violet faymoss for osmund ritual\n\t+100\t// 3/31/2010\tbeat tarin the stoat\n\t+200\t// 3/24/2010\torcs & bandits in stoat's den\n\t+75\t// 3/17/2010\tpuzzle lock to stoat's den\n\t+150\t// 3/10/2010\ttrapped door and giant croc\n\t+250\t// 3/3/2010\tMoral debate about orc prisoners, and looting the trunk\n\t+125\t// 2/17/2010, 2/24/2010\tCredit for playing as Salek in Corey's preview session vs. the were-rats\n\t+145\t// 11/18/2009\tDefeated group of orcs in catacombs with steamer trunk, looted robe of avoidance\n\t+154\t// 11/4/2009\tDefeated another flaming skeleton with skele-troops - scared off gaseous skull\n\t+79\t// 11/4/2009\tBeat away slimes next to pit\n\t+300\t// 10/28/2009\tFinished double combat vs. glove possessed skeletal warlords\n\t+125\t// 10/21/2009\tSolved map puzzle to open door to lower ocean catacombs\n\t+175\t// 10/14/2009\tFought Skeleton things w/ Zoran\n\t+170\t// 10/7/2009\tFought rats in crypt\n\t+190\t// 9/30/2009\tFought skeletons in catacombs beneath House of Melora\n\t+60\t// 9/30/2009\tTricked Jevram into letting us into the catacombs beneath the House of Melora w/ our weapons\n\t+121\t// 9/23/2009\tFought fowls in alchemists shop\n\t+142\t// 9/16/2009\tBrawl on the docks with pressgangers\n\t+100\t// 9/16/2009\tBarroom investigation skill challenge - find out what the Stoat is up to\n)\n",
+			UtilityPowers1:"Expeditious Retreat",
+			UtilityPowers1Action:"Move",
+			UtilityPowers1Attack:"n/a",
+			UtilityPowers1Box:true, DailyPowers2Box:true, UtilityPowers2Box:true, UtilityPowers1Additional:"<b>Extra:</b> Memorize at most one Utility power per day",
+			UtilityPowers1Class:"Wizard",
+			UtilityPowers1Defense:"n/a",
+			UtilityPowers1Details:"<b>Effect:</b> Shift up to twice your speed.",
+			UtilityPowers1Level:"2",
 			UtilityPowers1Name:"=(UtilityPowers1)",
-			UtilityPowers2:"Shield: +4 AC/Reflex for 1 turn when hit (enc)",
+			UtilityPowers1Page:"PHB1p160",
+			UtilityPowers1Range:"Personal",
+			UtilityPowers1Target:"n/a",
+			UtilityPowers2:"Shield",
+			UtilityPowers2Action:"Interrupt",
+			UtilityPowers2Additional:"<b>Extra:</b> Memorize at most one Utility power per day",
+			UtilityPowers2Attack:"n/a",
+			UtilityPowers2Class:"Wizard",
+			UtilityPowers2Defense:"n/a",
+			UtilityPowers2Details:"<p><b>Trigger:</b> You are hit by an attack.</p>\n<p><b>Effect:</b> You gain a +4 power bonus to AC and Reflex defense until the end of your next turn.</p>",
+			UtilityPowers2Keyword:"Arcane, Force",
+			UtilityPowers2Level:"2",
 			UtilityPowers2Name:"=(UtilityPowers2)",
+			UtilityPowers2Page:"PHB1p161",
+			UtilityPowers2Range:"Personal",
+			UtilityPowers2Target:"n/a",
 			UtilityPowers3Name:"=(UtilityPowers3)",
 			UtilityPowers4Name:"=(UtilityPowers4)",
 			UtilityPowers5Name:"=(UtilityPowers5)",
@@ -354,12 +971,356 @@
 			WisMod:"=(roundDown(Wis/2) - 5)",
 			WisModPlusHalfLevel:"=(WisMod + roundDown(Level/2))"
 		})</script>
-	</head><body>
+	<style type="text/css" charset="utf-8">/* See license.txt for terms of usage */
+.firebugCanvas {
+    position:fixed;
+    top: 0;
+    left: 0;
+    display:none;
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.firebugCanvas:before, .firebugCanvas:after {
+    content: "";
+}
+
+.firebugHighlight {
+    z-index: 2147483646;
+    position: fixed;
+    background-color: #3875d7;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugHighlight:before, .firebugHighlight:after {
+    content: "";
+}
+
+.firebugLayoutBoxParent {
+    z-index: 2147483646;
+    position: fixed;
+    background-color: transparent;
+    border-top: 0 none;
+    border-right: 1px dashed #E00 !important;
+    border-bottom: 1px dashed #E00 !important;
+    border-left: 0 none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.firebugRuler {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugRuler:before, .firebugRuler:after {
+    content: "";
+}
+
+.firebugRulerH {
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%13%88%00%00%00%0E%08%02%00%00%00L%25a%0A%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%04%F8IDATx%DA%EC%DD%D1n%E2%3A%00E%D1%80%F8%FF%EF%E2%AF2%95%D0D4%0E%C1%14%B0%8Fa-%E9%3E%CC%9C%87n%B9%81%A6W0%1C%A6i%9A%E7y%0As8%1CT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AATE9%FE%FCw%3E%9F%AF%2B%2F%BA%97%FDT%1D~K(%5C%9D%D5%EA%1B%5C%86%B5%A9%BDU%B5y%80%ED%AB*%03%FAV9%AB%E1%CEj%E7%82%EF%FB%18%BC%AEJ8%AB%FA'%D2%BEU9%D7U%ECc0%E1%A2r%5DynwVi%CFW%7F%BB%17%7Dy%EACU%CD%0E%F0%FA%3BX%FEbV%FEM%9B%2B%AD%BE%AA%E5%95v%AB%AA%E3E5%DCu%15rV9%07%B5%7F%B5w%FCm%BA%BE%AA%FBY%3D%14%F0%EE%C7%60%0EU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5JU%88%D3%F5%1F%AE%DF%3B%1B%F2%3E%DAUCNa%F92%D02%AC%7Dm%F9%3A%D4%F2%8B6%AE*%BF%5C%C2Ym~9g5%D0Y%95%17%7C%C8c%B0%7C%18%26%9CU%CD%13i%F7%AA%90%B3Z%7D%95%B4%C7%60%E6E%B5%BC%05%B4%FBY%95U%9E%DB%FD%1C%FC%E0%9F%83%7F%BE%17%7DkjMU%E3%03%AC%7CWj%DF%83%9An%BCG%AE%F1%95%96yQ%0Dq%5Dy%00%3Et%B5'%FC6%5DS%95pV%95%01%81%FF'%07%00%00%00%00%00%00%00%00%00%F8x%C7%F0%BE%9COp%5D%C9%7C%AD%E7%E6%EBV%FB%1E%E0(%07%E5%AC%C6%3A%ABi%9C%8F%C6%0E9%AB%C0'%D2%8E%9F%F99%D0E%B5%99%14%F5%0D%CD%7F%24%C6%DEH%B8%E9rV%DFs%DB%D0%F7%00k%FE%1D%84%84%83J%B8%E3%BA%FB%EF%20%84%1C%D7%AD%B0%8E%D7U%C8Y%05%1E%D4t%EF%AD%95Q%BF8w%BF%E9%0A%BF%EB%03%00%00%00%00%00%00%00%00%00%B8vJ%8E%BB%F5%B1u%8Cx%80%E1o%5E%CA9%AB%CB%CB%8E%03%DF%1D%B7T%25%9C%D5(%EFJM8%AB%CC'%D2%B2*%A4s%E7c6%FB%3E%FA%A2%1E%80~%0E%3E%DA%10x%5D%95Uig%15u%15%ED%7C%14%B6%87%A1%3B%FCo8%A8%D8o%D3%ADO%01%EDx%83%1A~%1B%9FpP%A3%DC%C6'%9C%95gK%00%00%00%00%00%00%00%00%00%20%D9%C9%11%D0%C0%40%AF%3F%EE%EE%92%94%D6%16X%B5%BCMH%15%2F%BF%D4%A7%C87%F1%8E%F2%81%AE%AAvzr%DA2%ABV%17%7C%E63%83%E7I%DC%C6%0Bs%1B%EF6%1E%00%00%00%00%00%00%00%00%00%80cr%9CW%FF%7F%C6%01%0E%F1%CE%A5%84%B3%CA%BC%E0%CB%AA%84%CE%F9%BF)%EC%13%08WU%AE%AB%B1%AE%2BO%EC%8E%CBYe%FE%8CN%ABr%5Dy%60~%CFA%0D%F4%AE%D4%BE%C75%CA%EDVB%EA(%B7%F1%09g%E5%D9%12%00%00%00%00%00%00%00%00%00H%F6%EB%13S%E7y%5E%5E%FB%98%F0%22%D1%B2'%A7%F0%92%B1%BC%24z3%AC%7Dm%60%D5%92%B4%7CEUO%5E%F0%AA*%3BU%B9%AE%3E%A0j%94%07%A0%C7%A0%AB%FD%B5%3F%A0%F7%03T%3Dy%D7%F7%D6%D4%C0%AAU%D2%E6%DFt%3F%A8%CC%AA%F2%86%B9%D7%F5%1F%18%E6%01%F8%CC%D5%9E%F0%F3z%88%AA%90%EF%20%00%00%00%00%00%00%00%00%00%C0%A6%D3%EA%CFi%AFb%2C%7BB%0A%2B%C3%1A%D7%06V%D5%07%A8r%5D%3D%D9%A6%CAu%F5%25%CF%A2%99%97zNX%60%95%AB%5DUZ%D5%FBR%03%AB%1C%D4k%9F%3F%BB%5C%FF%81a%AE%AB'%7F%F3%EA%FE%F3z%94%AA%D8%DF%5B%01%00%00%00%00%00%00%00%00%00%8E%FB%F3%F2%B1%1B%8DWU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*UiU%C7%BBe%E7%F3%B9%CB%AAJ%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5*%AAj%FD%C6%D4%5Eo%90%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5%86%AF%1B%9F%98%DA%EBm%BBV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%AD%D6%E4%F58%01%00%00%00%00%00%00%00%00%00%00%00%00%00%40%85%7F%02%0C%008%C2%D0H%16j%8FX%00%00%00%00IEND%AEB%60%82") repeat-x;
+    border-top: 1px solid #BBBBBB;
+    border-right: 1px dashed #BBBBBB;
+    border-bottom: 1px solid #000000;
+}
+
+.firebugRulerV {
+    top: 0;
+    left: -15px;
+    width: 14px;
+    height: 100%;
+    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%0E%00%00%13%88%08%02%00%00%00%0E%F5%CB%10%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%06~IDATx%DA%EC%DD%D1v%A20%14%40Qt%F1%FF%FF%E4%97%D9%07%3BT%19%92%DC%40(%90%EEy%9A5%CB%B6%E8%F6%9Ac%A4%CC0%84%FF%DC%9E%CF%E7%E3%F1%88%DE4%F8%5D%C7%9F%2F%BA%DD%5E%7FI%7D%F18%DDn%BA%C5%FB%DF%97%BFk%F2%10%FF%FD%B4%F2M%A7%FB%FD%FD%B3%22%07p%8F%3F%AE%E3%F4S%8A%8F%40%EEq%9D%BE8D%F0%0EY%A1Uq%B7%EA%1F%81%88V%E8X%3F%B4%CEy%B7h%D1%A2E%EBohU%FC%D9%AF2fO%8BBeD%BE%F7X%0C%97%A4%D6b7%2Ck%A5%12%E3%9B%60v%B7r%C7%1AI%8C%BD%2B%23r%00c0%B2v%9B%AD%CA%26%0C%1Ek%05A%FD%93%D0%2B%A1u%8B%16-%95q%5Ce%DCSO%8E%E4M%23%8B%F7%C2%FE%40%BB%BD%8C%FC%8A%B5V%EBu%40%F9%3B%A72%FA%AE%8C%D4%01%CC%B5%DA%13%9CB%AB%E2I%18%24%B0n%A9%0CZ*Ce%9C%A22%8E%D8NJ%1E%EB%FF%8F%AE%CAP%19*%C3%BAEKe%AC%D1%AAX%8C*%DEH%8F%C5W%A1e%AD%D4%B7%5C%5B%19%C5%DB%0D%EF%9F%19%1D%7B%5E%86%BD%0C%95%A12%AC%5B*%83%96%CAP%19%F62T%86%CAP%19*%83%96%CA%B8Xe%BC%FE)T%19%A1%17xg%7F%DA%CBP%19*%C3%BA%A52T%86%CAP%19%F62T%86%CA%B0n%A9%0CZ%1DV%C6%3D%F3%FCH%DE%B4%B8~%7F%5CZc%F1%D6%1F%AF%84%F9%0F6%E6%EBVt9%0E~%BEr%AF%23%B0%97%A12T%86%CAP%19%B4T%86%CA%B8Re%D8%CBP%19*%C3%BA%A52huX%19%AE%CA%E5%BC%0C%7B%19*CeX%B7h%A9%0C%95%E1%BC%0C%7B%19*CeX%B7T%06%AD%CB%5E%95%2B%BF.%8F%C5%97%D5%E4%7B%EE%82%D6%FB%CF-%9C%FD%B9%CF%3By%7B%19%F62T%86%CA%B0n%D1R%19*%A3%D3%CA%B0%97%A12T%86uKe%D0%EA%B02*%3F1%99%5DB%2B%A4%B5%F8%3A%7C%BA%2B%8Co%7D%5C%EDe%A8%0C%95a%DDR%19%B4T%C66%82fA%B2%ED%DA%9FC%FC%17GZ%06%C9%E1%B3%E5%2C%1A%9FoiB%EB%96%CA%A0%D5qe4%7B%7D%FD%85%F7%5B%ED_%E0s%07%F0k%951%ECr%0D%B5C%D7-g%D1%A8%0C%EB%96%CA%A0%A52T%C6)*%C3%5E%86%CAP%19%D6-%95A%EB*%95q%F8%BB%E3%F9%AB%F6%E21%ACZ%B7%22%B7%9B%3F%02%85%CB%A2%5B%B7%BA%5E%B7%9C%97%E1%BC%0C%EB%16-%95%A12z%AC%0C%BFc%A22T%86uKe%D0%EA%B02V%DD%AD%8A%2B%8CWhe%5E%AF%CF%F5%3B%26%CE%CBh%5C%19%CE%CB%B0%F3%A4%095%A1%CAP%19*Ce%A8%0C%3BO*Ce%A8%0C%95%A12%3A%AD%8C%0A%82%7B%F0v%1F%2FD%A9%5B%9F%EE%EA%26%AF%03%CA%DF9%7B%19*Ce%A8%0C%95%A12T%86%CA%B8Ze%D8%CBP%19*Ce%A8%0C%95%D1ae%EC%F7%89I%E1%B4%D7M%D7P%8BjU%5C%BB%3E%F2%20%D8%CBP%19*Ce%A8%0C%95%A12T%C6%D5*%C3%5E%86%CAP%19*Ce%B4O%07%7B%F0W%7Bw%1C%7C%1A%8C%B3%3B%D1%EE%AA%5C%D6-%EBV%83%80%5E%D0%CA%10%5CU%2BD%E07YU%86%CAP%19*%E3%9A%95%91%D9%A0%C8%AD%5B%EDv%9E%82%FFKOee%E4%8FUe%A8%0C%95%A12T%C6%1F%A9%8C%C8%3D%5B%A5%15%FD%14%22r%E7B%9F%17l%F8%BF%ED%EAf%2B%7F%CF%ECe%D8%CBP%19*Ce%A8%0C%95%E1%93~%7B%19%F62T%86%CAP%19*Ce%A8%0C%E7%13%DA%CBP%19*Ce%A8%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4%AE%A4%F5%25%C0%00%DE%BF%5C'%0F%DA%B8q%00%00%00%00IEND%AEB%60%82") repeat-y;
+    border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #000000;
+    border-bottom: 1px dashed #BBBBBB;
+}
+
+.overflowRulerX > .firebugRulerV {
+    left: 0;
+}
+
+.overflowRulerY > .firebugRulerH {
+    top: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBox {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.firebugLayoutBox:before, .firebugLayoutBox:after {
+    content: "";
+}
+
+.firebugLayoutBoxOffset {
+    z-index: 2147483646;
+    position: fixed;
+    opacity: 0.8;
+}
+
+.firebugLayoutBoxMargin {
+    background-color: #EDFF64;
+}
+
+.firebugLayoutBoxBorder {
+    background-color: #666666;
+}
+
+.firebugLayoutBoxPadding {
+    background-color: SlateBlue;
+}
+
+.firebugLayoutBoxContent {
+    background-color: SkyBlue;
+}
+
+.firebugLayoutLine {
+    z-index: 2147483646;
+    background-color: #000000;
+    opacity: 0.4;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugLayoutLine:before, .firebugLayoutLine:after {
+    content: "";
+}
+
+.firebugLayoutLineLeft, .firebugLayoutLineRight {
+    position: fixed;
+    width: 1px;
+    height: 100%;
+}
+
+.firebugLayoutLineTop, .firebugLayoutLineBottom {
+    position: fixed;
+    width: 100%;
+    height: 1px;
+}
+
+.firebugLayoutLineTop {
+    margin-top: -1px;
+    border-top: 1px solid #999999;
+}
+
+.firebugLayoutLineRight {
+    border-right: 1px solid #999999;
+}
+
+.firebugLayoutLineBottom {
+    border-bottom: 1px solid #999999;
+}
+
+.firebugLayoutLineLeft {
+    margin-left: -1px;
+    border-left: 1px solid #999999;
+}
+
+.fbProxyElement {
+    position: absolute;
+    background-color: transparent;
+    z-index: 2147483646;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+</style><style type="text/css" charset="utf-8">/* See license.txt for terms of usage */
+.firebugCanvas {
+    position:fixed;
+    top: 0;
+    left: 0;
+    display:none;
+    border: 0 none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.firebugCanvas:before, .firebugCanvas:after {
+    content: "";
+}
+
+.firebugHighlight {
+    z-index: 2147483646;
+    position: fixed;
+    background-color: #3875d7;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugHighlight:before, .firebugHighlight:after {
+    content: "";
+}
+
+.firebugLayoutBoxParent {
+    z-index: 2147483646;
+    position: fixed;
+    background-color: transparent;
+    border-top: 0 none;
+    border-right: 1px dashed #E00 !important;
+    border-bottom: 1px dashed #E00 !important;
+    border-left: 0 none;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+.firebugRuler {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugRuler:before, .firebugRuler:after {
+    content: "";
+}
+
+.firebugRulerH {
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%13%88%00%00%00%0E%08%02%00%00%00L%25a%0A%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%04%F8IDATx%DA%EC%DD%D1n%E2%3A%00E%D1%80%F8%FF%EF%E2%AF2%95%D0D4%0E%C1%14%B0%8Fa-%E9%3E%CC%9C%87n%B9%81%A6W0%1C%A6i%9A%E7y%0As8%1CT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AATE9%FE%FCw%3E%9F%AF%2B%2F%BA%97%FDT%1D~K(%5C%9D%D5%EA%1B%5C%86%B5%A9%BDU%B5y%80%ED%AB*%03%FAV9%AB%E1%CEj%E7%82%EF%FB%18%BC%AEJ8%AB%FA'%D2%BEU9%D7U%ECc0%E1%A2r%5DynwVi%CFW%7F%BB%17%7Dy%EACU%CD%0E%F0%FA%3BX%FEbV%FEM%9B%2B%AD%BE%AA%E5%95v%AB%AA%E3E5%DCu%15rV9%07%B5%7F%B5w%FCm%BA%BE%AA%FBY%3D%14%F0%EE%C7%60%0EU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5JU%88%D3%F5%1F%AE%DF%3B%1B%F2%3E%DAUCNa%F92%D02%AC%7Dm%F9%3A%D4%F2%8B6%AE*%BF%5C%C2Ym~9g5%D0Y%95%17%7C%C8c%B0%7C%18%26%9CU%CD%13i%F7%AA%90%B3Z%7D%95%B4%C7%60%E6E%B5%BC%05%B4%FBY%95U%9E%DB%FD%1C%FC%E0%9F%83%7F%BE%17%7DkjMU%E3%03%AC%7CWj%DF%83%9An%BCG%AE%F1%95%96yQ%0Dq%5Dy%00%3Et%B5'%FC6%5DS%95pV%95%01%81%FF'%07%00%00%00%00%00%00%00%00%00%F8x%C7%F0%BE%9COp%5D%C9%7C%AD%E7%E6%EBV%FB%1E%E0(%07%E5%AC%C6%3A%ABi%9C%8F%C6%0E9%AB%C0'%D2%8E%9F%F99%D0E%B5%99%14%F5%0D%CD%7F%24%C6%DEH%B8%E9rV%DFs%DB%D0%F7%00k%FE%1D%84%84%83J%B8%E3%BA%FB%EF%20%84%1C%D7%AD%B0%8E%D7U%C8Y%05%1E%D4t%EF%AD%95Q%BF8w%BF%E9%0A%BF%EB%03%00%00%00%00%00%00%00%00%00%B8vJ%8E%BB%F5%B1u%8Cx%80%E1o%5E%CA9%AB%CB%CB%8E%03%DF%1D%B7T%25%9C%D5(%EFJM8%AB%CC'%D2%B2*%A4s%E7c6%FB%3E%FA%A2%1E%80~%0E%3E%DA%10x%5D%95Uig%15u%15%ED%7C%14%B6%87%A1%3B%FCo8%A8%D8o%D3%ADO%01%EDx%83%1A~%1B%9FpP%A3%DC%C6'%9C%95gK%00%00%00%00%00%00%00%00%00%20%D9%C9%11%D0%C0%40%AF%3F%EE%EE%92%94%D6%16X%B5%BCMH%15%2F%BF%D4%A7%C87%F1%8E%F2%81%AE%AAvzr%DA2%ABV%17%7C%E63%83%E7I%DC%C6%0Bs%1B%EF6%1E%00%00%00%00%00%00%00%00%00%80cr%9CW%FF%7F%C6%01%0E%F1%CE%A5%84%B3%CA%BC%E0%CB%AA%84%CE%F9%BF)%EC%13%08WU%AE%AB%B1%AE%2BO%EC%8E%CBYe%FE%8CN%ABr%5Dy%60~%CFA%0D%F4%AE%D4%BE%C75%CA%EDVB%EA(%B7%F1%09g%E5%D9%12%00%00%00%00%00%00%00%00%00H%F6%EB%13S%E7y%5E%5E%FB%98%F0%22%D1%B2'%A7%F0%92%B1%BC%24z3%AC%7Dm%60%D5%92%B4%7CEUO%5E%F0%AA*%3BU%B9%AE%3E%A0j%94%07%A0%C7%A0%AB%FD%B5%3F%A0%F7%03T%3Dy%D7%F7%D6%D4%C0%AAU%D2%E6%DFt%3F%A8%CC%AA%F2%86%B9%D7%F5%1F%18%E6%01%F8%CC%D5%9E%F0%F3z%88%AA%90%EF%20%00%00%00%00%00%00%00%00%00%C0%A6%D3%EA%CFi%AFb%2C%7BB%0A%2B%C3%1A%D7%06V%D5%07%A8r%5D%3D%D9%A6%CAu%F5%25%CF%A2%99%97zNX%60%95%AB%5DUZ%D5%FBR%03%AB%1C%D4k%9F%3F%BB%5C%FF%81a%AE%AB'%7F%F3%EA%FE%F3z%94%AA%D8%DF%5B%01%00%00%00%00%00%00%00%00%00%8E%FB%F3%F2%B1%1B%8DWU%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*UiU%C7%BBe%E7%F3%B9%CB%AAJ%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5J%95*U%AAT%A9R%A5*%AAj%FD%C6%D4%5Eo%90%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5%86%AF%1B%9F%98%DA%EBm%BBV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%ADV%AB%D5j%B5Z%AD%D6%E4%F58%01%00%00%00%00%00%00%00%00%00%00%00%00%00%40%85%7F%02%0C%008%C2%D0H%16j%8FX%00%00%00%00IEND%AEB%60%82") repeat-x;
+    border-top: 1px solid #BBBBBB;
+    border-right: 1px dashed #BBBBBB;
+    border-bottom: 1px solid #000000;
+}
+
+.firebugRulerV {
+    top: 0;
+    left: -15px;
+    width: 14px;
+    height: 100%;
+    background: url("data:image/png,%89PNG%0D%0A%1A%0A%00%00%00%0DIHDR%00%00%00%0E%00%00%13%88%08%02%00%00%00%0E%F5%CB%10%00%00%00%04gAMA%00%00%D6%D8%D4OX2%00%00%00%19tEXtSoftware%00Adobe%20ImageReadyq%C9e%3C%00%00%06~IDATx%DA%EC%DD%D1v%A20%14%40Qt%F1%FF%FF%E4%97%D9%07%3BT%19%92%DC%40(%90%EEy%9A5%CB%B6%E8%F6%9Ac%A4%CC0%84%FF%DC%9E%CF%E7%E3%F1%88%DE4%F8%5D%C7%9F%2F%BA%DD%5E%7FI%7D%F18%DDn%BA%C5%FB%DF%97%BFk%F2%10%FF%FD%B4%F2M%A7%FB%FD%FD%B3%22%07p%8F%3F%AE%E3%F4S%8A%8F%40%EEq%9D%BE8D%F0%0EY%A1Uq%B7%EA%1F%81%88V%E8X%3F%B4%CEy%B7h%D1%A2E%EBohU%FC%D9%AF2fO%8BBeD%BE%F7X%0C%97%A4%D6b7%2Ck%A5%12%E3%9B%60v%B7r%C7%1AI%8C%BD%2B%23r%00c0%B2v%9B%AD%CA%26%0C%1Ek%05A%FD%93%D0%2B%A1u%8B%16-%95q%5Ce%DCSO%8E%E4M%23%8B%F7%C2%FE%40%BB%BD%8C%FC%8A%B5V%EBu%40%F9%3B%A72%FA%AE%8C%D4%01%CC%B5%DA%13%9CB%AB%E2I%18%24%B0n%A9%0CZ*Ce%9C%A22%8E%D8NJ%1E%EB%FF%8F%AE%CAP%19*%C3%BAEKe%AC%D1%AAX%8C*%DEH%8F%C5W%A1e%AD%D4%B7%5C%5B%19%C5%DB%0D%EF%9F%19%1D%7B%5E%86%BD%0C%95%A12%AC%5B*%83%96%CAP%19%F62T%86%CAP%19*%83%96%CA%B8Xe%BC%FE)T%19%A1%17xg%7F%DA%CBP%19*%C3%BA%A52T%86%CAP%19%F62T%86%CA%B0n%A9%0CZ%1DV%C6%3D%F3%FCH%DE%B4%B8~%7F%5CZc%F1%D6%1F%AF%84%F9%0F6%E6%EBVt9%0E~%BEr%AF%23%B0%97%A12T%86%CAP%19%B4T%86%CA%B8Re%D8%CBP%19*%C3%BA%A52huX%19%AE%CA%E5%BC%0C%7B%19*CeX%B7h%A9%0C%95%E1%BC%0C%7B%19*CeX%B7T%06%AD%CB%5E%95%2B%BF.%8F%C5%97%D5%E4%7B%EE%82%D6%FB%CF-%9C%FD%B9%CF%3By%7B%19%F62T%86%CA%B0n%D1R%19*%A3%D3%CA%B0%97%A12T%86uKe%D0%EA%B02*%3F1%99%5DB%2B%A4%B5%F8%3A%7C%BA%2B%8Co%7D%5C%EDe%A8%0C%95a%DDR%19%B4T%C66%82fA%B2%ED%DA%9FC%FC%17GZ%06%C9%E1%B3%E5%2C%1A%9FoiB%EB%96%CA%A0%D5qe4%7B%7D%FD%85%F7%5B%ED_%E0s%07%F0k%951%ECr%0D%B5C%D7-g%D1%A8%0C%EB%96%CA%A0%A52T%C6)*%C3%5E%86%CAP%19%D6-%95A%EB*%95q%F8%BB%E3%F9%AB%F6%E21%ACZ%B7%22%B7%9B%3F%02%85%CB%A2%5B%B7%BA%5E%B7%9C%97%E1%BC%0C%EB%16-%95%A12z%AC%0C%BFc%A22T%86uKe%D0%EA%B02V%DD%AD%8A%2B%8CWhe%5E%AF%CF%F5%3B%26%CE%CBh%5C%19%CE%CB%B0%F3%A4%095%A1%CAP%19*Ce%A8%0C%3BO*Ce%A8%0C%95%A12%3A%AD%8C%0A%82%7B%F0v%1F%2FD%A9%5B%9F%EE%EA%26%AF%03%CA%DF9%7B%19*Ce%A8%0C%95%A12T%86%CA%B8Ze%D8%CBP%19*Ce%A8%0C%95%D1ae%EC%F7%89I%E1%B4%D7M%D7P%8BjU%5C%BB%3E%F2%20%D8%CBP%19*Ce%A8%0C%95%A12T%C6%D5*%C3%5E%86%CAP%19*Ce%B4O%07%7B%F0W%7Bw%1C%7C%1A%8C%B3%3B%D1%EE%AA%5C%D6-%EBV%83%80%5E%D0%CA%10%5CU%2BD%E07YU%86%CAP%19*%E3%9A%95%91%D9%A0%C8%AD%5B%EDv%9E%82%FFKOee%E4%8FUe%A8%0C%95%A12T%C6%1F%A9%8C%C8%3D%5B%A5%15%FD%14%22r%E7B%9F%17l%F8%BF%ED%EAf%2B%7F%CF%ECe%D8%CBP%19*Ce%A8%0C%95%E1%93~%7B%19%F62T%86%CAP%19*Ce%A8%0C%E7%13%DA%CBP%19*Ce%A8%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4h%A9%0C%B3E%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%A9%0CZf%8B%16-Z%B4h%D1R%19f%8B%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1R%19%B4%CC%16-Z%B4h%D1%A2%A52%CC%16-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2%A52h%99-Z%B4h%D1%A2EKe%98-Z%B4h%D1%A2EKe%D02%5B%B4h%D1%A2EKe%D02%5B%B4h%D1%A2E%8B%96%CA0%5B%B4h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%96%CA%A0e%B6h%D1%A2E%8B%16-%95a%B6h%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-%95A%CBl%D1%A2E%8B%16-Z*%C3l%D1%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z*%83%96%D9%A2E%8B%16-Z%B4T%86%D9%A2E%8B%16-Z%B4T%06-%B3E%8B%16-Z%B4%AE%A4%F5%25%C0%00%DE%BF%5C'%0F%DA%B8q%00%00%00%00IEND%AEB%60%82") repeat-y;
+    border-left: 1px solid #BBBBBB;
+    border-right: 1px solid #000000;
+    border-bottom: 1px dashed #BBBBBB;
+}
+
+.overflowRulerX > .firebugRulerV {
+    left: 0;
+}
+
+.overflowRulerY > .firebugRulerH {
+    top: 0;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+.firebugLayoutBox {
+    margin: 0;
+    padding: 0;
+    border: 0 none;
+    outline: 0;
+}
+
+.firebugLayoutBox:before, .firebugLayoutBox:after {
+    content: "";
+}
+
+.firebugLayoutBoxOffset {
+    z-index: 2147483646;
+    position: fixed;
+    opacity: 0.8;
+}
+
+.firebugLayoutBoxMargin {
+    background-color: #EDFF64;
+}
+
+.firebugLayoutBoxBorder {
+    background-color: #666666;
+}
+
+.firebugLayoutBoxPadding {
+    background-color: SlateBlue;
+}
+
+.firebugLayoutBoxContent {
+    background-color: SkyBlue;
+}
+
+.firebugLayoutLine {
+    z-index: 2147483646;
+    background-color: #000000;
+    opacity: 0.4;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+
+.firebugLayoutLine:before, .firebugLayoutLine:after {
+    content: "";
+}
+
+.firebugLayoutLineLeft, .firebugLayoutLineRight {
+    position: fixed;
+    width: 1px;
+    height: 100%;
+}
+
+.firebugLayoutLineTop, .firebugLayoutLineBottom {
+    position: fixed;
+    width: 100%;
+    height: 1px;
+}
+
+.firebugLayoutLineTop {
+    margin-top: -1px;
+    border-top: 1px solid #999999;
+}
+
+.firebugLayoutLineRight {
+    border-right: 1px solid #999999;
+}
+
+.firebugLayoutLineBottom {
+    border-bottom: 1px solid #999999;
+}
+
+.firebugLayoutLineLeft {
+    margin-left: -1px;
+    border-left: 1px solid #999999;
+}
+
+.fbProxyElement {
+    position: absolute;
+    background-color: transparent;
+    z-index: 2147483646;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0 none;
+}
+</style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">AtWillPowers5Additional</div>
+				<div id="EditBoxTarget">UtilityPowers2Additional</div>
 				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">&lt;b&gt;Extra:&lt;/b&gt; Memorize at most one Utility power per day&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -374,7 +1335,7 @@
 				<span tabindex="4" class="box" id="_Class">Wizard</span>
 				<span tabindex="5" class="box" id="_ParagonPath"></span>
 				<span tabindex="6" class="box" id="_EpicDestiny"></span>
-				<span tabindex="7" class="center box" id="_TotalExperience">5072
+				<span tabindex="7" class="center box" id="_TotalExperience">5272
 </span>
 
 				<span tabindex="8" class="box" id="_Race">Halfling</span>
@@ -471,8 +1432,8 @@
 				<span tabindex="88" class="center box" id="_BloodiedHitPoints">17</span>
 				<span tabindex="89" class="center box" id="_SurgeValue">8</span>
 				<span tabindex="90" class="center box" id="_SurgesPerDay">7</span>
-				<span tabindex="91" class="center box" id="_CurrentHitPoints">27</span>
-				<span tabindex="92" class="center box" id="_CurrentSurgeUses">4</span>
+				<span tabindex="91" class="center box" id="_CurrentHitPoints">34</span>
+				<span tabindex="92" class="center box" id="_CurrentSurgeUses">7</span>
 				<input tabindex="93" class="center box" id="_SecondWindUsed" type="checkbox">
 				<span tabindex="94" class="box" id="_TemporaryHitPoints">0</span>
 				<input tabindex="95" class="center box" id="_DeathSavingThrowFailures1" type="checkbox">
@@ -482,7 +1443,7 @@
 				<span tabindex="99" class="box" id="_Resistances"></span>
 				<span tabindex="100" class="box" id="_CurrentConditionsAndEffects"></span>
 
-				<span tabindex="101" class="center box" id="_ActionPoints">0</span>
+				<span tabindex="101" class="center box" id="_ActionPoints">1</span>
 				<span tabindex="102" class="box" id="_ActionPointAddtionalEffects"></span>
 
 				<span tabindex="103" class="box" id="_RaceAbilityScoreMods">+2 Dexterity &amp; Charisma</span>
@@ -686,27 +1647,23 @@ Lost in the Crowd		p.196	 +2 to AC when adjacent to 2 larger enemies
 				<span tabindex="268" class="box" id="_AtWillPowers2">Light</span>
 				<span tabindex="269" class="box" id="_AtWillPowers3">Mage Hand</span>
 				<span tabindex="270" class="box" id="_AtWillPowers4">Prestigitation</span>
-				<span tabindex="271" class="box" id="_AtWillPowers5">Magic Missle: +7 vs Reflex, 2d4+4 dmg, range 20</span>
-				<span tabindex="272" class="box" id="_AtWillPowers6">Scorching Burst: +7 vs Reflex, 1d6+4, burst 1 w/in 10</span>
+				<span tabindex="271" class="box" id="_AtWillPowers5">Magic Missle</span>
+				<span tabindex="272" class="box" id="_AtWillPowers6">Scorching Burst</span>
 
-				<span tabindex="273" class="box" id="_EncounterPowers1">Force Orb: +7 vs Reflex, 2d8+3 / 1d10+4 dmg<!--
-ranged 20, secondary hits all adjacent --></span>
-				<span tabindex="274" class="box" id="_EncounterPowers2">Second Chance:  force reroll of attack that hits me<!-- Halfling, immediate interrupt --></span>
-				<span tabindex="275" class="box" id="_EncounterPowers3">Staff Block: +1 AC <!-- Wizard implement --></span>
-				<span tabindex="276" class="box" id="_EncounterPowers4">Sneak Attack: +2d6 dmg w/ CA &amp; light blade</span>
+				<span tabindex="273" class="box" id="_EncounterPowers1">Force Orb</span>
+				<span tabindex="274" class="box" id="_EncounterPowers2">Second Chance</span>
+				<span tabindex="275" class="box" id="_EncounterPowers3">Staff Block</span>
+				<span tabindex="276" class="box" id="_EncounterPowers4">Sneak Attack</span>
 				<span tabindex="277" class="box" id="_EncounterPowers5"></span>
-				<span tabindex="278" class="box" id="_EncounterPowers6">Color Spray: +7 vs Will, 1d6+4 rad, daze, CB 3<!-- close blast 3 --></span>
-				<span tabindex="279" class="box" id="_DailyPowers1">Sleep: +7 vs Will, slow/fail/sleep, burst 2 w/in 20<!--
-target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail -> unconsious, save ends); miss: slow (save ends) [standard action]
---></span>
-				<span tabindex="280" class="box" id="_DailyPowers2"><s>Freezing Cloud: +7 vs Fort, 1d8+4 cold, 1/2 miss</s>
-<!-- target all creatures in burst 2 w/in 10, Int vs Fort, hit: 1d8+Int cold dmg; miss: 1/2 dmg; effect: attack any creature entering cloud, starting turn their until end of next turn [standard action] --></span>
+				<span tabindex="278" class="box" id="_EncounterPowers6">Color Spray</span>
+				<span tabindex="279" class="box" id="_DailyPowers1">Sleep</span>
+				<span tabindex="280" class="box" id="_DailyPowers2">Freezing Cloud</span>
 				<span tabindex="281" class="box" id="_DailyPowers3"></span>
 				<span tabindex="282" class="box" id="_DailyPowers4"></span>
 				<span tabindex="283" class="box" id="_DailyPowers5"></span>
 				<span tabindex="284" class="box" id="_DailyPowers6"></span>
-				<span tabindex="285" class="box" id="_UtilityPowers1"><s>Expeditious Retreat: shift 12 daily</s></span>
-				<span tabindex="286" class="box" id="_UtilityPowers2">Shield: +4 AC/Reflex for 1 turn when hit (enc)</span>
+				<span tabindex="285" class="box" id="_UtilityPowers1">Expeditious Retreat</span>
+				<span tabindex="286" class="box" id="_UtilityPowers2">Shield</span>
 				<span tabindex="287" class="box" id="_UtilityPowers3"></span>
 				<span tabindex="288" class="box" id="_UtilityPowers4"></span>
 				<span tabindex="289" class="box" id="_UtilityPowers5"></span>
@@ -720,7 +1677,7 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 				<input tabindex="296" class="box" id="_EncounterPowersCheck4" type="checkbox">
 				<input tabindex="297" class="box" id="_EncounterPowersCheck5" type="checkbox">
 				<input tabindex="298" class="box edited" id="_EncounterPowersCheck6" type="checkbox">
-				<input tabindex="299" class="box" id="_DailyPowersCheck1" type="checkbox">
+				<input tabindex="299" class="box edited" id="_DailyPowersCheck1" type="checkbox">
 				<input tabindex="300" class="box edited" id="_DailyPowersCheck2" type="checkbox">
 				<input tabindex="301" class="box" id="_DailyPowersCheck3" type="checkbox">
 				<input tabindex="302" class="box" id="_DailyPowersCheck4" type="checkbox">
@@ -735,25 +1692,11 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 				<input tabindex="311" class="box" id="_UtilityPowersCheck7" type="checkbox">
 				<input tabindex="312" class="box" id="_UtilityPowersCheck8" type="checkbox">
 
-				<span tabindex="313" class="box" id="_MagicItemsWeapon1">Thief's Dagger: pickpocket on hit<!--
-Daily, on a hit, make a pickpocket check ignoring the -10 for combat, w/ +1 item bonus
-email from JR - april 1, 2010
---></span>
-				<span tabindex="314" class="box" id="_MagicItemsWeapon2">Staff of Light: lit undead take 1 radiant <!--
-
-daily
-light spell must be cast on tip of staff
-all undead w/in radius take 1 radiant at start of turn
-
-critical: +1d6 dmg
-email from JR - June 16, 2010
- --></span>
+				<span tabindex="313" class="box" id="_MagicItemsWeapon1">Thief's Dagger</span>
+				<span tabindex="314" class="box" id="_MagicItemsWeapon2">Staff of Light</span>
 				<span tabindex="315" class="box" id="_MagicItemsWeapon3"></span>
 				<span tabindex="316" class="box" id="_MagicItemsWeapon4"></span>
-				<span tabindex="317" class="box" id="_MagicItemsArmor">Robe of Avoidance(E):shift after missed<!--
-encounter power, immediate reaction
-email from JR - November 23, 2009
---></span>
+				<span tabindex="317" class="box" id="_MagicItemsArmor">Robe of Avoidance</span>
 				<span tabindex="318" class="box" id="_MagicItemsArms"></span>
 				<span tabindex="319" class="box" id="_MagicItemsFeet"></span>
 				<span tabindex="320" class="box" id="_MagicItemsHands"></span>
@@ -776,7 +1719,7 @@ email from JR - November 23, 2009
 				<span tabindex="337" class="box" id="_MagicItemsMisc12"></span>
 
 				<input tabindex="338" class="box" id="_MagicItemsWeaponCheck1" type="checkbox">
-				<input tabindex="339" class="box" id="_MagicItemsWeaponCheck2" type="checkbox">
+				<input tabindex="339" class="box edited" id="_MagicItemsWeaponCheck2" type="checkbox">
 				<input tabindex="340" class="box" id="_MagicItemsWeaponCheck3" type="checkbox">
 				<input tabindex="341" class="box" id="_MagicItemsWeaponCheck4" type="checkbox">
 				<input tabindex="342" class="box" id="_MagicItemsArmorCheck" type="checkbox">
@@ -897,10 +1840,10 @@ level 3, 680gp +1 AC, Encounter power: shift 1, [immediate reaction, when missed
 				<span tabindex="443" class="box" id="_SessionAndCampaignNotes11"></span>
 				<span tabindex="444" class="box" id="_SessionAndCampaignNotes12"></span>
 
-				<span tabindex="445" class="box" id="_CoinsAndOtherWealth">Cash: 119gp 5sp 7cp<br>
+				<span tabindex="445" class="box" id="_CoinsAndOtherWealth">Cash: 109gp 5sp 7cp<br>
 Ritual Components: Gator eyes &amp; liver (~20gp worth)<br>
-Black Marble Idol of Zehir<br>
-Gold Puzzle Ring (being held by Osmund)</span>
+Black Marble Idol of Zehir (being sold by Darg &amp; Shard)<br>
+Gold Puzzle Ring</span>
 			</div>
 			<div class="page" id="Page3">
 				<div style="display: inline-block;" id="_AtWillPowers1Card" class="power-card">
@@ -965,9 +1908,9 @@ Gold Puzzle Ring (being held by Osmund)</span>
 <p><b>Special:</b> You can create only one hand at a time.</p>
 </span>
 					<span tabindex="488" id="_AtWillPowers3Additional" class="box power-card-additional"></span>
-					<span tabindex="489" id="_AtWillPowers3Class" class="box power-card-class"></span>
-					<span tabindex="491" id="_AtWillPowers3Level" class="box power-card-level"></span>
-					<span tabindex="492" id="_AtWillPowers3Page" class="box power-card-page"></span>
+					<span tabindex="489" id="_AtWillPowers3Class" class="box power-card-class">Wizard Cantrip</span>
+					<span tabindex="491" id="_AtWillPowers3Level" class="box power-card-level">n/a</span>
+					<span tabindex="492" id="_AtWillPowers3Page" class="box power-card-page">PHBp158</span>
 					<select tabindex="493" id="_AtWillPowers3PowerType" class="power-card-power-type">
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -1008,7 +1951,7 @@ Nothing you create can deal damage or hinder.</span>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers5Card" class="power-card">
 					<img id="_AtWillPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="510" id="_AtWillPowers5Name" class="box power-card-name">Magic Missle: +7 vs Reflex, 2d4+4 dmg, range 20</span>
+					<span tabindex="510" id="_AtWillPowers5Name" class="box power-card-name">Magic Missle</span>
 					<span tabindex="511" id="_AtWillPowers5Keyword" class="box power-card-keyword">Arcane, Force, Implement</span>
 					<input tabindex="512" id="_AtWillPowers5Box" class="box power-card-box" type="checkbox">
 					<span tabindex="513" id="_AtWillPowers5Action" class="box power-card-action">Standard</span>
@@ -1031,7 +1974,7 @@ Nothing you create can deal damage or hinder.</span>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers6Card" class="power-card">
 					<img id="_AtWillPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="526" id="_AtWillPowers6Name" class="box power-card-name">Scorching Burst: +7 vs Reflex, 1d6+4, burst 1 w/in 10</span>
+					<span tabindex="526" id="_AtWillPowers6Name" class="box power-card-name">Scorching Burst</span>
 					<span tabindex="527" id="_AtWillPowers6Keyword" class="box power-card-keyword">Arcane, Fire, Implement</span>
 					<input tabindex="528" id="_AtWillPowers6Box" class="box power-card-box" type="checkbox">
 					<span tabindex="529" id="_AtWillPowers6Action" class="box power-card-action">Standard</span>
@@ -1051,23 +1994,28 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card">
 					<img id="_EncounterPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name">Force Orb: +7 vs Reflex, 2d8+3 / 1d10+4 dmg<!--
-ranged 20, secondary hits all adjacent --></span>
-					<span tabindex="543" id="_EncounterPowers1Keyword" class="box power-card-keyword"></span>
-					<input tabindex="544" id="_EncounterPowers1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="545" id="_EncounterPowers1Action" class="box power-card-action"></span>
+					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name">Force Orb</span>
+					<span tabindex="543" id="_EncounterPowers1Keyword" class="box power-card-keyword">Arcane, Force, Implement</span>
+					<input tabindex="544" id="_EncounterPowers1Box" class="box power-card-box edited" type="checkbox">
+					<span tabindex="545" id="_EncounterPowers1Action" class="box power-card-action">Standard</span>
 					<span tabindex="546" id="_EncounterPowers1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="547" id="_EncounterPowers1Range" class="box power-card-range"></span>
-					<span tabindex="548" id="_EncounterPowers1Attack" class="box power-card-attack"></span>
-					<span tabindex="549" id="_EncounterPowers1Defense" class="box power-card-defense"></span>
-					<span tabindex="550" id="_EncounterPowers1Target" class="box power-card-target"></span>
-					<span tabindex="551" id="_EncounterPowers1Details" class="box power-card-details"></span>
+					<span tabindex="547" id="_EncounterPowers1Range" class="box power-card-range">Ranged 20</span>
+					<span tabindex="548" id="_EncounterPowers1Attack" class="box power-card-attack">+7</span>
+					<span tabindex="549" id="_EncounterPowers1Defense" class="box power-card-defense">Reflex</span>
+					<span tabindex="550" id="_EncounterPowers1Target" class="box power-card-target">One creature or object</span>
+					<span tabindex="551" id="_EncounterPowers1Details" class="box power-card-details"><p><b>Hit:</b> 2d8+3 force damage.  Make a secondary attack.
+</p><blockquote>
+<p><b>Secondary Target:</b> Each enemy adjacent to the primary target.</p>
+<p><b>Secondary Attack:</b> +7 vs Reflex.</p>
+<p><b>Hit:</b> 1d10+3 force damage.</p>
+</blockquote>
+<p></p></span>
 					<span tabindex="552" id="_EncounterPowers1Additional" class="box power-card-additional"></span>
-					<span tabindex="553" id="_EncounterPowers1Class" class="box power-card-class"></span>
-					<span tabindex="555" id="_EncounterPowers1Level" class="box power-card-level"></span>
-					<span tabindex="556" id="_EncounterPowers1Page" class="box power-card-page"></span>
+					<span tabindex="553" id="_EncounterPowers1Class" class="box power-card-class">Wizard</span>
+					<span tabindex="555" id="_EncounterPowers1Level" class="box power-card-level">1</span>
+					<span tabindex="556" id="_EncounterPowers1Page" class="box power-card-page">PHBp160</span>
 					<select tabindex="557" id="_EncounterPowers1PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
@@ -1076,20 +2024,20 @@ ranged 20, secondary hits all adjacent --></span>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers2Card" class="power-card">
 					<img id="_EncounterPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name">Second Chance:  force reroll of attack that hits me<!-- Halfling, immediate interrupt --></span>
+					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name">Second Chance</span>
 					<span tabindex="559" id="_EncounterPowers2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="560" id="_EncounterPowers2Box" class="box power-card-box" type="checkbox">
-					<span tabindex="561" id="_EncounterPowers2Action" class="box power-card-action"></span>
+					<span tabindex="561" id="_EncounterPowers2Action" class="box power-card-action">Interrupt</span>
 					<span tabindex="562" id="_EncounterPowers2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="563" id="_EncounterPowers2Range" class="box power-card-range"></span>
-					<span tabindex="564" id="_EncounterPowers2Attack" class="box power-card-attack"></span>
-					<span tabindex="565" id="_EncounterPowers2Defense" class="box power-card-defense"></span>
-					<span tabindex="566" id="_EncounterPowers2Target" class="box power-card-target"></span>
-					<span tabindex="567" id="_EncounterPowers2Details" class="box power-card-details"></span>
+					<span tabindex="563" id="_EncounterPowers2Range" class="box power-card-range">Personal</span>
+					<span tabindex="564" id="_EncounterPowers2Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="565" id="_EncounterPowers2Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="566" id="_EncounterPowers2Target" class="box power-card-target">n/a</span>
+					<span tabindex="567" id="_EncounterPowers2Details" class="box power-card-details"><b>Effect:</b> When an attack hits you, force an enemy to roll the attack again.  The enemy uses the second roll, even if it's lower.</span>
 					<span tabindex="568" id="_EncounterPowers2Additional" class="box power-card-additional"></span>
-					<span tabindex="569" id="_EncounterPowers2Class" class="box power-card-class"></span>
-					<span tabindex="571" id="_EncounterPowers2Level" class="box power-card-level"></span>
-					<span tabindex="572" id="_EncounterPowers2Page" class="box power-card-page"></span>
+					<span tabindex="569" id="_EncounterPowers2Class" class="box power-card-class">Halfling Racial</span>
+					<span tabindex="571" id="_EncounterPowers2Level" class="box power-card-level">n/a</span>
+					<span tabindex="572" id="_EncounterPowers2Page" class="box power-card-page">PHB1p44</span>
 					<select tabindex="573" id="_EncounterPowers2PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
@@ -1098,20 +2046,20 @@ ranged 20, secondary hits all adjacent --></span>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers3Card" class="power-card">
 					<img id="_EncounterPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="574" id="_EncounterPowers3Name" class="box power-card-name">Staff Block: +1 AC <!-- Wizard implement --></span>
+					<span tabindex="574" id="_EncounterPowers3Name" class="box power-card-name">Staff Block</span>
 					<span tabindex="575" id="_EncounterPowers3Keyword" class="box power-card-keyword"></span>
 					<input tabindex="576" id="_EncounterPowers3Box" class="box power-card-box" type="checkbox">
-					<span tabindex="577" id="_EncounterPowers3Action" class="box power-card-action"></span>
+					<span tabindex="577" id="_EncounterPowers3Action" class="box power-card-action">Interrrupt</span>
 					<span tabindex="578" id="_EncounterPowers3AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="579" id="_EncounterPowers3Range" class="box power-card-range"></span>
-					<span tabindex="580" id="_EncounterPowers3Attack" class="box power-card-attack"></span>
-					<span tabindex="581" id="_EncounterPowers3Defense" class="box power-card-defense"></span>
-					<span tabindex="582" id="_EncounterPowers3Target" class="box power-card-target"></span>
-					<span tabindex="583" id="_EncounterPowers3Details" class="box power-card-details"></span>
+					<span tabindex="579" id="_EncounterPowers3Range" class="box power-card-range">Personal</span>
+					<span tabindex="580" id="_EncounterPowers3Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="581" id="_EncounterPowers3Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="582" id="_EncounterPowers3Target" class="box power-card-target">n/a</span>
+					<span tabindex="583" id="_EncounterPowers3Details" class="box power-card-details"><b>Effect:</b> Gain a bonus +1 bonus to defense.  You can declare the bonus after the Dungeon Master has already told you the damage total.</span>
 					<span tabindex="584" id="_EncounterPowers3Additional" class="box power-card-additional"></span>
-					<span tabindex="585" id="_EncounterPowers3Class" class="box power-card-class"></span>
-					<span tabindex="587" id="_EncounterPowers3Level" class="box power-card-level"></span>
-					<span tabindex="588" id="_EncounterPowers3Page" class="box power-card-page"></span>
+					<span tabindex="585" id="_EncounterPowers3Class" class="box power-card-class">Wizard</span>
+					<span tabindex="587" id="_EncounterPowers3Level" class="box power-card-level">n/a</span>
+					<span tabindex="588" id="_EncounterPowers3Page" class="box power-card-page">PHB1p157</span>
 					<select tabindex="589" id="_EncounterPowers3PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
@@ -1120,20 +2068,20 @@ ranged 20, secondary hits all adjacent --></span>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers4Card" class="power-card">
 					<img id="_EncounterPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="590" id="_EncounterPowers4Name" class="box power-card-name">Sneak Attack: +2d6 dmg w/ CA &amp; light blade</span>
+					<span tabindex="590" id="_EncounterPowers4Name" class="box power-card-name">Sneak Attack</span>
 					<span tabindex="591" id="_EncounterPowers4Keyword" class="box power-card-keyword"></span>
 					<input tabindex="592" id="_EncounterPowers4Box" class="box power-card-box" type="checkbox">
-					<span tabindex="593" id="_EncounterPowers4Action" class="box power-card-action"></span>
+					<span tabindex="593" id="_EncounterPowers4Action" class="box power-card-action">Free</span>
 					<span tabindex="594" id="_EncounterPowers4AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="595" id="_EncounterPowers4Range" class="box power-card-range"></span>
-					<span tabindex="596" id="_EncounterPowers4Attack" class="box power-card-attack"></span>
-					<span tabindex="597" id="_EncounterPowers4Defense" class="box power-card-defense"></span>
-					<span tabindex="598" id="_EncounterPowers4Target" class="box power-card-target"></span>
-					<span tabindex="599" id="_EncounterPowers4Details" class="box power-card-details"></span>
+					<span tabindex="595" id="_EncounterPowers4Range" class="box power-card-range">Personal</span>
+					<span tabindex="596" id="_EncounterPowers4Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="597" id="_EncounterPowers4Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="598" id="_EncounterPowers4Target" class="box power-card-target">n/a</span>
+					<span tabindex="599" id="_EncounterPowers4Details" class="box power-card-details"><p><b>Effect:</b> Once per round, when you have combat advantage against an enemy and are using a weapon from the light blade, the crossbow, or the sling weapon group, an attack you make against that enemy deals extra 2d6 damage.</p></span>
 					<span tabindex="600" id="_EncounterPowers4Additional" class="box power-card-additional"></span>
-					<span tabindex="601" id="_EncounterPowers4Class" class="box power-card-class"></span>
-					<span tabindex="603" id="_EncounterPowers4Level" class="box power-card-level"></span>
-					<span tabindex="604" id="_EncounterPowers4Page" class="box power-card-page"></span>
+					<span tabindex="601" id="_EncounterPowers4Class" class="box power-card-class">Rogue Feature</span>
+					<span tabindex="603" id="_EncounterPowers4Level" class="box power-card-level">n/a</span>
+					<span tabindex="604" id="_EncounterPowers4Page" class="box power-card-page">PHB1p117</span>
 					<select tabindex="605" id="_EncounterPowers4PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
@@ -1162,15 +2110,15 @@ ranged 20, secondary hits all adjacent --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_EncounterPowers6Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_EncounterPowers6Card" class="power-card">
 					<img id="_EncounterPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name">Color Spray: +7 vs Will, 1d6+4 rad, daze, CB 3<!-- close blast 3 --></span>
+					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name">Color Spray</span>
 					<span tabindex="623" id="_EncounterPowers6Keyword" class="box power-card-keyword"></span>
 					<input tabindex="624" id="_EncounterPowers6Box" class="box power-card-box" type="checkbox">
 					<span tabindex="625" id="_EncounterPowers6Action" class="box power-card-action">Standard</span>
 					<span tabindex="626" id="_EncounterPowers6AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="627" id="_EncounterPowers6Range" class="box power-card-range">Close blast 3</span>
-					<span tabindex="628" id="_EncounterPowers6Attack" class="box power-card-attack">7</span>
+					<span tabindex="628" id="_EncounterPowers6Attack" class="box power-card-attack">+7</span>
 					<span tabindex="629" id="_EncounterPowers6Defense" class="box power-card-defense">Willpower</span>
 					<span tabindex="630" id="_EncounterPowers6Target" class="box power-card-target">Each creature in blast</span>
 					<span tabindex="631" id="_EncounterPowers6Details" class="box power-card-details"><b>Hit:</b> 1d6+4 radiant damage, and the target is dazed until the end of my next turn.</span>
@@ -1184,24 +2132,23 @@ ranged 20, secondary hits all adjacent --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card">
 					<img id="_DailyPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name">Sleep: +7 vs Will, slow/fail/sleep, burst 2 w/in 20<!--
-target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail -> unconsious, save ends); miss: slow (save ends) [standard action]
---></span>
-					<span tabindex="639" id="_DailyPowers1Keyword" class="box power-card-keyword"></span>
+					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name">Sleep</span>
+					<span tabindex="639" id="_DailyPowers1Keyword" class="box power-card-keyword">Arcane, Implement, Sleep</span>
 					<input tabindex="640" id="_DailyPowers1Box" class="box power-card-box edited" type="checkbox">
-					<span tabindex="641" id="_DailyPowers1Action" class="box power-card-action"></span>
+					<span tabindex="641" id="_DailyPowers1Action" class="box power-card-action">Standard</span>
 					<span tabindex="642" id="_DailyPowers1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="643" id="_DailyPowers1Range" class="box power-card-range"></span>
-					<span tabindex="644" id="_DailyPowers1Attack" class="box power-card-attack"></span>
-					<span tabindex="645" id="_DailyPowers1Defense" class="box power-card-defense"></span>
-					<span tabindex="646" id="_DailyPowers1Target" class="box power-card-target"></span>
-					<span tabindex="647" id="_DailyPowers1Details" class="box power-card-details"></span>
-					<span tabindex="648" id="_DailyPowers1Additional" class="box power-card-additional"></span>
-					<span tabindex="649" id="_DailyPowers1Class" class="box power-card-class"></span>
-					<span tabindex="651" id="_DailyPowers1Level" class="box power-card-level"></span>
-					<span tabindex="652" id="_DailyPowers1Page" class="box power-card-page"></span>
+					<span tabindex="643" id="_DailyPowers1Range" class="box power-card-range">Area burst 2 within 20 squares</span>
+					<span tabindex="644" id="_DailyPowers1Attack" class="box power-card-attack">+7</span>
+					<span tabindex="645" id="_DailyPowers1Defense" class="box power-card-defense">Will</span>
+					<span tabindex="646" id="_DailyPowers1Target" class="box power-card-target">Each creature in burst</span>
+					<span tabindex="647" id="_DailyPowers1Details" class="box power-card-details"><p><b>Hit:</b> The target is slowed (save ends).  If the target fails its first saving throw against this power, the target becomes unconscious (save ends).</p>
+<p><b>Miss:</b> The target is slowed (save ends).</p></span>
+					<span tabindex="648" id="_DailyPowers1Additional" class="box power-card-additional"><b>Extra:</b> Memorize at most one Daily power per day</span>
+					<span tabindex="649" id="_DailyPowers1Class" class="box power-card-class">Wizard</span>
+					<span tabindex="651" id="_DailyPowers1Level" class="box power-card-level">1</span>
+					<span tabindex="652" id="_DailyPowers1Page" class="box power-card-page">PHBp160</span>
 					<select tabindex="653" id="_DailyPowers1PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -1210,21 +2157,21 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 				</div>
 				<div style="display: inline-block;" id="_DailyPowers2Card" class="power-card tapped">
 					<img id="_DailyPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="654" id="_DailyPowers2Name" class="box power-card-name"><s>Freezing Cloud: +7 vs Fort, 1d8+4 cold, 1/2 miss</s>
-<!-- target all creatures in burst 2 w/in 10, Int vs Fort, hit: 1d8+Int cold dmg; miss: 1/2 dmg; effect: attack any creature entering cloud, starting turn their until end of next turn [standard action] --></span>
-					<span tabindex="655" id="_DailyPowers2Keyword" class="box power-card-keyword"></span>
-					<input tabindex="656" id="_DailyPowers2Box" class="box power-card-box" type="checkbox">
-					<span tabindex="657" id="_DailyPowers2Action" class="box power-card-action"></span>
+					<span tabindex="654" id="_DailyPowers2Name" class="box power-card-name">Freezing Cloud</span>
+					<span tabindex="655" id="_DailyPowers2Keyword" class="box power-card-keyword">Arcane, Cold, Implement</span>
+					<input tabindex="656" id="_DailyPowers2Box" class="box power-card-box edited" type="checkbox">
+					<span tabindex="657" id="_DailyPowers2Action" class="box power-card-action">Standard</span>
 					<span tabindex="658" id="_DailyPowers2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="659" id="_DailyPowers2Range" class="box power-card-range"></span>
-					<span tabindex="660" id="_DailyPowers2Attack" class="box power-card-attack"></span>
-					<span tabindex="661" id="_DailyPowers2Defense" class="box power-card-defense"></span>
-					<span tabindex="662" id="_DailyPowers2Target" class="box power-card-target"></span>
-					<span tabindex="663" id="_DailyPowers2Details" class="box power-card-details"></span>
-					<span tabindex="664" id="_DailyPowers2Additional" class="box power-card-additional"></span>
-					<span tabindex="665" id="_DailyPowers2Class" class="box power-card-class"></span>
-					<span tabindex="667" id="_DailyPowers2Level" class="box power-card-level"></span>
-					<span tabindex="668" id="_DailyPowers2Page" class="box power-card-page"></span>
+					<span tabindex="659" id="_DailyPowers2Range" class="box power-card-range">Area burst 2 within 10 squares</span>
+					<span tabindex="660" id="_DailyPowers2Attack" class="box power-card-attack">+7</span>
+					<span tabindex="661" id="_DailyPowers2Defense" class="box power-card-defense">Fortitude</span>
+					<span tabindex="662" id="_DailyPowers2Target" class="box power-card-target">Each creature in burst</span>
+					<span tabindex="663" id="_DailyPowers2Details" class="box power-card-details"><p><b>Hit:</b> 1d8 + 3 cold damage</p><p><b>Miss:</b> Half damage</p>
+<p><b>Effect:</b> The cloud lasts until the end of your next turn.  Any creature that enters the cloud or starts its turn there is subject to another attack.  You can dismiss the cloud as a minor action.</p></span>
+					<span tabindex="664" id="_DailyPowers2Additional" class="box power-card-additional"><b>Extra:</b> Memorize at most one Daily power per day</span>
+					<span tabindex="665" id="_DailyPowers2Class" class="box power-card-class">Wizard</span>
+					<span tabindex="667" id="_DailyPowers2Level" class="box power-card-level">1</span>
+					<span tabindex="668" id="_DailyPowers2Page" class="box power-card-page">PHB1p160</span>
 					<select tabindex="669" id="_DailyPowers2PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -1319,22 +2266,22 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_UtilityPowers1Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_UtilityPowers1Card" class="power-card">
 					<img id="_UtilityPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="734" id="_UtilityPowers1Name" class="box power-card-name"><s>Expeditious Retreat: shift 12 daily</s></span>
+					<span tabindex="734" id="_UtilityPowers1Name" class="box power-card-name">Expeditious Retreat</span>
 					<span tabindex="735" id="_UtilityPowers1Keyword" class="box power-card-keyword"></span>
-					<input tabindex="736" id="_UtilityPowers1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="737" id="_UtilityPowers1Action" class="box power-card-action"></span>
+					<input tabindex="736" id="_UtilityPowers1Box" class="box power-card-box edited" type="checkbox">
+					<span tabindex="737" id="_UtilityPowers1Action" class="box power-card-action">Move</span>
 					<span tabindex="738" id="_UtilityPowers1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="739" id="_UtilityPowers1Range" class="box power-card-range"></span>
-					<span tabindex="740" id="_UtilityPowers1Attack" class="box power-card-attack"></span>
-					<span tabindex="741" id="_UtilityPowers1Defense" class="box power-card-defense"></span>
-					<span tabindex="742" id="_UtilityPowers1Target" class="box power-card-target"></span>
-					<span tabindex="743" id="_UtilityPowers1Details" class="box power-card-details"></span>
-					<span tabindex="744" id="_UtilityPowers1Additional" class="box power-card-additional"></span>
-					<span tabindex="745" id="_UtilityPowers1Class" class="box power-card-class"></span>
-					<span tabindex="747" id="_UtilityPowers1Level" class="box power-card-level"></span>
-					<span tabindex="748" id="_UtilityPowers1Page" class="box power-card-page"></span>
+					<span tabindex="739" id="_UtilityPowers1Range" class="box power-card-range">Personal</span>
+					<span tabindex="740" id="_UtilityPowers1Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="741" id="_UtilityPowers1Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="742" id="_UtilityPowers1Target" class="box power-card-target">n/a</span>
+					<span tabindex="743" id="_UtilityPowers1Details" class="box power-card-details"><b>Effect:</b> Shift up to twice your speed.</span>
+					<span tabindex="744" id="_UtilityPowers1Additional" class="box power-card-additional"><b>Extra:</b> Memorize at most one Utility power per day</span>
+					<span tabindex="745" id="_UtilityPowers1Class" class="box power-card-class">Wizard</span>
+					<span tabindex="747" id="_UtilityPowers1Level" class="box power-card-level">2</span>
+					<span tabindex="748" id="_UtilityPowers1Page" class="box power-card-page">PHB1p160</span>
 					<select tabindex="749" id="_UtilityPowers1PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -1342,21 +2289,22 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_UtilityPowers2Card" class="power-card tapped">
-					<img id="_UtilityPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="750" id="_UtilityPowers2Name" class="box power-card-name">Shield: +4 AC/Reflex for 1 turn when hit (enc)</span>
-					<span tabindex="751" id="_UtilityPowers2Keyword" class="box power-card-keyword"></span>
-					<input tabindex="752" id="_UtilityPowers2Box" class="box power-card-box" type="checkbox">
-					<span tabindex="753" id="_UtilityPowers2Action" class="box power-card-action"></span>
+					<img id="_UtilityPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="750" id="_UtilityPowers2Name" class="box power-card-name">Shield</span>
+					<span tabindex="751" id="_UtilityPowers2Keyword" class="box power-card-keyword">Arcane, Force</span>
+					<input tabindex="752" id="_UtilityPowers2Box" class="box power-card-box edited" type="checkbox">
+					<span tabindex="753" id="_UtilityPowers2Action" class="box power-card-action">Interrupt</span>
 					<span tabindex="754" id="_UtilityPowers2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="755" id="_UtilityPowers2Range" class="box power-card-range"></span>
-					<span tabindex="756" id="_UtilityPowers2Attack" class="box power-card-attack"></span>
-					<span tabindex="757" id="_UtilityPowers2Defense" class="box power-card-defense"></span>
-					<span tabindex="758" id="_UtilityPowers2Target" class="box power-card-target"></span>
-					<span tabindex="759" id="_UtilityPowers2Details" class="box power-card-details"></span>
-					<span tabindex="760" id="_UtilityPowers2Additional" class="box power-card-additional"></span>
-					<span tabindex="761" id="_UtilityPowers2Class" class="box power-card-class"></span>
-					<span tabindex="763" id="_UtilityPowers2Level" class="box power-card-level"></span>
-					<span tabindex="764" id="_UtilityPowers2Page" class="box power-card-page"></span>
+					<span tabindex="755" id="_UtilityPowers2Range" class="box power-card-range">Personal</span>
+					<span tabindex="756" id="_UtilityPowers2Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="757" id="_UtilityPowers2Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="758" id="_UtilityPowers2Target" class="box power-card-target">n/a</span>
+					<span tabindex="759" id="_UtilityPowers2Details" class="box power-card-details"><p><b>Trigger:</b> You are hit by an attack.</p>
+<p><b>Effect:</b> You gain a +4 power bonus to AC and Reflex defense until the end of your next turn.</p></span>
+					<span tabindex="760" id="_UtilityPowers2Additional" class="box power-card-additional"><b>Extra:</b> Memorize at most one Utility power per day</span>
+					<span tabindex="761" id="_UtilityPowers2Class" class="box power-card-class">Wizard</span>
+					<span tabindex="763" id="_UtilityPowers2Level" class="box power-card-level">2</span>
+					<span tabindex="764" id="_UtilityPowers2Page" class="box power-card-page">PHB1p161</span>
 					<select tabindex="765" id="_UtilityPowers2PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -1497,53 +2445,43 @@ target all creatures in burst 2 w/in 20, Int vs Will, hit: slow (save ends; fail
 				</div>
 				<div style="display: inline-block;" id="_MagicItemsWeapon1Card" class="power-card">
 					<img id="_MagicItemsWeapon1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="446" id="_MagicItemsWeapon1Name" class="box power-card-name">Thief's Dagger: pickpocket on hit<!--
-Daily, on a hit, make a pickpocket check ignoring the -10 for combat, w/ +1 item bonus
-email from JR - april 1, 2010
---></span>
+					<span tabindex="446" id="_MagicItemsWeapon1Name" class="box power-card-name">Thief's Dagger</span>
 					<span tabindex="447" id="_MagicItemsWeapon1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="448" id="_MagicItemsWeapon1Box" class="box power-card-box" type="checkbox">
-					<span tabindex="449" id="_MagicItemsWeapon1Action" class="box power-card-action"></span>
+					<span tabindex="449" id="_MagicItemsWeapon1Action" class="box power-card-action">Free</span>
 					<span tabindex="450" id="_MagicItemsWeapon1AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="451" id="_MagicItemsWeapon1Range" class="box power-card-range"></span>
-					<span tabindex="452" id="_MagicItemsWeapon1Attack" class="box power-card-attack"></span>
-					<span tabindex="453" id="_MagicItemsWeapon1Defense" class="box power-card-defense"></span>
-					<span tabindex="454" id="_MagicItemsWeapon1Target" class="box power-card-target"></span>
-					<span tabindex="455" id="_MagicItemsWeapon1Details" class="box power-card-details"></span>
+					<span tabindex="451" id="_MagicItemsWeapon1Range" class="box power-card-range">Melee weapon</span>
+					<span tabindex="452" id="_MagicItemsWeapon1Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="453" id="_MagicItemsWeapon1Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="454" id="_MagicItemsWeapon1Target" class="box power-card-target">One creature</span>
+					<span tabindex="455" id="_MagicItemsWeapon1Details" class="box power-card-details"><b>Effect:</b> On hit, make a Thievery check as a minor action.</span>
 					<span tabindex="456" id="_MagicItemsWeapon1Additional" class="box power-card-additional"></span>
-					<span tabindex="457" id="_MagicItemsWeapon1Class" class="box power-card-class"></span>
-					<span tabindex="459" id="_MagicItemsWeapon1Level" class="box power-card-level"></span>
-					<span tabindex="460" id="_MagicItemsWeapon1Page" class="box power-card-page"></span>
+					<span tabindex="457" id="_MagicItemsWeapon1Class" class="box power-card-class">n/a</span>
+					<span tabindex="459" id="_MagicItemsWeapon1Level" class="box power-card-level">n/a</span>
+					<span tabindex="460" id="_MagicItemsWeapon1Page" class="box power-card-page">n/a</span>
 					<select tabindex="461" id="_MagicItemsWeapon1PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_MagicItemsWeapon2Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_MagicItemsWeapon2Card" class="power-card">
 					<img id="_MagicItemsWeapon2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="462" id="_MagicItemsWeapon2Name" class="box power-card-name">Staff of Light: lit undead take 1 radiant <!--
-
-daily
-light spell must be cast on tip of staff
-all undead w/in radius take 1 radiant at start of turn
-
-critical: +1d6 dmg
-email from JR - June 16, 2010
- --></span>
+					<span tabindex="462" id="_MagicItemsWeapon2Name" class="box power-card-name">Staff of Light</span>
 					<span tabindex="463" id="_MagicItemsWeapon2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="464" id="_MagicItemsWeapon2Box" class="box power-card-box edited" type="checkbox">
-					<span tabindex="465" id="_MagicItemsWeapon2Action" class="box power-card-action"></span>
+					<span tabindex="465" id="_MagicItemsWeapon2Action" class="box power-card-action">Minor</span>
 					<span tabindex="466" id="_MagicItemsWeapon2AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="467" id="_MagicItemsWeapon2Range" class="box power-card-range"></span>
-					<span tabindex="468" id="_MagicItemsWeapon2Attack" class="box power-card-attack"></span>
-					<span tabindex="469" id="_MagicItemsWeapon2Defense" class="box power-card-defense"></span>
-					<span tabindex="470" id="_MagicItemsWeapon2Target" class="box power-card-target"></span>
-					<span tabindex="471" id="_MagicItemsWeapon2Details" class="box power-card-details"></span>
+					<span tabindex="467" id="_MagicItemsWeapon2Range" class="box power-card-range">Close burst 5</span>
+					<span tabindex="468" id="_MagicItemsWeapon2Attack" class="box power-card-attack">n/a</span>
+					<span tabindex="469" id="_MagicItemsWeapon2Defense" class="box power-card-defense">n/a</span>
+					<span tabindex="470" id="_MagicItemsWeapon2Target" class="box power-card-target">All undead in burst</span>
+					<span tabindex="471" id="_MagicItemsWeapon2Details" class="box power-card-details"><p><b>Effect:</b> The burst becomes an aura (burst 5) that lasts 5 minutes or until the end of the encounter.  Each undead that begins its turn in the burst takes 1 radiant damage.</p>
+<p><b>Special:</b> You must have a light spell cast on the staff before using this item power.</p></span>
 					<span tabindex="472" id="_MagicItemsWeapon2Additional" class="box power-card-additional"></span>
-					<span tabindex="473" id="_MagicItemsWeapon2Class" class="box power-card-class"></span>
-					<span tabindex="475" id="_MagicItemsWeapon2Level" class="box power-card-level"></span>
-					<span tabindex="476" id="_MagicItemsWeapon2Page" class="box power-card-page"></span>
+					<span tabindex="473" id="_MagicItemsWeapon2Class" class="box power-card-class">n/a</span>
+					<span tabindex="475" id="_MagicItemsWeapon2Level" class="box power-card-level">n/a</span>
+					<span tabindex="476" id="_MagicItemsWeapon2Page" class="box power-card-page">n/a</span>
 					<select tabindex="477" id="_MagicItemsWeapon2PowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -1595,24 +2533,22 @@ email from JR - June 16, 2010
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_MagicItemsArmorCard" class="power-card">
-					<img id="_MagicItemsArmorImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">Robe of Avoidance(E):shift after missed<!--
-encounter power, immediate reaction
-email from JR - November 23, 2009
---></span>
+					<img id="_MagicItemsArmorImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">Robe of Avoidance</span>
 					<span tabindex="511" id="_MagicItemsArmorKeyword" class="box power-card-keyword"></span>
 					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box" type="checkbox">
-					<span tabindex="513" id="_MagicItemsArmorAction" class="box power-card-action"></span>
+					<span tabindex="513" id="_MagicItemsArmorAction" class="box power-card-action">Reaction</span>
 					<span tabindex="514" id="_MagicItemsArmorAttackType" class="box power-card-attack-type"></span>
-					<span tabindex="515" id="_MagicItemsArmorRange" class="box power-card-range"></span>
-					<span tabindex="516" id="_MagicItemsArmorAttack" class="box power-card-attack"></span>
-					<span tabindex="517" id="_MagicItemsArmorDefense" class="box power-card-defense"></span>
-					<span tabindex="518" id="_MagicItemsArmorTarget" class="box power-card-target"></span>
-					<span tabindex="519" id="_MagicItemsArmorDetails" class="box power-card-details"></span>
+					<span tabindex="515" id="_MagicItemsArmorRange" class="box power-card-range">Personal</span>
+					<span tabindex="516" id="_MagicItemsArmorAttack" class="box power-card-attack">n/a</span>
+					<span tabindex="517" id="_MagicItemsArmorDefense" class="box power-card-defense">n/a</span>
+					<span tabindex="518" id="_MagicItemsArmorTarget" class="box power-card-target">n/a</span>
+					<span tabindex="519" id="_MagicItemsArmorDetails" class="box power-card-details"><p><b>Trigger:</b> You are missed by an attack.</p>
+<p><b>Effect:</b> Shift one.</p></span>
 					<span tabindex="520" id="_MagicItemsArmorAdditional" class="box power-card-additional"></span>
-					<span tabindex="521" id="_MagicItemsArmorClass" class="box power-card-class"></span>
-					<span tabindex="523" id="_MagicItemsArmorLevel" class="box power-card-level"></span>
-					<span tabindex="524" id="_MagicItemsArmorPage" class="box power-card-page"></span>
+					<span tabindex="521" id="_MagicItemsArmorClass" class="box power-card-class">n/a</span>
+					<span tabindex="523" id="_MagicItemsArmorLevel" class="box power-card-level">n/a</span>
+					<span tabindex="524" id="_MagicItemsArmorPage" class="box power-card-page">n/a</span>
 					<select tabindex="525" id="_MagicItemsArmorPowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
