@@ -122,7 +122,18 @@
 			AtWillPowers3Target:"One ally",
 			AtWillPowers4Name:"=(AtWillPowers4)",
 			AtWillPowers5Name:"=(AtWillPowers5)",
+			AtWillPowers6:"Charger's Call",
+			AtWillPowers6Action:"Standard",
+			AtWillPowers6Attack:"+=(ChaModPlusHalfLevel+3+1/*rapier songblade +1*/)",
+			AtWillPowers6Class:"Bard",
+			AtWillPowers6Defense:"AC",
+			AtWillPowers6Details:"<b>Hit:</b> 2d8+=(ChaMod +1) damage (rapier songblade +1) and each ally within 5 squares gains a +=(1+ConMod /*Virtue of Valor*/) bonus to attack rolls while charging until the end of your next turn.",
+			AtWillPowers6Keyword:"Arcane, Weapon",
+			AtWillPowers6Level:"3",
 			AtWillPowers6Name:"=(AtWillPowers6)",
+			AtWillPowers6Page:"PHB2p70",
+			AtWillPowers6Range:"Melee Weapon",
+			AtWillPowers6Target:"One creature",
 			Athletics:"=(AthleticsAbilModPlusHalfLevel + AthleticsTrained + AthleticsArmorPenalty + AthleticsMisc)",
 			AthleticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+StrMod)",
 			AthleticsMisc:"=(1 /* bard: skill versatility */)",
@@ -166,12 +177,12 @@
 			ClassPathDestinyFeatures7:"Virtue of Valor: =(1+2*roundDown((Level-1)/10)+ConMod) temp HP to ally on enemy fall<!--\n once per round, to an ally w/in 5, when ally reduces an enemy to 0 or bloodies an enemy, grant temp HP as a free action -->",
 			ClassPathDestinyFeatures8:"Majestic Word encounter power",
 			ClassPathDestinyFeatures9:"Multiclass Versatility: More than one multiclass",
-			CoinsAndOtherWealth:"=(\n +20 // gold found on thug#2\n -15 // adventurer's kit\n  -5 // flute\n  -1 // beltpouch\n -30 // fine clothing\n  -1 // dagger\n+100 // starting money\n) gp",
+			CoinsAndOtherWealth:"=(\n+100 // reward for completing water quest\n +20 // gold found on thug#2\n -15 // adventurer's kit\n  -5 // flute\n  -1 // beltpouch\n -30 // fine clothing\n  -1 // dagger\n+100 // starting money\n) gp",
 			Con:"=(pointBuy(10,9))",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
-			CurrentHitPoints:"=(\n+4 // restored by gurnis's charge\n-7 // hit by a cutpurse\n+MaxHitPoints)",
-			CurrentSurgeUses:"=(SurgesPerDay\n-2 // partial success trying to save the ship\n)",
+			CurrentHitPoints:"=(\n-1 // fall in cold water\n-1 // fall in cold water\n+MaxHitPoints)",
+			CurrentSurgeUses:"=(SurgesPerDay\n-5 // lost in avalanche\n)",
 			DailyPowers1:"Slayer's Song",
 			DailyPowers1Action:"Standard",
 			DailyPowers1Attack:"+=(ChaModPlusHalfLevel+3+1/*rapier songblade +1*/)",
@@ -307,7 +318,7 @@
 			IntimidateMisc:"=(2 /* drow */ + 1 /* bard: skill versatility */)",
 			LanguagesKnown1:"Common",
 			LanguagesKnown2:"Elven",
-			Level:"2",
+			Level:"3",
 			MagicItemsArmor:"Leather Armor of Luring Withdrawl +1",
 			MagicItemsArmorAction:"Reaction",
 			MagicItemsArmorAttack:"n/a",
@@ -329,7 +340,6 @@
 			MagicItemsMisc12Action:"Free",
 			MagicItemsMisc12Additional:"Regain after each extended rest or milestone.",
 			MagicItemsMisc12Attack:"n/a",
-			MagicItemsMisc12Box:true,
 			MagicItemsMisc12Class:"n/a",
 			MagicItemsMisc12Defense:"n/a",
 			MagicItemsMisc12Details:"<b>Effect:</b> Take a Standard, Move, or Minor action.",
@@ -348,7 +358,7 @@
 			MagicItemsMisc8Name:"=(MagicItemsMisc8)",
 			MagicItemsMisc9Name:"=(MagicItemsMisc9)",
 			MagicItemsNeck:"Amulet of Protection +1",
-			MagicItemsNeckCheck:true, EncounterPowersCheck4:true, MagicItemsNeckDetails:"No Power",
+			MagicItemsNeckCheck:true, MagicItemsNeckDetails:"No Power",
 			MagicItemsNeckName:"=(MagicItemsNeck)",
 			MagicItemsRing1Name:"=(MagicItemsRing1)",
 			MagicItemsRing2Name:"=(MagicItemsRing2)",
@@ -378,6 +388,7 @@
 			OtherEquipment5:"Belt Pouch",
 			OtherEquipment6:"Flute",
 			OtherEquipment7:"Ritual Book <!-- Bardic Training --> (small flipbook of musical notes)",
+			OtherEquipment8:"adventurer's kit",
 			PassiveInsight:"=(10+PassiveInsightSkillBonus)",
 			PassiveInsightSkillBonus:"=(Insight)",
 			PassivePerception:"=(10+PassivePerceptionSkillBonus)",
@@ -421,7 +432,7 @@
 			Thievery:"=(ThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc)",
 			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			ThieveryMisc:"=(1 /* bard: skill versatility */)",
-			TotalExperience:"=(\n1000 // start at level 2\n)",
+			TotalExperience:"=(\n1000 // start at level 2\n+1500 // upto beatign the goblin horde\n)",
 			UtilityPowers1:"Song of Courage",
 			UtilityPowers1Action:"Minor",
 			UtilityPowers1Attack:"n/a",
@@ -626,9 +637,9 @@
 </style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">EncounterPowers4Additional</div>
+				<div id="EditBoxTarget">EncounterPowers1Target</div>
 				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">One creature&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -639,11 +650,11 @@
 				<span tabindex="1" class="box" id="_PlayerName">Noah Luck Easterly</span>
 
 				<span tabindex="2" class="box" id="_CharacterName">Timothy Underleaf</span>
-				<span tabindex="3" class="center box" id="_Level">2</span>
+				<span tabindex="3" class="center box" id="_Level">3</span>
 				<span tabindex="4" class="box" id="_Class">Bard</span>
 				<span tabindex="5" class="box" id="_ParagonPath"></span>
 				<span tabindex="6" class="box" id="_EpicDestiny"></span>
-				<span tabindex="7" class="center box" id="_TotalExperience">1000</span>
+				<span tabindex="7" class="center box" id="_TotalExperience">2500</span>
 
 				<span tabindex="8" class="box" id="_Race">Shade Elf (Drow)</span>
 				<span tabindex="9" class="box" id="_Size">Medium</span>
@@ -735,12 +746,12 @@
 				<span tabindex="85" class="center box" id="_PassivePerceptionSkillBonus">5</span>
 				<span tabindex="86" class="box" id="_SpecialSenses">Darkvision</span>
 
-				<span tabindex="87" class="center box" id="_MaxHitPoints">33</span>
-				<span tabindex="88" class="center box" id="_BloodiedHitPoints">16</span>
-				<span tabindex="89" class="center box" id="_SurgeValue">8</span>
+				<span tabindex="87" class="center box" id="_MaxHitPoints">38</span>
+				<span tabindex="88" class="center box" id="_BloodiedHitPoints">19</span>
+				<span tabindex="89" class="center box" id="_SurgeValue">9</span>
 				<span tabindex="90" class="center box" id="_SurgesPerDay">10</span>
-				<span tabindex="91" class="center box" id="_CurrentHitPoints">30</span>
-				<span tabindex="92" class="center box" id="_CurrentSurgeUses">8</span>
+				<span tabindex="91" class="center box" id="_CurrentHitPoints">36</span>
+				<span tabindex="92" class="center box" id="_CurrentSurgeUses">5</span>
 				<input tabindex="93" class="center box" id="_SecondWindUsed" type="checkbox">
 				<span tabindex="94" class="box" id="_TemporaryHitPoints"></span>
 				<input tabindex="95" class="center box" id="_DeathSavingThrowFailures1" type="checkbox">
@@ -947,7 +958,7 @@ Longsword, Scimitar, Short Sword
 				<span tabindex="269" class="box" id="_AtWillPowers3">Virtue of Valor</span>
 				<span tabindex="270" class="box" id="_AtWillPowers4"></span>
 				<span tabindex="271" class="box" id="_AtWillPowers5"></span>
-				<span tabindex="272" class="box" id="_AtWillPowers6"></span>
+				<span tabindex="272" class="box" id="_AtWillPowers6">Charger's Call</span>
 
 				<span tabindex="273" class="box" id="_EncounterPowers1">Darkfire</span>
 				<span tabindex="274" class="box" id="_EncounterPowers2">Cloud of Darkness</span>
@@ -1107,7 +1118,7 @@ Longsword, Scimitar, Short Sword
 				<span tabindex="417" class="box" id="_OtherEquipment5">Belt Pouch</span>
 				<span tabindex="418" class="box" id="_OtherEquipment6">Flute</span>
 				<span tabindex="419" class="box" id="_OtherEquipment7">Ritual Book <!-- Bardic Training --> (small flipbook of musical notes)</span>
-				<span tabindex="420" class="box" id="_OtherEquipment8"></span>
+				<span tabindex="420" class="box" id="_OtherEquipment8">adventurer's kit</span>
 				<span tabindex="421" class="box" id="_OtherEquipment9"></span>
 				<span tabindex="422" class="box" id="_OtherEquipment10"></span>
 
@@ -1136,7 +1147,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 				<span tabindex="443" class="box" id="_SessionAndCampaignNotes11"></span>
 				<span tabindex="444" class="box" id="_SessionAndCampaignNotes12"></span>
 
-				<span tabindex="445" class="box" id="_CoinsAndOtherWealth">68 gp</span>
+				<span tabindex="445" class="box" id="_CoinsAndOtherWealth">168 gp</span>
 			</div>
 			<div class="page" id="Page3">
 				<div style="display: inline-block;" id="_AtWillPowers1Card" class="power-card">
@@ -1250,22 +1261,22 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: none;" id="_AtWillPowers6Card" class="power-card">
-					<img id="_AtWillPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png">
-					<span tabindex="526" id="_AtWillPowers6Name" class="box power-card-name">0</span>
-					<span tabindex="527" id="_AtWillPowers6Keyword" class="box power-card-keyword"></span>
+				<div style="display: inline-block;" id="_AtWillPowers6Card" class="power-card">
+					<img id="_AtWillPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
+					<span tabindex="526" id="_AtWillPowers6Name" class="box power-card-name">Charger's Call</span>
+					<span tabindex="527" id="_AtWillPowers6Keyword" class="box power-card-keyword">Arcane, Weapon</span>
 					<input tabindex="528" id="_AtWillPowers6Box" class="box power-card-box" type="checkbox">
-					<span tabindex="529" id="_AtWillPowers6Action" class="box power-card-action"></span>
+					<span tabindex="529" id="_AtWillPowers6Action" class="box power-card-action">Standard</span>
 					<span tabindex="530" id="_AtWillPowers6AttackType" class="box power-card-attack-type"></span>
-					<span tabindex="531" id="_AtWillPowers6Range" class="box power-card-range"></span>
-					<span tabindex="532" id="_AtWillPowers6Attack" class="box power-card-attack"></span>
-					<span tabindex="533" id="_AtWillPowers6Defense" class="box power-card-defense"></span>
-					<span tabindex="534" id="_AtWillPowers6Target" class="box power-card-target"></span>
-					<span tabindex="535" id="_AtWillPowers6Details" class="box power-card-details"></span>
+					<span tabindex="531" id="_AtWillPowers6Range" class="box power-card-range">Melee Weapon</span>
+					<span tabindex="532" id="_AtWillPowers6Attack" class="box power-card-attack">+9</span>
+					<span tabindex="533" id="_AtWillPowers6Defense" class="box power-card-defense">AC</span>
+					<span tabindex="534" id="_AtWillPowers6Target" class="box power-card-target">One creature</span>
+					<span tabindex="535" id="_AtWillPowers6Details" class="box power-card-details"><b>Hit:</b> 2d8+5 damage (rapier songblade +1) and each ally within 5 squares gains a +4 bonus to attack rolls while charging until the end of your next turn.</span>
 					<span tabindex="536" id="_AtWillPowers6Additional" class="box power-card-additional"></span>
-					<span tabindex="537" id="_AtWillPowers6Class" class="box power-card-class"></span>
-					<span tabindex="539" id="_AtWillPowers6Level" class="box power-card-level"></span>
-					<span tabindex="540" id="_AtWillPowers6Page" class="box power-card-page"></span>
+					<span tabindex="537" id="_AtWillPowers6Class" class="box power-card-class">Bard</span>
+					<span tabindex="539" id="_AtWillPowers6Level" class="box power-card-level">3</span>
+					<span tabindex="540" id="_AtWillPowers6Page" class="box power-card-page">PHB2p70</span>
 					<select tabindex="541" id="_AtWillPowers6PowerType" class="power-card-power-type">
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -1810,7 +1821,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 					<img id="_MagicItemsArmorImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">Leather Armor of Luring Withdrawl +1</span>
 					<span tabindex="511" id="_MagicItemsArmorKeyword" class="box power-card-keyword"></span>
-					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box" type="checkbox">
+					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box edited" type="checkbox">
 					<span tabindex="513" id="_MagicItemsArmorAction" class="box power-card-action">Reaction</span>
 					<span tabindex="514" id="_MagicItemsArmorAttackType" class="box power-card-attack-type"></span>
 					<span tabindex="515" id="_MagicItemsArmorRange" class="box power-card-range">n/a</span>
@@ -2247,11 +2258,11 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_MagicItemsMisc12Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_MagicItemsMisc12Card" class="power-card">
 					<img id="_MagicItemsMisc12Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="830" id="_MagicItemsMisc12Name" class="box power-card-name">Action Point</span>
 					<span tabindex="831" id="_MagicItemsMisc12Keyword" class="box power-card-keyword"></span>
-					<input tabindex="832" id="_MagicItemsMisc12Box" class="box power-card-box" type="checkbox">
+					<input tabindex="832" id="_MagicItemsMisc12Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="833" id="_MagicItemsMisc12Action" class="box power-card-action">Free</span>
 					<span tabindex="834" id="_MagicItemsMisc12AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="835" id="_MagicItemsMisc12Range" class="box power-card-range">Personal</span>
