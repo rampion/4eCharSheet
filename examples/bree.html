@@ -661,7 +661,7 @@ ul{ margin: 0; }
 			Con:"=(pointBuy(10,2))",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
-			CurrentHitPoints:"=(MaxHitPoints\n-4 // wretched howl by pack leader\n+4 // healed by darg\n-11 // psychic damage from wolf howl\n-9  // chomped by wolf\n+13 // inspiring word from lenora\n-9  // blinding hex\n-14 // hit by scimitar\n-7 // hit by scimitar\n+3 // zone of healing\n+10 // second wind\n-11 // hex bolt\n)",
+			CurrentHitPoints:"=(MaxHitPoints\n-4 // wretched howl by pack leader\n+4 // healed by darg\n-11 // psychic damage from wolf howl\n-9  // chomped by wolf\n+13 // inspiring word from lenora\n-9  // blinding hex\n-14 // hit by scimitar\n-7 // hit by scimitar\n+3 // zone of healing\n+10 // second wind\n-11 // hex bolt\n+20 // healed by Darg\n)",
 			CurrentSurgeUses:"=(SurgesPerDay\n-1 // inspiring word\n-1 // second wind\n)",
 			DailyPowers1:"Sleep",
 			DailyPowers1Action:"Standard",
@@ -743,6 +743,7 @@ ul{ margin: 0; }
 			EncounterPowers2:"Second Chance",
 			EncounterPowers2Action:"Interrupt",
 			EncounterPowers2Attack:"n/a",
+			EncounterPowers2Box:true, DailyPowers1Box:true, Thievery:"=(ThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryMisc)",
 			EncounterPowers2Class:"Halfling Racial",
 			EncounterPowers2Defense:"n/a",
 			EncounterPowers2Details:"<b>Effect:</b> When an attack hits you, force an enemy to roll the attack again.  The enemy uses the second roll, even if it's lower.",
@@ -873,8 +874,7 @@ ul{ margin: 0; }
 			MagicItemsMisc4:"Bellringer",
 			MagicItemsMisc4Action:"Free",
 			MagicItemsMisc4Additional:"One time use",
-			MagicItemsMisc4Box:true, EncounterPowers1Box:true, EncounterPowers2Box:true, MagicItemsArmorBox:true, EncounterPowers6Box:true, MagicItemsMisc2Box:true, DailyPowers3Box:true, SecondWindUsed:true,
-			MagicItemsMisc4Class:"n/a",
+			MagicItemsMisc4Box:true, MagicItemsArmorBox:true, MagicItemsMisc2Box:true, DailyPowers3Box:true, MagicItemsMisc4Class:"n/a",
 			MagicItemsMisc4Details:"<b>Effect:</b> Daily or Encounter Power becomes reliable stunned saved ends (until end of encounter)",
 			MagicItemsMisc4Keyword:"table of fun",
 			MagicItemsMisc4Level:"n/a",
@@ -1351,9 +1351,9 @@ ul{ margin: 0; }
 </style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">ClassPathDestinyFeatures1</div>
+				<div id="EditBoxTarget">Thievery</div>
 				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">=(ThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryMisc)&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -1465,7 +1465,7 @@ ul{ margin: 0; }
 				<span tabindex="88" class="center box" id="_BloodiedHitPoints">19</span>
 				<span tabindex="89" class="center box" id="_SurgeValue">9</span>
 				<span tabindex="90" class="center box" id="_SurgesPerDay">7</span>
-				<span tabindex="91" class="center box" id="_CurrentHitPoints">3</span>
+				<span tabindex="91" class="center box" id="_CurrentHitPoints">23</span>
 				<span tabindex="92" class="center box" id="_CurrentSurgeUses">5</span>
 				<input tabindex="93" class="center box edited" id="_SecondWindUsed" type="checkbox">
 				<span tabindex="94" class="box" id="_TemporaryHitPoints">0</span>
@@ -1560,7 +1560,7 @@ ul{ margin: 0; }
 				<span tabindex="173" class="center box" id="_Religion">5</span>
 				<span tabindex="174" class="center box" id="_Stealth">5</span>
 				<span tabindex="175" class="center box" id="_Streetwise">3</span>
-				<span tabindex="176" class="center box" id="_Thievery"></span>
+				<span tabindex="176" class="center box" id="_Thievery">12</span>
 
 				<span tabindex="177" class="center box" id="_AcrobaticsAbilModPlusHalfLevel">5</span>
 				<span tabindex="178" class="center box" id="_ArcanaAbilModPlusHalfLevel">5</span>
@@ -2026,11 +2026,11 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card">
 					<img id="_EncounterPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name">Force Orb</span>
 					<span tabindex="543" id="_EncounterPowers1Keyword" class="box power-card-keyword">Arcane, Force, Implement</span>
-					<input tabindex="544" id="_EncounterPowers1Box" class="box power-card-box" type="checkbox">
+					<input tabindex="544" id="_EncounterPowers1Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="545" id="_EncounterPowers1Action" class="box power-card-action">Standard</span>
 					<span tabindex="546" id="_EncounterPowers1AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="547" id="_EncounterPowers1Range" class="box power-card-range">Ranged 20</span>
@@ -2058,7 +2058,7 @@ Nothing you create can deal damage or hinder.</span>
 					<img id="_EncounterPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name">Second Chance</span>
 					<span tabindex="559" id="_EncounterPowers2Keyword" class="box power-card-keyword"></span>
-					<input tabindex="560" id="_EncounterPowers2Box" class="box power-card-box edited" type="checkbox">
+					<input tabindex="560" id="_EncounterPowers2Box" class="box power-card-box" type="checkbox">
 					<span tabindex="561" id="_EncounterPowers2Action" class="box power-card-action">Interrupt</span>
 					<span tabindex="562" id="_EncounterPowers2AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="563" id="_EncounterPowers2Range" class="box power-card-range">Personal</span>
@@ -2142,11 +2142,11 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_EncounterPowers6Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_EncounterPowers6Card" class="power-card">
 					<img id="_EncounterPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="622" id="_EncounterPowers6Name" class="box power-card-name">Color Spray</span>
 					<span tabindex="623" id="_EncounterPowers6Keyword" class="box power-card-keyword"></span>
-					<input tabindex="624" id="_EncounterPowers6Box" class="box power-card-box" type="checkbox">
+					<input tabindex="624" id="_EncounterPowers6Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="625" id="_EncounterPowers6Action" class="box power-card-action">Standard</span>
 					<span tabindex="626" id="_EncounterPowers6AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="627" id="_EncounterPowers6Range" class="box power-card-range">Close blast 3</span>
@@ -2164,7 +2164,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card">
+				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card tapped">
 					<img id="_DailyPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name">Sleep</span>
 					<span tabindex="639" id="_DailyPowers1Keyword" class="box power-card-keyword">Arcane, Implement, Sleep</span>

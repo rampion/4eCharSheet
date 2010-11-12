@@ -182,7 +182,6 @@
 			Con:"=(pointBuy(10,9) + 1 /* level 4 */)",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
-			CurrentConditionsAndEffects:"ongoing 2 cold",
 			CurrentHitPoints:"=(\n+MaxHitPoints)",
 			CurrentSurgeUses:"=(SurgesPerDay\n)",
 			DailyPowers1:"Slayer's Song",
@@ -639,9 +638,9 @@
 </style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">CharacterName</div>
+				<div id="EditBoxTarget">AtWillPowers2Details</div>
 				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">Timothy Underleaf&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">&lt;b&gt;Hit:&lt;/b&gt; =(tier(Level) &gt;= 2 ? 2 : 1)d6+=(ChaMod + 1) damage (songblade implement), and the target takes a -2 penalty to attack rolls until the end of my next turn&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -761,7 +760,7 @@
 				<input tabindex="97" class="center box" id="_DeathSavingThrowFailures3" type="checkbox">
 				<span tabindex="98" class="box" id="_SavingThrowMods"></span>
 				<span tabindex="99" class="box" id="_Resistances"></span>
-				<span tabindex="100" class="box" id="_CurrentConditionsAndEffects">ongoing 2 cold</span>
+				<span tabindex="100" class="box" id="_CurrentConditionsAndEffects"></span>
 
 				<span tabindex="101" class="center box" id="_ActionPoints">1</span>
 				<span tabindex="102" class="box" id="_ActionPointAddtionalEffects"></span>
