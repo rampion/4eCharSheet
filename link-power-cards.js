@@ -4,11 +4,11 @@
 		"http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png", 
 		"http://rampion.github.com/4eCharSheet/PowerCard-Daily.png"
 	];
-	const addClass = function(elt, class) {
+	const addClass = function(elt, klass) {
 		const classes = elt.className.split(' ');
-		if (classes.indexOf(class) < 0)
+		if (classes.indexOf(klass) < 0)
 		{
-			classes.push(class);
+			classes.push(klass);
 			elt.className = classes.join(' ');
 			return true;
 		}
@@ -17,9 +17,9 @@
 			return false;
 		}
 	};
-	const remClass = function(elt, class) {
+	const remClass = function(elt, klass) {
 		const classes = elt.className.split(' ');
-		const i = classes.indexOf(class);
+		const i = classes.indexOf(klass);
 		if (i >= 0)
 		{
 			classes.splice(i,1);
