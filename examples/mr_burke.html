@@ -51,7 +51,7 @@
 			Acrobatics:"=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
 			AcrobaticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			ActionPointAddtionalEffects:"enemies take -2 to all attacks until end of next turn<!-- Staggering Fury, PHB2p63-->",
-			ActionPoints:"1",
+			ActionPoints:"2",
 			Affiliation:"Regolith Risk Management LLC",
 			Age:"49",
 			Alignment:"Evil",
@@ -134,12 +134,12 @@
 			ClassPathDestinyFeatures7:"<li style=\"background:yellow\">if bloody enemy, +=(ChaMod) to anyone's next att vs enemy</li><!-- PHB2p49-->",
 			ClassPathDestinyFeatures8:"Rage Strike: daily power<!-- PHB2p49-->",
 			ClassPathDestinyFeatures9:"Rampage: free melee basic after critical hit<!-- PHB2p49-->",
-			CoinsAndOtherWealth:"=(\n-50   // everburning torch\n-30   // chain\n-30   // fine clothing\n-15   // adventurer's kit\n-2600 // Cloak of resistance\n-1800 // Horned Helm\n+5000 // starting gold, level 11\n)gp",
+			CoinsAndOtherWealth:"=(\n-1    // 10 silver\n-50   // everburning torch\n-30   // chain\n-30   // fine clothing\n-15   // adventurer's kit\n-2600 // Cloak of resistance\n-1800 // Horned Helm\n+5000 // starting gold, level 11\n)gp\n\n=(\n-5     // vest repair\n+10    // 1 gold\n)sp",
 			Con:"=(pointBuy(10,7) + 1 /* level 11 */)",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
-			CurrentHitPoints:"=(MaxHitPoints)",
-			CurrentSurgeUses:"=(SurgesPerDay)",
+			CurrentHitPoints:"=(MaxHitPoints\n+19 // healed by field\n+27 // second wind\n-25 // foot spears\n-10 // hit by johnny rifles\n-11 // hit by johnny rifles\n)",
+			CurrentSurgeUses:"=(SurgesPerDay\n-1 // second wind\n)",
 			DailyPowers1:"Swift Panther Rage",
 			DailyPowers1Action:"Standard",
 			DailyPowers1Attack:"+=(Attack1AttBonus)",
@@ -224,7 +224,7 @@
 			EncounterPowers2Attack:"+=(Attack1AttBonus)",
 			EncounterPowers2Class:"Barbarian",
 			EncounterPowers2Defense:"AC",
-			EncounterPowers2Details:"<b>Hit:</b> =(weap(2,Damage1Damage)).  If you or the target is bloodied, =(weap(3,Damage1Damage)) damage.",
+			EncounterPowers2Details:"<b>Hit:</b> =(weap(2,Damage1Damage)).  If you or the target is bloodied, =(\nweap(3,Damage1Damage)) damage.",
 			EncounterPowers2Keyword:"Primal, Weapon",
 			EncounterPowers2Level:"3",
 			EncounterPowers2Name:"=(EncounterPowers2)",
@@ -272,7 +272,7 @@
 			EncounterPowers6Attack:"n/a",
 			EncounterPowers6Class:"Barbarian",
 			EncounterPowers6Defense:"n/a",
-			EncounterPowers6Details:"<b>Effect:</b> Each target takes a -2 penalty to all defenses until the end of your next turn.  While raging, the range increases, and you gain a +2 power bonus to weapon damage rolls until the end of your next turn.",
+			EncounterPowers6Details:"<p><b>Trigger:</b> Your attack reduces an enemy to 0 hit points.</p>\n<p><b>Effect:</b> Each target takes a -2 penalty to all defenses until the end of your next turn.  While raging, the range increases, and you gain a +2 power bonus to weapon damage rolls until the end of your next turn.</p>",
 			EncounterPowers6Keyword:"Fear, Primal",
 			EncounterPowers6Level:"n/a",
 			EncounterPowers6Name:"=(EncounterPowers6)",
@@ -394,6 +394,7 @@
 			ReflexEnh:"=(2 /* cloak of resistance */)",
 			Religion:"=(ReligionAbilModPlusHalfLevel + ReligionTrained + ReligionMisc)",
 			ReligionAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
+			Resistances:"11 Radiant (encounter)",
 			Size:"Med",
 			Speed:"=(SpeedBase+SpeedArmor+SpeedItem+SpeedMisc)",
 			SpeedBase:"=(6 /* dragonborn */)",
@@ -405,7 +406,7 @@
 			Streetwise:"=(StreetwiseAbilModPlusHalfLevel + StreetwiseTrained + StreetwiseMisc)",
 			StreetwiseAbilModPlusHalfLevel:"=(roundDown(Level/2)+ChaMod)",
 			SurgeValue:"=(roundDown(MaxHitPoints/4) + ConMod /* Dragonborn */ + 2 /* Belt of Vigor */)",
-			SurgesPerDay:"0",
+			SurgesPerDay:"=(8+ConMod)",
 			Thievery:"=(ThieveryAbilModPlusHalfLevel + ThieveryTrained + ThieveryArmorPenalty + ThieveryMisc)",
 			ThieveryAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			TotalExperience:"0",
@@ -462,9 +463,9 @@
 	</head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">CoinsAndOtherWealth</div>
-				<textarea style="height: 193px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">=(<br>-50&nbsp;  // everburning torch<br>-30&nbsp;  // chain<br>-30&nbsp;  // fine clothing<br>-15&nbsp;  // adventurer's kit<br>-2600 // Cloak of resistance<br>-1800 // Horned Helm<br>+5000 // starting gold, level 11<br>)gp&nbsp;</div>
+				<div id="EditBoxTarget">RaceFeatures2</div>
+				<textarea style="height: 39px;" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">Dragonborn Fury: &lt;span style="background:yellow"&gt;+1r attack while bloodied&lt;/span&gt;&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -574,19 +575,19 @@
 				<span tabindex="87" class="center box" id="_MaxHitPoints">88</span>
 				<span tabindex="88" class="center box" id="_BloodiedHitPoints">44</span>
 				<span tabindex="89" class="center box" id="_SurgeValue">27</span>
-				<span tabindex="90" class="center box" id="_SurgesPerDay">0</span>
+				<span tabindex="90" class="center box" id="_SurgesPerDay">11</span>
 				<span tabindex="91" class="center box" id="_CurrentHitPoints">88</span>
-				<span tabindex="92" class="center box" id="_CurrentSurgeUses">0</span>
-				<input tabindex="93" class="center box" id="_SecondWindUsed" type="checkbox">
+				<span tabindex="92" class="center box" id="_CurrentSurgeUses">10</span>
+				<input tabindex="93" class="center box edited" id="_SecondWindUsed" type="checkbox">
 				<span tabindex="94" class="box" id="_TemporaryHitPoints"></span>
 				<input tabindex="95" class="center box" id="_DeathSavingThrowFailures1" type="checkbox">
 				<input tabindex="96" class="center box" id="_DeathSavingThrowFailures2" type="checkbox">
 				<input tabindex="97" class="center box" id="_DeathSavingThrowFailures3" type="checkbox">
 				<span tabindex="98" class="box" id="_SavingThrowMods"></span>
-				<span tabindex="99" class="box" id="_Resistances"></span>
+				<span tabindex="99" class="box" id="_Resistances">11 Radiant (encounter)</span>
 				<span tabindex="100" class="box" id="_CurrentConditionsAndEffects"></span>
 
-				<span tabindex="101" class="center box" id="_ActionPoints">1</span>
+				<span tabindex="101" class="center box" id="_ActionPoints">2</span>
 				<span tabindex="102" class="box" id="_ActionPointAddtionalEffects">enemies take -2 to all attacks until end of next turn<!-- Staggering Fury, PHB2p63--></span>
 
 				<span tabindex="103" class="box" id="_RaceAbilityScoreMods">+2 Str, +2 Cha</span>
@@ -964,7 +965,9 @@
 				<span tabindex="443" class="box" id="_SessionAndCampaignNotes11"></span>
 				<span tabindex="444" class="box" id="_SessionAndCampaignNotes12"></span>
 
-				<span tabindex="445" class="box" id="_CoinsAndOtherWealth">475gp</span>
+				<span tabindex="445" class="box" id="_CoinsAndOtherWealth">474gp
+
+5sp</span>
 			</div>
 			<div class="page" id="Page3">
 				<div style="display: inline-block;" id="_AtWillPowers1Card" class="power-card">
@@ -1106,7 +1109,7 @@
 					<img id="_EncounterPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name">Vault the Fallen</span>
 					<span tabindex="543" id="_EncounterPowers1Keyword" class="box power-card-keyword">Primal, Weapon</span>
-					<input tabindex="544" id="_EncounterPowers1Box" class="box power-card-box" type="checkbox">
+					<input tabindex="544" id="_EncounterPowers1Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="545" id="_EncounterPowers1Action" class="box power-card-action">Standard</span>
 					<span tabindex="546" id="_EncounterPowers1AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="547" id="_EncounterPowers1Range" class="box power-card-range">Melee Weapon</span>
@@ -1129,7 +1132,7 @@
 					<img id="_EncounterPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name">Blood Strike</span>
 					<span tabindex="559" id="_EncounterPowers2Keyword" class="box power-card-keyword">Primal, Weapon</span>
-					<input tabindex="560" id="_EncounterPowers2Box" class="box power-card-box" type="checkbox">
+					<input tabindex="560" id="_EncounterPowers2Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="561" id="_EncounterPowers2Action" class="box power-card-action">Standard</span>
 					<span tabindex="562" id="_EncounterPowers2AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="563" id="_EncounterPowers2Range" class="box power-card-range">Melee weapon</span>
@@ -1151,7 +1154,7 @@
 					<img id="_EncounterPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="574" id="_EncounterPowers3Name" class="box power-card-name">Curtain of Steel</span>
 					<span tabindex="575" id="_EncounterPowers3Keyword" class="box power-card-keyword">Primal, Weapon</span>
-					<input tabindex="576" id="_EncounterPowers3Box" class="box power-card-box" type="checkbox">
+					<input tabindex="576" id="_EncounterPowers3Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="577" id="_EncounterPowers3Action" class="box power-card-action">Reaction</span>
 					<span tabindex="578" id="_EncounterPowers3AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="579" id="_EncounterPowers3Range" class="box power-card-range">Melee 1</span>
@@ -1197,7 +1200,7 @@
 					<img id="_EncounterPowers5Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="606" id="_EncounterPowers5Name" class="box power-card-name">Dragon Breath</span>
 					<span tabindex="607" id="_EncounterPowers5Keyword" class="box power-card-keyword">Poison</span>
-					<input tabindex="608" id="_EncounterPowers5Box" class="box power-card-box" type="checkbox">
+					<input tabindex="608" id="_EncounterPowers5Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="609" id="_EncounterPowers5Action" class="box power-card-action">Minor</span>
 					<span tabindex="610" id="_EncounterPowers5AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="611" id="_EncounterPowers5Range" class="box power-card-range">Close blast 3</span>
@@ -1226,7 +1229,8 @@
 					<span tabindex="628" id="_EncounterPowers6Attack" class="box power-card-attack">n/a</span>
 					<span tabindex="629" id="_EncounterPowers6Defense" class="box power-card-defense">n/a</span>
 					<span tabindex="630" id="_EncounterPowers6Target" class="box power-card-target">Each enemy in burst</span>
-					<span tabindex="631" id="_EncounterPowers6Details" class="box power-card-details"><b>Effect:</b> Each target takes a -2 penalty to all defenses until the end of your next turn.  While raging, the range increases, and you gain a +2 power bonus to weapon damage rolls until the end of your next turn.</span>
+					<span tabindex="631" id="_EncounterPowers6Details" class="box power-card-details"><p><b>Trigger:</b> Your attack reduces an enemy to 0 hit points.</p>
+<p><b>Effect:</b> Each target takes a -2 penalty to all defenses until the end of your next turn.  While raging, the range increases, and you gain a +2 power bonus to weapon damage rolls until the end of your next turn.</p></span>
 					<span tabindex="632" id="_EncounterPowers6Additional" class="box power-card-additional"></span>
 					<span tabindex="633" id="_EncounterPowers6Class" class="box power-card-class">Barbarian</span>
 					<span tabindex="635" id="_EncounterPowers6Level" class="box power-card-level">n/a</span>
@@ -1389,7 +1393,7 @@
 					<img id="_UtilityPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="734" id="_UtilityPowers1Name" class="box power-card-name">Combat Sprint</span>
 					<span tabindex="735" id="_UtilityPowers1Keyword" class="box power-card-keyword">Primal</span>
-					<input tabindex="736" id="_UtilityPowers1Box" class="box power-card-box" type="checkbox">
+					<input tabindex="736" id="_UtilityPowers1Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="737" id="_UtilityPowers1Action" class="box power-card-action">Move</span>
 					<span tabindex="738" id="_UtilityPowers1AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="739" id="_UtilityPowers1Range" class="box power-card-range">Personal</span>

@@ -75,7 +75,7 @@
 			Acrobatics:"=(AcrobaticsAbilModPlusHalfLevel + AcrobaticsTrained + AcrobaticsArmorPenalty + AcrobaticsMisc)",
 			AcrobaticsAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
 			AcrobaticsMisc:"=(1 /* bard: skill versatility */)",
-			ActionPoints:"=(\n+1 // starting\n)",
+			ActionPoints:"=(\n+1 // starting\n-1 // tried to attack\n)",
 			Age:"35",
 			Alignment:"Lawful Good",
 			Arcana:"=(ArcanaAbilModPlusHalfLevel + ArcanaTrained + ArcanaMisc)",
@@ -182,8 +182,8 @@
 			Con:"=(pointBuy(10,9) + 1 /* level 4 */)",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
-			CurrentHitPoints:"=(\n+11   // second wind\n+15 // Majestic word\n-12 // hit by arrow\n-11 // hit by totem\n-15 // hit and marked by captain\n-5 // hit by totem damage\n+MaxHitPoints)",
-			CurrentSurgeUses:"=(SurgesPerDay\n)",
+			CurrentHitPoints:"=(\n-7 // hit by arrow\n-9 // hit by thugs\n-5 // hit by arrow\n+SurgeValue + 4 // majestic word\n-13 // hit by club\n-10 // hit by club\n-5 // hit by arrow\n+SurgeValue + 4 // majestic word\n-23 // hit by clubs\n+SurgeValue // second wind\n-5 // hit by arrow\n+2*(SurgeValue+4) // post-combat healing\n-5 // poison cloud\n-5 // poison cloud\n-11 // hit by a tree\n-5 // acidic slam\n-9 // oww\n-3 // hit by spiky plant\n+SurgeValue // second wind\n+2*(SurgeValue+4)\n+MaxHitPoints)",
+			CurrentSurgeUses:"=(SurgesPerDay\n-1 // wake up in a tree\n-1 // majestic word\n-1 // majestic word\n-1 // second wind\n-2 // post combat healing\n-1 // lost in the wilderness\n-1 // second wind\n-2 // post combat healing\n)",
 			DailyPowers1:"Slayer's Song",
 			DailyPowers1Action:"Standard",
 			DailyPowers1Attack:"+=(ChaModPlusHalfLevel+3+1/*rapier songblade +1*/+1 /* versatile expertise */)",
@@ -222,7 +222,6 @@
 			EncounterPowers1Action:"Minor",
 			EncounterPowers1Additional:"<b>Special:</b> Can use either this or Cloud of Darkness in a single encounter.",
 			EncounterPowers1Attack:"+=(ChaModPlusHalfLevel+2+2*roundDown((Level+9)/10))",
-			EncounterPowers1Box:true, AtWillPowers6Box:true, EncounterPowers2Box:true, EncounterPowers3Box:true, SecondWindUsed:true,
 			EncounterPowers1Class:"Drow Racial",
 			EncounterPowers1Defense:"Reflex",
 			EncounterPowers1Details:"<b>Hit</b>: Until the end of your next turn, all attacks against the target have combat advantage, and the target cannot benefit from invisibility or concealment.",
@@ -268,6 +267,7 @@
 			EncounterPowers5:"Shout of Triumph",
 			EncounterPowers5Action:"Standard",
 			EncounterPowers5Attack:"+=(ChaModPlusHalfLevel +1 /*songblade implement*/+1 /* versatile expertise */)",
+			EncounterPowers5Box:true, DailyPowers1Box:true, MagicItemsArmorBox:true, EncounterPowers3Box:true, MagicItemsMisc12Box:true, EncounterPowers1Box:true, EncounterPowers2Box:true, Resistances:"5 cold <!-- frostwolf pelt -->",
 			EncounterPowers5Class:"Bard",
 			EncounterPowers5Defense:"Fortitude",
 			EncounterPowers5Details:"<p><b>Hit:</b> 1d6+=(ChaMod+1) thunder damage (songblade implement), and you push the target =(ConMod) squres.</p>\n<p><b>Effect:</b> Slide each ally in the blast 1 square.</p>",
@@ -280,6 +280,7 @@
 			EncounterPowers6:"Battle Feint",
 			EncounterPowers6Action:"Minor",
 			EncounterPowers6Attack:"+=(Bluff)",
+			EncounterPowers6Box:true, SecondWindUsed:true, AtWillPowers6Box:true, DailyPowersCheck1:true,
 			EncounterPowers6Class:"Bluff Skill Power",
 			EncounterPowers6Defense:"P. Insight",
 			EncounterPowers6Details:"<b>Effect:</b> You make a Bluff check opposed by the target's passive Insight check.  If the check succeeds, one ally adjacent to you gains combat advantage against the target for that ally's next attack against it before the end of your next turn.",
@@ -298,7 +299,7 @@
 			Fortitude10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Fortitude:"=(Fortitude10PlusHalfLevel + FortitudeAbil + FortitudeClass + FortitudeFeat + FortitudeEnh + FortitudeMisc1 + FortitudeMisc2)",
 			FortitudeAbil:"=(max(StrMod,ConMod))",
-			FortitudeEnh:"=(1 /* amulet of protection */)",
+			FortitudeEnh:"=(1 /* frostwolf pelt */)",
 			Gender:"Male",
 			Heal:"=(HealAbilModPlusHalfLevel + HealTrained + HealMisc)",
 			HealAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
@@ -334,6 +335,7 @@
 			MagicItemsArmorRange:"n/a",
 			MagicItemsArmorTarget:"n/a",
 			MagicItemsArmsName:"=(MagicItemsArms)",
+			MagicItemsFeet:"Boots of Stealth +2",
 			MagicItemsFeetName:"=(MagicItemsFeet)",
 			MagicItemsHandsName:"=(MagicItemsHands)",
 			MagicItemsHeadName:"=(MagicItemsHead)",
@@ -360,8 +362,9 @@
 			MagicItemsMisc7Name:"=(MagicItemsMisc7)",
 			MagicItemsMisc8Name:"=(MagicItemsMisc8)",
 			MagicItemsMisc9Name:"=(MagicItemsMisc9)",
-			MagicItemsNeck:"Amulet of Protection +1",
-			MagicItemsNeckCheck:true, MagicItemsNeckDetails:"No Power",
+			MagicItemsNeck:"Frostwolf Pelt",
+			MagicItemsNeckAction:"Reaction",
+			MagicItemsNeckDetails:"<p><b>Trigger:</b> An enemy adjacent to you hits you.</p>\n<p><b>Effect:</b> The triggering enemy is knocked prone.</p>",
 			MagicItemsNeckName:"=(MagicItemsNeck)",
 			MagicItemsRing1Name:"=(MagicItemsRing1)",
 			MagicItemsRing2Name:"=(MagicItemsRing2)",
@@ -392,6 +395,7 @@
 			OtherEquipment6:"Flute",
 			OtherEquipment7:"Ritual Book <!-- Bardic Training --> (small flipbook of musical notes)",
 			OtherEquipment8:"adventurer's kit",
+			OtherEquipment9:"amulet +1",
 			PassiveInsight:"=(10+PassiveInsightSkillBonus)",
 			PassiveInsightSkillBonus:"=(Insight)",
 			PassivePerception:"=(10+PassivePerceptionSkillBonus)",
@@ -411,7 +415,7 @@
 			Reflex:"=(Reflex10PlusHalfLevel + ReflexAbil + ReflexClass + ReflexFeat + ReflexEnh + ReflexMisc1 + ReflexMisc2)",
 			ReflexAbil:"=(max(IntMod,DexMod) /* add shield bonus */)",
 			ReflexClass:"=(1 /* bard */)",
-			ReflexEnh:"=(1 /* amulet of protection */)",
+			ReflexEnh:"=(1 /* frostwolf pelt */)",
 			Religion:"=(ReligionAbilModPlusHalfLevel + ReligionTrained + ReligionMisc)",
 			ReligionAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
 			ReligionMisc:"=(1 /* bard: skill versatility */)",
@@ -423,7 +427,7 @@
 			SpeedBase:"=(6/*drow*/)",
 			Stealth:"=(StealthAbilModPlusHalfLevel + StealthTrained + StealthArmorPenalty + StealthMisc)",
 			StealthAbilModPlusHalfLevel:"=(roundDown(Level/2)+DexMod)",
-			StealthMisc:"=(2 /* drow */ + 1 /* bard: skill versatility */)",
+			StealthMisc:"=(2 /* drow */ + 1 /* bard: skill versatility */ + 2 /* magic boots */)",
 			Str:"=(pointBuy(10,0))",
 			StrMod:"=(roundDown(Str/2) - 5)",
 			StrModPlusHalfLevel:"=(StrMod + roundDown(Level/2))",
@@ -459,7 +463,7 @@
 			Willpower:"=(Willpower10PlusHalfLevel + WillpowerAbil + WillpowerClass + WillpowerFeat + WillpowerEnh + WillpowerMisc1 + WillpowerMisc2)",
 			WillpowerAbil:"=(max(WisMod,ChaMod))",
 			WillpowerClass:"=(1 /* bard */)",
-			WillpowerEnh:"=(1 /* amulet of protection */)",
+			WillpowerEnh:"=(1 /* frostwolf pelt */)",
 			Wis:"=(pointBuy(8,1))",
 			WisMod:"=(roundDown(Wis/2) - 5)",
 			WisModPlusHalfLevel:"=(WisMod + roundDown(Level/2))"
@@ -639,9 +643,9 @@
 </style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">CurrentHitPoints</div>
-				<textarea style="height: 174px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">=(<br>+11&nbsp;  // second wind<br>+15 // Majestic word<br>-12 // hit by arrow<br>-11 // hit by totem<br>-15 // hit and marked by captain<br>-5 // hit by totem damage<br>+MaxHitPoints)&nbsp;</div>
+				<div id="EditBoxTarget">FortitudeAbil</div>
+				<textarea style="height: 39px;" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">=(max(StrMod,ConMod))&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -752,18 +756,18 @@
 				<span tabindex="88" class="center box" id="_BloodiedHitPoints">22</span>
 				<span tabindex="89" class="center box" id="_SurgeValue">11</span>
 				<span tabindex="90" class="center box" id="_SurgesPerDay">10</span>
-				<span tabindex="91" class="center box" id="_CurrentHitPoints">27</span>
-				<span tabindex="92" class="center box" id="_CurrentSurgeUses">10</span>
+				<span tabindex="91" class="center box" id="_CurrentHitPoints">41</span>
+				<span tabindex="92" class="center box" id="_CurrentSurgeUses">0</span>
 				<input tabindex="93" class="center box edited" id="_SecondWindUsed" type="checkbox">
 				<span tabindex="94" class="box" id="_TemporaryHitPoints"></span>
 				<input tabindex="95" class="center box" id="_DeathSavingThrowFailures1" type="checkbox">
 				<input tabindex="96" class="center box" id="_DeathSavingThrowFailures2" type="checkbox">
 				<input tabindex="97" class="center box" id="_DeathSavingThrowFailures3" type="checkbox">
 				<span tabindex="98" class="box" id="_SavingThrowMods"></span>
-				<span tabindex="99" class="box" id="_Resistances"></span>
+				<span tabindex="99" class="box" id="_Resistances">5 cold <!-- frostwolf pelt --></span>
 				<span tabindex="100" class="box" id="_CurrentConditionsAndEffects"></span>
 
-				<span tabindex="101" class="center box" id="_ActionPoints">1</span>
+				<span tabindex="101" class="center box" id="_ActionPoints">0</span>
 				<span tabindex="102" class="box" id="_ActionPointAddtionalEffects"></span>
 
 				<span tabindex="103" class="box" id="_RaceAbilityScoreMods">+2 Dex, +2 Cha</span>
@@ -845,7 +849,7 @@
 				<span tabindex="171" class="center box" id="_Nature">2</span>
 				<span tabindex="172" class="center box" id="_Perception">6</span>
 				<span tabindex="173" class="center box" id="_Religion">3</span>
-				<span tabindex="174" class="center box" id="_Stealth">7</span>
+				<span tabindex="174" class="center box" id="_Stealth">9</span>
 				<span tabindex="175" class="center box" id="_Streetwise">11</span>
 				<span tabindex="176" class="center box" id="_Thievery">5</span>
 
@@ -905,7 +909,7 @@
 				<span tabindex="227" class="center box" id="_NatureMisc">1</span>
 				<span tabindex="228" class="center box" id="_PerceptionMisc"></span>
 				<span tabindex="229" class="center box" id="_ReligionMisc">1</span>
-				<span tabindex="230" class="center box" id="_StealthMisc">3</span>
+				<span tabindex="230" class="center box" id="_StealthMisc">5</span>
 				<span tabindex="231" class="center box" id="_StreetwiseMisc"></span>
 				<span tabindex="232" class="center box" id="_ThieveryMisc">1</span>
 
@@ -989,7 +993,7 @@ Longsword, Scimitar, Short Sword
 				<input tabindex="296" class="box edited" id="_EncounterPowersCheck4" type="checkbox">
 				<input tabindex="297" class="box" id="_EncounterPowersCheck5" type="checkbox">
 				<input tabindex="298" class="box" id="_EncounterPowersCheck6" type="checkbox">
-				<input tabindex="299" class="box" id="_DailyPowersCheck1" type="checkbox">
+				<input tabindex="299" class="box edited" id="_DailyPowersCheck1" type="checkbox">
 				<input tabindex="300" class="box" id="_DailyPowersCheck2" type="checkbox">
 				<input tabindex="301" class="box" id="_DailyPowersCheck3" type="checkbox">
 				<input tabindex="302" class="box" id="_DailyPowersCheck4" type="checkbox">
@@ -1010,10 +1014,10 @@ Longsword, Scimitar, Short Sword
 				<span tabindex="316" class="box" id="_MagicItemsWeapon4"></span>
 				<span tabindex="317" class="box" id="_MagicItemsArmor">Leather Armor of Luring Withdrawl +1</span>
 				<span tabindex="318" class="box" id="_MagicItemsArms"></span>
-				<span tabindex="319" class="box" id="_MagicItemsFeet"></span>
+				<span tabindex="319" class="box" id="_MagicItemsFeet">Boots of Stealth +2</span>
 				<span tabindex="320" class="box" id="_MagicItemsHands"></span>
 				<span tabindex="321" class="box" id="_MagicItemsHead"></span>
-				<span tabindex="322" class="box" id="_MagicItemsNeck">Amulet of Protection +1</span>
+				<span tabindex="322" class="box" id="_MagicItemsNeck">Frostwolf Pelt</span>
 				<span tabindex="323" class="box" id="_MagicItemsRing1"></span>
 				<span tabindex="324" class="box" id="_MagicItemsRing2"></span>
 				<span tabindex="325" class="box" id="_MagicItemsWaist"></span>
@@ -1121,7 +1125,7 @@ Longsword, Scimitar, Short Sword
 				<span tabindex="418" class="box" id="_OtherEquipment6">Flute</span>
 				<span tabindex="419" class="box" id="_OtherEquipment7">Ritual Book <!-- Bardic Training --> (small flipbook of musical notes)</span>
 				<span tabindex="420" class="box" id="_OtherEquipment8">adventurer's kit</span>
-				<span tabindex="421" class="box" id="_OtherEquipment9"></span>
+				<span tabindex="421" class="box" id="_OtherEquipment9">amulet +1</span>
 				<span tabindex="422" class="box" id="_OtherEquipment10"></span>
 
 				<span tabindex="423" class="box" id="_Rituals1">Glib Limerick (PHB2 p215) roll bluff checks twice</span>
@@ -1285,7 +1289,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card">
 					<img id="_EncounterPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name">Darkfire</span>
 					<span tabindex="543" id="_EncounterPowers1Keyword" class="box power-card-keyword"></span>
@@ -1307,7 +1311,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_EncounterPowers2Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_EncounterPowers2Card" class="power-card">
 					<img id="_EncounterPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name">Cloud of Darkness</span>
 					<span tabindex="559" id="_EncounterPowers2Keyword" class="box power-card-keyword"></span>
@@ -1329,7 +1333,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_EncounterPowers3Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_EncounterPowers3Card" class="power-card">
 					<img id="_EncounterPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="574" id="_EncounterPowers3Name" class="box power-card-name">Majestic Word</span>
 					<span tabindex="575" id="_EncounterPowers3Keyword" class="box power-card-keyword">Arcane, Healing</span>
@@ -1418,11 +1422,11 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card">
+				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card tapped">
 					<img id="_DailyPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name">Slayer's Song</span>
 					<span tabindex="639" id="_DailyPowers1Keyword" class="box power-card-keyword">Arcane, Weapon</span>
-					<input tabindex="640" id="_DailyPowers1Box" class="box power-card-box" type="checkbox">
+					<input tabindex="640" id="_DailyPowers1Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="641" id="_DailyPowers1Action" class="box power-card-action">Standard</span>
 					<span tabindex="642" id="_DailyPowers1AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="643" id="_DailyPowers1Range" class="box power-card-range">Melee Weapon</span>
@@ -1819,11 +1823,11 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_MagicItemsArmorCard" class="power-card">
+				<div style="display: inline-block;" id="_MagicItemsArmorCard" class="power-card tapped">
 					<img id="_MagicItemsArmorImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">Leather Armor of Luring Withdrawl +1</span>
 					<span tabindex="511" id="_MagicItemsArmorKeyword" class="box power-card-keyword"></span>
-					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box" type="checkbox">
+					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box edited" type="checkbox">
 					<span tabindex="513" id="_MagicItemsArmorAction" class="box power-card-action">Reaction</span>
 					<span tabindex="514" id="_MagicItemsArmorAttackType" class="box power-card-attack-type"></span>
 					<span tabindex="515" id="_MagicItemsArmorRange" class="box power-card-range">n/a</span>
@@ -1864,9 +1868,9 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: none;" id="_MagicItemsFeetCard" class="power-card">
+				<div style="display: inline-block;" id="_MagicItemsFeetCard" class="power-card">
 					<img id="_MagicItemsFeetImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="542" id="_MagicItemsFeetName" class="box power-card-name">0</span>
+					<span tabindex="542" id="_MagicItemsFeetName" class="box power-card-name">Boots of Stealth +2</span>
 					<span tabindex="543" id="_MagicItemsFeetKeyword" class="box power-card-keyword"></span>
 					<input tabindex="544" id="_MagicItemsFeetBox" class="box power-card-box" type="checkbox">
 					<span tabindex="545" id="_MagicItemsFeetAction" class="box power-card-action"></span>
@@ -1932,16 +1936,17 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 				</div>
 				<div style="display: inline-block;" id="_MagicItemsNeckCard" class="power-card">
 					<img id="_MagicItemsNeckImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">Amulet of Protection +1</span>
+					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">Frostwolf Pelt</span>
 					<span tabindex="591" id="_MagicItemsNeckKeyword" class="box power-card-keyword"></span>
 					<input tabindex="592" id="_MagicItemsNeckBox" class="box power-card-box" type="checkbox">
-					<span tabindex="593" id="_MagicItemsNeckAction" class="box power-card-action"></span>
+					<span tabindex="593" id="_MagicItemsNeckAction" class="box power-card-action">Reaction</span>
 					<span tabindex="594" id="_MagicItemsNeckAttackType" class="box power-card-attack-type"></span>
 					<span tabindex="595" id="_MagicItemsNeckRange" class="box power-card-range"></span>
 					<span tabindex="596" id="_MagicItemsNeckAttack" class="box power-card-attack"></span>
 					<span tabindex="597" id="_MagicItemsNeckDefense" class="box power-card-defense"></span>
 					<span tabindex="598" id="_MagicItemsNeckTarget" class="box power-card-target"></span>
-					<span tabindex="599" id="_MagicItemsNeckDetails" class="box power-card-details">No Power</span>
+					<span tabindex="599" id="_MagicItemsNeckDetails" class="box power-card-details"><p><b>Trigger:</b> An enemy adjacent to you hits you.</p>
+<p><b>Effect:</b> The triggering enemy is knocked prone.</p></span>
 					<span tabindex="600" id="_MagicItemsNeckAdditional" class="box power-card-additional"></span>
 					<span tabindex="601" id="_MagicItemsNeckClass" class="box power-card-class"></span>
 					<span tabindex="603" id="_MagicItemsNeckLevel" class="box power-card-level"></span>
@@ -2260,7 +2265,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_MagicItemsMisc12Card" class="power-card">
+				<div style="display: inline-block;" id="_MagicItemsMisc12Card" class="power-card tapped">
 					<img id="_MagicItemsMisc12Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="830" id="_MagicItemsMisc12Name" class="box power-card-name">Action Point</span>
 					<span tabindex="831" id="_MagicItemsMisc12Keyword" class="box power-card-keyword"></span>
