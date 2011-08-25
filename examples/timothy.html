@@ -182,8 +182,8 @@
 			Con:"=(pointBuy(10,9) + 1 /* level 4 */)",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
-			CurrentHitPoints:"=(\n-7 // hit by arrow\n-9 // hit by thugs\n-5 // hit by arrow\n+SurgeValue + 4 // majestic word\n-13 // hit by club\n-10 // hit by club\n-5 // hit by arrow\n+SurgeValue + 4 // majestic word\n-23 // hit by clubs\n+SurgeValue // second wind\n-5 // hit by arrow\n+2*(SurgeValue+4) // post-combat healing\n-5 // poison cloud\n-5 // poison cloud\n-11 // hit by a tree\n-5 // acidic slam\n-9 // oww\n-3 // hit by spiky plant\n+SurgeValue // second wind\n+2*(SurgeValue+4)\n+MaxHitPoints)",
-			CurrentSurgeUses:"=(SurgesPerDay\n-1 // wake up in a tree\n-1 // majestic word\n-1 // majestic word\n-1 // second wind\n-2 // post combat healing\n-1 // lost in the wilderness\n-1 // second wind\n-2 // post combat healing\n)",
+			CurrentHitPoints:"=(MaxHitPoints\n\n)",
+			CurrentSurgeUses:"=(SurgesPerDay\n\n)",
 			DailyPowers1:"Slayer's Song",
 			DailyPowers1Action:"Standard",
 			DailyPowers1Attack:"+=(ChaModPlusHalfLevel+3+1/*rapier songblade +1*/+1 /* versatile expertise */)",
@@ -243,6 +243,7 @@
 			EncounterPowers3Action:"Minor",
 			EncounterPowers3Additional:"I can use this power =(Level >= 16 ? 'thrice' : 'twice') per encounter, but only once per round.",
 			EncounterPowers3Attack:"n/a",
+			EncounterPowers3Box:true, Resistances:"5 cold <!-- frostwolf pelt -->",
 			EncounterPowers3Class:"Bard",
 			EncounterPowers3Defense:"n/a",
 			EncounterPowers3Details:"<b>Effect:</b> The target can spend a healing surge and regain =(ChaMod) additional hit points.  I also slide the target 1 square.",
@@ -267,7 +268,6 @@
 			EncounterPowers5:"Shout of Triumph",
 			EncounterPowers5Action:"Standard",
 			EncounterPowers5Attack:"+=(ChaModPlusHalfLevel +1 /*songblade implement*/+1 /* versatile expertise */)",
-			EncounterPowers5Box:true, DailyPowers1Box:true, MagicItemsArmorBox:true, EncounterPowers3Box:true, MagicItemsMisc12Box:true, EncounterPowers1Box:true, EncounterPowers2Box:true, Resistances:"5 cold <!-- frostwolf pelt -->",
 			EncounterPowers5Class:"Bard",
 			EncounterPowers5Defense:"Fortitude",
 			EncounterPowers5Details:"<p><b>Hit:</b> 1d6+=(ChaMod+1) thunder damage (songblade implement), and you push the target =(ConMod) squres.</p>\n<p><b>Effect:</b> Slide each ally in the blast 1 square.</p>",
@@ -280,8 +280,7 @@
 			EncounterPowers6:"Battle Feint",
 			EncounterPowers6Action:"Minor",
 			EncounterPowers6Attack:"+=(Bluff)",
-			EncounterPowers6Box:true, SecondWindUsed:true, AtWillPowers6Box:true, DailyPowersCheck1:true,
-			EncounterPowers6Class:"Bluff Skill Power",
+			EncounterPowers6Box:true, DailyPowersCheck1:true, EncounterPowers6Class:"Bluff Skill Power",
 			EncounterPowers6Defense:"P. Insight",
 			EncounterPowers6Details:"<b>Effect:</b> You make a Bluff check opposed by the target's passive Insight check.  If the check succeeds, one ally adjacent to you gains combat advantage against the target for that ally's next attack against it before the end of your next turn.",
 			EncounterPowers6Level:"2",
@@ -643,9 +642,9 @@
 </style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">FortitudeAbil</div>
-				<textarea style="height: 39px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">=(max(StrMod,ConMod))&nbsp;</div>
+				<div id="EditBoxTarget">CurrentHitPoints</div>
+				<textarea style="height: 78px;" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">=(MaxHitPoints<br><br>)&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -756,8 +755,8 @@
 				<span tabindex="88" class="center box" id="_BloodiedHitPoints">22</span>
 				<span tabindex="89" class="center box" id="_SurgeValue">11</span>
 				<span tabindex="90" class="center box" id="_SurgesPerDay">10</span>
-				<span tabindex="91" class="center box" id="_CurrentHitPoints">41</span>
-				<span tabindex="92" class="center box" id="_CurrentSurgeUses">0</span>
+				<span tabindex="91" class="center box" id="_CurrentHitPoints">44</span>
+				<span tabindex="92" class="center box" id="_CurrentSurgeUses">10</span>
 				<input tabindex="93" class="center box edited" id="_SecondWindUsed" type="checkbox">
 				<span tabindex="94" class="box" id="_TemporaryHitPoints"></span>
 				<input tabindex="95" class="center box" id="_DeathSavingThrowFailures1" type="checkbox">
@@ -1267,11 +1266,11 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_AtWillPowers6Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_AtWillPowers6Card" class="power-card">
 					<img id="_AtWillPowers6Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="526" id="_AtWillPowers6Name" class="box power-card-name">Charger's Call</span>
 					<span tabindex="527" id="_AtWillPowers6Keyword" class="box power-card-keyword">Arcane, Weapon</span>
-					<input tabindex="528" id="_AtWillPowers6Box" class="box power-card-box edited" type="checkbox">
+					<input tabindex="528" id="_AtWillPowers6Box" class="box power-card-box" type="checkbox">
 					<span tabindex="529" id="_AtWillPowers6Action" class="box power-card-action">Standard</span>
 					<span tabindex="530" id="_AtWillPowers6AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="531" id="_AtWillPowers6Range" class="box power-card-range">Melee Weapon</span>
@@ -1315,7 +1314,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 					<img id="_EncounterPowers2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="558" id="_EncounterPowers2Name" class="box power-card-name">Cloud of Darkness</span>
 					<span tabindex="559" id="_EncounterPowers2Keyword" class="box power-card-keyword"></span>
-					<input tabindex="560" id="_EncounterPowers2Box" class="box power-card-box edited" type="checkbox">
+					<input tabindex="560" id="_EncounterPowers2Box" class="box power-card-box" type="checkbox">
 					<span tabindex="561" id="_EncounterPowers2Action" class="box power-card-action">Minor</span>
 					<span tabindex="562" id="_EncounterPowers2AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="563" id="_EncounterPowers2Range" class="box power-card-range">Close burst 1</span>
@@ -1422,7 +1421,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card">
 					<img id="_DailyPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name">Slayer's Song</span>
 					<span tabindex="639" id="_DailyPowers1Keyword" class="box power-card-keyword">Arcane, Weapon</span>
@@ -1560,7 +1559,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 					<img id="_UtilityPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="734" id="_UtilityPowers1Name" class="box power-card-name">Song of Courage</span>
 					<span tabindex="735" id="_UtilityPowers1Keyword" class="box power-card-keyword">Arcane, Zone</span>
-					<input tabindex="736" id="_UtilityPowers1Box" class="box power-card-box" type="checkbox">
+					<input tabindex="736" id="_UtilityPowers1Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="737" id="_UtilityPowers1Action" class="box power-card-action">Minor</span>
 					<span tabindex="738" id="_UtilityPowers1AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="739" id="_UtilityPowers1Range" class="box power-card-range">Close burst 5</span>
@@ -1823,7 +1822,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_MagicItemsArmorCard" class="power-card tapped">
+				<div style="display: inline-block;" id="_MagicItemsArmorCard" class="power-card">
 					<img id="_MagicItemsArmorImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">Leather Armor of Luring Withdrawl +1</span>
 					<span tabindex="511" id="_MagicItemsArmorKeyword" class="box power-card-keyword"></span>
@@ -2265,7 +2264,7 @@ for day/hour travel, group's speed is slowest + 2 --></span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_MagicItemsMisc12Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_MagicItemsMisc12Card" class="power-card">
 					<img id="_MagicItemsMisc12Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="830" id="_MagicItemsMisc12Name" class="box power-card-name">Action Point</span>
 					<span tabindex="831" id="_MagicItemsMisc12Keyword" class="box power-card-keyword"></span>

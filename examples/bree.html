@@ -662,12 +662,13 @@ ul{ margin: 0; }
 			Con:"=(pointBuy(10,2))",
 			ConMod:"=(roundDown(Con/2) - 5)",
 			ConModPlusHalfLevel:"=(ConMod + roundDown(Level/2))",
-			CurrentHitPoints:"=(MaxHitPoints\n-11 // slapped by stone tentacle\n-21 // hit by stone whirlwind\n-5 // squozen by stone thing\n-5 // squozen by stone thing\n+15 // healed by lenora\n-7 // beaten by tentacle\n+5 // healed by darg\n+23 // healed by darg\n-27 // hit by whirlwind\n-12 // hit by flame spit\n+21 // healed by darg\n+16 // healed by darg\n-13 // falling head\n)",
-			CurrentSurgeUses:"=(SurgesPerDay\n-1 // lenora's inspiring word\n-1 // darg's healing word\n-1 // darg's healing word\n-1 // darg's sacrifice\n+1 // darg's belt\n-1 // trying to kick-start the head\n)",
+			CurrentHitPoints:"=(MaxHitPoints\n\n)",
+			CurrentSurgeUses:"=(SurgesPerDay\n-4 // cast four spells\n)",
 			DailyPowers1:"Sleep",
 			DailyPowers1Action:"Standard",
 			DailyPowers1Additional:"<b>Extra:</b> Memorize at most one Daily power per day",
 			DailyPowers1Attack:"+=(Attack2AttBonus)",
+			DailyPowers1Box:true, EncounterPowers5Class:"Wizard",
 			DailyPowers1Class:"Wizard",
 			DailyPowers1Defense:"Will",
 			DailyPowers1Details:"<p><b>Hit:</b> The target is slowed (save ends).  If the target fails its first saving throw against this power, the target becomes unconscious (save ends).</p>\n<p><b>Miss:</b> The target is slowed (save ends).</p>",
@@ -715,7 +716,7 @@ ul{ margin: 0; }
 			DailyPowers4Target:"Each creature in burst",
 			DailyPowers5Name:"=(DailyPowers5)",
 			DailyPowers6Name:"=(DailyPowers6)",
-			Damage1Abil:"=(IntMod /* melee training */)",
+			DailyPowersCheck1:true, DailyPowersCheck3:true, Damage1Abil:"=(IntMod /* melee training */)",
 			Damage1Ability:"=(Attack1Ability)",
 			Damage1Damage:"1d4 + =(Damage1Abil + Damage1Feat + Damage1Enh + Damage1Misc1 + Damage1Misc2)",
 			Damage1Enh:"1",
@@ -776,7 +777,6 @@ ul{ margin: 0; }
 			EncounterPowers5:"Fire Burst",
 			EncounterPowers5Action:"Standard",
 			EncounterPowers5Attack:"+=(Attack2AttBonus)",
-			EncounterPowers5Class:"Wizard",
 			EncounterPowers5Defense:"Reflex",
 			EncounterPowers5Details:"<b>Hit:</b> 3d6+=(IntMod + 1 /* staff of light */) fire damage.",
 			EncounterPowers5Keyword:"Arcane, Fire, Implement",
@@ -788,7 +788,7 @@ ul{ margin: 0; }
 			EncounterPowers6:"Color Spray",
 			EncounterPowers6Action:"Standard",
 			EncounterPowers6Attack:"+=(Attack2AttBonus)",
-			EncounterPowers6Class:"Wizard",
+			EncounterPowers6Box:true, EncounterPowersCheck2:true, EncounterPowers6Class:"Wizard",
 			EncounterPowers6Defense:"Willpower",
 			EncounterPowers6Details:"<b>Hit:</b> 1d6+=(IntMod + 1 /* staff of light */) radiant damage, and the target is dazed until the end of my next turn.",
 			EncounterPowers6Level:"3",
@@ -848,6 +848,7 @@ ul{ margin: 0; }
 			MagicItemsFeetName:"=(MagicItemsFeet)",
 			MagicItemsHandsAction:"Free",
 			MagicItemsHandsAttack:"n/a",
+			MagicItemsHandsBox:true, EncounterPowers5Box:true, EncounterPowers1Box:true, DailyPowers4Box:true,
 			MagicItemsHandsClass:"n/a",
 			MagicItemsHandsDefense:"n/a",
 			MagicItemsHandsDetails:"<p><b>Property:</b> You can draw and attack with a dagger as part of the same standard action</p>\n<p></p>\n<p><b>Trigger:</b> When you hit with a thrown weapon attack.</p>\n<p><b>Effect:</b> Add a +5 power bonus to the damage roll.</p>",
@@ -873,11 +874,10 @@ ul{ margin: 0; }
 			MagicItemsMisc1Page:"n/a",
 			MagicItemsMisc1Range:"Melee 1",
 			MagicItemsMisc1Target:"n/a",
-			MagicItemsMisc2:"Queen's Move",
 			MagicItemsMisc2Action:"Move",
 			MagicItemsMisc2Additional:"One time use",
 			MagicItemsMisc2Attack:"n/a",
-			MagicItemsMisc2Class:"n/a",
+			MagicItemsMisc2Box:true, MagicItemsMisc2Class:"n/a",
 			MagicItemsMisc2Defense:"n/a",
 			MagicItemsMisc2Details:"<b>Effect:</b> Shift upto your speed in a straight line.  You may make a melee basic attack as a free action against each creature adjacent to you at the end of this movement.  A hit does no damage, but stuns the target save ends.",
 			MagicItemsMisc2Keyword:"table of fun",
@@ -994,7 +994,7 @@ ul{ margin: 0; }
 			UtilityPowers1Action:"Move",
 			UtilityPowers1Additional:"<b>Extra:</b> Memorize at most one Utility power per day",
 			UtilityPowers1Attack:"n/a",
-			UtilityPowers1Box:true, EncounterPowers5Box:true, UtilityPowers1Class:"Wizard",
+			UtilityPowers1Class:"Wizard",
 			UtilityPowers1Defense:"n/a",
 			UtilityPowers1Details:"<b>Effect:</b> Shift up to twice your speed.",
 			UtilityPowers1Level:"2",
@@ -1024,7 +1024,7 @@ ul{ margin: 0; }
 			UtilityPowers6Name:"=(UtilityPowers6)",
 			UtilityPowers7Name:"=(UtilityPowers7)",
 			UtilityPowers8Name:"=(UtilityPowers8)",
-			UtilityPowersCheck2:true, UtilityPowersCheck4:true, EncounterPowersCheck2:true, EncounterPowersCheck6:true, Weight:"75lb",
+			UtilityPowersCheck2:true, UtilityPowersCheck4:true, Weight:"75lb",
 			Willpower10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Willpower:"=(Willpower10PlusHalfLevel + WillpowerAbil + WillpowerClass + WillpowerFeat + WillpowerEnh + WillpowerMisc1 + WillpowerMisc2)",
 			WillpowerAbil:"=(max(WisMod,ChaMod))",
@@ -1380,9 +1380,9 @@ ul{ margin: 0; }
 </style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">RaceFeatures3</div>
-				<textarea style="height: 39px; width: 1136px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">Second Chance: encounter power&nbsp;</div>
+				<div id="EditBoxTarget">Feats5</div>
+				<textarea style="height: 97px; width: 1136px;" id="EditBoxText"></textarea>
+				<div style="display: none;" id="EditBoxTextMeasure">Implement Expertiese: Staff (+=(<br>Level &lt; 15 ? 1 :<br>Level &lt; 25 ? 2 : 3<br>) to attack) &lt;!-- 2nd level --&gt;&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -1493,7 +1493,7 @@ ul{ margin: 0; }
 				<span tabindex="88" class="center box" id="_BloodiedHitPoints">23</span>
 				<span tabindex="89" class="center box" id="_SurgeValue">11</span>
 				<span tabindex="90" class="center box" id="_SurgesPerDay">7</span>
-				<span tabindex="91" class="center box" id="_CurrentHitPoints">25</span>
+				<span tabindex="91" class="center box" id="_CurrentHitPoints">46</span>
 				<span tabindex="92" class="center box" id="_CurrentSurgeUses">3</span>
 				<input tabindex="93" class="center box edited" id="_SecondWindUsed" type="checkbox">
 				<span tabindex="94" class="box" id="_TemporaryHitPoints"></span>
@@ -1742,7 +1742,7 @@ Lost in the Crowd		p.196	 +2 to AC when adjacent to 2 larger enemies
 				<input tabindex="298" class="box edited" id="_EncounterPowersCheck6" type="checkbox">
 				<input tabindex="299" class="box edited" id="_DailyPowersCheck1" type="checkbox">
 				<input tabindex="300" class="box edited" id="_DailyPowersCheck2" type="checkbox">
-				<input tabindex="301" class="box" id="_DailyPowersCheck3" type="checkbox">
+				<input tabindex="301" class="box edited" id="_DailyPowersCheck3" type="checkbox">
 				<input tabindex="302" class="box edited" id="_DailyPowersCheck4" type="checkbox">
 				<input tabindex="303" class="box" id="_DailyPowersCheck5" type="checkbox">
 				<input tabindex="304" class="box" id="_DailyPowersCheck6" type="checkbox">
@@ -1769,7 +1769,7 @@ Lost in the Crowd		p.196	 +2 to AC when adjacent to 2 larger enemies
 				<span tabindex="324" class="box" id="_MagicItemsRing2"></span>
 				<span tabindex="325" class="box" id="_MagicItemsWaist"></span>
 				<span tabindex="326" class="box" id="_MagicItemsMisc1">Bump &amp; Run</span>
-				<span tabindex="327" class="box" id="_MagicItemsMisc2">Queen's Move</span>
+				<span tabindex="327" class="box" id="_MagicItemsMisc2"></span>
 				<span tabindex="328" class="box" id="_MagicItemsMisc3"></span>
 				<span tabindex="329" class="box" id="_MagicItemsMisc4"></span>
 				<span tabindex="330" class="box" id="_MagicItemsMisc5"></span>
@@ -2069,7 +2069,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card">
+				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card tapped">
 					<img id="_EncounterPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
 					<span tabindex="542" id="_EncounterPowers1Name" class="box power-card-name">Force Orb</span>
 					<span tabindex="543" id="_EncounterPowers1Keyword" class="box power-card-keyword">Arcane, Force, Implement</span>
@@ -2207,7 +2207,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card">
+				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card tapped">
 					<img id="_DailyPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="638" id="_DailyPowers1Name" class="box power-card-name">Sleep</span>
 					<span tabindex="639" id="_DailyPowers1Keyword" class="box power-card-keyword">Arcane, Implement, Sleep</span>
@@ -2253,7 +2253,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_DailyPowers3Card" class="power-card">
+				<div style="display: inline-block;" id="_DailyPowers3Card" class="power-card tapped">
 					<img id="_DailyPowers3Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="670" id="_DailyPowers3Name" class="box power-card-name">Stinking Cloud</span>
 					<span tabindex="671" id="_DailyPowers3Keyword" class="box power-card-keyword">Arcane, Implement, Poison, Zone</span>
@@ -2277,11 +2277,11 @@ Nothing you create can deal damage or hinder.</span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_DailyPowers4Card" class="power-card">
+				<div style="display: inline-block;" id="_DailyPowers4Card" class="power-card tapped">
 					<img id="_DailyPowers4Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="686" id="_DailyPowers4Name" class="box power-card-name">Web</span>
 					<span tabindex="687" id="_DailyPowers4Keyword" class="box power-card-keyword">Arcane, Implement, Zone</span>
-					<input tabindex="688" id="_DailyPowers4Box" class="box power-card-box edited" type="checkbox">
+					<input tabindex="688" id="_DailyPowers4Box" class="box power-card-box" type="checkbox">
 					<span tabindex="689" id="_DailyPowers4Action" class="box power-card-action">Standard</span>
 					<span tabindex="690" id="_DailyPowers4AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="691" id="_DailyPowers4Range" class="box power-card-range">Area burst 2 within 20 squares</span>
@@ -2344,7 +2344,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_UtilityPowers1Card" class="power-card tapped">
+				<div style="display: inline-block;" id="_UtilityPowers1Card" class="power-card">
 					<img id="_UtilityPowers1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="734" id="_UtilityPowers1Name" class="box power-card-name">Expeditious Retreat</span>
 					<span tabindex="735" id="_UtilityPowers1Keyword" class="box power-card-keyword"></span>
@@ -2681,11 +2681,11 @@ all effects end instantly (even ones that require save)</span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_MagicItemsHandsCard" class="power-card">
+				<div style="display: inline-block;" id="_MagicItemsHandsCard" class="power-card tapped">
 					<img id="_MagicItemsHandsImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="558" id="_MagicItemsHandsName" class="box power-card-name">Knifethrower's Gloves</span>
 					<span tabindex="559" id="_MagicItemsHandsKeyword" class="box power-card-keyword"></span>
-					<input tabindex="560" id="_MagicItemsHandsBox" class="box power-card-box" type="checkbox">
+					<input tabindex="560" id="_MagicItemsHandsBox" class="box power-card-box edited" type="checkbox">
 					<span tabindex="561" id="_MagicItemsHandsAction" class="box power-card-action">Free</span>
 					<span tabindex="562" id="_MagicItemsHandsAttackType" class="box power-card-attack-type"></span>
 					<span tabindex="563" id="_MagicItemsHandsRange" class="box power-card-range">Personal</span>
@@ -2839,9 +2839,9 @@ attack: you can push the target 1 square.</span>
 						<option selected="selected" value="2">Daily</option>
 					</select>
 				</div>
-				<div style="display: inline-block;" id="_MagicItemsMisc2Card" class="power-card">
+				<div style="display: none;" id="_MagicItemsMisc2Card" class="power-card">
 					<img id="_MagicItemsMisc2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="670" id="_MagicItemsMisc2Name" class="box power-card-name">Queen's Move</span>
+					<span tabindex="670" id="_MagicItemsMisc2Name" class="box power-card-name">0</span>
 					<span tabindex="671" id="_MagicItemsMisc2Keyword" class="box power-card-keyword">table of fun</span>
 					<input tabindex="672" id="_MagicItemsMisc2Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="673" id="_MagicItemsMisc2Action" class="box power-card-action">Move</span>
