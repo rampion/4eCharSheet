@@ -545,9 +545,9 @@ ul{ margin: 0; }
 			ArcanaTrained:"=(5 /* Trained */)",
 			ArmorClass10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			ArmorClass:"=(ArmorClass10PlusHalfLevel + ArmorClassArmorSlashAbil + ArmorClassClass + ArmorClassFeat + ArmorClassEnh + ArmorClassMisc1 + ArmorClassMisc2)",
-			ArmorClassArmorSlashAbil:"=(max(DexMod,IntMod) + 2 /* +2 Leather Armor? */)",
+			ArmorClassArmorSlashAbil:"=(max(DexMod,IntMod) + 2 /* +1 Darkleaf Leather Armor */)",
 			ArmorClassConditionalBonuses:"+2 vs opportunity attacks <!-- Nimble Reaction, p.44 -->",
-			ArmorClassEnh:"=(2 /* +2 Leather Armor? */)",
+			ArmorClassEnh:"=(2 /* +1 Darkleaf Leather Armor */)",
 			ArmorClassMisc1:"=(1 /* Staff of Defense (p.157) */)",
 			AtWillPowers1:"Ghost Sound",
 			AtWillPowers1Action:"Standard",
@@ -810,6 +810,7 @@ ul{ margin: 0; }
 			Fortitude10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Fortitude:"=(Fortitude10PlusHalfLevel + FortitudeAbil + FortitudeClass + FortitudeFeat + FortitudeEnh + FortitudeMisc1 + FortitudeMisc2)",
 			FortitudeAbil:"=(max(StrMod,ConMod))",
+			FortitudeEnh:"=( 2 /* +2 Baffling Cape */)",
 			Gender:"Female",
 			Heal:"=(HealAbilModPlusHalfLevel + HealTrained + HealMisc)",
 			HealAbilModPlusHalfLevel:"=(roundDown(Level/2)+WisMod)",
@@ -834,7 +835,7 @@ ul{ margin: 0; }
 			LanguagesKnown2:"Draconic",
 			LanguagesKnown3:"Infernal <!-- Book Imp Familiar -->",
 			Level:"8",
-			MagicItemsArmor:"Leather Armor +2",
+			MagicItemsArmor:"+1 Darkleaf Leather Armor",
 			MagicItemsArmorAction:"Reaction",
 			MagicItemsArmorAttack:"n/a",
 			MagicItemsArmorClass:"n/a",
@@ -873,12 +874,13 @@ ul{ margin: 0; }
 			MagicItemsMisc1Page:"n/a",
 			MagicItemsMisc1Range:"Melee 1",
 			MagicItemsMisc1Target:"n/a",
-			MagicItemsMisc2Action:"Move",
+			MagicItemsMisc2:"Avandra's Luck",
+			MagicItemsMisc2Action:"Free",
 			MagicItemsMisc2Additional:"One time use",
 			MagicItemsMisc2Attack:"n/a",
 			MagicItemsMisc2Box:true, MagicItemsMisc2Class:"n/a",
 			MagicItemsMisc2Defense:"n/a",
-			MagicItemsMisc2Details:"<b>Effect:</b> Shift upto your speed in a straight line.  You may make a melee basic attack as a free action against each creature adjacent to you at the end of this movement.  A hit does no damage, but stuns the target save ends.",
+			MagicItemsMisc2Details:"<b>Effect:</b> +1 AC vs attacks of opportunity for the rest of the combat.\n<li> when missed by an attack of opportunity, increase the bonus by +1.</li>\n<li> when hit by an attack of opportunity, reset the bonus to +1.</li>",
 			MagicItemsMisc2Keyword:"table of fun",
 			MagicItemsMisc2Level:"n/a",
 			MagicItemsMisc2Name:"=(MagicItemsMisc2)",
@@ -908,11 +910,12 @@ ul{ margin: 0; }
 			MagicItemsMisc7Name:"=(MagicItemsMisc7)",
 			MagicItemsMisc8Name:"=(MagicItemsMisc8)",
 			MagicItemsMisc9Name:"=(MagicItemsMisc9)",
+			MagicItemsNeck:"+2 Baffling Cape",
 			MagicItemsNeckName:"=(MagicItemsNeck)",
 			MagicItemsRing1Name:"=(MagicItemsRing1)",
 			MagicItemsRing2Name:"=(MagicItemsRing2)",
 			MagicItemsWaistName:"=(MagicItemsWaist)",
-			MagicItemsWeapon1:"Thief's Dagger",
+			MagicItemsWeapon1:"+1 Thief's Dagger",
 			MagicItemsWeapon1Action:"Free",
 			MagicItemsWeapon1Attack:"n/a",
 			MagicItemsWeapon1Class:"n/a",
@@ -923,7 +926,7 @@ ul{ margin: 0; }
 			MagicItemsWeapon1Page:"n/a",
 			MagicItemsWeapon1Range:"Melee weapon",
 			MagicItemsWeapon1Target:"One creature",
-			MagicItemsWeapon2:"Staff of Light",
+			MagicItemsWeapon2:"+1 Staff of Light",
 			MagicItemsWeapon2Action:"Minor",
 			MagicItemsWeapon2Attack:"n/a",
 			MagicItemsWeapon2Class:"n/a",
@@ -959,6 +962,7 @@ ul{ margin: 0; }
 			Reflex10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			Reflex:"=(Reflex10PlusHalfLevel + ReflexAbil + ReflexClass + ReflexFeat + ReflexEnh + ReflexMisc1 + ReflexMisc2)",
 			ReflexAbil:"=(max(IntMod,DexMod) /* add shield bonus */)",
+			ReflexEnh:"=( 2 /* +2 Baffling Cape */)",
 			Religion:"=(ReligionAbilModPlusHalfLevel + ReligionTrained + ReligionMisc)",
 			ReligionAbilModPlusHalfLevel:"=(roundDown(Level/2)+IntMod)",
 			Resistances:"5 fire <!-- book imp familiar -->",
@@ -1049,6 +1053,7 @@ ul{ margin: 0; }
 			Willpower:"=(Willpower10PlusHalfLevel + WillpowerAbil + WillpowerClass + WillpowerFeat + WillpowerEnh + WillpowerMisc1 + WillpowerMisc2)",
 			WillpowerAbil:"=(max(WisMod,ChaMod))",
 			WillpowerClass:"2",
+			WillpowerEnh:"=( 2 /* +2 Baffling Cape */)",
 			Wis:"=(pointBuy(10,3))",
 			WisMod:"=(roundDown(Wis/2) - 5)",
 			WisModPlusHalfLevel:"=(WisMod + roundDown(Level/2))"
@@ -1400,9 +1405,9 @@ ul{ margin: 0; }
 </style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">MagicItemsWeapon1Attack</div>
+				<div id="EditBoxTarget">MagicItemsMisc2Additional</div>
 				<textarea style="height: 39px; width: 1136px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">n/a&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">One time use&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -1466,32 +1471,32 @@ ul{ margin: 0; }
 				<span tabindex="47" class="center box" id="_ArmorClassMisc2"></span>
 				<span tabindex="48" class="box" id="_ArmorClassConditionalBonuses">+2 vs opportunity attacks <!-- Nimble Reaction, p.44 --></span>
 
-				<span tabindex="49" class="center box" id="_Fortitude">15</span>
+				<span tabindex="49" class="center box" id="_Fortitude">17</span>
 				<span tabindex="50" class="center box" id="_Fortitude10PlusHalfLevel">14</span>
 				<span tabindex="51" class="center box" id="_FortitudeAbil">1</span>
 				<span tabindex="52" class="center box" id="_FortitudeClass"></span>
 				<span tabindex="53" class="center box" id="_FortitudeFeat"></span>
-				<span tabindex="54" class="center box" id="_FortitudeEnh"></span>
+				<span tabindex="54" class="center box" id="_FortitudeEnh">2</span>
 				<span tabindex="55" class="center box" id="_FortitudeMisc1"></span>
 				<span tabindex="56" class="center box" id="_FortitudeMisc2"></span>
 				<span tabindex="57" class="box" id="_FortitudeConditionalBonuses"></span>
 
-				<span tabindex="58" class="center box" id="_Reflex">18</span>
+				<span tabindex="58" class="center box" id="_Reflex">20</span>
 				<span tabindex="59" class="center box" id="_Reflex10PlusHalfLevel">14</span>
 				<span tabindex="60" class="center box" id="_ReflexAbil">4</span>
 				<span tabindex="61" class="center box" id="_ReflexClass"></span>
 				<span tabindex="62" class="center box" id="_ReflexFeat"></span>
-				<span tabindex="63" class="center box" id="_ReflexEnh"></span>
+				<span tabindex="63" class="center box" id="_ReflexEnh">2</span>
 				<span tabindex="64" class="center box" id="_ReflexMisc1"></span>
 				<span tabindex="65" class="center box" id="_ReflexMisc2"></span>
 				<span tabindex="66" class="box" id="_ReflexConditionalBonuses"></span>
 
-				<span tabindex="67" class="center box" id="_Willpower">18</span>
+				<span tabindex="67" class="center box" id="_Willpower">20</span>
 				<span tabindex="68" class="center box" id="_Willpower10PlusHalfLevel">14</span>
 				<span tabindex="69" class="center box" id="_WillpowerAbil">2</span>
 				<span tabindex="70" class="center box" id="_WillpowerClass">2</span>
 				<span tabindex="71" class="center box" id="_WillpowerFeat"></span>
-				<span tabindex="72" class="center box" id="_WillpowerEnh"></span>
+				<span tabindex="72" class="center box" id="_WillpowerEnh">2</span>
 				<span tabindex="73" class="center box" id="_WillpowerMisc1"></span>
 				<span tabindex="74" class="center box" id="_WillpowerMisc2"></span>
 				<span tabindex="75" class="box" id="_WillpowerConditionalBonuses"></span>
@@ -1773,21 +1778,21 @@ Lost in the Crowd		p.196	 +2 to AC when adjacent to 2 larger enemies
 				<input tabindex="311" class="box" id="_UtilityPowersCheck7" type="checkbox">
 				<input tabindex="312" class="box" id="_UtilityPowersCheck8" type="checkbox">
 
-				<span tabindex="313" class="box" id="_MagicItemsWeapon1">Thief's Dagger</span>
-				<span tabindex="314" class="box" id="_MagicItemsWeapon2">Staff of Light</span>
+				<span tabindex="313" class="box" id="_MagicItemsWeapon1">+1 Thief's Dagger</span>
+				<span tabindex="314" class="box" id="_MagicItemsWeapon2">+1 Staff of Light</span>
 				<span tabindex="315" class="box" id="_MagicItemsWeapon3"></span>
 				<span tabindex="316" class="box" id="_MagicItemsWeapon4"></span>
-				<span tabindex="317" class="box" id="_MagicItemsArmor">Leather Armor +2</span>
+				<span tabindex="317" class="box" id="_MagicItemsArmor">+1 Darkleaf Leather Armor</span>
 				<span tabindex="318" class="box" id="_MagicItemsArms"></span>
 				<span tabindex="319" class="box" id="_MagicItemsFeet"></span>
 				<span tabindex="320" class="box" id="_MagicItemsHands">Knifethrower's Gloves</span>
 				<span tabindex="321" class="box" id="_MagicItemsHead"></span>
-				<span tabindex="322" class="box" id="_MagicItemsNeck"></span>
+				<span tabindex="322" class="box" id="_MagicItemsNeck">+2 Baffling Cape</span>
 				<span tabindex="323" class="box" id="_MagicItemsRing1"></span>
 				<span tabindex="324" class="box" id="_MagicItemsRing2"></span>
 				<span tabindex="325" class="box" id="_MagicItemsWaist"></span>
 				<span tabindex="326" class="box" id="_MagicItemsMisc1">Bump &amp; Run</span>
-				<span tabindex="327" class="box" id="_MagicItemsMisc2"></span>
+				<span tabindex="327" class="box" id="_MagicItemsMisc2">Avandra's Luck</span>
 				<span tabindex="328" class="box" id="_MagicItemsMisc3"></span>
 				<span tabindex="329" class="box" id="_MagicItemsMisc4"></span>
 				<span tabindex="330" class="box" id="_MagicItemsMisc5"></span>
@@ -1960,6 +1965,7 @@ golden arm circlet<br></span>
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers2Card" class="power-card">
@@ -1983,6 +1989,7 @@ golden arm circlet<br></span>
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers3Card" class="power-card">
@@ -2009,6 +2016,7 @@ golden arm circlet<br></span>
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers4Card" class="power-card">
@@ -2041,6 +2049,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers5Card" class="power-card">
@@ -2063,6 +2072,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_AtWillPowers6Card" class="power-card">
@@ -2085,6 +2095,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option selected="selected" value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers1Card" class="power-card">
@@ -2113,6 +2124,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers2Card" class="power-card">
@@ -2135,6 +2147,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers3Card" class="power-card">
@@ -2157,6 +2170,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers4Card" class="power-card">
@@ -2179,6 +2193,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers5Card" class="power-card">
@@ -2201,6 +2216,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_EncounterPowers6Card" class="power-card">
@@ -2223,6 +2239,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option selected="selected" value="1">Encounter</option>
 						<option value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_DailyPowers1Card" class="power-card">
@@ -2246,6 +2263,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_DailyPowers2Card" class="power-card">
@@ -2269,6 +2287,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_DailyPowers3Card" class="power-card">
@@ -2293,6 +2312,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_DailyPowers4Card" class="power-card">
@@ -2316,6 +2336,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_DailyPowers5Card" class="power-card">
@@ -2338,6 +2359,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_DailyPowers6Card" class="power-card">
@@ -2360,6 +2382,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_UtilityPowers1Card" class="power-card">
@@ -2382,6 +2405,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_UtilityPowers2Card" class="power-card">
@@ -2405,6 +2429,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_UtilityPowers3Card" class="power-card">
@@ -2427,6 +2452,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_UtilityPowers4Card" class="power-card">
@@ -2449,6 +2475,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_UtilityPowers5Card" class="power-card">
@@ -2471,6 +2498,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_UtilityPowers6Card" class="power-card">
@@ -2493,6 +2521,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_UtilityPowers7Card" class="power-card">
@@ -2515,6 +2544,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_UtilityPowers8Card" class="power-card">
@@ -2537,11 +2567,12 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_MagicItemsWeapon1Card" class="power-card">
 					<img id="_MagicItemsWeapon1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="446" id="_MagicItemsWeapon1Name" class="box power-card-name">Thief's Dagger</span>
+					<span tabindex="446" id="_MagicItemsWeapon1Name" class="box power-card-name">+1 Thief's Dagger</span>
 					<span tabindex="447" id="_MagicItemsWeapon1Keyword" class="box power-card-keyword"></span>
 					<input tabindex="448" id="_MagicItemsWeapon1Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="449" id="_MagicItemsWeapon1Action" class="box power-card-action">Free</span>
@@ -2559,11 +2590,12 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_MagicItemsWeapon2Card" class="power-card">
 					<img id="_MagicItemsWeapon2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="462" id="_MagicItemsWeapon2Name" class="box power-card-name">Staff of Light</span>
+					<span tabindex="462" id="_MagicItemsWeapon2Name" class="box power-card-name">+1 Staff of Light</span>
 					<span tabindex="463" id="_MagicItemsWeapon2Keyword" class="box power-card-keyword"></span>
 					<input tabindex="464" id="_MagicItemsWeapon2Box" class="box power-card-box edited" type="checkbox">
 					<span tabindex="465" id="_MagicItemsWeapon2Action" class="box power-card-action">Minor</span>
@@ -2582,6 +2614,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsWeapon3Card" class="power-card">
@@ -2604,6 +2637,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsWeapon4Card" class="power-card">
@@ -2626,11 +2660,12 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_MagicItemsArmorCard" class="power-card">
 					<img id="_MagicItemsArmorImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png">
-					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">Leather Armor +2</span>
+					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">+1 Darkleaf Leather Armor</span>
 					<span tabindex="511" id="_MagicItemsArmorKeyword" class="box power-card-keyword"></span>
 					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box edited" type="checkbox">
 					<span tabindex="513" id="_MagicItemsArmorAction" class="box power-card-action">Reaction</span>
@@ -2648,6 +2683,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsArmsCard" class="power-card">
@@ -2670,6 +2706,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsFeetCard" class="power-card">
@@ -2692,6 +2729,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_MagicItemsHandsCard" class="power-card">
@@ -2717,6 +2755,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsHeadCard" class="power-card">
@@ -2739,11 +2778,12 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
-				<div style="display: none;" id="_MagicItemsNeckCard" class="power-card">
+				<div style="display: inline-block;" id="_MagicItemsNeckCard" class="power-card">
 					<img id="_MagicItemsNeckImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">0</span>
+					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">+2 Baffling Cape</span>
 					<span tabindex="591" id="_MagicItemsNeckKeyword" class="box power-card-keyword"></span>
 					<input tabindex="592" id="_MagicItemsNeckBox" class="box power-card-box" type="checkbox">
 					<span tabindex="593" id="_MagicItemsNeckAction" class="box power-card-action"></span>
@@ -2761,6 +2801,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsRing1Card" class="power-card">
@@ -2783,6 +2824,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsRing2Card" class="power-card">
@@ -2805,6 +2847,7 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsWaistCard" class="power-card">
@@ -2827,10 +2870,11 @@ Nothing you create can deal damage or hinder.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: inline-block;" id="_MagicItemsMisc1Card" class="power-card">
-					<img id="_MagicItemsMisc1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
+					<img id="_MagicItemsMisc1Image" src="http://rampion.github.com/4eCharSheet/PowerCard-OneTime.png">
 					<span tabindex="654" id="_MagicItemsMisc1Name" class="box power-card-name">Bump &amp; Run</span>
 					<span tabindex="655" id="_MagicItemsMisc1Keyword" class="box power-card-keyword">table of fun</span>
 					<input tabindex="656" id="_MagicItemsMisc1Box" class="box power-card-box" type="checkbox">
@@ -2850,20 +2894,23 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
-				<div style="display: none;" id="_MagicItemsMisc2Card" class="power-card">
-					<img id="_MagicItemsMisc2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
-					<span tabindex="670" id="_MagicItemsMisc2Name" class="box power-card-name">0</span>
+				<div style="display: inline-block;" id="_MagicItemsMisc2Card" class="power-card">
+					<img id="_MagicItemsMisc2Image" src="http://rampion.github.com/4eCharSheet/PowerCard-OneTime.png">
+					<span tabindex="670" id="_MagicItemsMisc2Name" class="box power-card-name">Avandra's Luck</span>
 					<span tabindex="671" id="_MagicItemsMisc2Keyword" class="box power-card-keyword">table of fun</span>
 					<input tabindex="672" id="_MagicItemsMisc2Box" class="box power-card-box edited" type="checkbox">
-					<span tabindex="673" id="_MagicItemsMisc2Action" class="box power-card-action">Move</span>
+					<span tabindex="673" id="_MagicItemsMisc2Action" class="box power-card-action">Free</span>
 					<span tabindex="674" id="_MagicItemsMisc2AttackType" class="box power-card-attack-type"></span>
 					<span tabindex="675" id="_MagicItemsMisc2Range" class="box power-card-range">n/a</span>
 					<span tabindex="676" id="_MagicItemsMisc2Attack" class="box power-card-attack">n/a</span>
 					<span tabindex="677" id="_MagicItemsMisc2Defense" class="box power-card-defense">n/a</span>
 					<span tabindex="678" id="_MagicItemsMisc2Target" class="box power-card-target">self</span>
-					<span tabindex="679" id="_MagicItemsMisc2Details" class="box power-card-details"><b>Effect:</b> Shift upto your speed in a straight line.  You may make a melee basic attack as a free action against each creature adjacent to you at the end of this movement.  A hit does no damage, but stuns the target save ends.</span>
+					<span tabindex="679" id="_MagicItemsMisc2Details" class="box power-card-details"><b>Effect:</b> +1 AC vs attacks of opportunity for the rest of the combat.
+<li> when missed by an attack of opportunity, increase the bonus by +1.</li>
+<li> when hit by an attack of opportunity, reset the bonus to +1.</li></span>
 					<span tabindex="680" id="_MagicItemsMisc2Additional" class="box power-card-additional">One time use</span>
 					<span tabindex="681" id="_MagicItemsMisc2Class" class="box power-card-class">n/a</span>
 					<span tabindex="683" id="_MagicItemsMisc2Level" class="box power-card-level">n/a</span>
@@ -2872,6 +2919,7 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc3Card" class="power-card">
@@ -2894,6 +2942,7 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc4Card" class="power-card">
@@ -2916,6 +2965,7 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc5Card" class="power-card">
@@ -2938,6 +2988,7 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc6Card" class="power-card">
@@ -2960,6 +3011,7 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc7Card" class="power-card">
@@ -2982,6 +3034,7 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc8Card" class="power-card">
@@ -3004,6 +3057,7 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc9Card" class="power-card">
@@ -3026,6 +3080,7 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc10Card" class="power-card">
@@ -3048,6 +3103,7 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc11Card" class="power-card">
@@ -3070,6 +3126,7 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 				<div style="display: none;" id="_MagicItemsMisc12Card" class="power-card">
@@ -3092,10 +3149,12 @@ attack: you can push the target 1 square.</span>
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
 						<option selected="selected" value="2">Daily</option>
+						<option value="3">One-Time</option>
 					</select>
 				</div>
 			</div>
 		</div>
 		<script src="http://rampion.github.com/4eCharSheet/link-power-cards.js"></script>
 		<script src="http://rampion.github.com/4eCharSheet/program.js"></script>
+
 </body></html>

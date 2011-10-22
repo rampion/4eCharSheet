@@ -2,7 +2,8 @@
 	const image_urls=[ 
 		"http://rampion.github.com/4eCharSheet/PowerCard-AtWill.png", 
 		"http://rampion.github.com/4eCharSheet/PowerCard-Encounter.png", 
-		"http://rampion.github.com/4eCharSheet/PowerCard-Daily.png"
+		"http://rampion.github.com/4eCharSheet/PowerCard-Daily.png",
+		"http://rampion.github.com/4eCharSheet/PowerCard-OneTime.png"
 	];
 	const addClass = function(elt, klass) {
 		const classes = elt.className.split(' ');
