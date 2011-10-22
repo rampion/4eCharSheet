@@ -546,8 +546,8 @@ ul{ margin: 0; }
 			ArmorClass10PlusHalfLevel:"=(10 + roundDown(Level/2))",
 			ArmorClass:"=(ArmorClass10PlusHalfLevel + ArmorClassArmorSlashAbil + ArmorClassClass + ArmorClassFeat + ArmorClassEnh + ArmorClassMisc1 + ArmorClassMisc2)",
 			ArmorClassArmorSlashAbil:"=(max(DexMod,IntMod) + 2 /* +1 Darkleaf Leather Armor */)",
-			ArmorClassConditionalBonuses:"+2 vs opportunity attacks <!-- Nimble Reaction, p.44 -->",
-			ArmorClassEnh:"=(2 /* +1 Darkleaf Leather Armor */)",
+			ArmorClassConditionalBonuses:"+2 vs opportunity attacks <!-- Nimble Reaction, p.44 -->, +2 vs initial attack of combat <!-- +2 Darkleaf Leather -->",
+			ArmorClassEnh:"=(1 /* +1 Darkleaf Leather Armor */)",
 			ArmorClassMisc1:"=(1 /* Staff of Defense (p.157) */)",
 			AtWillPowers1:"Ghost Sound",
 			AtWillPowers1Action:"Standard",
@@ -836,13 +836,14 @@ ul{ margin: 0; }
 			LanguagesKnown3:"Infernal <!-- Book Imp Familiar -->",
 			Level:"8",
 			MagicItemsArmor:"+1 Darkleaf Leather Armor",
-			MagicItemsArmorAction:"Reaction",
+			MagicItemsArmorAction:"Interrupt",
 			MagicItemsArmorAttack:"n/a",
 			MagicItemsArmorClass:"n/a",
 			MagicItemsArmorDefense:"n/a",
-			MagicItemsArmorLevel:"n/a",
+			MagicItemsArmorDetails:"<b>Property:</b> Gain a +2 item bonus to AC against the first attack made against you in each encounter.",
+			MagicItemsArmorLevel:"4",
 			MagicItemsArmorName:"=(MagicItemsArmor)",
-			MagicItemsArmorPage:"n/a",
+			MagicItemsArmorPage:"PHB1p228",
 			MagicItemsArmorRange:"Personal",
 			MagicItemsArmorTarget:"n/a",
 			MagicItemsArmsName:"=(MagicItemsArms)",
@@ -911,7 +912,17 @@ ul{ margin: 0; }
 			MagicItemsMisc8Name:"=(MagicItemsMisc8)",
 			MagicItemsMisc9Name:"=(MagicItemsMisc9)",
 			MagicItemsNeck:"+2 Baffling Cape",
+			MagicItemsNeckAction:"Reaction",
+			MagicItemsNeckAttack:"n/a",
+			MagicItemsNeckClass:"n/a",
+			MagicItemsNeckDefense:"n/a",
+			MagicItemsNeckDetails:"<p><b>Trigger:</b> An enemy adjacent to you misses with a melee attack.</p>\n<p><b>Effect:</b> Swap places with the triggering enemy.</p>",
+			MagicItemsNeckKeyword:"Teleportation",
+			MagicItemsNeckLevel:"8",
 			MagicItemsNeckName:"=(MagicItemsNeck)",
+			MagicItemsNeckPage:"goo.gl/BnpaZ",
+			MagicItemsNeckRange:"n/a",
+			MagicItemsNeckTarget:"Self",
 			MagicItemsRing1Name:"=(MagicItemsRing1)",
 			MagicItemsRing2Name:"=(MagicItemsRing2)",
 			MagicItemsWaistName:"=(MagicItemsWaist)",
@@ -1405,9 +1416,9 @@ ul{ margin: 0; }
 </style></head><body>
 		<div id="CharacterSheet">
 			<div style="" id="EditBox">
-				<div id="EditBoxTarget">MagicItemsMisc2Additional</div>
+				<div id="EditBoxTarget">ArmorClassEnh</div>
 				<textarea style="height: 39px; width: 1136px;" id="EditBoxText"></textarea>
-				<div style="display: none;" id="EditBoxTextMeasure">One time use&nbsp;</div>
+				<div style="display: none;" id="EditBoxTextMeasure">=(1 /* +1 Darkleaf Leather Armor */)&nbsp;</div>
 				<div id="EditBoxButtons">
 					<a id="EditBoxSave">Save Changes</a>
 					<a id="EditBoxX">X</a>
@@ -1461,15 +1472,15 @@ ul{ margin: 0; }
 				<span tabindex="38" class="center box" id="_WisModPlusHalfLevel">5</span>
 				<span tabindex="39" class="center box" id="_ChaModPlusHalfLevel">6</span>
 
-				<span tabindex="40" class="center box" id="_ArmorClass">23</span>
+				<span tabindex="40" class="center box" id="_ArmorClass">22</span>
 				<span tabindex="41" class="center box" id="_ArmorClass10PlusHalfLevel">14</span>
 				<span tabindex="42" class="center box" id="_ArmorClassArmorSlashAbil">6</span>
 				<span tabindex="43" class="center box" id="_ArmorClassClass"></span>
 				<span tabindex="44" class="center box" id="_ArmorClassFeat"></span>
-				<span tabindex="45" class="center box" id="_ArmorClassEnh">2</span>
+				<span tabindex="45" class="center box" id="_ArmorClassEnh">1</span>
 				<span tabindex="46" class="center box" id="_ArmorClassMisc1">1</span>
 				<span tabindex="47" class="center box" id="_ArmorClassMisc2"></span>
-				<span tabindex="48" class="box" id="_ArmorClassConditionalBonuses">+2 vs opportunity attacks <!-- Nimble Reaction, p.44 --></span>
+				<span tabindex="48" class="box" id="_ArmorClassConditionalBonuses">+2 vs opportunity attacks <!-- Nimble Reaction, p.44 -->, +2 vs initial attack of combat <!-- +2 Darkleaf Leather --></span>
 
 				<span tabindex="49" class="center box" id="_Fortitude">17</span>
 				<span tabindex="50" class="center box" id="_Fortitude10PlusHalfLevel">14</span>
@@ -2668,17 +2679,17 @@ Nothing you create can deal damage or hinder.</span>
 					<span tabindex="510" id="_MagicItemsArmorName" class="box power-card-name">+1 Darkleaf Leather Armor</span>
 					<span tabindex="511" id="_MagicItemsArmorKeyword" class="box power-card-keyword"></span>
 					<input tabindex="512" id="_MagicItemsArmorBox" class="box power-card-box edited" type="checkbox">
-					<span tabindex="513" id="_MagicItemsArmorAction" class="box power-card-action">Reaction</span>
+					<span tabindex="513" id="_MagicItemsArmorAction" class="box power-card-action">Interrupt</span>
 					<span tabindex="514" id="_MagicItemsArmorAttackType" class="box power-card-attack-type"></span>
 					<span tabindex="515" id="_MagicItemsArmorRange" class="box power-card-range">Personal</span>
 					<span tabindex="516" id="_MagicItemsArmorAttack" class="box power-card-attack">n/a</span>
 					<span tabindex="517" id="_MagicItemsArmorDefense" class="box power-card-defense">n/a</span>
 					<span tabindex="518" id="_MagicItemsArmorTarget" class="box power-card-target">n/a</span>
-					<span tabindex="519" id="_MagicItemsArmorDetails" class="box power-card-details"></span>
+					<span tabindex="519" id="_MagicItemsArmorDetails" class="box power-card-details"><b>Property:</b> Gain a +2 item bonus to AC against the first attack made against you in each encounter.</span>
 					<span tabindex="520" id="_MagicItemsArmorAdditional" class="box power-card-additional"></span>
 					<span tabindex="521" id="_MagicItemsArmorClass" class="box power-card-class">n/a</span>
-					<span tabindex="523" id="_MagicItemsArmorLevel" class="box power-card-level">n/a</span>
-					<span tabindex="524" id="_MagicItemsArmorPage" class="box power-card-page">n/a</span>
+					<span tabindex="523" id="_MagicItemsArmorLevel" class="box power-card-level">4</span>
+					<span tabindex="524" id="_MagicItemsArmorPage" class="box power-card-page">PHB1p228</span>
 					<select tabindex="525" id="_MagicItemsArmorPowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -2784,19 +2795,20 @@ Nothing you create can deal damage or hinder.</span>
 				<div style="display: inline-block;" id="_MagicItemsNeckCard" class="power-card">
 					<img id="_MagicItemsNeckImage" src="http://rampion.github.com/4eCharSheet/PowerCard-Daily.png">
 					<span tabindex="590" id="_MagicItemsNeckName" class="box power-card-name">+2 Baffling Cape</span>
-					<span tabindex="591" id="_MagicItemsNeckKeyword" class="box power-card-keyword"></span>
+					<span tabindex="591" id="_MagicItemsNeckKeyword" class="box power-card-keyword">Teleportation</span>
 					<input tabindex="592" id="_MagicItemsNeckBox" class="box power-card-box" type="checkbox">
-					<span tabindex="593" id="_MagicItemsNeckAction" class="box power-card-action"></span>
+					<span tabindex="593" id="_MagicItemsNeckAction" class="box power-card-action">Reaction</span>
 					<span tabindex="594" id="_MagicItemsNeckAttackType" class="box power-card-attack-type"></span>
-					<span tabindex="595" id="_MagicItemsNeckRange" class="box power-card-range"></span>
-					<span tabindex="596" id="_MagicItemsNeckAttack" class="box power-card-attack"></span>
-					<span tabindex="597" id="_MagicItemsNeckDefense" class="box power-card-defense"></span>
-					<span tabindex="598" id="_MagicItemsNeckTarget" class="box power-card-target"></span>
-					<span tabindex="599" id="_MagicItemsNeckDetails" class="box power-card-details"></span>
+					<span tabindex="595" id="_MagicItemsNeckRange" class="box power-card-range">n/a</span>
+					<span tabindex="596" id="_MagicItemsNeckAttack" class="box power-card-attack">n/a</span>
+					<span tabindex="597" id="_MagicItemsNeckDefense" class="box power-card-defense">n/a</span>
+					<span tabindex="598" id="_MagicItemsNeckTarget" class="box power-card-target">Self</span>
+					<span tabindex="599" id="_MagicItemsNeckDetails" class="box power-card-details"><p><b>Trigger:</b> An enemy adjacent to you misses with a melee attack.</p>
+<p><b>Effect:</b> Swap places with the triggering enemy.</p></span>
 					<span tabindex="600" id="_MagicItemsNeckAdditional" class="box power-card-additional"></span>
-					<span tabindex="601" id="_MagicItemsNeckClass" class="box power-card-class"></span>
-					<span tabindex="603" id="_MagicItemsNeckLevel" class="box power-card-level"></span>
-					<span tabindex="604" id="_MagicItemsNeckPage" class="box power-card-page"></span>
+					<span tabindex="601" id="_MagicItemsNeckClass" class="box power-card-class">n/a</span>
+					<span tabindex="603" id="_MagicItemsNeckLevel" class="box power-card-level">8</span>
+					<span tabindex="604" id="_MagicItemsNeckPage" class="box power-card-page">goo.gl/BnpaZ</span>
 					<select tabindex="605" id="_MagicItemsNeckPowerType" class="power-card-power-type">
 						<option value="0">At Will</option>
 						<option value="1">Encounter</option>
@@ -3156,5 +3168,6 @@ attack: you can push the target 1 square.</span>
 		</div>
 		<script src="http://rampion.github.com/4eCharSheet/link-power-cards.js"></script>
 		<script src="http://rampion.github.com/4eCharSheet/program.js"></script>
+
 
 </body></html>
